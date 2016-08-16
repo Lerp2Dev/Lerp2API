@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{397F3C95-D8F2-4A9F-A7EF-2FF7FF1155C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lerp2API</RootNamespace>
+    <AssemblyName>Lerp2API</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNITY_EDITOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>..\Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="API\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="API\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="API\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <Compile Include="API\FallingAvoider.cs" />
+    <Compile Include="API\FirstPersonCharacter\FirstPersonController.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsArrayConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsDateConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsDictionaryConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsEnumConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsForwardConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsGuidConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsIEnumerableConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsKeyValuePairConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsNullableConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsPrimitiveConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsReflectedConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsTypeConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\fsWeakReferenceConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\AnimationCurve_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\Bounds_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\GameObject_DirectConvert.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\Gradient_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\GUIStyleState_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\GUIStyle_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\Keyframe_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\LayerMask_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\RectOffset_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\Rect_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\Texture2D_DirectConverter.cs" />
+    <Compile Include="API\FullSerializer\Converters\Unity\UnityEvent_Converter.cs" />
+    <Compile Include="API\FullSerializer\fsAotCompilationManager.cs" />
+    <Compile Include="API\FullSerializer\fsBaseConverter.cs" />
+    <Compile Include="API\FullSerializer\fsConfig.cs" />
+    <Compile Include="API\FullSerializer\fsContext.cs" />
+    <Compile Include="API\FullSerializer\fsConverter.cs" />
+    <Compile Include="API\FullSerializer\fsConverterRegistrar.cs" />
+    <Compile Include="API\FullSerializer\fsData.cs" />
+    <Compile Include="API\FullSerializer\fsDirectConverter.cs" />
+    <Compile Include="API\FullSerializer\fsExceptions.cs" />
+    <Compile Include="API\FullSerializer\fsIgnoreAttribute.cs" />
+    <Compile Include="API\FullSerializer\fsISerializationCallbacks.cs" />
+    <Compile Include="API\FullSerializer\fsJsonParser.cs" />
+    <Compile Include="API\FullSerializer\fsJsonPrinter.cs" />
+    <Compile Include="API\FullSerializer\fsMemberSerialization.cs" />
+    <Compile Include="API\FullSerializer\fsObjectAttribute.cs" />
+    <Compile Include="API\FullSerializer\fsObjectProcessor.cs" />
+    <Compile Include="API\FullSerializer\fsPropertyAttribute.cs" />
+    <Compile Include="API\FullSerializer\fsResult.cs" />
+    <Compile Include="API\FullSerializer\fsSerializer.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsCyclicReferenceManager.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsOption.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsPortableReflection.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsTypeExtensions.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsVersionedType.cs" />
+    <Compile Include="API\FullSerializer\Internal\fsVersionManager.cs" />
+    <Compile Include="API\FullSerializer\Reflection\fsMetaProperty.cs" />
+    <Compile Include="API\FullSerializer\Reflection\fsMetaType.cs" />
+    <Compile Include="API\FullSerializer\Reflection\fsReflectionUtility.cs" />
+    <Compile Include="API\FullSerializer\Reflection\fsTypeCache.cs" />
+    <Compile Include="API\Helpers.cs" />
+    <Compile Include="API\MeshSerializer.cs" />
+    <Compile Include="API\MouseLook.cs" />
+    <Compile Include="API\MyHideFlags.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Broadcaster.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Curves.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Delegates\DelegateSupport.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Easing.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\LoadAnimations.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Loom.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\MonoBehaviourEx.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Radical.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\RadicalRoutine.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\RadicalRoutineHelper.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\Smoothing.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\TransformExtensions.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Radical\System\XmlSupport.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\ResultLogger.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\ComponentDependencies.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\EmptyObjectIdentifier.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Entry.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\GetSet.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\GetSetGeneric.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\GetWritableAttributes.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\InRangeItem.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\IStorage.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\LevelLoader.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\LevelSerializer.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\OnlyInRangeManager.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\PersistentStorage\DataContainer.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\PersistentStorage\FilePrefs.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\PersistentStorage\SaveOnQuit.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\PrefabIdentifier.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\prewarm.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\RemoveEditors.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\DontStoreObjectInRoom.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\Examples\PlayerLocator.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\Examples\PlayerSpawnPoint.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\PreserveObjectWhenLoading.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\Room.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\RoomDataSaveGameStorage.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\RoomLoader.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Rooms\RoomManager.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\SaveGameManager.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\SerializationUnits.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\Storage.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\StoreAnimator.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\StoredReferences.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\StoreInformation.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\StoreMaterials.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\StoreMesh.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\TimeSpecialist.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\UniqueIdentifier.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\UnitySerializationExtensions.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Serialization\UnitySerializer.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SevenZipHelper.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Checksums\Adler32.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Checksums\CRC32.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Checksums\IChecksum.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Checksums\StrangeCRC.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Deflater.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\DeflaterConstants.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\DeflaterEngine.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\DeflaterHuffman.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\DeflaterPending.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Inflater.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\InflaterDynHeader.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\PendingBuffer.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Encryption\PkzipClassic.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Encryption\ZipAESStream.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\Encryption\ZipAESTransform.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\SharpZipBaseException.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\ZipConstants.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\ZipEntry.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\ZipExtraData.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\SharpZIP\src\ZipHelperStream.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\UnitySerializerVersion.cs" />
+    <Compile Include="API\OpenUnityTools\unityserializer-ng\Utility\Types.cs" />
+    <Compile Include="API\Utility\CurveControlledBob.cs" />
+    <Compile Include="API\Utility\FOVKick.cs" />
+    <Compile Include="API\Utility\FPSCounter.cs" />
+    <Compile Include="API\Utility\LerpControlledBob.cs" />
+    <Compile Include="API\Utility\SmoothFollow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API\OpenUnityTools\unityserializer-ng\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="API\OpenUnityTools\unityserializer-ng\Serialization\.gitignore" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
