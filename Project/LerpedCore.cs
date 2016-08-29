@@ -84,23 +84,7 @@ namespace Lerp2API
 
         static LerpedUpdater()
         {
-            if (!File.Exists(localVersionFilepath))
-                JSONHelpers.SerializeToFile(localVersionFilepath, new LerpedUpdater(), true);
-            if (!noConnection)
-                try
-                {
-                    HtmlWeb web = new HtmlWeb();
-                    LerpedUpdater updater = web.Load("http://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Lerp2API.version").DocumentNode.OuterHtml.Deserialize<LerpedUpdater>();
-                    if (updater.versionStr != "1.0a")
-                        WarnOutdated(updater.versionStr);
-                }
-                catch
-                {
-                    Debug.LogError("Internet connection couldn't be detected, Updates are disabled!");
-                    noConnection = true;
-                }
-            else
-                CheckForConnection();
+            UpdateCheck();
         }
 
         public LerpedUpdater()
@@ -153,6 +137,39 @@ namespace Lerp2API
         {
             if (EditorUtility.DisplayDialog("Asset message", string.Format("Newer version '{0}' is available. You are using '{1}'.\nDo you want to update the DLL API?", newerVersion, "1.0a"), "Yes", "No"))
                 DoUpdate(newerVersion);
+        }
+
+#if UNITY_EDITOR
+        [MenuItem("Lerp2Dev Team Tools/Check for API Updates...", false, 1000)]
+#endif
+        public static void CheckForUpdates()
+        {
+            UpdateCheck(true);
+        }
+        internal static void UpdateCheck(bool successEnabled = false)
+        {
+            if (!File.Exists(localVersionFilepath))
+                JSONHelpers.SerializeToFile(localVersionFilepath, new LerpedUpdater(), true);
+            if (!noConnection)
+                try
+                {
+                    HtmlWeb web = new HtmlWeb();
+                    LerpedUpdater updater = web.Load("http://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Lerp2API.version").DocumentNode.OuterHtml.Deserialize<LerpedUpdater>();
+                    if (updater.versionStr != "1.0a")
+                        WarnOutdated(updater.versionStr);
+                    else
+                    {
+                        if (successEnabled)
+                            Debug.Log("Lerp2API is up-to-date!");
+                    }
+                }
+                catch
+                {
+                    Debug.LogError("Internet connection couldn't be detected, Updates are disabled!");
+                    noConnection = true;
+                }
+            else
+                CheckForConnection();
         }
     }
 }
