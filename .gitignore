@@ -1,0 +1,7 @@
+.vs
+Project/bin
+Project/obj
+Project/.vs
+Build/UnityEngine.dll
+Build/UnityEditor.dll
+Build/UnityEngine.UI.dll
