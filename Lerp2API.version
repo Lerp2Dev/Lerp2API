@@ -1,5 +1,5 @@
 {
-    "versionName": "1.0 Alpha Release",
-    "versionStr": "1.0a",
-    "versionChangelog": "Initial release."
+    "versionName": "1.0.1 Alpha Release",
+    "versionStr": "1.0.1a",
+    "versionChangelog": "Splitted the dll into Editor and Game part.\nAdded internal XML documentation file.\nCleaned some unused references.\nAdded some more utilities to the repo.\nFixed some errors in Editor."
 }

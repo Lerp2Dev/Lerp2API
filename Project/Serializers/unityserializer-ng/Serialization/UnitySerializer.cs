@@ -12,7 +12,6 @@ using System.Runtime.Serialization;
 using System.Text;
 using UnityEngine;
 using UnitySerializerNG;
-using Lerp2API.MenuSrc;
 using Debug = Lerp2API.DebugHandler.Debug;
 using Object = UnityEngine.Object;
 
@@ -3110,7 +3109,7 @@ namespace Serialization
                     _loadedObjects.Clear();
                     _seenTypes.Clear();
 
-                    if (DebugManager.active)
+                    if (Debug.isEnabled)
                         startTime = DateTime.Now;
 
                     _nextId = 0;

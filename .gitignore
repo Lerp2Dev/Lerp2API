@@ -5,3 +5,12 @@ Project/.vs
 Build/UnityEngine.dll
 Build/UnityEditor.dll
 Build/UnityEngine.UI.dll
+Build/Lerp2APIEditor.dll
+Build/Lerp2APIEditor.pdb
+Build/Lerp2APIEditor.xml
+Build/Editor/UnityEngine.dll
+Build/Editor/UnityEditor.dll
+Build/Editor/UnityEngine.UI.dll
+Build/Editor/Lerp2API.dll
+Build/Editor/Lerp2API.pdb
+Build/Editor/Lerp2API.xml

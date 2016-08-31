@@ -25,25 +25,50 @@ Manual (not available yet)
 The ability of save every scene in Unity.
 Maybe I will add CS-Script Asset (it's to load .cs files at runtime), yep, Unity modding with my API is coming stronger and stronger. (Serializers do a good job, but they need something more :P).
 I'm searching some way to avoid Floating Point precision errors, I founded some time ago, Floating Origin, but I am not sure about it (and it's compatibility in Multiplayer).
+An installer for my API (this will use to install the API in your projects in a easy way).
+Debug Enabled/Disable option in-game.
+
+## Known issues ##
+
+ - The menu checkmark from Debug Enabler doesn't get marked when Editor is recompiled and it's active in the config file.
 
 ## Changelogs ##
 
 Version 1.0a:
 
- - Initial release
+ - Initial release.
+
+Version 1.0.1a:
+
+ - Splitted the dll into Editor and Game part.
+ - Added internal XML documentation file.
+ - Cleaned some unused references.
+ - Added some more utilities to the repo.
+ - Fixed some errors in Editor.
+
+## Do you want to make an API? ##
+
+Tutorial is here: [http://lerp2dev.com/UnityDllReferencesTutorial/](http://lerp2dev.com/UnityDllReferencesTutorial/) (it's still in Spanish).
 
 ## Credits and thanks ##
 
 Ikillnukes - I made all the scripts that are not listed below:
 
 Unity Team for Standard Assets
-[scgarland](https://www.codeplex.com/site/users/view/scgarland) thanks for [BigIntegers in Unity](http://biginteger.codeplex.com/) (a downgraded version from .NET FW 4 System.Numerics.BigIntegers Class)
-[WestHill](http://forum.unity3d.com/members/westhill.145073/) thanks for [UniGif](http://forum.unity3d.com/threads/unigif-gif-image-decoder-for-unity-now-available-for-free-on-github.290126/)
-[TheSniperFan](https://gitgud.io/TheSniperFan) thanks for [unityserializer-ng](https://gitgud.io/TheSniperFan/unityserializer-ng)
-[jacobdufault](https://github.com/jacobdufault) thanks for [FullSerializer](https://github.com/jacobdufault/fullserializer)
-[DarthObiwan](https://www.codeplex.com/site/users/view/DarthObiwan) thanks for [HtmlAgilityPack](https://htmlagilitypack.codeplex.com/)
-Somebody for Noises folder (I did Voronoi Class by using [this resource](https://en.wikipedia.org/wiki/Voronoi_diagram))
+
+[scgarland](https://www.codeplex.com/site/users/view/scgarland) thanks for [BigIntegers in Unity](http://biginteger.codeplex.com/) (a downgraded version from .NET FW 4 System.Numerics.BigIntegers Class).
+
+[WestHill](http://forum.unity3d.com/members/westhill.145073/) thanks for [UniGif](http://forum.unity3d.com/threads/unigif-gif-image-decoder-for-unity-now-available-for-free-on-github.290126/).
+
+[TheSniperFan](https://gitgud.io/TheSniperFan) thanks for [unityserializer-ng](https://gitgud.io/TheSniperFan/unityserializer-ng).
+
+[jacobdufault](https://github.com/jacobdufault) thanks for [FullSerializer](https://github.com/jacobdufault/fullserializer).
+
+[DarthObiwan](https://www.codeplex.com/site/users/view/DarthObiwan) thanks for [HtmlAgilityPack](https://htmlagilitypack.codeplex.com/).
+
+Somebody for Noises folder (I did Voronoi Class by using [this resource](https://en.wikipedia.org/wiki/Voronoi_diagram)).
 
 #### I hope you found this useful ####
 Lerp2Dev Team
+
 Ikillnukes~~

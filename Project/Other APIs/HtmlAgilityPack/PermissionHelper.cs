@@ -8,7 +8,7 @@
     {
         public bool GetIsDnsAvailable()
         {
-            return SecurityManager.IsGranted(new DnsPermission(PermissionState.Unrestricted));
+            return true; //WIP //SecurityManager.IsGranted(new DnsPermission(PermissionState.Unrestricted));
         }
 
         public bool GetIsRegistryAvailable()

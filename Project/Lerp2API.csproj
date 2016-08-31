@@ -11,16 +11,17 @@
     <AssemblyName>Lerp2API</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Build\</OutputPath>
     <DefineConstants>TRACE;DEBUG;LERP2API;UNITY_EDITOR</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Build\Lerp2API.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,17 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lerp2APIEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Build\Lerp2APIEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Net" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEditor">
-      <HintPath>..\Assemblies\UnityEditor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Assemblies\UnityEngine.dll</HintPath>
     </Reference>
@@ -72,8 +70,6 @@
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="LerpedCore.cs" />
-    <Compile Include="MenuSrc\DebugManager.cs" />
-    <Compile Include="MenuSrc\UnityAnalyticsEditor.cs" />
     <Compile Include="Other APIs\BigInteger\BigInteger.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\AttributeValueQuote.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\Crc32.cs" />
@@ -245,9 +241,7 @@
     <Compile Include="Serializers\unityserializer-ng\SharpZIP\src\ZipHelperStream.cs" />
     <Compile Include="Serializers\unityserializer-ng\UnitySerializerVersion.cs" />
     <Compile Include="Serializers\unityserializer-ng\Utility\Types.cs" />
-    <Compile Include="Utility\AssetDefineManager.cs" />
     <Compile Include="Utility\DebugLine.cs" />
-    <Compile Include="Utility\GenericMenuExtensions.cs" />
     <Compile Include="Utility\MeshSerializer.cs" />
     <Compile Include="Utility\UniqueIdentifiers.cs" />
   </ItemGroup>

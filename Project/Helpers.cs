@@ -7,403 +7,365 @@ using FullSerializer;
 using Object = UnityEngine.Object;
 using Debug = Lerp2API.DebugHandler.Debug;
 using Lerp2API.Game;
-using Lerp2API.MenuSrc;
 
-#if UNITY_EDITOR
-
-using UnityEditor;
-
-#endif
-
-public static class Helpers
+namespace Lerp2API
 {
-    #region "String Extensions"
-
-    public static string FirstCharToUpper(this string input)
+    public static class Helpers
     {
-        if (string.IsNullOrEmpty(input))
-            return "";
-        return input[0].ToString().ToUpper() + input.Substring(1);
-    }
+        #region "String Extensions"
 
-    public static string ReplaceLast(this string Source, string Find, string Replace)
-    {
-        int place = Source.LastIndexOf(Find);
+        public static string FirstCharToUpper(this string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return "";
+            return input[0].ToString().ToUpper() + input.Substring(1);
+        }
 
-        if (place == -1)
-            return Source;
+        public static string ReplaceLast(this string Source, string Find, string Replace)
+        {
+            int place = Source.LastIndexOf(Find);
 
-        string result = Source.Remove(place, Find.Length).Insert(place, Replace);
-        return result;
-    }
+            if (place == -1)
+                return Source;
 
-    #endregion "String Extensions"
+            string result = Source.Remove(place, Find.Length).Insert(place, Replace);
+            return result;
+        }
 
-    #region "Texture Extensions"
+        #endregion "String Extensions"
 
-    public static Texture2D ToTexture(this Color c, int w = 1, int h = 1)
-    {
-        if (w < 1 || h < 1)
-            throw new Exception("This method doesn't avoid zero or negative dimensions.");
-        Texture2D t = new Texture2D(w, h);
-        if (w > 1 && h > 1)
-            for (int i = 0; i < w; ++i)
+        #region "Texture Extensions"
+
+        public static Texture2D ToTexture(this Color c, int w = 1, int h = 1)
+        {
+            if (w < 1 || h < 1)
+                throw new Exception("This method doesn't avoid zero or negative dimensions.");
+            Texture2D t = new Texture2D(w, h);
+            if (w > 1 && h > 1)
+                for (int i = 0; i < w; ++i)
+                    for (int j = 0; j < h; ++j)
+                        t.SetPixel(i, j, c);
+            else if (w > 1 && h == 1)
+                for (int i = 0; i < w; ++i)
+                    t.SetPixel(i, 0, c);
+            else if (w == 1 && h > 1)
                 for (int j = 0; j < h; ++j)
-                    t.SetPixel(i, j, c);
-        else if (w > 1 && h == 1)
-            for (int i = 0; i < w; ++i)
-                t.SetPixel(i, 0, c);
-        else if (w == 1 && h > 1)
-            for (int j = 0; j < h; ++j)
-                t.SetPixel(0, j, c);
-        else
-            t.SetPixel(0, 0, c);
-        t.Apply();
-        return t;
-    }
-
-    #endregion "Texture Extensions"
-
-    #region "Array Extensions"
-
-    public static T[] Push<T>(this T[] array, T item)
-    {
-        List<T> l = new List<T>();
-        if (array != null)
-            l = array.ToList();
-        l.Add(item);
-        array = l.ToArray();
-        return array;
-    }
-
-    public static T[] RemoveAt<T>(this T[] array, int index)
-    {
-        List<T> l = array.ToList();
-        l.RemoveAt(index);
-        array = l.ToArray();
-        return array;
-    }
-
-    #endregion "Array Extensions"
-
-    #region "Dictionary Extensions"
-
-    public static Dictionary<TKey, TValue> RenameKey<TKey, TValue>(this IDictionary<TKey, TValue> dic,
-                                      TKey fromKey, TKey toKey)
-    {
-        TValue value = dic[fromKey];
-        dic.Remove(fromKey);
-        if (!dic.ContainsKey(toKey))
-            dic[toKey] = value;
-        else
-        {
-            TValue v = dic[toKey];
-            dic.Remove(toKey);
-            dic[fromKey] = v;
-            dic[toKey] = value;
-        }
-        return (Dictionary<TKey, TValue>)dic;
-    }
-
-    #endregion "Dictionary Extensions"
-
-    #region "Iteration Extensions"
-
-    public static void ForEach<T>(this IEnumerable<T> ie, Action<T> action)
-    {
-        foreach (var i in ie)
-            action(i);
-    }
-
-    #endregion "Iteration Extensions"
-
-    #region "IO Extensions"
-
-    public static void DeleteDirectory(this string target_dir)
-    {
-        string[] files = Directory.GetFiles(target_dir);
-        string[] dirs = Directory.GetDirectories(target_dir);
-
-        foreach (string file in files)
-        {
-            File.SetAttributes(file, FileAttributes.Normal);
-            File.Delete(file);
-        }
-
-        foreach (string dir in dirs)
-            DeleteDirectory(dir);
-
-        Directory.Delete(target_dir, false);
-    }
-
-    #endregion "IO Extensions"
-
-#if UNITY_EDITOR
-
-    #region "Editor Extensions"
-
-    public static void DefineTag(this string tagName)
-    { //Credits: http://answers.unity3d.com/questions/33597/is-it-possible-to-create-a-tag-programmatically.html
-        // Open tag manager
-        SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
-        SerializedProperty tagsProp = tagManager.FindProperty("tags");
-
-        // For Unity 5 we need this too
-        //SerializedProperty layersProp = tagManager.FindProperty("layers");
-
-        // Adding a Tag
-        // First check if it is not already present
-        bool found = false;
-        for (int i = 0; i < tagsProp.arraySize; i++)
-        {
-            SerializedProperty t = tagsProp.GetArrayElementAtIndex(i);
-            if (t.stringValue.Equals(tagName)) { found = true; break; }
-        }
-
-        // if not found, add it
-        if (!found)
-        {
-            tagsProp.InsertArrayElementAtIndex(0);
-            SerializedProperty n = tagsProp.GetArrayElementAtIndex(0);
-            n.stringValue = tagName;
-        }
-    }
-
-    #endregion "Editor Extensions"
-
-#endif
-
-    #region "GameObject Extensions"
-
-    public static GameObject getRoot(this GameObject go)
-    {
-        Transform t = go.transform;
-        while (t.parent != null)
-            t = t.parent.transform;
-        return t.gameObject;
-    }
-
-    #endregion "GameObject Extensions"
-
-    #region "Object Extensions"
-
-    public static string ToUString(this object message) //To Universal String, converts an object to string by checking if it's a string
-    {
-        return message.GetType().Equals(typeof(string)) ? (string)message : message.ToString();
-    }
-
-    #endregion "Object Extensions"
-}
-
-#region "JSON Helpers"
-
-public static class JSONHelpers
-{
-    private static readonly fsSerializer _serializer = new fsSerializer();
-
-    public static string Serialize<T>(this T value, bool pretty = true)
-    {
-        fsData data;
-        fsResult res = _serializer.TrySerialize(typeof(T), value, out data).AssertSuccessWithoutWarnings();
-
-        if (res.Failed)
-            Debug.LogError(res.FormattedMessages);
-
-        if (pretty)
-            return fsJsonPrinter.PrettyJson(data);
-        return fsJsonPrinter.CompressedJson(data);
-    }
-
-    public static T Deserialize<T>(this string serializedState)
-    {
-        fsData data = fsJsonParser.Parse(serializedState);
-
-        object deserialized = null;
-        _serializer.TryDeserialize(data, typeof(T), ref deserialized).AssertSuccessWithoutWarnings();
-
-        return (T)deserialized;
-    }
-
-    public static void SerializeToFile<T>(string path, T value, bool pretty = true)
-    {
-        File.WriteAllText(path, Serialize(value, pretty));
-    }
-
-    public static T DeserializeFromFile<T>(string path)
-    {
-        return Deserialize<T>(File.ReadAllText(path));
-    }
-}
-
-#endregion "JSON Helpers"
-
-#region "Serializer Helpers"
-
-public static class SerializerHelpers
-{
-    public class Transporter
-    {
-        public Type type;
-        public bool write;
-        public object obj;
-
-        public Transporter(object o, bool w = true)
-        {
-            type = o.GetType();
-            obj = o;
-        }
-    }
-
-    public static string SaveAsAsset<T>(this string str, T obj, string name = "", bool w = true)
-    {
-        return SaveAsAsset(new Transporter(str, w), obj, name);
-    }
-
-    public static string SaveAsAsset<T>(this string[] strs, T obj, string name = "")
-    {
-        return SaveAsAsset(new Transporter(strs), obj, name);
-    }
-
-    public static string SaveAsAsset<T>(this byte[] arr, T obj, string name = "")
-    {
-        return SaveAsAsset(new Transporter(arr), obj, name);
-    }
-
-    public static string SaveAsAsset<T>(Transporter value, T obj, string name)
-    {
-        bool emptyName = string.IsNullOrEmpty(name),
-             derivedClass = obj != null && typeof(T).IsSubclassOf(typeof(Object)), alreadyExists = false;
-        string n = name, path = "", fpath = "", rpath = "";
-        if (emptyName && derivedClass)
-            n = ((Object)(object)obj).name;
-        else if (emptyName && !derivedClass)
-            n = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString("F0");
-        path = Path.Combine(Application.streamingAssetsPath, typeof(T).Name);
-        fpath = Path.Combine(path, n + ".asset");
-        rpath = typeof(T).Name + "/" + n + ".asset";
-        alreadyExists = File.Exists(fpath);
-        if (!alreadyExists)
-        {
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            if (value.type.Equals(typeof(string)))
-                if (value.write)
-                    File.WriteAllText(fpath, (string)value.obj);
-                else
-                    File.AppendAllText(fpath, (string)value.obj + Environment.NewLine);
-            else if (value.type.Equals(typeof(string[])))
-                File.WriteAllLines(fpath, (string[])value.obj);
-            else if (value.type.Equals(typeof(byte[])))
-                File.WriteAllBytes(fpath, (byte[])value.obj);
+                    t.SetPixel(0, j, c);
             else
-                throw new Exception("Not recognised type!");
-            Debug.Log("Asset saved at " + fpath + "!");
+                t.SetPixel(0, 0, c);
+            t.Apply();
+            return t;
         }
-        if (typeof(T).Equals(typeof(GameObject)))
+
+        #endregion "Texture Extensions"
+
+        #region "Array Extensions"
+
+        public static T[] Push<T>(this T[] array, T item)
         {
-            //if (Application.isPlaying)
-            //    Object.Destroy(GameObject.Find(((GameObject)(object)obj).name));
-            //else
-            if (Application.isEditor)
-                Object.DestroyImmediate(GameObject.Find(((GameObject)(object)obj).name));
+            List<T> l = new List<T>();
+            if (array != null)
+                l = array.ToList();
+            l.Add(item);
+            array = l.ToArray();
+            return array;
         }
-        return rpath;
+
+        public static T[] RemoveAt<T>(this T[] array, int index)
+        {
+            List<T> l = array.ToList();
+            l.RemoveAt(index);
+            array = l.ToArray();
+            return array;
+        }
+
+        #endregion "Array Extensions"
+
+        #region "Dictionary Extensions"
+
+        public static Dictionary<TKey, TValue> RenameKey<TKey, TValue>(this IDictionary<TKey, TValue> dic,
+                                          TKey fromKey, TKey toKey)
+        {
+            TValue value = dic[fromKey];
+            dic.Remove(fromKey);
+            if (!dic.ContainsKey(toKey))
+                dic[toKey] = value;
+            else
+            {
+                TValue v = dic[toKey];
+                dic.Remove(toKey);
+                dic[fromKey] = v;
+                dic[toKey] = value;
+            }
+            return (Dictionary<TKey, TValue>)dic;
+        }
+
+        #endregion "Dictionary Extensions"
+
+        #region "Iteration Extensions"
+
+        public static void ForEach<T>(this IEnumerable<T> ie, Action<T> action)
+        {
+            foreach (var i in ie)
+                action(i);
+        }
+
+        #endregion "Iteration Extensions"
+
+        #region "IO Extensions"
+
+        public static void DeleteDirectory(this string target_dir)
+        {
+            string[] files = Directory.GetFiles(target_dir);
+            string[] dirs = Directory.GetDirectories(target_dir);
+
+            foreach (string file in files)
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+
+            foreach (string dir in dirs)
+                DeleteDirectory(dir);
+
+            Directory.Delete(target_dir, false);
+        }
+
+        #endregion "IO Extensions"
+
+        #region "GameObject Extensions"
+
+        public static GameObject getRoot(this GameObject go)
+        {
+            Transform t = go.transform;
+            while (t.parent != null)
+                t = t.parent.transform;
+            return t.gameObject;
+        }
+
+        #endregion "GameObject Extensions"
+
+        #region "Object Extensions"
+
+        public static string ToUString(this object message) //To Universal String, converts an object to string by checking if it's a string
+        {
+            return message.GetType().Equals(typeof(string)) ? (string)message : message.ToString();
+        }
+
+        #endregion "Object Extensions"
     }
 
-    public static byte[] LoadAsset(string fpath)
+    #region "JSON Helpers"
+
+    public static class JSONHelpers
     {
-        string p = Path.Combine(Application.streamingAssetsPath, fpath);
-        if (!File.Exists(p))
+        private static readonly fsSerializer _serializer = new fsSerializer();
+
+        public static string Serialize<T>(this T value, bool pretty = true)
         {
-            Debug.LogError("Any file found at " + p + "!");
+            fsData data;
+            fsResult res = _serializer.TrySerialize(typeof(T), value, out data).AssertSuccessWithoutWarnings();
+
+            if (res.Failed)
+                Debug.LogError(res.FormattedMessages);
+
+            if (pretty)
+                return fsJsonPrinter.PrettyJson(data);
+            return fsJsonPrinter.CompressedJson(data);
+        }
+
+        public static T Deserialize<T>(this string serializedState)
+        {
+            fsData data = fsJsonParser.Parse(serializedState);
+
+            object deserialized = null;
+            _serializer.TryDeserialize(data, typeof(T), ref deserialized).AssertSuccessWithoutWarnings();
+
+            return (T)deserialized;
+        }
+
+        public static void SerializeToFile<T>(string path, T value, bool pretty = true)
+        {
+            File.WriteAllText(path, Serialize(value, pretty));
+        }
+
+        public static T DeserializeFromFile<T>(string path)
+        {
+            return Deserialize<T>(File.ReadAllText(path));
+        }
+    }
+
+    #endregion "JSON Helpers"
+
+    #region "Serializer Helpers"
+
+    public static class SerializerHelpers
+    {
+        public class Transporter
+        {
+            public Type type;
+            public bool write;
+            public object obj;
+
+            public Transporter(object o, bool w = true)
+            {
+                type = o.GetType();
+                obj = o;
+            }
+        }
+
+        public static string SaveAsAsset<T>(this string str, T obj, string name = "", bool w = true)
+        {
+            return SaveAsAsset(new Transporter(str, w), obj, name);
+        }
+
+        public static string SaveAsAsset<T>(this string[] strs, T obj, string name = "")
+        {
+            return SaveAsAsset(new Transporter(strs), obj, name);
+        }
+
+        public static string SaveAsAsset<T>(this byte[] arr, T obj, string name = "")
+        {
+            return SaveAsAsset(new Transporter(arr), obj, name);
+        }
+
+        public static string SaveAsAsset<T>(Transporter value, T obj, string name)
+        {
+            bool emptyName = string.IsNullOrEmpty(name),
+                 derivedClass = obj != null && typeof(T).IsSubclassOf(typeof(Object)), alreadyExists = false;
+            string n = name, path = "", fpath = "", rpath = "";
+            if (emptyName && derivedClass)
+                n = ((Object)(object)obj).name;
+            else if (emptyName && !derivedClass)
+                n = (DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString("F0");
+            path = Path.Combine(Application.streamingAssetsPath, typeof(T).Name);
+            fpath = Path.Combine(path, n + ".asset");
+            rpath = typeof(T).Name + "/" + n + ".asset";
+            alreadyExists = File.Exists(fpath);
+            if (!alreadyExists)
+            {
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+                if (value.type.Equals(typeof(string)))
+                    if (value.write)
+                        File.WriteAllText(fpath, (string)value.obj);
+                    else
+                        File.AppendAllText(fpath, (string)value.obj + Environment.NewLine);
+                else if (value.type.Equals(typeof(string[])))
+                    File.WriteAllLines(fpath, (string[])value.obj);
+                else if (value.type.Equals(typeof(byte[])))
+                    File.WriteAllBytes(fpath, (byte[])value.obj);
+                else
+                    throw new Exception("Not recognised type!");
+                Debug.Log("Asset saved at " + fpath + "!");
+            }
+            if (typeof(T).Equals(typeof(GameObject)))
+            {
+                //if (Application.isPlaying)
+                //    Object.Destroy(GameObject.Find(((GameObject)(object)obj).name));
+                //else
+                if (Application.isEditor)
+                    Object.DestroyImmediate(GameObject.Find(((GameObject)(object)obj).name));
+            }
+            return rpath;
+        }
+
+        public static byte[] LoadAsset(string fpath)
+        {
+            string p = Path.Combine(Application.streamingAssetsPath, fpath);
+            if (!File.Exists(p))
+            {
+                Debug.LogError("Any file found at " + p + "!");
+                return null;
+            }
+            return File.ReadAllBytes(p);
+        }
+    }
+
+    public partial class PluginsHelper
+    {
+        public static Dictionary<string, GameObject> objList = new Dictionary<string, GameObject>();
+
+        public static void Add(GameObject go)
+        {
+            GameObject root = go.getRoot();
+            if (!objList.ContainsKey(root.name))
+                objList.Add(root.name, root);
+        }
+
+        public static MeshFilter FindMeshFilter(GameObject go, ref GameObject foundGo)
+        {
+            if (go == null)
+            {
+                foundGo = null;
+                return null;
+            }
+            if (go.GetComponent<MeshFilter>() != null)
+            {
+                foundGo = go;
+                return go.GetComponent<MeshFilter>();
+            }
+            foreach (Transform child in go.transform)
+            {
+                MeshFilter mf = FindMeshFilter(child.gameObject, ref foundGo);
+                if (mf != null)
+                {
+                    foundGo = child.gameObject;
+                    return mf;
+                }
+                else
+                    continue;
+            }
             return null;
         }
-        return File.ReadAllBytes(p);
-    }
-}
 
-public partial class PluginsHelper
-{
-    public static Dictionary<string, GameObject> objList = new Dictionary<string, GameObject>();
-
-    public static void Add(GameObject go)
-    {
-        GameObject root = go.getRoot();
-        if (!objList.ContainsKey(root.name))
-            objList.Add(root.name, root);
-    }
-
-    public static MeshFilter FindMeshFilter(GameObject go, ref GameObject foundGo)
-    {
-        if (go == null)
+        public static SkinnedMeshRenderer FindSkinnedMeshRenderer(GameObject go, ref GameObject foundGo)
         {
-            foundGo = null;
+            if (go == null)
+            {
+                foundGo = null;
+                return null;
+            }
+            if (go.GetComponent<SkinnedMeshRenderer>() != null)
+            {
+                foundGo = go;
+                return go.GetComponent<SkinnedMeshRenderer>();
+            }
+            foreach (Transform child in go.transform)
+            {
+                SkinnedMeshRenderer mr = FindSkinnedMeshRenderer(child.gameObject, ref foundGo);
+                if (mr != null)
+                {
+                    foundGo = child.gameObject;
+                    return mr;
+                }
+                else
+                    continue;
+            }
             return null;
         }
-        if (go.GetComponent<MeshFilter>() != null)
+
+        public static Mesh FindMesh(GameObject obj, ref GameObject foundGo)
         {
-            foundGo = go;
-            return go.GetComponent<MeshFilter>();
-        }
-        foreach (Transform child in go.transform)
-        {
-            MeshFilter mf = FindMeshFilter(child.gameObject, ref foundGo);
+            MeshFilter mf = FindMeshFilter(obj, ref foundGo);
+            SkinnedMeshRenderer smr = FindSkinnedMeshRenderer(obj, ref foundGo);
             if (mf != null)
             {
-                foundGo = child.gameObject;
-                return mf;
+                if (Application.isPlaying)
+                    return mf.mesh;
+                else
+                    return mf.sharedMesh;
             }
+            else if (smr != null)
+                return smr.sharedMesh;
             else
-                continue;
+                return null;
         }
-        return null;
     }
 
-    public static SkinnedMeshRenderer FindSkinnedMeshRenderer(GameObject go, ref GameObject foundGo)
-    {
-        if (go == null)
-        {
-            foundGo = null;
-            return null;
-        }
-        if (go.GetComponent<SkinnedMeshRenderer>() != null)
-        {
-            foundGo = go;
-            return go.GetComponent<SkinnedMeshRenderer>();
-        }
-        foreach (Transform child in go.transform)
-        {
-            SkinnedMeshRenderer mr = FindSkinnedMeshRenderer(child.gameObject, ref foundGo);
-            if (mr != null)
-            {
-                foundGo = child.gameObject;
-                return mr;
-            }
-            else
-                continue;
-        }
-        return null;
-    }
+    #endregion "Serializer Helpers"
 
-    public static Mesh FindMesh(GameObject obj, ref GameObject foundGo)
-    {
-        MeshFilter mf = FindMeshFilter(obj, ref foundGo);
-        SkinnedMeshRenderer smr = FindSkinnedMeshRenderer(obj, ref foundGo);
-        if (mf != null)
-        {
-            if (Application.isPlaying)
-                return mf.mesh;
-            else
-                return mf.sharedMesh;
-        }
-        else if (smr != null)
-            return smr.sharedMesh;
-        else
-            return null;
-    }
 }
-
-#endregion "Serializer Helpers"
 
 //This sould be in separate file
 
@@ -413,6 +375,13 @@ namespace Lerp2API.DebugHandler
 { //using Debug = Lerp2API.DebugHandler.Debug;
     public class Debug : GameConsole
     {
+        public static bool isEnabled
+        {
+            get
+            {
+                return LerpedCore.GetBool("ENABLE_DEBUG");
+            }
+        }
         public static bool developerConsoleVisible
         {
             get { return UnityEngine.Debug.developerConsoleVisible; }
@@ -451,7 +420,7 @@ namespace Lerp2API.DebugHandler
 
         public static void Assert(bool condition, object message, Object context, bool str = false)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.Assert(condition, str ? message : (string)message, context);
@@ -462,7 +431,7 @@ namespace Lerp2API.DebugHandler
 
         public static void AssertFormat(bool condition, string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.AssertFormat(condition, format, args);
@@ -473,13 +442,13 @@ namespace Lerp2API.DebugHandler
 
         public static void Break()
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
                 UnityEngine.Debug.Break();
         }
 
         public static void ClearDeveloperConsole()
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.ClearDeveloperConsole();
@@ -492,9 +461,9 @@ namespace Lerp2API.DebugHandler
         {
             if (color.Equals(default(Color)))
                 color = DebugColor.normal;
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
-                if (Application.isEditor && EApp.isPaused)
+                if (Application.isEditor && Application.isPlaying)
                     UnityEngine.Debug.DrawLine(start, end, color, duration, depthTest);
                 if (Application.isPlaying)
                     DebugLine.DrawLine(start, end, color, duration, width);
@@ -505,9 +474,9 @@ namespace Lerp2API.DebugHandler
         {
             if (color.Equals(default(Color)))
                 color = DebugColor.normal;
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
-                if (Application.isEditor && EApp.isPaused)
+                if (Application.isEditor && Application.isPlaying)
                     UnityEngine.Debug.DrawRay(start, dir, color, duration, depthTest);
                 if (Application.isPlaying)
                     DebugLine.DrawRay(start, dir, color, duration, width);
@@ -516,7 +485,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogAssertion(object message, Object context = null)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     if (context != null)
@@ -535,7 +504,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogAssertionFormat(string message, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogAssertionFormat(message, args);
@@ -551,7 +520,7 @@ namespace Lerp2API.DebugHandler
 
         public static void Log(object message)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.Log(message);
@@ -562,7 +531,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogFormat(string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogFormat(format, args);
@@ -573,7 +542,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogFormat(Object context, string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogFormat(context, format, args);
@@ -589,7 +558,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogWarning(object message)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarning(message);
@@ -600,7 +569,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogWarningFormat(string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarningFormat(format, args);
@@ -611,7 +580,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogWarningFormat(Object context, string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarningFormat(context, format, args);
@@ -627,7 +596,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogError(object message)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogError(message);
@@ -638,7 +607,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogErrorFormat(string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogErrorFormat(format, args);
@@ -649,7 +618,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogErrorFormat(Object context, string format, params object[] args)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogErrorFormat(context, format, args);
@@ -660,7 +629,7 @@ namespace Lerp2API.DebugHandler
 
         public static void LogException(Exception exception, Object context = null)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogException(exception, context);
@@ -671,7 +640,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawCube(Vector3 pos, Color col, Vector3 scale)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 Vector3 halfScale = scale * 0.5f;
 
@@ -696,7 +665,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawRect(Rect rect, Color col)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 Vector3 pos = new Vector3(rect.x + rect.width / 2, rect.y + rect.height / 2, 0.0f);
                 Vector3 scale = new Vector3(rect.width, rect.height, 0.0f);
@@ -707,7 +676,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawRect(Vector3 pos, Color col, Vector3 scale)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 Vector3 halfScale = scale * 0.5f;
 
@@ -728,7 +697,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawPoint(Vector3 pos, Color col, float scale)
         {
-            if (DebugManager.active)
+            if (Debug.isEnabled)
             {
                 Vector3[] points = new Vector3[]
                 {
@@ -763,7 +732,7 @@ namespace Lerp2API.DebugHandler
     }
 }
 
-public class EApp
+/*public class EApp
 {
     public static bool isPaused
     {
@@ -776,7 +745,7 @@ public class EApp
 #endif
         }
     }
-}
+}*/
 
 public class DebugColor
 {

@@ -1,0 +1,639 @@
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AnimationClipCurveData: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ObjectReferenceKeyframe: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorCurveBinding: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AnimationClipSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AnimationUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AnimationMode: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorLayerBlendingMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorControllerLayer: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.StateMachineBehaviourContext: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorController: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.RemoveAssetOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ImportAssetOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetDatabase: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para AssetModificationProcessor: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetPostprocessor: el tipo tiene miembros obsoletos que darían lugar a un error de compilación.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetPreview: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetStatus: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetsItem: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PackageInfo: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AssetStore: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AssetStoreToolUtils: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AvatarMaskBodyPart: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AvatarMask: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.BlendTreeType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.ChildMotion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.BlendTree: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.BlendTreePreviewUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BuildOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BuildAssetBundleOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetBundleBuild: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BuildPipeline: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BuildTarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BuildTargetGroup: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PostProcessAttribute: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Callbacks.PostProcessBuildAttribute: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Callbacks.PostProcessSceneAttribute: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Callbacks.DidReloadScripts: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Callbacks.OnOpenAssetAttribute: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ComponentUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.DefaultAsset: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.CustomEditor: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.CanEditMultipleObjects: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorApplication: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Rendering.EditorGraphicsSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorGUI: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorGUILayout: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorGUIUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MessageType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorSkin: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MouseCursor: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Handles: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.HandleUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorJsonUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorMaterialUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneManagement.OpenSceneMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneManagement.NewSceneMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneManagement.NewSceneSetup: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneManagement.EditorSceneManager: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SerializationMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorBehaviorMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SpritePackerMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ExternalVersionControl: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SemanticMergeMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorUserSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ExportPackageOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.FileUtil: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.GameObjectUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.GenericMenu: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ViewTool: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PivotMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PivotRotation: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Tool: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Tools: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.GUID: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.UsbDevice: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.Usb: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.DevDeviceList: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.DevDeviceState: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.DevDeviceFeatures: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Hardware.DevDevice: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.CanAppendBuild: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.DllType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.InternalEditorUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PSMBuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PSP2BuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PS4BuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SCEBuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WiiUBuildDebugLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WiiUBuildOutput: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.XboxBuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.XboxRunMethod: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.XboxOneDeployMethod: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidBuildSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MobileTextureSubtarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WSASDK: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WSAUWPBuildType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WSABuildAndRunDeployTarget: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WSABuildType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorBuildSettingsScene: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorBuildSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorUserBuildSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ActiveEditorTracker: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.InspectorMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.HierarchyType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.IconDrawStyle: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.HierarchyProperty: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetMoveResult: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetDeleteResult: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SaveAssetsProcessor: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MonoImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ClipAnimationMaskType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ClipAnimationInfoCurve: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterClipAnimation: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterGenerateMaterials: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterMaterialName: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterMaterialSearch: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterTangentSpaceMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterNormals: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterTangents: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterMeshCompression: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterAnimationCompression: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterGenerateAnimations: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterAnimationType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporterHumanoidOversampling: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.HumanTemplate: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TakeInfo: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ModelImporter: el tipo tiene miembros obsoletos que darían lugar a un error de compilación.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterFormat: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterMipFilter: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterGenerateCubemap: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterNPOTScale: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterNormalFilter: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SpriteImportMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SpriteMetaData: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ShaderImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioImporterFormat: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioImporterLoadType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioImporterChannels: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioSampleRateSetting: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioImporterSampleSettings: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AudioImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MovieImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.FontTextureCase: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.FontRenderingMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MeshUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ArrayUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.UnwrapParam: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Unwrapping: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.StaticOcclusionCulling: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.StaticOcclusionCullingVisualization: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LocalizationDatabase: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LODUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ResolutionDialogSetting: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ScriptingImplementation: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AspectRatio: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MacFullscreenMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.D3D9FullscreenMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.D3D11FullscreenMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.StrippingLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ScriptCallOptimizationLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TargetGlesGraphics: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.UIOrientation: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ApiCompatibilityLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ActionOnDotNetUnhandledException: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SplashScreenStyle: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PlayerSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidTargetDevice: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidSdkVersions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidPreferredInstallLocation: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidShowActivityIndicatorOnLoading: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidGamepadSupportLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AndroidSplashScreenScale: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSSdkVersion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSTargetOSVersion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSTargetDevice: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSShowActivityIndicatorOnLoading: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TargetIOSGraphics: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSTargetResolution: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSStatusBarStyle: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSAppInBackgroundBehavior: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.iOSDeviceRequirement: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.tvOSSdkVersion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.tvOSTargetOSVersion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.WiiUTVResolution: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.XboxOneEncryptionLevel: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.XboxOnePackageUpdateGranularity: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PluginImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ReplacePrefabOptions: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PrefabType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PropertyModification: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PrefabUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PreferenceItem: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerViewType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerMemoryView: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerAudioView: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerColumn: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerArea: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.InstrumentedAssemblyTypes: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.MemoryInfoGCReason: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ObjectMemoryInfo: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ObjectMemoryStackInfo: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AudioProfilerInfo: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerDriver: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerProperty: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ProfilerFrameDataIterator: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.RegistryUtil: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.ScriptUpdatingManager: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SerializedPropertyType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SerializedObject: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SerializedProperty: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneAsset: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ShaderUtil: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.DragAndDropVisualMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.DragAndDrop: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.GizmoType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.DrawGizmo: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Help: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Menu: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MenuItem: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MenuCommand: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SelectionMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Selection: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorPrefs: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.NETVersion: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Unsupported: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.ObjectNames: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.UnityStats: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MonoScript: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SpeedTreeImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Sprites.AtlasSettings: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Sprites.PackerJob: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Sprites.Packer: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Sprites.SpriteUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Sprites.DataUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.InternalSpriteUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorConditionMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.TransitionInterruptionSource: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorCondition: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorTransition: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorStateTransition: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorState: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.ChildAnimatorState: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.ChildAnimatorStateMachine: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Animations.AnimatorStateMachine: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.StaticEditorFlags: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SubstanceImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SubstanceArchive: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.HighlightSearchMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Highlighter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.UndoPropertyModification: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Undo: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.UndoSnapshot: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.Asset: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.ChangeSet: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.Message: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.ConfigField: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.Plugin: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.Provider: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.CompletionAction: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.SubmitResult: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.Task: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VertexChannelCompressionFlags: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Lightmapping: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LightingDataAsset: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LightmapEditorSettings: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LightmapParameters: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.NavMeshBuilder: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AscentCalculationMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TrueTypeFontImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEngine.NScreenBridge: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SketchUpImportCamera: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SketchUpImportScene: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SketchUpImporter: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.VR.VREditor: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.VR.VRDeviceInfoEditor: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Rendering.ShaderQuality: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Rendering.PlatformShaderSettings: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MaterialProperty: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TransformSort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AlphabeticalSort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BaseHierarchySort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.Transition: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.StateMachine: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.State: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AnimatorController: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.BlendTree: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AnimatorControllerLayer: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AnimatorControllerParameter: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AnimatorControllerParameterType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.AnimatorLayerBlendingMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.DrawCameraMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.AssetStoreAsset: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.Il2CppNativeCodeBuilderUtils: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.GameViewSizeGroupType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LightmapBakeQuality: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.LightmapSnapshot: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.EditorStyles: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.PopupWindow: el tipo no tiene constructores visibles de familia.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterCubemapConvolution: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.TextureImporterRGBMMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.CustomPreviewAttribute: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BodyPart: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.BoneState: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.MonoScripts: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Macros.MacroEvaluator: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Macros.MethodEvaluator: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SaveType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.MemorySnapshot: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.PackedMemorySnapshot: el tipo no tiene constructores visibles de familia.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.PackedNativeType: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.PackedNativeUnityEngineObject: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.PackedGCHandle: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.Connection: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.MemorySection: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.VirtualMachineInformation: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.TypeDescription: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.MemoryProfiler.FieldDescription: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.SceneModeUtility: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.CustomPropertyDrawer: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditorInternal.SpriteEditorHandles: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.Events.UnityEventTools: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.CheckoutMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.ResolveMethod: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.MergeMethod: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.OnlineState: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.RevertMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VersionControl.FileMode: el tipo es un tipo de valor.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar stub para UnityEditor.VisualStudioIntegration.SolutionGuidGenerator: el tipo está sellado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AnimationUtility+CurveModifiedType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AnimationUtility+OnCurveWasModified: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AnimationUtility+TangentMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AnimationMode+AnimationModeChangedCallback: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorLayerBlendingMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.RemoveAssetOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ImportAssetOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para AssetModificationProcessor: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AssetStatus: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AvatarMaskBodyPart: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.BlendTreeType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BuildOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BuildAssetBundleOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BuildTarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BuildTargetGroup: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PostProcessAttribute: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ComponentUtility+<DestroyComponentsMatching>c__AnonStorey12: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ComponentUtility+<ReplaceComponentsIfDifferent>c__AnonStorey13: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ComponentUtility+IsDesiredComponent: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Editor+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorApplication+CallbackFunction: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorApplication+HierarchyWindowItemCallback: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorApplication+ProjectWindowItemCallback: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+ColorBrightnessFieldStateObject: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+DelayedTextEditor: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+GUIContents: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+KnobContext: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+ObjectFieldValidator: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+ObjectFieldVisualType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+PopupCallbackInfo: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+PopupMenuEvent: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+RecycledTextEditor: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUI+VUMeter: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUILayout+HorizontalScrollViewScope: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUILayout+VerticalScrollViewScope: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorGUIUtility+SkinnedColor: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MessageType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorSkin: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MouseCursor: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Handles+DrawCapFunction: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Handles+FilterMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Handles+PlaneHandle: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.HandleUtility+SavedCamera: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneManagement.OpenSceneMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneManagement.NewSceneMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneManagement.NewSceneSetup: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SerializationMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorBehaviorMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SpritePackerMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SemanticMergeMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorWindow+<GetWindow>c__AnonStorey14`1: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ExportPackageOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.FileUtil+<CopyDirectoryFiltered>c__AnonStorey15: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.FileUtil+<GetAllFilesRecursive>c__AnonStorey16: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GameObjectUtility+ShouldIncludeChildren: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GenericMenu+MenuFunction: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GenericMenu+MenuFunction2: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GenericMenu+MenuItem: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ViewTool: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PivotMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PivotRotation: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Tool: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Tools+OnToolChangedFunc: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Hardware.Usb+OnDevicesChangedHandler: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Hardware.DevDeviceList+OnChangedHandler: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Hardware.DevDeviceState: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Hardware.DevDeviceFeatures: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.CanAppendBuild: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.DllType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.InternalEditorUtility+HierarchyDropMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PSMBuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PSP2BuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PS4BuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SCEBuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WiiUBuildDebugLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WiiUBuildOutput: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.XboxBuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.XboxRunMethod: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.XboxOneDeployMethod: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidBuildSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MobileTextureSubtarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WSASDK: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WSAUWPBuildType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WSABuildAndRunDeployTarget: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WSABuildType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.InspectorMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.HierarchyType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.IconDrawStyle: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AssetMoveResult: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AssetDeleteResult: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SaveAssetsProcessor: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ClipAnimationMaskType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterGenerateMaterials: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterMaterialName: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterMaterialSearch: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterTangentSpaceMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterNormals: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterTangents: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterMeshCompression: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterAnimationCompression: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterGenerateAnimations: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterAnimationType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ModelImporterHumanoidOversampling: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterFormat: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterMipFilter: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterGenerateCubemap: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterNPOTScale: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterNormalFilter: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SpriteImportMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioImporterFormat: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioImporterLoadType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioImporterChannels: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioSampleRateSetting: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.FontTextureCase: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.FontRenderingMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ResolutionDialogSetting: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ScriptingImplementation: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AspectRatio: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MacFullscreenMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.D3D9FullscreenMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.D3D11FullscreenMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.StrippingLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ScriptCallOptimizationLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TargetGlesGraphics: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.UIOrientation: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ApiCompatibilityLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ActionOnDotNetUnhandledException: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SplashScreenStyle: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+<GetPlatformName>c__AnonStorey17: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+Nintendo3DS+LogoStyle: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+Nintendo3DS+MediaSize: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+Nintendo3DS+Region: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+Nintendo3DS+TargetPlatform: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PS4+PS4AppCategory: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PS4+PS4EnterButtonAssignment: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PS4+PS4RemotePlayKeyAssignment: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaAppCategory: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaDRMType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaEnterButtonAssignment: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaMemoryExpansionMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaPowerMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+PSVita+PSVitaTvBootMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+SamsungTV+SamsungTVProductCategories: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+TizenCapability: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSAApplicationForegroundText: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSAApplicationShowName: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSACapability: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSACompilationOverrides: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSADefaultTileSize: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSAImageScale: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PlayerSettings+WSAImageType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidTargetDevice: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidSdkVersions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidPreferredInstallLocation: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidShowActivityIndicatorOnLoading: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidGamepadSupportLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AndroidSplashScreenScale: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSSdkVersion: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSTargetOSVersion: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSTargetDevice: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSShowActivityIndicatorOnLoading: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TargetIOSGraphics: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSTargetResolution: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSStatusBarStyle: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.iOSAppInBackgroundBehavior: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.tvOSSdkVersion: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.tvOSTargetOSVersion: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.WiiUTVResolution: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.XboxOneEncryptionLevel: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.XboxOnePackageUpdateGranularity: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PluginImporter+<GetExtensionPlugins>c__Iterator0: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PluginImporter+<GetImporters>c__AnonStorey18: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ReplacePrefabOptions: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PrefabType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.PrefabUtility+PrefabInstanceUpdated: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ProfilerViewType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ProfilerMemoryView: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ProfilerAudioView: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ProfilerColumn: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ProfilerArea: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.InstrumentedAssemblyTypes: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.MemoryInfoGCReason: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ScriptableWizard+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SerializedPropertyType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SerializedProperty+<GetEnumerator>c__Iterator1: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.EditorUtility+SelectMenuItemFunction: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ShaderUtil+ShaderCompilerPlatformType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ShaderUtil+ShaderPropertyTexDim: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ShaderUtil+ShaderPropertyType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.DragAndDropVisualMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GizmoType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SelectionMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.NETVersion: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Sprites.Packer+Execution: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Sprites.DataUtility: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorConditionMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.TransitionInterruptionSource: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorState+<FindTransition>c__AnonStorey19: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindParent>c__AnonStorey22: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindState>c__AnonStorey1C: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindState>c__AnonStorey1D: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindStateMachine>c__AnonStorey23: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindStateMachine>c__AnonStorey24: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindStateMachine>c__AnonStorey25: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<FindTransition>c__AnonStorey26: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<HasState>c__AnonStorey1E: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<HasStateMachine>c__AnonStorey20: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<HasTransition>c__AnonStorey21: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<IsDirectParent>c__AnonStorey1F: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<RemoveAnyStateTransition>c__AnonStorey1A: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Animations.AnimatorStateMachine+<RemoveEntryTransition>c__AnonStorey1B: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.StaticEditorFlags: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.HighlightSearchMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Undo+PostprocessModifications: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Undo+UndoRedoCallback: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Undo+WillFlushUndoRecord: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.UndoSnapshot: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.Asset+States: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.Message+Severity: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.CompletionAction: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.SubmitResult: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VertexChannelCompressionFlags: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Lightmapping+ConcurrentJobsType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Lightmapping+GIWorkflowMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Lightmapping+OnCompletedFunction: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AscentCalculationMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.VR.VREditor+<GetEnabledVRDeviceInfo>c__AnonStorey31: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Rendering.ShaderQuality: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.IHasCustomMenu: el tipo es una interfaz.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialProperty+ApplyPropertyCallback: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialProperty+PropFlags: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialProperty+PropType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialProperty+TexDim: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TransformSort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AlphabeticalSort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BaseHierarchySort: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.Transition: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.StateMachine: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.State: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.AnimatorController: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.BlendTree: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.AnimatorControllerLayer: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.AnimatorControllerParameter: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.AnimatorControllerParameterType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.AnimatorLayerBlendingMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.DrawCameraMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AssetStoreAsset+PreviewInfo: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioCurveRendering+<DrawFilledCurve>c__AnonStorey68: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioCurveRendering+AudioCurveAndColorEvaluator: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioCurveRendering+AudioCurveEvaluator: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.AudioCurveRendering+AudioMinMaxCurveAndColorEvaluator: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.GameViewSizeGroupType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.LightmapBakeQuality: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.LightmapSnapshot: el tipo es obsoleto.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+AddCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+AddDropdownCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+CanRemoveCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+ChangedCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+ElementCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+ElementHeightCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+FooterCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+HeaderCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+RemoveCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+ReorderCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.ReorderableList+SelectCallbackDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterCubemapConvolution: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.TextureImporterRGBMMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.EditMode+OnEditModeStartFunc: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.EditMode+OnEditModeStopFunc: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.EditMode+SceneViewEditMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.ObjectPreview+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialEditor+ForwardApplyMaterialModification: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialEditor+PreviewType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialEditor+ReflectionProbePicker: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MaterialEditor+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.UnityEventDrawer+State: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.UnityEventDrawer+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.UnityEventDrawer+UnityEventFunction: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.UnityEventDrawer+ValidMethodMap: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BodyPart: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.BoneState: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Macros.MacroEvaluator+<ExecuteMethodThroughReflection>c__AnonStoreyB1: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Macros.MacroEvaluator+EditorEvaluationDomainProvider: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SaveType: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MemoryProfiler.PackedNativeUnityEngineObject+ObjectFlags: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.MemoryProfiler.TypeDescription+TypeFlags: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SearchableEditorWindow+SearchMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SearchableEditorWindow+SearchModeHierarchyWindow: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneModeUtility+Styles: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneView+CursorRect: el tipo no es visible para exported or assembly(UnityEditor.Fakes).
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneView+DraggingLockedState: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.SceneView+OnSceneFunc: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.Sprites.IPackerPolicy: el tipo es una interfaz.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.AssetList+<FilterChildren>c__AnonStoreyCD: no se admite el tipo debido a limitaciones internas.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.CheckoutMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.ResolveMethod: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.MergeMethod: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.OnlineState: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.RevertMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditor.VersionControl.FileMode: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.VersionControl.ListControl+ActionDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.VersionControl.ListControl+DragDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.VersionControl.ListControl+ExpandDelegate: el tipo es un delegado.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : No se puede generar shim para UnityEditorInternal.VersionControl.ListControl+SelectDirection: el tipo es una enumeración.
+C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Fakes\UnityEditor.fakes : warning : error de compilación, reintentando sin contratos de código
