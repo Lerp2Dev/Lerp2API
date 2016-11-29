@@ -66,6 +66,7 @@
     <Compile Include="Controllers\Utils\LerpControlledBob.cs" />
     <Compile Include="Controllers\Utils\MouseLook.cs" />
     <Compile Include="Controllers\Utils\SmoothFollow.cs" />
+    <Compile Include="Controllers\Utils\Teleporter.cs" />
     <Compile Include="Game\FPSCounter.cs" />
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
@@ -242,6 +243,8 @@
     <Compile Include="Serializers\unityserializer-ng\UnitySerializerVersion.cs" />
     <Compile Include="Serializers\unityserializer-ng\Utility\Types.cs" />
     <Compile Include="Utility\DebugLine.cs" />
+    <Compile Include="Utility\FileBrowser.cs" />
+    <Compile Include="Utility\GUILayoutx.cs" />
     <Compile Include="Utility\MeshSerializer.cs" />
     <Compile Include="Utility\UniqueIdentifiers.cs" />
   </ItemGroup>

@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects" DefaultTargets="Build">
   <PropertyGroup>
-    <VCTargetsPath>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\</VCTargetsPath>
-    <VCTargetsPath10>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\</VCTargetsPath10>
-    <VCTargetsPath11>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\</VCTargetsPath11>
-    <VCTargetsPath12>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\</VCTargetsPath12>
-    <VCTargetsPath14>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\</VCTargetsPath14>
     <MSBuildToolsPath32>C:\Program Files (x86)\MSBuild\14.0\bin\</MSBuildToolsPath32>
     <MSBuildToolsRoot>C:\Program Files (x86)\MSBuild\</MSBuildToolsRoot>
     <MSBuildFrameworkToolsPath>C:\Windows\Microsoft.NET\Framework\v4.0.30319\</MSBuildFrameworkToolsPath>
@@ -15,18 +10,24 @@
     <FrameworkSDKRoot>C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\</FrameworkSDKRoot>
     <SDK35ToolsPath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\</SDK35ToolsPath>
     <SDK40ToolsPath>C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\</SDK40ToolsPath>
+    <VCTargetsPath>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\</VCTargetsPath>
+    <VCTargetsPath10>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\</VCTargetsPath10>
+    <VCTargetsPath11>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\</VCTargetsPath11>
+    <VCTargetsPath12>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\</VCTargetsPath12>
+    <VCTargetsPath14>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\</VCTargetsPath14>
     <VisualStudioVersion>14.0</VisualStudioVersion>
     <WindowsSDK80Path />
     <AspNetConfiguration>Debug</AspNetConfiguration>
-    <SolutionDir>C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\</SolutionDir>
+    <SolutionDir>D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>Lerp2API.sln</SolutionFileName>
     <SolutionName>Lerp2API</SolutionName>
-    <SolutionPath>C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Lerp2API.sln</SolutionPath>
+    <SolutionPath>D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Lerp2API.sln</SolutionPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -37,7 +38,8 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -46,13 +48,22 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj">
+    <ProjectReference Include="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj">
+      <ToolsVersion>
+      </ToolsVersion>
+      <SkipNonexistentProjects>False</SkipNonexistentProjects>
+      <AdditionalProperties>Configuration=Debug; Platform=AnyCPU</AdditionalProperties>
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectReference>
+    <ProjectReference Include="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj">
       <ToolsVersion>
       </ToolsVersion>
       <SkipNonexistentProjects>False</SkipNonexistentProjects>
@@ -88,19 +99,35 @@
     <MSBuild Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" Properties="BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" SkipNonexistentProjects="%(ProjectReference.SkipNonexistentProjects)" />
   </Target>
   <Target Name="Lerp2API" Outputs="@(Lerp2APIBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="Lerp2APIBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="Lerp2API:Clean">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
   <Target Name="Lerp2API:Rebuild" Outputs="@(Lerp2APIBuildOutput)">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
       <Output TaskParameter="TargetOutputs" ItemName="Lerp2APIBuildOutput" />
     </MSBuild>
   </Target>
   <Target Name="Lerp2API:Publish">
-    <MSBuild Condition="'%(ProjectReference.Identity)' == 'C:\Users\Alvaro\Documents\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="Editor" Outputs="@(EditorBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj'" Projects="@(ProjectReference)" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="EditorBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Editor:Clean">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj'" Projects="@(ProjectReference)" Targets="Clean" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
+  </Target>
+  <Target Name="Editor:Rebuild" Outputs="@(EditorBuildOutput)">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj'" Projects="@(ProjectReference)" Targets="Rebuild" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)">
+      <Output TaskParameter="TargetOutputs" ItemName="EditorBuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="Editor:Publish">
+    <MSBuild Condition="'%(ProjectReference.Identity)' == 'D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj'" Projects="@(ProjectReference)" Targets="Publish" BuildInParallel="True" ToolsVersion="$(ProjectToolsVersion)" Properties="Configuration=Debug; Platform=AnyCPU;BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" />
   </Target>
 </Project>

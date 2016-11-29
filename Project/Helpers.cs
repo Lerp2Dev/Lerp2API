@@ -10,6 +10,7 @@ using Lerp2API.Game;
 
 namespace Lerp2API
 {
+    public enum Position { UpperLeft, UpperRight, BottomLeft, BottomRight }
     public static class Helpers
     {
         #region "String Extensions"
@@ -30,6 +31,17 @@ namespace Lerp2API
 
             string result = Source.Remove(place, Find.Length).Insert(place, Replace);
             return result;
+        }
+
+        public static bool IsEmptyOrWhiteSpace(this string value)
+        {
+            return value.All(char.IsWhiteSpace);
+        }
+
+        public static string ReplaceAt(this string str, int index, int length, string replace)
+        {
+            return str.Remove(index, Math.Min(length, str.Length - index))
+                    .Insert(index, replace);
         }
 
         #endregion "String Extensions"
@@ -153,6 +165,29 @@ namespace Lerp2API
         }
 
         #endregion "Object Extensions"
+
+        #region "Color Extensions"
+
+        public static string ColorToHex(this Color color) 
+        {
+            return ColorToHex((Color32)color);
+        }
+
+        public static string ColorToHex(this Color32 color)
+        {
+            string hex = color.r.ToString("X2") + color.g.ToString("X2") + color.b.ToString("X2");
+            return hex;
+        }
+         
+        public static Color HexToColor(this string hex)
+        {
+            byte r = byte.Parse(hex.Substring(0,2), System.Globalization.NumberStyles.HexNumber);
+            byte g = byte.Parse(hex.Substring(2,2), System.Globalization.NumberStyles.HexNumber);
+            byte b = byte.Parse(hex.Substring(4,2), System.Globalization.NumberStyles.HexNumber);
+            return new Color32(r,g,b, 255);
+        }
+
+        #endregion
     }
 
     #region "JSON Helpers"
@@ -365,6 +400,30 @@ namespace Lerp2API
 
     #endregion "Serializer Helpers"
 
+    #region "Rect Helpers"
+
+    public static class RectHelpers
+    {
+        public static Rect GetPosition(this Position pos, int w, int h, int mh = 5, int mv = 5)
+        {
+            switch(pos)
+            {
+                case Position.UpperLeft:
+                    return new Rect(mh, mv, w, h);
+                case Position.UpperRight:
+                    return new Rect(Screen.width - w - mh, mv, w, h);
+                case Position.BottomLeft:
+                    return new Rect(mh, Screen.height - h - mv, w, h);
+                case Position.BottomRight:
+                    return new Rect(Screen.width - w - mh, Screen.height - h - mv, w, h);
+                default:
+                    return new Rect(mh, mv, w, h);
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 //This sould be in separate file
@@ -379,9 +438,10 @@ namespace Lerp2API.DebugHandler
         {
             get
             {
-                return LerpedCore.GetBool("ENABLE_DEBUG");
+                return GetBool("ENABLE_DEBUG");
             }
         }
+        public static bool isGamingEnabled {get; set;}
         public static bool developerConsoleVisible
         {
             get { return UnityEngine.Debug.developerConsoleVisible; }
@@ -420,39 +480,39 @@ namespace Lerp2API.DebugHandler
 
         public static void Assert(bool condition, object message, Object context, bool str = false)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.Assert(condition, str ? message : (string)message, context);
-                if (Application.isPlaying)
-                    AddMessage(message.ToUString(), DebugColor.assert);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message.ToUString(), DebugColor.assert);
             }
         }
 
         public static void AssertFormat(bool condition, string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.AssertFormat(condition, format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.assert);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.assert);
             }
         }
 
         public static void Break()
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
                 UnityEngine.Debug.Break();
         }
 
         public static void ClearDeveloperConsole()
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.ClearDeveloperConsole();
-                if (Application.isPlaying)
+                if (Application.isPlaying && isGamingEnabled)
                     Clear();
             }
         }
@@ -461,11 +521,11 @@ namespace Lerp2API.DebugHandler
         {
             if (color.Equals(default(Color)))
                 color = DebugColor.normal;
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor && Application.isPlaying)
                     UnityEngine.Debug.DrawLine(start, end, color, duration, depthTest);
-                if (Application.isPlaying)
+                if (Application.isPlaying && isGamingEnabled)
                     DebugLine.DrawLine(start, end, color, duration, width);
             }
         }
@@ -474,26 +534,26 @@ namespace Lerp2API.DebugHandler
         {
             if (color.Equals(default(Color)))
                 color = DebugColor.normal;
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor && Application.isPlaying)
                     UnityEngine.Debug.DrawRay(start, dir, color, duration, depthTest);
-                if (Application.isPlaying)
+                if (Application.isPlaying && isGamingEnabled)
                     DebugLine.DrawRay(start, dir, color, duration, width);
             }
         }
 
         public static void LogAssertion(object message, Object context = null)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     if (context != null)
                         UnityEngine.Debug.LogAssertion(message, context);
                     else
                         UnityEngine.Debug.LogAssertion(message);
-                if (Application.isPlaying)
-                    AddMessage(message.ToUString(), DebugColor.assertion);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message.ToUString(), DebugColor.assertion);
             }
         }
 
@@ -504,12 +564,12 @@ namespace Lerp2API.DebugHandler
 
         public static void LogAssertionFormat(string message, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogAssertionFormat(message, args);
-                if (Application.isPlaying)
-                    AddMessage(message, DebugColor.assertion);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message, DebugColor.assertion);
             }
         }
 
@@ -520,34 +580,34 @@ namespace Lerp2API.DebugHandler
 
         public static void Log(object message)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.Log(message);
-                if (Application.isPlaying)
-                    AddMessage(message.ToUString(), DebugColor.normal);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message.ToUString(), DebugColor.normal);
             }
         }
 
         public static void LogFormat(string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogFormat(format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.normal);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.normal);
             }
         }
 
         public static void LogFormat(Object context, string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogFormat(context, format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.normal);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.normal);
             }
         }
 
@@ -558,34 +618,34 @@ namespace Lerp2API.DebugHandler
 
         public static void LogWarning(object message)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarning(message);
-                if (Application.isPlaying)
-                    AddMessage(message.ToUString(), DebugColor.warning);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message.ToUString(), DebugColor.warning);
             }
         }
 
         public static void LogWarningFormat(string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarningFormat(format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.warning);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.warning);
             }
         }
 
         public static void LogWarningFormat(Object context, string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogWarningFormat(context, format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.warning);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.warning);
             }
         }
 
@@ -596,51 +656,51 @@ namespace Lerp2API.DebugHandler
 
         public static void LogError(object message)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogError(message);
-                if (Application.isPlaying)
-                    AddMessage(message.ToUString(), DebugColor.error);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(message.ToUString(), DebugColor.error);
             }
         }
 
         public static void LogErrorFormat(string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogErrorFormat(format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.error);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.error);
             }
         }
 
         public static void LogErrorFormat(Object context, string format, params object[] args)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogErrorFormat(context, format, args);
-                if (Application.isPlaying)
-                    AddMessage(string.Format(format, args), DebugColor.error);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(string.Format(format, args), DebugColor.error);
             }
         }
 
         public static void LogException(Exception exception, Object context = null)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 if (Application.isEditor)
                     UnityEngine.Debug.LogException(exception, context);
-                if (Application.isPlaying)
-                    AddMessage(exception.Message, DebugColor.exception);
+                if (Application.isPlaying && isGamingEnabled)
+                    AddFormattedMessage(exception.Message, DebugColor.exception);
             }
         }
 
         public static void DrawCube(Vector3 pos, Color col, Vector3 scale)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 Vector3 halfScale = scale * 0.5f;
 
@@ -665,7 +725,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawRect(Rect rect, Color col)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 Vector3 pos = new Vector3(rect.x + rect.width / 2, rect.y + rect.height / 2, 0.0f);
                 Vector3 scale = new Vector3(rect.width, rect.height, 0.0f);
@@ -676,7 +736,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawRect(Vector3 pos, Color col, Vector3 scale)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 Vector3 halfScale = scale * 0.5f;
 
@@ -697,7 +757,7 @@ namespace Lerp2API.DebugHandler
 
         public static void DrawPoint(Vector3 pos, Color col, float scale)
         {
-            if (Debug.isEnabled)
+            if (isEnabled)
             {
                 Vector3[] points = new Vector3[]
                 {
@@ -732,21 +792,6 @@ namespace Lerp2API.DebugHandler
     }
 }
 
-/*public class EApp
-{
-    public static bool isPaused
-    {
-        get
-        {
-#if UNITY_EDITOR
-            return UnityEditor.EditorApplication.isPaused;
-#else
-            return false;
-#endif
-        }
-    }
-}*/
-
 public class DebugColor
 {
     public static Color normal
@@ -756,12 +801,12 @@ public class DebugColor
 
     public static Color warning
     {
-        get { return new Color(1, 1, 1); }
+        get { return new Color(1, 1, 0); }
     }
 
     public static Color error
     {
-        get { return new Color(1, 1, 1); }
+        get { return new Color(1, 0, 0); }
     }
 
     public static Color assert
@@ -771,13 +816,96 @@ public class DebugColor
 
     public static Color assertion
     {
-        get { return new Color(1, 1, 1); }
+        get { return new Color(0, 1, 1); }
     }
 
     public static Color exception
     {
-        get { return new Color(1, 1, 1); }
+        get { return new Color(1, 0, 0); }
     }
 }
 
 #endregion "Debug Handler & Game Console"
+
+#region "GUI Utils"
+
+public static class ShadowAndOutline
+{
+        public static void DrawOutline(Rect rect, string text, GUIStyle style, Color outColor, Color inColor, float size)
+        {
+            float halfSize = size * 0.5F;
+            GUIStyle backupStyle = new GUIStyle(style);
+            Color backupColor = GUI.color;
+ 
+            style.normal.textColor = outColor;
+            GUI.color = outColor;
+ 
+            rect.x -= halfSize;
+            GUI.Label(rect, text, style);
+ 
+            rect.x += size;
+            GUI.Label(rect, text, style);
+ 
+            rect.x -= halfSize;
+            rect.y -= halfSize;
+            GUI.Label(rect, text, style);
+ 
+            rect.y += size;
+            GUI.Label(rect, text, style);
+ 
+            rect.y -= halfSize;
+            style.normal.textColor = inColor;
+            GUI.color = backupColor;
+            GUI.Label(rect, text, style);
+ 
+            style = backupStyle;
+        }
+
+        public static void DrawShadow(Rect rect, GUIContent content, GUIStyle style, Color txtColor, Color shadowColor,
+                                        Vector2 direction)
+        {
+
+            rect.x += direction.x;
+            rect.y += direction.y;
+            GUI.Label(rect, content, new GUIStyle(style) { normal = new GUIStyleState() { textColor = shadowColor } });
+ 
+            rect.x -= direction.x;
+            rect.y -= direction.y;
+            GUI.Label(rect, content, new GUIStyle(style) { normal = new GUIStyleState() { textColor = txtColor } });
+        }
+
+        public static void DrawLayoutOutline(string text, GUIStyle style, Color outColor, Color inColor, float size, params GUILayoutOption[] options)
+        {
+            DrawOutline(GUILayoutUtility.GetRect(new GUIContent(text), style, options), text, style, outColor, inColor, size);
+        }
+
+        public static void DrawLayoutShadow(GUIContent content, GUIStyle style, Color txtColor, Color shadowColor,
+                                        Vector2 direction, params GUILayoutOption[] options)
+        {
+            DrawShadow(GUILayoutUtility.GetRect(content, style, options), content, style, txtColor, shadowColor, direction);
+        }
+ 
+        public static bool DrawButtonWithShadow(Rect r, GUIContent content, GUIStyle style, float shadowAlpha, Vector2 direction)
+        {
+            GUIStyle letters = new GUIStyle(style);
+            letters.normal.background = null;
+            letters.hover.background = null;
+            letters.active.background = null;
+ 
+            bool result = GUI.Button(r, content, style);
+ 
+            Color color = r.Contains(Event.current.mousePosition) ? letters.hover.textColor : letters.normal.textColor;
+ 
+            DrawShadow(r, content, letters, color, new Color(0f, 0f, 0f, shadowAlpha), direction);
+ 
+            return result;
+        }
+ 
+        public static bool DrawLayoutButtonWithShadow(GUIContent content, GUIStyle style, float shadowAlpha,
+                                                       Vector2 direction, params GUILayoutOption[] options)
+        {
+            return DrawButtonWithShadow(GUILayoutUtility.GetRect(content, style, options), content, style, shadowAlpha, direction);
+        }
+}
+
+#endregion

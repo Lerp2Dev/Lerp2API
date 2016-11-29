@@ -14,3 +14,7 @@ Build/Editor/UnityEngine.UI.dll
 Build/Editor/Lerp2API.dll
 Build/Editor/Lerp2API.pdb
 Build/Editor/Lerp2API.xml
+Project/Editor/obj
+Project/Editor/bin
+Project/Properties
+Project/Editor/Properties

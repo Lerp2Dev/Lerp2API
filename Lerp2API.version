@@ -1,5 +1,5 @@
 {
-    "versionName": "1.0.1 Alpha Release",
-    "versionStr": "1.0.1a",
-    "versionChangelog": "Splitted the dll into Editor and Game part.\nAdded internal XML documentation file.\nCleaned some unused references.\nAdded some more utilities to the repo.\nFixed some errors in Editor."
+    "versionName": "1.1 Alpha Release",
+    "versionStr": "1.1a",
+    "versionChangelog": "Deleted Unity Analytics popup.\nImproved Lerped Updater (I added the XML file to download, and I made several optimizations to it).\nFixed problem with Debug Manager's editor menu option.\nAdded Debug Manager to the game.\nNow there is a working console (the unique command is /debug, the shortcut to this command is the key 'P').\nImproved WWW System.\nThe Falling Avoider has been fixed (it has a minor bug, that had not detect the Start event of MonoBehaviour) and improved.\nAdded support to unistalled Assets by creating two new options 'Build Scene' & 'Init Asset', if the asset is not present the Editor will show you a message to download/buy it!\nIf the API is not active in the Editor, the DownloadAPI class will help it you to promote it.\nGame Console simple format system.\nAdded shortcuts to editor.\nUtility to get Skin from Editor, Inspector and Game.\nAdded some commands.\nAdded a File Browser Utility.\nAdded custom inspector draws for some classes.\nImproved GUI from console.\nUpdate and compile external files from the API Project to update changes."
 }

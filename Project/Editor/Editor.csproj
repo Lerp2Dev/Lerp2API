@@ -47,13 +47,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomIEditor\CommandsEditor.cs" />
     <Compile Include="EditorHelpers.cs" />
+    <Compile Include="EditorWindows\BrowserWindow.cs" />
+    <Compile Include="EditorWindows\LerpedPaths.cs" />
+    <Compile Include="LerpedEditorCore.cs" />
+    <Compile Include="Utility\LerpedThread.cs" />
+    <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />
+    <Compile Include="Utility\ContinuationManager.cs" />
+    <Compile Include="Utility\DummyEditor.cs" />
+    <Compile Include="Utility\FileBrowserEditor.cs" />
     <Compile Include="Utility\GenericMenuExtensions.cs" />
     <Compile Include="LerpedUpdater.cs" />
     <Compile Include="Menu\DebugManager.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\ContinuationManager.cs" />
+    <Compile Include="Utility\LerpedShortcuts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

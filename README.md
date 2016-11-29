@@ -1,50 +1,93 @@
 #Lerp2API#
+
 Our API for Unity. It contains several features to make easier your coding in this Engine.
-## Content ##
-As example, we will mention the folders that my API has and explain them:
-
- - **All Noises** folder has two subfolders:
-	 - **Noises** folder has all the Noise generators for my Terrain Asset (specially, to do height-map).
-	 - **Voronoi** folder, it is used to delimit Biome (also, from my Terrain Asset).
- - **Controllers**, and all they subfolders are scripts fro Standard Assets of Unity.
- - **Game** folder has hand-made scripts, by me, they have a FPS Counter and a basic Game Console.
- - **MenuSrc** folder has an Utility to enable and disable Debug from UnityEngine and Unity Analytics script (I prefer to use it in my script, in your, you can disable it)
- - **Other APIs** folder has three big APIs: BigInteger (to allow Unity has higher values from ulong capacities), HtmlAgilityPack (to manage HTML from website easily, I use it on my Unity Wiki in Editor Asset) and UniGif (to display gifs in Unity GUI)
- - **Serializers** folder has another two tools (yep, they are Serializers) that works together to make everything from **Unity Scenes** be saved and stored successfully in our HDD or SDD.
- - **Utility** folder, has some utilities from Unity Standard Assets and Unity Community (like, something to work with Directives References, other script to make Debug Rays and Lines be available in Playmode, other thing to work with Window Context Menus easily, a Mesh Serializer and other tool that I made to make users Identificable by their Unique Computer ID, I will use this in my [Website](http://lerp2dev.com/))
-
-## Usage ##
-
-Just drop Lerp2API.dll and Lerp2API.pdb in a folder called Lerp2API in a the root of your Project Asset folder. 
 
 Documentation (not available yet)
-Manual (not available yet)
+[https://github.com/Lerp2Dev/Lerp2API/wiki](Wiki) ... Please review this!!
 
 ## Next features ##
 
 The ability of save every scene in Unity.
+
 Maybe I will add CS-Script Asset (it's to load .cs files at runtime), yep, Unity modding with my API is coming stronger and stronger. (Serializers do a good job, but they need something more :P).
+
 I'm searching some way to avoid Floating Point precision errors, I founded some time ago, Floating Origin, but I am not sure about it (and it's compatibility in Multiplayer).
+
 An installer for my API (this will use to install the API in your projects in a easy way).
-Debug Enabled/Disable option in-game.
+
+QuixelEngine to work with Marching Cubes in my API (I'm working in a Terrain System, but this doesn't use voxels, I will make an expensive version that use Voxels, adn it will use an refined version of it). I doesn't have an chunk system for example!
+
+An interactive menu to Editor Input Manager in the game.
+
+A Minimap Utility for the game.
+
+AForge.NET (something to detect shapes in images) I will try to do something interesting with it.
+
+Generate Readme Console Commands parts from Editor.
+
+A permission system for multiplayer.
+
+Listen to externally projects that are compiled and imported automattically after their edit.
+
+A lot of new parts of code/libraries from outside:
+
+- All the free assets that Ikillnukes has prepared to upload
+- Some procedural generators
+- Asset unpacker
+- CsScript
+- QuixelEngine
+- Utymap / ActionStreetMaps
+- Etc etc...
+
+We will do some free versions of some paid assets:
+
+- Ai4Unity
+
+Minimap for this.
+
+Shaders for the API.
+
+Object demo from my other assets.
+
+Selectable part of compilation due to the bigger coming content.
+
+Listen to other Projects path.
+
+Shooter api (Novashot one).
+
+Server utility (apart dll).
+
+Login utility (another dll).
+
+Minigame utility (another dll)
+
+## In the next version ##
+
+Maybe, I will work in some information for the XML and maybe in a documentation page, the manual will come later.
+
+Moar commands for the Console.
+
+Multiple key handlings for Lerped Key Action Utility.
+
+Better support for command modding (new method finder system w/ reflection)
+
+Some tasks I didn't fixed in this version:
+
+- Add the posibility of undone something in a text field
+- Copy text from the chat [HARD TASK]
+- Some bugs with the formatting codes (If you put several fomatting codes in the same line the chat goes crazy, and some underline functions are still unfinished)
+- Some parts of the code is commented with a starting sentence "I have to", this is the most important things I didn't done
+- Escape formatting codes with \&...
+- Remove unnecesary stackstrace if desired (Reduced stacktrace option)
+- Put errors from cmd console into Unity [HARD OR IMPOSSIBLE TASK DUE TO UNITY INCAPACITY]
 
 ## Known issues ##
 
- - The menu checkmark from Debug Enabler doesn't get marked when Editor is recompiled and it's active in the config file.
+### Nothing by the moment :) ###
 
 ## Changelogs ##
 
-Version 1.0a:
-
- - Initial release.
-
-Version 1.0.1a:
-
- - Splitted the dll into Editor and Game part.
- - Added internal XML documentation file.
- - Cleaned some unused references.
- - Added some more utilities to the repo.
- - Fixed some errors in Editor.
+See **[releases](https://github.com/Lerp2Dev/Lerp2API/releases)** page
 
 ## Do you want to make an API? ##
 

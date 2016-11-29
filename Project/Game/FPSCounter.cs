@@ -6,7 +6,9 @@ namespace Lerp2API.Game
     public class FPSCounter : MonoBehaviour
     {
         public float m_updateInterval = 0.5f;
-        public Rect m_displayRect = new Rect(5, 5, 200, 100);
+        public int width = 200,
+                   height = 40;
+        public Position m_counterPosition;
         public int m_fontSize = 14;
 
         private const string display = "{0:F2} FPS";
@@ -46,7 +48,7 @@ namespace Lerp2API.Game
         private void OnGUI()
         {
             if (m_Active)
-                GUI.Label(m_displayRect, m_Text, new GUIStyle("label") { fontSize = m_fontSize, normal = new GUIStyleState() { textColor = GetTextColor() } });
+                GUI.Label(m_counterPosition.GetPosition(width, height), m_Text, new GUIStyle("label") { fontSize = m_fontSize, normal = new GUIStyleState() { textColor = GetTextColor() } });
         }
 
         private Color GetTextColor()
