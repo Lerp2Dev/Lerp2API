@@ -12,11 +12,11 @@
         {
             get
             {
-                return this.OuterHtml;
+                return OuterHtml;
             }
             set
             {
-                this._text = value;
+                _text = value;
             }
         }
 
@@ -24,11 +24,11 @@
         {
             get
             {
-                if (this._text == null)
+                if (_text == null)
                 {
                     return base.OuterHtml;
                 }
-                return this._text;
+                return _text;
             }
         }
 
@@ -36,15 +36,15 @@
         {
             get
             {
-                if (this._text == null)
+                if (_text == null)
                 {
                     return base.OuterHtml;
                 }
-                return this._text;
+                return _text;
             }
             set
             {
-                this._text = value;
+                _text = value;
             }
         }
     }

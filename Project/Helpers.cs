@@ -208,6 +208,16 @@ namespace Lerp2API
         }
 
         #endregion
+
+        #region "Action Extensions"
+
+        public static Action<T2> Convert<T1, T2>(this Action<T1> myActionT)
+        {
+            if (myActionT == null) return null;
+            else return new Action<T2>(o => myActionT((T1)(object)o)); //Doesn't convert correctly types
+        }
+
+        #endregion
     }
 
     #region "JSON Helpers"

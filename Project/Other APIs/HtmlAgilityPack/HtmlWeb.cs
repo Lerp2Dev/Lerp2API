@@ -32,12 +32,12 @@
 
         public object CreateInstance(string url, Type type)
         {
-            return this.CreateInstance(url, null, null, type);
+            return CreateInstance(url, null, null, type);
         }
 
         public object CreateInstance(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, Type type)
         {
-            return this.CreateInstance(htmlUrl, xsltUrl, xsltArgs, type, null);
+            return CreateInstance(htmlUrl, xsltUrl, xsltArgs, type, null);
         }
 
         public object CreateInstance(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, Type type, string xmlPath)
@@ -47,15 +47,15 @@
             XmlTextWriter writer = new XmlTextWriter(w);
             if (xsltUrl == null)
             {
-                this.LoadHtmlAsXml(htmlUrl, writer);
+                LoadHtmlAsXml(htmlUrl, writer);
             }
             else if (xmlPath == null)
             {
-                this.LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer);
+                LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer);
             }
             else
             {
-                this.LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer, xmlPath);
+                LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer, xmlPath);
             }
             writer.Flush();
             StringReader input = new StringReader(w.ToString());
@@ -91,7 +91,7 @@
 
         public void Get(string url, string path)
         {
-            this.Get(url, path, "GET");
+            Get(url, path, "GET");
         }
 
         public void Get(string url, string path, string method)
@@ -101,12 +101,12 @@
             {
                 throw new HtmlWebException("Unsupported uri scheme: '" + uri.Scheme + "'.");
             }
-            this.Get(uri, method, path, null, null, null);
+            Get(uri, method, path, null, null, null);
         }
 
         public void Get(string url, string path, WebProxy proxy, NetworkCredential credentials)
         {
-            this.Get(url, path, proxy, credentials, "GET");
+            Get(url, path, proxy, credentials, "GET");
         }
 
         public void Get(string url, string path, WebProxy proxy, NetworkCredential credentials, string method)
@@ -116,7 +116,7 @@
             {
                 throw new HtmlWebException("Unsupported uri scheme: '" + uri.Scheme + "'.");
             }
-            this.Get(uri, method, path, null, proxy, credentials);
+            Get(uri, method, path, null, proxy, credentials);
         }
 
         private HttpStatusCode Get(Uri uri, string method, string path, HtmlDocument doc, IWebProxy proxy, ICredentials creds)
@@ -126,7 +126,7 @@
             bool flag = false;
             HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
             request.Method = method;
-            request.UserAgent = this.UserAgent;
+            request.UserAgent = UserAgent;
             if (proxy != null)
             {
                 if (creds != null)
@@ -141,19 +141,19 @@
                 }
                 request.Proxy = proxy;
             }
-            this._fromCache = false;
-            this._requestDuration = 0;
+            _fromCache = false;
+            _requestDuration = 0;
             int tickCount = Environment.TickCount;
-            if (this.UsingCache)
+            if (UsingCache)
             {
-                cachePath = this.GetCachePath(request.RequestUri);
+                cachePath = GetCachePath(request.RequestUri);
                 if (System.IO.File.Exists(cachePath))
                 {
                     request.IfModifiedSince = System.IO.File.GetLastAccessTime(cachePath);
                     flag = true;
                 }
             }
-            if (this._cacheOnly)
+            if (_cacheOnly)
             {
                 if (!System.IO.File.Exists(cachePath))
                 {
@@ -167,14 +167,14 @@
                         System.IO.File.SetLastWriteTime(path, System.IO.File.GetLastWriteTime(cachePath));
                     }
                 }
-                this._fromCache = true;
+                _fromCache = true;
                 return HttpStatusCode.NotModified;
             }
-            if (this._useCookies)
+            if (_useCookies)
             {
                 request.CookieContainer = new CookieContainer();
             }
-            if ((this.PreRequest != null) && !this.PreRequest(request))
+            if ((PreRequest != null) && !PreRequest(request))
             {
                 return HttpStatusCode.ResetContent;
             }
@@ -184,7 +184,7 @@
             }
             catch (WebException exception)
             {
-                this._requestDuration = Environment.TickCount - tickCount;
+                _requestDuration = Environment.TickCount - tickCount;
                 response = (HttpWebResponse)exception.Response;
                 if (response == null)
                 {
@@ -202,28 +202,28 @@
             }
             catch (Exception)
             {
-                this._requestDuration = Environment.TickCount - tickCount;
+                _requestDuration = Environment.TickCount - tickCount;
                 throw;
             }
-            if (this.PostResponse != null)
+            if (PostResponse != null)
             {
-                this.PostResponse(request, response);
+                PostResponse(request, response);
             }
-            this._requestDuration = Environment.TickCount - tickCount;
-            this._responseUri = response.ResponseUri;
-            bool flag2 = this.IsHtmlContent(response.ContentType);
+            _requestDuration = Environment.TickCount - tickCount;
+            _responseUri = response.ResponseUri;
+            bool flag2 = IsHtmlContent(response.ContentType);
             Encoding overrideEncoding = !string.IsNullOrEmpty(response.ContentEncoding) ? Encoding.GetEncoding(response.ContentEncoding) : null;
-            if (this.OverrideEncoding != null)
+            if (OverrideEncoding != null)
             {
-                overrideEncoding = this.OverrideEncoding;
+                overrideEncoding = OverrideEncoding;
             }
             if (response.StatusCode == HttpStatusCode.NotModified)
             {
-                if (!this.UsingCache)
+                if (!UsingCache)
                 {
                     throw new HtmlWebException("Server has send a NotModifed code, without cache enabled.");
                 }
-                this._fromCache = true;
+                _fromCache = true;
                 if (path != null)
                 {
                     IOLibrary.CopyAlways(cachePath, path);
@@ -234,10 +234,10 @@
             Stream responseStream = response.GetResponseStream();
             if (responseStream != null)
             {
-                if (this.UsingCache)
+                if (UsingCache)
                 {
-                    SaveStream(responseStream, cachePath, RemoveMilliseconds(response.LastModified), this._streamBufferSize);
-                    this.SaveCacheHeaders(request.RequestUri, response);
+                    SaveStream(responseStream, cachePath, RemoveMilliseconds(response.LastModified), _streamBufferSize);
+                    SaveCacheHeaders(request.RequestUri, response);
                     if (path != null)
                     {
                         IOLibrary.CopyAlways(cachePath, path);
@@ -263,7 +263,7 @@
         private string GetCacheHeader(Uri requestUri, string name, string def)
         {
             XmlDocument document = new XmlDocument();
-            document.Load(this.GetCacheHeadersPath(requestUri));
+            document.Load(GetCacheHeadersPath(requestUri));
             XmlNode node = document.SelectSingleNode("//h[translate(@n, 'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')='" + name.ToUpper() + "']");
             if (node == null)
             {
@@ -274,7 +274,7 @@
 
         private string GetCacheHeadersPath(Uri uri)
         {
-            return (this.GetCachePath(uri) + ".h.xml");
+            return (GetCachePath(uri) + ".h.xml");
         }
 
         public string GetCachePath(Uri uri)
@@ -283,15 +283,15 @@
             {
                 throw new ArgumentNullException("uri");
             }
-            if (!this.UsingCache)
+            if (!UsingCache)
             {
                 throw new HtmlWebException("Cache is not enabled. Set UsingCache to true first.");
             }
             if (uri.AbsolutePath == "/")
             {
-                return Path.Combine(this._cachePath, ".htm");
+                return Path.Combine(_cachePath, ".htm");
             }
-            return Path.Combine(this._cachePath, (uri.Host + uri.AbsolutePath).Replace('/', '\\'));
+            return Path.Combine(_cachePath, (uri.Host + uri.AbsolutePath).Replace('/', '\\'));
         }
 
         public static string GetContentTypeForExtension(string extension, string def)
@@ -374,7 +374,7 @@
         private bool IsCacheHtmlContent(string path)
         {
             string contentTypeForExtension = GetContentTypeForExtension(Path.GetExtension(path), null);
-            return this.IsHtmlContent(contentTypeForExtension);
+            return IsHtmlContent(contentTypeForExtension);
         }
 
         private bool IsGZipEncoding(string contentEncoding)
@@ -389,7 +389,7 @@
 
         public HtmlDocument Load(string url)
         {
-            return this.Load(url, "GET");
+            return Load(url, "GET");
         }
 
         public HtmlDocument Load(string url, string method)
@@ -398,7 +398,7 @@
             Uri uri = new Uri(url);
             if ((uri.Scheme == Uri.UriSchemeHttps) || (uri.Scheme == Uri.UriSchemeHttp))
             {
-                document = this.LoadUrl(uri, method, null, null);
+                document = LoadUrl(uri, method, null, null);
             }
             else
             {
@@ -411,18 +411,18 @@
                     //OptionAutoCloseOnEnd = false,
                     OptionAutoCloseOnEnd = true
                 };
-                if (this.OverrideEncoding != null)
+                if (OverrideEncoding != null)
                 {
-                    document.Load(url, this.OverrideEncoding);
+                    document.Load(url, OverrideEncoding);
                 }
                 else
                 {
-                    document.DetectEncodingAndLoad(url, this._autoDetectEncoding);
+                    document.DetectEncodingAndLoad(url, _autoDetectEncoding);
                 }
             }
-            if (this.PreHandleDocument != null)
+            if (PreHandleDocument != null)
             {
-                this.PreHandleDocument(document);
+                PreHandleDocument(document);
             }
             return document;
         }
@@ -433,7 +433,7 @@
             Uri uri = new Uri(url);
             if ((uri.Scheme == Uri.UriSchemeHttps) || (uri.Scheme == Uri.UriSchemeHttp))
             {
-                document = this.LoadUrl(uri, method, proxy, credentials);
+                document = LoadUrl(uri, method, proxy, credentials);
             }
             else
             {
@@ -446,11 +446,11 @@
                     //OptionAutoCloseOnEnd = false,
                     OptionAutoCloseOnEnd = true
                 };
-                document.DetectEncodingAndLoad(url, this._autoDetectEncoding);
+                document.DetectEncodingAndLoad(url, _autoDetectEncoding);
             }
-            if (this.PreHandleDocument != null)
+            if (PreHandleDocument != null)
             {
-                this.PreHandleDocument(document);
+                PreHandleDocument(document);
             }
             return document;
         }
@@ -469,17 +469,17 @@
                 cache.Add(proxy.Address, "Basic", cred);
                 cache.Add(proxy.Address, "Digest", cred);
             }
-            return this.Load(url, "GET", proxy, cred);
+            return Load(url, "GET", proxy, cred);
         }
 
         public void LoadHtmlAsXml(string htmlUrl, XmlTextWriter writer)
         {
-            this.Load(htmlUrl).Save(writer);
+            Load(htmlUrl).Save(writer);
         }
 
         public void LoadHtmlAsXml(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, XmlTextWriter writer)
         {
-            this.LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer, null);
+            LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer, null);
         }
 
         public void LoadHtmlAsXml(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, XmlTextWriter writer, string xmlPath)
@@ -488,7 +488,7 @@
             {
                 throw new ArgumentNullException("htmlUrl");
             }
-            HtmlDocument document = this.Load(htmlUrl);
+            HtmlDocument document = Load(htmlUrl);
             if (xmlPath != null)
             {
                 XmlTextWriter writer2 = new XmlTextWriter(xmlPath, document.Encoding);
@@ -500,8 +500,8 @@
                 xsltArgs = new XsltArgumentList();
             }
             xsltArgs.AddParam("url", "", htmlUrl);
-            xsltArgs.AddParam("requestDuration", "", this.RequestDuration);
-            xsltArgs.AddParam("fromCache", "", this.FromCache);
+            xsltArgs.AddParam("requestDuration", "", RequestDuration);
+            xsltArgs.AddParam("fromCache", "", FromCache);
             XslCompiledTransform transform = new XslCompiledTransform();
             transform.Load(xsltUrl);
             transform.Transform((IXPathNavigable)document, xsltArgs, (XmlWriter)writer);
@@ -514,10 +514,10 @@
                 OptionAutoCloseOnEnd = false,
                 OptionFixNestedTags = true
             };
-            this._statusCode = this.Get(uri, method, null, doc, proxy, creds);
-            if (this._statusCode == HttpStatusCode.NotModified)
+            _statusCode = Get(uri, method, null, doc, proxy, creds);
+            if (_statusCode == HttpStatusCode.NotModified)
             {
-                doc.DetectEncodingAndLoad(this.GetCachePath(uri));
+                doc.DetectEncodingAndLoad(GetCachePath(uri));
             }
             return doc;
         }
@@ -529,7 +529,7 @@
 
         private void SaveCacheHeaders(Uri requestUri, HttpWebResponse resp)
         {
-            string cacheHeadersPath = this.GetCacheHeadersPath(requestUri);
+            string cacheHeadersPath = GetCacheHeadersPath(requestUri);
             XmlDocument document = new XmlDocument();
             document.LoadXml("<c></c>");
             XmlNode firstChild = document.FirstChild;
@@ -594,11 +594,11 @@
         {
             get
             {
-                return this._autoDetectEncoding;
+                return _autoDetectEncoding;
             }
             set
             {
-                this._autoDetectEncoding = value;
+                _autoDetectEncoding = value;
             }
         }
 
@@ -606,15 +606,15 @@
         {
             get
             {
-                return this._cacheOnly;
+                return _cacheOnly;
             }
             set
             {
-                if (value && !this.UsingCache)
+                if (value && !UsingCache)
                 {
                     throw new HtmlWebException("Cache is not enabled. Set UsingCache to true first.");
                 }
-                this._cacheOnly = value;
+                _cacheOnly = value;
             }
         }
 
@@ -622,11 +622,11 @@
         {
             get
             {
-                return this._cachePath;
+                return _cachePath;
             }
             set
             {
-                this._cachePath = value;
+                _cachePath = value;
             }
         }
 
@@ -634,7 +634,7 @@
         {
             get
             {
-                return this._fromCache;
+                return _fromCache;
             }
         }
 
@@ -1299,11 +1299,11 @@
         {
             get
             {
-                return this._encoding;
+                return _encoding;
             }
             set
             {
-                this._encoding = value;
+                _encoding = value;
             }
         }
 
@@ -1311,7 +1311,7 @@
         {
             get
             {
-                return this._requestDuration;
+                return _requestDuration;
             }
         }
 
@@ -1319,7 +1319,7 @@
         {
             get
             {
-                return this._responseUri;
+                return _responseUri;
             }
         }
 
@@ -1327,7 +1327,7 @@
         {
             get
             {
-                return this._statusCode;
+                return _statusCode;
             }
         }
 
@@ -1335,15 +1335,15 @@
         {
             get
             {
-                return this._streamBufferSize;
+                return _streamBufferSize;
             }
             set
             {
-                if (this._streamBufferSize <= 0)
+                if (_streamBufferSize <= 0)
                 {
                     throw new ArgumentException("Size must be greater than zero.");
                 }
-                this._streamBufferSize = value;
+                _streamBufferSize = value;
             }
         }
 
@@ -1351,11 +1351,11 @@
         {
             get
             {
-                return this._useCookies;
+                return _useCookies;
             }
             set
             {
-                this._useCookies = value;
+                _useCookies = value;
             }
         }
 
@@ -1363,11 +1363,11 @@
         {
             get
             {
-                return this._userAgent;
+                return _userAgent;
             }
             set
             {
-                this._userAgent = value;
+                _userAgent = value;
             }
         }
 
@@ -1375,15 +1375,15 @@
         {
             get
             {
-                return ((this._cachePath != null) && this._usingCache);
+                return ((_cachePath != null) && _usingCache);
             }
             set
             {
-                if (value && (this._cachePath == null))
+                if (value && (_cachePath == null))
                 {
                     throw new HtmlWebException("You need to define a CachePath first.");
                 }
-                this._usingCache = value;
+                _usingCache = value;
             }
         }
 

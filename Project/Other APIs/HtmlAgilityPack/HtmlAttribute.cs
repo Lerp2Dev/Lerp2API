@@ -22,12 +22,12 @@
 
         internal HtmlAttribute(HtmlDocument ownerdocument)
         {
-            this._ownerdocument = ownerdocument;
+            _ownerdocument = ownerdocument;
         }
 
         public HtmlAttribute Clone()
         {
-            return new HtmlAttribute(this._ownerdocument) { Name = this.Name, Value = this.Value };
+            return new HtmlAttribute(_ownerdocument) { Name = Name, Value = Value };
         }
 
         public int CompareTo(object obj)
@@ -37,19 +37,19 @@
             {
                 throw new ArgumentException("obj");
             }
-            return this.Name.CompareTo(attribute.Name);
+            return Name.CompareTo(attribute.Name);
         }
 
         private string GetRelativeXpath()
         {
-            if (this.OwnerNode == null)
+            if (OwnerNode == null)
             {
-                return this.Name;
+                return Name;
             }
             int num = 1;
-            foreach (HtmlAttribute attribute in (IEnumerable<HtmlAttribute>)this.OwnerNode.Attributes)
+            foreach (HtmlAttribute attribute in (IEnumerable<HtmlAttribute>)OwnerNode.Attributes)
             {
-                if (!(attribute.Name != this.Name))
+                if (!(attribute.Name != Name))
                 {
                     if (attribute == this)
                     {
@@ -58,23 +58,23 @@
                     num++;
                 }
             }
-            return string.Concat(new object[] { "@", this.Name, "[", num, "]" });
+            return string.Concat(new object[] { "@", Name, "[", num, "]" });
         }
 
         public void Remove()
         {
-            this._ownernode.Attributes.Remove(this);
+            _ownernode.Attributes.Remove(this);
         }
 
         public int Line
         {
             get
             {
-                return this._line;
+                return _line;
             }
             internal set
             {
-                this._line = value;
+                _line = value;
             }
         }
 
@@ -82,7 +82,7 @@
         {
             get
             {
-                return this._lineposition;
+                return _lineposition;
             }
         }
 
@@ -90,11 +90,11 @@
         {
             get
             {
-                if (this._name == null)
+                if (_name == null)
                 {
-                    this._name = this._ownerdocument.Text.Substring(this._namestartindex, this._namelength);
+                    _name = _ownerdocument.Text.Substring(_namestartindex, _namelength);
                 }
-                return this._name.ToLower();
+                return _name.ToLower();
             }
             set
             {
@@ -102,11 +102,11 @@
                 {
                     throw new ArgumentNullException("value");
                 }
-                this._name = value;
-                if (this._ownernode != null)
+                _name = value;
+                if (_ownernode != null)
                 {
-                    this._ownernode._innerchanged = true;
-                    this._ownernode._outerchanged = true;
+                    _ownernode._innerchanged = true;
+                    _ownernode._outerchanged = true;
                 }
             }
         }
@@ -115,7 +115,7 @@
         {
             get
             {
-                return this._name;
+                return _name;
             }
         }
 
@@ -123,7 +123,7 @@
         {
             get
             {
-                return this._ownerdocument;
+                return _ownerdocument;
             }
         }
 
@@ -131,7 +131,7 @@
         {
             get
             {
-                return this._ownernode;
+                return _ownernode;
             }
         }
 
@@ -139,11 +139,11 @@
         {
             get
             {
-                return this._quoteType;
+                return _quoteType;
             }
             set
             {
-                this._quoteType = value;
+                _quoteType = value;
             }
         }
 
@@ -151,7 +151,7 @@
         {
             get
             {
-                return this._streamposition;
+                return _streamposition;
             }
         }
 
@@ -159,19 +159,19 @@
         {
             get
             {
-                if (this._value == null)
+                if (_value == null)
                 {
-                    this._value = this._ownerdocument.Text.Substring(this._valuestartindex, this._valuelength);
+                    _value = _ownerdocument.Text.Substring(_valuestartindex, _valuelength);
                 }
-                return this._value;
+                return _value;
             }
             set
             {
-                this._value = value;
-                if (this._ownernode != null)
+                _value = value;
+                if (_ownernode != null)
                 {
-                    this._ownernode._innerchanged = true;
-                    this._ownernode._outerchanged = true;
+                    _ownernode._innerchanged = true;
+                    _ownernode._outerchanged = true;
                 }
             }
         }
@@ -180,7 +180,7 @@
         {
             get
             {
-                return HtmlDocument.GetXmlName(this.Name);
+                return HtmlDocument.GetXmlName(Name);
             }
         }
 
@@ -188,7 +188,7 @@
         {
             get
             {
-                return this.Value;
+                return Value;
             }
         }
 
@@ -196,8 +196,8 @@
         {
             get
             {
-                string str = (this.OwnerNode == null) ? "/" : (this.OwnerNode.XPath + "/");
-                return (str + this.GetRelativeXpath());
+                string str = (OwnerNode == null) ? "/" : (OwnerNode.XPath + "/");
+                return (str + GetRelativeXpath());
             }
         }
     }

@@ -70,40 +70,40 @@
 
         public HtmlNode(HtmlNodeType type, HtmlDocument ownerdocument, int index)
         {
-            this._nodetype = type;
-            this._ownerdocument = ownerdocument;
-            this._outerstartindex = index;
+            _nodetype = type;
+            _ownerdocument = ownerdocument;
+            _outerstartindex = index;
             switch (type)
             {
                 case HtmlNodeType.Document:
-                    this.Name = HtmlNodeTypeNameDocument;
-                    this._endnode = this;
+                    Name = HtmlNodeTypeNameDocument;
+                    _endnode = this;
                     break;
 
                 case HtmlNodeType.Comment:
-                    this.Name = HtmlNodeTypeNameComment;
-                    this._endnode = this;
+                    Name = HtmlNodeTypeNameComment;
+                    _endnode = this;
                     break;
 
                 case HtmlNodeType.Text:
-                    this.Name = HtmlNodeTypeNameText;
-                    this._endnode = this;
+                    Name = HtmlNodeTypeNameText;
+                    _endnode = this;
                     break;
             }
-            if (((this._ownerdocument.Openednodes != null) && !this.Closed) && (-1 != index))
+            if (((_ownerdocument.Openednodes != null) && !Closed) && (-1 != index))
             {
-                this._ownerdocument.Openednodes.Add(index, this);
+                _ownerdocument.Openednodes.Add(index, this);
             }
             if (((-1 == index) && (type != HtmlNodeType.Comment)) && (type != HtmlNodeType.Text))
             {
-                this._outerchanged = true;
-                this._innerchanged = true;
+                _outerchanged = true;
+                _innerchanged = true;
             }
         }
 
         public IEnumerable<HtmlNode> Ancestors()
         {
-            HtmlNode parentNode = this.ParentNode;
+            HtmlNode parentNode = ParentNode;
             while (true)
             {
                 if (parentNode.ParentNode == null)
@@ -117,7 +117,7 @@
 
         public IEnumerable<HtmlNode> Ancestors(string name)
         {
-            for (HtmlNode iteratorVariable0 = this.ParentNode; iteratorVariable0 != null; iteratorVariable0 = iteratorVariable0.ParentNode)
+            for (HtmlNode iteratorVariable0 = ParentNode; iteratorVariable0 != null; iteratorVariable0 = iteratorVariable0.ParentNode)
             {
                 if (iteratorVariable0.Name == name)
                 {
@@ -157,10 +157,10 @@
             {
                 throw new ArgumentNullException("newChild");
             }
-            this.ChildNodes.Append(newChild);
-            this._ownerdocument.SetIdForNode(newChild, newChild.GetId());
-            this._outerchanged = true;
-            this._innerchanged = true;
+            ChildNodes.Append(newChild);
+            _ownerdocument.SetIdForNode(newChild, newChild.GetId());
+            _outerchanged = true;
+            _innerchanged = true;
             return newChild;
         }
 
@@ -172,7 +172,7 @@
             }
             foreach (HtmlNode node in (IEnumerable<HtmlNode>)newChildren)
             {
-                this.AppendChild(node);
+                AppendChild(node);
             }
         }
 
@@ -192,14 +192,14 @@
 
         public HtmlNode Clone()
         {
-            return this.CloneNode(true);
+            return CloneNode(true);
         }
 
         public HtmlNode CloneNode(bool deep)
         {
-            HtmlNode node = this._ownerdocument.CreateNode(this._nodetype);
-            node.Name = this.Name;
-            switch (this._nodetype)
+            HtmlNode node = _ownerdocument.CreateNode(_nodetype);
+            node.Name = Name;
+            switch (_nodetype)
             {
                 case HtmlNodeType.Comment:
                     ((HtmlCommentNode)node).Comment = ((HtmlCommentNode)this).Comment;
@@ -209,18 +209,18 @@
                     ((HtmlTextNode)node).Text = ((HtmlTextNode)this).Text;
                     return node;
             }
-            if (this.HasAttributes)
+            if (HasAttributes)
             {
-                foreach (HtmlAttribute attribute in (IEnumerable<HtmlAttribute>)this._attributes)
+                foreach (HtmlAttribute attribute in (IEnumerable<HtmlAttribute>)_attributes)
                 {
                     HtmlAttribute newAttribute = attribute.Clone();
                     node.Attributes.Append(newAttribute);
                 }
             }
-            if (this.HasClosingAttributes)
+            if (HasClosingAttributes)
             {
-                node._endnode = this._endnode.CloneNode(false);
-                foreach (HtmlAttribute attribute3 in (IEnumerable<HtmlAttribute>)this._endnode._attributes)
+                node._endnode = _endnode.CloneNode(false);
+                foreach (HtmlAttribute attribute3 in (IEnumerable<HtmlAttribute>)_endnode._attributes)
                 {
                     HtmlAttribute attribute4 = attribute3.Clone();
                     node._endnode._attributes.Append(attribute4);
@@ -228,11 +228,11 @@
             }
             if (deep)
             {
-                if (!this.HasChildNodes)
+                if (!HasChildNodes)
                 {
                     return node;
                 }
-                foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)this._childnodes)
+                foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)_childnodes)
                 {
                     HtmlNode newChild = node2.Clone();
                     node.AppendChild(newChild);
@@ -243,7 +243,7 @@
 
         public HtmlNode CloneNode(string newName)
         {
-            return this.CloneNode(newName, true);
+            return CloneNode(newName, true);
         }
 
         public HtmlNode CloneNode(string newName, bool deep)
@@ -252,21 +252,21 @@
             {
                 throw new ArgumentNullException("newName");
             }
-            HtmlNode node = this.CloneNode(deep);
+            HtmlNode node = CloneNode(deep);
             node.Name = newName;
             return node;
         }
 
         internal void CloseNode(HtmlNode endnode)
         {
-            if (!this._ownerdocument.OptionAutoCloseOnEnd && (this._childnodes != null))
+            if (!_ownerdocument.OptionAutoCloseOnEnd && (_childnodes != null))
             {
-                foreach (HtmlNode node in (IEnumerable<HtmlNode>)this._childnodes)
+                foreach (HtmlNode node in (IEnumerable<HtmlNode>)_childnodes)
                 {
                     if (!node.Closed)
                     {
                         HtmlNode node2 = null;
-                        node2 = new HtmlNode(this.NodeType, this._ownerdocument, -1)
+                        node2 = new HtmlNode(NodeType, _ownerdocument, -1)
                         {
                             _endnode = node2
                         };
@@ -274,30 +274,30 @@
                     }
                 }
             }
-            if (!this.Closed)
+            if (!Closed)
             {
-                this._endnode = endnode;
-                if (this._ownerdocument.Openednodes != null)
+                _endnode = endnode;
+                if (_ownerdocument.Openednodes != null)
                 {
-                    this._ownerdocument.Openednodes.Remove(this._outerstartindex);
+                    _ownerdocument.Openednodes.Remove(_outerstartindex);
                 }
-                if (Utilities.GetDictionaryValueOrNull<string, HtmlNode>(this._ownerdocument.Lastnodes, this.Name) == this)
+                if (Utilities.GetDictionaryValueOrNull<string, HtmlNode>(_ownerdocument.Lastnodes, Name) == this)
                 {
-                    this._ownerdocument.Lastnodes.Remove(this.Name);
-                    this._ownerdocument.UpdateLastParentNode();
+                    _ownerdocument.Lastnodes.Remove(Name);
+                    _ownerdocument.UpdateLastParentNode();
                 }
                 if (endnode != this)
                 {
-                    this._innerstartindex = this._outerstartindex + this._outerlength;
-                    this._innerlength = endnode._outerstartindex - this._innerstartindex;
-                    this._outerlength = (endnode._outerstartindex + endnode._outerlength) - this._outerstartindex;
+                    _innerstartindex = _outerstartindex + _outerlength;
+                    _innerlength = endnode._outerstartindex - _innerstartindex;
+                    _outerlength = (endnode._outerstartindex + endnode._outerlength) - _outerstartindex;
                 }
             }
         }
 
         public void CopyFrom(HtmlNode node)
         {
-            this.CopyFrom(node, true);
+            CopyFrom(node, true);
         }
 
         public void CopyFrom(HtmlNode node, bool deep)
@@ -306,22 +306,22 @@
             {
                 throw new ArgumentNullException("node");
             }
-            this.Attributes.RemoveAll();
+            Attributes.RemoveAll();
             if (node.HasAttributes)
             {
                 foreach (HtmlAttribute attribute in (IEnumerable<HtmlAttribute>)node.Attributes)
                 {
-                    this.SetAttributeValue(attribute.Name, attribute.Value);
+                    SetAttributeValue(attribute.Name, attribute.Value);
                 }
             }
             if (!deep)
             {
-                this.RemoveAllChildren();
+                RemoveAllChildren();
                 if (node.HasChildNodes)
                 {
                     foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)node.ChildNodes)
                     {
-                        this.AppendChild(node2.CloneNode(true));
+                        AppendChild(node2.CloneNode(true));
                     }
                 }
             }
@@ -329,7 +329,7 @@
 
         public XPathNavigator CreateNavigator()
         {
-            return new HtmlNodeNavigator(this.OwnerDocument, this);
+            return new HtmlNodeNavigator(OwnerDocument, this);
         }
 
         public static HtmlNode CreateNode(string html)
@@ -341,18 +341,18 @@
 
         public XPathNavigator CreateRootNavigator()
         {
-            return new HtmlNodeNavigator(this.OwnerDocument, this.OwnerDocument.DocumentNode);
+            return new HtmlNodeNavigator(OwnerDocument, OwnerDocument.DocumentNode);
         }
 
         public IEnumerable<HtmlAttribute> ChildAttributes(string name)
         {
-            return this.Attributes.AttributesWithName(name);
+            return Attributes.AttributesWithName(name);
         }
 
         [Obsolete("Use Descendants() instead, the results of this function will change in a future version")]
         public IEnumerable<HtmlNode> DescendantNodes()
         {
-            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)this.ChildNodes)
+            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)ChildNodes)
             {
                 yield return iteratorVariable0;
                 foreach (HtmlNode iteratorVariable1 in iteratorVariable0.DescendantNodes())
@@ -365,12 +365,12 @@
         [Obsolete("Use DescendantsAndSelf() instead, the results of this function will change in a future version")]
         public IEnumerable<HtmlNode> DescendantNodesAndSelf()
         {
-            return this.DescendantsAndSelf();
+            return DescendantsAndSelf();
         }
 
         public IEnumerable<HtmlNode> Descendants()
         {
-            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)this.ChildNodes)
+            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)ChildNodes)
             {
                 yield return iteratorVariable0;
                 foreach (HtmlNode iteratorVariable1 in iteratorVariable0.Descendants())
@@ -383,7 +383,7 @@
         public IEnumerable<HtmlNode> Descendants(string name)
         {
             name = name.ToLowerInvariant();
-            foreach (HtmlNode iteratorVariable0 in this.Descendants())
+            foreach (HtmlNode iteratorVariable0 in Descendants())
             {
                 if (iteratorVariable0.Name.Equals(name))
                 {
@@ -395,7 +395,7 @@
         public IEnumerable<HtmlNode> DescendantsAndSelf()
         {
             yield return this;
-            foreach (HtmlNode iteratorVariable0 in this.Descendants())
+            foreach (HtmlNode iteratorVariable0 in Descendants())
             {
                 HtmlNode iteratorVariable1 = iteratorVariable0;
                 if (iteratorVariable1 != null)
@@ -408,7 +408,7 @@
         public IEnumerable<HtmlNode> DescendantsAndSelf(string name)
         {
             yield return this;
-            foreach (HtmlNode iteratorVariable0 in this.Descendants())
+            foreach (HtmlNode iteratorVariable0 in Descendants())
             {
                 if (iteratorVariable0.Name == name)
                 {
@@ -419,7 +419,7 @@
 
         public HtmlNode Element(string name)
         {
-            foreach (HtmlNode node in (IEnumerable<HtmlNode>)this.ChildNodes)
+            foreach (HtmlNode node in (IEnumerable<HtmlNode>)ChildNodes)
             {
                 if (node.Name == name)
                 {
@@ -431,7 +431,7 @@
 
         public IEnumerable<HtmlNode> Elements(string name)
         {
-            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)this.ChildNodes)
+            foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)ChildNodes)
             {
                 if (iteratorVariable0.Name == name)
                 {
@@ -446,11 +446,11 @@
             {
                 throw new ArgumentNullException("name");
             }
-            if (!this.HasAttributes)
+            if (!HasAttributes)
             {
                 return def;
             }
-            HtmlAttribute attribute = this.Attributes[name];
+            HtmlAttribute attribute = Attributes[name];
             if (attribute == null)
             {
                 return def;
@@ -471,11 +471,11 @@
             {
                 throw new ArgumentNullException("name");
             }
-            if (!this.HasAttributes)
+            if (!HasAttributes)
             {
                 return def;
             }
-            HtmlAttribute attribute = this.Attributes[name];
+            HtmlAttribute attribute = Attributes[name];
             if (attribute == null)
             {
                 return def;
@@ -496,11 +496,11 @@
             {
                 throw new ArgumentNullException("name");
             }
-            if (!this.HasAttributes)
+            if (!HasAttributes)
             {
                 return def;
             }
-            HtmlAttribute attribute = this.Attributes[name];
+            HtmlAttribute attribute = Attributes[name];
             if (attribute == null)
             {
                 return def;
@@ -510,7 +510,7 @@
 
         internal string GetId()
         {
-            HtmlAttribute attribute = this.Attributes["id"];
+            HtmlAttribute attribute = Attributes["id"];
             if (attribute != null)
             {
                 return attribute.Value;
@@ -520,18 +520,18 @@
 
         private string GetRelativeXpath()
         {
-            if (this.ParentNode == null)
+            if (ParentNode == null)
             {
-                return this.Name;
+                return Name;
             }
-            if (this.NodeType == HtmlNodeType.Document)
+            if (NodeType == HtmlNodeType.Document)
             {
                 return string.Empty;
             }
             int num = 1;
-            foreach (HtmlNode node in (IEnumerable<HtmlNode>)this.ParentNode.ChildNodes)
+            foreach (HtmlNode node in (IEnumerable<HtmlNode>)ParentNode.ChildNodes)
             {
-                if (!(node.Name != this.Name))
+                if (!(node.Name != Name))
                 {
                     if (node == this)
                     {
@@ -540,7 +540,7 @@
                     num++;
                 }
             }
-            return string.Concat(new object[] { this.Name, "[", num, "]" });
+            return string.Concat(new object[] { Name, "[", num, "]" });
         }
 
         internal static string GetXmlComment(HtmlCommentNode comment)
@@ -557,26 +557,26 @@
             }
             if (refChild == null)
             {
-                return this.PrependChild(newChild);
+                return PrependChild(newChild);
             }
             if (newChild != refChild)
             {
                 int num = -1;
-                if (this._childnodes != null)
+                if (_childnodes != null)
                 {
-                    num = this._childnodes[refChild];
+                    num = _childnodes[refChild];
                 }
                 if (num == -1)
                 {
                     throw new ArgumentException(HtmlDocument.HtmlExceptionRefNotChild);
                 }
-                if (this._childnodes != null)
+                if (_childnodes != null)
                 {
-                    this._childnodes.Insert(num + 1, newChild);
+                    _childnodes.Insert(num + 1, newChild);
                 }
-                this._ownerdocument.SetIdForNode(newChild, newChild.GetId());
-                this._outerchanged = true;
-                this._innerchanged = true;
+                _ownerdocument.SetIdForNode(newChild, newChild.GetId());
+                _outerchanged = true;
+                _innerchanged = true;
             }
             return newChild;
         }
@@ -589,26 +589,26 @@
             }
             if (refChild == null)
             {
-                return this.AppendChild(newChild);
+                return AppendChild(newChild);
             }
             if (newChild != refChild)
             {
                 int index = -1;
-                if (this._childnodes != null)
+                if (_childnodes != null)
                 {
-                    index = this._childnodes[refChild];
+                    index = _childnodes[refChild];
                 }
                 if (index == -1)
                 {
                     throw new ArgumentException(HtmlDocument.HtmlExceptionRefNotChild);
                 }
-                if (this._childnodes != null)
+                if (_childnodes != null)
                 {
-                    this._childnodes.Insert(index, newChild);
+                    _childnodes.Insert(index, newChild);
                 }
-                this._ownerdocument.SetIdForNode(newChild, newChild.GetId());
-                this._outerchanged = true;
-                this._innerchanged = true;
+                _ownerdocument.SetIdForNode(newChild, newChild.GetId());
+                _outerchanged = true;
+                _innerchanged = true;
             }
             return newChild;
         }
@@ -686,10 +686,10 @@
             {
                 throw new ArgumentNullException("newChild");
             }
-            this.ChildNodes.Prepend(newChild);
-            this._ownerdocument.SetIdForNode(newChild, newChild.GetId());
-            this._outerchanged = true;
-            this._innerchanged = true;
+            ChildNodes.Prepend(newChild);
+            _ownerdocument.SetIdForNode(newChild, newChild.GetId());
+            _outerchanged = true;
+            _innerchanged = true;
             return newChild;
         }
 
@@ -701,47 +701,47 @@
             }
             foreach (HtmlNode node in (IEnumerable<HtmlNode>)newChildren)
             {
-                this.PrependChild(node);
+                PrependChild(node);
             }
         }
 
         public void Remove()
         {
-            if (this.ParentNode != null)
+            if (ParentNode != null)
             {
-                this.ParentNode.ChildNodes.Remove(this);
+                ParentNode.ChildNodes.Remove(this);
             }
         }
 
         public void RemoveAll()
         {
-            this.RemoveAllChildren();
-            if (this.HasAttributes)
+            RemoveAllChildren();
+            if (HasAttributes)
             {
-                this._attributes.Clear();
+                _attributes.Clear();
             }
-            if (((this._endnode != null) && (this._endnode != this)) && (this._endnode._attributes != null))
+            if (((_endnode != null) && (_endnode != this)) && (_endnode._attributes != null))
             {
-                this._endnode._attributes.Clear();
+                _endnode._attributes.Clear();
             }
-            this._outerchanged = true;
-            this._innerchanged = true;
+            _outerchanged = true;
+            _innerchanged = true;
         }
 
         public void RemoveAllChildren()
         {
-            if (this.HasChildNodes)
+            if (HasChildNodes)
             {
-                if (this._ownerdocument.OptionUseIdAttribute)
+                if (_ownerdocument.OptionUseIdAttribute)
                 {
-                    foreach (HtmlNode node in (IEnumerable<HtmlNode>)this._childnodes)
+                    foreach (HtmlNode node in (IEnumerable<HtmlNode>)_childnodes)
                     {
-                        this._ownerdocument.SetIdForNode(null, node.GetId());
+                        _ownerdocument.SetIdForNode(null, node.GetId());
                     }
                 }
-                this._childnodes.Clear();
-                this._outerchanged = true;
-                this._innerchanged = true;
+                _childnodes.Clear();
+                _outerchanged = true;
+                _innerchanged = true;
             }
         }
 
@@ -752,21 +752,21 @@
                 throw new ArgumentNullException("oldChild");
             }
             int index = -1;
-            if (this._childnodes != null)
+            if (_childnodes != null)
             {
-                index = this._childnodes[oldChild];
+                index = _childnodes[oldChild];
             }
             if (index == -1)
             {
                 throw new ArgumentException(HtmlDocument.HtmlExceptionRefNotChild);
             }
-            if (this._childnodes != null)
+            if (_childnodes != null)
             {
-                this._childnodes.Remove(index);
+                _childnodes.Remove(index);
             }
-            this._ownerdocument.SetIdForNode(null, oldChild.GetId());
-            this._outerchanged = true;
-            this._innerchanged = true;
+            _ownerdocument.SetIdForNode(null, oldChild.GetId());
+            _outerchanged = true;
+            _innerchanged = true;
             return oldChild;
         }
 
@@ -781,12 +781,12 @@
                 HtmlNode previousSibling = oldChild.PreviousSibling;
                 foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)oldChild._childnodes)
                 {
-                    this.InsertAfter(node2, previousSibling);
+                    InsertAfter(node2, previousSibling);
                 }
             }
-            this.RemoveChild(oldChild);
-            this._outerchanged = true;
-            this._innerchanged = true;
+            RemoveChild(oldChild);
+            _outerchanged = true;
+            _innerchanged = true;
             return oldChild;
         }
 
@@ -794,36 +794,36 @@
         {
             if (newChild == null)
             {
-                return this.RemoveChild(oldChild);
+                return RemoveChild(oldChild);
             }
             if (oldChild == null)
             {
-                return this.AppendChild(newChild);
+                return AppendChild(newChild);
             }
             int index = -1;
-            if (this._childnodes != null)
+            if (_childnodes != null)
             {
-                index = this._childnodes[oldChild];
+                index = _childnodes[oldChild];
             }
             if (index == -1)
             {
                 throw new ArgumentException(HtmlDocument.HtmlExceptionRefNotChild);
             }
-            if (this._childnodes != null)
+            if (_childnodes != null)
             {
-                this._childnodes.Replace(index, newChild);
+                _childnodes.Replace(index, newChild);
             }
-            this._ownerdocument.SetIdForNode(null, oldChild.GetId());
-            this._ownerdocument.SetIdForNode(newChild, newChild.GetId());
-            this._outerchanged = true;
-            this._innerchanged = true;
+            _ownerdocument.SetIdForNode(null, oldChild.GetId());
+            _ownerdocument.SetIdForNode(newChild, newChild.GetId());
+            _outerchanged = true;
+            _innerchanged = true;
             return newChild;
         }
 
         public HtmlNodeCollection SelectNodes(string xpath)
         {
             HtmlNodeCollection nodes = new HtmlNodeCollection(null);
-            XPathNodeIterator iterator = new HtmlNodeNavigator(this.OwnerDocument, this).Select(xpath);
+            XPathNodeIterator iterator = new HtmlNodeNavigator(OwnerDocument, this).Select(xpath);
             while (iterator.MoveNext())
             {
                 HtmlNodeNavigator current = (HtmlNodeNavigator)iterator.Current;
@@ -842,7 +842,7 @@
             {
                 throw new ArgumentNullException("xpath");
             }
-            XPathNodeIterator iterator = new HtmlNodeNavigator(this.OwnerDocument, this).Select(xpath);
+            XPathNodeIterator iterator = new HtmlNodeNavigator(OwnerDocument, this).Select(xpath);
             if (!iterator.MoveNext())
             {
                 return null;
@@ -857,10 +857,10 @@
             {
                 throw new ArgumentNullException("name");
             }
-            HtmlAttribute attribute = this.Attributes[name];
+            HtmlAttribute attribute = Attributes[name];
             if (attribute == null)
             {
-                return this.Attributes.Append(this._ownerdocument.CreateAttribute(name, value));
+                return Attributes.Append(_ownerdocument.CreateAttribute(name, value));
             }
             attribute.Value = value;
             return attribute;
@@ -868,20 +868,20 @@
 
         internal void SetId(string id)
         {
-            HtmlAttribute attribute = this.Attributes["id"] ?? this._ownerdocument.CreateAttribute("id");
+            HtmlAttribute attribute = Attributes["id"] ?? _ownerdocument.CreateAttribute("id");
             attribute.Value = id;
-            this._ownerdocument.SetIdForNode(this, attribute.Value);
-            this._outerchanged = true;
+            _ownerdocument.SetIdForNode(this, attribute.Value);
+            _outerchanged = true;
         }
 
         internal void WriteAttribute(TextWriter outText, HtmlAttribute att)
         {
             string originalName;
             string str2 = (att.QuoteType == AttributeValueQuote.DoubleQuote) ? "\"" : "'";
-            if (this._ownerdocument.OptionOutputAsXml)
+            if (_ownerdocument.OptionOutputAsXml)
             {
-                originalName = this._ownerdocument.OptionOutputUpperCase ? att.XmlName.ToUpper() : att.XmlName;
-                if (this._ownerdocument.OptionOutputOriginalCase)
+                originalName = _ownerdocument.OptionOutputUpperCase ? att.XmlName.ToUpper() : att.XmlName;
+                if (_ownerdocument.OptionOutputOriginalCase)
                 {
                     originalName = att.OriginalName;
                 }
@@ -889,12 +889,12 @@
             }
             else
             {
-                originalName = this._ownerdocument.OptionOutputUpperCase ? att.Name.ToUpper() : att.Name;
+                originalName = _ownerdocument.OptionOutputUpperCase ? att.Name.ToUpper() : att.Name;
                 if ((((att.Name.Length >= 4) && (att.Name[0] == '<')) && ((att.Name[1] == '%') && (att.Name[att.Name.Length - 1] == '>'))) && (att.Name[att.Name.Length - 2] == '%'))
                 {
                     outText.Write(" " + originalName);
                 }
-                else if (this._ownerdocument.OptionOutputOptimizeAttributeValues)
+                else if (_ownerdocument.OptionOutputOptimizeAttributeValues)
                 {
                     if (att.Value.IndexOfAny(new char[] { '\n', '\r', '\t', ' ' }) < 0)
                     {
@@ -914,47 +914,47 @@
 
         internal void WriteAttributes(TextWriter outText, bool closing)
         {
-            if (this._ownerdocument.OptionOutputAsXml)
+            if (_ownerdocument.OptionOutputAsXml)
             {
-                if (this._attributes != null)
+                if (_attributes != null)
                 {
-                    foreach (HtmlAttribute attribute in this._attributes.Hashitems.Values)
+                    foreach (HtmlAttribute attribute in _attributes.Hashitems.Values)
                     {
-                        this.WriteAttribute(outText, attribute);
+                        WriteAttribute(outText, attribute);
                     }
                 }
             }
             else if (!closing)
             {
-                if (this._attributes != null)
+                if (_attributes != null)
                 {
-                    foreach (HtmlAttribute attribute2 in (IEnumerable<HtmlAttribute>)this._attributes)
+                    foreach (HtmlAttribute attribute2 in (IEnumerable<HtmlAttribute>)_attributes)
                     {
-                        this.WriteAttribute(outText, attribute2);
+                        WriteAttribute(outText, attribute2);
                     }
                 }
-                if (this._ownerdocument.OptionAddDebuggingAttributes)
+                if (_ownerdocument.OptionAddDebuggingAttributes)
                 {
-                    this.WriteAttribute(outText, this._ownerdocument.CreateAttribute("_closed", this.Closed.ToString()));
-                    this.WriteAttribute(outText, this._ownerdocument.CreateAttribute("_children", this.ChildNodes.Count.ToString()));
+                    WriteAttribute(outText, _ownerdocument.CreateAttribute("_closed", Closed.ToString()));
+                    WriteAttribute(outText, _ownerdocument.CreateAttribute("_children", ChildNodes.Count.ToString()));
                     int num = 0;
-                    foreach (HtmlNode node in (IEnumerable<HtmlNode>)this.ChildNodes)
+                    foreach (HtmlNode node in (IEnumerable<HtmlNode>)ChildNodes)
                     {
-                        this.WriteAttribute(outText, this._ownerdocument.CreateAttribute("_child_" + num, node.Name));
+                        WriteAttribute(outText, _ownerdocument.CreateAttribute("_child_" + num, node.Name));
                         num++;
                     }
                 }
             }
-            else if (((this._endnode != null) && (this._endnode._attributes != null)) && (this._endnode != this))
+            else if (((_endnode != null) && (_endnode._attributes != null)) && (_endnode != this))
             {
-                foreach (HtmlAttribute attribute3 in (IEnumerable<HtmlAttribute>)this._endnode._attributes)
+                foreach (HtmlAttribute attribute3 in (IEnumerable<HtmlAttribute>)_endnode._attributes)
                 {
-                    this.WriteAttribute(outText, attribute3);
+                    WriteAttribute(outText, attribute3);
                 }
-                if (this._ownerdocument.OptionAddDebuggingAttributes)
+                if (_ownerdocument.OptionAddDebuggingAttributes)
                 {
-                    this.WriteAttribute(outText, this._ownerdocument.CreateAttribute("_closed", this.Closed.ToString()));
-                    this.WriteAttribute(outText, this._ownerdocument.CreateAttribute("_children", this.ChildNodes.Count.ToString()));
+                    WriteAttribute(outText, _ownerdocument.CreateAttribute("_closed", Closed.ToString()));
+                    WriteAttribute(outText, _ownerdocument.CreateAttribute("_children", ChildNodes.Count.ToString()));
                 }
             }
         }
@@ -973,16 +973,16 @@
         public string WriteContentTo()
         {
             StringWriter outText = new StringWriter();
-            this.WriteContentTo(outText);
+            WriteContentTo(outText);
             outText.Flush();
             return outText.ToString();
         }
 
         public void WriteContentTo(TextWriter outText)
         {
-            if (this._childnodes != null)
+            if (_childnodes != null)
             {
-                foreach (HtmlNode node in (IEnumerable<HtmlNode>)this._childnodes)
+                foreach (HtmlNode node in (IEnumerable<HtmlNode>)_childnodes)
                 {
                     node.WriteTo(outText);
                 }
@@ -993,7 +993,7 @@
         {
             using (StringWriter writer = new StringWriter())
             {
-                this.WriteTo(writer);
+                WriteTo(writer);
                 writer.Flush();
                 return writer.ToString();
             }
@@ -1002,25 +1002,25 @@
         public void WriteTo(TextWriter outText)
         {
             string comment;
-            switch (this._nodetype)
+            switch (_nodetype)
             {
                 case HtmlNodeType.Document:
                     {
-                        if (!this._ownerdocument.OptionOutputAsXml)
+                        if (!_ownerdocument.OptionOutputAsXml)
                         {
                             break;
                         }
-                        outText.Write("<?xml version=\"1.0\" encoding=\"" + this._ownerdocument.GetOutEncoding().BodyName + "\"?>");
-                        if (!this._ownerdocument.DocumentNode.HasChildNodes)
+                        outText.Write("<?xml version=\"1.0\" encoding=\"" + _ownerdocument.GetOutEncoding().BodyName + "\"?>");
+                        if (!_ownerdocument.DocumentNode.HasChildNodes)
                         {
                             break;
                         }
-                        int count = this._ownerdocument.DocumentNode._childnodes.Count;
+                        int count = _ownerdocument.DocumentNode._childnodes.Count;
                         if (count <= 0)
                         {
                             break;
                         }
-                        if (this._ownerdocument.GetXmlDeclaration() != null)
+                        if (_ownerdocument.GetXmlDeclaration() != null)
                         {
                             count--;
                         }
@@ -1028,26 +1028,26 @@
                         {
                             break;
                         }
-                        if (this._ownerdocument.OptionOutputUpperCase)
+                        if (_ownerdocument.OptionOutputUpperCase)
                         {
                             outText.Write("<SPAN>");
-                            this.WriteContentTo(outText);
+                            WriteContentTo(outText);
                             outText.Write("</SPAN>");
                             return;
                         }
                         outText.Write("<span>");
-                        this.WriteContentTo(outText);
+                        WriteContentTo(outText);
                         outText.Write("</span>");
                         return;
                     }
                 case HtmlNodeType.Element:
                     {
-                        string name = this._ownerdocument.OptionOutputUpperCase ? this.Name.ToUpper() : this.Name;
-                        if (this._ownerdocument.OptionOutputOriginalCase)
+                        string name = _ownerdocument.OptionOutputUpperCase ? Name.ToUpper() : Name;
+                        if (_ownerdocument.OptionOutputOriginalCase)
                         {
-                            name = this.OriginalName;
+                            name = OriginalName;
                         }
-                        if (this._ownerdocument.OptionOutputAsXml)
+                        if (_ownerdocument.OptionOutputAsXml)
                         {
                             if (name.Length <= 0)
                             {
@@ -1064,17 +1064,17 @@
                             name = HtmlDocument.GetXmlName(name);
                         }
                         outText.Write("<" + name);
-                        this.WriteAttributes(outText, false);
-                        if (!this.HasChildNodes)
+                        WriteAttributes(outText, false);
+                        if (!HasChildNodes)
                         {
-                            if (IsEmptyElement(this.Name))
+                            if (IsEmptyElement(Name))
                             {
-                                if (this._ownerdocument.OptionWriteEmptyNodes || this._ownerdocument.OptionOutputAsXml)
+                                if (_ownerdocument.OptionWriteEmptyNodes || _ownerdocument.OptionOutputAsXml)
                                 {
                                     outText.Write(" />");
                                     return;
                                 }
-                                if ((this.Name.Length > 0) && (this.Name[0] == '?'))
+                                if ((Name.Length > 0) && (Name[0] == '?'))
                                 {
                                     outText.Write("?");
                                 }
@@ -1086,34 +1086,34 @@
                         }
                         outText.Write(">");
                         bool flag = false;
-                        if (this._ownerdocument.OptionOutputAsXml && IsCDataElement(this.Name))
+                        if (_ownerdocument.OptionOutputAsXml && IsCDataElement(Name))
                         {
                             flag = true;
                             outText.Write("\r\n//<![CDATA[\r\n");
                         }
                         if (flag)
                         {
-                            if (this.HasChildNodes)
+                            if (HasChildNodes)
                             {
-                                this.ChildNodes[0].WriteTo(outText);
+                                ChildNodes[0].WriteTo(outText);
                             }
                             outText.Write("\r\n//]]>//\r\n");
                         }
                         else
                         {
-                            this.WriteContentTo(outText);
+                            WriteContentTo(outText);
                         }
                         outText.Write("</" + name);
-                        if (!this._ownerdocument.OptionOutputAsXml)
+                        if (!_ownerdocument.OptionOutputAsXml)
                         {
-                            this.WriteAttributes(outText, true);
+                            WriteAttributes(outText, true);
                         }
                         outText.Write(">");
                         return;
                     }
                 case HtmlNodeType.Comment:
                     comment = ((HtmlCommentNode)this).Comment;
-                    if (!this._ownerdocument.OptionOutputAsXml)
+                    if (!_ownerdocument.OptionOutputAsXml)
                     {
                         outText.Write(comment);
                         return;
@@ -1123,24 +1123,24 @@
 
                 case HtmlNodeType.Text:
                     comment = ((HtmlTextNode)this).Text;
-                    outText.Write(this._ownerdocument.OptionOutputAsXml ? HtmlDocument.HtmlEncode(comment) : comment);
+                    outText.Write(_ownerdocument.OptionOutputAsXml ? HtmlDocument.HtmlEncode(comment) : comment);
                     return;
 
                 default:
                     return;
             }
-            this.WriteContentTo(outText);
+            WriteContentTo(outText);
         }
 
         public void WriteTo(XmlWriter writer)
         {
-            switch (this._nodetype)
+            switch (_nodetype)
             {
                 case HtmlNodeType.Document:
-                    writer.WriteProcessingInstruction("xml", "version=\"1.0\" encoding=\"" + this._ownerdocument.GetOutEncoding().BodyName + "\"");
-                    if (this.HasChildNodes)
+                    writer.WriteProcessingInstruction("xml", "version=\"1.0\" encoding=\"" + _ownerdocument.GetOutEncoding().BodyName + "\"");
+                    if (HasChildNodes)
                     {
-                        foreach (HtmlNode node in (IEnumerable<HtmlNode>)this.ChildNodes)
+                        foreach (HtmlNode node in (IEnumerable<HtmlNode>)ChildNodes)
                         {
                             node.WriteTo(writer);
                         }
@@ -1149,16 +1149,16 @@
 
                 case HtmlNodeType.Element:
                     {
-                        string localName = this._ownerdocument.OptionOutputUpperCase ? this.Name.ToUpper() : this.Name;
-                        if (this._ownerdocument.OptionOutputOriginalCase)
+                        string localName = _ownerdocument.OptionOutputUpperCase ? Name.ToUpper() : Name;
+                        if (_ownerdocument.OptionOutputOriginalCase)
                         {
-                            localName = this.OriginalName;
+                            localName = OriginalName;
                         }
                         writer.WriteStartElement(localName);
                         WriteAttributes(writer, this);
-                        if (this.HasChildNodes)
+                        if (HasChildNodes)
                         {
-                            foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)this.ChildNodes)
+                            foreach (HtmlNode node2 in (IEnumerable<HtmlNode>)ChildNodes)
                             {
                                 node2.WriteTo(writer);
                             }
@@ -1185,15 +1185,15 @@
         {
             get
             {
-                if (!this.HasAttributes)
+                if (!HasAttributes)
                 {
-                    this._attributes = new HtmlAttributeCollection(this);
+                    _attributes = new HtmlAttributeCollection(this);
                 }
-                return this._attributes;
+                return _attributes;
             }
             internal set
             {
-                this._attributes = value;
+                _attributes = value;
             }
         }
 
@@ -1201,7 +1201,7 @@
         {
             get
             {
-                return (this._endnode != null);
+                return (_endnode != null);
             }
         }
 
@@ -1209,9 +1209,9 @@
         {
             get
             {
-                if (this.HasClosingAttributes)
+                if (HasClosingAttributes)
                 {
-                    return this._endnode.Attributes;
+                    return _endnode.Attributes;
                 }
                 return new HtmlAttributeCollection(this);
             }
@@ -1221,11 +1221,11 @@
         {
             get
             {
-                return (this._childnodes ?? (this._childnodes = new HtmlNodeCollection(this)));
+                return (_childnodes ?? (_childnodes = new HtmlNodeCollection(this)));
             }
             internal set
             {
-                this._childnodes = value;
+                _childnodes = value;
             }
         }
 
@@ -1233,7 +1233,7 @@
         {
             get
             {
-                return this._endnode;
+                return _endnode;
             }
         }
 
@@ -1241,9 +1241,9 @@
         {
             get
             {
-                if (this.HasChildNodes)
+                if (HasChildNodes)
                 {
-                    return this._childnodes[0];
+                    return _childnodes[0];
                 }
                 return null;
             }
@@ -1253,11 +1253,11 @@
         {
             get
             {
-                if (this._attributes == null)
+                if (_attributes == null)
                 {
                     return false;
                 }
-                if (this._attributes.Count <= 0)
+                if (_attributes.Count <= 0)
                 {
                     return false;
                 }
@@ -1269,15 +1269,15 @@
         {
             get
             {
-                if ((this._endnode == null) || (this._endnode == this))
+                if ((_endnode == null) || (_endnode == this))
                 {
                     return false;
                 }
-                if (this._endnode._attributes == null)
+                if (_endnode._attributes == null)
                 {
                     return false;
                 }
-                if (this._endnode._attributes.Count <= 0)
+                if (_endnode._attributes.Count <= 0)
                 {
                     return false;
                 }
@@ -1289,11 +1289,11 @@
         {
             get
             {
-                if (this._childnodes == null)
+                if (_childnodes == null)
                 {
                     return false;
                 }
-                if (this._childnodes.Count <= 0)
+                if (_childnodes.Count <= 0)
                 {
                     return false;
                 }
@@ -1305,15 +1305,15 @@
         {
             get
             {
-                if (this._ownerdocument.Nodesid == null)
+                if (_ownerdocument.Nodesid == null)
                 {
                     throw new Exception(HtmlDocument.HtmlExceptionUseIdAttributeFalse);
                 }
-                return this.GetId();
+                return GetId();
             }
             set
             {
-                if (this._ownerdocument.Nodesid == null)
+                if (_ownerdocument.Nodesid == null)
                 {
                     throw new Exception(HtmlDocument.HtmlExceptionUseIdAttributeFalse);
                 }
@@ -1321,7 +1321,7 @@
                 {
                     throw new ArgumentNullException("value");
                 }
-                this.SetId(value);
+                SetId(value);
             }
         }
 
@@ -1329,28 +1329,28 @@
         {
             get
             {
-                if (this._innerchanged)
+                if (_innerchanged)
                 {
-                    this._innerhtml = this.WriteContentTo();
-                    this._innerchanged = false;
-                    return this._innerhtml;
+                    _innerhtml = WriteContentTo();
+                    _innerchanged = false;
+                    return _innerhtml;
                 }
-                if (this._innerhtml != null)
+                if (_innerhtml != null)
                 {
-                    return this._innerhtml;
+                    return _innerhtml;
                 }
-                if (this._innerstartindex < 0)
+                if (_innerstartindex < 0)
                 {
                     return string.Empty;
                 }
-                return this._ownerdocument.Text.Substring(this._innerstartindex, this._innerlength);
+                return _ownerdocument.Text.Substring(_innerstartindex, _innerlength);
             }
             set
             {
                 HtmlDocument document = new HtmlDocument();
                 document.LoadHtml(value);
-                this.RemoveAllChildren();
-                this.AppendChildren(document.DocumentNode.ChildNodes);
+                RemoveAllChildren();
+                AppendChildren(document.DocumentNode.ChildNodes);
             }
         }
 
@@ -1358,20 +1358,20 @@
         {
             get
             {
-                if (this._nodetype == HtmlNodeType.Text)
+                if (_nodetype == HtmlNodeType.Text)
                 {
                     return ((HtmlTextNode)this).Text;
                 }
-                if (this._nodetype == HtmlNodeType.Comment)
+                if (_nodetype == HtmlNodeType.Comment)
                 {
                     return ((HtmlCommentNode)this).Comment;
                 }
-                if (!this.HasChildNodes)
+                if (!HasChildNodes)
                 {
                     return string.Empty;
                 }
                 string str = null;
-                foreach (HtmlNode node in (IEnumerable<HtmlNode>)this.ChildNodes)
+                foreach (HtmlNode node in (IEnumerable<HtmlNode>)ChildNodes)
                 {
                     str = str + node.InnerText;
                 }
@@ -1383,9 +1383,9 @@
         {
             get
             {
-                if (this.HasChildNodes)
+                if (HasChildNodes)
                 {
-                    return this._childnodes[this._childnodes.Count - 1];
+                    return _childnodes[_childnodes.Count - 1];
                 }
                 return null;
             }
@@ -1395,11 +1395,11 @@
         {
             get
             {
-                return this._line;
+                return _line;
             }
             internal set
             {
-                this._line = value;
+                _line = value;
             }
         }
 
@@ -1407,11 +1407,11 @@
         {
             get
             {
-                return this._lineposition;
+                return _lineposition;
             }
             internal set
             {
-                this._lineposition = value;
+                _lineposition = value;
             }
         }
 
@@ -1419,27 +1419,27 @@
         {
             get
             {
-                if (this._optimizedName == null)
+                if (_optimizedName == null)
                 {
-                    if (this._name == null)
+                    if (_name == null)
                     {
-                        this.Name = this._ownerdocument.Text.Substring(this._namestartindex, this._namelength);
+                        Name = _ownerdocument.Text.Substring(_namestartindex, _namelength);
                     }
-                    if (this._name == null)
+                    if (_name == null)
                     {
-                        this._optimizedName = string.Empty;
+                        _optimizedName = string.Empty;
                     }
                     else
                     {
-                        this._optimizedName = this._name.ToLower();
+                        _optimizedName = _name.ToLower();
                     }
                 }
-                return this._optimizedName;
+                return _optimizedName;
             }
             set
             {
-                this._name = value;
-                this._optimizedName = null;
+                _name = value;
+                _optimizedName = null;
             }
         }
 
@@ -1447,11 +1447,11 @@
         {
             get
             {
-                return this._nextnode;
+                return _nextnode;
             }
             internal set
             {
-                this._nextnode = value;
+                _nextnode = value;
             }
         }
 
@@ -1459,11 +1459,11 @@
         {
             get
             {
-                return this._nodetype;
+                return _nodetype;
             }
             internal set
             {
-                this._nodetype = value;
+                _nodetype = value;
             }
         }
 
@@ -1471,7 +1471,7 @@
         {
             get
             {
-                return this._name;
+                return _name;
             }
         }
 
@@ -1479,21 +1479,21 @@
         {
             get
             {
-                if (this._outerchanged)
+                if (_outerchanged)
                 {
-                    this._outerhtml = this.WriteTo();
-                    this._outerchanged = false;
-                    return this._outerhtml;
+                    _outerhtml = WriteTo();
+                    _outerchanged = false;
+                    return _outerhtml;
                 }
-                if (this._outerhtml != null)
+                if (_outerhtml != null)
                 {
-                    return this._outerhtml;
+                    return _outerhtml;
                 }
-                if (this._outerstartindex < 0)
+                if (_outerstartindex < 0)
                 {
                     return string.Empty;
                 }
-                return this._ownerdocument.Text.Substring(this._outerstartindex, this._outerlength);
+                return _ownerdocument.Text.Substring(_outerstartindex, _outerlength);
             }
         }
 
@@ -1501,11 +1501,11 @@
         {
             get
             {
-                return this._ownerdocument;
+                return _ownerdocument;
             }
             internal set
             {
-                this._ownerdocument = value;
+                _ownerdocument = value;
             }
         }
 
@@ -1513,11 +1513,11 @@
         {
             get
             {
-                return this._parentnode;
+                return _parentnode;
             }
             internal set
             {
-                this._parentnode = value;
+                _parentnode = value;
             }
         }
 
@@ -1525,11 +1525,11 @@
         {
             get
             {
-                return this._prevnode;
+                return _prevnode;
             }
             internal set
             {
-                this._prevnode = value;
+                _prevnode = value;
             }
         }
 
@@ -1537,7 +1537,7 @@
         {
             get
             {
-                return this._streamposition;
+                return _streamposition;
             }
         }
 
@@ -1545,8 +1545,8 @@
         {
             get
             {
-                string str = ((this.ParentNode == null) || (this.ParentNode.NodeType == HtmlNodeType.Document)) ? "/" : (this.ParentNode.XPath + "/");
-                return (str + this.GetRelativeXpath());
+                string str = ((ParentNode == null) || (ParentNode.NodeType == HtmlNodeType.Document)) ? "/" : (ParentNode.XPath + "/");
+                return (str + GetRelativeXpath());
             }
         }
     }

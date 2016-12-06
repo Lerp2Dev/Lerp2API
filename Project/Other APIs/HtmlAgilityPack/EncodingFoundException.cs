@@ -8,14 +8,14 @@
 
         internal EncodingFoundException(System.Text.Encoding encoding)
         {
-            this._encoding = encoding;
+            _encoding = encoding;
         }
 
         internal System.Text.Encoding Encoding
         {
             get
             {
-                return this._encoding;
+                return _encoding;
             }
         }
     }

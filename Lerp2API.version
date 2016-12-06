@@ -1,5 +1,5 @@
 {
     "versionName": "1.1.1 Alpha Release",
     "versionStr": "1.1.1a",
-    "versionChangelog": "Fixed README.\nFixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work."
+    "versionChangelog": "Fixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.\nSome utilities to Array Extensions Helpers."
 }

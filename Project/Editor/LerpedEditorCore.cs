@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Diagnostics;
 using Lerp2API;
+using Lerp2API.Utility;
 using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
 using Debug = Lerp2API.DebugHandler.Debug;
@@ -27,7 +28,7 @@ namespace Lerp2APIEditor
             Path.Combine(mainFolder, "Resources/Images/file.png"),
             Path.Combine(mainFolder, "Resources/Skins/File Browser.guiskin")
         },
-                                  repFiles = new string[] {
+                                 repFiles = new string[] {
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Resources/Images/folder.png",
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Resources/Images/folder.png",
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Resources/Skins/File%20Browser.guiskin"
@@ -35,6 +36,8 @@ namespace Lerp2APIEditor
         private static LerpedThread<FileSystemWatcher> m_Watcher;
         internal const double threadSeek = .1f; //Decreasing this will make that the Watcher works more accurately
         internal static double nextSeek = 0;
+
+        internal static WWWHandler wh;
 
         public static bool availablePaths
         {
@@ -68,7 +71,7 @@ namespace Lerp2APIEditor
                 return;
             if (!ae && LerpedUpdater.noConnection)
             {
-                Debug.LogError("No conection available to download !");
+                Debug.LogError("No conection available to download!");
                 return;
             }
             for(int i = 0; i < resourceFiles.Length; ++i)
@@ -78,9 +81,10 @@ namespace Lerp2APIEditor
                     if (!Directory.Exists(fp))
                         Directory.CreateDirectory(fp);
                     WWW www = new WWW(repFiles[i]);
-                    WWWHandler.Add(www);
-                    WWWHandler.Start(() => {
-                        File.WriteAllBytes(resourceFiles[i], www.bytes);
+                    wh = new WWWHandler();
+                    wh.Add(www);
+                    wh.Start<WWW>(false, (x) => {
+                        File.WriteAllBytes(resourceFiles[i], x.bytes);
                     });
                 }
         }
@@ -95,16 +99,16 @@ namespace Lerp2APIEditor
                 return;
             }
             string bPath = LerpedCore.GetString(buildPath);
-            m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite, true));
+            m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
 
             m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () => {
                 LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
                 lp.iInit(lp, true);
             });
 
-            //m_Watcher.Created += new FileSystemEventHandler(); //Add to the solution before compile
-            //m_Watcher.Renamed += new FileSystemEventHandler(); //Rename to the solution before compile
-            //m_Watcher.Deleted += new FileSystemEventHandler(); //Remove to the solution before compile
+            //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
+            //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
+            //m_Watcher.Deleted += new FileSystemEventHandler(); //I have to remove files to the raw solution before compile
 
             m_Watcher.StartFSW();
         }

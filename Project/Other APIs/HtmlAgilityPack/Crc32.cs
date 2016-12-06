@@ -27,16 +27,16 @@
 
         internal uint AddToCRC32(int c)
         {
-            return this.AddToCRC32((ushort)c);
+            return AddToCRC32((ushort)c);
         }
 
         internal uint AddToCRC32(ushort c)
         {
             byte octet = (byte)(c & 0xff);
             byte num2 = (byte)(c >> 8);
-            this._crc32 = UPDC32(num2, this._crc32);
-            this._crc32 = UPDC32(octet, this._crc32);
-            return ~this._crc32;
+            _crc32 = UPDC32(num2, _crc32);
+            _crc32 = UPDC32(octet, _crc32);
+            return ~_crc32;
         }
 
         public static uint CRC32Bytes(byte[] bytes)
@@ -76,11 +76,11 @@
         {
             get
             {
-                return this._crc32;
+                return _crc32;
             }
             set
             {
-                this._crc32 = value;
+                _crc32 = value;
             }
         }
     }

@@ -7,7 +7,7 @@
     {
         public override void Write(string Message)
         {
-            this.Write(Message, "");
+            Write(Message, "");
         }
 
         public override void Write(string Message, string Category)
@@ -17,12 +17,12 @@
 
         public override void WriteLine(string Message)
         {
-            this.Write(Message + "\n");
+            Write(Message + "\n");
         }
 
         public override void WriteLine(string Message, string Category)
         {
-            this.Write(Message + "\n", Category);
+            Write(Message + "\n", Category);
         }
     }
 }

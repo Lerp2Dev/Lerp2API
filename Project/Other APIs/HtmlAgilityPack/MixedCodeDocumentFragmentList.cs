@@ -11,7 +11,7 @@
 
         internal MixedCodeDocumentFragmentList(MixedCodeDocument doc)
         {
-            this._doc = doc;
+            _doc = doc;
         }
 
         public void Append(MixedCodeDocumentFragment newFragment)
@@ -20,17 +20,17 @@
             {
                 throw new ArgumentNullException("newFragment");
             }
-            this._items.Add(newFragment);
+            _items.Add(newFragment);
         }
 
         internal void Clear()
         {
-            this._items.Clear();
+            _items.Clear();
         }
 
         public MixedCodeDocumentFragmentEnumerator GetEnumerator()
         {
-            return new MixedCodeDocumentFragmentEnumerator(this._items);
+            return new MixedCodeDocumentFragmentEnumerator(_items);
         }
 
         internal int GetFragmentIndex(MixedCodeDocumentFragment fragment)
@@ -39,9 +39,9 @@
             {
                 throw new ArgumentNullException("fragment");
             }
-            for (int i = 0; i < this._items.Count; i++)
+            for (int i = 0; i < _items.Count; i++)
             {
-                if (this._items[i] == fragment)
+                if (_items[i] == fragment)
                 {
                     return i;
                 }
@@ -55,7 +55,7 @@
             {
                 throw new ArgumentNullException("newFragment");
             }
-            this._items.Insert(0, newFragment);
+            _items.Insert(0, newFragment);
         }
 
         public void Remove(MixedCodeDocumentFragment fragment)
@@ -64,34 +64,34 @@
             {
                 throw new ArgumentNullException("fragment");
             }
-            int fragmentIndex = this.GetFragmentIndex(fragment);
+            int fragmentIndex = GetFragmentIndex(fragment);
             if (fragmentIndex == -1)
             {
                 throw new IndexOutOfRangeException();
             }
-            this.RemoveAt(fragmentIndex);
+            RemoveAt(fragmentIndex);
         }
 
         public void RemoveAll()
         {
-            this._items.Clear();
+            _items.Clear();
         }
 
         public void RemoveAt(int index)
         {
-            this._items.RemoveAt(index);
+            _items.RemoveAt(index);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         public int Count
         {
             get
             {
-                return this._items.Count;
+                return _items.Count;
             }
         }
 
@@ -99,7 +99,7 @@
         {
             get
             {
-                return this._doc;
+                return _doc;
             }
         }
 
@@ -107,7 +107,7 @@
         {
             get
             {
-                return this._items[index];
+                return _items[index];
             }
         }
 
@@ -118,26 +118,26 @@
 
             internal MixedCodeDocumentFragmentEnumerator(IList<MixedCodeDocumentFragment> items)
             {
-                this._items = items;
-                this._index = -1;
+                _items = items;
+                _index = -1;
             }
 
             public bool MoveNext()
             {
-                this._index++;
-                return (this._index < this._items.Count);
+                _index++;
+                return (_index < _items.Count);
             }
 
             public void Reset()
             {
-                this._index = -1;
+                _index = -1;
             }
 
             public MixedCodeDocumentFragment Current
             {
                 get
                 {
-                    return this._items[this._index];
+                    return _items[_index];
                 }
             }
 
@@ -145,7 +145,7 @@
             {
                 get
                 {
-                    return this.Current;
+                    return Current;
                 }
             }
         }

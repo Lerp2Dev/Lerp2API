@@ -11,19 +11,19 @@
 
         internal HtmlParseError(HtmlParseErrorCode code, int line, int linePosition, int streamPosition, string sourceText, string reason)
         {
-            this._code = code;
-            this._line = line;
-            this._linePosition = linePosition;
-            this._streamPosition = streamPosition;
-            this._sourceText = sourceText;
-            this._reason = reason;
+            _code = code;
+            _line = line;
+            _linePosition = linePosition;
+            _streamPosition = streamPosition;
+            _sourceText = sourceText;
+            _reason = reason;
         }
 
         public HtmlParseErrorCode Code
         {
             get
             {
-                return this._code;
+                return _code;
             }
         }
 
@@ -31,7 +31,7 @@
         {
             get
             {
-                return this._line;
+                return _line;
             }
         }
 
@@ -39,7 +39,7 @@
         {
             get
             {
-                return this._linePosition;
+                return _linePosition;
             }
         }
 
@@ -47,7 +47,7 @@
         {
             get
             {
-                return this._reason;
+                return _reason;
             }
         }
 
@@ -55,7 +55,7 @@
         {
             get
             {
-                return this._sourceText;
+                return _sourceText;
             }
         }
 
@@ -63,7 +63,7 @@
         {
             get
             {
-                return this._streamPosition;
+                return _streamPosition;
             }
         }
     }

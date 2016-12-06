@@ -12,17 +12,17 @@
 
         internal HtmlAttributeCollection(HtmlNode ownernode)
         {
-            this._ownernode = ownernode;
+            _ownernode = ownernode;
         }
 
         public void Add(HtmlAttribute item)
         {
-            this.Append(item);
+            Append(item);
         }
 
         public void Add(string name, string value)
         {
-            this.Append(name, value);
+            Append(name, value);
         }
 
         public HtmlAttribute Append(HtmlAttribute newAttribute)
@@ -31,54 +31,54 @@
             {
                 throw new ArgumentNullException("newAttribute");
             }
-            this.Hashitems[newAttribute.Name] = newAttribute;
-            newAttribute._ownernode = this._ownernode;
-            this.items.Add(newAttribute);
-            this._ownernode._innerchanged = true;
-            this._ownernode._outerchanged = true;
+            Hashitems[newAttribute.Name] = newAttribute;
+            newAttribute._ownernode = _ownernode;
+            items.Add(newAttribute);
+            _ownernode._innerchanged = true;
+            _ownernode._outerchanged = true;
             return newAttribute;
         }
 
         public HtmlAttribute Append(string name)
         {
-            HtmlAttribute newAttribute = this._ownernode._ownerdocument.CreateAttribute(name);
-            return this.Append(newAttribute);
+            HtmlAttribute newAttribute = _ownernode._ownerdocument.CreateAttribute(name);
+            return Append(newAttribute);
         }
 
         public HtmlAttribute Append(string name, string value)
         {
-            HtmlAttribute newAttribute = this._ownernode._ownerdocument.CreateAttribute(name, value);
-            return this.Append(newAttribute);
+            HtmlAttribute newAttribute = _ownernode._ownerdocument.CreateAttribute(name, value);
+            return Append(newAttribute);
         }
 
         public IEnumerable<HtmlAttribute> AttributesWithName(string attributeName)
         {
             attributeName = attributeName.ToLower();
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                if (this.items[i].Name.Equals(attributeName))
+                if (items[i].Name.Equals(attributeName))
                 {
-                    yield return this.items[i];
+                    yield return items[i];
                 }
             }
         }
 
         internal void Clear()
         {
-            this.Hashitems.Clear();
-            this.items.Clear();
+            Hashitems.Clear();
+            items.Clear();
         }
 
         public bool Contains(HtmlAttribute item)
         {
-            return this.items.Contains(item);
+            return items.Contains(item);
         }
 
         public bool Contains(string name)
         {
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                if (this.items[i].Name.Equals(name.ToLower()))
+                if (items[i].Name.Equals(name.ToLower()))
                 {
                     return true;
                 }
@@ -88,7 +88,7 @@
 
         public void CopyTo(HtmlAttribute[] array, int arrayIndex)
         {
-            this.items.CopyTo(array, arrayIndex);
+            items.CopyTo(array, arrayIndex);
         }
 
         internal int GetAttributeIndex(HtmlAttribute attribute)
@@ -97,9 +97,9 @@
             {
                 throw new ArgumentNullException("attribute");
             }
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                if (this.items[i] == attribute)
+                if (items[i] == attribute)
                 {
                     return i;
                 }
@@ -114,9 +114,9 @@
                 throw new ArgumentNullException("name");
             }
             string str = name.ToLower();
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                if (this.items[i].Name == str)
+                if (items[i].Name == str)
                 {
                     return i;
                 }
@@ -126,7 +126,7 @@
 
         public int IndexOf(HtmlAttribute item)
         {
-            return this.items.IndexOf(item);
+            return items.IndexOf(item);
         }
 
         public void Insert(int index, HtmlAttribute item)
@@ -135,22 +135,22 @@
             {
                 throw new ArgumentNullException("item");
             }
-            this.Hashitems[item.Name] = item;
-            item._ownernode = this._ownernode;
-            this.items.Insert(index, item);
-            this._ownernode._innerchanged = true;
-            this._ownernode._outerchanged = true;
+            Hashitems[item.Name] = item;
+            item._ownernode = _ownernode;
+            items.Insert(index, item);
+            _ownernode._innerchanged = true;
+            _ownernode._outerchanged = true;
         }
 
         public HtmlAttribute Prepend(HtmlAttribute newAttribute)
         {
-            this.Insert(0, newAttribute);
+            Insert(0, newAttribute);
             return newAttribute;
         }
 
         public void Remove()
         {
-            foreach (HtmlAttribute attribute in this.items)
+            foreach (HtmlAttribute attribute in items)
             {
                 attribute.Remove();
             }
@@ -162,12 +162,12 @@
             {
                 throw new ArgumentNullException("attribute");
             }
-            int attributeIndex = this.GetAttributeIndex(attribute);
+            int attributeIndex = GetAttributeIndex(attribute);
             if (attributeIndex == -1)
             {
                 throw new IndexOutOfRangeException();
             }
-            this.RemoveAt(attributeIndex);
+            RemoveAt(attributeIndex);
         }
 
         public void Remove(string name)
@@ -177,58 +177,58 @@
                 throw new ArgumentNullException("name");
             }
             string str = name.ToLower();
-            for (int i = 0; i < this.items.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                HtmlAttribute attribute = this.items[i];
+                HtmlAttribute attribute = items[i];
                 if (attribute.Name == str)
                 {
-                    this.RemoveAt(i);
+                    RemoveAt(i);
                 }
             }
         }
 
         public void RemoveAll()
         {
-            this.Hashitems.Clear();
-            this.items.Clear();
-            this._ownernode._innerchanged = true;
-            this._ownernode._outerchanged = true;
+            Hashitems.Clear();
+            items.Clear();
+            _ownernode._innerchanged = true;
+            _ownernode._outerchanged = true;
         }
 
         public void RemoveAt(int index)
         {
-            HtmlAttribute attribute = this.items[index];
-            this.Hashitems.Remove(attribute.Name);
-            this.items.RemoveAt(index);
-            this._ownernode._innerchanged = true;
-            this._ownernode._outerchanged = true;
+            HtmlAttribute attribute = items[index];
+            Hashitems.Remove(attribute.Name);
+            items.RemoveAt(index);
+            _ownernode._innerchanged = true;
+            _ownernode._outerchanged = true;
         }
 
         void ICollection<HtmlAttribute>.Clear()
         {
-            this.items.Clear();
+            items.Clear();
         }
 
         bool ICollection<HtmlAttribute>.Remove(HtmlAttribute item)
         {
-            return this.items.Remove(item);
+            return items.Remove(item);
         }
 
         IEnumerator<HtmlAttribute> IEnumerable<HtmlAttribute>.GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.items.GetEnumerator();
+            return items.GetEnumerator();
         }
 
         public int Count
         {
             get
             {
-                return this.items.Count;
+                return items.Count;
             }
         }
 
@@ -249,7 +249,7 @@
                 {
                     throw new ArgumentNullException("name");
                 }
-                if (!this.Hashitems.TryGetValue(name.ToLower(), out attribute))
+                if (!Hashitems.TryGetValue(name.ToLower(), out attribute))
                 {
                     return null;
                 }
@@ -257,7 +257,7 @@
             }
             set
             {
-                this.Append(value);
+                Append(value);
             }
         }
 
@@ -265,11 +265,11 @@
         {
             get
             {
-                return this.items[index];
+                return items[index];
             }
             set
             {
-                this.items[index] = value;
+                items[index] = value;
             }
         }
     }

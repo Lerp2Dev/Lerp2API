@@ -1,6 +1,5 @@
 ﻿namespace HtmlAgilityPack
 {
-    using System.Net;
     using System.Security;
     using System.Security.Permissions;
 

@@ -12,15 +12,15 @@
         {
             get
             {
-                if (this._comment == null)
+                if (_comment == null)
                 {
                     return base.InnerHtml;
                 }
-                return this._comment;
+                return _comment;
             }
             set
             {
-                this._comment = value;
+                _comment = value;
             }
         }
 
@@ -28,15 +28,15 @@
         {
             get
             {
-                if (this._comment == null)
+                if (_comment == null)
                 {
                     return base.InnerHtml;
                 }
-                return this._comment;
+                return _comment;
             }
             set
             {
-                this._comment = value;
+                _comment = value;
             }
         }
 
@@ -44,11 +44,11 @@
         {
             get
             {
-                if (this._comment == null)
+                if (_comment == null)
                 {
                     return base.OuterHtml;
                 }
-                return ("<!--" + this._comment + "-->");
+                return ("<!--" + _comment + "-->");
             }
         }
     }

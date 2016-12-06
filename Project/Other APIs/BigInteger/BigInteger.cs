@@ -483,7 +483,7 @@ namespace ScottGarland
                 result = -result;
             }
 
-            this.m_digits = result.m_digits;
+            m_digits = result.m_digits;
         }
 
         /// <summary>
@@ -494,7 +494,7 @@ namespace ScottGarland
         private BigInteger(DigitsArray digits)
         {
             digits.ResetDataUsed();
-            this.m_digits = digits;
+            m_digits = digits;
         }
 
         #endregion Constructors
@@ -1396,14 +1396,14 @@ namespace ScottGarland
             }
 
             BigInteger c = (BigInteger)obj;
-            if (this.m_digits.DataUsed != c.m_digits.DataUsed)
+            if (m_digits.DataUsed != c.m_digits.DataUsed)
             {
                 return false;
             }
 
-            for (int idx = 0; idx < this.m_digits.DataUsed; idx++)
+            for (int idx = 0; idx < m_digits.DataUsed; idx++)
             {
-                if (this.m_digits[idx] != c.m_digits[idx])
+                if (m_digits[idx] != c.m_digits[idx])
                 {
                     return false;
                 }
@@ -1418,7 +1418,7 @@ namespace ScottGarland
         /// <seealso cref="System.Object">System.Object</seealso>
         public override int GetHashCode()
         {
-            return this.m_digits.GetHashCode();
+            return m_digits.GetHashCode();
         }
 
         /// <summary>

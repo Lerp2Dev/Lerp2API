@@ -17,53 +17,53 @@
 
         internal HtmlNodeNavigator()
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            Reset();
         }
 
         private HtmlNodeNavigator(HtmlNodeNavigator nav)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
             if (nav == null)
             {
                 throw new ArgumentNullException("nav");
             }
-            this._doc = nav._doc;
-            this._currentnode = nav._currentnode;
-            this._attindex = nav._attindex;
-            this._nametable = nav._nametable;
+            _doc = nav._doc;
+            _currentnode = nav._currentnode;
+            _attindex = nav._attindex;
+            _nametable = nav._nametable;
         }
 
         public HtmlNodeNavigator(Stream stream)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(stream);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(stream);
+            Reset();
         }
 
         public HtmlNodeNavigator(TextReader reader)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(reader);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(reader);
+            Reset();
         }
 
         public HtmlNodeNavigator(string path)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(path);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(path);
+            Reset();
         }
 
         internal HtmlNodeNavigator(HtmlDocument doc, HtmlNode currentNode)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
             if (currentNode == null)
             {
                 throw new ArgumentNullException("currentNode");
@@ -72,73 +72,73 @@
             {
                 throw new ArgumentException(HtmlDocument.HtmlExceptionRefNotChild);
             }
-            this._doc = doc;
-            this.Reset();
-            this._currentnode = currentNode;
+            _doc = doc;
+            Reset();
+            _currentnode = currentNode;
         }
 
         public HtmlNodeNavigator(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(stream, detectEncodingFromByteOrderMarks);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(stream, detectEncodingFromByteOrderMarks);
+            Reset();
         }
 
         public HtmlNodeNavigator(Stream stream, Encoding encoding)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(stream, encoding);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(stream, encoding);
+            Reset();
         }
 
         public HtmlNodeNavigator(string path, bool detectEncodingFromByteOrderMarks)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(path, detectEncodingFromByteOrderMarks);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(path, detectEncodingFromByteOrderMarks);
+            Reset();
         }
 
         public HtmlNodeNavigator(string path, Encoding encoding)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(path, encoding);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(path, encoding);
+            Reset();
         }
 
         public HtmlNodeNavigator(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(stream, encoding, detectEncodingFromByteOrderMarks);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(stream, encoding, detectEncodingFromByteOrderMarks);
+            Reset();
         }
 
         public HtmlNodeNavigator(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(path, encoding, detectEncodingFromByteOrderMarks);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(path, encoding, detectEncodingFromByteOrderMarks);
+            Reset();
         }
 
         public HtmlNodeNavigator(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(stream, encoding, detectEncodingFromByteOrderMarks, buffersize);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(stream, encoding, detectEncodingFromByteOrderMarks, buffersize);
+            Reset();
         }
 
         public HtmlNodeNavigator(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
-            this._doc = new HtmlDocument();
-            this._nametable = new HtmlNameTable();
-            this._doc.Load(path, encoding, detectEncodingFromByteOrderMarks, buffersize);
-            this.Reset();
+            _doc = new HtmlDocument();
+            _nametable = new HtmlNameTable();
+            _doc.Load(path, encoding, detectEncodingFromByteOrderMarks, buffersize);
+            Reset();
         }
 
         public override XPathNavigator Clone()
@@ -148,7 +148,7 @@
 
         public override string GetAttribute(string localName, string namespaceURI)
         {
-            HtmlAttribute attribute = this._currentnode.Attributes[localName];
+            HtmlAttribute attribute = _currentnode.Attributes[localName];
             if (attribute == null)
             {
                 return null;
@@ -165,37 +165,37 @@
         internal void InternalTrace(object traceValue)
         {
             string outerHtml;
-            if (!this.Trace)
+            if (!Trace)
             {
                 return;
             }
             StackFrame frame = new StackFrame(1, true);
             string name = frame.GetMethod().Name;
-            string str2 = (this._currentnode == null) ? "(null)" : this._currentnode.Name;
-            if (this._currentnode == null)
+            string str2 = (_currentnode == null) ? "(null)" : _currentnode.Name;
+            if (_currentnode == null)
             {
                 outerHtml = "(null)";
             }
             else
             {
-                switch (this._currentnode.NodeType)
+                switch (_currentnode.NodeType)
                 {
                     case HtmlNodeType.Document:
                         outerHtml = "";
                         goto Label_00AE;
 
                     case HtmlNodeType.Comment:
-                        outerHtml = ((HtmlCommentNode)this._currentnode).Comment;
+                        outerHtml = ((HtmlCommentNode)_currentnode).Comment;
                         goto Label_00AE;
 
                     case HtmlNodeType.Text:
-                        outerHtml = ((HtmlTextNode)this._currentnode).Text;
+                        outerHtml = ((HtmlTextNode)_currentnode).Text;
                         goto Label_00AE;
                 }
-                outerHtml = this._currentnode.CloneNode(false).OuterHtml;
+                outerHtml = _currentnode.CloneNode(false).OuterHtml;
             }
             Label_00AE:;
-            HtmlAgilityPack.Trace.WriteLine(string.Format("oid={0},n={1},a={2},v={3},{4}", new object[] { this.GetHashCode(), str2, this._attindex, outerHtml, traceValue }), "N!" + name);
+            HtmlAgilityPack.Trace.WriteLine(string.Format("oid={0},n={1},a={2},v={3},{4}", new object[] { GetHashCode(), str2, _attindex, outerHtml, traceValue }), "N!" + name);
         }
 
         public override bool IsSamePosition(XPathNavigator other)
@@ -205,16 +205,16 @@
             {
                 return false;
             }
-            return (navigator._currentnode == this._currentnode);
+            return (navigator._currentnode == _currentnode);
         }
 
         public override bool MoveTo(XPathNavigator other)
         {
             HtmlNodeNavigator navigator = other as HtmlNodeNavigator;
-            if ((navigator != null) && (navigator._doc == this._doc))
+            if ((navigator != null) && (navigator._doc == _doc))
             {
-                this._currentnode = navigator._currentnode;
-                this._attindex = navigator._attindex;
+                _currentnode = navigator._currentnode;
+                _attindex = navigator._attindex;
                 return true;
             }
             return false;
@@ -222,46 +222,46 @@
 
         public override bool MoveToAttribute(string localName, string namespaceURI)
         {
-            int attributeIndex = this._currentnode.Attributes.GetAttributeIndex(localName);
+            int attributeIndex = _currentnode.Attributes.GetAttributeIndex(localName);
             if (attributeIndex == -1)
             {
                 return false;
             }
-            this._attindex = attributeIndex;
+            _attindex = attributeIndex;
             return true;
         }
 
         public override bool MoveToFirst()
         {
-            if (this._currentnode.ParentNode == null)
+            if (_currentnode.ParentNode == null)
             {
                 return false;
             }
-            if (this._currentnode.ParentNode.FirstChild == null)
+            if (_currentnode.ParentNode.FirstChild == null)
             {
                 return false;
             }
-            this._currentnode = this._currentnode.ParentNode.FirstChild;
+            _currentnode = _currentnode.ParentNode.FirstChild;
             return true;
         }
 
         public override bool MoveToFirstAttribute()
         {
-            if (!this.HasAttributes)
+            if (!HasAttributes)
             {
                 return false;
             }
-            this._attindex = 0;
+            _attindex = 0;
             return true;
         }
 
         public override bool MoveToFirstChild()
         {
-            if (!this._currentnode.HasChildNodes)
+            if (!_currentnode.HasChildNodes)
             {
                 return false;
             }
-            this._currentnode = this._currentnode.ChildNodes[0];
+            _currentnode = _currentnode.ChildNodes[0];
             return true;
         }
 
@@ -272,12 +272,12 @@
 
         public override bool MoveToId(string id)
         {
-            HtmlNode elementbyId = this._doc.GetElementbyId(id);
+            HtmlNode elementbyId = _doc.GetElementbyId(id);
             if (elementbyId == null)
             {
                 return false;
             }
-            this._currentnode = elementbyId;
+            _currentnode = elementbyId;
             return true;
         }
 
@@ -288,21 +288,21 @@
 
         public override bool MoveToNext()
         {
-            if (this._currentnode.NextSibling == null)
+            if (_currentnode.NextSibling == null)
             {
                 return false;
             }
-            this._currentnode = this._currentnode.NextSibling;
+            _currentnode = _currentnode.NextSibling;
             return true;
         }
 
         public override bool MoveToNextAttribute()
         {
-            if (this._attindex >= (this._currentnode.Attributes.Count - 1))
+            if (_attindex >= (_currentnode.Attributes.Count - 1))
             {
                 return false;
             }
-            this._attindex++;
+            _attindex++;
             return true;
         }
 
@@ -313,40 +313,40 @@
 
         public override bool MoveToParent()
         {
-            if (this._currentnode.ParentNode == null)
+            if (_currentnode.ParentNode == null)
             {
                 return false;
             }
-            this._currentnode = this._currentnode.ParentNode;
+            _currentnode = _currentnode.ParentNode;
             return true;
         }
 
         public override bool MoveToPrevious()
         {
-            if (this._currentnode.PreviousSibling == null)
+            if (_currentnode.PreviousSibling == null)
             {
                 return false;
             }
-            this._currentnode = this._currentnode.PreviousSibling;
+            _currentnode = _currentnode.PreviousSibling;
             return true;
         }
 
         public override void MoveToRoot()
         {
-            this._currentnode = this._doc.DocumentNode;
+            _currentnode = _doc.DocumentNode;
         }
 
         private void Reset()
         {
-            this._currentnode = this._doc.DocumentNode;
-            this._attindex = -1;
+            _currentnode = _doc.DocumentNode;
+            _attindex = -1;
         }
 
         public override string BaseURI
         {
             get
             {
-                return this._nametable.GetOrAdd(string.Empty);
+                return _nametable.GetOrAdd(string.Empty);
             }
         }
 
@@ -354,7 +354,7 @@
         {
             get
             {
-                return this._doc;
+                return _doc;
             }
         }
 
@@ -362,7 +362,7 @@
         {
             get
             {
-                return this._currentnode;
+                return _currentnode;
             }
         }
 
@@ -370,7 +370,7 @@
         {
             get
             {
-                return (this._currentnode.Attributes.Count > 0);
+                return (_currentnode.Attributes.Count > 0);
             }
         }
 
@@ -378,7 +378,7 @@
         {
             get
             {
-                return (this._currentnode.ChildNodes.Count > 0);
+                return (_currentnode.ChildNodes.Count > 0);
             }
         }
 
@@ -386,7 +386,7 @@
         {
             get
             {
-                return !this.HasChildren;
+                return !HasChildren;
             }
         }
 
@@ -394,11 +394,11 @@
         {
             get
             {
-                if (this._attindex != -1)
+                if (_attindex != -1)
                 {
-                    return this._nametable.GetOrAdd(this._currentnode.Attributes[this._attindex].Name);
+                    return _nametable.GetOrAdd(_currentnode.Attributes[_attindex].Name);
                 }
-                return this._nametable.GetOrAdd(this._currentnode.Name);
+                return _nametable.GetOrAdd(_currentnode.Name);
             }
         }
 
@@ -406,7 +406,7 @@
         {
             get
             {
-                return this._nametable.GetOrAdd(this._currentnode.Name);
+                return _nametable.GetOrAdd(_currentnode.Name);
             }
         }
 
@@ -414,7 +414,7 @@
         {
             get
             {
-                return this._nametable.GetOrAdd(string.Empty);
+                return _nametable.GetOrAdd(string.Empty);
             }
         }
 
@@ -422,7 +422,7 @@
         {
             get
             {
-                return this._nametable;
+                return _nametable;
             }
         }
 
@@ -430,13 +430,13 @@
         {
             get
             {
-                switch (this._currentnode.NodeType)
+                switch (_currentnode.NodeType)
                 {
                     case HtmlNodeType.Document:
                         return XPathNodeType.Root;
 
                     case HtmlNodeType.Element:
-                        if (this._attindex == -1)
+                        if (_attindex == -1)
                         {
                             return XPathNodeType.Element;
                         }
@@ -448,7 +448,7 @@
                     case HtmlNodeType.Text:
                         return XPathNodeType.Text;
                 }
-                throw new NotImplementedException("Internal error: Unhandled HtmlNodeType: " + this._currentnode.NodeType);
+                throw new NotImplementedException("Internal error: Unhandled HtmlNodeType: " + _currentnode.NodeType);
             }
         }
 
@@ -456,7 +456,7 @@
         {
             get
             {
-                return this._nametable.GetOrAdd(string.Empty);
+                return _nametable.GetOrAdd(string.Empty);
             }
         }
 
@@ -464,25 +464,25 @@
         {
             get
             {
-                switch (this._currentnode.NodeType)
+                switch (_currentnode.NodeType)
                 {
                     case HtmlNodeType.Document:
                         return "";
 
                     case HtmlNodeType.Element:
-                        if (this._attindex == -1)
+                        if (_attindex == -1)
                         {
-                            return this._currentnode.InnerText;
+                            return _currentnode.InnerText;
                         }
-                        return this._currentnode.Attributes[this._attindex].Value;
+                        return _currentnode.Attributes[_attindex].Value;
 
                     case HtmlNodeType.Comment:
-                        return ((HtmlCommentNode)this._currentnode).Comment;
+                        return ((HtmlCommentNode)_currentnode).Comment;
 
                     case HtmlNodeType.Text:
-                        return ((HtmlTextNode)this._currentnode).Text;
+                        return ((HtmlTextNode)_currentnode).Text;
                 }
-                throw new NotImplementedException("Internal error: Unhandled HtmlNodeType: " + this._currentnode.NodeType);
+                throw new NotImplementedException("Internal error: Unhandled HtmlNodeType: " + _currentnode.NodeType);
             }
         }
 
@@ -490,7 +490,7 @@
         {
             get
             {
-                return this._nametable.GetOrAdd(string.Empty);
+                return _nametable.GetOrAdd(string.Empty);
             }
         }
     }

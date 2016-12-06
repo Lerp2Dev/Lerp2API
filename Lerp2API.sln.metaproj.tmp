@@ -27,7 +27,7 @@
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
   <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -38,7 +38,7 @@
       <Content>
         <SolutionConfiguration xmlns="">
   <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -48,7 +48,7 @@
       <Content>
         <SolutionConfiguration xmlns="">
   <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -57,7 +57,7 @@
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
   <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Editor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>

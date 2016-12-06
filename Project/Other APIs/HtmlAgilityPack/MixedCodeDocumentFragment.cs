@@ -12,34 +12,34 @@
 
         internal MixedCodeDocumentFragment(MixedCodeDocument doc, MixedCodeDocumentFragmentType type)
         {
-            this.Doc = doc;
-            this._type = type;
+            Doc = doc;
+            _type = type;
             switch (type)
             {
                 case MixedCodeDocumentFragmentType.Code:
-                    this.Doc._codefragments.Append(this);
+                    Doc._codefragments.Append(this);
                     break;
 
                 case MixedCodeDocumentFragmentType.Text:
-                    this.Doc._textfragments.Append(this);
+                    Doc._textfragments.Append(this);
                     break;
             }
-            this.Doc._fragments.Append(this);
+            Doc._fragments.Append(this);
         }
 
         public string FragmentText
         {
             get
             {
-                if (this._fragmentText == null)
+                if (_fragmentText == null)
                 {
-                    this._fragmentText = this.Doc._text.Substring(this.Index, this.Length);
+                    _fragmentText = Doc._text.Substring(Index, Length);
                 }
-                return this.FragmentText;
+                return FragmentText;
             }
             internal set
             {
-                this._fragmentText = value;
+                _fragmentText = value;
             }
         }
 
@@ -47,7 +47,7 @@
         {
             get
             {
-                return this._type;
+                return _type;
             }
         }
 
@@ -55,11 +55,11 @@
         {
             get
             {
-                return this._line;
+                return _line;
             }
             internal set
             {
-                this._line = value;
+                _line = value;
             }
         }
 
@@ -67,7 +67,7 @@
         {
             get
             {
-                return this._lineposition;
+                return _lineposition;
             }
         }
 
@@ -75,7 +75,7 @@
         {
             get
             {
-                return this.Index;
+                return Index;
             }
         }
     }

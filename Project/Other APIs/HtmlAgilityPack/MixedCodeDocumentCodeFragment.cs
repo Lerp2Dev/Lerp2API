@@ -12,19 +12,19 @@
         {
             get
             {
-                if (this._code == null)
+                if (_code == null)
                 {
-                    this._code = base.FragmentText.Substring(base.Doc.TokenCodeStart.Length, ((base.FragmentText.Length - base.Doc.TokenCodeEnd.Length) - base.Doc.TokenCodeStart.Length) - 1).Trim();
-                    if (this._code.StartsWith("="))
+                    _code = base.FragmentText.Substring(base.Doc.TokenCodeStart.Length, ((base.FragmentText.Length - base.Doc.TokenCodeEnd.Length) - base.Doc.TokenCodeStart.Length) - 1).Trim();
+                    if (_code.StartsWith("="))
                     {
-                        this._code = base.Doc.TokenResponseWrite + this._code.Substring(1, this._code.Length - 1);
+                        _code = base.Doc.TokenResponseWrite + _code.Substring(1, _code.Length - 1);
                     }
                 }
-                return this._code;
+                return _code;
             }
             set
             {
-                this._code = value;
+                _code = value;
             }
         }
     }

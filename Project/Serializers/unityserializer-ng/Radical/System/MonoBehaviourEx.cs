@@ -34,10 +34,10 @@ public class MonoBehaviourEx : MonoBehaviour
     /// </param>
     public new RadicalRoutine StartCoroutine(string func)
     {
-        var m = this.GetType().GetMethod(func, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+        var m = GetType().GetMethod(func, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
         if (m.ReturnType == typeof(IEnumerator))
         {
-            return this.StartCoroutine((IEnumerator)m.Invoke(this, null));
+            return StartCoroutine((IEnumerator)m.Invoke(this, null));
         }
         return null;
     }

@@ -25,14 +25,14 @@
 
         public MixedCodeDocument()
         {
-            this._codefragments = new MixedCodeDocumentFragmentList(this);
-            this._textfragments = new MixedCodeDocumentFragmentList(this);
-            this._fragments = new MixedCodeDocumentFragmentList(this);
+            _codefragments = new MixedCodeDocumentFragmentList(this);
+            _textfragments = new MixedCodeDocumentFragmentList(this);
+            _fragments = new MixedCodeDocumentFragmentList(this);
         }
 
         public MixedCodeDocumentCodeFragment CreateCodeFragment()
         {
-            return (MixedCodeDocumentCodeFragment)this.CreateFragment(MixedCodeDocumentFragmentType.Code);
+            return (MixedCodeDocumentCodeFragment)CreateFragment(MixedCodeDocumentFragmentType.Code);
         }
 
         internal MixedCodeDocumentFragment CreateFragment(MixedCodeDocumentFragmentType type)
@@ -50,147 +50,147 @@
 
         public MixedCodeDocumentTextFragment CreateTextFragment()
         {
-            return (MixedCodeDocumentTextFragment)this.CreateFragment(MixedCodeDocumentFragmentType.Text);
+            return (MixedCodeDocumentTextFragment)CreateFragment(MixedCodeDocumentFragmentType.Text);
         }
 
         internal Encoding GetOutEncoding()
         {
-            if (this._streamencoding != null)
+            if (_streamencoding != null)
             {
-                return this._streamencoding;
+                return _streamencoding;
             }
             return Encoding.UTF8;
         }
 
         private void IncrementPosition()
         {
-            this._index++;
-            if (this._c == 10)
+            _index++;
+            if (_c == 10)
             {
-                this._lineposition = 1;
-                this._line++;
+                _lineposition = 1;
+                _line++;
             }
             else
             {
-                this._lineposition++;
+                _lineposition++;
             }
         }
 
         public void Load(Stream stream)
         {
-            this.Load(new StreamReader(stream));
+            Load(new StreamReader(stream));
         }
 
         public void Load(TextReader reader)
         {
-            this._codefragments.Clear();
-            this._textfragments.Clear();
+            _codefragments.Clear();
+            _textfragments.Clear();
             StreamReader reader2 = reader as StreamReader;
             if (reader2 != null)
             {
-                this._streamencoding = reader2.CurrentEncoding;
+                _streamencoding = reader2.CurrentEncoding;
             }
-            this._text = reader.ReadToEnd();
+            _text = reader.ReadToEnd();
             reader.Close();
-            this.Parse();
+            Parse();
         }
 
         public void Load(string path)
         {
-            this.Load(new StreamReader(path));
+            Load(new StreamReader(path));
         }
 
         public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(Stream stream, Encoding encoding)
         {
-            this.Load(new StreamReader(stream, encoding));
+            Load(new StreamReader(stream, encoding));
         }
 
         public void Load(string path, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(path, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(path, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(string path, Encoding encoding)
         {
-            this.Load(new StreamReader(path, encoding));
+            Load(new StreamReader(path, encoding));
         }
 
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
-            this.Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
+            Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
-            this.Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks, buffersize));
+            Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
         public void LoadHtml(string html)
         {
-            this.Load(new StringReader(html));
+            Load(new StringReader(html));
         }
 
         private void Parse()
         {
-            this._state = ParseState.Text;
-            this._index = 0;
-            this._currentfragment = this.CreateFragment(MixedCodeDocumentFragmentType.Text);
-            while (this._index < this._text.Length)
+            _state = ParseState.Text;
+            _index = 0;
+            _currentfragment = CreateFragment(MixedCodeDocumentFragmentType.Text);
+            while (_index < _text.Length)
             {
-                this._c = this._text[this._index];
-                this.IncrementPosition();
-                switch (this._state)
+                _c = _text[_index];
+                IncrementPosition();
+                switch (_state)
                 {
                     case ParseState.Text:
-                        if (((this._index + this.TokenCodeStart.Length) < this._text.Length) && (this._text.Substring(this._index - 1, this.TokenCodeStart.Length) == this.TokenCodeStart))
+                        if (((_index + TokenCodeStart.Length) < _text.Length) && (_text.Substring(_index - 1, TokenCodeStart.Length) == TokenCodeStart))
                         {
-                            this._state = ParseState.Code;
-                            this._currentfragment.Length = (this._index - 1) - this._currentfragment.Index;
-                            this._currentfragment = this.CreateFragment(MixedCodeDocumentFragmentType.Code);
-                            this.SetPosition();
+                            _state = ParseState.Code;
+                            _currentfragment.Length = (_index - 1) - _currentfragment.Index;
+                            _currentfragment = CreateFragment(MixedCodeDocumentFragmentType.Code);
+                            SetPosition();
                         }
                         break;
 
                     case ParseState.Code:
-                        if (((this._index + this.TokenCodeEnd.Length) < this._text.Length) && (this._text.Substring(this._index - 1, this.TokenCodeEnd.Length) == this.TokenCodeEnd))
+                        if (((_index + TokenCodeEnd.Length) < _text.Length) && (_text.Substring(_index - 1, TokenCodeEnd.Length) == TokenCodeEnd))
                         {
-                            this._state = ParseState.Text;
-                            this._currentfragment.Length = (this._index + this.TokenCodeEnd.Length) - this._currentfragment.Index;
-                            this._index += this.TokenCodeEnd.Length;
-                            this._lineposition += this.TokenCodeEnd.Length;
-                            this._currentfragment = this.CreateFragment(MixedCodeDocumentFragmentType.Text);
-                            this.SetPosition();
+                            _state = ParseState.Text;
+                            _currentfragment.Length = (_index + TokenCodeEnd.Length) - _currentfragment.Index;
+                            _index += TokenCodeEnd.Length;
+                            _lineposition += TokenCodeEnd.Length;
+                            _currentfragment = CreateFragment(MixedCodeDocumentFragmentType.Text);
+                            SetPosition();
                         }
                         break;
                 }
             }
-            this._currentfragment.Length = this._index - this._currentfragment.Index;
+            _currentfragment.Length = _index - _currentfragment.Index;
         }
 
         public void Save(Stream outStream)
         {
-            StreamWriter writer = new StreamWriter(outStream, this.GetOutEncoding());
-            this.Save(writer);
+            StreamWriter writer = new StreamWriter(outStream, GetOutEncoding());
+            Save(writer);
         }
 
         public void Save(StreamWriter writer)
         {
-            this.Save((TextWriter)writer);
+            Save((TextWriter)writer);
         }
 
         public void Save(TextWriter writer)
@@ -200,28 +200,28 @@
 
         public void Save(string filename)
         {
-            StreamWriter writer = new StreamWriter(filename, false, this.GetOutEncoding());
-            this.Save(writer);
+            StreamWriter writer = new StreamWriter(filename, false, GetOutEncoding());
+            Save(writer);
         }
 
         public void Save(Stream outStream, Encoding encoding)
         {
             StreamWriter writer = new StreamWriter(outStream, encoding);
-            this.Save(writer);
+            Save(writer);
         }
 
         public void Save(string filename, Encoding encoding)
         {
             StreamWriter writer = new StreamWriter(filename, false, encoding);
-            this.Save(writer);
+            Save(writer);
         }
 
         private void SetPosition()
         {
-            this._currentfragment.Line = this._line;
-            this._currentfragment._lineposition = this._lineposition;
-            this._currentfragment.Index = this._index - 1;
-            this._currentfragment.Length = 0;
+            _currentfragment.Line = _line;
+            _currentfragment._lineposition = _lineposition;
+            _currentfragment.Index = _index - 1;
+            _currentfragment.Length = 0;
         }
 
         public string Code
@@ -230,7 +230,7 @@
             {
                 string str = "";
                 int num = 0;
-                foreach (MixedCodeDocumentFragment fragment in this._fragments)
+                foreach (MixedCodeDocumentFragment fragment in _fragments)
                 {
                     switch (fragment._type)
                     {
@@ -239,7 +239,7 @@
                             break;
 
                         case MixedCodeDocumentFragmentType.Text:
-                            str = str + this.TokenResponseWrite + string.Format(this.TokenTextBlock, num) + "\n";
+                            str = str + TokenResponseWrite + string.Format(TokenTextBlock, num) + "\n";
                             num++;
                             break;
                     }
@@ -252,7 +252,7 @@
         {
             get
             {
-                return this._codefragments;
+                return _codefragments;
             }
         }
 
@@ -260,7 +260,7 @@
         {
             get
             {
-                return this._fragments;
+                return _fragments;
             }
         }
 
@@ -268,7 +268,7 @@
         {
             get
             {
-                return this._streamencoding;
+                return _streamencoding;
             }
         }
 
@@ -276,7 +276,7 @@
         {
             get
             {
-                return this._textfragments;
+                return _textfragments;
             }
         }
 

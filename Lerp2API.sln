@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lerp2API", "Project\Lerp2API.csproj", "{C6D33E81-3C33-4B6B-886E-B52673F98614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Project\Editor\Editor.csproj", "{BFCE159D-8227-4D26-B883-FAEB77AC33FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lerp2APIEditor", "Project\Editor\Lerp2APIEditor.csproj", "{BFCE159D-8227-4D26-B883-FAEB77AC33FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

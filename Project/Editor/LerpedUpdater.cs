@@ -7,7 +7,6 @@ using System.Net;
 using System.Linq;
 using Lerp2API;
 using Lerp2API.Utility;
-using Lerp2APIEditor.Utility;
 using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2APIEditor
@@ -15,23 +14,26 @@ namespace Lerp2APIEditor
     [InitializeOnLoad]
     public class LerpedUpdater
     {
-        internal const string curVersion = "1.1a",
-                              versionUrl = "http://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Lerp2API.version";
+        internal const string curVersion = "1.1.1a",
+                              versionUrl = "http://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Lerp2API.version";
 
         internal static string localVersionFilepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Lerp2API.version");
         public static bool noConnection;
         internal static string[] updateUrls = new string[] {
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.dll",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.pdb",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.xml",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.dll",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.pdb",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.xml"
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Lerp2API.dll",
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Lerp2API.pdb",
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Lerp2API.xml",
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Editor/Lerp2APIEditor.dll",
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Editor/Lerp2APIEditor.pdb",
+            "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Editor/Lerp2APIEditor.xml",
+            versionUrl
         };
 
         public string versionName = "1.1.1 Alpha Release",
                       versionStr = "1.1.1a",
-                      versionChangelog = "Fixed README.\nFixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.";
+                      versionChangelog = "Fixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.\nSome utilities to Array Extensions Helpers.";
+
+        internal static WWWHandler wh;
 
         static LerpedUpdater()
         {
@@ -75,22 +77,33 @@ namespace Lerp2APIEditor
                 Path.Combine(depPath, "Lerp2API.xml"),
                 Path.Combine(editorPath, "Lerp2APIEditor.dll"),
                 Path.Combine(editorPath, "Lerp2APIEditor.pdb"),
-                Path.Combine(editorPath, "Lerp2APIEditor.xml")
+                Path.Combine(editorPath, "Lerp2APIEditor.xml"),
+                Path.Combine(editorPath, "Lerp2API.version")
             };
             WWW[] wwws = updateUrls.GetWWW();
             if (!deps.All(x => File.Exists(x)))
                 Debug.LogErrorFormat("Some Library files doesn't exist, aborting update mission!\nDownload them manually from {0}, and put them in '{1}' folder.", 
-                    @"<a href=""https://github.com/Ikillnukes/Lerp2API/tree/master/Build"">here</a>", 
+                    @"<a href=""https://github.com/Lerp2Dev/Lerp2API/tree/master/Build"">here</a>", 
                     depPath);
             else
             {
-                WWWHandler.Add(wwws);
-                WWWHandler.Start(() => 
+                wh = new WWWHandler();
+                wh.Add(wwws);
+                wh.Start<WWW[]>(false, (x) => 
                 {
-                    for(int i = 0; i < wwws.Length; ++i)
+                    int v = 0;
+                    try
                     {
-                        File.Delete(deps[i]);
-                        File.WriteAllBytes(deps[i], wwws[i].bytes);
+                        for (int i = 0; i < x.Length; ++i)
+                        {
+                            File.Delete(deps[i]);
+                            v = i;
+                            File.WriteAllBytes(deps[i], x[i].bytes);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        Debug.LogFormat("Oh guy! You are so fast, {0} has not been downloaded!\n{1}\n{2}", x[v].url, ex.Message, ex.StackTrace);
                     }
                     Debug.LogFormat("Update to '{0}' successfully done!", newerVersion);
                     AssetDatabase.Refresh();
@@ -101,7 +114,7 @@ namespace Lerp2APIEditor
         internal static void WarnOutdated(string newerVersion)
         {
             if (EditorUtility.DisplayDialog("Asset message", string.Format("Newer version '{0}' is available. You are using '{1}'.\nDo you want to update the DLL API?", 
-                newerVersion, "1.0a"), 
+                newerVersion, curVersion), 
                 "Yes", "No"))
                 DoUpdate(newerVersion);
         }
@@ -118,11 +131,12 @@ namespace Lerp2APIEditor
             if (!noConnection)
                 try
                 {
-                    WWW www = new WWW("https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Lerp2API.version");
-                    WWWHandler.Add(www);
-                    WWWHandler.Start(() =>
+                    WWW www = new WWW("https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Lerp2API.version");
+                    wh = new WWWHandler();
+                    wh.Add(www);
+                    wh.Start<WWW>(false, (x) =>
                     {
-                        var updater = www.text.Deserialize<LerpedUpdater>();
+                        var updater = x.text.Deserialize<LerpedUpdater>();
                         if (updater.versionStr != curVersion)
                             WarnOutdated(updater.versionStr);
                         else
@@ -134,7 +148,7 @@ namespace Lerp2APIEditor
                 }
                 catch(Exception e)
                 {
-                    Debug.LogError("Internet connection couldn't be detected, Updates are disabled!\n"+e.Message);
+                    Debug.LogError("Internet connection couldn't be detected, Updates are disabled!\nMaybe it can be another problem, check the log by clicking this message.\n"+e.Message+"\n"+e.StackTrace);
                     noConnection = true;
                 }
             else
@@ -150,10 +164,11 @@ namespace Lerp2APIEditor
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MissingAssets.cs");
             if (File.Exists(path))
                 return;
-            WWW www = new WWW("http://lerp2dev.com/unityassets/");
-            WWWHandler.Add(www);
-            WWWHandler.Start(() => {
-                File.WriteAllText(path, www.text);
+            WWW www = new WWW("http://lerp2dev.x10host.com/unityassets/"); //We have to keep this url and the proper hosting (to give support to the upcoming users of the API) until we don't launch the new web design with all this data updated...
+            wh = new WWWHandler();
+            wh.Add(www);
+            wh.Start<WWW>(false, (x) => {
+                File.WriteAllText(path, x.text);
                 AssetDatabase.Refresh();
             });
         }

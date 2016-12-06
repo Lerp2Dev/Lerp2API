@@ -54,67 +54,67 @@
 
         public HtmlDocument()
         {
-            this._documentnode = this.CreateNode(HtmlNodeType.Document, 0);
-            this.OptionDefaultStreamEncoding = Encoding.Default;
+            _documentnode = CreateNode(HtmlNodeType.Document, 0);
+            OptionDefaultStreamEncoding = Encoding.Default;
         }
 
         private void AddError(HtmlParseErrorCode code, int line, int linePosition, int streamPosition, string sourceText, string reason)
         {
             HtmlParseError item = new HtmlParseError(code, line, linePosition, streamPosition, sourceText, reason);
-            this._parseerrors.Add(item);
+            _parseerrors.Add(item);
         }
 
         private void CloseCurrentNode()
         {
-            if (!this._currentnode.Closed)
+            if (!_currentnode.Closed)
             {
                 bool flag = false;
-                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(this.Lastnodes, this._currentnode.Name);
+                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(Lastnodes, _currentnode.Name);
                 if (dictionaryValueOrNull != null)
                 {
-                    if (this.OptionFixNestedTags && this.FindResetterNodes(dictionaryValueOrNull, this.GetResetters(this._currentnode.Name)))
+                    if (OptionFixNestedTags && FindResetterNodes(dictionaryValueOrNull, GetResetters(_currentnode.Name)))
                     {
-                        this.AddError(HtmlParseErrorCode.EndTagInvalidHere, this._currentnode._line, this._currentnode._lineposition, this._currentnode._streamposition, this._currentnode.OuterHtml, "End tag </" + this._currentnode.Name + "> invalid here");
+                        AddError(HtmlParseErrorCode.EndTagInvalidHere, _currentnode._line, _currentnode._lineposition, _currentnode._streamposition, _currentnode.OuterHtml, "End tag </" + _currentnode.Name + "> invalid here");
                         flag = true;
                     }
                     if (!flag)
                     {
-                        this.Lastnodes[this._currentnode.Name] = dictionaryValueOrNull._prevwithsamename;
-                        dictionaryValueOrNull.CloseNode(this._currentnode);
+                        Lastnodes[_currentnode.Name] = dictionaryValueOrNull._prevwithsamename;
+                        dictionaryValueOrNull.CloseNode(_currentnode);
                     }
                 }
-                else if (!HtmlNode.IsClosedElement(this._currentnode.Name))
+                else if (!HtmlNode.IsClosedElement(_currentnode.Name))
                 {
-                    if (HtmlNode.CanOverlapElement(this._currentnode.Name))
+                    if (HtmlNode.CanOverlapElement(_currentnode.Name))
                     {
-                        HtmlNode newChild = this.CreateNode(HtmlNodeType.Text, this._currentnode._outerstartindex);
-                        newChild._outerlength = this._currentnode._outerlength;
+                        HtmlNode newChild = CreateNode(HtmlNodeType.Text, _currentnode._outerstartindex);
+                        newChild._outerlength = _currentnode._outerlength;
                         ((HtmlTextNode)newChild).Text = ((HtmlTextNode)newChild).Text.ToLower();
-                        if (this._lastparentnode != null)
+                        if (_lastparentnode != null)
                         {
-                            this._lastparentnode.AppendChild(newChild);
+                            _lastparentnode.AppendChild(newChild);
                         }
                     }
-                    else if (HtmlNode.IsEmptyElement(this._currentnode.Name))
+                    else if (HtmlNode.IsEmptyElement(_currentnode.Name))
                     {
-                        this.AddError(HtmlParseErrorCode.EndTagNotRequired, this._currentnode._line, this._currentnode._lineposition, this._currentnode._streamposition, this._currentnode.OuterHtml, "End tag </" + this._currentnode.Name + "> is not required");
+                        AddError(HtmlParseErrorCode.EndTagNotRequired, _currentnode._line, _currentnode._lineposition, _currentnode._streamposition, _currentnode.OuterHtml, "End tag </" + _currentnode.Name + "> is not required");
                     }
                     else
                     {
-                        this.AddError(HtmlParseErrorCode.TagNotOpened, this._currentnode._line, this._currentnode._lineposition, this._currentnode._streamposition, this._currentnode.OuterHtml, "Start tag <" + this._currentnode.Name + "> was not found");
+                        AddError(HtmlParseErrorCode.TagNotOpened, _currentnode._line, _currentnode._lineposition, _currentnode._streamposition, _currentnode.OuterHtml, "Start tag <" + _currentnode.Name + "> was not found");
                         flag = true;
                     }
                 }
                 else
                 {
-                    this._currentnode.CloseNode(this._currentnode);
-                    if (this._lastparentnode != null)
+                    _currentnode.CloseNode(_currentnode);
+                    if (_lastparentnode != null)
                     {
                         HtmlNode node2 = null;
                         Stack<HtmlNode> stack = new Stack<HtmlNode>();
-                        for (HtmlNode node3 = this._lastparentnode.LastChild; node3 != null; node3 = node3.PreviousSibling)
+                        for (HtmlNode node3 = _lastparentnode.LastChild; node3 != null; node3 = node3.PreviousSibling)
                         {
-                            if ((node3.Name == this._currentnode.Name) && !node3.HasChildNodes)
+                            if ((node3.Name == _currentnode.Name) && !node3.HasChildNodes)
                             {
                                 node2 = node3;
                                 break;
@@ -126,19 +126,19 @@
                             while (stack.Count != 0)
                             {
                                 HtmlNode oldChild = stack.Pop();
-                                this._lastparentnode.RemoveChild(oldChild);
+                                _lastparentnode.RemoveChild(oldChild);
                                 node2.AppendChild(oldChild);
                             }
                         }
                         else
                         {
-                            this._lastparentnode.AppendChild(this._currentnode);
+                            _lastparentnode.AppendChild(_currentnode);
                         }
                     }
                 }
-                if ((!flag && (this._lastparentnode != null)) && (!HtmlNode.IsClosedElement(this._currentnode.Name) || this._currentnode._starttag))
+                if ((!flag && (_lastparentnode != null)) && (!HtmlNode.IsClosedElement(_currentnode.Name) || _currentnode._starttag))
                 {
-                    this.UpdateLastParentNode();
+                    UpdateLastParentNode();
                 }
             }
         }
@@ -154,7 +154,7 @@
             {
                 throw new ArgumentNullException("name");
             }
-            HtmlAttribute attribute = this.CreateAttribute();
+            HtmlAttribute attribute = CreateAttribute();
             attribute.Name = name;
             return attribute;
         }
@@ -165,14 +165,14 @@
             {
                 throw new ArgumentNullException("name");
             }
-            HtmlAttribute attribute = this.CreateAttribute(name);
+            HtmlAttribute attribute = CreateAttribute(name);
             attribute.Value = value;
             return attribute;
         }
 
         public HtmlCommentNode CreateComment()
         {
-            return (HtmlCommentNode)this.CreateNode(HtmlNodeType.Comment);
+            return (HtmlCommentNode)CreateNode(HtmlNodeType.Comment);
         }
 
         public HtmlCommentNode CreateComment(string comment)
@@ -181,7 +181,7 @@
             {
                 throw new ArgumentNullException("comment");
             }
-            HtmlCommentNode node = this.CreateComment();
+            HtmlCommentNode node = CreateComment();
             node.Comment = comment;
             return node;
         }
@@ -192,19 +192,19 @@
             {
                 throw new ArgumentNullException("name");
             }
-            HtmlNode node = this.CreateNode(HtmlNodeType.Element);
+            HtmlNode node = CreateNode(HtmlNodeType.Element);
             node.Name = name;
             return node;
         }
 
         public XPathNavigator CreateNavigator()
         {
-            return new HtmlNodeNavigator(this, this._documentnode);
+            return new HtmlNodeNavigator(this, _documentnode);
         }
 
         internal HtmlNode CreateNode(HtmlNodeType type)
         {
-            return this.CreateNode(type, -1);
+            return CreateNode(type, -1);
         }
 
         internal HtmlNode CreateNode(HtmlNodeType type, int index)
@@ -222,7 +222,7 @@
 
         public HtmlTextNode CreateTextNode()
         {
-            return (HtmlTextNode)this.CreateNode(HtmlNodeType.Text);
+            return (HtmlTextNode)CreateNode(HtmlNodeType.Text);
         }
 
         public HtmlTextNode CreateTextNode(string text)
@@ -231,27 +231,27 @@
             {
                 throw new ArgumentNullException("text");
             }
-            HtmlTextNode node = this.CreateTextNode();
+            HtmlTextNode node = CreateTextNode();
             node.Text = text;
             return node;
         }
 
         private string CurrentNodeName()
         {
-            return this.Text.Substring(this._currentnode._namestartindex, this._currentnode._namelength);
+            return Text.Substring(_currentnode._namestartindex, _currentnode._namelength);
         }
 
         private void DecrementPosition()
         {
-            this._index--;
-            if (this._lineposition == 1)
+            _index--;
+            if (_lineposition == 1)
             {
-                this._lineposition = this._maxlineposition;
-                this._line--;
+                _lineposition = _maxlineposition;
+                _line--;
             }
             else
             {
-                this._lineposition--;
+                _lineposition--;
             }
         }
 
@@ -261,7 +261,7 @@
             {
                 throw new ArgumentNullException("stream");
             }
-            return this.DetectEncoding(new StreamReader(stream));
+            return DetectEncoding(new StreamReader(stream));
         }
 
         public Encoding DetectEncoding(TextReader reader)
@@ -270,38 +270,38 @@
             {
                 throw new ArgumentNullException("reader");
             }
-            this._onlyDetectEncoding = true;
-            if (this.OptionCheckSyntax)
+            _onlyDetectEncoding = true;
+            if (OptionCheckSyntax)
             {
-                this.Openednodes = new Dictionary<int, HtmlNode>();
+                Openednodes = new Dictionary<int, HtmlNode>();
             }
             else
             {
-                this.Openednodes = null;
+                Openednodes = null;
             }
-            if (this.OptionUseIdAttribute)
+            if (OptionUseIdAttribute)
             {
-                this.Nodesid = new Dictionary<string, HtmlNode>();
+                Nodesid = new Dictionary<string, HtmlNode>();
             }
             else
             {
-                this.Nodesid = null;
+                Nodesid = null;
             }
             StreamReader reader2 = reader as StreamReader;
             if (reader2 != null)
             {
-                this._streamencoding = reader2.CurrentEncoding;
+                _streamencoding = reader2.CurrentEncoding;
             }
             else
             {
-                this._streamencoding = null;
+                _streamencoding = null;
             }
-            this._declaredencoding = null;
-            this.Text = reader.ReadToEnd();
-            this._documentnode = this.CreateNode(HtmlNodeType.Document, 0);
+            _declaredencoding = null;
+            Text = reader.ReadToEnd();
+            _documentnode = CreateNode(HtmlNodeType.Document, 0);
             try
             {
-                this.Parse();
+                Parse();
             }
             catch (EncodingFoundException exception)
             {
@@ -316,15 +316,15 @@
             {
                 throw new ArgumentNullException("path");
             }
-            using (StreamReader reader = new StreamReader(path, this.OptionDefaultStreamEncoding))
+            using (StreamReader reader = new StreamReader(path, OptionDefaultStreamEncoding))
             {
-                return this.DetectEncoding(reader);
+                return DetectEncoding(reader);
             }
         }
 
         public void DetectEncodingAndLoad(string path)
         {
-            this.DetectEncodingAndLoad(path, true);
+            DetectEncodingAndLoad(path, true);
         }
 
         public void DetectEncodingAndLoad(string path, bool detectEncoding)
@@ -336,7 +336,7 @@
             }
             if (detectEncoding)
             {
-                encoding = this.DetectEncoding(path);
+                encoding = DetectEncoding(path);
             }
             else
             {
@@ -344,11 +344,11 @@
             }
             if (encoding == null)
             {
-                this.Load(path);
+                Load(path);
             }
             else
             {
-                this.Load(path, encoding);
+                Load(path, encoding);
             }
         }
 
@@ -360,13 +360,13 @@
             }
             using (StringReader reader = new StringReader(html))
             {
-                return this.DetectEncoding(reader);
+                return DetectEncoding(reader);
             }
         }
 
         private HtmlNode FindResetterNode(HtmlNode node, string name)
         {
-            HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(this.Lastnodes, name);
+            HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(Lastnodes, name);
             if (dictionaryValueOrNull == null)
             {
                 return null;
@@ -388,7 +388,7 @@
             {
                 for (int i = 0; i < names.Length; i++)
                 {
-                    if (this.FindResetterNode(node, names[i]) != null)
+                    if (FindResetterNode(node, names[i]) != null)
                     {
                         return true;
                     }
@@ -401,8 +401,8 @@
         {
             if (resetters != null)
             {
-                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(this.Lastnodes, this._currentnode.Name);
-                if (((dictionaryValueOrNull != null) && !this.Lastnodes[name].Closed) && !this.FindResetterNodes(dictionaryValueOrNull, resetters))
+                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(Lastnodes, _currentnode.Name);
+                if (((dictionaryValueOrNull != null) && !Lastnodes[name].Closed) && !FindResetterNodes(dictionaryValueOrNull, resetters))
                 {
                     HtmlNode node2 = null;
                     node2 = new HtmlNode(dictionaryValueOrNull.NodeType, this, -1)
@@ -416,10 +416,10 @@
 
         private void FixNestedTags()
         {
-            if (this._currentnode._starttag)
+            if (_currentnode._starttag)
             {
-                string name = this.CurrentNodeName();
-                this.FixNestedTag(name, this.GetResetters(name));
+                string name = CurrentNodeName();
+                FixNestedTag(name, GetResetters(name));
             }
         }
 
@@ -429,20 +429,20 @@
             {
                 throw new ArgumentNullException("id");
             }
-            if (this.Nodesid == null)
+            if (Nodesid == null)
             {
                 throw new Exception(HtmlExceptionUseIdAttributeFalse);
             }
-            if (!this.Nodesid.ContainsKey(id.ToLower()))
+            if (!Nodesid.ContainsKey(id.ToLower()))
             {
                 return null;
             }
-            return this.Nodesid[id.ToLower()];
+            return Nodesid[id.ToLower()];
         }
 
         internal Encoding GetOutEncoding()
         {
-            return (this._declaredencoding ?? (this._streamencoding ?? this.OptionDefaultStreamEncoding));
+            return (_declaredencoding ?? (_streamencoding ?? OptionDefaultStreamEncoding));
         }
 
         private string[] GetResetters(string name)
@@ -464,9 +464,9 @@
 
         internal HtmlNode GetXmlDeclaration()
         {
-            if (this._documentnode.HasChildNodes)
+            if (_documentnode.HasChildNodes)
             {
-                foreach (HtmlNode node in (IEnumerable<HtmlNode>)this._documentnode._childnodes)
+                foreach (HtmlNode node in (IEnumerable<HtmlNode>)_documentnode._childnodes)
                 {
                     if (node.Name == "?xml")
                     {
@@ -517,20 +517,20 @@
 
         private void IncrementPosition()
         {
-            if (this._crc32 != null)
+            if (_crc32 != null)
             {
-                this._crc32.AddToCRC32(this._c);
+                _crc32.AddToCRC32(_c);
             }
-            this._index++;
-            this._maxlineposition = this._lineposition;
-            if (this._c == 10)
+            _index++;
+            _maxlineposition = _lineposition;
+            if (_c == 10)
             {
-                this._lineposition = 1;
-                this._line++;
+                _lineposition = 1;
+                _line++;
             }
             else
             {
-                this._lineposition++;
+                _lineposition++;
             }
         }
 
@@ -545,7 +545,7 @@
 
         public void Load(Stream stream)
         {
-            this.Load(new StreamReader(stream, this.OptionDefaultStreamEncoding));
+            Load(new StreamReader(stream, OptionDefaultStreamEncoding));
         }
 
         public void Load(TextReader reader)
@@ -554,22 +554,22 @@
             {
                 throw new ArgumentNullException("reader");
             }
-            this._onlyDetectEncoding = false;
-            if (this.OptionCheckSyntax)
+            _onlyDetectEncoding = false;
+            if (OptionCheckSyntax)
             {
-                this.Openednodes = new Dictionary<int, HtmlNode>();
+                Openednodes = new Dictionary<int, HtmlNode>();
             }
             else
             {
-                this.Openednodes = null;
+                Openednodes = null;
             }
-            if (this.OptionUseIdAttribute)
+            if (OptionUseIdAttribute)
             {
-                this.Nodesid = new Dictionary<string, HtmlNode>();
+                Nodesid = new Dictionary<string, HtmlNode>();
             }
             else
             {
-                this.Nodesid = null;
+                Nodesid = null;
             }
             StreamReader reader2 = reader as StreamReader;
             if (reader2 != null)
@@ -581,39 +581,39 @@
                 catch (Exception)
                 {
                 }
-                this._streamencoding = reader2.CurrentEncoding;
+                _streamencoding = reader2.CurrentEncoding;
             }
             else
             {
-                this._streamencoding = null;
+                _streamencoding = null;
             }
-            this._declaredencoding = null;
-            this.Text = reader.ReadToEnd();
-            this._documentnode = this.CreateNode(HtmlNodeType.Document, 0);
-            this.Parse();
-            if (this.OptionCheckSyntax && (this.Openednodes != null))
+            _declaredencoding = null;
+            Text = reader.ReadToEnd();
+            _documentnode = CreateNode(HtmlNodeType.Document, 0);
+            Parse();
+            if (OptionCheckSyntax && (Openednodes != null))
             {
-                foreach (HtmlNode node in this.Openednodes.Values)
+                foreach (HtmlNode node in Openednodes.Values)
                 {
                     if (node._starttag)
                     {
                         string outerHtml;
-                        if (this.OptionExtractErrorSourceText)
+                        if (OptionExtractErrorSourceText)
                         {
                             outerHtml = node.OuterHtml;
-                            if (outerHtml.Length > this.OptionExtractErrorSourceTextMaxLength)
+                            if (outerHtml.Length > OptionExtractErrorSourceTextMaxLength)
                             {
-                                outerHtml = outerHtml.Substring(0, this.OptionExtractErrorSourceTextMaxLength);
+                                outerHtml = outerHtml.Substring(0, OptionExtractErrorSourceTextMaxLength);
                             }
                         }
                         else
                         {
                             outerHtml = string.Empty;
                         }
-                        this.AddError(HtmlParseErrorCode.TagNotClosed, node._line, node._lineposition, node._streamposition, outerHtml, "End tag </" + node.Name + "> was not found");
+                        AddError(HtmlParseErrorCode.TagNotClosed, node._line, node._lineposition, node._streamposition, outerHtml, "End tag </" + node.Name + "> was not found");
                     }
                 }
-                this.Openednodes.Clear();
+                Openednodes.Clear();
             }
         }
 
@@ -623,20 +623,20 @@
             {
                 throw new ArgumentNullException("path");
             }
-            using (StreamReader reader = new StreamReader(path, this.OptionDefaultStreamEncoding))
+            using (StreamReader reader = new StreamReader(path, OptionDefaultStreamEncoding))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
         public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(Stream stream, Encoding encoding)
         {
-            this.Load(new StreamReader(stream, encoding));
+            Load(new StreamReader(stream, encoding));
         }
 
         public void Load(string path, bool detectEncodingFromByteOrderMarks)
@@ -647,7 +647,7 @@
             }
             using (StreamReader reader = new StreamReader(path, detectEncodingFromByteOrderMarks))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
@@ -663,13 +663,13 @@
             }
             using (StreamReader reader = new StreamReader(path, encoding))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
-            this.Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
+            Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
         }
 
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
@@ -684,13 +684,13 @@
             }
             using (StreamReader reader = new StreamReader(path, encoding, detectEncodingFromByteOrderMarks))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
-            this.Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
+            Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
@@ -705,7 +705,7 @@
             }
             using (StreamReader reader = new StreamReader(path, encoding, detectEncodingFromByteOrderMarks, buffersize))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
@@ -717,255 +717,255 @@
             }
             using (StringReader reader = new StringReader(html))
             {
-                this.Load(reader);
+                Load(reader);
             }
         }
 
         private bool NewCheck()
         {
-            if (this._c != 60)
+            if (_c != 60)
             {
                 return false;
             }
-            if ((this._index >= this.Text.Length) || (this.Text[this._index] != '%'))
+            if ((_index >= Text.Length) || (Text[_index] != '%'))
             {
-                if (!this.PushNodeEnd(this._index - 1, true))
+                if (!PushNodeEnd(_index - 1, true))
                 {
-                    this._index = this.Text.Length;
+                    _index = Text.Length;
                     return true;
                 }
-                this._state = ParseState.WhichTag;
-                if (((this._index - 1) <= (this.Text.Length - 2)) && (this.Text[this._index] == '!'))
+                _state = ParseState.WhichTag;
+                if (((_index - 1) <= (Text.Length - 2)) && (Text[_index] == '!'))
                 {
-                    this.PushNodeStart(HtmlNodeType.Comment, this._index - 1);
-                    this.PushNodeNameStart(true, this._index);
-                    this.PushNodeNameEnd(this._index + 1);
-                    this._state = ParseState.Comment;
-                    if (this._index < (this.Text.Length - 2))
+                    PushNodeStart(HtmlNodeType.Comment, _index - 1);
+                    PushNodeNameStart(true, _index);
+                    PushNodeNameEnd(_index + 1);
+                    _state = ParseState.Comment;
+                    if (_index < (Text.Length - 2))
                     {
-                        if ((this.Text[this._index + 1] == '-') && (this.Text[this._index + 2] == '-'))
+                        if ((Text[_index + 1] == '-') && (Text[_index + 2] == '-'))
                         {
-                            this._fullcomment = true;
+                            _fullcomment = true;
                         }
                         else
                         {
-                            this._fullcomment = false;
+                            _fullcomment = false;
                         }
                     }
                     return true;
                 }
-                this.PushNodeStart(HtmlNodeType.Element, this._index - 1);
+                PushNodeStart(HtmlNodeType.Element, _index - 1);
                 return true;
             }
-            ParseState state = this._state;
+            ParseState state = _state;
             switch (state)
             {
                 case ParseState.WhichTag:
-                    this.PushNodeNameStart(true, this._index - 1);
-                    this._state = ParseState.Tag;
+                    PushNodeNameStart(true, _index - 1);
+                    _state = ParseState.Tag;
                     break;
 
                 case ParseState.Tag:
                     break;
 
                 case ParseState.BetweenAttributes:
-                    this.PushAttributeNameStart(this._index - 1);
+                    PushAttributeNameStart(_index - 1);
                     break;
 
                 default:
                     if (state == ParseState.AttributeAfterEquals)
                     {
-                        this.PushAttributeValueStart(this._index - 1);
+                        PushAttributeValueStart(_index - 1);
                     }
                     break;
             }
-            this._oldstate = this._state;
-            this._state = ParseState.ServerSideCode;
+            _oldstate = _state;
+            _state = ParseState.ServerSideCode;
             return true;
         }
 
         private void Parse()
         {
             int num = 0;
-            if (this.OptionComputeChecksum)
+            if (OptionComputeChecksum)
             {
-                this._crc32 = new Crc32();
+                _crc32 = new Crc32();
             }
-            this.Lastnodes = new Dictionary<string, HtmlNode>();
-            this._c = 0;
-            this._fullcomment = false;
-            this._parseerrors = new List<HtmlParseError>();
-            this._line = 1;
-            this._lineposition = 1;
-            this._maxlineposition = 1;
-            this._state = ParseState.Text;
-            this._oldstate = this._state;
-            this._documentnode._innerlength = this.Text.Length;
-            this._documentnode._outerlength = this.Text.Length;
-            this._remainderOffset = this.Text.Length;
-            this._lastparentnode = this._documentnode;
-            this._currentnode = this.CreateNode(HtmlNodeType.Text, 0);
-            this._currentattribute = null;
-            this._index = 0;
-            this.PushNodeStart(HtmlNodeType.Text, 0);
-            while (this._index < this.Text.Length)
+            Lastnodes = new Dictionary<string, HtmlNode>();
+            _c = 0;
+            _fullcomment = false;
+            _parseerrors = new List<HtmlParseError>();
+            _line = 1;
+            _lineposition = 1;
+            _maxlineposition = 1;
+            _state = ParseState.Text;
+            _oldstate = _state;
+            _documentnode._innerlength = Text.Length;
+            _documentnode._outerlength = Text.Length;
+            _remainderOffset = Text.Length;
+            _lastparentnode = _documentnode;
+            _currentnode = CreateNode(HtmlNodeType.Text, 0);
+            _currentattribute = null;
+            _index = 0;
+            PushNodeStart(HtmlNodeType.Text, 0);
+            while (_index < Text.Length)
             {
-                this._c = this.Text[this._index];
-                this.IncrementPosition();
-                switch (this._state)
+                _c = Text[_index];
+                IncrementPosition();
+                switch (_state)
                 {
                     case ParseState.Text:
                         {
-                            if (!this.NewCheck())
+                            if (!NewCheck())
                             {
                             }
                             continue;
                         }
                     case ParseState.WhichTag:
-                        if (this.NewCheck())
+                        if (NewCheck())
                         {
                             continue;
                         }
-                        if (this._c != 0x2f)
+                        if (_c != 0x2f)
                         {
                             break;
                         }
-                        this.PushNodeNameStart(false, this._index);
+                        PushNodeNameStart(false, _index);
                         goto Label_017F;
 
                     case ParseState.Tag:
                         {
-                            if (!this.NewCheck())
+                            if (!NewCheck())
                             {
-                                if (!IsWhiteSpace(this._c))
+                                if (!IsWhiteSpace(_c))
                                 {
                                     goto Label_01C9;
                                 }
-                                this.PushNodeNameEnd(this._index - 1);
-                                if (this._state == ParseState.Tag)
+                                PushNodeNameEnd(_index - 1);
+                                if (_state == ParseState.Tag)
                                 {
-                                    this._state = ParseState.BetweenAttributes;
+                                    _state = ParseState.BetweenAttributes;
                                 }
                             }
                             continue;
                         }
                     case ParseState.BetweenAttributes:
                         {
-                            if (!this.NewCheck() && !IsWhiteSpace(this._c))
+                            if (!NewCheck() && !IsWhiteSpace(_c))
                             {
-                                if ((this._c != 0x2f) && (this._c != 0x3f))
+                                if ((_c != 0x2f) && (_c != 0x3f))
                                 {
                                     goto Label_02A5;
                                 }
-                                this._state = ParseState.EmptyTag;
+                                _state = ParseState.EmptyTag;
                             }
                             continue;
                         }
                     case ParseState.EmptyTag:
                         {
-                            if (!this.NewCheck())
+                            if (!NewCheck())
                             {
-                                if (this._c != 0x3e)
+                                if (_c != 0x3e)
                                 {
                                     goto Label_0372;
                                 }
-                                if (this.PushNodeEnd(this._index, true))
+                                if (PushNodeEnd(_index, true))
                                 {
                                     goto Label_034D;
                                 }
-                                this._index = this.Text.Length;
+                                _index = Text.Length;
                             }
                             continue;
                         }
                     case ParseState.AttributeName:
                         {
-                            if (!this.NewCheck())
+                            if (!NewCheck())
                             {
-                                if (!IsWhiteSpace(this._c))
+                                if (!IsWhiteSpace(_c))
                                 {
                                     goto Label_03B0;
                                 }
-                                this.PushAttributeNameEnd(this._index - 1);
-                                this._state = ParseState.AttributeBeforeEquals;
+                                PushAttributeNameEnd(_index - 1);
+                                _state = ParseState.AttributeBeforeEquals;
                             }
                             continue;
                         }
                     case ParseState.AttributeBeforeEquals:
                         {
-                            if (!this.NewCheck() && !IsWhiteSpace(this._c))
+                            if (!NewCheck() && !IsWhiteSpace(_c))
                             {
-                                if (this._c != 0x3e)
+                                if (_c != 0x3e)
                                 {
                                     goto Label_04A8;
                                 }
-                                if (this.PushNodeEnd(this._index, false))
+                                if (PushNodeEnd(_index, false))
                                 {
                                     goto Label_0483;
                                 }
-                                this._index = this.Text.Length;
+                                _index = Text.Length;
                             }
                             continue;
                         }
                     case ParseState.AttributeAfterEquals:
                         {
-                            if (!this.NewCheck() && !IsWhiteSpace(this._c))
+                            if (!NewCheck() && !IsWhiteSpace(_c))
                             {
-                                if ((this._c != 0x27) && (this._c != 0x22))
+                                if ((_c != 0x27) && (_c != 0x22))
                                 {
                                     goto Label_0525;
                                 }
-                                this._state = ParseState.QuotedAttributeValue;
-                                this.PushAttributeValueStart(this._index, this._c);
-                                num = this._c;
+                                _state = ParseState.QuotedAttributeValue;
+                                PushAttributeValueStart(_index, _c);
+                                num = _c;
                             }
                             continue;
                         }
                     case ParseState.AttributeValue:
                         {
-                            if (!this.NewCheck())
+                            if (!NewCheck())
                             {
-                                if (!IsWhiteSpace(this._c))
+                                if (!IsWhiteSpace(_c))
                                 {
                                     goto Label_05C5;
                                 }
-                                this.PushAttributeValueEnd(this._index - 1);
-                                this._state = ParseState.BetweenAttributes;
+                                PushAttributeValueEnd(_index - 1);
+                                _state = ParseState.BetweenAttributes;
                             }
                             continue;
                         }
                     case ParseState.Comment:
                         {
-                            if ((this._c == 0x3e) && (!this._fullcomment || ((this.Text[this._index - 2] == '-') && (this.Text[this._index - 3] == '-'))))
+                            if ((_c == 0x3e) && (!_fullcomment || ((Text[_index - 2] == '-') && (Text[_index - 3] == '-'))))
                             {
-                                if (!this.PushNodeEnd(this._index, false))
+                                if (!PushNodeEnd(_index, false))
                                 {
-                                    this._index = this.Text.Length;
+                                    _index = Text.Length;
                                 }
                                 else
                                 {
-                                    this._state = ParseState.Text;
-                                    this.PushNodeStart(HtmlNodeType.Text, this._index);
+                                    _state = ParseState.Text;
+                                    PushNodeStart(HtmlNodeType.Text, _index);
                                 }
                             }
                             continue;
                         }
                     case ParseState.QuotedAttributeValue:
                         {
-                            if (this._c != num)
+                            if (_c != num)
                             {
                                 goto Label_064D;
                             }
-                            this.PushAttributeValueEnd(this._index - 1);
-                            this._state = ParseState.BetweenAttributes;
+                            PushAttributeValueEnd(_index - 1);
+                            _state = ParseState.BetweenAttributes;
                             continue;
                         }
                     case ParseState.ServerSideCode:
                         {
-                            if (((this._c != 0x25) || (this._index >= this.Text.Length)) || (this.Text[this._index] != '>'))
+                            if (((_c != 0x25) || (_index >= Text.Length)) || (Text[_index] != '>'))
                             {
                                 continue;
                             }
-                            ParseState state2 = this._oldstate;
+                            ParseState state2 = _oldstate;
                             if (state2 == ParseState.BetweenAttributes)
                             {
                                 goto Label_077E;
@@ -974,23 +974,23 @@
                             {
                                 goto Label_0795;
                             }
-                            this._state = ParseState.AttributeValue;
+                            _state = ParseState.AttributeValue;
                             goto Label_07A1;
                         }
                     case ParseState.PcData:
                         {
-                            if (((this._currentnode._namelength + 3) <= (this.Text.Length - (this._index - 1))) && (string.Compare(this.Text.Substring(this._index - 1, this._currentnode._namelength + 2), "</" + this._currentnode.Name, StringComparison.OrdinalIgnoreCase) == 0))
+                            if (((_currentnode._namelength + 3) <= (Text.Length - (_index - 1))) && (string.Compare(Text.Substring(_index - 1, _currentnode._namelength + 2), "</" + _currentnode.Name, StringComparison.OrdinalIgnoreCase) == 0))
                             {
-                                int c = this.Text[((this._index - 1) + 2) + this._currentnode.Name.Length];
+                                int c = Text[((_index - 1) + 2) + _currentnode.Name.Length];
                                 if ((c == 0x3e) || IsWhiteSpace(c))
                                 {
-                                    HtmlNode newChild = this.CreateNode(HtmlNodeType.Text, this._currentnode._outerstartindex + this._currentnode._outerlength);
-                                    newChild._outerlength = (this._index - 1) - newChild._outerstartindex;
-                                    this._currentnode.AppendChild(newChild);
-                                    this.PushNodeStart(HtmlNodeType.Element, this._index - 1);
-                                    this.PushNodeNameStart(false, (this._index - 1) + 2);
-                                    this._state = ParseState.Tag;
-                                    this.IncrementPosition();
+                                    HtmlNode newChild = CreateNode(HtmlNodeType.Text, _currentnode._outerstartindex + _currentnode._outerlength);
+                                    newChild._outerlength = (_index - 1) - newChild._outerstartindex;
+                                    _currentnode.AppendChild(newChild);
+                                    PushNodeStart(HtmlNodeType.Element, _index - 1);
+                                    PushNodeNameStart(false, (_index - 1) + 2);
+                                    _state = ParseState.Tag;
+                                    IncrementPosition();
                                 }
                             }
                             continue;
@@ -1000,279 +1000,279 @@
                             continue;
                         }
                 }
-                this.PushNodeNameStart(true, this._index - 1);
-                this.DecrementPosition();
+                PushNodeNameStart(true, _index - 1);
+                DecrementPosition();
                 Label_017F:
-                this._state = ParseState.Tag;
+                _state = ParseState.Tag;
                 continue;
                 Label_01C9:
-                if (this._c == 0x2f)
+                if (_c == 0x2f)
                 {
-                    this.PushNodeNameEnd(this._index - 1);
-                    if (this._state == ParseState.Tag)
+                    PushNodeNameEnd(_index - 1);
+                    if (_state == ParseState.Tag)
                     {
-                        this._state = ParseState.EmptyTag;
+                        _state = ParseState.EmptyTag;
                     }
                 }
-                else if (this._c == 0x3e)
+                else if (_c == 0x3e)
                 {
-                    this.PushNodeNameEnd(this._index - 1);
-                    if (this._state == ParseState.Tag)
+                    PushNodeNameEnd(_index - 1);
+                    if (_state == ParseState.Tag)
                     {
-                        if (!this.PushNodeEnd(this._index, false))
+                        if (!PushNodeEnd(_index, false))
                         {
-                            this._index = this.Text.Length;
+                            _index = Text.Length;
                         }
-                        else if (this._state == ParseState.Tag)
+                        else if (_state == ParseState.Tag)
                         {
-                            this._state = ParseState.Text;
-                            this.PushNodeStart(HtmlNodeType.Text, this._index);
+                            _state = ParseState.Text;
+                            PushNodeStart(HtmlNodeType.Text, _index);
                         }
                     }
                 }
                 continue;
                 Label_02A5:
-                if (this._c == 0x3e)
+                if (_c == 0x3e)
                 {
-                    if (!this.PushNodeEnd(this._index, false))
+                    if (!PushNodeEnd(_index, false))
                     {
-                        this._index = this.Text.Length;
+                        _index = Text.Length;
                     }
-                    else if (this._state == ParseState.BetweenAttributes)
+                    else if (_state == ParseState.BetweenAttributes)
                     {
-                        this._state = ParseState.Text;
-                        this.PushNodeStart(HtmlNodeType.Text, this._index);
+                        _state = ParseState.Text;
+                        PushNodeStart(HtmlNodeType.Text, _index);
                     }
                 }
                 else
                 {
-                    this.PushAttributeNameStart(this._index - 1);
-                    this._state = ParseState.AttributeName;
+                    PushAttributeNameStart(_index - 1);
+                    _state = ParseState.AttributeName;
                 }
                 continue;
                 Label_034D:
-                if (this._state == ParseState.EmptyTag)
+                if (_state == ParseState.EmptyTag)
                 {
-                    this._state = ParseState.Text;
-                    this.PushNodeStart(HtmlNodeType.Text, this._index);
+                    _state = ParseState.Text;
+                    PushNodeStart(HtmlNodeType.Text, _index);
                 }
                 continue;
                 Label_0372:
-                this._state = ParseState.BetweenAttributes;
+                _state = ParseState.BetweenAttributes;
                 continue;
                 Label_03B0:
-                if (this._c == 0x3d)
+                if (_c == 0x3d)
                 {
-                    this.PushAttributeNameEnd(this._index - 1);
-                    this._state = ParseState.AttributeAfterEquals;
+                    PushAttributeNameEnd(_index - 1);
+                    _state = ParseState.AttributeAfterEquals;
                 }
-                else if (this._c == 0x3e)
+                else if (_c == 0x3e)
                 {
-                    this.PushAttributeNameEnd(this._index - 1);
-                    if (!this.PushNodeEnd(this._index, false))
+                    PushAttributeNameEnd(_index - 1);
+                    if (!PushNodeEnd(_index, false))
                     {
-                        this._index = this.Text.Length;
+                        _index = Text.Length;
                     }
-                    else if (this._state == ParseState.AttributeName)
+                    else if (_state == ParseState.AttributeName)
                     {
-                        this._state = ParseState.Text;
-                        this.PushNodeStart(HtmlNodeType.Text, this._index);
+                        _state = ParseState.Text;
+                        PushNodeStart(HtmlNodeType.Text, _index);
                     }
                 }
                 continue;
                 Label_0483:
-                if (this._state == ParseState.AttributeBeforeEquals)
+                if (_state == ParseState.AttributeBeforeEquals)
                 {
-                    this._state = ParseState.Text;
-                    this.PushNodeStart(HtmlNodeType.Text, this._index);
+                    _state = ParseState.Text;
+                    PushNodeStart(HtmlNodeType.Text, _index);
                 }
                 continue;
                 Label_04A8:
-                if (this._c == 0x3d)
+                if (_c == 0x3d)
                 {
-                    this._state = ParseState.AttributeAfterEquals;
+                    _state = ParseState.AttributeAfterEquals;
                 }
                 else
                 {
-                    this._state = ParseState.BetweenAttributes;
-                    this.DecrementPosition();
+                    _state = ParseState.BetweenAttributes;
+                    DecrementPosition();
                 }
                 continue;
                 Label_0525:
-                if (this._c == 0x3e)
+                if (_c == 0x3e)
                 {
-                    if (!this.PushNodeEnd(this._index, false))
+                    if (!PushNodeEnd(_index, false))
                     {
-                        this._index = this.Text.Length;
+                        _index = Text.Length;
                     }
-                    else if (this._state == ParseState.AttributeAfterEquals)
+                    else if (_state == ParseState.AttributeAfterEquals)
                     {
-                        this._state = ParseState.Text;
-                        this.PushNodeStart(HtmlNodeType.Text, this._index);
+                        _state = ParseState.Text;
+                        PushNodeStart(HtmlNodeType.Text, _index);
                     }
                 }
                 else
                 {
-                    this.PushAttributeValueStart(this._index - 1);
-                    this._state = ParseState.AttributeValue;
+                    PushAttributeValueStart(_index - 1);
+                    _state = ParseState.AttributeValue;
                 }
                 continue;
                 Label_05C5:
-                if (this._c == 0x3e)
+                if (_c == 0x3e)
                 {
-                    this.PushAttributeValueEnd(this._index - 1);
-                    if (!this.PushNodeEnd(this._index, false))
+                    PushAttributeValueEnd(_index - 1);
+                    if (!PushNodeEnd(_index, false))
                     {
-                        this._index = this.Text.Length;
+                        _index = Text.Length;
                     }
-                    else if (this._state == ParseState.AttributeValue)
+                    else if (_state == ParseState.AttributeValue)
                     {
-                        this._state = ParseState.Text;
-                        this.PushNodeStart(HtmlNodeType.Text, this._index);
+                        _state = ParseState.Text;
+                        PushNodeStart(HtmlNodeType.Text, _index);
                     }
                 }
                 continue;
                 Label_064D:
-                if (((this._c == 60) && (this._index < this.Text.Length)) && (this.Text[this._index] == '%'))
+                if (((_c == 60) && (_index < Text.Length)) && (Text[_index] == '%'))
                 {
-                    this._oldstate = this._state;
-                    this._state = ParseState.ServerSideCode;
+                    _oldstate = _state;
+                    _state = ParseState.ServerSideCode;
                 }
                 continue;
                 Label_077E:
-                this.PushAttributeNameEnd(this._index + 1);
-                this._state = ParseState.BetweenAttributes;
+                PushAttributeNameEnd(_index + 1);
+                _state = ParseState.BetweenAttributes;
                 goto Label_07A1;
                 Label_0795:
-                this._state = this._oldstate;
+                _state = _oldstate;
                 Label_07A1:
-                this.IncrementPosition();
+                IncrementPosition();
             }
-            if (this._currentnode._namestartindex > 0)
+            if (_currentnode._namestartindex > 0)
             {
-                this.PushNodeNameEnd(this._index);
+                PushNodeNameEnd(_index);
             }
-            this.PushNodeEnd(this._index, false);
-            this.Lastnodes.Clear();
+            PushNodeEnd(_index, false);
+            Lastnodes.Clear();
         }
 
         private void PushAttributeNameEnd(int index)
         {
-            this._currentattribute._namelength = index - this._currentattribute._namestartindex;
-            this._currentnode.Attributes.Append(this._currentattribute);
+            _currentattribute._namelength = index - _currentattribute._namestartindex;
+            _currentnode.Attributes.Append(_currentattribute);
         }
 
         private void PushAttributeNameStart(int index)
         {
-            this._currentattribute = this.CreateAttribute();
-            this._currentattribute._namestartindex = index;
-            this._currentattribute.Line = this._line;
-            this._currentattribute._lineposition = this._lineposition;
-            this._currentattribute._streamposition = index;
+            _currentattribute = CreateAttribute();
+            _currentattribute._namestartindex = index;
+            _currentattribute.Line = _line;
+            _currentattribute._lineposition = _lineposition;
+            _currentattribute._streamposition = index;
         }
 
         private void PushAttributeValueEnd(int index)
         {
-            this._currentattribute._valuelength = index - this._currentattribute._valuestartindex;
+            _currentattribute._valuelength = index - _currentattribute._valuestartindex;
         }
 
         private void PushAttributeValueStart(int index)
         {
-            this.PushAttributeValueStart(index, 0);
+            PushAttributeValueStart(index, 0);
         }
 
         private void PushAttributeValueStart(int index, int quote)
         {
-            this._currentattribute._valuestartindex = index;
+            _currentattribute._valuestartindex = index;
             if (quote == 0x27)
             {
-                this._currentattribute.QuoteType = AttributeValueQuote.SingleQuote;
+                _currentattribute.QuoteType = AttributeValueQuote.SingleQuote;
             }
         }
 
         private bool PushNodeEnd(int index, bool close)
         {
-            this._currentnode._outerlength = index - this._currentnode._outerstartindex;
-            if ((this._currentnode._nodetype == HtmlNodeType.Text) || (this._currentnode._nodetype == HtmlNodeType.Comment))
+            _currentnode._outerlength = index - _currentnode._outerstartindex;
+            if ((_currentnode._nodetype == HtmlNodeType.Text) || (_currentnode._nodetype == HtmlNodeType.Comment))
             {
-                if (this._currentnode._outerlength > 0)
+                if (_currentnode._outerlength > 0)
                 {
-                    this._currentnode._innerlength = this._currentnode._outerlength;
-                    this._currentnode._innerstartindex = this._currentnode._outerstartindex;
-                    if (this._lastparentnode != null)
+                    _currentnode._innerlength = _currentnode._outerlength;
+                    _currentnode._innerstartindex = _currentnode._outerstartindex;
+                    if (_lastparentnode != null)
                     {
-                        this._lastparentnode.AppendChild(this._currentnode);
+                        _lastparentnode.AppendChild(_currentnode);
                     }
                 }
             }
-            else if (this._currentnode._starttag && (this._lastparentnode != this._currentnode))
+            else if (_currentnode._starttag && (_lastparentnode != _currentnode))
             {
-                if (this._lastparentnode != null)
+                if (_lastparentnode != null)
                 {
-                    this._lastparentnode.AppendChild(this._currentnode);
+                    _lastparentnode.AppendChild(_currentnode);
                 }
-                this.ReadDocumentEncoding(this._currentnode);
-                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(this.Lastnodes, this._currentnode.Name);
-                this._currentnode._prevwithsamename = dictionaryValueOrNull;
-                this.Lastnodes[this._currentnode.Name] = this._currentnode;
-                if ((this._currentnode.NodeType == HtmlNodeType.Document) || (this._currentnode.NodeType == HtmlNodeType.Element))
+                ReadDocumentEncoding(_currentnode);
+                HtmlNode dictionaryValueOrNull = Utilities.GetDictionaryValueOrNull<string, HtmlNode>(Lastnodes, _currentnode.Name);
+                _currentnode._prevwithsamename = dictionaryValueOrNull;
+                Lastnodes[_currentnode.Name] = _currentnode;
+                if ((_currentnode.NodeType == HtmlNodeType.Document) || (_currentnode.NodeType == HtmlNodeType.Element))
                 {
-                    this._lastparentnode = this._currentnode;
+                    _lastparentnode = _currentnode;
                 }
-                if (HtmlNode.IsCDataElement(this.CurrentNodeName()))
+                if (HtmlNode.IsCDataElement(CurrentNodeName()))
                 {
-                    this._state = ParseState.PcData;
+                    _state = ParseState.PcData;
                     return true;
                 }
-                if (HtmlNode.IsClosedElement(this._currentnode.Name) || HtmlNode.IsEmptyElement(this._currentnode.Name))
+                if (HtmlNode.IsClosedElement(_currentnode.Name) || HtmlNode.IsEmptyElement(_currentnode.Name))
                 {
                     close = true;
                 }
             }
-            if (close || !this._currentnode._starttag)
+            if (close || !_currentnode._starttag)
             {
-                if (((this.OptionStopperNodeName != null) && (this._remainder == null)) && (string.Compare(this._currentnode.Name, this.OptionStopperNodeName, StringComparison.OrdinalIgnoreCase) == 0))
+                if (((OptionStopperNodeName != null) && (_remainder == null)) && (string.Compare(_currentnode.Name, OptionStopperNodeName, StringComparison.OrdinalIgnoreCase) == 0))
                 {
-                    this._remainderOffset = index;
-                    this._remainder = this.Text.Substring(this._remainderOffset);
-                    this.CloseCurrentNode();
+                    _remainderOffset = index;
+                    _remainder = Text.Substring(_remainderOffset);
+                    CloseCurrentNode();
                     return false;
                 }
-                this.CloseCurrentNode();
+                CloseCurrentNode();
             }
             return true;
         }
 
         private void PushNodeNameEnd(int index)
         {
-            this._currentnode._namelength = index - this._currentnode._namestartindex;
-            if (this.OptionFixNestedTags)
+            _currentnode._namelength = index - _currentnode._namestartindex;
+            if (OptionFixNestedTags)
             {
-                this.FixNestedTags();
+                FixNestedTags();
             }
         }
 
         private void PushNodeNameStart(bool starttag, int index)
         {
-            this._currentnode._starttag = starttag;
-            this._currentnode._namestartindex = index;
+            _currentnode._starttag = starttag;
+            _currentnode._namestartindex = index;
         }
 
         private void PushNodeStart(HtmlNodeType type, int index)
         {
-            this._currentnode = this.CreateNode(type, index);
-            this._currentnode._line = this._line;
-            this._currentnode._lineposition = this._lineposition;
+            _currentnode = CreateNode(type, index);
+            _currentnode._line = _line;
+            _currentnode._lineposition = _lineposition;
             if (type == HtmlNodeType.Element)
             {
-                this._currentnode._lineposition--;
+                _currentnode._lineposition--;
             }
-            this._currentnode._streamposition = index;
+            _currentnode._streamposition = index;
         }
 
         private void ReadDocumentEncoding(HtmlNode node)
         {
-            if ((this.OptionReadEncoding && (node._namelength == 4)) && (node.Name == "meta"))
+            if ((OptionReadEncoding && (node._namelength == 4)) && (node.Name == "meta"))
             {
                 HtmlAttribute attribute = node.Attributes["http-equiv"];
                 if ((attribute != null) && (string.Compare(attribute.Value, "content-type", StringComparison.OrdinalIgnoreCase) == 0))
@@ -1289,19 +1289,19 @@
                             }
                             try
                             {
-                                this._declaredencoding = Encoding.GetEncoding(nameValuePairsValue);
+                                _declaredencoding = Encoding.GetEncoding(nameValuePairsValue);
                             }
                             catch (ArgumentException)
                             {
-                                this._declaredencoding = null;
+                                _declaredencoding = null;
                             }
-                            if (this._onlyDetectEncoding)
+                            if (_onlyDetectEncoding)
                             {
-                                throw new EncodingFoundException(this._declaredencoding);
+                                throw new EncodingFoundException(_declaredencoding);
                             }
-                            if (((this._streamencoding != null) && (this._declaredencoding != null)) && (this._declaredencoding.WindowsCodePage != this._streamencoding.WindowsCodePage))
+                            if (((_streamencoding != null) && (_declaredencoding != null)) && (_declaredencoding.WindowsCodePage != _streamencoding.WindowsCodePage))
                             {
-                                this.AddError(HtmlParseErrorCode.CharsetMismatch, this._line, this._lineposition, this._index, node.OuterHtml, "Encoding mismatch between StreamEncoding: " + this._streamencoding.WebName + " and DeclaredEncoding: " + this._declaredencoding.WebName);
+                                AddError(HtmlParseErrorCode.CharsetMismatch, _line, _lineposition, _index, node.OuterHtml, "Encoding mismatch between StreamEncoding: " + _streamencoding.WebName + " and DeclaredEncoding: " + _declaredencoding.WebName);
                             }
                         }
                     }
@@ -1311,13 +1311,13 @@
 
         public void Save(Stream outStream)
         {
-            StreamWriter writer = new StreamWriter(outStream, this.GetOutEncoding());
-            this.Save(writer);
+            StreamWriter writer = new StreamWriter(outStream, GetOutEncoding());
+            Save(writer);
         }
 
         public void Save(StreamWriter writer)
         {
-            this.Save((TextWriter)writer);
+            Save((TextWriter)writer);
         }
 
         public void Save(TextWriter writer)
@@ -1326,21 +1326,21 @@
             {
                 throw new ArgumentNullException("writer");
             }
-            this.DocumentNode.WriteTo(writer);
+            DocumentNode.WriteTo(writer);
             writer.Flush();
         }
 
         public void Save(string filename)
         {
-            using (StreamWriter writer = new StreamWriter(filename, false, this.GetOutEncoding()))
+            using (StreamWriter writer = new StreamWriter(filename, false, GetOutEncoding()))
             {
-                this.Save(writer);
+                Save(writer);
             }
         }
 
         public void Save(XmlWriter writer)
         {
-            this.DocumentNode.WriteTo(writer);
+            DocumentNode.WriteTo(writer);
             writer.Flush();
         }
 
@@ -1355,7 +1355,7 @@
                 throw new ArgumentNullException("encoding");
             }
             StreamWriter writer = new StreamWriter(outStream, encoding);
-            this.Save(writer);
+            Save(writer);
         }
 
         public void Save(string filename, Encoding encoding)
@@ -1370,21 +1370,21 @@
             }
             using (StreamWriter writer = new StreamWriter(filename, false, encoding))
             {
-                this.Save(writer);
+                Save(writer);
             }
         }
 
         internal void SetIdForNode(HtmlNode node, string id)
         {
-            if (this.OptionUseIdAttribute && ((this.Nodesid != null) && (id != null)))
+            if (OptionUseIdAttribute && ((Nodesid != null) && (id != null)))
             {
                 if (node == null)
                 {
-                    this.Nodesid.Remove(id.ToLower());
+                    Nodesid.Remove(id.ToLower());
                 }
                 else
                 {
-                    this.Nodesid[id.ToLower()] = node;
+                    Nodesid[id.ToLower()] = node;
                 }
             }
         }
@@ -1393,15 +1393,15 @@
         {
             do
             {
-                if (this._lastparentnode.Closed)
+                if (_lastparentnode.Closed)
                 {
-                    this._lastparentnode = this._lastparentnode.ParentNode;
+                    _lastparentnode = _lastparentnode.ParentNode;
                 }
             }
-            while ((this._lastparentnode != null) && this._lastparentnode.Closed);
-            if (this._lastparentnode == null)
+            while ((_lastparentnode != null) && _lastparentnode.Closed);
+            if (_lastparentnode == null)
             {
-                this._lastparentnode = this._documentnode;
+                _lastparentnode = _documentnode;
             }
         }
 
@@ -1409,9 +1409,9 @@
         {
             get
             {
-                if (this._crc32 != null)
+                if (_crc32 != null)
                 {
-                    return (int)this._crc32.CheckSum;
+                    return (int)_crc32.CheckSum;
                 }
                 return 0;
             }
@@ -1421,7 +1421,7 @@
         {
             get
             {
-                return this._declaredencoding;
+                return _declaredencoding;
             }
         }
 
@@ -1429,7 +1429,7 @@
         {
             get
             {
-                return this._documentnode;
+                return _documentnode;
             }
         }
 
@@ -1437,7 +1437,7 @@
         {
             get
             {
-                return this.GetOutEncoding();
+                return GetOutEncoding();
             }
         }
 
@@ -1445,7 +1445,7 @@
         {
             get
             {
-                return this._parseerrors;
+                return _parseerrors;
             }
         }
 
@@ -1453,7 +1453,7 @@
         {
             get
             {
-                return this._remainder;
+                return _remainder;
             }
         }
 
@@ -1461,7 +1461,7 @@
         {
             get
             {
-                return this._remainderOffset;
+                return _remainderOffset;
             }
         }
 
@@ -1469,7 +1469,7 @@
         {
             get
             {
-                return this._streamencoding;
+                return _streamencoding;
             }
         }
 

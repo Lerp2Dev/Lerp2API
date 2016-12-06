@@ -55,7 +55,6 @@
     <Compile Include="Utility\LerpedThread.cs" />
     <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />
-    <Compile Include="Utility\ContinuationManager.cs" />
     <Compile Include="Utility\DummyEditor.cs" />
     <Compile Include="Utility\FileBrowserEditor.cs" />
     <Compile Include="Utility\GenericMenuExtensions.cs" />

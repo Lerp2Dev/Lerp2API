@@ -242,11 +242,14 @@
     <Compile Include="Serializers\unityserializer-ng\SharpZIP\src\ZipHelperStream.cs" />
     <Compile Include="Serializers\unityserializer-ng\UnitySerializerVersion.cs" />
     <Compile Include="Serializers\unityserializer-ng\Utility\Types.cs" />
+    <Compile Include="Utility\ContinuationManager.cs" />
     <Compile Include="Utility\DebugLine.cs" />
     <Compile Include="Utility\FileBrowser.cs" />
+    <Compile Include="Utility\GameLoopEntry.cs" />
     <Compile Include="Utility\GUILayoutx.cs" />
     <Compile Include="Utility\MeshSerializer.cs" />
     <Compile Include="Utility\UniqueIdentifiers.cs" />
+    <Compile Include="Utility\UpdateEventHooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="All Noises\Noise\COPYING.LESSER.txt" />

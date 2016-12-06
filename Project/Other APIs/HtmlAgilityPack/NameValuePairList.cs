@@ -15,23 +15,23 @@
 
         internal NameValuePairList(string text)
         {
-            this.Text = text;
-            this._allPairs = new List<KeyValuePair<string, string>>();
-            this._pairsWithName = new Dictionary<string, List<KeyValuePair<string, string>>>();
-            this.Parse(text);
+            Text = text;
+            _allPairs = new List<KeyValuePair<string, string>>();
+            _pairsWithName = new Dictionary<string, List<KeyValuePair<string, string>>>();
+            Parse(text);
         }
 
         internal List<KeyValuePair<string, string>> GetNameValuePairs(string name)
         {
             if (name == null)
             {
-                return this._allPairs;
+                return _allPairs;
             }
-            if (!this._pairsWithName.ContainsKey(name))
+            if (!_pairsWithName.ContainsKey(name))
             {
                 return new List<KeyValuePair<string, string>>();
             }
-            return this._pairsWithName[name];
+            return _pairsWithName[name];
         }
 
         internal static string GetNameValuePairsValue(string text, string name)
@@ -46,7 +46,7 @@
             {
                 throw new ArgumentNullException();
             }
-            List<KeyValuePair<string, string>> nameValuePairs = this.GetNameValuePairs(name);
+            List<KeyValuePair<string, string>> nameValuePairs = GetNameValuePairs(name);
             if (nameValuePairs.Count == 0)
             {
                 return string.Empty;
@@ -57,8 +57,8 @@
 
         private void Parse(string text)
         {
-            this._allPairs.Clear();
-            this._pairsWithName.Clear();
+            _allPairs.Clear();
+            _pairsWithName.Clear();
             if (text != null)
             {
                 foreach (string str in text.Split(new char[] { ';' }))
@@ -70,15 +70,15 @@
                         {
                             List<KeyValuePair<string, string>> list;
                             KeyValuePair<string, string> item = new KeyValuePair<string, string>(strArray2[0].Trim().ToLower(), (strArray2.Length < 2) ? "" : strArray2[1]);
-                            this._allPairs.Add(item);
-                            if (!this._pairsWithName.ContainsKey(item.Key))
+                            _allPairs.Add(item);
+                            if (!_pairsWithName.ContainsKey(item.Key))
                             {
                                 list = new List<KeyValuePair<string, string>>();
-                                this._pairsWithName[item.Key] = list;
+                                _pairsWithName[item.Key] = list;
                             }
                             else
                             {
-                                list = this._pairsWithName[item.Key];
+                                list = _pairsWithName[item.Key];
                             }
                             list.Add(item);
                         }
