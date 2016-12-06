@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Net;
+using System.Linq;
 using Lerp2API;
 using Lerp2API.Utility;
 using Lerp2APIEditor.Utility;
@@ -19,14 +20,18 @@ namespace Lerp2APIEditor
 
         internal static string localVersionFilepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Lerp2API.version");
         public static bool noConnection;
-        internal static string[] updateUrl = new string[] {
+        internal static string[] updateUrls = new string[] {
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.dll",
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.pdb",
-            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.xml" };
+            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Lerp2API.xml",
+            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.dll",
+            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.pdb",
+            "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Lerp2APIEditor.xml"
+        };
 
-        public string versionName = "1.1 Alpha Release",
-                      versionStr = "1.1a",
-                      versionChangelog = "Deleted Unity Analytics popup.\nImproved Lerped Updater (I added the XML file to download, and I made several optimizations to it).\nFixed problem with Debug Manager's editor menu option.\nAdded Debug Manager to the game.\nNow there is a working console (the unique command is /debug, the shortcut to this command is the key 'P').\nImproved WWW System.\nThe Falling Avoider has been fixed (it has a minor bug, that had not detect the Start event of MonoBehaviour) and improved.\nAdded support to unistalled Assets by creating two new options 'Build Scene' & 'Init Asset', if the asset is not present the Editor will show you a message to download/buy it!\nIf the API is not active in the Editor, the DownloadAPI class will help it you to promote it.\nGame Console simple format system.\nAdded shortcuts to editor.\nUtility to get Skin from Editor, Inspector and Game.\nAdded some commands.\nAdded a File Browser Utility.\nAdded custom inspector draws for some classes.\nImproved GUI from console.\nUpdate and compile external files from the API Project to update changes.";
+        public string versionName = "1.1.1 Alpha Release",
+                      versionStr = "1.1.1a",
+                      versionChangelog = "Fixed README.\nFixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.";
 
         static LerpedUpdater()
         {
@@ -62,48 +67,34 @@ namespace Lerp2APIEditor
 
         internal static void DoUpdate(string newerVersion)
         {
-            string location = Assembly.GetExecutingAssembly().Location,
-                   path = location.Replace(".dll", ".pdb"),
-                   path1 = location.Replace(".dll", ".xml");
-            WWW www1 = new WWW(updateUrl[0]);
-            WWW www2 = new WWW(updateUrl[1]);
-            WWW www3 = new WWW(updateUrl[2]);
-            if (!File.Exists(location) || !File.Exists(path))
+            string depPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)),
+                   editorPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string[] deps = new string[] {
+                Path.Combine(depPath, "Lerp2API.dll"),
+                Path.Combine(depPath, "Lerp2API.pdb"),
+                Path.Combine(depPath, "Lerp2API.xml"),
+                Path.Combine(editorPath, "Lerp2APIEditor.dll"),
+                Path.Combine(editorPath, "Lerp2APIEditor.pdb"),
+                Path.Combine(editorPath, "Lerp2APIEditor.xml")
+            };
+            WWW[] wwws = updateUrls.GetWWW();
+            if (!deps.All(x => File.Exists(x)))
                 Debug.LogErrorFormat("Some Library files doesn't exist, aborting update mission!\nDownload them manually from {0}, and put them in '{1}' folder.", 
                     @"<a href=""https://github.com/Ikillnukes/Lerp2API/tree/master/Build"">here</a>", 
-                    Path.GetDirectoryName(location));
+                    depPath);
             else
             {
-                WWWHandler.Handle(www1, () => 
+                WWWHandler.Add(wwws);
+                WWWHandler.Start(() => 
                 {
-                    File.Delete(location);
-                    File.WriteAllBytes(location, www1.bytes);
-                    WWWHandler.Handle(www2, () =>
+                    for(int i = 0; i < wwws.Length; ++i)
                     {
-                        File.Delete(path);
-                        File.WriteAllBytes(path, www2.bytes);
-                        WWWHandler.Handle(www3, () =>
-                        {
-                            File.Delete(path1);
-                            File.WriteAllBytes(path1, www3.bytes);
-                            Debug.LogFormat("Update to '{0}' successfully done!", newerVersion);
-                            AssetDatabase.Refresh();
-                        });
-                    });
-                });
-                /*WWWHandler.Add(www1);
-                WWWHandler.Add(www2);
-                WWWHandler.Add(www3);
-                WWWHandler.Start(() => {
-                    File.Delete(location);
-                    File.WriteAllBytes(location, www1.bytes);
-                    File.Delete(path);
-                    File.WriteAllBytes(path, www2.bytes);
-                    File.Delete(path1);
-                    File.WriteAllBytes(path1, www3.bytes);
+                        File.Delete(deps[i]);
+                        File.WriteAllBytes(deps[i], wwws[i].bytes);
+                    }
                     Debug.LogFormat("Update to '{0}' successfully done!", newerVersion);
                     AssetDatabase.Refresh();
-                });*/
+                });
             }
         }
 
@@ -128,7 +119,8 @@ namespace Lerp2APIEditor
                 try
                 {
                     WWW www = new WWW("https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Lerp2API.version");
-                    WWWHandler.Handle(www, () =>
+                    WWWHandler.Add(www);
+                    WWWHandler.Start(() =>
                     {
                         var updater = www.text.Deserialize<LerpedUpdater>();
                         if (updater.versionStr != curVersion)
@@ -159,7 +151,8 @@ namespace Lerp2APIEditor
             if (File.Exists(path))
                 return;
             WWW www = new WWW("http://lerp2dev.com/unityassets/");
-            WWWHandler.Handle(www, () => {
+            WWWHandler.Add(www);
+            WWWHandler.Start(() => {
                 File.WriteAllText(path, www.text);
                 AssetDatabase.Refresh();
             });

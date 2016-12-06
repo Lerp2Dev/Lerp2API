@@ -91,6 +91,26 @@ namespace Lerp2API
             return array;
         }
 
+        public static T[] Merge<T>(params object[] arrays)
+        {
+            List<T> arr = new List<T>();
+            foreach (object t in arrays)
+                if (t is Array)
+                    foreach (object st in (Array)t)
+                        arr.Add((T)st);
+                else
+                    arr.Add((T)t);
+            return arr.ToArray();
+        }
+
+        public static WWW[] GetWWW(this string[] a)
+        {
+            List<WWW> w = new List<WWW>();
+            foreach (string p in a)
+                w.Add(new WWW(p));
+            return w.ToArray();
+        }
+
         #endregion "Array Extensions"
 
         #region "Dictionary Extensions"

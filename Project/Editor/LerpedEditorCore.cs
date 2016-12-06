@@ -78,7 +78,8 @@ namespace Lerp2APIEditor
                     if (!Directory.Exists(fp))
                         Directory.CreateDirectory(fp);
                     WWW www = new WWW(repFiles[i]);
-                    WWWHandler.Handle(www, () => {
+                    WWWHandler.Add(www);
+                    WWWHandler.Start(() => {
                         File.WriteAllBytes(resourceFiles[i], www.bytes);
                     });
                 }

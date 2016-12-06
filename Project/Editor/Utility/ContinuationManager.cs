@@ -7,33 +7,44 @@ using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2APIEditor.Utility
 {
-    public static class WWWHandler
+    public class WWWHandler : ContinuationManager
     {
         internal static List<WWW> wwws = new List<WWW>();
-        public static void Handle(WWW www, Action finishedAction)
-        {
-            ContinuationManager.Add(() => www.isDone, finishedAction);
-        }
+        /*public static void Handle(WWW www, Action finishedAction)
+        { //Obsolete
+            AddJob(() => www.isDone, finishedAction);
+        }*/
         public static void Add(WWW www)
         {
             wwws.Add(www);
+        }
+        public static void Add(WWW[] wws)
+        {
+            foreach(WWW www in wws)
+                wwws.Add(www);
         }
         public static void Start(Action finishedAction)
         {
             if (wwws.Count > 1)
             {
-                for(int i = 0; i < wwws.Count - 1; ++i)
-                    ContinuationManager.Add(() => wwws[i].isDone);
-                ContinuationManager.Add(() => wwws.Last().isDone, finishedAction);
+                for (int i = 0; i < wwws.Count - 1; ++i)
+                    AddJob(() => wwws[i].isDone);
+                Action a = delegate {
+                    finishedAction();
+                    start = false;
+                };
+                AddJob(() => wwws.Last().isDone, a);
+                start = true;
             }
             else if (wwws.Count == 1)
-                ContinuationManager.Add(() => wwws[0].isDone, finishedAction);
+                AddJob(() => wwws[0].isDone, finishedAction);
             else
                 Debug.LogError("You have to add any WWW value to start!");
         }
     }
-    internal static class ContinuationManager
+    public class ContinuationManager
     {
+        protected static bool start = true;
         private class Job
         {
             public Job(Func<bool> completed, Action continueWith)
@@ -46,7 +57,7 @@ namespace Lerp2APIEditor.Utility
         }
 
         private static readonly List<Job> jobs = new List<Job>();
-        public static void Add(Func<bool> completed, Action continueWith = null)
+        protected static void AddJob(Func<bool> completed, Action continueWith = null)
         {
             if (!jobs.Any()) EditorApplication.update += Update;
             jobs.Add(new Job(completed, continueWith));
@@ -54,13 +65,14 @@ namespace Lerp2APIEditor.Utility
 
         private static void Update()
         {
+            if (!start)
+                return;
             for (int i = 0; i >= 0; --i)
             {
                 var jobIt = jobs[i];
                 if (jobIt.Completed())
                 {
-                    if(jobIt.ContinueWith != null)
-                        jobIt.ContinueWith();
+                    jobIt.ContinueWith?.Invoke();
                     jobs.RemoveAt(i);
                 }
             }

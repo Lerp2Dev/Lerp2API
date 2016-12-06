@@ -4,7 +4,7 @@
         <name>Lerp2API</name>
     </assembly>
     <members>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "T:SimplexNoise.Noise" -->
+        <!-- Badly formed XML comment ignored for member "T:SimplexNoise.Noise" -->
         <member name="M:SimplexNoise.Noise.Generate(System.Single)">
             <summary>
             1D simplex noise
@@ -1788,7 +1788,7 @@
             until we have entirely finished serializing it.
             </summary>
         </member>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
+        <!-- Badly formed XML comment ignored for member "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
         <member name="F:FullSerializer.fsSerializer._cachedConverters">
             <summary>
             A cache from type to it's converter.
