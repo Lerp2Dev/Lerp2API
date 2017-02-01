@@ -36,7 +36,7 @@ public class DownloadAPI
             switch(option) 
             {
                 case 0:
-                    DownloadAPI();
+                    Download();
                     break;
                 case 2:
                     LerpedCore.SetBool(section, !active);
@@ -49,25 +49,19 @@ public class DownloadAPI
     }
 
 	[MenuItem(menuName)]
-	public static void DownloadAPI() 
+	public static void Download() 
 	{
 		string location = Path.Combine(Application.dataPath, "Lerp2API/Lerp2API.dll"),
 			   path = location.Replace(".dll", ".pdb"),
                path1 = location.Replace(".dll", ".xml");
-		WWW www = new WWW(updateUrl[0]);
-        WWW www2 = new WWW(updateUrl[1]);
-        WWW www3 = new WWW(updateUrl[2]);
-        WWWHandler.Handle(www, () => 
-        {
-            File.WriteAllBytes(location, www.bytes);
-        });
-        WWWHandler.Handle(www2, () => 
-        {
-            File.WriteAllBytes(path, www2.bytes);
-        });
-        WWWHandler.Handle(www3, () =>
-        {
-            File.WriteAllBytes(path1, www3.bytes);
+        WWWHandler wh = new WWWHandler();
+        wh.Add(new WWW(updateUrl[0]));
+        wh.Add(new WWW(updateUrl[1]));
+        wh.Add(new WWW(updateUrl[2]));
+        wh.Start<WWW[]>(false, (x) => {
+            File.WriteAllBytes(location, x[0].bytes);
+            File.WriteAllBytes(path, x[1].bytes);
+            File.WriteAllBytes(path1, x[2].bytes);
         });
         Debug.LogFormat("API downloaded successfully!");
         AssetDatabase.Refresh();
