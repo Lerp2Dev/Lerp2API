@@ -6,7 +6,12 @@ using System.Collections.Generic;
 using FullSerializer;
 using Object = UnityEngine.Object;
 using Debug = Lerp2API.DebugHandler.Debug;
+using Color = Lerp2API.Optimizers.Color;
 using Lerp2API.Game;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections;
+using Lerp2API.Optimizers;
 
 namespace Lerp2API
 {
@@ -48,7 +53,7 @@ namespace Lerp2API
 
         #region "Texture Extensions"
 
-        public static Texture2D ToTexture(this Color c, int w = 1, int h = 1)
+        public static Texture2D ToTexture(this UnityEngine.Color c, int w = 1, int h = 1)
         {
             if (w < 1 || h < 1)
                 throw new Exception("This method doesn't avoid zero or negative dimensions.");
@@ -188,7 +193,7 @@ namespace Lerp2API
 
         #region "Color Extensions"
 
-        public static string ColorToHex(this Color color) 
+        public static string ColorToHex(this UnityEngine.Color color) 
         {
             return ColorToHex((Color32)color);
         }
@@ -199,12 +204,12 @@ namespace Lerp2API
             return hex;
         }
          
-        public static Color HexToColor(this string hex)
+        public static UnityEngine.Color HexToColor(this string hex)
         {
-            byte r = byte.Parse(hex.Substring(0,2), System.Globalization.NumberStyles.HexNumber);
-            byte g = byte.Parse(hex.Substring(2,2), System.Globalization.NumberStyles.HexNumber);
-            byte b = byte.Parse(hex.Substring(4,2), System.Globalization.NumberStyles.HexNumber);
-            return new Color32(r,g,b, 255);
+            byte r = byte.Parse(hex.Substring(0,2), System.Globalization.NumberStyles.HexNumber),
+                 g = byte.Parse(hex.Substring(2,2), System.Globalization.NumberStyles.HexNumber),
+                 b = byte.Parse(hex.Substring(4,2), System.Globalization.NumberStyles.HexNumber);
+            return new Color32(r, g, b, 255);
         }
 
         #endregion
@@ -218,6 +223,65 @@ namespace Lerp2API
         }
 
         #endregion
+
+        #region "IEnumerable Extensions"
+
+        public static T Clone<T>(this T RealObject)
+        {
+            using (Stream objectStream = new MemoryStream())
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(objectStream, RealObject);
+                objectStream.Seek(0, SeekOrigin.Begin);
+                return (T)formatter.Deserialize(objectStream);
+            }
+        }
+
+        public static IEnumerable<T> TakeLast<T>(this IEnumerable<T> source, int N)
+        {
+            return source.Skip(Math.Max(0, source.Count() - N));
+        }
+
+        ///<summary>Finds the index of the first item matching an expression in an enumerable.</summary>
+        ///<param name="items">The enumerable to search.</param>
+        ///<param name="predicate">The expression to test the items against.</param>
+        ///<returns>The index of the first matching item, or -1 if no items match.</returns>
+        public static int FindIndex<T>(this IEnumerable<T> items, Func<T, bool> predicate)
+        {
+            if (items == null) throw new ArgumentNullException("items");
+            if (predicate == null) throw new ArgumentNullException("predicate");
+
+            int retVal = 0;
+            foreach (var item in items)
+            {
+                if (predicate(item)) return retVal;
+                retVal++;
+            }
+            return -1;
+        }
+
+        ///<summary>Finds the index of the first occurrence of an item in an enumerable.</summary>
+        ///<param name="items">The enumerable to search.</param>
+        ///<param name="item">The item to find.</param>
+        ///<returns>The index of the first matching item, or -1 if the item was not found.</returns>
+        public static int IndexOf<T>(this IEnumerable<T> items, T item) { return items.FindIndex(i => EqualityComparer<T>.Default.Equals(item, i)); }
+
+        #endregion
+
+        #region "Misc Extensions"
+
+        public static string UnpackNl(string str)
+        {
+            return str.Replace("\\n", Environment.NewLine);
+        }
+
+        public static string PackNl(string str)
+        {
+            return str.Replace(Environment.NewLine, "\\n");
+        }
+
+        #endregion
+
     }
 
     #region "JSON Helpers"
@@ -547,9 +611,9 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawLine(Vector3 start, Vector3 end, Color color = default(Color), float duration = 0.0f, float width = 1.0f, bool depthTest = true)
+        public static void DrawLine(Vector3 start, Vector3 end, UnityEngine.Color color = default(UnityEngine.Color), float duration = 0.0f, float width = 1.0f, bool depthTest = true)
         {
-            if (color.Equals(default(Color)))
+            if (color.Equals(default(UnityEngine.Color)))
                 color = DebugColor.normal;
             if (isEnabled)
             {
@@ -560,9 +624,9 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawRay(Vector3 start, Vector3 dir, Color color = default(Color), float duration = 0.0f, float width = 1.0f, bool depthTest = true)
+        public static void DrawRay(Vector3 start, Vector3 dir, UnityEngine.Color color = default(UnityEngine.Color), float duration = 0.0f, float width = 1.0f, bool depthTest = true)
         {
-            if (color.Equals(default(Color)))
+            if (color.Equals(default(UnityEngine.Color)))
                 color = DebugColor.normal;
             if (isEnabled)
             {
@@ -728,7 +792,7 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawCube(Vector3 pos, Color col, Vector3 scale)
+        public static void DrawCube(Vector3 pos, UnityEngine.Color col, Vector3 scale)
         {
             if (isEnabled)
             {
@@ -753,7 +817,7 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawRect(Rect rect, Color col)
+        public static void DrawRect(Rect rect, UnityEngine.Color col)
         {
             if (isEnabled)
             {
@@ -764,7 +828,7 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawRect(Vector3 pos, Color col, Vector3 scale)
+        public static void DrawRect(Vector3 pos, UnityEngine.Color col, Vector3 scale)
         {
             if (isEnabled)
             {
@@ -785,7 +849,7 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        public static void DrawPoint(Vector3 pos, Color col, float scale)
+        public static void DrawPoint(Vector3 pos, UnityEngine.Color col, float scale)
         {
             if (isEnabled)
             {
@@ -861,11 +925,11 @@ public class DebugColor
 
 public static class ShadowAndOutline
 {
-        public static void DrawOutline(Rect rect, string text, GUIStyle style, Color outColor, Color inColor, float size)
+        public static void DrawOutline(Rect rect, string text, GUIStyle style, UnityEngine.Color outColor, UnityEngine.Color inColor, float size)
         {
             float halfSize = size * 0.5F;
             GUIStyle backupStyle = new GUIStyle(style);
-            Color backupColor = GUI.color;
+            UnityEngine.Color backupColor = GUI.color;
  
             style.normal.textColor = outColor;
             GUI.color = outColor;
@@ -891,7 +955,7 @@ public static class ShadowAndOutline
             style = backupStyle;
         }
 
-        public static void DrawShadow(Rect rect, GUIContent content, GUIStyle style, Color txtColor, Color shadowColor,
+        public static void DrawShadow(Rect rect, GUIContent content, GUIStyle style, UnityEngine.Color txtColor, UnityEngine.Color shadowColor,
                                         Vector2 direction)
         {
 
@@ -904,12 +968,12 @@ public static class ShadowAndOutline
             GUI.Label(rect, content, new GUIStyle(style) { normal = new GUIStyleState() { textColor = txtColor } });
         }
 
-        public static void DrawLayoutOutline(string text, GUIStyle style, Color outColor, Color inColor, float size, params GUILayoutOption[] options)
+        public static void DrawLayoutOutline(string text, GUIStyle style, UnityEngine.Color outColor, UnityEngine.Color inColor, float size, params GUILayoutOption[] options)
         {
             DrawOutline(GUILayoutUtility.GetRect(new GUIContent(text), style, options), text, style, outColor, inColor, size);
         }
 
-        public static void DrawLayoutShadow(GUIContent content, GUIStyle style, Color txtColor, Color shadowColor,
+        public static void DrawLayoutShadow(GUIContent content, GUIStyle style, UnityEngine.Color txtColor, UnityEngine.Color shadowColor,
                                         Vector2 direction, params GUILayoutOption[] options)
         {
             DrawShadow(GUILayoutUtility.GetRect(content, style, options), content, style, txtColor, shadowColor, direction);
@@ -923,10 +987,10 @@ public static class ShadowAndOutline
             letters.active.background = null;
  
             bool result = GUI.Button(r, content, style);
+
+            UnityEngine.Color color = r.Contains(Event.current.mousePosition) ? letters.hover.textColor : letters.normal.textColor;
  
-            Color color = r.Contains(Event.current.mousePosition) ? letters.hover.textColor : letters.normal.textColor;
- 
-            DrawShadow(r, content, letters, color, new Color(0f, 0f, 0f, shadowAlpha), direction);
+            DrawShadow(r, content, letters, color, new UnityEngine.Color(0f, 0f, 0f, shadowAlpha), direction);
  
             return result;
         }
@@ -936,6 +1000,146 @@ public static class ShadowAndOutline
         {
             return DrawButtonWithShadow(GUILayoutUtility.GetRect(content, style, options), content, style, shadowAlpha, direction);
         }
+}
+
+#endregion
+
+#region "Color Utils"
+
+public static class ColorHelpers
+{
+    public static Color[,] GetBixels(this Texture2D t)
+    {
+        int w = t.width, h = t.height;
+        Color[,] cs = new Color[w, h];
+        for (int i = 0; i < w; ++i)
+            for (int j = 0; j < h; ++j)
+                cs[i, j] = (Color)t.GetPixel(i, h - j - 1); //c[i + j * w];
+        return cs;
+    }
+    public static UnityEngine.Color[] GetColor(this Color[,] c, int w, int h)
+    {
+        UnityEngine.Color[] cs = new UnityEngine.Color[w * h];
+        for (int i = 0; i < w; ++i)
+            for (int j = 0; j < h; ++j)
+                cs[i + j * w] = c[i, h - j - 1];
+        return cs;
+    }
+    public static Color[,] Fill(this Color c, int w, int h)
+    {
+        Color[,] cs = new Color[w, h];
+        for (int i = 0; i < w; ++i)
+            for (int j = 0; j < h; ++j)
+                cs[i, j] = c;
+        return cs;
+    }
+
+    internal static Dictionary<string, Texture2D> assocColor = new Dictionary<string, Texture2D>();
+    public static Texture2D ToTexture(this Color c)
+    {
+        Texture2D t = new Texture2D(1, 1);
+        t.SetPixel(0, 0, c);
+        t.Apply();
+        if (assocColor.ContainsKey(c.ToString()))
+            return assocColor[c.ToString()];
+        else
+        {
+            assocColor.Add(c.ToString(), t);
+            return t;
+        }
+    }
+    public static IEnumerator Clone(this Color[,] c, int w, int h, int step, Action upt, Action<Color[,]> f)
+    {
+        Color[,] nc = new Color[w, h];
+        int k = 0;
+        for (int i = 0; i < w; ++i)
+            for (int j = 0; j < h; ++j)
+            {
+                //Color cc = ((Color[])new Color[] { c[i, j] }.Clone())[0];
+                nc[i, j] = (Color)c[i, j].Clone(); //new Color(cc.r, cc.g, cc.b);
+                upt();
+                ++k;
+                if (k % step == 0)
+                    yield return null;
+            }
+        f(nc);
+    }
+    public static void UptPixel(this Texture2D t, Point p, Color c)
+    {
+        t.SetPixel(p.x, t.height - p.y - 1, c);
+        t.Apply();
+    }
+}
+
+#endregion
+
+#region "Color Extensions"
+
+public static class PointHelpers
+{
+    public static Vector2[] GetVecArr(this Point[] ps)
+    {
+        return Array.ConvertAll(ps, (Point item) => (Vector2)item);
+    }
+
+    public static Point[] GetPointArr(this Vector2[] ps)
+    {
+        return Array.ConvertAll(ps, (Vector2 item) => (Point)item);
+    }
+}
+
+#endregion
+
+#region "Math Extensions"
+
+public static class MathHelpers
+{
+    public static bool IsClockwise(this IEnumerable<Point> vertices)
+    {
+        double sum = 0.0;
+        for (int i = 0; i < vertices.Count(); i++)
+        {
+            Point v1 = vertices.ElementAt(i),
+                  v2 = vertices.ElementAt((i + 1) % vertices.Count()); // % is the modulo operator
+            sum += (v2.x - v1.x) * (v2.y + v1.y);
+        }
+        return sum > 0.0;
+    }
+
+    public static int SortCornersClockwise(Point A, Point B, Point center)
+    {
+        //  Variables to Store the atans
+        double aTanA, aTanB;
+
+        //  Fetch the atans
+        aTanA = Math.Atan2(A.y - center.y, A.x - center.x);
+        aTanB = Math.Atan2(B.y - center.y, B.x - center.x);
+
+        //  Determine next point in Clockwise rotation
+        if (aTanA < aTanB) return -1;
+        else if (aTanA > aTanB) return 1;
+        return 0;
+    }
+
+    public static int InRange(this int value, int max) //Zero-index bases
+    {
+        if (value >= max) return value % max;
+        else if (value < 0) return max - Mathf.Abs(value);
+        else return value;
+    }
+
+    /*public static bool Orientation(this IEnumerable<Point> polygon, Point up)
+    {
+        var sum = polygon
+            .Buffer(2, 1) // from Interactive Extensions Nuget Pkg
+            .Where(b => b.Count == 2)
+            .Aggregate
+              (Vector3.Zero
+              , (p, b) => p + Vector3.Cross(b[0], b[1])
+                              / b[0].Length() / b[1].Length());
+
+        return Vector3.Dot(up, sum) > 0;
+    }*/
 }
 
 #endregion

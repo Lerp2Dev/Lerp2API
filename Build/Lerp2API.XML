@@ -76,6 +76,18 @@
             Updates the cached cell seeds to match the specified cell. Noop if cell pos already matches.
             	Updates m_SeedX and m_SeedZ. 
         </member>
+        <member name="M:Lerp2API.Helpers.FindIndex``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>Finds the index of the first item matching an expression in an enumerable.</summary>
+            <param name="items">The enumerable to search.</param>
+            <param name="predicate">The expression to test the items against.</param>
+            <returns>The index of the first matching item, or -1 if no items match.</returns>
+        </member>
+        <member name="M:Lerp2API.Helpers.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>Finds the index of the first occurrence of an item in an enumerable.</summary>
+            <param name="items">The enumerable to search.</param>
+            <param name="item">The item to find.</param>
+            <returns>The index of the first matching item, or -1 if the item was not found.</returns>
+        </member>
         <member name="T:ScottGarland.BigInteger">
              <summary>
              Represents a integer of abitrary length.

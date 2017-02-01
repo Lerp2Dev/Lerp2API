@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -96,6 +98,58 @@ namespace Lerp2API
             {
                 _storedInfo = value;
             }
+        }
+    }
+
+    public class ConsoleListener
+    {
+        public static void StartConsole(string path, string file)
+        {
+            string console = Path.Combine(Application.streamingAssetsPath, "Lerp2Console.exe");
+            if (!File.Exists(console))
+                return;
+            var process = new Process
+            {
+                StartInfo =
+                              {
+                                  FileName = console,
+                                  Arguments = string.Format(@"-path=""{0}"" -file=""{1}""{2}", path, file, Application.isEditor ? " -editor" : "")
+                              }
+            };
+            process.Start();
+        }
+    }
+
+    public class ConsoleSender
+    {
+        private static List<string> paths = new List<string>();
+        public static void SendMessage(string path, LogType lt, string ls, string st)
+        {
+            if (!paths.Contains(path))
+                paths.Add(path);
+            File.AppendAllText(path, Environment.NewLine + JsonUtility.ToJson(new ConsoleMessage(lt, ls, st)));
+        }
+        public static void Quit()
+        {
+            //Tengo q comprimir el log... Todo esto cuando tenga una carpeta q se llame logs y este codigo este dentro de la api
+            //Al tener la api ya no me va a hacer falta tener q estar diciendole q se ejecute todos los eventos, ni los archivos definidos en otros scripts ni nada
+            //Ni tampoco estar diciendole a esta clase donde esta el ejecutable pq debe ir siempre acompañado de la api al tenerlo como referencia dentro de si
+            //Y todo estar mas compactado tanto las clases como los metodos
+            foreach (string p in paths)
+                if (File.Exists(p))
+                    File.Delete(p);
+        }
+    }
+
+    public class ConsoleMessage
+    {
+        public LogType logType;
+        public string logString, stackTrace;
+        public ConsoleMessage(LogType lt, string ls, string st)
+        {
+            logType = lt;
+            logString = ls;
+            stackTrace = st;
         }
     }
 }

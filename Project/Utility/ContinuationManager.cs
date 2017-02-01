@@ -119,13 +119,8 @@ namespace Lerp2API.Utility
 
         internal void JobWorker(bool working = true)
         {
-            if (working)
-                Debug.Log("Waiting to work to be completed!");
-            else
-            {
-                //Debug.Log("Job has been done!");
+            if (!working)
                 job.Finish(job.Objects);
-            }
         }
     }
 }
