@@ -88,6 +88,34 @@
             <param name="item">The item to find.</param>
             <returns>The index of the first matching item, or -1 if the item was not found.</returns>
         </member>
+        <member name="M:DateTimeHelpers.ToEpoch(System.DateTime)">
+            <summary>
+            Converts a DateTime to the long representation which is the number of seconds since the unix epoch.
+            </summary>
+            <param name="dateTime">A DateTime to convert to epoch time.</param>
+            <returns>The long number of seconds since the unix epoch.</returns>
+        </member>
+        <member name="M:DateTimeHelpers.FromEpoch(System.Int64)">
+            <summary>
+            Converts a long representation of time since the unix epoch to a DateTime.
+            </summary>
+            <param name="epoch">The number of seconds since Jan 1, 1970.</param>
+            <returns>A DateTime representing the time since the epoch.</returns>
+        </member>
+        <member name="M:DateTimeHelpers.ToEpoch(System.Nullable{System.DateTime})">
+            <summary>
+            Converts a DateTime? to the long? representation which is the number of seconds since the unix epoch.
+            </summary>
+            <param name="dateTime">A DateTime? to convert to epoch time.</param>
+            <returns>The long? number of seconds since the unix epoch.</returns>
+        </member>
+        <member name="M:DateTimeHelpers.FromEpoch(System.Nullable{System.Int64})">
+            <summary>
+            Converts a long? representation of time since the unix epoch to a DateTime?.
+            </summary>
+            <param name="epoch">The number of seconds since Jan 1, 1970.</param>
+            <returns>A DateTime? representing the time since the epoch.</returns>
+        </member>
         <member name="T:ScottGarland.BigInteger">
              <summary>
              Represents a integer of abitrary length.

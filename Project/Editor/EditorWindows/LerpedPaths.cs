@@ -5,6 +5,7 @@ using Lerp2API.Utility;
 
 namespace Lerp2APIEditor.EditorWindows
 {
+    public enum LerpedAPIChange { Auto, InEnter, Default }
     public class LerpedPaths : EditorWindow
     {
         public static LerpedPaths me;
@@ -23,7 +24,27 @@ namespace Lerp2APIEditor.EditorWindows
             me.iInit(me);
         }
 
-        public void iInit(LerpedPaths rf, bool auto = false)
+        /*[InitializeOnLoad]
+        class LerpedStartCheck
+        {
+            static LerpedStartCheck()
+            {
+                string bPath = LerpedCore.GetString(LerpedEditorCore.buildPath);
+                if (string.IsNullOrEmpty(bPath))
+                    return;
+
+                long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
+                     lastModTime = Helpers.LatestModification(bPath);
+
+                if(estimatedModTime != lastModTime)
+                {
+                    LerpedPaths lp = GetWindow<LerpedPaths>();
+                    lp.iInit(lp, LerpedAPIChange.InEnter);
+                }
+            }
+        }*/
+
+        public void iInit(LerpedPaths rf, LerpedAPIChange change = LerpedAPIChange.Default)
         {
             if (rf != null)
                 rf.Close();
@@ -34,7 +55,7 @@ namespace Lerp2APIEditor.EditorWindows
                     EditorUtility.DisplayDialog("API Message", "You have reversed the path, you should put in Project API the path from this Project,\nand in Build Path, the path where the DLL are builded!", "Ok");
                 else
                 {
-                    int r = EditorUtility.DisplayDialogComplex("API Message", auto ? "Origin files has been changed, do you want to update them?" : "Do you want to update dependence files?", "Yes", "No", "Change path");
+                    int r = EditorUtility.DisplayDialogComplex("API Message", GetCaption(change), "Yes", "No", "Change path");
                     switch (r)
                     {
                         case 0:
@@ -86,6 +107,21 @@ namespace Lerp2APIEditor.EditorWindows
 
             me.position = new Rect(Screen.resolutions[0].width / 2 - 200, Screen.resolutions[0].height / 2 - 150, 400, 300);
             me.Show();
+        }
+
+        private static string GetCaption(LerpedAPIChange change)
+        {
+            switch(change)
+            {
+                case LerpedAPIChange.Default:
+                    return "Do you want to update dependence files?";
+                case LerpedAPIChange.Auto:
+                    return "Origin files has been changed, do you want to update them?";
+                case LerpedAPIChange.InEnter:
+                    return "Origin files has been changed since your last visit, do you want to update them?";
+                default:
+                    return "";
+            }
         }
 
         void OnGUI()

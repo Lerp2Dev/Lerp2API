@@ -168,6 +168,33 @@ namespace Lerp2API
             Directory.Delete(target_dir, false);
         }
 
+        private static IEnumerable<long> _LatestModification(string dir)
+        {
+            try
+            {
+                List<long> time = new List<long>();
+                foreach (string d in Directory.GetDirectories(dir))
+                    foreach(string f in Directory.GetFiles(d))
+                        time.Add(File.GetCreationTime(f).ToEpoch());
+                    time.AddRange(_LatestModification(dir));
+                return time;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex.Message);
+                return null;
+            }
+        }
+
+        public static long LatestModification(string dir)
+        {
+            var l = _LatestModification(dir);
+            if (l != null)
+                return l.Max();
+            else
+                return -1;
+        }
+
         #endregion "IO Extensions"
 
         #region "GameObject Extensions"
@@ -1140,6 +1167,43 @@ public static class MathHelpers
 
         return Vector3.Dot(up, sum) > 0;
     }*/
+}
+
+#endregion
+
+#region "DateTime Extensions"
+
+public static class DateTimeHelpers
+{
+
+    /// <summary>
+    /// Converts a DateTime to the long representation which is the number of seconds since the unix epoch.
+    /// </summary>
+    /// <param name="dateTime">A DateTime to convert to epoch time.</param>
+    /// <returns>The long number of seconds since the unix epoch.</returns>
+    public static long ToEpoch(this DateTime dateTime) => (long)(dateTime - new DateTime(1970, 1, 1)).TotalSeconds;
+
+    /// <summary>
+    /// Converts a long representation of time since the unix epoch to a DateTime.
+    /// </summary>
+    /// <param name="epoch">The number of seconds since Jan 1, 1970.</param>
+    /// <returns>A DateTime representing the time since the epoch.</returns>
+    public static DateTime FromEpoch(this long epoch) => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddSeconds(epoch);
+
+    /// <summary>
+    /// Converts a DateTime? to the long? representation which is the number of seconds since the unix epoch.
+    /// </summary>
+    /// <param name="dateTime">A DateTime? to convert to epoch time.</param>
+    /// <returns>The long? number of seconds since the unix epoch.</returns>
+    public static long? ToEpoch(this DateTime? dateTime) => dateTime.HasValue ? (long?)ToEpoch(dateTime.Value) : null;
+
+    /// <summary>
+    /// Converts a long? representation of time since the unix epoch to a DateTime?.
+    /// </summary>
+    /// <param name="epoch">The number of seconds since Jan 1, 1970.</param>
+    /// <returns>A DateTime? representing the time since the epoch.</returns>
+    public static DateTime? FromEpoch(this long? epoch) => epoch.HasValue ? (DateTime?)FromEpoch(epoch.Value) : null;
+
 }
 
 #endregion
