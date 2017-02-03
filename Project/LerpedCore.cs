@@ -83,6 +83,23 @@ namespace Lerp2API
             JSONHelpers.SerializeToFile(storePath, storedInfo, true);
         }
 
+        public static long GetLong(string key)
+        {
+            if (storedInfo.ContainsKey(key))
+                return (long)storedInfo[key];
+            else
+                return 0;
+        }
+
+        public static void SetLong(string key, long value)
+        {
+            if (!storedInfo.ContainsKey(key))
+                storedInfo.Add(key, value);
+            else
+                storedInfo[key] = value;
+            JSONHelpers.SerializeToFile(storePath, storedInfo, true);
+        }
+
         private static Dictionary<string, object> storedInfo
         {
             get
@@ -103,7 +120,7 @@ namespace Lerp2API
 
     public class ConsoleListener
     {
-        public static void StartConsole(string path, string file)
+        public static void StartConsole()
         {
             string console = Path.Combine(Application.streamingAssetsPath, "Lerp2Console.exe");
             if (!File.Exists(console))
@@ -111,10 +128,10 @@ namespace Lerp2API
             var process = new Process
             {
                 StartInfo =
-                              {
-                                  FileName = console,
-                                  Arguments = string.Format(@"-path=""{0}"" -file=""{1}""{2}", path, file, Application.isEditor ? " -editor" : "")
-                              }
+                {
+                    FileName = console,
+                    Arguments = string.Format(@"-projectPath={0}{1}", Application.dataPath, Application.isEditor ? " -editor" : "")
+                }
             };
             process.Start();
         }
@@ -134,7 +151,7 @@ namespace Lerp2API
             //Tengo q comprimir el log... Todo esto cuando tenga una carpeta q se llame logs y este codigo este dentro de la api
             //Al tener la api ya no me va a hacer falta tener q estar diciendole q se ejecute todos los eventos, ni los archivos definidos en otros scripts ni nada
             //Ni tampoco estar diciendole a esta clase donde esta el ejecutable pq debe ir siempre acompañado de la api al tenerlo como referencia dentro de si
-            //Y todo estar mas compactado tanto las clases como los metodos
+            //Y todo estar mas compactado tanto las clases como los metodos...
             foreach (string p in paths)
                 if (File.Exists(p))
                     File.Delete(p);

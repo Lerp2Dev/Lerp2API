@@ -21,7 +21,8 @@ namespace Lerp2APIEditor
                               editorPath = "EDITOR_PATH",
                               hookShortcut = "UPT_DEP_HOOK",
                               t_CompileWatcher = "COMPILE_WATCHER",
-                              timesCompiled = "TIMES_COMPILED";
+                              timesCompiled = "TIMES_COMPILED",
+                              lastBuildTime = "LAST_BUILD_TIME";
         public static string mainFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         internal static string[] resourceFiles = new string[] {
             Path.Combine(mainFolder, "Resources/Images/folder.png"),
@@ -103,7 +104,7 @@ namespace Lerp2APIEditor
 
             m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () => {
                 LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
-                lp.iInit(lp, true);
+                lp.iInit(lp,  LerpedAPIChange.Auto);
             });
 
             //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
@@ -120,6 +121,9 @@ namespace Lerp2APIEditor
                    ePath = LerpedCore.GetString(editorPath),
                    eePath = Path.Combine(ePath, "Editor"),
                    batchPath = Path.Combine(Path.GetDirectoryName(bPath), "Compile/compile.bat");
+
+            LerpedCore.SetLong(lastBuildTime, Helpers.LatestModification(bPath));
+
             if(!Directory.Exists(bePath))
             {
                 Debug.Log("Editor path couldn't not be found in Build Path!");
