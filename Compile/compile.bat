@@ -9,8 +9,8 @@ if "%REF_PATH%" == "" ( set "REF_PATH=%MAIN_PATH%\Assemblies" )
 set MSBuildEmitSolution=1
 "%~dp0\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
 
-if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( xcopy /s /z /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( xcopy /s /z /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
+if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
 
 if exist "%MAIN_PATH%\Build\Lerp2APIEditor.dll" ( del "%MAIN_PATH%\Build\Lerp2APIEditor.dll" )
 if exist "%MAIN_PATH%\Build\Lerp2APIEditor.pdb" ( del "%MAIN_PATH%\Build\Lerp2APIEditor.pdb" )
@@ -29,16 +29,17 @@ if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Edi
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
 
 set "ProjectPath=%~1"
-if "%ProjectPath%" NEQ "" goto :copycontent 
+if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
+goto:EOF
 
 :copycontent
-xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
-xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
-xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
-xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
-xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
-xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
-pause
+xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
+xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
+xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
+xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
+xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
+xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
+goto:EOF
 
 ::Other params that you will need if you modify this code and put new dlls, or maybe, if the dlls aren't found in your hdd
 ::/t:Compile /p:Configuration=Release "/p:ReferencePath=%REF_PATH%"
