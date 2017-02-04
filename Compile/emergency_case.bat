@@ -12,6 +12,7 @@ echo.
 set /p opt="Select option: "
 
 if /i %opt% == Y (
+<<<<<<< HEAD
 	for /f "delims=" %%f in (project_path.txt) do if "%%f" NEQ "" call :callcompile "%%f"
 ) else (
 echo bbb
@@ -19,12 +20,27 @@ echo bbb
 		echo.
 		set /p cpath="Path: "
 		goto :callcompile %cpath%
+=======
+	set /p path=<path.txt
+	goto :callcompile
+) else (
+	if /i %opt% == N (
+		echo.
+		set /p path="Path: "
+		goto :callcompile
+>>>>>>> 5930cae50477d76e26446a942dc57ab486c1fbe7
 	) else (
 		goto :str
 	)
 )
+<<<<<<< HEAD
 goto :EOF
 
 :callcompile
 cmd /c compile.bat "%~1"
+=======
+
+:callcompile
+compile.bat "%path%"
+>>>>>>> 5930cae50477d76e26446a942dc57ab486c1fbe7
 pause

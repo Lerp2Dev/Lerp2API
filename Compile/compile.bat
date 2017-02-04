@@ -29,6 +29,7 @@ if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Edi
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
 
 set "ProjectPath=%~1"
+<<<<<<< HEAD
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
 goto:EOF
 
@@ -40,6 +41,18 @@ xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\
 xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
 xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
 goto:EOF
+=======
+if "%ProjectPath%" NEQ "" goto :copycontent 
+
+:copycontent
+xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
+xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
+xcopy /E /Y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
+xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
+xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
+xcopy /E /Y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
+pause
+>>>>>>> 5930cae50477d76e26446a942dc57ab486c1fbe7
 
 ::Other params that you will need if you modify this code and put new dlls, or maybe, if the dlls aren't found in your hdd
 ::/t:Compile /p:Configuration=Release "/p:ReferencePath=%REF_PATH%"
