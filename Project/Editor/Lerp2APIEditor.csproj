@@ -67,7 +67,9 @@
     <Compile Include="Menu\DebugManager.cs" />
     <Compile Include="Utility\LerpedShortcuts.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Lerp2EditorMono.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,11 +10,14 @@
     {
         static LerpedEditorHook()
         {
-            LerpedCore.AutoHook<LerpedEditorHook>();
+            Lerp2EditorMono.AddElement<LerpedEditorHook>();
         }
         void OnDestroy()
         {
-            LerpedCore.SetBool(LerpedCore.UnityBoot, false);
+			if(!EditorApplication.isPlayingOrWillChangePlaymode) 
+			{
+				LerpedCore.SetBool(LerpedCore.UnityBoot, false);
+			}
         }
     }
 

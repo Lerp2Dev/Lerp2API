@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2API
 {
@@ -117,21 +118,6 @@ namespace Lerp2API
                 _storedInfo = value;
             }
         }
-
-        public static void AutoHook<T>() where T : MonoBehaviour
-        {
-            GameObject lerp2core = GameObject.Find("Lerp2Core"); //This is not allowed
-            if (lerp2core == null)
-            {
-                GameObject go = new GameObject("Lerp2Core");
-            }
-            else
-            {
-                T hook = lerp2core.GetComponent<T>();
-                if (hook == null)
-                    lerp2core.AddComponent<T>();
-            }
-        } 
     }
 
     public class ConsoleListener

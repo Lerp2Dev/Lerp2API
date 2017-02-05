@@ -61,11 +61,21 @@ namespace Lerp2APIEditor.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string Lerp2EditorMono {
+            get {
+                return ResourceManager.GetString("Lerp2EditorMono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a #if UNITY_EDITOR
         ///
         ///	using UnityEngine;
         ///	using UnityEditor;
         ///	using Lerp2API;
+        ///	using Lerp2APIEditor;
         ///
         ///	[ExecuteInEditMode]
         ///	[InitializeOnLoad]
@@ -73,11 +83,14 @@ namespace Lerp2APIEditor.Properties {
         ///    {
         ///        static LerpedEditorHook()
         ///        {
-        ///            LerpedCore.AutoHook&lt;LerpedEditorHook&gt;();
+        ///            Lerp2EditorMono.AddElement&lt;LerpedEditorHook&gt;();
         ///        }
         ///        void OnDestroy()
         ///        {
-        ///            LerpedCore.SetBool(LerpedEditorCore.UnityBoot, false);
+        ///			if(!EditorApplication.isPlayingOrWillChangePlaymode) 
+        ///			{
+        ///				LerpedCore.SetBool(LerpedCore.UnityBoot, false);
+        ///			}
         ///        }
         ///    }
         ///

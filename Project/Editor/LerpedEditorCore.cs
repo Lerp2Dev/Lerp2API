@@ -52,6 +52,7 @@ namespace Lerp2APIEditor
         [InitializeOnLoadMethod]
         static void AutoAttachScripts()
         {
+            AttachResource("Lerp2EditorMono.cs", Properties.Resources.Lerp2EditorMono);
             AttachResource("LerpedEditorHook.cs", Properties.Resources.LerpedEditorAttach);
         }
 

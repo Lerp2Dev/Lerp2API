@@ -196,7 +196,7 @@ namespace Lerp2API
 
         #region "Object Extensions"
 
-        public static string ToUString(this object message) //To Universal String, converts an object to string by checking if it's a string
+        public static string ToUString(this object message) //To Universal String, converts an object to string by checking if it's a string...
         {
             return message.GetType().Equals(typeof(string)) ? (string)message : message.ToString();
         }
