@@ -168,29 +168,14 @@ namespace Lerp2API
             Directory.Delete(target_dir, false);
         }
 
-        private static IEnumerable<long> _LatestModification(string dir)
-        {
-            try
-            {
-                List<long> time = new List<long>();
-                foreach (string d in Directory.GetDirectories(dir))
-                    foreach(string f in Directory.GetFiles(d))
-                        time.Add(File.GetCreationTime(f).ToEpoch());
-                    time.AddRange(_LatestModification(dir));
-                return time;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError(ex.Message);
-                return null;
-            }
-        }
-
         public static long LatestModification(string dir)
         {
-            var l = _LatestModification(dir);
-            if (l != null)
-                return l.Max();
+            string[] files = Directory.GetFiles(dir, "*", SearchOption.AllDirectories);
+            List<long> dates = new List<long>();
+            foreach (string f in files)
+                dates.Add(File.GetAttributes(f) == FileAttributes.Directory ? Directory.GetCreationTime(f).ToEpoch() : File.GetCreationTime(f).ToEpoch());
+            if (files != null)
+                return dates.Max();
             else
                 return -1;
         }

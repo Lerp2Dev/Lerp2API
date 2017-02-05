@@ -116,6 +116,21 @@ namespace Lerp2API
                 _storedInfo = value;
             }
         }
+
+        public static void AutoHook<T>() where T : MonoBehaviour
+        {
+            GameObject lerp2core = GameObject.Find("Lerp2Core");
+            if (lerp2core == null)
+            {
+                GameObject go = new GameObject("Lerp2Core");
+            }
+            else
+            {
+                T hook = lerp2core.GetComponent<T>();
+                if (hook == null)
+                    lerp2core.AddComponent<T>();
+            }
+        } 
     }
 
     public class ConsoleListener

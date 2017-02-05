@@ -22,7 +22,8 @@ namespace Lerp2APIEditor
                               hookShortcut = "UPT_DEP_HOOK",
                               t_CompileWatcher = "COMPILE_WATCHER",
                               timesCompiled = "TIMES_COMPILED",
-                              lastBuildTime = "LAST_BUILD_TIME";
+                              lastBuildTime = "LAST_BUILD_TIME",
+                              UnityBoot = "UNITY_STARTED_UP";
         public static string mainFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         internal static string[] resourceFiles = new string[] {
             Path.Combine(mainFolder, "Resources/Images/folder.png"),
@@ -122,7 +123,7 @@ namespace Lerp2APIEditor
                    eePath = Path.Combine(ePath, "Editor"),
                    batchPath = Path.Combine(Path.GetDirectoryName(bPath), "Compile/compile.bat");
 
-            LerpedCore.SetLong(lastBuildTime, Helpers.LatestModification(bPath));
+            LerpedCore.SetLong(lastBuildTime, Helpers.LatestModification(Path.GetDirectoryName(bPath)));
 
             if(!Directory.Exists(bePath))
             {
@@ -138,7 +139,7 @@ namespace Lerp2APIEditor
             using (Process proc = new Process())
             {
                 proc.StartInfo.FileName = batchPath;
-                //proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                //proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //This will be hidden when the console of the api compiles itsself and could send messages to Unity?
                 proc.Start();
                 proc.WaitForExit();
                 int exitCode = proc.ExitCode;
@@ -179,6 +180,21 @@ namespace Lerp2APIEditor
                 }
             }
             nextSeek = EditorApplication.timeSinceStartup + threadSeek;
+        }
+
+        public static void AutoHook<T>() where T : MonoBehaviour
+        {
+            GameObject lerp2core = GameObject.Find("Lerp2Core");
+            if (lerp2core == null)
+            {
+                GameObject go = new GameObject("Lerp2Core");
+            }
+            else
+            {
+                T hook = lerp2core.GetComponent<T>();
+                if (hook == null)
+                    lerp2core.AddComponent<T>();
+            }
         }
     }
 }

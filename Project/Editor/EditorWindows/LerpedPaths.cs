@@ -2,6 +2,7 @@
 using UnityEditor;
 using Lerp2API;
 using Lerp2API.Utility;
+using System.IO;
 
 namespace Lerp2APIEditor.EditorWindows
 {
@@ -24,25 +25,29 @@ namespace Lerp2APIEditor.EditorWindows
             me.iInit(me);
         }
 
-        /*[InitializeOnLoad]
+        [InitializeOnLoad]
         class LerpedStartCheck
         {
             static LerpedStartCheck()
             {
-                string bPath = LerpedCore.GetString(LerpedEditorCore.buildPath);
-                if (string.IsNullOrEmpty(bPath))
-                    return;
-
-                long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
-                     lastModTime = Helpers.LatestModification(bPath);
-
-                if(estimatedModTime != lastModTime)
+                if (!LerpedCore.GetBool(LerpedEditorCore.UnityBoot))
                 {
-                    LerpedPaths lp = GetWindow<LerpedPaths>();
-                    lp.iInit(lp, LerpedAPIChange.InEnter);
+                    LerpedCore.SetBool(LerpedEditorCore.UnityBoot, true);
+                    string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath));
+                    if (string.IsNullOrEmpty(bPath))
+                        return;
+
+                    long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
+                         lastModTime = Helpers.LatestModification(bPath);
+
+                    if (estimatedModTime != lastModTime)
+                    {
+                        LerpedPaths lp = GetWindow<LerpedPaths>();
+                        lp.iInit(lp, LerpedAPIChange.InEnter);
+                    }
                 }
             }
-        }*/
+        }
 
         public void iInit(LerpedPaths rf, LerpedAPIChange change = LerpedAPIChange.Default)
         {
@@ -155,6 +160,19 @@ namespace Lerp2APIEditor.EditorWindows
             LerpedCore.SetString(buildPath, bPath);
             LerpedCore.SetString(editorPath, ePath);
             me.Close();
+        }
+    }
+    [ExecuteInEditMode]
+    [InitializeOnLoad]
+    public class LerpedEditorHook : MonoBehaviour
+    {
+        static LerpedEditorHook()
+        {
+            LerpedEditorCore.AutoHook<LerpedEditorHook>();
+        }
+        void OnDestroy()
+        {
+            LerpedCore.SetBool(LerpedEditorCore.UnityBoot, false);
         }
     }
 }
