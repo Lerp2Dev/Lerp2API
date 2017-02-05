@@ -22,8 +22,7 @@ namespace Lerp2APIEditor
                               hookShortcut = "UPT_DEP_HOOK",
                               t_CompileWatcher = "COMPILE_WATCHER",
                               timesCompiled = "TIMES_COMPILED",
-                              lastBuildTime = "LAST_BUILD_TIME",
-                              UnityBoot = "UNITY_STARTED_UP";
+                              lastBuildTime = "LAST_BUILD_TIME";
         public static string mainFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         internal static string[] resourceFiles = new string[] {
             Path.Combine(mainFolder, "Resources/Images/folder.png"),
@@ -48,6 +47,12 @@ namespace Lerp2APIEditor
                 return !((string.IsNullOrEmpty(LerpedCore.GetString(buildPath)) || !string.IsNullOrEmpty(LerpedCore.GetString(buildPath)) && !Directory.Exists(LerpedCore.GetString(buildPath))) ||
                        (string.IsNullOrEmpty(LerpedCore.GetString(editorPath)) || !string.IsNullOrEmpty(LerpedCore.GetString(editorPath)) && !Directory.Exists(LerpedCore.GetString(editorPath))));
             }
+        }
+
+        [InitializeOnLoadMethod]
+        static void AutoAttachScripts()
+        {
+            AttachResource("LerpedEditorHook.cs", Properties.Resources.LerpedEditorAttach);
         }
 
         [InitializeOnLoadMethod]
@@ -92,7 +97,7 @@ namespace Lerp2APIEditor
         }
 
         [InitializeOnLoadMethod]
-        static void HookWatchers() //I have to fix this because it deletes on reaload in some editors
+        static void HookWatchers() //I have to fix this because it deletes on reaload in some editors...
         { //Detect new file and add them to the solution? (I have to)
             EditorApplication.update += OnEditorApplicationUpdate;
             if (!availablePaths)
@@ -182,19 +187,15 @@ namespace Lerp2APIEditor
             nextSeek = EditorApplication.timeSinceStartup + threadSeek;
         }
 
-        public static void AutoHook<T>() where T : MonoBehaviour
+        public static void AttachResource(string name, string contents)
         {
-            GameObject lerp2core = GameObject.Find("Lerp2Core");
-            if (lerp2core == null)
-            {
-                GameObject go = new GameObject("Lerp2Core");
-            }
-            else
-            {
-                T hook = lerp2core.GetComponent<T>();
-                if (hook == null)
-                    lerp2core.AddComponent<T>();
-            }
+            Debug.LogFormat("Attaching {0} file, with content:\n\n{1}", name, contents);
+            string path = Path.Combine(Application.dataPath, "Lerp2API/AttachedScripts/"),
+                   file = Path.Combine(path, name);
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            if (!File.Exists(file) || File.ReadAllText(file) != contents)
+                File.WriteAllText(file, contents);
         }
     }
 }

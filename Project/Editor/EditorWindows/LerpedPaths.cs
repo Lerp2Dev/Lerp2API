@@ -30,9 +30,9 @@ namespace Lerp2APIEditor.EditorWindows
         {
             static LerpedStartCheck()
             {
-                if (!LerpedCore.GetBool(LerpedEditorCore.UnityBoot))
+                if (!LerpedCore.GetBool(LerpedCore.UnityBoot))
                 {
-                    LerpedCore.SetBool(LerpedEditorCore.UnityBoot, true);
+                    LerpedCore.SetBool(LerpedCore.UnityBoot, true);
                     string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath));
                     if (string.IsNullOrEmpty(bPath))
                         return;
@@ -160,19 +160,6 @@ namespace Lerp2APIEditor.EditorWindows
             LerpedCore.SetString(buildPath, bPath);
             LerpedCore.SetString(editorPath, ePath);
             me.Close();
-        }
-    }
-    [ExecuteInEditMode]
-    [InitializeOnLoad]
-    public class LerpedEditorHook : MonoBehaviour
-    {
-        static LerpedEditorHook()
-        {
-            LerpedEditorCore.AutoHook<LerpedEditorHook>();
-        }
-        void OnDestroy()
-        {
-            LerpedCore.SetBool(LerpedEditorCore.UnityBoot, false);
         }
     }
 }

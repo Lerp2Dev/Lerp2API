@@ -111,6 +111,11 @@
     <Compile Include="Other APIs\UniGif\UniGifConst.cs" />
     <Compile Include="Other APIs\UniGif\UniGifDecoder.cs" />
     <Compile Include="Other APIs\UniGif\UniGifFormatter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Serializers\FullSerializer\Converters\fsArrayConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDateConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDictionaryConverter.cs" />
@@ -258,13 +263,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="All Noises\Noise\COPYING.LESSER.txt" />
+    <None Include="Resources\LerpedEditorAttach.txt" />
     <Content Include="Serializers\unityserializer-ng\license.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Serializers\unityserializer-ng\Serialization\.gitignore" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

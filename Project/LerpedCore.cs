@@ -12,6 +12,7 @@ namespace Lerp2API
     {
         private static Dictionary<string, object> _storedInfo;
         private static string storePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L2API.sav");
+        public const string UnityBoot = "UNITY_STARTED_UP";
 
         public static float UnityTick
         {

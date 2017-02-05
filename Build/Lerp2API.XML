@@ -88,6 +88,22 @@
             <param name="item">The item to find.</param>
             <returns>The index of the first matching item, or -1 if the item was not found.</returns>
         </member>
+        <member name="T:Lerp2API.Properties.Resources">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Properties.Resources.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
         <member name="M:DateTimeHelpers.ToEpoch(System.DateTime)">
             <summary>
             Converts a DateTime to the long representation which is the number of seconds since the unix epoch.

@@ -1,0 +1,21 @@
+#if UNITY_EDITOR
+
+	using UnityEngine;
+	using UnityEditor;
+	using Lerp2API;
+
+	[ExecuteInEditMode]
+	[InitializeOnLoad]
+    public class LerpedEditorHook : MonoBehaviour
+    {
+        static LerpedEditorHook()
+        {
+            LerpedCore.AutoHook<LerpedEditorHook>();
+        }
+        void OnDestroy()
+        {
+            LerpedCore.SetBool(LerpedEditorCore.UnityBoot, false);
+        }
+    }
+
+#endif
