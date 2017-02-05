@@ -92,24 +92,6 @@ namespace Lerp2APIEditor.EditorWindows
             bPath = string.IsNullOrEmpty(bPath) ? Application.dataPath : bPath;
             ePath = string.IsNullOrEmpty(ePath) ? Application.dataPath : ePath;
 
-            bBrowser = CreateInstance<BrowserWindow>();
-            bBrowser.fbt = FileBrowserType.Directory;
-            bBrowser.name = "Build Dependencies Path";
-            bBrowser.height = 200;
-            bBrowser.cb = (x) =>
-            {
-                bPath = x;
-            };
-
-            eBrowser = CreateInstance<BrowserWindow>();
-            eBrowser.fbt = FileBrowserType.Directory;
-            eBrowser.name = "Project Dependencies Path";
-            eBrowser.height = 200;
-            eBrowser.cb = (x) =>
-            {
-                bPath = x;
-            };
-
             me.position = new Rect(Screen.resolutions[0].width / 2 - 200, Screen.resolutions[0].height / 2 - 150, 400, 300);
             me.Show();
         }
@@ -138,13 +120,13 @@ namespace Lerp2APIEditor.EditorWindows
             GUILayout.Label("Build Dependencies Path");
             bPath = GUILayout.TextField(bPath, GUILayout.Width(180));
             if (GUILayout.Button("...", GUILayout.Width(16), GUILayout.Height(16)))
-                bBrowser.Init();
+                ShowBrowser("Build Dependencies Path", out bBrowser);
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUILayout.Label("Project API Dependencies Path");
             ePath = GUILayout.TextField(ePath, GUILayout.Width(180));
             if (GUILayout.Button("...", GUILayout.Width(16), GUILayout.Height(16)))
-                eBrowser.Init();
+                ShowBrowser("Project Dependencies Path", out bBrowser);
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
@@ -153,6 +135,19 @@ namespace Lerp2APIEditor.EditorWindows
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
             GUILayout.EndVertical();
+        }
+
+        private void ShowBrowser(string name, out BrowserWindow win)
+        {
+            win = GetWindow<BrowserWindow>();
+            win.fbt = FileBrowserType.Directory;
+            win.name = name;
+            win.height = 200;
+            win.cb = (x) =>
+            {
+                bPath = x;
+            };
+            win.Init();
         }
 
         internal void SaveChanges()

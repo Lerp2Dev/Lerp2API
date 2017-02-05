@@ -28,6 +28,8 @@ if exist "%MAIN_PATH%\Build\Editor\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Edi
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.dll" )
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
 
+::Call console_compile.bat here vv
+
 set "ProjectPath=%~1"
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
 goto:EOF

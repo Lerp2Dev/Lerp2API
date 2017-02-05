@@ -120,7 +120,7 @@ namespace Lerp2API
 
         public static void AutoHook<T>() where T : MonoBehaviour
         {
-            GameObject lerp2core = GameObject.Find("Lerp2Core");
+            GameObject lerp2core = GameObject.Find("Lerp2Core"); //This is not allowed
             if (lerp2core == null)
             {
                 GameObject go = new GameObject("Lerp2Core");

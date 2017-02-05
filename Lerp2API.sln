@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lerp2API", "Project\Lerp2AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lerp2APIEditor", "Project\Editor\Lerp2APIEditor.csproj", "{BFCE159D-8227-4D26-B883-FAEB77AC33FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lerp2Console", "Project\Lerp2Console\Lerp2Console.csproj", "{8846AD97-88BB-4336-A603-9A4D656EE7D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BFCE159D-8227-4D26-B883-FAEB77AC33FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFCE159D-8227-4D26-B883-FAEB77AC33FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFCE159D-8227-4D26-B883-FAEB77AC33FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8846AD97-88BB-4336-A603-9A4D656EE7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8846AD97-88BB-4336-A603-9A4D656EE7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8846AD97-88BB-4336-A603-9A4D656EE7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8846AD97-88BB-4336-A603-9A4D656EE7D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
