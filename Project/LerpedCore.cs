@@ -13,7 +13,8 @@ namespace Lerp2API
     {
         private static Dictionary<string, object> _storedInfo;
         private static string storePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L2API.sav");
-        public const string UnityBoot = "UNITY_STARTED_UP";
+        public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH", 
+                            defaultLogFilePath = "Logs/Console.log";
 
         public static float UnityTick
         {
@@ -124,7 +125,7 @@ namespace Lerp2API
     {
         public static void StartConsole()
         {
-            string console = Path.Combine(Application.streamingAssetsPath, "Lerp2Console.exe");
+            string console = Path.Combine(Application.dataPath, "/Lerp2API/Console/Lerp2Console.exe");
             if (!File.Exists(console))
                 return;
             var process = new Process

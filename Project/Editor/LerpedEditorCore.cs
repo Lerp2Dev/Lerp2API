@@ -11,6 +11,7 @@ using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
 using Debug = Lerp2API.DebugHandler.Debug;
 using System.Reflection;
+using Lerp2APIEditor.MonoBehaviours;
 
 namespace Lerp2APIEditor
 {
@@ -50,14 +51,30 @@ namespace Lerp2APIEditor
         }
 
         [InitializeOnLoadMethod]
-        static void AutoAttachScripts()
-        {
-            AttachResource("Lerp2EditorMono.cs", Properties.Resources.Lerp2EditorMono);
-            AttachResource("LerpedEditorHook.cs", Properties.Resources.LerpedEditorAttach);
+        static void OnLoadMethods()
+        { //This is called at the recompile to set what we need at its start
+            AddHook();
+            DownloadEditorFiles();
+            HookWatchers();
+            AutoHookCore();
         }
 
-        [InitializeOnLoadMethod]
-        static void AddHook()
+        private static void AutoHookCore()
+        {
+            GameObject core = GameObject.Find("Lerp2Core");
+            if (core == null)
+                core = new GameObject("Lerp2Core");
+            if (core.GetComponent<LerpedEditorHook>() == null)
+            {
+                LerpedEditorHook leh = core.AddComponent<LerpedEditorHook>();
+            }
+            if(core.GetComponent<LerpedHook>() == null)
+            {
+                LerpedHook lh = core.AddComponent<LerpedHook>();
+            }
+        }
+
+        private static void AddHook()
         {
             if (!LerpedShortcuts.keyActions.ContainsKey(hookShortcut))
                 LerpedShortcuts.keyActions.Add(hookShortcut, new LerpedKeyAction(KeyCode.F5, () => {
@@ -66,8 +83,7 @@ namespace Lerp2APIEditor
                 }));
         }
 
-        [InitializeOnLoadMethod]
-        static void DownloadEditorFiles()
+        private static void DownloadEditorFiles()
         {
             if (resourceFiles.Length != repFiles.Length)
             {
@@ -97,8 +113,7 @@ namespace Lerp2APIEditor
                 }
         }
 
-        [InitializeOnLoadMethod]
-        static void HookWatchers() //I have to fix this because it deletes on reaload in some editors...
+        private static void HookWatchers() //I have to fix this because it deletes on reload in some editors...
         { //Detect new file and add them to the solution? (I have to)
             EditorApplication.update += OnEditorApplicationUpdate;
             if (!availablePaths)

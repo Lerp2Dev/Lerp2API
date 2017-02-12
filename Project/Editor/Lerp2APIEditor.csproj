@@ -54,11 +54,7 @@
     <Compile Include="EditorWindows\BrowserWindow.cs" />
     <Compile Include="EditorWindows\LerpedPaths.cs" />
     <Compile Include="LerpedEditorCore.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="MonoBehaviours\LerpedEditorHook.cs" />
     <Compile Include="Utility\LerpedThread.cs" />
     <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />
@@ -70,16 +66,7 @@
     <Compile Include="Utility\LerpedShortcuts.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lerp2EditorMono.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LerpedEditorAttach.txt" />
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

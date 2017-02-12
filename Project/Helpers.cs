@@ -12,6 +12,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
 using Lerp2API.Optimizers;
+using System.Reflection;
 
 namespace Lerp2API
 {
@@ -544,9 +545,36 @@ namespace Lerp2API.DebugHandler
         {
             get
             {
-                return GetBool("ENABLE_DEBUG");
+                return GetBool(enabledDebug);
             }
         }
+
+        private static string _logPath;
+        private static string logPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_logPath))
+                    _logPath = GetString(loggerPath);
+                if(string.IsNullOrEmpty(_logPath))
+                {
+                    _logPath = Path.Combine(Application.dataPath, defaultLogFilePath);
+                    SetString(loggerPath, _logPath);
+                }
+                return _logPath;
+            }
+        }
+
+        public static void HookLog()
+        {
+            Application.logMessageReceived += LogToFile;
+        }
+
+        public static void UnhookLog()
+        {
+            Application.logMessageReceived -= LogToFile;
+        }
+
         public static bool isGamingEnabled {get; set;}
         public static bool developerConsoleVisible
         {
@@ -802,6 +830,11 @@ namespace Lerp2API.DebugHandler
                 if (Application.isPlaying && isGamingEnabled)
                     AddFormattedMessage(exception.Message, DebugColor.exception);
             }
+        }
+
+        internal static void LogToFile(string logString, string stackTrace, LogType type)
+        {
+            ConsoleSender.SendMessage(logPath, type, logString, stackTrace);
         }
 
         public static void DrawCube(Vector3 pos, UnityEngine.Color col, Vector3 scale)

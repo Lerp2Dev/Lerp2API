@@ -3,6 +3,7 @@ using UnityEditor;
 using Lerp2API;
 using Lerp2API.Utility;
 using System.IO;
+using System;
 
 namespace Lerp2APIEditor.EditorWindows
 {
