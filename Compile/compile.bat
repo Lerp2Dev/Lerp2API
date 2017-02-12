@@ -28,7 +28,7 @@ if exist "%MAIN_PATH%\Build\Editor\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Edi
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.dll" )
 if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
 
-::Call console_compile.bat here vv
+%MAIN_PATH%/Compile/Console/compile_console.bat
 
 set "ProjectPath=%~1"
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
@@ -38,6 +38,12 @@ goto:EOF
 xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
 xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
 xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
+
+xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe" "%ProjectPath%\Console\Lerp2Console.exe"
+xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe.config" "%ProjectPath%\Console\Lerp2Console.exe.config"
+xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.xml" "%ProjectPath%\Console\Lerp2Console.xml"
+xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.pdb" "%ProjectPath%\Console\Lerp2Console.pdb"
+
 xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
 xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
 xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"

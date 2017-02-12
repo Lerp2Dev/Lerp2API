@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = Lerp2API.DebugHandler.Debug;
 using Lerp2API;
+using UnityEngine.AI;
 
 //Do not add this script to your own classes! This is created internally
 [AddComponentMenu("Storage/Internal/Level Loader (Internal use only, do not add this to your objects!)")]

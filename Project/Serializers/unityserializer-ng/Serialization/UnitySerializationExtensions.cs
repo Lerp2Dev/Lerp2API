@@ -6,6 +6,7 @@ using System.Reflection;
 
 //using TreeEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
