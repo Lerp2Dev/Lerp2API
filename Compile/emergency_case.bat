@@ -12,15 +12,17 @@ set /p opt="Do you want to read your path from the 'path.txt' file or do you wan
 echo.
 echo Also, this is optional but you can try to establish an order for the compilation.
 echo.
-echo 1) Build the API
-echo 2) Build the RAW Scripts
-echo 3) Build the Editor API
+echo 1.- Build the API
+echo 2.- Build the RAW Scripts
+echo 3.- Build the Editor API
 echo.
 set /p order="Type, for example: [2 1 3], to compile in this order, or the way you want: "
 
 if /i "%opt%" == "Y" (
 	for /f "delims=" %%f in ("project_path.txt") do (
-		if "%%f" NEQ "" call :callcompile "%%f" "%order%"
+		if "%%f" NEQ "" (
+			call :callcompile "%%f" "%order%"
+		)
 	)
 ) else (
 	if /i "%opt%" == "N" (
