@@ -34,6 +34,9 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lerp2Raw">
+      <HintPath>..\Build\Raw\Lerp2Raw.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,7 +72,6 @@
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="LerpedCore.cs" />
-    <Compile Include="MonoBehaviours\LerpedHook.cs" />
     <Compile Include="Optimizers\Color.cs" />
     <Compile Include="Optimizers\Point.cs" />
     <Compile Include="Other APIs\BigInteger\BigInteger.cs" />

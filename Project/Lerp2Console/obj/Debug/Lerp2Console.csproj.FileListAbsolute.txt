@@ -23,3 +23,4 @@ D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.XML
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML

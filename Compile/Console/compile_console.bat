@@ -6,4 +6,9 @@ if "%REF_PATH%" == "" ( set "REF_PATH=%MAIN_PATH%\Assemblies" )
 
 MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Console /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Console /p:Configuration=Debug /flp:logfile=Output.log;verbosity=diagnostic  
 
-pause
+if exist "%MAIN_PATH%\Build\Console\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Console\Lerp2API.dll" )
+if exist "%MAIN_PATH%\Build\Console\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Console\Lerp2API.pdb" )
+if exist "%MAIN_PATH%\Build\Console\Lerp2API.xml" ( del "%MAIN_PATH%\Build\Console\Lerp2API.xml" )
+if exist "%MAIN_PATH%\Build\Console\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Console\UnityEngine.dll" )
+if exist "%MAIN_PATH%\Build\Console\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Console\UnityEditor.dll" )
+if exist "%MAIN_PATH%\Build\Console\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Console\UnityEngine.UI.dll" )

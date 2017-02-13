@@ -11,7 +11,7 @@ using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
 using Debug = Lerp2API.DebugHandler.Debug;
 using System.Reflection;
-using Lerp2APIEditor.MonoBehaviours;
+using Lerp2Raw;
 
 namespace Lerp2APIEditor
 {
