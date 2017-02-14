@@ -11,7 +11,7 @@ GoTo :Main
 Echo:Hello. Well, if you're opening this it is because you have done something wrong and you cannot start Unity...
 Echo+
 Choice.exe /C "YN" /M "Do you want to read your path from the \"project_path.txt\" file or do you want to specify "
-Set /A "opt=%ErrorLevel%" :: 1=Y, 2=N
+Set /A "opt=%ErrorLevel%" & REM 1=Y, 2=N
 Echo+
 Echo:Also, these options below are optional but you can try to establish an order for the compilation.
 Echo+
@@ -38,7 +38,8 @@ If %opt% EQU 1 (
 GoTo :Terminate
  
 :RunCompiler
-echo aaaa
+::CMD.exe /C " Start /W "" "compile.bat" "%~1" "%~2" " 
+::Beautiful error, above
 CMD.exe /C " compile.bat "%~1" "%~2" "
 GoTo :EOF
  
