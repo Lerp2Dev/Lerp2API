@@ -25,12 +25,10 @@ if "%CompileOrder%" NEQ "" (
 
 ::Build Console
 
-CMD.exe /C "%MAIN_PATH%/Compile/Console/compile_console.bat"
+CMD /C "%MAIN_PATH%/Compile/Console/compile_console.bat"
 
 set "ProjectPath=%~1"
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
-
-pause
 
 goto :EOF
 
@@ -60,7 +58,7 @@ goto :EOF
 :build2
 MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
-if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( xcopy /e /y "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
+if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /ey "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
 
 if exist "%MAIN_PATH%\Build\Raw\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Raw\Lerp2API.dll" )
 if exist "%MAIN_PATH%\Build\Raw\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Raw\Lerp2API.pdb" )
@@ -81,7 +79,7 @@ goto :EOF
 :build3
 MSBuild "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
 
-if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( copy /ey "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
 
 if exist "%MAIN_PATH%\Build\Editor\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.dll" )
 if exist "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" )
@@ -100,20 +98,21 @@ goto :EOF
 ::Copy everything
 
 :copycontent
-xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
-xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
-xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
 
-xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe" "%ProjectPath%\Console\Lerp2Console.exe"
-xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe.config" "%ProjectPath%\Console\Lerp2Console.exe.config"
-xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.xml" "%ProjectPath%\Console\Lerp2Console.xml"
-xcopy /e /y "%MAIN_PATH%\Build\Console\Lerp2Console.pdb" "%ProjectPath%\Console\Lerp2Console.pdb"
+copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
+copy /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
+copy /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
 
-xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
-xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
-xcopy /e /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
+copy /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe" "%ProjectPath%\Console\Lerp2Console.exe"
+copy /y "%MAIN_PATH%\Build\Console\Lerp2Console.exe.config" "%ProjectPath%\Console\Lerp2Console.exe.config"
+copy /y "%MAIN_PATH%\Build\Console\Lerp2Console.xml" "%ProjectPath%\Console\Lerp2Console.xml"
+copy /y "%MAIN_PATH%\Build\Console\Lerp2Console.pdb" "%ProjectPath%\Console\Lerp2Console.pdb"
 
-xcopy /e /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
+copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp2APIEditor.dll"
+copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
+copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
+
+copy /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
 
 goto:EOF
 
