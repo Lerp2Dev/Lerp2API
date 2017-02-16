@@ -14,3 +14,6 @@ D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.pdb
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.XML
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.dll
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.dll
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.XML

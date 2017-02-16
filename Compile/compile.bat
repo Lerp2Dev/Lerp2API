@@ -17,17 +17,20 @@ if "%CompileOrder%" NEQ "" (
 		call :build%%b
 		call :build%%c
 	)
-	::echo %%a&echo %%b&echo %%c
 ) else (
-	FOR /L %%i IN (1,1,3) DO call :build%%i
+	FOR /L %%i IN (1,1,3) DO (
+		call :build%%i
+	)
 )
 
 ::Build Console
 
-%MAIN_PATH%/Compile/Console/compile_console.bat
+CMD.exe /C "%MAIN_PATH%/Compile/Console/compile_console.bat"
 
 set "ProjectPath=%~1"
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
+
+pause
 
 goto :EOF
 
