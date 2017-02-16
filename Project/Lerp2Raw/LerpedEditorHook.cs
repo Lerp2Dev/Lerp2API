@@ -1,16 +1,18 @@
 ﻿using Lerp2API;
+using Lerp2API.Mono;
 using System;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
+using Lerp2API.RawReferences;
 
 namespace Lerp2Raw
 {
 
     [ExecuteInEditMode]
-    public class LerpedEditorHook : MonoBehaviour
+    public class LerpedEditorHook : LerpedEditorHookBase
     {
 #if UNITY_EDITOR
         public static LerpedEditorHook me;
@@ -41,7 +43,7 @@ namespace Lerp2Raw
             return me;
         }
 
-        public static void AddElement(string name)
+        public override void AddElement(string name)
         {
             Type type = Type.GetType(name);
             if (type == null)

@@ -98,7 +98,6 @@ goto :EOF
 ::Copy everything
 
 :copycontent
-
 copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
 copy /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
 copy /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
@@ -113,7 +112,6 @@ copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp
 copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
 
 copy /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
-
 goto:EOF
 
 ::Other params that you will need if you modify this code and put new dlls, or maybe, if the dlls aren't found in your hdd

@@ -11,7 +11,7 @@ using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
 using Debug = Lerp2API.DebugHandler.Debug;
 using System.Reflection;
-using Lerp2Raw;
+using Lerp2API.RawReferences;
 
 namespace Lerp2APIEditor
 {
@@ -64,13 +64,13 @@ namespace Lerp2APIEditor
             GameObject core = GameObject.Find("Lerp2Core");
             if (core == null)
                 core = new GameObject("Lerp2Core");
-            if (core.GetComponent<LerpedEditorHook>() == null)
+            if (core.GetComponent<LerpedEditorHookBase>() == null)
             {
-                LerpedEditorHook leh = core.AddComponent<LerpedEditorHook>();
+                LerpedEditorHookBase leh = core.AddComponent<LerpedEditorHookBase>();
             }
-            if(core.GetComponent<LerpedHook>() == null)
+            if(core.GetComponent<LerpedHookBase>() == null)
             {
-                LerpedHook lh = core.AddComponent<LerpedHook>();
+                LerpedHookBase lh = core.AddComponent<LerpedHookBase>();
             }
         }
 

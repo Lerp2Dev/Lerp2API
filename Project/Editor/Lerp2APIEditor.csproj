@@ -37,9 +37,6 @@
     <Reference Include="Lerp2API">
       <HintPath>..\..\Build\Lerp2API.dll</HintPath>
     </Reference>
-    <Reference Include="Lerp2Raw">
-      <HintPath>..\..\Build\Raw\Lerp2Raw.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +54,7 @@
     <Compile Include="EditorWindows\BrowserWindow.cs" />
     <Compile Include="EditorWindows\LerpedPaths.cs" />
     <Compile Include="LerpedEditorCore.cs" />
+    <Compile Include="RawReferences\LerpedEditorHook.cs" />
     <Compile Include="Utility\LerpedThread.cs" />
     <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />
