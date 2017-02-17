@@ -1,4 +1,8 @@
-﻿using UnityEditor;
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+using UnityEditor;
+using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2APIEditor
 {
@@ -35,4 +39,45 @@ namespace Lerp2APIEditor
 
         #endregion "Editor Extensions"
     }
+
+    #region "Editor Reflection Extensions"
+    public class EditorReflectionHelpers
+    {
+        public Action fin;
+        public EditorReflectionHelpers(Action f)
+        {
+            fin = f;
+        }
+        public void WaitUntilClassIsAvailable(string type)
+        {
+            Debug.LogFormat("Waiting for '{0}' class.", type);
+            Thread th = new Thread(() =>
+            {
+                ThreadSafeEditor.ShowCMDMessage("echo prueba xd", "echo hola");
+                int secs = 30;
+                bool av = false;
+                while (--secs > 0)
+                {
+                    av = Type.GetType(type) != null;
+                    if (av)
+                        break;
+                    Thread.Sleep(1000);
+                }
+                //Process.Start(string.Format("cmd.exe /c echo {0} {1} & pause", av, secs));
+                if (av) fin();
+            });
+            th.Start();
+        }
+    }
+    #endregion
+
+    #region "Thread Safe Editor Extensions"
+    public class ThreadSafeEditor
+    {
+        public static void ShowCMDMessage(params string[] commands)
+        {
+            Process.Start("cmd.exe", string.Format("/c {0} & pause", string.Join(" & ", commands)));
+        }
+    }
+    #endregion
 }

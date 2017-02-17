@@ -36,7 +36,10 @@ namespace Lerp2APIEditor.EditorWindows
                     LerpedCore.SetBool(LerpedCore.UnityBoot, true);
                     string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath));
                     if (string.IsNullOrEmpty(bPath))
+                    {
+                        bPath = "";
                         return;
+                    }
 
                     long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
                          lastModTime = Helpers.LatestModification(bPath);
@@ -88,7 +91,7 @@ namespace Lerp2APIEditor.EditorWindows
             }
 
             bPath = LerpedCore.GetString(buildPath);
-            ePath = LerpedCore.GetString(editorPath);
+            ePath = LerpedCore.GetString(editorPath); //Is null?
 
             bPath = string.IsNullOrEmpty(bPath) ? Application.dataPath : bPath;
             ePath = string.IsNullOrEmpty(ePath) ? Application.dataPath : ePath;

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lerp2API.RawReferences
+/*namespace Lerp2API.RawReferences
 {
     public abstract class LerpedEditorHookBase : LerpedMono
     {
@@ -11,4 +11,4 @@ namespace Lerp2API.RawReferences
 
         public virtual void AddElement(string name) { }
     }
-}
+}*/

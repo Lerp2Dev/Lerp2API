@@ -16,5 +16,10 @@ namespace Lerp2API.Mono
                 Debug.LogWarningFormat("'{0}' instance is null.", typeof(T).FullName);
             return (T)me;
         }
+        public void Start()
+        {
+            //if (!EditorApplication.isPlayingOrWillChangePlaymode)
+            me = this;
+        }
     }
 }

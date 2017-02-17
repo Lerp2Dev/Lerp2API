@@ -36,8 +36,6 @@ If %opt% EQU 1 (
 GoTo :Terminate
  
 :RunCompiler
-::CMD.exe /C " Start /W "" "compile.bat" "%~1" "%~2" " 
-::Beautiful error, above
 CMD.exe /C " compile.bat "%~1" "%~2" "
 GoTo :EOF
  

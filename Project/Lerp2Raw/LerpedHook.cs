@@ -3,7 +3,7 @@ using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2Raw
 {
-    public abstract class LerpedHook : LerpedMono
+    public class LerpedHook : LerpedMono
     {
         private void Awake() //This must be ondisable, only for hooklog
         {

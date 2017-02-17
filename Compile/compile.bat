@@ -37,7 +37,7 @@ goto :EOF
 :build1
 MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
 
-if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( xcopy /e /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
+if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
 
 if exist "%MAIN_PATH%\Build\Lerp2APIEditor.dll" ( del "%MAIN_PATH%\Build\Lerp2APIEditor.dll" )
 if exist "%MAIN_PATH%\Build\Lerp2APIEditor.pdb" ( del "%MAIN_PATH%\Build\Lerp2APIEditor.pdb" )
@@ -58,7 +58,7 @@ goto :EOF
 :build2
 MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
-if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /ey "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
+if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /y "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
 
 if exist "%MAIN_PATH%\Build\Raw\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Raw\Lerp2API.dll" )
 if exist "%MAIN_PATH%\Build\Raw\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Raw\Lerp2API.pdb" )

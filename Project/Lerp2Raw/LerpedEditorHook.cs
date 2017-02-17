@@ -6,23 +6,15 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 using UnityEngine;
-using Lerp2API.RawReferences;
 
 namespace Lerp2Raw
 {
 
     [ExecuteInEditMode]
-    public class LerpedEditorHook : LerpedEditorHookBase
+    public class LerpedEditorHook : LerpedMono
     {
 #if UNITY_EDITOR
-        public static LerpedEditorHook me;
         public static Queue<Type> typePool = new Queue<Type>();
-
-        public void Start()
-        {
-            if (!EditorApplication.isPlayingOrWillChangePlaymode)
-                me = this;
-        }
 
         public void Update()
         {
@@ -36,14 +28,7 @@ namespace Lerp2Raw
             }
         }
 
-        public static LerpedEditorHook GetInstance()
-        {
-            if (me == null)
-                Debug.LogWarning("'LerpedEditorHook' instance is null.");
-            return me;
-        }
-
-        public override void AddElement(string name)
+        public void AddElement(string name)
         {
             Type type = Type.GetType(name);
             if (type == null)

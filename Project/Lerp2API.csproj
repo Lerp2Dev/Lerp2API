@@ -115,7 +115,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RawReferences\LerpedHook.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsArrayConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDateConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDictionaryConverter.cs" />
