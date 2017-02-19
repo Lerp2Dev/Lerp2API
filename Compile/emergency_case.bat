@@ -22,16 +22,13 @@ Echo+
 Set /P "order=Type, for example: [2 1 3], to compile in this order, or the way you want: "
  
 If %opt% EQU 1 (
-    FOR /F "Delims=" %%f in (project_path.txt) Do (
-        If "%%~f" NEQ "" (
-            Call :RunCompiler "%%~f" "%order%"
-        )
+    Set /P firstline=<project_path.txt 
+    If "%firstline%" NEQ "" (
+        Call :RunCompiler "%firstline%" "%order%"
     )
- 
 ) Else (
-    Set /P "cpath=Path: "
+    Set /P "cpath=Write path manually: "
     Call :RunCompiler "%cpath%" "%order%"
- 
 )
 GoTo :Terminate
  

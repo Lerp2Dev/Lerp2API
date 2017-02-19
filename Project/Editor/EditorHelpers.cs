@@ -51,9 +51,10 @@ namespace Lerp2APIEditor
         public void WaitUntilClassIsAvailable(string type)
         {
             Debug.LogFormat("Waiting for '{0}' class.", type);
+            ThreadSafeEditor tse = new ThreadSafeEditor();
             Thread th = new Thread(() =>
             {
-                ThreadSafeEditor.ShowCMDMessage("echo prueba xd", "echo hola");
+                tse.Message("echo prueba xd", "echo hola");
                 int secs = 30;
                 bool av = false;
                 while (--secs > 0)
@@ -74,9 +75,17 @@ namespace Lerp2APIEditor
     #region "Thread Safe Editor Extensions"
     public class ThreadSafeEditor
     {
-        public static void ShowCMDMessage(params string[] commands)
+        private Process cmd;
+        public ThreadSafeEditor()
         {
-            Process.Start("cmd.exe", string.Format("/c {0} & pause", string.Join(" & ", commands)));
+            cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+        }
+        public void Message(params string[] commands)
+        {
+            //Process.Start("cmd.exe", string.Format("/c {0} & pause", string.Join(" & ", commands)));
+            cmd.StartInfo.Arguments = string.Format("/c {0} & pause", string.Join(" & ", commands));
+            cmd.Start();
         }
     }
     #endregion
