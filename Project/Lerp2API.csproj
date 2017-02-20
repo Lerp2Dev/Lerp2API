@@ -53,6 +53,15 @@
     <Compile Include="All Noises\Noise\RidgedNoise.cs" />
     <Compile Include="All Noises\Voronoi\Noise.cs" />
     <Compile Include="All Noises\Voronoi\Voronoi.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Client\PipeClient.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunication.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunicationClient.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunicationServer.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Server\InternalPipeServer.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Server\PipeServer.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Utilities\EventHandlerExtensions.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Utilities\Logger.cs" />
+    <Compile Include="Communication\NamedPipesUtils\Utilities\TaskResult.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />

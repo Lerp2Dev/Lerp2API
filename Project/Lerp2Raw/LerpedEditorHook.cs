@@ -16,6 +16,7 @@ namespace Lerp2Raw
     public class LerpedEditorHook : LerpedMono
     {
 #if UNITY_EDITOR
+        public static LerpedEditorHook me;
         public static Queue<Type> typePool = new Queue<Type>();
 
         [InitializeOnLoadMethod]
@@ -32,9 +33,9 @@ namespace Lerp2Raw
                 PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
         }
 
-        public void Start()
+        public void Awake()
         {
-
+            me = this;
         }
 
         public void Update()

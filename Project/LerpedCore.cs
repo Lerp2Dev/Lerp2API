@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
@@ -162,17 +163,23 @@ namespace Lerp2API
                 }
             };
             process.Start();
+            ConsoleSender.l2dStream = new NamedPipeClientStream(".", "Lerped2Console", PipeDirection.InOut);
+            ConsoleSender.l2dStream.Connect(1000);
         }
     }
 
     public class ConsoleSender
     {
         private static List<string> paths = new List<string>();
+        public static NamedPipeClientStream l2dStream;
         public static void SendMessage(string path, LogType lt, string ls, string st)
         {
-            if (!paths.Contains(path))
-                paths.Add(path);
-            File.AppendAllText(path, Environment.NewLine + JsonUtility.ToJson(new ConsoleMessage(lt, ls, st)));
+            //if (!paths.Contains(path))
+            //    paths.Add(path);
+            //File.AppendAllText(path, Environment.NewLine + JsonUtility.ToJson(new ConsoleMessage(lt, ls, st)));
+            if(l2dStream == null)
+                l2dStream = new NamedPipeClientStream(".", "Lerped2Console", PipeDirection.InOut);
+            //l2dStream. //There I should send a message
         }
         public static void Quit()
         {

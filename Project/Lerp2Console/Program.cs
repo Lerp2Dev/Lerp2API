@@ -13,6 +13,7 @@ namespace Lerp2Console
     class Program
     {
         //private static FileSystemWatcher l2dWatcher;
+        private static NamedPipeServerStream l2dStream;
         private static string listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
         private static Parameter[] parameters;
         private static ulong calls;
@@ -40,6 +41,9 @@ namespace Lerp2Console
 
         static void Work(string[] args)
         {
+            l2dStream = new NamedPipeServerStream("Lerp2Console", PipeDirection.InOut);
+            l2dStream.WaitForConnection();
+
             parameters = Parameter.GetParams(args);
             //string ePath = GetParam("path"),
             //       lFile = GetParam("file");
