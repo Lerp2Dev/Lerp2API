@@ -10,11 +10,32 @@ using UnityEngine;
 namespace Lerp2Raw
 {
 
+#if UNITY_EDITOR
     [ExecuteInEditMode]
+#endif
     public class LerpedEditorHook : LerpedMono
     {
 #if UNITY_EDITOR
         public static Queue<Type> typePool = new Queue<Type>();
+
+        [InitializeOnLoadMethod]
+        static void OnLoadMethods()
+        {
+            ChangeAPILevelComp();
+            LerpedCore.HookThis(typeof(LerpedEditorHook));
+            LerpedCore.HookThis(typeof(LerpedHook));
+        }
+
+        private static void ChangeAPILevelComp()
+        {
+            if (PlayerSettings.apiCompatibilityLevel == ApiCompatibilityLevel.NET_2_0_Subset)
+                PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
+        }
+
+        public void Start()
+        {
+
+        }
 
         public void Update()
         {

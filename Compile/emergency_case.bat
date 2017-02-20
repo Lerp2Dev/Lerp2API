@@ -19,7 +19,7 @@ Echo:1.- Build the API
 Echo:2.- Build the RAW Scripts
 Echo:3.- Build the Editor API
 Echo+
-Set /P "order=Type, for example: [2 1 3], to compile in this order, or the way you want: "
+Set /P "order=Type, for example: [2 1 4 3], to compile in this order, or the way you want: "
  
 If %opt% EQU 1 (
 FOR /F "Delims=" %%f in (

@@ -12,20 +12,17 @@ set MSBuildEmitSolution=1
 
 set "CompileOrder=%~2"
 if "%CompileOrder%" NEQ "" (
-	FOR /f "tokens=1,2,3 delims= " %%a IN ("%CompileOrder%") do (
+	FOR /f "tokens=1,2,3,4 delims= " %%a IN ("%CompileOrder%") do (
 		call :build%%a
 		call :build%%b
 		call :build%%c
+		call :build%%d
 	)
 ) else (
-	FOR /L %%i IN (1,1,3) DO (
+	FOR /L %%i IN (1,1,4) DO (
 		call :build%%i
 	)
 )
-
-::Build Console
-
-CMD /C "%MAIN_PATH%/Compile/Console/compile_console.bat"
 
 set "ProjectPath=%~1"
 if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
@@ -53,9 +50,34 @@ if exist "%MAIN_PATH%\Build\Lerp2Raw.pdb" ( del "%MAIN_PATH%\Build\Lerp2Raw.pdb"
 if exist "%MAIN_PATH%\Build\Lerp2Raw.xml" ( del "%MAIN_PATH%\Build\Lerp2Raw.xml" )
 goto :EOF
 
-::Build RAW
+::Build Editor
 
 :build2
+MSBuild "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
+
+if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
+
+if exist "%MAIN_PATH%\Build\Editor\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.dll" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2API.xml" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.xml" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.dll" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.dll" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.pdb" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.pdb" )
+if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.xml" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.xml" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.dll" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEngine.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.xml" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEditor.dll" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEditor.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEditor.xml" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
+if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.xml" )
+goto :EOF
+
+:build4
+CMD /C "%MAIN_PATH%/Compile/Console/compile_console.bat"
+goto :EOF
+
+::Build RAW
+
+:build3
 MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /y "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
@@ -72,27 +94,6 @@ if exist "%MAIN_PATH%\Build\Raw\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Raw\Un
 if exist "%MAIN_PATH%\Build\Raw\UnityEditor.xml" ( del "%MAIN_PATH%\Build\Raw\UnityEditor.xml" )
 if exist "%MAIN_PATH%\Build\Raw\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Raw\UnityEngine.UI.dll" )
 if exist "%MAIN_PATH%\Build\Raw\UnityEngine.UI.xml" ( del "%MAIN_PATH%\Build\Raw\UnityEngine.UI.xml" )
-goto :EOF
-
-::Build Editor
-
-:build3
-MSBuild "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
-
-if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( copy /ey "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
-
-if exist "%MAIN_PATH%\Build\Editor\Lerp2API.dll" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.dll" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.pdb" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2API.xml" ( del "%MAIN_PATH%\Build\Editor\Lerp2API.xml" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.dll" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.dll" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.pdb" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.pdb" )
-if exist "%MAIN_PATH%\Build\Editor\Lerp2Raw.xml" ( del "%MAIN_PATH%\Build\Editor\Lerp2Raw.xml" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEngine.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.dll" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEngine.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.xml" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEditor.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEditor.dll" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEditor.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEditor.xml" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.dll" )
-if exist "%MAIN_PATH%\Build\Editor\UnityEngine.UI.xml" ( del "%MAIN_PATH%\Build\Editor\UnityEngine.UI.xml" )
 goto :EOF
 
 ::Copy everything

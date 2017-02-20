@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using Lerp2API;
@@ -11,7 +12,7 @@ namespace Lerp2Console
 {
     class Program
     {
-        private static FileSystemWatcher l2dWatcher;
+        //private static FileSystemWatcher l2dWatcher;
         private static string listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
         private static Parameter[] parameters;
         private static ulong calls;
@@ -48,10 +49,10 @@ namespace Lerp2Console
             //executionPath = string.IsNullOrWhiteSpace(ePath) ? Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) : ePath;
             listenPath = Path.Combine(projectPath, sPath[0]); //string.IsNullOrWhiteSpace(lFile) ? "debug.log" : lFile; //Tengo que probar a renombrar el archivo a ver que pasa...
             listenFile = Path.Combine(listenPath, sPath[1]);
-            l2dWatcher = new FileSystemWatcher(listenPath, listenFile); //executionPath
+            /*l2dWatcher = new FileSystemWatcher(listenPath, listenFile); //executionPath
             l2dWatcher.Changed += L2dWatcher_Changed;
             l2dWatcher.Deleted += L2dWatcher_Deleted;
-            l2dWatcher.EnableRaisingEvents = true;
+            l2dWatcher.EnableRaisingEvents = true;*/
             QueryWork();
         }
 

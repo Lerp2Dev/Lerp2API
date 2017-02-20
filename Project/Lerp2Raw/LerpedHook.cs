@@ -1,4 +1,5 @@
-﻿using Lerp2API.Mono;
+﻿using Lerp2API;
+using Lerp2API.Mono;
 using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2Raw
@@ -7,6 +8,7 @@ namespace Lerp2Raw
     {
         private void Awake() //This must be ondisable, only for hooklog
         {
+            LerpedCore.lerpedCore = LerpedCore.AutoHookCore();
             Debug.HookLog();
         }
 

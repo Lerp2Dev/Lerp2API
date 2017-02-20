@@ -15,6 +15,14 @@ namespace Lerp2API
         private static string storePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L2API.sav");
         public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH", 
                             defaultLogFilePath = "Logs/Console.log";
+        public static GameObject lerpedCore;
+        public static string SystemTime
+        {
+            get
+            {
+                return DateTime.Now.ToString("h:mm:ss.ffffff");
+            }
+        }
 
         public static float UnityTick
         {
@@ -118,6 +126,23 @@ namespace Lerp2API
             {
                 _storedInfo = value;
             }
+        }
+
+        public static GameObject AutoHookCore()
+        {
+            GameObject core = GameObject.Find("Lerp2Core");
+            if (core == null)
+                core = new GameObject("Lerp2Core");
+            return core;
+        }
+
+        public static void HookThis(Type type, int waitSecs = 1)
+        {
+            int i = DateTime.Now.Second + waitSecs; //Wait desired seconds for lerpedCore to be assigned 
+            if (lerpedCore == null) lerpedCore = AutoHookCore();
+            //while (lerpedCore == null && DateTime.Now.Second < i) { }
+            if (lerpedCore.GetComponent(type) == null)
+                lerpedCore.AddComponent(type);
         }
     }
 

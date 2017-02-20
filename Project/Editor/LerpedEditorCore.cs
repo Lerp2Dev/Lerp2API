@@ -55,14 +55,16 @@ namespace Lerp2APIEditor
             AddHook();
             DownloadEditorFiles();
             HookWatchers();
-            AutoHookCore();
+            //Debug.Log("Assigning LerpedCore GameObject: " + LerpedCore.SystemTime);
+            //LerpedCore.lerpedCore = LerpedCore.AutoHookCore();
         }
 
-        private static void AutoHookCore()
+        /*private static GameObject AutoHookCore()
         {
             GameObject core = GameObject.Find("Lerp2Core");
             if (core == null)
                 core = new GameObject("Lerp2Core");
+            return core;
             EditorReflectionHelpers erh_EditorHook = new EditorReflectionHelpers(() => {
                 Type leh = Type.GetType("Lerp2Raw.LerpedEditorHook");
                 if (core.GetComponent(leh) == null)
@@ -75,7 +77,7 @@ namespace Lerp2APIEditor
                     core.AddComponent(lh);
             });
             erh_Hook.WaitUntilClassIsAvailable("LerpedHook");
-        }
+        }*/
 
         private static void AddHook()
         {
