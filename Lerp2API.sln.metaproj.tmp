@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions;ValidateProjects">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportBefore')" />
-  <Import Project="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\before.Lerp2API.sln.targets" Condition="exists('D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\before.Lerp2API.sln.targets')" />
+  <Import Project="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\before.Lerp2API.sln.targets" Condition="exists('C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\before.Lerp2API.sln.targets')" />
   <PropertyGroup Condition=" '$(Configuration)' == '' ">
     <Configuration>Debug</Configuration>
   </PropertyGroup>
@@ -12,11 +12,11 @@
     <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
   </PropertyGroup>
   <PropertyGroup>
-    <SolutionDir>D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\</SolutionDir>
+    <SolutionDir>C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>Lerp2API.sln</SolutionFileName>
     <SolutionName>Lerp2API</SolutionName>
-    <SolutionPath>D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Lerp2API.sln</SolutionPath>
+    <SolutionPath>C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Lerp2API.sln</SolutionPath>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
@@ -26,10 +26,10 @@
   <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
@@ -39,10 +39,10 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Debug|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -51,10 +51,10 @@
       <Platform>Any CPU</Platform>
       <Content>
         <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
       </Content>
     </SolutionConfiguration>
@@ -62,15 +62,15 @@
   <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
     <CurrentSolutionConfigurationContents>
       <SolutionConfiguration xmlns="">
-  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
-  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{C6D33E81-3C33-4B6B-886E-B52673F98614}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2API.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{BFCE159D-8227-4D26-B883-FAEB77AC33FE}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Editor\Lerp2APIEditor.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{8846AD97-88BB-4336-A603-9A4D656EE7D5}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
+  <ProjectConfiguration Project="{EAA2986A-8FEE-460A-A774-FD20913339B4}" AbsolutePath="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Raw\Lerp2Raw.csproj" BuildProjectInSolution="True">Release|AnyCPU</ProjectConfiguration>
 </SolutionConfiguration>
     </CurrentSolutionConfigurationContents>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter\*" Condition="'$(ImportByWildcardBeforeSolution)' != 'false' and exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\SolutionFile\ImportAfter')" />
-  <Import Project="D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\after.Lerp2API.sln.targets" Condition="exists('D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\after.Lerp2API.sln.targets')" />
+  <Import Project="C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\after.Lerp2API.sln.targets" Condition="exists('C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\after.Lerp2API.sln.targets')" />
   <Target Name="Build" />
   <Target Name="Rebuild" />
   <Target Name="Clean" />

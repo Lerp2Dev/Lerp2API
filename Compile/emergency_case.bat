@@ -22,9 +22,15 @@ Echo+
 Set /P "order=Type, for example: [2 1 3], to compile in this order, or the way you want: "
  
 If %opt% EQU 1 (
-    Set /P firstline=<project_path.txt 
-    If "%firstline%" NEQ "" (
-        Call :RunCompiler "%firstline%" "%order%"
+FOR /F "Delims=" %%f in (
+    	project_path.txt
+    ) Do (
+        If "%%~f" NEQ "" (
+            Call :RunCompiler "%%~f" "%order%"
+        ) Else (
+            Call :EmptyError
+        )
+        GoTo :Terminate
     )
 ) Else (
     Set /P "cpath=Write path manually: "
@@ -35,6 +41,10 @@ GoTo :Terminate
 :RunCompiler
 CMD.exe /C " compile.bat "%~1" "%~2" "
 GoTo :EOF
- 
+
+:EmptyError
+Echo:The file 'project_path.txt' is empty, please check it. If it's empty, please put the path where you want to copy the file.
+GoTo :Terminate 
+
 :Terminate
 Pause&Exit
