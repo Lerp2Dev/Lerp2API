@@ -64,7 +64,6 @@ namespace Lerp2APIEditor
                         break;
                     Thread.Sleep(1000);
                 }
-                //Process.Start(string.Format("cmd.exe /c echo {0} {1} & pause", av, secs));
                 if (av) fin();
             });
             th.Start();
@@ -83,9 +82,9 @@ namespace Lerp2APIEditor
         }
         public void Message(params string[] commands)
         {
-            //Process.Start("cmd.exe", string.Format("/c {0} & pause", string.Join(" & ", commands)));
             cmd.StartInfo.Arguments = string.Format("/c {0} & pause", string.Join(" & ", commands));
             cmd.Start();
+            cmd.Close();
         }
     }
     #endregion

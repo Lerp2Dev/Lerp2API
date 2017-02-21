@@ -4,7 +4,7 @@
         <name>Lerp2API</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "T:SimplexNoise.Noise" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "T:SimplexNoise.Noise" -->
         <member name="M:SimplexNoise.Noise.Generate(System.Single)">
             <summary>
             1D simplex noise
@@ -729,7 +729,7 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:System.Threading.Tasks.TaskCompletionSource`1.Task" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "P:System.Threading.Tasks.TaskCompletionSource`1.Task" -->
         <member name="M:System.Threading.Tasks.TaskCompletionSource`1.TrySetCanceled">
             <summary>
             Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state.
@@ -3808,7 +3808,7 @@
             until we have entirely finished serializing it.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
         <member name="F:FullSerializer.fsSerializer._cachedConverters">
             <summary>
             A cache from type to it's converter.

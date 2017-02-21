@@ -153,22 +153,27 @@ namespace Lerp2APIEditor
 
             if(!Directory.Exists(bePath))
             {
-                Debug.Log("Editor path couldn't not be found in Build Path!");
+                Debug.LogError("Editor path couldn't not be found in Build Path!");
                 return;
             }
             if (!Directory.Exists(eePath))
             {
-                Debug.Log("Editor path couldn't not be found in Project Path!");
+                Debug.LogError("Editor path couldn't not be found in Project Path!");
+                return;
+            }
+            if(!File.Exists(batchPath))
+            {
+                Debug.LogError("Batch compile file couldn't be found, please, download it from Lerp2Dev Repository.");
                 return;
             }
 
-            using (Process proc = new Process())
+            using (var proc = new Process())
             {
                 proc.StartInfo.FileName = batchPath;
                 //proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //This will be hidden when the console of the api compiles itsself and could send messages to Unity?
                 proc.Start();
                 proc.WaitForExit();
-                int exitCode = proc.ExitCode;
+                //int exitCode = proc.ExitCode;
             }
 
             string[] fbFiles = new string[] { Path.Combine(bPath, "Lerp2API.dll"), Path.Combine(bPath, "Lerp2API.pdb"), Path.Combine(bPath, "Lerp2API.pdb"),

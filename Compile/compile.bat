@@ -1,14 +1,14 @@
 @echo off
 
 ::Use this in case, you haven't VS installed, or you wan't to open it!
-::Maybe you need to install this, if you don't have VS 2015 or MSBuild packages: https://www.microsoft.com/en-us/download/details.aspx?id=48159
+::Maybe you need to install this, if you don't have VS 2015 or "%MAIN_PATH%\Compile\MSBuild.exe" packages: https://www.microsoft.com/en-us/download/details.aspx?id=48159
 
 ::Main
 
 if "%MAIN_PATH%" == "" ( for %%a in ("%~dp0..") do set "MAIN_PATH=%%~fa" )
 if "%REF_PATH%" == "" ( set "REF_PATH=%MAIN_PATH%\Assemblies" )
 
-set MSBuildEmitSolution=1
+::set MSBuildEmitSolution=1
 
 set "CompileOrder=%~2"
 if "%CompileOrder%" NEQ "" (
@@ -25,14 +25,16 @@ if "%CompileOrder%" NEQ "" (
 )
 
 set "ProjectPath=%~1"
-if "%ProjectPath%" NEQ "" call :copycontent "%ProjectPath%"
+if "%ProjectPath%" NEQ "" (
+	call :copycontent "%ProjectPath%"
+)
 
 goto :EOF
 
 ::Build API
 
 :build1
-MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
 
@@ -53,7 +55,7 @@ goto :EOF
 ::Build Editor
 
 :build2
-MSBuild "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
 
@@ -78,7 +80,7 @@ goto :EOF
 ::Build RAW
 
 :build3
-MSBuild "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /y "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
 
