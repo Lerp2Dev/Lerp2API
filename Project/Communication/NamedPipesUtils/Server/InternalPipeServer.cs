@@ -39,6 +39,7 @@ namespace ClientServerUsingNamedPipes.Server
         {
             _pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.InOut, maxNumberOfServerInstances,
                 PipeTransmissionMode.Message, PipeOptions.Asynchronous);
+            //_pipeServer = new NamedPipeServerStream(pipeName, PipeDirection.InOut, maxNumberOfServerInstances);
             Id = Guid.NewGuid().ToString();
         }
 

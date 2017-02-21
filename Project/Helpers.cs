@@ -13,6 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
 using Lerp2API.Optimizers;
 using System.Reflection;
+using UnityEngine.Assertions;
 
 namespace Lerp2API
 {
@@ -1249,6 +1250,18 @@ public class ReflectionHelpers
         T instance = new T();
         MethodInfo method = typeof(T).GetMethod(methodName);
         method.Invoke(instance, null);
+    }
+}
+
+#endregion
+
+#region "Assertions Extensions"
+
+public class AssertExt
+{
+    public static void AreSame(object a, object b)
+    {
+        Assert.IsTrue(ReferenceEquals(a, b));
     }
 }
 

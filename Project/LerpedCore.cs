@@ -1,3 +1,4 @@
+using ClientServerUsingNamedPipes.Client;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -151,9 +152,13 @@ namespace Lerp2API
     {
         public static void StartConsole()
         {
-            string console = Path.Combine(Application.dataPath, "/Lerp2API/Console/Lerp2Console.exe");
+            //Debug.LogFormat("Attemping to open the console in {0}.", Application.dataPath);
+            string console = Application.dataPath + "/Lerp2API/Console/Lerp2Console.exe";
             if (!File.Exists(console))
+            {
+                Debug.LogErrorFormat("Console app couldn't be found in its default path ({0}).", console);
                 return;
+            }
             var process = new Process
             {
                 StartInfo =
@@ -163,23 +168,28 @@ namespace Lerp2API
                 }
             };
             process.Start();
-            ConsoleSender.l2dStream = new NamedPipeClientStream(".", "Lerped2Console", PipeDirection.InOut);
-            ConsoleSender.l2dStream.Connect(1000);
         }
     }
 
     public class ConsoleSender
     {
         private static List<string> paths = new List<string>();
-        public static NamedPipeClientStream l2dStream;
+        public static PipeClient l2dStream;
+        public static void InitStream(string serverID)
+        {
+            l2dStream = new PipeClient(serverID);
+            l2dStream.Start();
+        }
         public static void SendMessage(string path, LogType lt, string ls, string st)
         {
             //if (!paths.Contains(path))
             //    paths.Add(path);
             //File.AppendAllText(path, Environment.NewLine + JsonUtility.ToJson(new ConsoleMessage(lt, ls, st)));
             if(l2dStream == null)
-                l2dStream = new NamedPipeClientStream(".", "Lerped2Console", PipeDirection.InOut);
-            //l2dStream. //There I should send a message
+                l2dStream = new PipeClient(GetServerID());
+
+            l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
+            //Tengo que quitar el path, tengo que ver lo de los colores y si pasando una instancia de una clase que exista en la Lerp2API me puedo evitar todo el engorro este.
         }
         public static void Quit()
         {
@@ -190,6 +200,19 @@ namespace Lerp2API
             foreach (string p in paths)
                 if (File.Exists(p))
                     File.Delete(p);
+        }
+
+        //Obsolete?
+        private static string GetServerID()
+        {
+            string path = Path.Combine(Application.dataPath, "Lerp2API/Console/ServerID.GUID");
+            if (File.Exists(path))
+                return File.ReadAllText(path);
+            else
+            {
+                Debug.LogErrorFormat("File '{0}' doesn't exists. Server ID couldn't be retrieved!", path);
+                return "";
+            } 
         }
     }
 

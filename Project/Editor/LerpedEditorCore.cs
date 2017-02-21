@@ -123,7 +123,7 @@ namespace Lerp2APIEditor
             EditorApplication.update += OnEditorApplicationUpdate;
             if (!availablePaths)
             {
-                Debug.LogError("There's any Path setted already, go to Lerp2Dev Team Tools > Refresh Project API Dependencies... to set the paths of the Project in your HDD and the path of this project.");
+                Debug.LogError("There are one or more paths unsetted, go to Lerp2Dev Team Tools > Refresh Project API Dependencies... to set the paths of the Project in your HDD and the path of this project.");
                 return;
             }
             string bPath = LerpedCore.GetString(buildPath);

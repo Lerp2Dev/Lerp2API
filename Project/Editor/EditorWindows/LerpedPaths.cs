@@ -40,6 +40,11 @@ namespace Lerp2APIEditor.EditorWindows
                         bPath = "";
                         return;
                     }
+                    else if(!Directory.Exists(bPath))
+                    {
+                        Debug.LogErrorFormat("Your fork from Lerp2API has been moved, re-edit the path under: 'Lerp2Dev Team Tools > Refresh Project API References > Change Path > Build Dependencies Path', click '...' and set the new path, pressing 'Save'.\n'{0}' directory path doesn't exists!", bPath);
+                        return;
+                    }
 
                     long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
                          lastModTime = Helpers.LatestModification(bPath);

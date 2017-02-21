@@ -2,7 +2,7 @@
 using System.IO;
 using System.IO.Pipes;
 using System.Text;
-//using System.Threading.Tasks;
+using System.Threading.Tasks;
 using ClientServerUsingNamedPipes.Interfaces;
 using ClientServerUsingNamedPipes.Utilities;
 

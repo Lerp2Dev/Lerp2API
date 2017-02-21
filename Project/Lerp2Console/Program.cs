@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Pipes;
 using System.Linq;
 using System.Threading;
 using Lerp2API;
 using UnityEngine;
 using ICSharpCode.SharpZipLib.Zip;
+using ClientServerUsingNamedPipes.Server;
+using ClientServerUsingNamedPipes.Interfaces;
 
 namespace Lerp2Console
 {
     class Program
     {
         //private static FileSystemWatcher l2dWatcher;
-        private static NamedPipeServerStream l2dStream;
-        private static string listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
+        private static PipeServer l2dStream;
+        private static string projectPath = "", listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
         private static Parameter[] parameters;
         private static ulong calls;
         private const int msWait = 500;
@@ -41,13 +42,21 @@ namespace Lerp2Console
 
         static void Work(string[] args)
         {
-            l2dStream = new NamedPipeServerStream("Lerp2Console", PipeDirection.InOut);
-            l2dStream.WaitForConnection();
+            l2dStream = new PipeServer();
+            //PublishServerID(l2dStream.ServerId);
+
+            l2dStream.Start();
+
+            ConsoleSender.InitStream(l2dStream.ServerId);
+
+            l2dStream.ClientConnectedEvent += L2dStream_ClientConnected;
+            l2dStream.ClientDisconnectedEvent += L2dStream_ClientDisconnected;
+            l2dStream.MessageReceivedEvent += L2dStream_MessageReceived;
 
             parameters = Parameter.GetParams(args);
             //string ePath = GetParam("path"),
             //       lFile = GetParam("file");
-            string projectPath = GetParam("projectPath");
+            projectPath = GetParam("projectPath");
             stacktrace = !ExistParam("nostacktrace");
             editor = ExistParam("editor");
             //executionPath = string.IsNullOrWhiteSpace(ePath) ? Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) : ePath;
@@ -60,6 +69,21 @@ namespace Lerp2Console
             QueryWork();
         }
 
+        static void L2dStream_ClientConnected(object sender, ClientConnectedEventArgs e)
+        {
+
+        }
+
+        static void L2dStream_ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
+        {
+
+        }
+
+        static void L2dStream_MessageReceived(object sender, MessageReceivedEventArgs e)
+        {
+
+        }
+
         static void L2dWatcher_Changed(object sender, FileSystemEventArgs e)
         {
             ++calls;
@@ -68,6 +92,12 @@ namespace Lerp2Console
         static void L2dWatcher_Deleted(object sender, FileSystemEventArgs e)
         {
             ExitEvent();
+        }
+
+        //Obsolete?
+        private static void PublishServerID(string ID)
+        {
+            File.WriteAllText(Path.Combine(projectPath, "Lerp2API/Console/ServerID.GUID"), ID);
         }
 
         private static void QueryWork()

@@ -4,7 +4,7 @@
         <name>Lerp2API</name>
     </assembly>
     <members>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "T:SimplexNoise.Noise" -->
+        <!-- Badly formed XML comment ignored for member "T:SimplexNoise.Noise" -->
         <member name="M:SimplexNoise.Noise.Generate(System.Single)">
             <summary>
             1D simplex noise
@@ -76,6 +76,1806 @@
             Updates the cached cell seeds to match the specified cell. Noop if cell pos already matches.
             	Updates m_SeedX and m_SeedZ. 
         </member>
+        <member name="T:IteratorTasksAwaitExtensions">
+            <summary>
+            Provides an awaiter for awaiting a <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+        </member>
+        <member name="T:MinimuAsyncBridgeUnitTest.SingleThreadSynchronizationContext">
+            <summary>
+            <see cref="T:System.Threading.SynchronizationContext"/> which has a message pump on a single thread.
+            </summary>
+        </member>
+        <member name="M:MinimuAsyncBridgeUnitTest.SingleThreadSynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)">
+            <summary>
+            <see cref="M:System.Threading.SynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)"/>
+            </summary>
+            <param name="d"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:MinimuAsyncBridgeUnitTest.SingleThreadSynchronizationContext.Update">
+            <summary>
+            Assume this method is called on a single thread。
+            </summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodBuilderCore">
+            <summary>Holds state related to the builder's <see cref="T:System.Runtime.CompilerServices.IAsyncStateMachine"/>.</summary>
+            <remarks>This is a mutable struct. Be very delicate with it.</remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore._stateMachine">
+            <summary>A reference to the heap-allocated state machine object associated with this builder.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start``1(``0@)">
+            <summary>Initiates the builder's execution with the associated state machine.</summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="stateMachine">The state machine instance, passed by reference.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>Associates the builder with the state machine it represents.</summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.GetCompletionAction``2(``0@,``1@)">
+            <summary>
+            Gets the <see cref="T:System.Action"/> to use with an awaiter's <see cref="M:System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)"/> or
+            <see cref="M:System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)"/> method. On first invocation, the supplied state
+            machine will be boxed.
+            </summary>
+            <typeparam name="TMethodBuilder">Specifies the type of the method builder used.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine used.</typeparam>
+            <param name="builder">The builder.</param>
+            <param name="stateMachine">The state machine.</param>
+            <returns>An <see cref="T:System.Action"/> to provide to the awaiter.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner">
+            <summary>
+            Provides the ability to invoke a state machine's <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/> method under a
+            supplied <see cref="T:System.Threading.ExecutionContext"/>.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner._context">
+            <summary>The context with which to run <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/>.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner._stateMachine">
+            <summary>
+            The state machine whose <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/> method should be invoked.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner._invokeMoveNext">
+            <summary>Cached delegate used with <see cref="M:System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext,System.Threading.ContextCallback,System.Object)"/>.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.#ctor(System.Threading.ExecutionContext)">
+            <summary>Initializes the runner.</summary>
+            <param name="context">The context with which to run <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/>.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.Run">
+            <summary>Invokes <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/> under the provided context.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodBuilderCore.MoveNextRunner.InvokeMoveNext(System.Object)">
+            <summary>
+            Invokes the <see cref="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext"/> method on the supplied
+            <see cref="T:System.Runtime.CompilerServices.IAsyncStateMachine"/>.
+            </summary>
+            <param name="stateMachine">The <see cref="T:System.Runtime.CompilerServices.IAsyncStateMachine"/> machine instance.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1">
+            <summary>Provides a base class used to cache tasks of a specific return type.</summary>
+            <typeparam name="TResult">Specifies the type of results the cached tasks return.</typeparam>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.Singleton">
+            <summary>
+            A singleton cache for this result type. This may be <see langword="null"/> if there are no cached tasks for
+            this <typeparamref name="TResult"/>.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.CreateCompleted(`0)">
+            <summary>Creates a non-disposable task.</summary>
+            <param name="result">The result for the task.</param>
+            <returns>The cacheable task.</returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.CreateCache">
+            <summary>Creates a cache.</summary>
+            <returns>A task cache for this result type.</returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.FromResult(`0)">
+            <summary>Gets a cached task if one exists.</summary>
+            <param name="result">The result for which we want a cached task.</param>
+            <returns>A cached task if one exists; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache">
+            <summary>Provides a cache for <see cref="T:System.Boolean"/> tasks.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache._true">
+            <summary>A <see langword="true"/> task.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache._false">
+            <summary>A <see langword="false"/> task.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodBooleanTaskCache.FromResult(System.Boolean)">
+            <summary>Gets a cached task for the <see cref="T:System.Boolean"/> result.</summary>
+            <param name="result"><see langword="true"/> or <see langword="false"/></param>
+            <returns>A cached task for the <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache">
+            <summary>Provides a cache for <see cref="T:System.Int32"/> tasks.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.INCLUSIVE_INT32_MIN">
+            <summary>The minimum value, inclusive, for which we want a cached task.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.EXCLUSIVE_INT32_MAX">
+            <summary>The maximum value, exclusive, for which we want a cached task.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.Int32Tasks">
+            <summary>The cache of <see cref="T:System.Int32"/>-returning <see cref="T:System.Threading.Tasks.Task`1"/> instances.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.CreateInt32Tasks">
+            <summary>
+            Creates an array of cached tasks for the values in the range [<see cref="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.INCLUSIVE_INT32_MIN"/>,
+            <see cref="F:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.EXCLUSIVE_INT32_MAX"/>).
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncMethodTaskCache`1.AsyncMethodInt32TaskCache.FromResult(System.Int32)">
+            <summary>Gets a cached task for the <see cref="T:System.Int32"/> result.</summary>
+            <param name="result">The integer value.</param>
+            <returns>
+            A cached task for the <see cref="T:System.Int32"/> result; otherwise, <see langword="null"/> if no task is cached
+            for the value <paramref name="result"/>.
+            </returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncStateMachineAttribute">
+            <summary>
+            Indicates whether a method is marked with the <see langword="async"/> modifier.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncStateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.AsyncStateMachineAttribute"/> class.
+            </summary>
+            <param name="stateMachineType">
+            The type object for the underlying state machine type that's used to implement a state machine method.
+            </param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder">
+            <summary>
+            Provides a builder for asynchronous methods that return <see cref="T:System.Threading.Tasks.Task"/>. This type is
+            intended for compiler use only.
+            </summary>
+            <remarks>
+            <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/> is a value type, and thus it is copied by value. Prior to being copied,
+            one of its <see cref="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Task"/>, <see cref="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult"/>, or <see cref="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException(System.Exception)"/> members must be accessed,
+            or else the copies may end up building distinct <see cref="T:System.Threading.Tasks.Task"/> instances.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder._cachedCompleted">
+            <summary>A cached <see cref="!:VoidResult"/> task used for builders that complete synchronously.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder._builder">
+            <summary>The generic builder object to which this non-generic instance delegates.</summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Task">
+            <summary>Gets the <see cref="T:System.Threading.Tasks.Task"/> for this builder.</summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task"/> representing the builder's asynchronous operation.</returns>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.System#Runtime#CompilerServices#IAsyncMethodBuilder#ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            </summary>
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner. It must only be used by the debugger,
+            and only in a single-threaded manner when no other threads are in the middle of accessing this property or
+            <see cref="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Task"/>.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Create">
+            <summary>Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.</summary>
+            <returns>The initialized <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.</returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.Start``1(``0@)">
+            <summary>Initiates the builder's execution with the associated state machine.</summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="stateMachine">The state machine instance, passed by reference.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>Associates the builder with the state machine it represents.</summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.System#Runtime#CompilerServices#IAsyncMethodBuilder#PreBoxInitialization``1(``0@)">
+            <summary>Perform any initialization necessary prior to lifting the builder to the heap.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task"/> in the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+            <exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException(System.Exception)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task"/> in the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state with the
+            specified exception.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to use to fault the task.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="exception"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+            <exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetNotificationForWaitCompletion(System.Boolean)">
+            <summary>
+            Called by the debugger to request notification when the first wait operation (await, Wait, Result, etc.) on
+            this builder's task completes.
+            </summary>
+            <param name="enabled">
+            <see langword="true"/> to enable notification; <see langword="false"/> to disable a previously set
+            notification.
+            </param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1">
+            <summary>
+            Provides a builder for asynchronous methods that return <see cref="T:System.Threading.Tasks.Task`1"/>. This type is intended for
+            compiler use only.
+            </summary>
+            <remarks>
+            <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1"/> is a value type, and thus it is copied by value. Prior to being
+            copied, one of its <see cref="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Task"/>, <see cref="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(`0)"/>, or
+            <see cref="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception)"/> members must be accessed, or else the copies may end up building distinct
+            <see cref="T:System.Threading.Tasks.Task"/> instances.
+            </remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1._defaultResultTask">
+            <summary>A cached task for default(<typeparamref name="TResult"/>).</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1._coreState">
+            <summary>State related to the <see cref="T:System.Runtime.CompilerServices.IAsyncStateMachine"/>.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.m_task">
+            <summary>The lazily-initialized task.</summary>
+            <remarks>Must be named <c>m_task</c> for debugger step-over to work correctly.</remarks>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1._taskCompletionSource">
+            <summary>The lazily-initialized task completion source.</summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.CompletionSource">
+            <summary>Gets the lazily-initialized <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>.</summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Task">
+            <summary>Gets the <see cref="T:System.Threading.Tasks.Task`1"/> for this builder.</summary>
+            <returns>The <see cref="T:System.Threading.Tasks.Task`1"/> representing the builder's asynchronous operation.</returns>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.System#Runtime#CompilerServices#IAsyncMethodBuilder#ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            </summary>
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner. It must only be used by the debugger,
+            and only in a single-threaded manner when no other threads are in the middle of accessing this property or
+            <see cref="P:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Task"/>.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.#cctor">
+            <summary>Temporary support for disabling crashing if tasks go unobserved.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Create">
+            <summary>Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.</summary>
+            <returns>The initialized <see cref="T:System.Runtime.CompilerServices.AsyncTaskMethodBuilder"/>.</returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.Start``1(``0@)">
+            <summary>Initiates the builder's execution with the associated state machine.</summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="stateMachine">The state machine instance, passed by reference.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>Associates the builder with the state machine it represents.</summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.System#Runtime#CompilerServices#IAsyncMethodBuilder#PreBoxInitialization``1(``0@)">
+            <summary>Perform any initialization necessary prior to lifting the builder to the heap.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(`0)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task`1"/> in the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state with the
+            specified result.
+            </summary>
+            <param name="result">The result to use to complete the task.</param>
+            <exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetResult(System.Threading.Tasks.TaskCompletionSource{`0})">
+            <summary>
+            Completes the builder by using either the supplied completed task, or by completing
+            the builder's previously accessed task using default(<typeparamref name="TResult"/>).
+            </summary>
+            <param name="completedTask">
+            A task already completed with the value default(<typeparamref name="TResult"/>).
+            </param>
+            <exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception)">
+            <summary>
+            Completes the <see cref="T:System.Threading.Tasks.Task`1"/> in the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state with the specified
+            exception.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> to use to fault the task.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="exception"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The task has already completed.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetNotificationForWaitCompletion(System.Boolean)">
+            <summary>
+            Called by the debugger to request notification when the first wait operation (await, Wait, Result, etc.) on
+            this builder's task completes.
+            </summary>
+            <param name="enabled">
+            <see langword="true"/> to enable notification; <see langword="false"/> to disable a previously set
+            notification.
+            </param>
+            <remarks>
+            This should only be invoked from within an asynchronous method, and only by the debugger.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.GetTaskForResult(`0)">
+            <summary>
+            Gets a task for the specified result. This will either be a cached or new task, never
+            <see langword="null"/>.
+            </summary>
+            <param name="result">The result for which we need a task.</param>
+            <returns>The completed task containing the result.</returns>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder">
+            <summary>
+            Provides a builder for asynchronous methods that return void. This type is intended for compiler use only.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder._synchronizationContext">
+            <summary>The synchronization context associated with this operation.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder._coreState">
+            <summary>State related to the <see cref="T:System.Runtime.CompilerServices.IAsyncStateMachine"/>.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder._objectIdForDebugger">
+            <summary>An object used by the debugger to uniquely identify this builder. Lazily initialized.</summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.AsyncVoidMethodBuilder._preventUnobservedTaskExceptionsInvoked">
+            <summary>Non-zero if <see cref="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.PreventUnobservedTaskExceptions"/> has already been invoked.</summary>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.System#Runtime#CompilerServices#IAsyncMethodBuilder#ObjectIdForDebugger">
+            <summary>
+            Gets an object that may be used to uniquely identify this builder to the debugger.
+            </summary>
+            <remarks>
+            This property lazily instantiates the ID in a non-thread-safe manner. It must only be used by the debugger
+            and only in a single-threaded manner.
+            </remarks>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.#cctor">
+            <summary>Temporary support for disabling crashing if tasks go unobserved.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.PreventUnobservedTaskExceptions">
+            <summary>
+            Registers with <see cref="!:TaskScheduler.UnobservedTaskException"/> to suppress exception crashing.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Create">
+            <summary>Initializes a new <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.</summary>
+            <returns>The initialized <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.</returns>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.#ctor(System.Threading.SynchronizationContext)">
+            <summary>Initializes the <see cref="T:System.Runtime.CompilerServices.AsyncVoidMethodBuilder"/>.</summary>
+            <param name="synchronizationContext">
+            The synchronization context associated with this operation. This may be <see langword="null"/>.
+            </param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start``1(``0@)">
+            <summary>Initiates the builder's execution with the associated state machine.</summary>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="stateMachine">The state machine instance, passed by reference.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>Associates the builder with the state machine it represents.</summary>
+            <param name="stateMachine">The heap-allocated state machine object.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="stateMachine"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is incorrectly initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.System#Runtime#CompilerServices#IAsyncMethodBuilder#PreBoxInitialization``1(``0@)">
+            <summary>Perform any initialization necessary prior to lifting the builder to the heap.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted``2(``0@,``1@)">
+            <summary>
+            Schedules the specified state machine to be pushed forward when the specified awaiter completes.
+            </summary>
+            <typeparam name="TAwaiter">Specifies the type of the awaiter.</typeparam>
+            <typeparam name="TStateMachine">Specifies the type of the state machine.</typeparam>
+            <param name="awaiter">The awaiter.</param>
+            <param name="stateMachine">The state machine.</param>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetResult">
+            <summary>Completes the method builder successfully.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.SetException(System.Exception)">
+            <summary>Faults the method builder with an exception.</summary>
+            <param name="exception">The exception that is the cause of this fault.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="exception"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The builder is not initialized.</exception>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.AsyncVoidMethodBuilder.NotifySynchronizationContextOfCompletion">
+            <summary>Notifies the current synchronization context that the operation completed.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IAsyncMethodBuilder">
+            <summary>Represents an asynchronous method builder.</summary>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IAsyncStateMachine">
+            <summary>
+            Represents state machines generated for asynchronous methods. This type is intended for compiler use only.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IAsyncStateMachine.MoveNext">
+            <summary>Moves the state machine to its next state.</summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IAsyncStateMachine.SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)">
+            <summary>Configures the state machine with a heap-allocated replica.</summary>
+            <param name="stateMachine">The heap-allocated replica.</param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.ICriticalNotifyCompletion">
+            <summary>
+            Represents an awaiter used to schedule continuations when an await operation completes.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)">
+            <summary>Schedules the continuation action to be invoked when the instance completes.</summary>
+            <param name="continuation">The action to invoke when the operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="continuation"/> is <see langword="null"/>.
+            </exception>
+            Unlike <see cref="M:System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)"/>, <see cref="M:System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)"/> need not propagate
+            <see cref="T:System.Threading.ExecutionContext"/> information.
+        </member>
+        <member name="T:System.Runtime.CompilerServices.INotifyCompletion">
+            <summary>
+            Represents an operation that will schedule continuations when the operation completes.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)">
+            <summary>Schedules the continuation action to be invoked when the instance completes.</summary>
+            <param name="continuation">The action to invoke when the operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="continuation"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.IteratorStateMachineAttribute">
+            <summary>
+            Indicates whether a method in Visual Basic is marked with the <see langword="Iterator"/> modifier.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.IteratorStateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.IteratorStateMachineAttribute"/> class.
+            </summary>
+            <param name="stateMachineType">
+            The type object for the underlying state machine type that's used to implement a state machine method.
+            </param>
+        </member>
+        <member name="T:System.Runtime.CompilerServices.StateMachineAttribute">
+            <summary>
+            Allows you to determine whether a method is a state machine method.
+            </summary>
+        </member>
+        <member name="F:System.Runtime.CompilerServices.StateMachineAttribute._stateMachineType">
+            <summary>
+            This is the backing field for the <see cref="P:System.Runtime.CompilerServices.StateMachineAttribute.StateMachineType"/> property.
+            </summary>
+        </member>
+        <member name="M:System.Runtime.CompilerServices.StateMachineAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Runtime.CompilerServices.StateMachineAttribute"/> class.
+            </summary>
+            <param name="stateMachineType">
+            The type object for the underlying state machine type that was generated by the compiler to implement the
+            state machine method.
+            </param>
+        </member>
+        <member name="P:System.Runtime.CompilerServices.StateMachineAttribute.StateMachineType">
+            <summary>
+            Gets the type object for the underlying state machine type that was generated by the compiler to implement
+            the state machine method.
+            </summary>
+            <value>
+            The type object for the underlying state machine type that was generated by the compiler to implement the
+            state machine method.
+            </value>
+        </member>
+        <member name="M:System.AsyncServices.ThrowAsync(System.Exception,System.Threading.SynchronizationContext)">
+            <summary>Throws the exception on the thread pool.</summary>
+            <param name="exception">The exception to propagate.</param>
+            <param name="targetContext">
+            The target context on which to propagate the exception; otherwise, <see langword="null"/> to use the thread
+            pool.
+            </param>
+        </member>
+        <member name="M:System.AsyncServices.PrepareExceptionForRethrow(System.Exception)">
+            <summary>Copies the exception's stack trace so its stack trace isn't overwritten.</summary>
+            <param name="exc">The exception to prepare.</param>
+        </member>
+        <member name="T:System.Threading.SemaphoreSlim">
+            <summary>
+            Simplified implementation of SemaphoreSlim.
+            
+            </summary>
+        </member>
+        <member name="T:System.Threading.SemaphoreSlim.TaskNode">
+            <summary>
+            <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>-derived linked list node so as to have links intrusively。
+            </summary>
+        </member>
+        <member name="T:System.Threading.Tasks.Task">
+            <summary>
+            Represents an asynchronous operation.
+            </summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Task.IsCompleted">
+            <summary>
+            Gets whether this Task has completed.
+            </summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Task.IsCanceled">
+            <summary>
+            Gets whether this Task instance has completed execution due to being canceled.
+            </summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Task.IsFaulted">
+            <summary>
+            Gets whether the Task completed due to an unhandled exception.
+            </summary>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskCanceledException">
+            <summary>
+            Represents an exception used to communicate task cancellation.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCanceledException.#ctor">
+            <summary>
+            Initializes a new instance of the TaskCanceledException class with a system-supplied message that describes the error.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCanceledException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the TaskCanceledException class with a specified message that describes the error.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCanceledException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the TaskCanceledException class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCanceledException.#ctor(System.Threading.Tasks.Task)">
+            <summary>
+            Initializes a new instance of the TaskCanceledException class with a reference to the <see cref="T:System.Threading.Tasks.Task"/> that has been canceled.
+            </summary>
+            <param name="task"></param>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskCompletionSource`1">
+            <summary>
+            Represents the producer side of a <see cref="T:System.Threading.Tasks.Task`1"/> unbound to a delegate, providing access to the consumer side through the Task property.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:System.Threading.Tasks.TaskCompletionSource`1.Task" -->
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.TrySetCanceled">
+            <summary>
+            Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.TrySetException(System.Exception)">
+            <summary>
+            Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task`1"/>into the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.TrySetResult(`0)">
+            <summary>
+            Attempts to transition the underlying <see cref="T:System.Threading.Tasks.Task`1"/>into the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.SetCanceled">
+            <summary>
+            Transitions the underlying <see cref="T:System.Threading.Tasks.Task`1"/> into the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled"/> state.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.SetException(System.Exception)">
+            <summary>
+            Transitions the underlying <see cref="T:System.Threading.Tasks.Task`1"/>into the <see cref="F:System.Threading.Tasks.TaskStatus.Faulted"/> state.
+            </summary>
+            <param name="exception"></param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskCompletionSource`1.SetResult(`0)">
+            <summary>
+            Transitions the underlying <see cref="T:System.Threading.Tasks.Task`1"/>into the <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion"/> state.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskStatus">
+            <summary>
+            Represents the current stage in the lifecycle of a Task.
+            </summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskStatus.Running">
+            <summary>
+            The task is running but has not yet completed.
+            </summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskStatus.RanToCompletion">
+            <summary>
+            The task completed execution successfully.
+            </summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskStatus.Canceled">
+            <summary>
+            The task acknowledged cancellation by throwing an OperationCanceledException with its own CancellationToken while the token was in signaled state, or the task's CancellationToken was already signaled before the task started executing. For more information, see Task Cancellation.
+            </summary>
+        </member>
+        <member name="F:System.Threading.Tasks.TaskStatus.Faulted">
+            <summary>
+            The task completed due to an unhandled exception.
+            </summary>
+        </member>
+        <member name="T:System.Threading.Tasks.Task`1">
+            <summary>
+            Represents an asynchronous operation that can return a value.
+            </summary>
+            <typeparam name="TResult"></typeparam>
+        </member>
+        <member name="T:System.Threading.CancellationToken">
+            <summary>
+            Propagates notification that operations should be canceled.
+            </summary>
+            <remarks>
+            <para>
+            A <see cref="T:System.Threading.CancellationToken"/> may be created directly in an unchangeable canceled or non-canceled state
+            using the CancellationToken's constructors. However, to have a CancellationToken that can change 
+            from a non-canceled to a canceled state, 
+            <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> must be used.
+            CancellationTokenSource exposes the associated CancellationToken that may be canceled by the source through its 
+            <see cref="P:System.Threading.CancellationTokenSource.Token">Token</see> property. 
+            </para>
+            <para>
+            Once canceled, a token may not transition to a non-canceled state, and a token whose 
+            <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> is false will never change to one that can be canceled.
+            </para>
+            <para>
+            All members of this struct are thread-safe and may be used concurrently from multiple threads.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:System.Threading.CancellationToken.None">
+            <summary>
+            Returns an empty CancellationToken value.
+            </summary>
+            <remarks>
+            The <see cref="T:System.Threading.CancellationToken"/> value returned by this property will be non-cancelable by default.
+            </remarks>
+        </member>
+        <member name="P:System.Threading.CancellationToken.IsCancellationRequested">
+            <summary>
+            Gets whether cancellation has been requested for this token.
+            </summary>
+            <value>Whether cancellation has been requested for this token.</value>
+            <remarks>
+            <para>
+            This property indicates whether cancellation has been requested for this token, 
+            either through the token initially being construted in a canceled state, or through
+            calling <see cref="M:System.Threading.CancellationTokenSource.Cancel">Cancel</see> 
+            on the token's associated <see cref="T:System.Threading.CancellationTokenSource"/>.
+            </para>
+            <para>
+            If this property is true, it only guarantees that cancellation has been requested.  
+            It does not guarantee that every registered handler
+            has finished executing, nor that cancellation requests have finished propagating
+            to all registered handlers.  Additional synchronization may be required,
+            particularly in situations where related objects are being canceled concurrently.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:System.Threading.CancellationToken.CanBeCanceled">
+            <summary>
+            Gets whether this token is capable of being in the canceled state.
+            </summary>
+            <remarks>
+            If CanBeCanceled returns false, it is guaranteed that the token will never transition
+            into a canceled state, meaning that <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will never
+            return true.
+            </remarks>
+        </member>
+        <member name="P:System.Threading.CancellationToken.WaitHandle">
+            <summary>
+            Gets a <see cref="T:System.Threading.WaitHandle"/> that is signaled when the token is canceled.</summary>
+            <remarks>
+            Accessing this property causes a <see cref="T:System.Threading.WaitHandle">WaitHandle</see>
+            to be instantiated.  It is preferable to only use this property when necessary, and to then
+            dispose the associated <see cref="T:System.Threading.CancellationTokenSource"/> instance at the earliest opportunity (disposing
+            the source will dispose of this allocated handle).  The handle should not be closed or disposed directly.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The associated <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.#ctor(System.Threading.CancellationTokenSource)">
+            <summary>
+            Internal constructor only a CancellationTokenSource should create a CancellationToken
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationToken.#ctor(System.Boolean)">
+            <summary>
+            Initializes the <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
+            </summary>
+            <param name="canceled">
+            The canceled state for the token.
+            </param>
+            <remarks>
+            Tokens created with this constructor will remain in the canceled state specified
+            by the <paramref name="canceled"/> parameter.  If <paramref name="canceled"/> is false,
+            both <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> and <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will be false.
+            If <paramref name="canceled"/> is true,
+            both <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> and <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will be true. 
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationToken.Register(System.Action)">
+            <summary>
+            Registers a delegate that will be called when this <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.
+            </summary>
+            <remarks>
+            <para>
+            If this token is already in the canceled state, the
+            delegate will be run immediately and synchronously. Any exception the delegate generates will be
+            propagated out of this method call.
+            </para>
+            <para>
+            The current <see cref="T:System.Threading.ExecutionContext">ExecutionContext</see>, if one exists, will be captured
+            along with the delegate and will be used when executing it.
+            </para>
+            </remarks>
+            <param name="callback">The delegate to be executed when the <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.</param>
+            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can 
+            be used to deregister the callback.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="callback"/> is null.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.Register(System.Action{System.Object},System.Object)">
+            <summary>
+            Registers a delegate that will be called when this 
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.
+            </summary>
+            <remarks>
+            <para>
+            If this token is already in the canceled state, the
+            delegate will be run immediately and synchronously. Any exception the delegate generates will be
+            propagated out of this method call.
+            </para>
+            <para>
+            The current <see cref="T:System.Threading.ExecutionContext">ExecutionContext</see>, if one exists, will be captured
+            along with the delegate and will be used when executing it.
+            </para>
+            </remarks>
+            <param name="callback">The delegate to be executed when the <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.</param>
+            <param name="state">The state to pass to the <paramref name="callback"/> when the delegate is invoked.  This may be null.</param>
+            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can 
+            be used to deregister the callback.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="callback"/> is null.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.Equals(System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            specified token.
+            </summary>
+            <param name="other">The other <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to which to compare this
+            instance.</param>
+            <returns>True if the instances are equal; otherwise, false. Two tokens are equal if they are associated
+            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed 
+            from public CancellationToken constructors and their <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> values are equal.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationToken.Equals(System.Object)">
+            <summary>
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            specified <see cref="T:System.Object"/>.
+            </summary>
+            <param name="other">The other object to which to compare this instance.</param>
+            <returns>True if <paramref name="other"/> is a <see cref="T:System.Threading.CancellationToken">CancellationToken</see>
+            and if the two instances are equal; otherwise, false. Two tokens are equal if they are associated
+            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed 
+            from public CancellationToken constructors and their <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> values are equal.</returns>
+            <exception cref="T:System.ObjectDisposedException">An associated <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.GetHashCode">
+            <summary>
+            Serves as a hash function for a <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationToken.op_Equality(System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether two <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instances are equal.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True if the instances are equal; otherwise, false.</returns>
+            <exception cref="T:System.ObjectDisposedException">An associated <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.op_Inequality(System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether two <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instances are not equal.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True if the instances are not equal; otherwise, false.</returns>
+            <exception cref="T:System.ObjectDisposedException">An associated <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
+        </member>
+        <member name="M:System.Threading.CancellationToken.ThrowIfCancellationRequested">
+            <summary>
+            Throws a <see cref="T:System.OperationCanceledException">OperationCanceledException</see> if
+            this token has had cancellation requested.
+            </summary>
+            <remarks>
+            This method provides functionality equivalent to:
+            <code>
+            if (token.IsCancellationRequested) 
+               throw new OperationCanceledException(token);
+            </code>
+            </remarks>
+            <exception cref="T:System.OperationCanceledException">The token has had cancellation requested.</exception>
+            <exception cref="T:System.ObjectDisposedException">The associated <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
+        </member>
+        <member name="T:System.Threading.CancellationTokenRegistration">
+            <summary>
+            Represents a callback delegate that has been registered with a <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
+            </summary>
+            <remarks>
+            To unregister a callback, dispose the corresponding Registration instance.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.TryDeregister">
+            <summary>
+            Attempts to deregister the item. If it's already being run, this may fail.
+            Entails a full memory fence.
+            </summary>
+            <returns>True if the callback was found and deregistered, false otherwise.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.Dispose">
+            <summary>
+            Disposes of the registration and unregisters the target callback from the associated 
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
+            If the target callback is currently executing this method will wait until it completes, except
+            in the degenerate cases where a callback method deregisters itself.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.op_Equality(System.Threading.CancellationTokenRegistration,System.Threading.CancellationTokenRegistration)">
+            <summary>
+            Determines whether two <see
+            cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see>
+            instances are equal.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True if the instances are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.op_Inequality(System.Threading.CancellationTokenRegistration,System.Threading.CancellationTokenRegistration)">
+            <summary>
+            Determines whether two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are not equal.
+            </summary>
+            <param name="left">The first instance.</param>
+            <param name="right">The second instance.</param>
+            <returns>True if the instances are not equal; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.Equals(System.Object)">
+            <summary>
+            Determines whether the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance is equal to the 
+            specified <see cref="T:System.Object"/>.
+            </summary> 
+            <param name="obj">The other object to which to compare this instance.</param>
+            <returns>True, if both this and <paramref name="obj"/> are equal. False, otherwise.
+            Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
+            they both refer to the output of a single call to the same Register method of a 
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+            </returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.Equals(System.Threading.CancellationTokenRegistration)">
+            <summary>
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            specified <see cref="T:System.Object"/>.
+            </summary> 
+            <param name="other">The other <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> to which to compare this instance.</param>
+            <returns>True, if both this and <paramref name="other"/> are equal. False, otherwise.
+            Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
+            they both refer to the output of a single call to the same Register method of a 
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+            </returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenRegistration.GetHashCode">
+            <summary>
+            Serves as a hash function for a <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration.</see>.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance.</returns>
+        </member>
+        <member name="T:System.Threading.CancellationTokenSource">
+            <summary>
+            Signals to a <see cref="T:System.Threading.CancellationToken"/> that it should be canceled.
+            </summary>
+            <remarks>
+            <para>
+            <see cref="T:System.Threading.CancellationTokenSource"/> is used to instantiate a <see
+            cref="T:System.Threading.CancellationToken"/>
+            (via the source's <see cref="P:System.Threading.CancellationTokenSource.Token">Token</see> property)
+            that can be handed to operations that wish to be notified of cancellation or that can be used to
+            register asynchronous operations for cancellation. That token may have cancellation requested by
+            calling to the source's <see cref="M:System.Threading.CancellationTokenSource.Cancel">Cancel</see>
+            method.
+            </para>
+            <para>
+            All members of this class, except <see cref="M:System.Threading.CancellationTokenSource.Dispose">Dispose</see>, are thread-safe and may be used
+            concurrently from multiple threads.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:System.Threading.CancellationTokenSource.m_threadIDExecutingCallbacks">
+            The ID of the thread currently executing the main body of CTS.Cancel()
+            this helps us to know if a call to ctr.Dispose() is running 'within' a cancellation callback.
+            This is updated as we move between the main thread calling cts.Cancel() and any syncContexts that are used to 
+            actually run the callbacks.
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.IsCancellationRequested">
+            <summary>
+            Gets whether cancellation has been requested for this <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see>.
+            </summary>
+            <value>Whether cancellation has been requested for this <see
+            cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see>.</value>
+            <remarks>
+            <para>
+            This property indicates whether cancellation has been requested for this token source, such as
+            due to a call to its
+            <see cref="M:System.Threading.CancellationTokenSource.Cancel">Cancel</see> method.
+            </para>
+            <para>
+            If this property returns true, it only guarantees that cancellation has been requested. It does not
+            guarantee that every handler registered with the corresponding token has finished executing, nor
+            that cancellation requests have finished propagating to all registered handlers. Additional
+            synchronization may be required, particularly in situations where related objects are being
+            canceled concurrently.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.IsCancellationCompleted">
+            <summary>
+            A simple helper to determine whether cancellation has finished.
+            </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.IsDisposed">
+            <summary>
+            A simple helper to determine whether disposal has occured.
+            </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.ThreadIDExecutingCallbacks">
+            <summary>
+            The ID of the thread that is running callbacks.
+            </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.Token">
+            <summary>
+            Gets the <see cref="T:System.Threading.CancellationToken">CancellationToken</see>
+            associated with this <see cref="T:System.Threading.CancellationTokenSource"/>.
+            </summary>
+            <value>The <see cref="T:System.Threading.CancellationToken">CancellationToken</see>
+            associated with this <see cref="T:System.Threading.CancellationTokenSource"/>.</value>
+            <exception cref="T:System.ObjectDisposedException">The token source has been
+            disposed.</exception>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.CanBeCanceled">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.WaitHandle">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.ExecutingCallback">
+            <summary>
+            The currently executing callback
+            </summary>
+        </member>
+        <member name="P:System.Threading.CancellationTokenSource.CallbackCount">
+            <summary>
+            Used by the dev unit tests to check the number of outstanding registrations.
+            They use private reflection to gain access.  Because this would be dead retail
+            code, however, it is ifdef'd out to work only in debug builds.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.#ctor">
+            <summary>
+            Initializes the <see cref="T:System.Threading.CancellationTokenSource"/>.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.#ctor(System.TimeSpan)">
+            <summary>
+            Constructs a <see cref="T:System.Threading.CancellationTokenSource"/> that will be canceled after a specified time span.
+            </summary>
+            <param name="delay">The time span to wait before canceling this <see cref="T:System.Threading.CancellationTokenSource"/></param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The exception that is thrown when <paramref name="delay"/> is less than -1 or greater than Int32.MaxValue.
+            </exception>
+            <remarks>
+            <para>
+            The countdown for the delay starts during the call to the constructor.  When the delay expires, 
+            the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
+            not been canceled already.
+            </para>
+            <para>
+            Subsequent calls to CancelAfter will reset the delay for the constructed 
+            <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
+            canceled already.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.#ctor(System.Int32)">
+            <summary>
+            Constructs a <see cref="T:System.Threading.CancellationTokenSource"/> that will be canceled after a specified time span.
+            </summary>
+            <param name="millisecondsDelay">The time span to wait before canceling this <see cref="T:System.Threading.CancellationTokenSource"/></param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The exception that is thrown when <paramref name="millisecondsDelay"/> is less than -1.
+            </exception>
+            <remarks>
+            <para>
+            The countdown for the millisecondsDelay starts during the call to the constructor.  When the millisecondsDelay expires, 
+            the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled (if it has
+            not been canceled already).
+            </para>
+            <para>
+            Subsequent calls to CancelAfter will reset the millisecondsDelay for the constructed 
+            <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
+            canceled already.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.Cancel">
+            <summary>
+            Communicates a request for cancellation.
+            </summary>
+            <remarks>
+            <para>
+            The associated <see cref="T:System.Threading.CancellationToken" /> will be
+            notified of the cancellation and will transition to a state where 
+            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+            Any callbacks or cancelable operations
+            registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
+            </para>
+            <para>
+            Cancelable operations and callbacks registered with the token should not throw exceptions.
+            However, this overload of Cancel will aggregate any exceptions thrown into a <see cref="T:System.AggregateException"/>,
+            such that one callback throwing an exception will not prevent other registered callbacks from being executed.
+            </para>
+            <para>
+            The <see cref="T:System.Threading.ExecutionContext"/> that was captured when each callback was registered
+            will be reestablished when the callback is invoked.
+            </para>
+            </remarks>
+            <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
+            by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">This <see
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.Cancel(System.Boolean)">
+            <summary>
+            Communicates a request for cancellation.
+            </summary>
+            <remarks>
+            <para>
+            The associated <see cref="T:System.Threading.CancellationToken" /> will be
+            notified of the cancellation and will transition to a state where 
+            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+            Any callbacks or cancelable operations
+            registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
+            </para>
+            <para>
+            Cancelable operations and callbacks registered with the token should not throw exceptions. 
+            If <paramref name="throwOnFirstException"/> is true, an exception will immediately propagate out of the
+            call to Cancel, preventing the remaining callbacks and cancelable operations from being processed.
+            If <paramref name="throwOnFirstException"/> is false, this overload will aggregate any 
+            exceptions thrown into a <see cref="T:System.AggregateException"/>,
+            such that one callback throwing an exception will not prevent other registered callbacks from being executed.
+            </para>
+            <para>
+            The <see cref="T:System.Threading.ExecutionContext"/> that was captured when each callback was registered
+            will be reestablished when the callback is invoked.
+            </para>
+            </remarks>
+            <param name="throwOnFirstException">Specifies whether exceptions should immediately propagate.</param>
+            <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
+            by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
+            <exception cref="T:System.ObjectDisposedException">This <see
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.CancelAfter(System.TimeSpan)">
+            <summary>
+            Schedules a Cancel operation on this <see cref="T:System.Threading.CancellationTokenSource"/>.
+            </summary>
+            <param name="delay">The time span to wait before canceling this <see
+            cref="T:System.Threading.CancellationTokenSource"/>.
+            </param>
+            <exception cref="T:System.ObjectDisposedException">The exception thrown when this <see
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The exception thrown when <paramref name="delay"/> is less than -1 or 
+            greater than Int32.MaxValue.
+            </exception>
+            <remarks>
+            <para>
+            The countdown for the delay starts during this call.  When the delay expires, 
+            this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
+            not been canceled already.
+            </para>
+            <para>
+            Subsequent calls to CancelAfter will reset the delay for this  
+            <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
+            canceled already.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.CancelAfter(System.Int32)">
+            <summary>
+            Schedules a Cancel operation on this <see cref="T:System.Threading.CancellationTokenSource"/>.
+            </summary>
+            <param name="millisecondsDelay">The time span to wait before canceling this <see
+            cref="T:System.Threading.CancellationTokenSource"/>.
+            </param>
+            <exception cref="T:System.ObjectDisposedException">The exception thrown when this <see
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The exception thrown when <paramref name="millisecondsDelay"/> is less than -1.
+            </exception>
+            <remarks>
+            <para>
+            The countdown for the millisecondsDelay starts during this call.  When the millisecondsDelay expires, 
+            this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
+            not been canceled already.
+            </para>
+            <para>
+            Subsequent calls to CancelAfter will reset the millisecondsDelay for this  
+            <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
+            canceled already.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.Dispose">
+            <summary>
+            Releases the resources used by this <see cref="T:System.Threading.CancellationTokenSource" />.
+            </summary>
+            <remarks>
+            This method is not thread-safe for any other concurrent calls.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.Threading.CancellationTokenSource" /> class and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.ThrowIfDisposed">
+            <summary>
+            Throws an exception if the source has been disposed.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.InternalGetStaticSource(System.Boolean)">
+            <summary>
+            InternalGetStaticSource()
+            </summary>
+            <param name="set">Whether the source should be set.</param>
+            <returns>A static source to be shared among multiple tokens.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.InternalRegister(System.Action{System.Object},System.Object,System.Threading.SynchronizationContext,System.Threading.ExecutionContext)">
+            <summary>
+            Registers a callback object. If cancellation has already occurred, the
+            callback will have been run by the time this method returns.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.NotifyCancellation(System.Boolean)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(System.Boolean)">
+            <summary>
+            Invoke the Canceled event.
+            </summary>
+            <remarks>
+            The handlers are invoked synchronously in LIFO order.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.CreateLinkedTokenSource(System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Creates a <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that will be in the canceled state
+            when any of the source tokens are in the canceled state.
+            </summary>
+            <param name="token1">The first <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
+            <param name="token2">The second <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
+            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+            to the source tokens.</returns>
+        </member>
+        <member name="M:System.Threading.CancellationTokenSource.CreateLinkedTokenSource(System.Threading.CancellationToken[])">
+            <summary>
+            Creates a <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that will be in the canceled state
+            when any of the source tokens are in the canceled state.
+            </summary>
+            <param name="tokens">The <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instances to observe.</param>
+            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+            to the source tokens.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="tokens"/> is null.</exception>
+        </member>
+        <member name="T:System.Threading.CancellationCallbackInfo">
+            <summary>
+            A helper class for collating the various bits of information required to execute 
+            cancellation callbacks.
+            </summary>
+        </member>
+        <member name="M:System.Threading.CancellationCallbackInfo.ExecuteCallback">
+            <summary>
+            InternalExecuteCallbackSynchronously_GeneralPath
+            This will be called on the target synchronization context, however, we still need to restore the required execution context
+            </summary>
+        </member>
+        <member name="T:System.Threading.SparselyPopulatedArray`1">
+            <summary>
+            A sparsely populated array.  Elements can be sparse and some null, but this allows for
+            lock-free additions and growth, and also for constant time removal (by nulling out).
+            </summary>
+            <typeparam name="T">The kind of elements contained within.</typeparam>
+        </member>
+        <member name="M:System.Threading.SparselyPopulatedArray`1.#ctor(System.Int32)">
+            <summary>
+            Allocates a new array with the given initial size.
+            </summary>
+            <param name="initialSize">How many array slots to pre-allocate.</param>
+        </member>
+        <member name="P:System.Threading.SparselyPopulatedArray`1.Head">
+            <summary>
+            The head of the doubly linked list.
+            </summary>
+        </member>
+        <member name="P:System.Threading.SparselyPopulatedArray`1.Tail">
+            <summary>
+            The tail of the doubly linked list.
+            </summary>
+        </member>
+        <member name="M:System.Threading.SparselyPopulatedArray`1.Add(`0)">
+            <summary>
+            Adds an element in the first available slot, beginning the search from the tail-to-head.
+            If no slots are available, the array is grown.  The method doesn't return until successful.
+            </summary>
+            <param name="element">The element to add.</param>
+            <returns>Information about where the add happened, to enable O(1) deregistration.</returns>
+        </member>
+        <member name="T:System.Threading.SparselyPopulatedArrayAddInfo`1">
+            <summary>
+            A struct to hold a link to the exact spot in an array an element was inserted, enabling
+            constant time removal later on.
+            </summary>
+        </member>
+        <member name="T:System.Threading.SparselyPopulatedArrayFragment`1">
+            <summary>
+            A fragment of a sparsely populated array, doubly linked.
+            </summary>
+            <typeparam name="T">The kind of elements contained within.</typeparam>
+        </member>
+        <member name="T:System.Threading.SpinWait">
+            <summary>
+            Provides support for spin-based waiting.
+            </summary>
+            <remarks>
+            <para>
+            <see cref="T:System.Threading.SpinWait"/> encapsulates common spinning logic. On single-processor machines, yields are
+            always used instead of busy waits, and on computers with Intel™ processors employing Hyper-Threading™
+            technology, it helps to prevent hardware thread starvation. SpinWait encapsulates a good mixture of
+            spinning and true yielding.
+            </para>
+            <para>
+            <see cref="T:System.Threading.SpinWait"/> is a value type, which means that low-level code can utilize SpinWait without
+            fear of unnecessary allocation overheads. SpinWait is not generally useful for ordinary applications.
+            In most cases, you should use the synchronization classes provided by the .NET Framework, such as
+            <see cref="T:System.Threading.Monitor"/>. For most purposes where spin waiting is required, however,
+            the <see cref="T:System.Threading.SpinWait"/> type should be preferred over the <see
+            cref="M:System.Threading.Thread.SpinWait(System.Int32)"/> method.
+            </para>
+            <para>
+            While SpinWait is designed to be used in concurrent applications, it is not designed to be
+            used from multiple threads concurrently.  SpinWait's members are not thread-safe.  If multiple
+            threads must spin, each should use its own instance of SpinWait.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:System.Threading.SpinWait.Count">
+            <summary>
+            Gets the number of times <see cref="M:System.Threading.SpinWait.SpinOnce"/> has been called on this instance.
+            </summary>
+        </member>
+        <member name="P:System.Threading.SpinWait.NextSpinWillYield">
+            <summary>
+            Gets whether the next call to <see cref="M:System.Threading.SpinWait.SpinOnce"/> will yield the processor, triggering a
+            forced context switch.
+            </summary>
+            <value>Whether the next call to <see cref="M:System.Threading.SpinWait.SpinOnce"/> will yield the processor, triggering a
+            forced context switch.</value>
+            <remarks>
+            On a single-CPU machine, <see cref="M:System.Threading.SpinWait.SpinOnce"/> always yields the processor. On machines with
+            multiple CPUs, <see cref="M:System.Threading.SpinWait.SpinOnce"/> may yield after an unspecified number of calls.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinOnce">
+            <summary>
+            Performs a single spin.
+            </summary>
+            <remarks>
+            This is typically called in a loop, and may change in behavior based on the number of times a
+            <see cref="M:System.Threading.SpinWait.SpinOnce"/> has been called thus far on this instance.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.SpinWait.Reset">
+            <summary>
+            Resets the spin counter.
+            </summary>
+            <remarks>
+            This makes <see cref="M:System.Threading.SpinWait.SpinOnce"/> and <see cref="P:System.Threading.SpinWait.NextSpinWillYield"/> behave as though no calls
+            to <see cref="M:System.Threading.SpinWait.SpinOnce"/> had been issued on this instance. If a <see cref="T:System.Threading.SpinWait"/> instance
+            is reused many times, it may be useful to reset it to avoid yielding too soon.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean})">
+            <summary>
+            Spins until the specified condition is satisfied.
+            </summary>
+            <param name="condition">A delegate to be executed over and over until it returns true.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="condition"/> argument is null.</exception>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean},System.TimeSpan)">
+            <summary>
+            Spins until the specified condition is satisfied or until the specified timeout is expired.
+            </summary>
+            <param name="condition">A delegate to be executed over and over until it returns true.</param>
+            <param name="timeout">
+            A <see cref="T:System.TimeSpan"/> that represents the number of milliseconds to wait, 
+            or a TimeSpan that represents -1 milliseconds to wait indefinitely.</param>
+            <returns>True if the condition is satisfied within the timeout; otherwise, false</returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="condition"/> argument is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeout"/> is a negative number
+            other than -1 milliseconds, which represents an infinite time-out -or- timeout is greater than
+            <see cref="F:System.Int32.MaxValue"/>.</exception>
+        </member>
+        <member name="M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean},System.Int32)">
+            <summary>
+            Spins until the specified condition is satisfied or until the specified timeout is expired.
+            </summary>
+            <param name="condition">A delegate to be executed over and over until it returns true.</param>
+            <param name="millisecondsTimeout">The number of milliseconds to wait, or <see
+            cref="F:System.Threading.Timeout.Infinite"/> (-1) to wait indefinitely.</param>
+            <returns>True if the condition is satisfied within the timeout; otherwise, false</returns>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="condition"/> argument is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="millisecondsTimeout"/> is a
+            negative number other than -1, which represents an infinite time-out.</exception>
+        </member>
+        <member name="T:System.Threading.PlatformHelper">
+            <summary>
+            A helper class to get the number of processors, it updates the numbers of processors every sampling interval.
+            </summary>
+        </member>
+        <member name="P:System.Threading.PlatformHelper.ProcessorCount">
+            <summary>
+            Gets the number of available processors
+            </summary>
+        </member>
+        <member name="P:System.Threading.PlatformHelper.IsSingleProcessor">
+            <summary>
+            Gets whether the current machine has only a single processor.
+            </summary>
+        </member>
+        <member name="T:System.Threading.TimeoutHelper">
+            <summary>
+            A helper class to capture a start time using Environment.TickCout as a time in milliseconds, also updates a given timeout bu subtracting the current time from
+            the start time
+            </summary>
+        </member>
+        <member name="M:System.Threading.TimeoutHelper.GetTime">
+            <summary>
+            Returns the Environment.TickCount as a start time in milliseconds as a uint, TickCount tools over from postive to negative every ~ 25 days
+            then ~25 days to back to positive again, uint is sued to ignore the sign and double the range to 50 days
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Threading.TimeoutHelper.UpdateTimeOut(System.UInt32,System.Int32)">
+            <summary>
+            Helper function to measure and update the elapsed time
+            </summary>
+            <param name="startTime"> The first time (in milliseconds) observed when the wait started</param>
+            <param name="originalWaitMillisecondsTimeout">The orginal wait timeoutout in milliseconds</param>
+            <returns>The new wait time in milliseconds, -1 if the time expired</returns>
+        </member>
+        <member name="T:System.Collections.Specialized.INotifyCollectionChanged">
+            <summary>
+            A collection implementing this interface will notify listeners of dynamic changes,
+            e.g. when items get added and removed or the whole list is refreshed.
+            </summary>
+        </member>
+        <member name="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged">
+            <summary>
+            Occurs when the collection changes, either by adding or removing an item.
+            </summary>
+            <remarks>
+            The event handler receives an argument of type
+            <seealso cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+            containing data related to this event.
+            </remarks>
+        </member>
+        <member name="T:System.Collections.Specialized.NotifyCollectionChangedAction">
+            <summary>
+            This enum describes the action that caused a CollectionChanged event.
+            </summary>
+        </member>
+        <member name="F:System.Collections.Specialized.NotifyCollectionChangedAction.Add">
+            <summary> One or more items were added to the collection. </summary>
+        </member>
+        <member name="F:System.Collections.Specialized.NotifyCollectionChangedAction.Remove">
+            <summary> One or more items were removed from the collection. </summary>
+        </member>
+        <member name="F:System.Collections.Specialized.NotifyCollectionChangedAction.Replace">
+            <summary> One or more items were replaced in the collection. </summary>
+        </member>
+        <member name="F:System.Collections.Specialized.NotifyCollectionChangedAction.Move">
+            <summary> One or more items were moved within the collection. </summary>
+        </member>
+        <member name="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset">
+            <summary> The contents of the collection changed dramatically. </summary>
+        </member>
+        <member name="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs">
+            <summary>
+            Arguments for the CollectionChanged event.
+            A collection that supports INotifyCollectionChangedThis raises this event
+            whenever an item is added or removed, or when the contents of the collection
+            changes dramatically.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a reset change.
+            </summary>
+            <param name="action">The action that caused the event (must be Reset).</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a one-item change.
+            </summary>
+            <param name="action">The action that caused the event; can only be Reset, Add or Remove action.</param>
+            <param name="changedItem">The item affected by the change.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a one-item change.
+            </summary>
+            <param name="action">The action that caused the event.</param>
+            <param name="changedItem">The item affected by the change.</param>
+            <param name="index">The index where the change occurred.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a multi-item change.
+            </summary>
+            <param name="action">The action that caused the event.</param>
+            <param name="changedItems">The items affected by the change.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a multi-item change (or a reset).
+            </summary>
+            <param name="action">The action that caused the event.</param>
+            <param name="changedItems">The items affected by the change.</param>
+            <param name="startingIndex">The index where the change occurred.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a one-item Replace event.
+            </summary>
+            <param name="action">Can only be a Replace action.</param>
+            <param name="newItem">The new item replacing the original item.</param>
+            <param name="oldItem">The original item that is replaced.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a one-item Replace event.
+            </summary>
+            <param name="action">Can only be a Replace action.</param>
+            <param name="newItem">The new item replacing the original item.</param>
+            <param name="oldItem">The original item that is replaced.</param>
+            <param name="index">The index of the item being replaced.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a multi-item Replace event.
+            </summary>
+            <param name="action">Can only be a Replace action.</param>
+            <param name="newItems">The new items replacing the original items.</param>
+            <param name="oldItems">The original items that are replaced.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a multi-item Replace event.
+            </summary>
+            <param name="action">Can only be a Replace action.</param>
+            <param name="newItems">The new items replacing the original items.</param>
+            <param name="oldItems">The original items that are replaced.</param>
+            <param name="startingIndex">The starting index of the items being replaced.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a one-item Move event.
+            </summary>
+            <param name="action">Can only be a Move action.</param>
+            <param name="changedItem">The item affected by the change.</param>
+            <param name="index">The new index for the changed item.</param>
+            <param name="oldIndex">The old index for the changed item.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Int32,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs that describes a multi-item Move event.
+            </summary>
+            <param name="action">The action that caused the event.</param>
+            <param name="changedItems">The items affected by the change.</param>
+            <param name="index">The new index for the changed items.</param>
+            <param name="oldIndex">The old index for the changed items.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction,System.Collections.IList,System.Collections.IList,System.Int32,System.Int32)">
+            <summary>
+            Construct a NotifyCollectionChangedEventArgs with given fields (no validation). Used by WinRT marshaling.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.Action">
+            <summary>
+            The action that caused the event.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewItems">
+            <summary>
+            The items affected by the change.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldItems">
+            <summary>
+            The old items affected by the change (for Replace events).
+            </summary>
+        </member>
+        <member name="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.NewStartingIndex">
+            <summary>
+            The index where the change occurred.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Specialized.NotifyCollectionChangedEventArgs.OldStartingIndex">
+            <summary>
+            The old index where the change occurred (for Move events).
+            </summary>
+        </member>
+        <member name="T:System.Collections.Specialized.NotifyCollectionChangedEventHandler">
+            <summary>
+                The delegate to use for handlers that receive the CollectionChanged event.
+            </summary>
+        </member>
+        <member name="T:System.Collections.ObjectModel.ObservableCollection`1">
+            <summary>
+            Implementation of a dynamic data collection based on generic Collection&lt;T&gt;,
+            implementing INotifyCollectionChanged to notify listeners
+            when items get added, removed or the whole list is refreshed.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of ObservableCollection that is empty and has default initial capacity.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the ObservableCollection class that contains
+            elements copied from the specified collection and has sufficient capacity
+            to accommodate the number of elements copied.
+            </summary>
+            <param name="collection">The collection whose elements are copied to the new list.</param>
+            <remarks>
+            The elements are copied onto the ObservableCollection in the
+            same order they are read by the enumerator of the collection.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"> collection is a null reference </exception>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.Move(System.Int32,System.Int32)">
+            <summary>
+            Move item at oldIndex to newIndex.
+            </summary>
+        </member>
+        <member name="E:System.Collections.ObjectModel.ObservableCollection`1.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
+            <summary>
+            PropertyChanged event (per <see cref="T:System.ComponentModel.INotifyPropertyChanged" />).
+            </summary>
+        </member>
+        <member name="E:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged">
+            <summary>
+            Occurs when the collection changes, either by adding or removing an item.
+            </summary>
+            <remarks>
+            see <seealso cref="T:System.Collections.Specialized.INotifyCollectionChanged"/>
+            </remarks>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.ClearItems">
+            <summary>
+            Called by base class Collection&lt;T&gt; when the list is being cleared;
+            raises a CollectionChanged event to any listeners.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.RemoveItem(System.Int32)">
+            <summary>
+            Called by base class Collection&lt;T&gt; when an item is removed from list;
+            raises a CollectionChanged event to any listeners.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.InsertItem(System.Int32,`0)">
+            <summary>
+            Called by base class Collection&lt;T&gt; when an item is added to list;
+            raises a CollectionChanged event to any listeners.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.SetItem(System.Int32,`0)">
+            <summary>
+            Called by base class Collection&lt;T&gt; when an item is set in list;
+            raises a CollectionChanged event to any listeners.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.MoveItem(System.Int32,System.Int32)">
+            <summary>
+            Called by base class ObservableCollection&lt;T&gt; when an item is to be moved within the list;
+            raises a CollectionChanged event to any listeners.
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises a PropertyChanged event (per <see cref="T:System.ComponentModel.INotifyPropertyChanged" />).
+            </summary>
+        </member>
+        <member name="E:System.Collections.ObjectModel.ObservableCollection`1.PropertyChanged">
+            <summary>
+            PropertyChanged event (per <see cref="T:System.ComponentModel.INotifyPropertyChanged" />).
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Raise CollectionChanged event to any listeners.
+            Properties/methods modifying this ObservableCollection will raise
+            a collection changed event through this virtual method.
+            </summary>
+            <remarks>
+            When overriding this method, either call its base implementation
+            or call <see cref="M:System.Collections.ObjectModel.ObservableCollection`1.BlockReentrancy"/> to guard against reentrant collection changes.
+            </remarks>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.BlockReentrancy">
+            <summary>
+            Disallow reentrant attempts to change this collection. E.g. a event handler
+            of the CollectionChanged event is not allowed to make changes to this collection.
+            </summary>
+            <remarks>
+            typical usage is to wrap e.g. a OnCollectionChanged call with a using() scope:
+            <code>
+                    using (BlockReentrancy())
+                    {
+                        CollectionChanged(this, new NotifyCollectionChangedEventArgs(action, item, index));
+                    }
+            </code>
+            </remarks>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.CheckReentrancy">
+            <summary> Check and assert for reentrant attempts to change this collection. </summary>
+            <exception cref="T:System.InvalidOperationException"> raised when changing the collection
+            while another collection change is still being notified to other listeners </exception>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnPropertyChanged(System.String)">
+            <summary>
+            Helper to raise a PropertyChanged event  />).
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32)">
+            <summary>
+            Helper to raise CollectionChanged event to any listeners
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Helper to raise CollectionChanged event to any listeners
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object,System.Object,System.Int32)">
+            <summary>
+            Helper to raise CollectionChanged event to any listeners
+            </summary>
+        </member>
+        <member name="M:System.Collections.ObjectModel.ObservableCollection`1.OnCollectionReset">
+            <summary>
+            Helper to raise CollectionChanged event with action == Reset to any listeners
+            </summary>
+        </member>
         <member name="M:Lerp2API.Helpers.FindIndex``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
             <summary>Finds the index of the first item matching an expression in an enumerable.</summary>
             <param name="items">The enumerable to search.</param>
@@ -90,19 +1890,183 @@
         </member>
         <member name="T:Lerp2API.Properties.Resources">
             <summary>
-              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Lerp2API.Properties.Resources.ResourceManager">
             <summary>
-              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Lerp2API.Properties.Resources.Culture">
             <summary>
-              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Client.PipeClient.Start">
+            <summary>
+            Starts the client. Connects to the server.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Client.PipeClient.Stop">
+            <summary>
+            Stops the client. Waits for pipe drain, closes and disposes it.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Client.PipeClient.EndWriteCallBack(System.IAsyncResult)">
+            <summary>
+            This callback is called when the BeginWrite operation is completed.
+            It can be called whether the connection is valid or not.
+            </summary>
+            <param name="asyncResult"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Interfaces.ICommunication.Start">
+            <summary>
+            Starts the communication channel
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Interfaces.ICommunication.Stop">
+            <summary>
+            Stops the communication channel
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Interfaces.ICommunicationClient.SendMessage(System.String)">
+            <summary>
+            This method sends the given message asynchronously over the communication channel
+            </summary>
+            <param name="message"></param>
+            <returns>A task of TaskResult</returns>
+        </member>
+        <member name="P:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.ServerId">
+            <summary>
+            The server id
+            </summary>
+        </member>
+        <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.MessageReceivedEvent">
+            <summary>
+            This event is fired when a message is received 
+            </summary>
+        </member>
+        <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.ClientConnectedEvent">
+            <summary>
+            This event is fired when a client connects 
+            </summary>
+        </member>
+        <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.ClientDisconnectedEvent">
+            <summary>
+            This event is fired when a client disconnects 
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a new NamedPipeServerStream 
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.Start">
+            <summary>
+            This method begins an asynchronous operation to wait for a client to connect.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.Stop">
+            <summary>
+            This method disconnects, closes and disposes the server
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.BeginRead(ClientServerUsingNamedPipes.Server.InternalPipeServer.Info)">
+            <summary>
+            This method begins an asynchronous read operation.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.WaitForConnectionCallBack(System.IAsyncResult)">
+            <summary>
+            This callback is called when the async WaitForConnection operation is completed,
+            whether a connection was made or not. WaitForConnection can be completed when the server disconnects.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.EndReadCallBack(System.IAsyncResult)">
+            <summary>
+            This callback is called when the BeginRead operation is completed.
+            We can arrive here whether the connection is valid or not
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.OnMessageReceived(System.String)">
+            <summary>
+            This method fires MessageReceivedEvent with the given message
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.OnConnected">
+            <summary>
+            This method fires ConnectedEvent 
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.OnDisconnected">
+            <summary>
+            This method fires DisconnectedEvent 
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.StartNamedPipeServer">
+            <summary>
+            Starts a new NamedPipeServerStream that waits for connection
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.StopNamedPipeServer(System.String)">
+            <summary>
+            Stops the server that belongs to the given id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.UnregisterFromServerEvents(ClientServerUsingNamedPipes.Interfaces.ICommunicationServer)">
+            <summary>
+            Unregisters from the given server's events
+            </summary>
+            <param name="server"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.OnMessageReceived(ClientServerUsingNamedPipes.Interfaces.MessageReceivedEventArgs)">
+            <summary>
+            Fires MessageReceivedEvent in the current thread
+            </summary>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.OnClientConnected(ClientServerUsingNamedPipes.Interfaces.ClientConnectedEventArgs)">
+            <summary>
+            Fires ClientConnectedEvent in the current thread
+            </summary>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.OnClientDisconnected(ClientServerUsingNamedPipes.Interfaces.ClientDisconnectedEventArgs)">
+            <summary>
+            Fires ClientDisconnectedEvent in the current thread
+            </summary>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.ClientConnectedHandler(System.Object,ClientServerUsingNamedPipes.Interfaces.ClientConnectedEventArgs)">
+            <summary>
+            Handles a client connection. Fires the relevant event and prepares for new connection.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.ClientDisconnectedHandler(System.Object,ClientServerUsingNamedPipes.Interfaces.ClientDisconnectedEventArgs)">
+            <summary>
+            Hanldes a client disconnection. Fires the relevant event ans removes its server from the pool
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Server.PipeServer.MessageReceivedHandler(System.Object,ClientServerUsingNamedPipes.Interfaces.MessageReceivedEventArgs)">
+            <summary>
+            Handles a message that is received from the client. Fires the relevant event.
+            </summary>
+        </member>
+        <member name="M:ClientServerUsingNamedPipes.Utilities.EventHandlerExtensions.SafeInvoke``1(System.EventHandler{``0},System.Object,``0)">
+            <summary>
+            This method is a safe way to fire an event in a multithreaded process. 
+            Since there is a tiny chance that the event becomes null after the null check but before the invocation, 
+            we use this extension where the event is passed as an argument.
+            Why is this helpful? MulticastDelagates are immutable, so if you first assign a variable, null check against the variable and invoke through it, 
+            you are safe
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="event"></param>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
         </member>
         <member name="M:DateTimeHelpers.ToEpoch(System.DateTime)">
             <summary>
@@ -1844,7 +3808,7 @@
             until we have entirely finished serializing it.
             </summary>
         </member>
-        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
+        <!-- Badly formed XML comment ignored for member "F:FullSerializer.fsSerializer._cachedConverterTypeInstances" -->
         <member name="F:FullSerializer.fsSerializer._cachedConverters">
             <summary>
             A cache from type to it's converter.

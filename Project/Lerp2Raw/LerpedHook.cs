@@ -6,10 +6,12 @@ namespace Lerp2Raw
 {
     public class LerpedHook : LerpedMono
     {
-        private void Awake() //This must be ondisable, only for hooklog
+        public bool m_runConsoleAtPlayEvent = true;
+        private void Awake() //This must be onenable, only for hook log
         {
             LerpedCore.lerpedCore = LerpedCore.AutoHookCore();
             Debug.HookLog();
+            if (m_runConsoleAtPlayEvent) ConsoleListener.StartConsole();
         }
 
         private void OnDisable()
