@@ -1,4 +1,5 @@
 using ClientServerUsingNamedPipes.Client;
+using Lerp2API.Communication.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -174,21 +175,31 @@ namespace Lerp2API
     public class ConsoleSender
     {
         private static List<string> paths = new List<string>();
-        public static PipeClient l2dStream;
-        public static void InitStream(string serverID)
+        //public static PipeClient l2dStream;
+        public static SocketClient l2dClient;
+        public static void InitClient()
         {
-            l2dStream = new PipeClient(serverID);
-            l2dStream.Start();
+            //l2dStream = new PipeClient(serverID);
+            //l2dStream.Start();
+
+            l2dClient = new SocketClient();
+
+            l2dClient.DoConnection();
         }
         public static void SendMessage(string path, LogType lt, string ls, string st)
         {
             //if (!paths.Contains(path))
             //    paths.Add(path);
             //File.AppendAllText(path, Environment.NewLine + JsonUtility.ToJson(new ConsoleMessage(lt, ls, st)));
-            if(l2dStream == null)
-                l2dStream = new PipeClient(GetServerID());
+            //if(l2dStream == null)
+            //    l2dStream = new PipeClient(GetServerID());
 
-            l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
+            //l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
+
+            if (l2dClient == null)
+                l2dClient = new SocketClient();
+
+            l2dClient.WriteLine(ls);
             //Tengo que quitar el path, tengo que ver lo de los colores y si pasando una instancia de una clase que exista en la Lerp2API me puedo evitar todo el engorro este.
         }
         public static void Quit()

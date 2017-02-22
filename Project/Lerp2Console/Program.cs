@@ -6,15 +6,19 @@ using System.Threading;
 using Lerp2API;
 using UnityEngine;
 using ICSharpCode.SharpZipLib.Zip;
-using ClientServerUsingNamedPipes.Server;
-using ClientServerUsingNamedPipes.Interfaces;
+using Lerp2API.Communication.Sockets;
+using System.Net.Sockets;
+using System.Text;
+//using ClientServerUsingNamedPipes.Server;
+//using ClientServerUsingNamedPipes.Interfaces;
 
 namespace Lerp2Console
 {
     class Program
     {
         //private static FileSystemWatcher l2dWatcher;
-        private static PipeServer l2dStream;
+        //private static PipeServer l2dStream;
+        private static SocketServer l2dServer;
         private static string projectPath = "", listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
         private static Parameter[] parameters;
         private static ulong calls;
@@ -35,6 +39,17 @@ namespace Lerp2Console
         { //Check when Unity button closes up...
             Console.Title = "Lerp2Dev Console";
 
+            parameters = Parameter.GetParams(args);
+            //string ePath = GetParam("path"),
+            //       lFile = GetParam("file");
+            projectPath = GetParam("projectPath");
+            stacktrace = !ExistParam("nostacktrace");
+            editor = ExistParam("editor");
+            //executionPath = string.IsNullOrWhiteSpace(ePath) ? Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) : ePath;
+
+            string dllDirectory = Path.Combine(projectPath, "Lerp2API");
+            Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH") + ";" + dllDirectory);
+
             Work(args);
 
             Console.Read();
@@ -42,7 +57,7 @@ namespace Lerp2Console
 
         static void Work(string[] args)
         {
-            l2dStream = new PipeServer();
+            /*l2dStream = new PipeServer();
             //PublishServerID(l2dStream.ServerId);
 
             l2dStream.Start();
@@ -51,15 +66,15 @@ namespace Lerp2Console
 
             l2dStream.ClientConnectedEvent += L2dStream_ClientConnected;
             l2dStream.ClientDisconnectedEvent += L2dStream_ClientDisconnected;
-            l2dStream.MessageReceivedEvent += L2dStream_MessageReceived;
+            l2dStream.MessageReceivedEvent += L2dStream_MessageReceived;*/
 
-            parameters = Parameter.GetParams(args);
-            //string ePath = GetParam("path"),
-            //       lFile = GetParam("file");
-            projectPath = GetParam("projectPath");
-            stacktrace = !ExistParam("nostacktrace");
-            editor = ExistParam("editor");
-            //executionPath = string.IsNullOrWhiteSpace(ePath) ? Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) : ePath;
+            l2dServer = new SocketServer();
+
+            l2dServer.ComeAlive();
+            l2dServer.StartListening();
+
+            l2dServer.ServerCallback = new AsyncCallback(AcceptCallback);
+
             listenPath = Path.Combine(projectPath, sPath[0]); //string.IsNullOrWhiteSpace(lFile) ? "debug.log" : lFile; //Tengo que probar a renombrar el archivo a ver que pasa...
             listenFile = Path.Combine(listenPath, sPath[1]);
             /*l2dWatcher = new FileSystemWatcher(listenPath, listenFile); //executionPath
@@ -69,7 +84,146 @@ namespace Lerp2Console
             QueryWork();
         }
 
-        static void L2dStream_ClientConnected(object sender, ClientConnectedEventArgs e)
+        /// <summary>
+        /// Asynchronously accepts an incoming connection attempt and creates
+        /// a new Socket to handle remote host communication.
+        /// </summary>     
+        /// <param name="ar">the status of an asynchronous operation
+        /// </param> 
+        public static void AcceptCallback(IAsyncResult ar)
+        {
+            Socket listener = null;
+
+            // A new Socket to handle remote host communication
+            Socket handler = null;
+            try
+            {
+                // Receiving byte array
+                byte[] buffer = new byte[1024];
+                // Get Listening Socket object
+                listener = (Socket)ar.AsyncState;
+                // Create a new socket
+                handler = listener.EndAccept(ar);
+
+                // Using the Nagle algorithm
+                handler.NoDelay = false;
+
+                // Creates one object array for passing data
+                object[] obj = new object[2];
+                obj[0] = buffer;
+                obj[1] = handler;
+
+                // Begins to asynchronously receive data
+                handler.BeginReceive(
+                    buffer,        // An array of type Byt for received data
+                    0,             // The zero-based position in the buffer 
+                    buffer.Length, // The number of bytes to receive
+                    SocketFlags.None,// Specifies send and receive behaviors
+                    new AsyncCallback(ReceiveCallback),//An AsyncCallback delegate
+                    obj            // Specifies infomation for receive operation
+                    );
+
+                // Begins an asynchronous operation to accept an attempt
+                AsyncCallback aCallback = new AsyncCallback(AcceptCallback);
+                listener.BeginAccept(aCallback, listener);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Asynchronously receive data from a connected Socket.
+        /// </summary>
+        /// <param name="ar">
+        /// the status of an asynchronous operation
+        /// </param> 
+        public static void ReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // Fetch a user-defined object that contains information
+                object[] obj = new object[2];
+                obj = (object[])ar.AsyncState;
+
+                // Received byte array
+                byte[] buffer = (byte[])obj[0];
+
+                // A Socket to handle remote host communication.
+                Socket handler = (Socket)obj[1];
+
+                // Received message
+                string content = string.Empty;
+
+                // The number of bytes received.
+                int bytesRead = handler.EndReceive(ar);
+
+                if (bytesRead > 0)
+                {
+                    content += Encoding.Unicode.GetString(buffer, 0,
+                        bytesRead);
+                    // If message contains "<Client Quit>", finish receiving
+                    if (content.IndexOf("<Client Quit>") > -1)
+                    {
+                        // Convert byte array to string
+                        string str =
+                            content.Substring(0, content.LastIndexOf("<Client Quit>"));
+                        Console.WriteLine(
+                            "Read {0} bytes from client.\n Data: {1}",
+                            str.Length * 2, str);
+
+                        // Prepare the reply message
+                        byte[] byteData =
+                            Encoding.Unicode.GetBytes(str);
+
+                        // Sends data asynchronously to a connected Socket
+                        handler.BeginSend(byteData, 0, byteData.Length, 0,
+                            new AsyncCallback(SendCallback), handler);
+                    }
+                    else
+                    {
+                        // Continues to asynchronously receive data
+                        byte[] buffernew = new byte[1024];
+                        obj[0] = buffernew;
+                        obj[1] = handler;
+                        handler.BeginReceive(buffernew, 0, buffernew.Length,
+                            SocketFlags.None,
+                            new AsyncCallback(ReceiveCallback), obj);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Sends data asynchronously to a connected Socket.
+        /// </summary>
+        /// <param name="ar">
+        /// The status of an asynchronous operation
+        /// </param> 
+        public static void SendCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // A Socket which has sent the data to remote host
+                Socket handler = (Socket)ar.AsyncState;
+
+                // The number of bytes sent to the Socket
+                int bytesSend = handler.EndSend(ar);
+                Console.WriteLine(
+                    "Sent {0} bytes to Client", bytesSend);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: {0}", ex.ToString());
+            }
+        }
+
+        /*static void L2dStream_ClientConnected(object sender, ClientConnectedEventArgs e)
         {
 
         }
@@ -82,7 +236,7 @@ namespace Lerp2Console
         static void L2dStream_MessageReceived(object sender, MessageReceivedEventArgs e)
         {
 
-        }
+        }*/
 
         static void L2dWatcher_Changed(object sender, FileSystemEventArgs e)
         {

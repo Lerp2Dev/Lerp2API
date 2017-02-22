@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Build\Lerp2API.XML</DocumentationFile>
     <CodeAnalysisRuleSet />
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -99,6 +100,22 @@
     <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\NotifyCollectionChangedEventArgs.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\ObservableCollection.cs" />
     <Compile Include="Backports\NonSpecific\ConcurrentMap.cs" />
+    <Compile Include="Backports\SharedMemory\BufferReadWrite.cs" />
+    <Compile Include="Backports\SharedMemory\BufferWithLocks.cs" />
+    <Compile Include="Backports\SharedMemory\CircularBuffer.cs" />
+    <Compile Include="Backports\SharedMemory\FastStructure.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFile.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFileAccess.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFileRights.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedView.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedViewAccessor.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\SafeMemoryMappedFileHandle.cs" />
+    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\SafeMemoryMappedViewHandle.cs" />
+    <Compile Include="Backports\SharedMemory\SharedArray.cs" />
+    <Compile Include="Backports\SharedMemory\SharedBuffer.cs" />
+    <Compile Include="Backports\SharedMemory\SharedHeader.cs" />
+    <Compile Include="Backports\SharedMemory\UnsafeNativeMethods.cs" />
+    <Compile Include="Backports\SharedMemory\Utilities\ArraySlice.cs" />
     <Compile Include="Communication\NamedPipesUtils\Client\PipeClient.cs" />
     <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunication.cs" />
     <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunicationClient.cs" />
@@ -108,6 +125,8 @@
     <Compile Include="Communication\NamedPipesUtils\Utilities\EventHandlerExtensions.cs" />
     <Compile Include="Communication\NamedPipesUtils\Utilities\Logger.cs" />
     <Compile Include="Communication\NamedPipesUtils\Utilities\TaskResult.cs" />
+    <Compile Include="Communication\Sockets\SocketClient.cs" />
+    <Compile Include="Communication\Sockets\SocketServer.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />

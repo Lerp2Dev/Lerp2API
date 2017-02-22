@@ -1,8 +1,9 @@
-Compilación iniciada a las 21/02/2017 22:13:43.
+Compilación iniciada a las 22/02/2017 17:04:22.
 Entorno al principio de la compilación:
 ALLUSERSPROFILE = C:\ProgramData
 APPDATA = C:\Users\Álvaro\AppData\Roaming
 AWE_DIR = C:\Program Files (x86)\Awesomium Technologies LLC\Awesomium SDK\1.7.5.1\
+CHROME_ALLOCATOR = TCMALLOC
 CommonProgramFiles = C:\Program Files (x86)\Common Files
 CommonProgramFiles(x86) = C:\Program Files (x86)\Common Files
 CommonProgramW6432 = C:\Program Files\Common Files
@@ -20,7 +21,6 @@ MSBUILDLOADALLFILESASWRITEABLE = 1
 MSBuildLoadMicrosoftTargetsReadOnly = true
 NUMBER_OF_PROCESSORS = 8
 OneDrive = C:\Users\Álvaro\OneDrive
-opt = 1
 OS = Windows_NT
 Path = C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Brackets\command;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Álvaro\AppData\Local\Microsoft\WindowsApps;
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
@@ -57,6 +57,7 @@ ALLUSERSPROFILE = C:\ProgramData
 APPDATA = C:\Users\Álvaro\AppData\Roaming
 AspNetConfiguration = Debug
 AWE_DIR = C:\Program Files (x86)\Awesomium Technologies LLC\Awesomium SDK\1.7.5.1\
+CHROME_ALLOCATOR = TCMALLOC
 CommonProgramFiles = C:\Program Files (x86)\Common Files
 CommonProgramW6432 = C:\Program Files\Common Files
 COMPUTERNAME = DESKTOP-8FVL506
@@ -105,7 +106,6 @@ MSBuildToolsVersion = 14.0
 MSBuildUserExtensionsPath = C:\Users\Álvaro\AppData\Local\Microsoft\MSBuild
 NUMBER_OF_PROCESSORS = 8
 OneDrive = C:\Users\Álvaro\OneDrive
-opt = 1
 OS = Windows_NT
 OutputPath = ../../Build/Console
 Path = C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Brackets\command;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Álvaro\AppData\Local\Microsoft\WindowsApps;
@@ -367,6 +367,7 @@ BuildProjectReferences = true
 BuildSystem = MSBuild
 BuildTaskAssembly = PresentationBuildTasks, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
 BuiltProjectOutputGroupDependsOn = PrepareForBuild
+CHROME_ALLOCATOR = TCMALLOC
 CleanDependsOn = 
       
       BeforeClean;
@@ -664,7 +665,6 @@ NuGetTargetMonikerToInject = .NETCore,Version=v5.0
 NuGetTargets = C:\Program Files (x86)\MSBuild\Microsoft\NuGet\Microsoft.NuGet.targets
 NUMBER_OF_PROCESSORS = 8
 OneDrive = C:\Users\Álvaro\OneDrive
-opt = 1
 Optimize = false
 OS = Windows_NT
 OSVersion = 5.1.2600.0
@@ -2376,12 +2376,165 @@ Ejecución de la tarea "CallTarget" terminada. (TaskId:18)
 Compilación terminada del destino "PreXsdCodeGen" en el proyecto "Lerp2Console.csproj".: (TargetId:42)
 Se omitió el destino "XsdCodeGen" debido a una condición falsa (False); ( '$(XsdCodeGenPreCondition)' == 'True' ) se evaluó como ( 'False' == 'True' ).
 Destino "CoreCompile: (TargetId:44)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.CSharp.Core.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "Compile" depende de él):
-Se omitirá el destino "CoreCompile" porque todos los archivos de salida están actualizados respecto a los archivos de entrada.
-Archivos de entrada: Program.cs;Properties\AssemblyInfo.cs;C:\Users\Álvaro\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cs;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Core.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.DataSetExtensions.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Numerics.dll;C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Runtime.Serialization.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.Linq.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.dll;C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.CSharp.CurrentVersion.targets;C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.NetFramework.CurrentVersion.props;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj;C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj.user;C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.NetFramework.CurrentVersion.targets;C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Xaml.targets;C:\Program Files %28x86%29\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\\Rule Sets\MinimumRecommendedRules.ruleset
-Archivos de salida: ..\..\Build\Console\Lerp2Console.XML;obj\Debug\Lerp2Console.exe;obj\Debug\Lerp2Console.pdb
+Compilando completamente el destino "CoreCompile".
+El archivo de entrada "Program.cs" es más reciente que el archivo de salida "..\..\Build\Console\Lerp2Console.XML".
 Propiedad establecida: NoWarn=;1701;1702
 Propiedad establecida: Prefer32Bit=false
 Propiedad establecida: UseSharedCompilation=true
+Usando la tarea "Csc" del ensamblado "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Build.Tasks.CodeAnalysis.dll".
+Tarea "Csc" (TaskId:20)
+  Parámetro de tarea:CodeAnalysisRuleSet=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\\Rule Sets\MinimumRecommendedRules.ruleset (TaskId:20)
+  Parámetro de tarea:DebugType=full (TaskId:20)
+  Parámetro de tarea:DefineConstants=DEBUG;TRACE (TaskId:20)
+  Parámetro de tarea:DisabledWarnings=;1701;1702 (TaskId:20)
+  Parámetro de tarea:DocumentationFile=..\..\Build\Console\Lerp2Console.XML (TaskId:20)
+  Parámetro de tarea:EmitDebugInformation=True (TaskId:20)
+  Parámetro de tarea:ErrorReport=prompt (TaskId:20)
+  Parámetro de tarea:FileAlignment=512 (TaskId:20)
+  Parámetro de tarea:HighEntropyVA=False (TaskId:20)
+  Parámetro de tarea:NoConfig=True (TaskId:20)
+  Parámetro de tarea:NoStandardLib=True (TaskId:20)
+  Parámetro de tarea:Optimize=False (TaskId:20)
+  Parámetro de tarea:OutputAssembly=obj\Debug\Lerp2Console.exe (TaskId:20)
+  Parámetro de tarea:Platform=AnyCPU (TaskId:20)
+  Parámetro de tarea:Prefer32Bit=False (TaskId:20)
+  Parámetro de tarea:
+      References=
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll
+                  CopyLocal=true
+                  FusionName=Lerp2API, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+                  HintPath=..\..\Build\Lerp2API.dll
+                  ImageRuntime=v2.0.50727
+                  OriginalItemSpec=Lerp2API
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=0.0.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=Microsoft.CSharp
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom={TargetFrameworkDirectory}
+                  Version=4.0.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll
+                  Version=4.0.0.0
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Core.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v2.0.50727
+                  Implicit=true
+                  OriginalItemSpec=System.Core
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=3.5.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.DataSetExtensions.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=System.Data.DataSetExtensions
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom={TargetFrameworkDirectory}
+                  Version=4.0.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=System.Data
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom={TargetFrameworkDirectory}
+                  Version=4.0.0.0
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v2.0.50727
+                  OriginalItemSpec=System
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=2.0.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Numerics.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Numerics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=System.Numerics
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom={TargetFrameworkDirectory}
+                  Version=4.0.0.0
+          C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Runtime.Serialization.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v4.0.30319
+                  OriginalItemSpec=System.Runtime.Serialization
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom={TargetFrameworkDirectory}
+                  Version=4.0.0.0
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v2.0.50727
+                  OriginalItemSpec=System.Xml
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=2.0.0.0
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.Linq.dll
+                  CopyLocal=false
+                  FrameworkFile=true
+                  FusionName=System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+                  ImageRuntime=v2.0.50727
+                  OriginalItemSpec=System.Xml.Linq
+                  Redist=Microsoft-Windows-CLRCoreComp.4.0
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=3.5.0.0
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.dll
+                  CopyLocal=true
+                  FusionName=UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+                  HintPath=..\..\Assemblies\UnityEngine.dll
+                  ImageRuntime=v2.0.50727
+                  OriginalItemSpec=UnityEngine
+                  ReferenceSourceTarget=ResolveAssemblyReference
+                  ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
+                  Version=0.0.0.0 (TaskId:20)
+  Parámetro de tarea:
+      Sources=
+          Program.cs
+          Properties\AssemblyInfo.cs
+          C:\Users\Álvaro\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cs (TaskId:20)
+  Parámetro de tarea:TargetType=Exe (TaskId:20)
+  Parámetro de tarea:UseHostCompilerIfAvailable=True (TaskId:20)
+  Parámetro de tarea:UseSharedCompilation=True (TaskId:20)
+  Parámetro de tarea:Utf8Output=True (TaskId:20)
+  Parámetro de tarea:WarningLevel=4 (TaskId:20)
+  C:\Program Files (x86)\MSBuild\14.0\bin\csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:AnyCPU /errorreport:prompt /warn:4 /doc:..\..\Build\Console\Lerp2Console.XML /define:DEBUG;TRACE /highentropyva- /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Numerics.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Runtime.Serialization.dll" /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.dll" /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\System.Xml.Linq.dll" /reference:"D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\Lerp2Console.exe /ruleset:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\\Rule Sets\MinimumRecommendedRules.ruleset" /target:exe /utf8output Program.cs Properties\AssemblyInfo.cs "C:\Users\Álvaro\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cs" (TaskId:20)
+  Using shared compilation with compiler from directory: C:\Program Files (x86)\MSBuild\14.0\bin (TaskId:20)
+  Compilador de Microsoft (R) Visual C# versión 1.3.1.60616 (TaskId:20)
+  Copyright (C) Microsoft Corporation. Todos los derechos reservados. (TaskId:20)
+  Elementos de salida: CscCommandLineArgs= (TaskId:20)
+Ejecución de la tarea "Csc" terminada. (TaskId:20)
+Se omitió la tarea "CallTarget" debido a una condición falsa (False); ('$(TargetsTriggeredByCompilation)' != '') se evaluó como ('' != '').
 Compilación terminada del destino "CoreCompile" en el proyecto "Lerp2Console.csproj".: (TargetId:44)
 Se omitió el destino "_TimeStampAfterCompile" debido a una condición falsa (False); ('$(RunPostBuildEvent)'=='OnOutputUpdated' or ('$(RegisterForComInterop)'=='true' and '$(OutputType)'=='library')) se evaluó como (''=='OnOutputUpdated' or (''=='true' and 'Exe'=='library')).
 Destino "AfterCompile: (TargetId:45)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "Compile" depende de él):
@@ -2389,9 +2542,9 @@ Compilación terminada del destino "AfterCompile" en el proyecto "Lerp2Console.cs
 Se omitió el destino "CreateTfsBuildInfoResource" debido a una condición falsa (False); ( $(AddBuildInfoToAssembly)==true ) se evaluó como ( false==true ).
 Se omitió el destino "CreateTfsBuildInfoFile" debido a una condición falsa (False); ( $(GenerateBuildInfoConfigFile)==true AND $(WebProjectOutputDir)!='') se evaluó como ( false==true AND !='').
 Destino "SetBuildInfoDefaults: (TargetId:46)" en el archivo "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\BuildInfo\Microsoft.VisualStudio.ReleaseManagement.BuildInfo.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "DeleteBuildInfoFile" depende de él):
-Propiedad establecida: BuildId=AutoGen_0681c619-9403-4783-9f91-68b928e8ae08
-Propiedad establecida: BuildLabel=AutoGen_0681c619-9403-4783-9f91-68b928e8ae08
-Propiedad establecida: BuildTimestamp=Tue, 21 Feb 2017 21:13:43 GMT
+Propiedad establecida: BuildId=AutoGen_fe1debac-7c5b-46c7-a905-7510cc3d1535
+Propiedad establecida: BuildLabel=AutoGen_fe1debac-7c5b-46c7-a905-7510cc3d1535
+Propiedad establecida: BuildTimestamp=Wed, 22 Feb 2017 16:04:22 GMT
 Propiedad establecida: BuildInfoPath=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\
 Propiedad establecida: BuildInfoFileName=Lerp2Console.BuildInfo.config
 Propiedad establecida: BuildInfoResourceFileName= obj\Debug\Lerp2Console.BuildInfo.config
@@ -2440,7 +2593,7 @@ Se omitió el destino "ComputeIntermediateSatelliteAssemblies" debido a una condi
 Destino "_CopyFilesMarkedCopyLocal: (TargetId:55)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "CopyFilesToOutputDirectory" depende de él):
 Propiedad establecida: CreateHardLinksForCopyLocalIfPossible=false
 Usando la tarea "Copy" del ensamblado "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-Tarea "Copy" (TaskId:20)
+Tarea "Copy" (TaskId:21)
   Parámetro de tarea:
       SourceFiles=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll
@@ -2478,7 +2631,7 @@ Tarea "Copy" (TaskId:20)
                   OriginalItemSpec=Lerp2API
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:20)
+                  Version=0.0.0.0 (TaskId:21)
   Parámetro de tarea:
       DestinationFiles=
           ../../Build/Console\Lerp2API.dll
@@ -2516,14 +2669,14 @@ Tarea "Copy" (TaskId:20)
                   OriginalItemSpec=Lerp2API
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:20)
-  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:20)
-  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:20)
-  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:20)
-  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll" en "../../Build/Console\Lerp2API.dll". (TaskId:20)
-  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.dll" en "../../Build/Console\UnityEngine.dll". (TaskId:20)
-  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.UI.dll" en "../../Build/Console\UnityEngine.UI.dll". (TaskId:20)
-  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEditor.dll" en "../../Build/Console\UnityEditor.dll". (TaskId:20)
+                  Version=0.0.0.0 (TaskId:21)
+  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:21)
+  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:21)
+  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:21)
+  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll" en "../../Build/Console\Lerp2API.dll". (TaskId:21)
+  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.dll" en "../../Build/Console\UnityEngine.dll". (TaskId:21)
+  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEngine.UI.dll" en "../../Build/Console\UnityEngine.UI.dll". (TaskId:21)
+  Copiando el archivo de "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\UnityEditor.dll" en "../../Build/Console\UnityEditor.dll". (TaskId:21)
   Elementos de salida: 
       FileWritesShareable=
           ../../Build/Console\Lerp2API.dll
@@ -2561,32 +2714,50 @@ Tarea "Copy" (TaskId:20)
                   OriginalItemSpec=Lerp2API
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:20)
-Ejecución de la tarea "Copy" terminada. (TaskId:20)
+                  Version=0.0.0.0 (TaskId:21)
+Ejecución de la tarea "Copy" terminada. (TaskId:21)
 Compilación terminada del destino "_CopyFilesMarkedCopyLocal" en el proyecto "Lerp2Console.csproj".: (TargetId:55)
 Se omitió el destino "AssignTargetPaths". Compilado previamente de forma correcta.
 Se omitió el destino "_SplitProjectReferencesByFileExistence". Compilado previamente de forma correcta.
 Destino "GetCopyToOutputDirectoryXamlAppDefs: (TargetId:56)" en el archivo "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "GetCopyToOutputDirectoryItems" depende de él):
-Tarea "AssignTargetPath" (TaskId:21)
-  Parámetro de tarea:RootFolder=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:21)
-Ejecución de la tarea "AssignTargetPath" terminada. (TaskId:21)
+Tarea "AssignTargetPath" (TaskId:22)
+  Parámetro de tarea:RootFolder=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:22)
+Ejecución de la tarea "AssignTargetPath" terminada. (TaskId:22)
 Compilación terminada del destino "GetCopyToOutputDirectoryXamlAppDefs" en el proyecto "Lerp2Console.csproj".: (TargetId:56)
 Destino "GetCopyToOutputDirectoryItems: (TargetId:57)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "_CopySourceItemsToOutputDirectory" depende de él):
 Propiedad establecida: _GCTODIKeepDuplicates=false
 Propiedad establecida: _GCTODIKeepMetadata=CopyToOutputDirectory;TargetPath
 Se omitió la tarea "MSBuild" debido a una condición falsa (False); ('@(_MSBuildProjectReferenceExistent)' != '' and '$(_GetChildProjectCopyToOutputDirectoryItems)' == 'true' and '%(_MSBuildProjectReferenceExistent.Private)' != 'false' and '$(UseCommonOutputDirectory)' != 'true') se evaluó como ('' != '' and 'true' == 'true' and '' != 'false' and 'false' != 'true').
-Tarea "AssignTargetPath" (TaskId:22)
-  Parámetro de tarea:RootFolder=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:22)
-Ejecución de la tarea "AssignTargetPath" terminada. (TaskId:22)
+Tarea "AssignTargetPath" (TaskId:23)
+  Parámetro de tarea:RootFolder=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:23)
+Ejecución de la tarea "AssignTargetPath" terminada. (TaskId:23)
 Compilación terminada del destino "GetCopyToOutputDirectoryItems" en el proyecto "Lerp2Console.csproj".: (TargetId:57)
 Se omitió el destino "_CopyOutOfDateSourceItemsToOutputDirectory" debido a una condición falsa (False); ( '@(_SourceItemsToCopyToOutputDirectory)' != '' ) se evaluó como ( '' != '' ).
 Se omitió el destino "_CopyOutOfDateSourceItemsToOutputDirectoryAlways" debido a una condición falsa (False); ( '@(_SourceItemsToCopyToOutputDirectoryAlways)' != '' ) se evaluó como ( '' != '' ).
 Destino "_CopySourceItemsToOutputDirectory: (TargetId:58)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "CopyFilesToOutputDirectory" depende de él):
 Compilación terminada del destino "_CopySourceItemsToOutputDirectory" en el proyecto "Lerp2Console.csproj".: (TargetId:58)
 Destino "_CopyAppConfigFile: (TargetId:59)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "CopyFilesToOutputDirectory" depende de él):
-Se omitirá el destino "_CopyAppConfigFile" porque todos los archivos de salida están actualizados respecto a los archivos de entrada.
-Archivos de entrada: App.config
-Archivos de salida: ../../Build/Console\Lerp2Console.exe.config
+Compilando completamente el destino "_CopyAppConfigFile".
+El archivo de entrada "App.config" es más reciente que el archivo de salida "../../Build/Console\Lerp2Console.exe.config".
+Tarea "Copy" (TaskId:24)
+  Parámetro de tarea:
+      SourceFiles=
+          App.config
+                  OriginalItemSpec=App.config
+                  TargetPath=Lerp2Console.exe.config (TaskId:24)
+  Parámetro de tarea:
+      DestinationFiles=
+          ../../Build/Console\Lerp2Console.exe.config
+                  OriginalItemSpec=App.config
+                  TargetPath=Lerp2Console.exe.config (TaskId:24)
+  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:24)
+  Copiando el archivo de "App.config" en "../../Build/Console\Lerp2Console.exe.config". (TaskId:24)
+  Elementos de salida: 
+      FileWrites=
+          ../../Build/Console\Lerp2Console.exe.config
+                  OriginalItemSpec=App.config
+                  TargetPath=Lerp2Console.exe.config (TaskId:24)
+Ejecución de la tarea "Copy" terminada. (TaskId:24)
 Compilación terminada del destino "_CopyAppConfigFile" en el proyecto "Lerp2Console.csproj".: (TargetId:59)
 Se omitió el destino "_CopyManifestFiles" debido a una condición falsa (False); ( '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' ) se evaluó como ( ''=='true' or ''=='true' ).
 Destino "_CheckForCompileOutputs: (TargetId:60)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "CopyFilesToOutputDirectory" depende de él):
@@ -2599,53 +2770,53 @@ Destino "CopyFilesToOutputDirectory: (TargetId:61)" en el archivo "C:\Program Fi
 Propiedad establecida: CreateHardLinksForCopyFilesToOutputDirectoryIfPossible=false
 Propiedad establecida: CopyBuildOutputToOutputDirectory=true
 Propiedad establecida: CopyOutputSymbolsToOutputDirectory=true
-Tarea "Copy" (TaskId:23)
-  Parámetro de tarea:SourceFiles=obj\Debug\Lerp2Console.exe (TaskId:23)
-  Parámetro de tarea:DestinationFolder=../../Build/Console\ (TaskId:23)
-  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:23)
-  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:23)
-  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:23)
-  No se copió del archivo "obj\Debug\Lerp2Console.exe" en el archivo "../../Build/Console\Lerp2Console.exe" porque el parámetro "SkipUnchangedFiles" se estableció como "true" en el proyecto y los tamaños y las marcas de tiempo de los archivos coinciden. (TaskId:23)
-  Elementos de salida: 
-      MainAssembly=
-          ../../Build/Console\Lerp2Console.exe
-                  OriginalItemSpec=obj\Debug\Lerp2Console.exe (TaskId:23)
-  Elementos de salida: 
-      FileWrites=
-          ../../Build/Console\Lerp2Console.exe
-                  OriginalItemSpec=obj\Debug\Lerp2Console.exe (TaskId:23)
-Ejecución de la tarea "Copy" terminada. (TaskId:23)
-Tarea "Message" (TaskId:24)
-  Parámetro de tarea:Importance=High (TaskId:24)
-  Parámetro de tarea:Text=Lerp2Console -> D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe (TaskId:24)
-  Lerp2Console -> D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe (TaskId:24)
-Ejecución de la tarea "Message" terminada. (TaskId:24)
-Se omitió la tarea "Copy" debido a una condición falsa (False); ('@(AddModules)' != '') se evaluó como ('' != '').
-Se omitió la tarea "Copy" debido a una condición falsa (False); ('$(_SGenDllCreated)'=='true') se evaluó como ('false'=='true').
 Tarea "Copy" (TaskId:25)
-  Parámetro de tarea:SourceFiles=obj\Debug\Lerp2Console.pdb (TaskId:25)
-  Parámetro de tarea:DestinationFiles=../../Build/Console\Lerp2Console.pdb (TaskId:25)
+  Parámetro de tarea:SourceFiles=obj\Debug\Lerp2Console.exe (TaskId:25)
+  Parámetro de tarea:DestinationFolder=../../Build/Console\ (TaskId:25)
   Parámetro de tarea:SkipUnchangedFiles=True (TaskId:25)
   Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:25)
   Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:25)
-  No se copió del archivo "obj\Debug\Lerp2Console.pdb" en el archivo "../../Build/Console\Lerp2Console.pdb" porque el parámetro "SkipUnchangedFiles" se estableció como "true" en el proyecto y los tamaños y las marcas de tiempo de los archivos coinciden. (TaskId:25)
+  Copiando el archivo de "obj\Debug\Lerp2Console.exe" en "../../Build/Console\Lerp2Console.exe". (TaskId:25)
+  Elementos de salida: 
+      MainAssembly=
+          ../../Build/Console\Lerp2Console.exe
+                  OriginalItemSpec=obj\Debug\Lerp2Console.exe (TaskId:25)
+  Elementos de salida: 
+      FileWrites=
+          ../../Build/Console\Lerp2Console.exe
+                  OriginalItemSpec=obj\Debug\Lerp2Console.exe (TaskId:25)
+Ejecución de la tarea "Copy" terminada. (TaskId:25)
+Tarea "Message" (TaskId:26)
+  Parámetro de tarea:Importance=High (TaskId:26)
+  Parámetro de tarea:Text=Lerp2Console -> D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe (TaskId:26)
+  Lerp2Console -> D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe (TaskId:26)
+Ejecución de la tarea "Message" terminada. (TaskId:26)
+Se omitió la tarea "Copy" debido a una condición falsa (False); ('@(AddModules)' != '') se evaluó como ('' != '').
+Se omitió la tarea "Copy" debido a una condición falsa (False); ('$(_SGenDllCreated)'=='true') se evaluó como ('false'=='true').
+Tarea "Copy" (TaskId:27)
+  Parámetro de tarea:SourceFiles=obj\Debug\Lerp2Console.pdb (TaskId:27)
+  Parámetro de tarea:DestinationFiles=../../Build/Console\Lerp2Console.pdb (TaskId:27)
+  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:27)
+  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:27)
+  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:27)
+  Copiando el archivo de "obj\Debug\Lerp2Console.pdb" en "../../Build/Console\Lerp2Console.pdb". (TaskId:27)
   Elementos de salida: 
       FileWrites=
           ../../Build/Console\Lerp2Console.pdb
-                  OriginalItemSpec=obj\Debug\Lerp2Console.pdb (TaskId:25)
-Ejecución de la tarea "Copy" terminada. (TaskId:25)
-Tarea "Copy" (TaskId:26)
-  Parámetro de tarea:SourceFiles=..\..\Build\Console\Lerp2Console.XML (TaskId:26)
-  Parámetro de tarea:DestinationFiles=../../Build/Console\Lerp2Console.XML (TaskId:26)
-  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:26)
-  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:26)
-  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:26)
-  No se copió del archivo "..\..\Build\Console\Lerp2Console.XML" en el archivo "../../Build/Console\Lerp2Console.XML" porque el parámetro "SkipUnchangedFiles" se estableció como "true" en el proyecto y los tamaños y las marcas de tiempo de los archivos coinciden. (TaskId:26)
+                  OriginalItemSpec=obj\Debug\Lerp2Console.pdb (TaskId:27)
+Ejecución de la tarea "Copy" terminada. (TaskId:27)
+Tarea "Copy" (TaskId:28)
+  Parámetro de tarea:SourceFiles=..\..\Build\Console\Lerp2Console.XML (TaskId:28)
+  Parámetro de tarea:DestinationFiles=../../Build/Console\Lerp2Console.XML (TaskId:28)
+  Parámetro de tarea:SkipUnchangedFiles=True (TaskId:28)
+  Parámetro de tarea:OverwriteReadOnlyFiles=False (TaskId:28)
+  Parámetro de tarea:UseHardlinksIfPossible=False (TaskId:28)
+  No se copió del archivo "..\..\Build\Console\Lerp2Console.XML" en el archivo "../../Build/Console\Lerp2Console.XML" porque el parámetro "SkipUnchangedFiles" se estableció como "true" en el proyecto y los tamaños y las marcas de tiempo de los archivos coinciden. (TaskId:28)
   Elementos de salida: 
       FileWrites=
           ../../Build/Console\Lerp2Console.XML
-                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:26)
-Ejecución de la tarea "Copy" terminada. (TaskId:26)
+                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:28)
+Ejecución de la tarea "Copy" terminada. (TaskId:28)
 Se omitió la tarea "Copy" debido a una condición falsa (False); ('@(IntermediateSatelliteAssembliesWithTargetPath)' != '') se evaluó como ('' != '').
 Se omitió la tarea "Copy" debido a una condición falsa (False); ('@(ReferenceComWrappersToCopyLocal)' != '' or '@(ResolvedIsolatedComModules)' != '' or '@(_DeploymentLooseManifestFile)' != '' or '@(NativeReferenceFile)' != '' ) se evaluó como ('' != '' or '' != '' or '' != '' or '' != '' ).
 Se omitió la tarea "Copy" debido a una condición falsa (False); ('$(SkipCopyWinMDArtifact)' != 'true' and '@(WinMDExpArtifacts)' != '') se evaluó como ('' != 'true' and '' != '').
@@ -2659,8 +2830,8 @@ Se omitió el destino "_CheckForCompileOutputs". Compilado previamente de forma c
 Se omitió el destino "_SGenCheckForOutputs" debido a una condición falsa (False); ('$(_SGenGenerateSerializationAssembliesConfig)' == 'On' or ('@(WebReferenceUrl)'!='' and '$(_SGenGenerateSerializationAssembliesConfig)' == 'Auto')) se evaluó como ('Off' == 'On' or (''!='' and 'Off' == 'Auto')).
 Destino "_CleanGetCurrentAndPriorFileWrites: (TargetId:63)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "IncrementalClean" depende de él):
 Usando la tarea "ReadLinesFromFile" del ensamblado "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-Tarea "ReadLinesFromFile" (TaskId:27)
-  Parámetro de tarea:File=obj\Debug\Lerp2Console.csproj.FileListAbsolute.txt (TaskId:27)
+Tarea "ReadLinesFromFile" (TaskId:29)
+  Parámetro de tarea:File=obj\Debug\Lerp2Console.csproj.FileListAbsolute.txt (TaskId:29)
   Elementos de salida: 
       _CleanUnfilteredPriorFileWrites=
           D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -2695,10 +2866,10 @@ Tarea "ReadLinesFromFile" (TaskId:27)
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:27)
-Ejecución de la tarea "ReadLinesFromFile" terminada. (TaskId:27)
+          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:29)
+Ejecución de la tarea "ReadLinesFromFile" terminada. (TaskId:29)
 Usando la tarea "ConvertToAbsolutePath" del ensamblado "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-Tarea "ConvertToAbsolutePath" (TaskId:28)
+Tarea "ConvertToAbsolutePath" (TaskId:30)
   Parámetro de tarea:
       Paths=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll
@@ -2818,7 +2989,7 @@ Tarea "ConvertToAbsolutePath" (TaskId:28)
                   OriginalItemSpec=UnityEngine
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:28)
+                  Version=0.0.0.0 (TaskId:30)
   Elementos de salida: 
       _ResolveAssemblyReferenceResolvedFilesAbsolute=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies\Lerp2API.dll
@@ -2938,8 +3109,8 @@ Tarea "ConvertToAbsolutePath" (TaskId:28)
                   OriginalItemSpec=UnityEngine
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:28)
-Ejecución de la tarea "ConvertToAbsolutePath" terminada. (TaskId:28)
+                  Version=0.0.0.0 (TaskId:30)
+Ejecución de la tarea "ConvertToAbsolutePath" terminada. (TaskId:30)
 Elementos agregados: 
     _CleanPriorFileWrites=
         D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -2976,8 +3147,8 @@ Elementos agregados:
         C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
         C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
 Usando la tarea "FindUnderPath" del ensamblado "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-Tarea "FindUnderPath" (TaskId:29)
-  Parámetro de tarea:Path=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:29)
+Tarea "FindUnderPath" (TaskId:31)
+  Parámetro de tarea:Path=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console (TaskId:31)
   Parámetro de tarea:
       Files=
           ../../Build/Console\Lerp2API.dll
@@ -3015,12 +3186,12 @@ Tarea "FindUnderPath" (TaskId:29)
                   OriginalItemSpec=Lerp2API
                   ReferenceSourceTarget=ResolveAssemblyReference
                   ResolvedFrom=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Assemblies
-                  Version=0.0.0.0 (TaskId:29)
-  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:29)
-  La ruta de comparación es "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console". (TaskId:29)
-Ejecución de la tarea "FindUnderPath" terminada. (TaskId:29)
-Tarea "FindUnderPath" (TaskId:30)
-  Parámetro de tarea:Path=../../Build/Console\ (TaskId:30)
+                  Version=0.0.0.0 (TaskId:31)
+  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:31)
+  La ruta de comparación es "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console". (TaskId:31)
+Ejecución de la tarea "FindUnderPath" terminada. (TaskId:31)
+Tarea "FindUnderPath" (TaskId:32)
+  Parámetro de tarea:Path=../../Build/Console\ (TaskId:32)
   Parámetro de tarea:
       Files=
           obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
@@ -3035,9 +3206,9 @@ Tarea "FindUnderPath" (TaskId:30)
           ../../Build/Console\Lerp2Console.pdb
                   OriginalItemSpec=obj\Debug\Lerp2Console.pdb
           ../../Build/Console\Lerp2Console.XML
-                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:30)
-  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:30)
-  La ruta de comparación es "../../Build/Console\". (TaskId:30)
+                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:32)
+  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:32)
+  La ruta de comparación es "../../Build/Console\". (TaskId:32)
   Elementos de salida: 
       _CleanCurrentFileWritesInOutput=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
@@ -3049,10 +3220,10 @@ Tarea "FindUnderPath" (TaskId:30)
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.pdb
                   OriginalItemSpec=obj\Debug\Lerp2Console.pdb
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML
-                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:30)
-Ejecución de la tarea "FindUnderPath" terminada. (TaskId:30)
-Tarea "FindUnderPath" (TaskId:31)
-  Parámetro de tarea:Path=obj\Debug\ (TaskId:31)
+                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:32)
+Ejecución de la tarea "FindUnderPath" terminada. (TaskId:32)
+Tarea "FindUnderPath" (TaskId:33)
+  Parámetro de tarea:Path=obj\Debug\ (TaskId:33)
   Parámetro de tarea:
       Files=
           obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
@@ -3067,15 +3238,15 @@ Tarea "FindUnderPath" (TaskId:31)
           ../../Build/Console\Lerp2Console.pdb
                   OriginalItemSpec=obj\Debug\Lerp2Console.pdb
           ../../Build/Console\Lerp2Console.XML
-                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:31)
-  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:31)
-  La ruta de comparación es "obj\Debug\". (TaskId:31)
+                  OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML (TaskId:33)
+  Parámetro de tarea:UpdateToAbsolutePaths=True (TaskId:33)
+  La ruta de comparación es "obj\Debug\". (TaskId:33)
   Elementos de salida: 
       _CleanCurrentFileWritesInIntermediate=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:31)
-Ejecución de la tarea "FindUnderPath" terminada. (TaskId:31)
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:33)
+Ejecución de la tarea "FindUnderPath" terminada. (TaskId:33)
 Elementos agregados: 
     _CleanCurrentFileWritesWithNoReferences=
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
@@ -3092,7 +3263,7 @@ Elementos agregados:
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
 Usando la tarea "RemoveDuplicates" del ensamblado "Microsoft.Build.Tasks.Core, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-Tarea "RemoveDuplicates" (TaskId:32)
+Tarea "RemoveDuplicates" (TaskId:34)
   Parámetro de tarea:
       Inputs=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
@@ -3107,7 +3278,7 @@ Tarea "RemoveDuplicates" (TaskId:32)
                   OriginalItemSpec=..\..\Build\Console\Lerp2Console.XML
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:32)
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:34)
   Elementos de salida: 
       _CleanCurrentFileWrites=
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
@@ -3120,8 +3291,8 @@ Tarea "RemoveDuplicates" (TaskId:32)
                   OriginalItemSpec=obj\Debug\Lerp2Console.pdb
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:32)
-Ejecución de la tarea "RemoveDuplicates" terminada. (TaskId:32)
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:34)
+Ejecución de la tarea "RemoveDuplicates" terminada. (TaskId:34)
 Compilación terminada del destino "_CleanGetCurrentAndPriorFileWrites" en el proyecto "Lerp2Console.csproj".: (TargetId:63)
 Destino "IncrementalClean: (TargetId:64)" en el archivo "C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets" del proyecto "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj" (el destino "CoreBuild" depende de él):
 Elementos agregados: 
@@ -3152,8 +3323,8 @@ Elementos agregados:
         C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
         C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
         C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
-Tarea "FindUnderPath" (TaskId:33)
-  Parámetro de tarea:Path=../../Build/Console\ (TaskId:33)
+Tarea "FindUnderPath" (TaskId:35)
+  Parámetro de tarea:Path=../../Build/Console\ (TaskId:35)
   Parámetro de tarea:
       Files=
           D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -3181,11 +3352,11 @@ Tarea "FindUnderPath" (TaskId:33)
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:33)
-  La ruta de comparación es "../../Build/Console\". (TaskId:33)
-Ejecución de la tarea "FindUnderPath" terminada. (TaskId:33)
-Tarea "FindUnderPath" (TaskId:34)
-  Parámetro de tarea:Path=obj\Debug\ (TaskId:34)
+          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:35)
+  La ruta de comparación es "../../Build/Console\". (TaskId:35)
+Ejecución de la tarea "FindUnderPath" terminada. (TaskId:35)
+Tarea "FindUnderPath" (TaskId:36)
+  Parámetro de tarea:Path=obj\Debug\ (TaskId:36)
   Parámetro de tarea:
       Files=
           D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -3213,12 +3384,12 @@ Tarea "FindUnderPath" (TaskId:34)
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:34)
-  La ruta de comparación es "obj\Debug\". (TaskId:34)
-Ejecución de la tarea "FindUnderPath" terminada. (TaskId:34)
-Tarea "Delete" (TaskId:35)
-  Parámetro de tarea:TreatErrorsAsWarnings=True (TaskId:35)
-Ejecución de la tarea "Delete" terminada. (TaskId:35)
+          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:36)
+  La ruta de comparación es "obj\Debug\". (TaskId:36)
+Ejecución de la tarea "FindUnderPath" terminada. (TaskId:36)
+Tarea "Delete" (TaskId:37)
+  Parámetro de tarea:TreatErrorsAsWarnings=True (TaskId:37)
+Ejecución de la tarea "Delete" terminada. (TaskId:37)
 Elementos agregados: 
     _CleanRemainingFileWritesAfterIncrementalClean=
         D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -3265,7 +3436,7 @@ Elementos agregados:
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
         D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
-Tarea "RemoveDuplicates" (TaskId:36)
+Tarea "RemoveDuplicates" (TaskId:38)
   Parámetro de tarea:
       Inputs=
           D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -3311,7 +3482,7 @@ Tarea "RemoveDuplicates" (TaskId:36)
                   OriginalItemSpec=obj\Debug\Lerp2Console.pdb
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:36)
+          D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:38)
   Elementos de salida: 
       _CleanUniqueRemainingFileWritesAfterIncrementalClean=
           D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config
@@ -3346,8 +3517,8 @@ Tarea "RemoveDuplicates" (TaskId:36)
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
           C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:36)
-Ejecución de la tarea "RemoveDuplicates" terminada. (TaskId:36)
+          C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb (TaskId:38)
+Ejecución de la tarea "RemoveDuplicates" terminada. (TaskId:38)
 Se omitió la tarea "WriteLinesToFile" debido a una condición falsa (False); ('@(_CleanUnfilteredPriorFileWrites)'!='@(_CleanUniqueRemainingFileWritesAfterIncrementalClean)') se evaluó como ('D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.pdb;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.exe;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe.config;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.XML;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe.config;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.XML;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb'!='D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe.config;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.exe;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.pdb;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.exe;D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe.config;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.pdb;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2API.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.dll;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.xml;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.XML;D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe.config;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.XML;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.pdb;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe;C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb').
 Compilación terminada del destino "IncrementalClean" en el proyecto "Lerp2Console.csproj".: (TargetId:64)
 Se omitió el destino "PostBuildEvent" debido a una condición falsa (False); ('$(PostBuildEvent)' != '' and ('$(RunPostBuildEvent)' != 'OnOutputUpdated' or '$(_AssemblyTimestampBeforeCompile)' != '$(_AssemblyTimestampAfterCompile)')) se evaluó como ('' != '' and ('' != 'OnOutputUpdated' or '' != '')).
@@ -3379,12 +3550,13 @@ Compilación del proyecto terminada "D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Lerp2AP
 
 
 Resumen del rendimiento del proyecto:
-      275 ms D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj   1 llamadas
-      367 ms D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Lerp2API.sln   1 llamadas
-                367 ms Lerp2Console                               1 llamadas
+      361 ms D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\Lerp2Console.csproj   1 llamadas
+      426 ms D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Lerp2API.sln   1 llamadas
+                426 ms Lerp2Console                               1 llamadas
 
 Resumen del rendimiento de destino:
         0 ms Compile                                    1 llamadas
+        0 ms ModifyUnitTestPlatformVersion              1 llamadas
         0 ms PrepareResourceNames                       1 llamadas
         0 ms AfterCompileWinFX                          1 llamadas
         0 ms AfterResGen                                1 llamadas
@@ -3392,84 +3564,84 @@ Resumen del rendimiento de destino:
         0 ms ResolveReferences                          1 llamadas
         0 ms CreateSatelliteAssemblies                  1 llamadas
         0 ms _CopySourceItemsToOutputDirectory          1 llamadas
+        0 ms CreateCustomManifestResourceNames          1 llamadas
         0 ms BeforeResGen                               1 llamadas
         0 ms SetWin32ManifestProperties                 1 llamadas
         0 ms AfterMarkupCompilePass1                    1 llamadas
         0 ms PrepareResources                           1 llamadas
+        0 ms _GenerateSatelliteAssemblyInputs           1 llamadas
         0 ms AfterBuild                                 1 llamadas
         0 ms AfterCompile                               1 llamadas
         0 ms Build                                      1 llamadas
         0 ms _AfterCompileWinFXInternal                 1 llamadas
-        0 ms ModifyUnitTestPlatformVersion              1 llamadas
-        0 ms CreateCustomManifestResourceNames          1 llamadas
+        0 ms DeleteBuildInfoFile                        1 llamadas
+        0 ms _GenerateCompileInputs                     1 llamadas
         0 ms GetTargetPath                              1 llamadas
-        0 ms BeforeResolveReferences                    1 llamadas
-        0 ms BeforeBuild                                1 llamadas
-        0 ms ResGen                                     1 llamadas
-        0 ms BuildOnlySettings                          1 llamadas
-        0 ms PrepareForRun                              1 llamadas
         0 ms BeforeCompile                              1 llamadas
-        0 ms _SplitProjectReferencesByFileExistence     1 llamadas
+        0 ms PrepareForRun                              1 llamadas
         0 ms AfterResolveReferences                     1 llamadas
+        0 ms ExpandSDKReferences                        1 llamadas
+        0 ms ResGen                                     1 llamadas
+        0 ms BeforeBuild                                1 llamadas
         0 ms ValidateProjects                           1 llamadas
-        0 ms ResolveProjectReferences                   1 llamadas
-        0 ms ResolveSDKReferences                       1 llamadas
-        1 ms FileClassification                         1 llamadas
-        1 ms GetInstalledSDKLocations                   1 llamadas
-        1 ms DeleteBuildInfoResource                    1 llamadas
-        1 ms GetReferenceAssemblyPaths                  1 llamadas
-        1 ms _CheckForCompileOutputs                    1 llamadas
-        1 ms _SetTargetFrameworkMonikerAttribute        1 llamadas
-        1 ms DeleteBuildInfoFile                        1 llamadas
-        1 ms _GenerateCompileInputs                     1 llamadas
+        0 ms BeforeResolveReferences                    1 llamadas
         1 ms ValidateToolsVersions                      1 llamadas
-        1 ms CleanXsdCodeGen                            1 llamadas
-        1 ms ExpandSDKReferences                        1 llamadas
-        1 ms _GenerateSatelliteAssemblyInputs           1 llamadas
-        1 ms SetBuildInfoDefaults                       1 llamadas
+        1 ms _SetTargetFrameworkMonikerAttribute        1 llamadas
+        1 ms GetReferenceAssemblyPaths                  1 llamadas
+        1 ms BuildOnlySettings                          1 llamadas
+        1 ms GetInstalledSDKLocations                   1 llamadas
         1 ms GetCopyToOutputDirectoryXamlAppDefs        1 llamadas
+        1 ms CleanXsdCodeGen                            1 llamadas
+        1 ms _SplitProjectReferencesByFileExistence     1 llamadas
+        1 ms DeleteBuildInfoResource                    1 llamadas
+        1 ms FileClassification                         1 llamadas
+        1 ms ResolveSDKReferences                       1 llamadas
+        1 ms _CheckForCompileOutputs                    1 llamadas
+        1 ms GetCopyToOutputDirectoryItems              1 llamadas
+        1 ms SetBuildInfoDefaults                       1 llamadas
+        1 ms GetFrameworkPaths                          1 llamadas
+        1 ms ResolveProjectReferences                   1 llamadas
+        1 ms SplitResourcesByCulture                    1 llamadas
         1 ms ResolveCodeAnalysisRuleSet                 1 llamadas
-        1 ms CoreResGen                                 1 llamadas
-        2 ms GetCopyToOutputDirectoryItems              1 llamadas
-        2 ms GetFrameworkPaths                          1 llamadas
-        2 ms SplitResourcesByCulture                    1 llamadas
+        2 ms CoreResGen                                 1 llamadas
+        2 ms _SetEmbeddedWin32ManifestProperties        1 llamadas
         2 ms PreXsdCodeGen                              1 llamadas
         2 ms AssignProjectConfiguration                 1 llamadas
-        2 ms _CopyAppConfigFile                         1 llamadas
-        3 ms GenerateBindingRedirects                   1 llamadas
+        2 ms AssignTargetPaths                          1 llamadas
+        3 ms _CopyAppConfigFile                         1 llamadas
         3 ms GenerateTargetFrameworkMonikerAttribute    1 llamadas
+        4 ms GenerateBindingRedirects                   1 llamadas
+        4 ms PrepareForBuild                            1 llamadas
+        4 ms _CheckForInvalidConfigurationAndPlatform   1 llamadas
         4 ms IncrementalClean                           1 llamadas
-        4 ms AssignTargetPaths                          1 llamadas
-        5 ms CoreCompile                                1 llamadas
-        5 ms PrepareForBuild                            1 llamadas
-        5 ms _CheckForInvalidConfigurationAndPlatform   1 llamadas
-        6 ms CopyFilesToOutputDirectory                 1 llamadas
-        8 ms _CleanGetCurrentAndPriorFileWrites         1 llamadas
-        9 ms _SetEmbeddedWin32ManifestProperties        1 llamadas
-       11 ms ValidateSolutionConfiguration              1 llamadas
-       18 ms _CopyFilesMarkedCopyLocal                  1 llamadas
-      132 ms ResolveAssemblyReferences                  1 llamadas
-      347 ms Lerp2Console                               1 llamadas
+        7 ms _CleanGetCurrentAndPriorFileWrites         1 llamadas
+       10 ms ValidateSolutionConfiguration              1 llamadas
+       13 ms CopyFilesToOutputDirectory                 1 llamadas
+       14 ms _CopyFilesMarkedCopyLocal                  1 llamadas
+      112 ms ResolveAssemblyReferences                  1 llamadas
+      120 ms CoreCompile                                1 llamadas
+      409 ms Lerp2Console                               1 llamadas
 
 Resumen del rendimiento de la tarea:
-        0 ms AssignCulture                              1 llamadas
-        0 ms Delete                                     2 llamadas
-        1 ms ResolveCodeAnalysisRuleSet                 1 llamadas
+        1 ms AssignTargetPath                           6 llamadas
+        1 ms Delete                                     2 llamadas
         1 ms GetFrameworkPath                           1 llamadas
         1 ms MakeDir                                    1 llamadas
+        1 ms AssignCulture                              1 llamadas
+        1 ms ResolveCodeAnalysisRuleSet                 1 llamadas
         1 ms RemoveDuplicates                           2 llamadas
+        1 ms ConvertToAbsolutePath                      1 llamadas
         1 ms ReadLinesFromFile                          1 llamadas
-        2 ms ConvertToAbsolutePath                      1 llamadas
         2 ms CallTarget                                 1 llamadas
         2 ms AssignProjectConfiguration                 1 llamadas
-        2 ms AssignTargetPath                           6 llamadas
-        2 ms GenerateBindingRedirects                   1 llamadas
-        3 ms FindAppConfigFile                          1 llamadas
+        2 ms FindAppConfigFile                          1 llamadas
+        3 ms GenerateBindingRedirects                   1 llamadas
         4 ms FindUnderPath                              5 llamadas
-        6 ms Message                                    4 llamadas
-       21 ms Copy                                       4 llamadas
-      131 ms ResolveAssemblyReference                   1 llamadas
-      346 ms MSBuild                                    1 llamadas
+        5 ms Message                                    4 llamadas
+       26 ms Copy                                       5 llamadas
+      110 ms ResolveAssemblyReference                   1 llamadas
+      115 ms Csc                                        1 llamadas
+      408 ms MSBuild                                    1 llamadas
 
 Compilación correcta.
 
@@ -3481,4 +3653,4 @@ Compilación correcta.
     1 Advertencia(s)
     0 Errores
 
-Tiempo transcurrido 00:00:00.39
+Tiempo transcurrido 00:00:00.44

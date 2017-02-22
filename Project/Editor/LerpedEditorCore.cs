@@ -170,6 +170,7 @@ namespace Lerp2APIEditor
             using (var proc = new Process())
             {
                 proc.StartInfo.FileName = batchPath;
+                proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(batchPath); //Gracias Elektro: https://foro.elhacker.net/net/processstart_ejecuta_un_batch_y_hace_que_sus_rutas_contiguas_sean_innacesibles-t465478.0.html;msg2109889#msg2109889
                 //proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //This will be hidden when the console of the api compiles itsself and could send messages to Unity?
                 proc.Start();
                 proc.WaitForExit();
