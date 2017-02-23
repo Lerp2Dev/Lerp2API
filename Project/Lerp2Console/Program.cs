@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Lerp2API;
+//using Lerp2API;
 using UnityEngine;
-using ICSharpCode.SharpZipLib.Zip;
-using Lerp2API.Communication.Sockets;
+//using ICSharpCode.SharpZipLib.Zip;
+//using Lerp2API.Communication.Sockets;
 using System.Net.Sockets;
 using System.Text;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using Microsoft.Win32;
+using System.Diagnostics.Contracts;
+using System.Diagnostics;
+using System.Security.Principal;
 //using ClientServerUsingNamedPipes.Server;
 //using ClientServerUsingNamedPipes.Interfaces;
 
@@ -16,15 +22,25 @@ namespace Lerp2Console
 {
     class Program
     {
+
+        const int HWND_BROADCAST = 0xffff;
+        const uint WM_SETTINGCHANGE = 0x001a;
+
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        static extern bool SendNotifyMessage(IntPtr hWnd, uint Msg,
+            UIntPtr wParam, string lParam);
+
         //private static FileSystemWatcher l2dWatcher;
         //private static PipeServer l2dStream;
-        private static SocketServer l2dServer;
+        private static Lerp2API.Communication.Sockets.SocketServer l2dServer;
         private static string projectPath = "", listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
         private static Parameter[] parameters;
         private static ulong calls;
         private const int msWait = 500;
         private static bool stacktrace = true, editor = false, fmsg = true;
-        private static string[] sPath = LerpedCore.defaultLogFilePath.Split('/');
+        private static string[] sPath = Lerp2API.LerpedCore.defaultLogFilePath.Split('/');
+        private const string TIMES_OPENED = "timesOpened";
+        private static int timesOpened = 0;
 
         /*
          * 
@@ -36,16 +52,48 @@ namespace Lerp2Console
 
         //... -path=C:/.../ -file=example.txt
         static void Main(string[] args)
-        { //Check when Unity button closes up...
+        { //Check when Unity button closes up
+
+            timesOpened = ForceExistParam(args, TIMES_OPENED) ? int.Parse(ForceGetParam(args, TIMES_OPENED)) : 0;
+
+            string EXEPath = Assembly.GetExecutingAssembly().Location,
+                   DLLDir = Path.GetDirectoryName(Path.GetDirectoryName(EXEPath)),
+                   curPATH = Environment.GetEnvironmentVariable("PATH");
+            string[] splitPATHS = (curPATH[curPATH.Length - 1] == ';' ? curPATH.Remove(curPATH.Length - 1) : curPATH).Split(';');
+
+            //Only for debug now:
+            /*PreventiveRunAs(args, EXEPath, false);
+            if(IsUserAdministrator()) ForcePathReset(splitPATHS, DLLDir);
+            Console.ReadKey();
+
+            return;*/
+
+            bool reinit = !curPATH.Contains("Lerp2API") || curPATH.Contains("Lerp2API") && !splitPATHS.Any(x => x == DLLDir);
+
+            Console.WriteLine(timesOpened);
+            Console.WriteLine(IsUserAdministrator());
+            Console.WriteLine(reinit);
+
+            if (reinit)
+                PreventiveRunAs(args, EXEPath);
+
+            if (!curPATH.Contains("Lerp2API"))
+                SetEnvPath(curPATH + ";" + DLLDir + ";");
+            else if (!splitPATHS.Any(x => x == DLLDir))
+                ForcePathReset(splitPATHS, DLLDir);
+
+            if(reinit)
+            {
+                Process.Start(EXEPath);
+                Environment.Exit(0);
+            }
+
             Console.Title = "Lerp2Dev Console";
 
             parameters = Parameter.GetParams(args);
-            //string ePath = GetParam("path"),
-            //       lFile = GetParam("file");
             projectPath = GetParam("projectPath");
             stacktrace = !ExistParam("nostacktrace");
             editor = ExistParam("editor");
-            //executionPath = string.IsNullOrWhiteSpace(ePath) ? Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) : ePath;
 
             string dllDirectory = Path.Combine(projectPath, "Lerp2API");
             Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH") + ";" + dllDirectory);
@@ -53,6 +101,62 @@ namespace Lerp2Console
             Work(args);
 
             Console.Read();
+        }
+
+        static void PreventiveRunAs(string[] args, string exe, bool closeApp = true)
+        {
+            //Console.WriteLine(timesOpened);
+            //Console.WriteLine(IsUserAdministrator());
+            if (!IsUserAdministrator() && timesOpened <= 2)
+            {
+                using (Process p = new Process())
+                {
+                    p.StartInfo.FileName = exe;
+                    p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
+                    p.StartInfo.Arguments = string.Join(" ", args.Where(x => !x.Contains("timesOpened"))) + " -timesOpened=" + (++timesOpened);
+                    p.StartInfo.UseShellExecute = true;
+                    if (Environment.OSVersion.Version.Major >= 6)
+                        p.StartInfo.Verb = "runas";
+                    try
+                    {
+                        Console.WriteLine("Trying to run as administrator...");
+                        p.Start();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("The very first time you start the console, you must call it as an administrator, because we need to set a new entry in %PATH% of Windows.");
+                        Console.WriteLine("");
+                        Console.WriteLine("Press any key to exit...");
+                        Console.ReadKey();
+                    }
+                    finally
+                    {
+                        Console.WriteLine("Succesfully running as admin, closing this instance.");
+                    }
+                }
+                if(closeApp) Environment.Exit(0);
+            }
+        }
+
+        static void SetEnvPath(string newpath)
+        {
+            using (var envKey = Registry.LocalMachine.OpenSubKey(
+    @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment",
+    true))
+            {
+                Contract.Assert(envKey != null, @"registry key is missing!");
+                envKey.SetValue("PATH", newpath);
+                SendNotifyMessage((IntPtr)HWND_BROADCAST, WM_SETTINGCHANGE,
+                    (UIntPtr)0, "Environment");
+            }
+        }
+
+        static void ForcePathReset(string[] paths, string dll)
+        {
+            List<string> tempPathList = paths.Where(x => !x.Contains("Lerp2API")).ToList();
+            tempPathList.Add(dll);
+            string newPATH = string.Join(";", tempPathList.ToArray()) + ";";
+            SetEnvPath(newPATH);
         }
 
         static void Work(string[] args)
@@ -68,7 +172,7 @@ namespace Lerp2Console
             l2dStream.ClientDisconnectedEvent += L2dStream_ClientDisconnected;
             l2dStream.MessageReceivedEvent += L2dStream_MessageReceived;*/
 
-            l2dServer = new SocketServer();
+            l2dServer = new Lerp2API.Communication.Sockets.SocketServer();
 
             l2dServer.ComeAlive();
             l2dServer.StartListening();
@@ -248,6 +352,26 @@ namespace Lerp2Console
             ExitEvent();
         }
 
+        static bool IsUserAdministrator()
+        {
+            bool isAdmin;
+            try
+            {
+                WindowsIdentity user = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(user);
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                isAdmin = false;
+            }
+            catch (Exception ex)
+            {
+                isAdmin = false;
+            }
+            return isAdmin;
+        }
+
         //Obsolete?
         private static void PublishServerID(string ID)
         {
@@ -277,7 +401,7 @@ namespace Lerp2Console
                 r = !string.IsNullOrWhiteSpace(line) && !string.IsNullOrWhiteSpace(lastLine) && line == lastLine;
                 if (!r)
                 {
-                    ConsoleMessage msg = JsonUtility.FromJson<ConsoleMessage>(line);
+                    Lerp2API.ConsoleMessage msg = JsonUtility.FromJson<Lerp2API.ConsoleMessage>(line);
                     Console.ForegroundColor = GetColor(msg.logType);
                     if (!editor && !fmsg) Console.WriteLine();
                     if (fmsg) fmsg = false;
@@ -301,11 +425,26 @@ namespace Lerp2Console
             return parameters.FirstOrDefault(x => x.name == name) != null;
         }
 
+        private static string ForceGetParam(string[] args, string name)
+        {
+            foreach (string arg in args)
+                if (arg.IndexOf("=") > -1 && arg.Substring(1, arg.IndexOf("=")) == name)
+                    return arg.Split('=')[1];
+            return "";
+        }
+
+        private static bool ForceExistParam(string[] args, string name)
+        {
+            return !string.IsNullOrWhiteSpace(ForceGetParam(args, name));
+        }
+
+        //Obsolete
         private static string UnpackNl(string str)
         {
             return str.Replace("\\n", Environment.NewLine);
         }
 
+        //Obsolete
         private static string PackNl(string str)
         {
             return str.Replace(Environment.NewLine, "\\n");
@@ -313,7 +452,7 @@ namespace Lerp2Console
 
         private static ConsoleColor GetColor(LogType type)
         {
-            switch(type)
+            switch (type)
             {
                 case LogType.Assert:
                     return ConsoleColor.Blue;
@@ -367,7 +506,7 @@ namespace Lerp2Console
 
         private static void CreateCompressedLog()
         {
-            FastZip fastZip = new FastZip();
+            ICSharpCode.SharpZipLib.Zip.FastZip fastZip = new ICSharpCode.SharpZipLib.Zip.FastZip();
 
             string now = DateTime.Now.ToString("yyyy-MM-dd");
             int count = new DirectoryInfo(listenPath).GetFiles(string.Format("{0}*.{1}", now, sPath[1].Split('.')[1])).Length;
@@ -388,8 +527,8 @@ namespace Lerp2Console
         public static Parameter[] GetParams(string[] args)
         {
             List<Parameter> prms = new List<Parameter>();
-            foreach(string a in args)
-                if(a.StartsWith("-"))
+            foreach (string a in args)
+                if (a.StartsWith("-"))
                     if (a.Contains("="))
                     {
                         string[] param = a.Substring(1).Split('=');
