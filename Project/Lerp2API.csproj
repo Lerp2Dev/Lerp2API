@@ -139,6 +139,8 @@
     <Compile Include="Controllers\Utils\MouseLook.cs" />
     <Compile Include="Controllers\Utils\SmoothFollow.cs" />
     <Compile Include="Controllers\Utils\Teleporter.cs" />
+    <Compile Include="DynFixes\DynLerpedCore.cs" />
+    <Compile Include="DynFixes\DynSocketServer.cs" />
     <Compile Include="Game\FPSCounter.cs" />
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
@@ -297,6 +299,7 @@
     <Compile Include="Serializers\unityserializer-ng\SevenZipHelper.cs" />
     <Compile Include="Serializers\unityserializer-ng\UnitySerializerVersion.cs" />
     <Compile Include="Serializers\unityserializer-ng\Utility\Types.cs" />
+    <Compile Include="Tests\Test.cs" />
     <Compile Include="Utility\ContinuationManager.cs" />
     <Compile Include="Utility\DebugLine.cs" />
     <Compile Include="Utility\FileBrowser.cs" />

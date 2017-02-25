@@ -2,51 +2,48 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
-//using Lerp2API;
-using UnityEngine;
-//using ICSharpCode.SharpZipLib.Zip;
-//using Lerp2API.Communication.Sockets;
 using System.Net.Sockets;
 using System.Text;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using Microsoft.Win32;
-using System.Diagnostics.Contracts;
-using System.Diagnostics;
 using System.Security.Principal;
-//using ClientServerUsingNamedPipes.Server;
-//using ClientServerUsingNamedPipes.Interfaces;
+
+/*using ICSharpCode.SharpZipLib.Zip;
+using Lerp2API;
+using Lerp2API.Communication.Sockets;*/
 
 namespace Lerp2Console
 {
     class Program
     {
 
-        const int HWND_BROADCAST = 0xffff;
+        public static Instancials instance;
+
+        /*const int HWND_BROADCAST = 0xffff;
         const uint WM_SETTINGCHANGE = 0x001a;
 
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         static extern bool SendNotifyMessage(IntPtr hWnd, uint Msg,
-            UIntPtr wParam, string lParam);
+            UIntPtr wParam, string lParam);*/
 
         //private static FileSystemWatcher l2dWatcher;
         //private static PipeServer l2dStream;
-        private static Lerp2API.Communication.Sockets.SocketServer l2dServer;
+        private static dynamic l2dServer;
+        //private static Assembly DLL;
         private static string projectPath = "", listenPath = "", listenFile = "", lastLine = ""; //executionPath = "",
-        private static Parameter[] parameters;
+        //private static Parameter[] parameters;
         private static ulong calls;
         private const int msWait = 500;
         private static bool stacktrace = true, editor = false, fmsg = true;
-        private static string[] sPath = Lerp2API.LerpedCore.defaultLogFilePath.Split('/');
+        private static string[] sPath; //LerpedCore.defaultLogFilePath.Split('/');
         private const string TIMES_OPENED = "timesOpened";
-        private static int timesOpened = 0;
+        //private static int timesOpened = 0;
 
         /*
          * 
          * TODO:
          
             - Command system, inherited from lerp2api
+            - ...
              
         */
 
@@ -54,12 +51,40 @@ namespace Lerp2Console
         static void Main(string[] args)
         { //Check when Unity button closes up
 
-            timesOpened = ForceExistParam(args, TIMES_OPENED) ? int.Parse(ForceGetParam(args, TIMES_OPENED)) : 0;
+            //timesOpened = ForceExistParam(args, TIMES_OPENED) ? int.Parse(ForceGetParam(args, TIMES_OPENED)) : 0;
 
             string EXEPath = Assembly.GetExecutingAssembly().Location,
-                   DLLDir = Path.GetDirectoryName(Path.GetDirectoryName(EXEPath)),
-                   curPATH = Environment.GetEnvironmentVariable("PATH");
-            string[] splitPATHS = (curPATH[curPATH.Length - 1] == ';' ? curPATH.Remove(curPATH.Length - 1) : curPATH).Split(';');
+                   DLLDir = Path.GetDirectoryName(Path.GetDirectoryName(EXEPath));
+            //curPATH = Environment.GetEnvironmentVariable("PATH");
+            //string[] splitPATHS = (curPATH[curPATH.Length - 1] == ';' ? curPATH.Remove(curPATH.Length - 1) : curPATH).Split(';');
+
+            //Ruta contigua: Assembly.LoadFile(Path.Combine(Path.GetDirectoryName(EXEPath), "Lerp2API.dll"));
+
+            //DLL = Assembly.LoadFile(Path.Combine(DLLDir, "Lerp2API.dll"));
+
+            instance = new Instancials(Path.Combine(DLLDir, "Lerp2API.dll"));
+
+            sPath = instance.CreateStatic("Lerp2API.DynFixes.DynLerpedCore").GetDefaultLogFilePath().Split('/'); //DynamicStaticTypeMembers.Create(DLL.GetType("Lerp2API.DynFixes.DynLerpedCore")).GetDefaultLogFilePath().Split('/');
+
+            //Estático: DynamicStaticTypeMembers.Create(DLL.GetType("Lerp2API.Tests.Test"));
+            //Instancia: Activator.CreateInstance(DLL.GetType("Lerp2API.Tests.Test"));
+
+            //dynamic test = Activator.CreateInstance(DLL.GetType("Lerp2API.Tests.Test")); //Activator.GetObject(DLL.GetType("Lerp2API.LerpedCore"), Path.Combine(Path.GetDirectoryName(EXEPath), "Lerp2API.dll")); //DLL.GetType("Lerp2API.LerpedCore"); //Activator.CreateInstance(DLL.GetType("Lerp2API.Tests.Test"));
+            //Console.WriteLine(test.Suma(4, 9));
+
+            /*try
+            {
+                foreach (Type type in DLL.GetExportedTypes())
+                {
+                    Console.WriteLine(type.FullName);
+                    //dynamic c = Activator.CreateInstance(type);
+                    //c.Output(@"Hello");
+                }
+            } catch { }*/
+
+            //Console.ReadKey();
+
+            //return;
 
             //Only for debug now:
             /*PreventiveRunAs(args, EXEPath, false);
@@ -68,7 +93,7 @@ namespace Lerp2Console
 
             return;*/
 
-            bool reinit = !curPATH.Contains("Lerp2API") || curPATH.Contains("Lerp2API") && !splitPATHS.Any(x => x == DLLDir);
+            /*bool reinit = !curPATH.Contains("Lerp2API") || curPATH.Contains("Lerp2API") && !splitPATHS.Any(x => x == DLLDir);
 
             Console.WriteLine(timesOpened);
             Console.WriteLine(IsUserAdministrator());
@@ -96,14 +121,15 @@ namespace Lerp2Console
             editor = ExistParam("editor");
 
             string dllDirectory = Path.Combine(projectPath, "Lerp2API");
-            Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH") + ";" + dllDirectory);
+            Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH") + ";" + dllDirectory);*/
 
             Work(args);
 
+            Console.WriteLine("Press any key to exit console...");
             Console.Read();
         }
 
-        static void PreventiveRunAs(string[] args, string exe, bool closeApp = true)
+        /*static void PreventiveRunAs(string[] args, string exe, bool closeApp = true)
         {
             //Console.WriteLine(timesOpened);
             //Console.WriteLine(IsUserAdministrator());
@@ -141,8 +167,8 @@ namespace Lerp2Console
         static void SetEnvPath(string newpath)
         {
             using (var envKey = Registry.LocalMachine.OpenSubKey(
-    @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment",
-    true))
+            @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment",
+            true))
             {
                 Contract.Assert(envKey != null, @"registry key is missing!");
                 envKey.SetValue("PATH", newpath);
@@ -157,7 +183,7 @@ namespace Lerp2Console
             tempPathList.Add(dll);
             string newPATH = string.Join(";", tempPathList.ToArray()) + ";";
             SetEnvPath(newPATH);
-        }
+        }*/
 
         static void Work(string[] args)
         {
@@ -172,12 +198,13 @@ namespace Lerp2Console
             l2dStream.ClientDisconnectedEvent += L2dStream_ClientDisconnected;
             l2dStream.MessageReceivedEvent += L2dStream_MessageReceived;*/
 
-            l2dServer = new Lerp2API.Communication.Sockets.SocketServer();
+            l2dServer = instance.CreateInstance("Lerp2API.DynFixes.DynSocketServer"); //Activator.CreateInstance(DLL.GetType("Lerp2API.DynFixes.DynSocketServer")); //new SocketServer();
 
             l2dServer.ComeAlive();
             l2dServer.StartListening();
 
-            l2dServer.ServerCallback = new AsyncCallback(AcceptCallback);
+            //l2dServer.ServerCallback = new AsyncCallback(AcceptCallback);
+            l2dServer.SetServerCallback(new AsyncCallback(AcceptCallback));
 
             listenPath = Path.Combine(projectPath, sPath[0]); //string.IsNullOrWhiteSpace(lFile) ? "debug.log" : lFile; //Tengo que probar a renombrar el archivo a ver que pasa...
             listenFile = Path.Combine(listenPath, sPath[1]);
@@ -185,7 +212,7 @@ namespace Lerp2Console
             l2dWatcher.Changed += L2dWatcher_Changed;
             l2dWatcher.Deleted += L2dWatcher_Deleted;
             l2dWatcher.EnableRaisingEvents = true;*/
-            QueryWork();
+            //QueryWork();
         }
 
         /// <summary>
@@ -378,7 +405,7 @@ namespace Lerp2Console
             File.WriteAllText(Path.Combine(projectPath, "Lerp2API/Console/ServerID.GUID"), ID);
         }
 
-        private static void QueryWork()
+        /*private static void QueryWork()
         { //Se podria hacer una clase con esto...
             bool quick = false;
             if (calls > 0)
@@ -401,7 +428,7 @@ namespace Lerp2Console
                 r = !string.IsNullOrWhiteSpace(line) && !string.IsNullOrWhiteSpace(lastLine) && line == lastLine;
                 if (!r)
                 {
-                    Lerp2API.ConsoleMessage msg = JsonUtility.FromJson<Lerp2API.ConsoleMessage>(line);
+                    ConsoleMessage msg = JsonUtility.FromJson<ConsoleMessage>(line);
                     Console.ForegroundColor = GetColor(msg.logType);
                     if (!editor && !fmsg) Console.WriteLine();
                     if (fmsg) fmsg = false;
@@ -412,9 +439,9 @@ namespace Lerp2Console
             }
             lastLine = line;
             return r;
-        }
+        }*/
 
-        private static string GetParam(string name)
+        /*private static string GetParam(string name)
         {
             Parameter p = parameters.FirstOrDefault(x => x.name == name);
             return p != null ? p.value : "";
@@ -493,7 +520,7 @@ namespace Lerp2Console
 
             //file is not locked
             return false;
-        }
+        }*/
 
         private static void ExitEvent()
         {
@@ -506,7 +533,7 @@ namespace Lerp2Console
 
         private static void CreateCompressedLog()
         {
-            ICSharpCode.SharpZipLib.Zip.FastZip fastZip = new ICSharpCode.SharpZipLib.Zip.FastZip();
+            dynamic fastZip = instance.CreateInstance("ICSharpCode.SharpZipLib.Zip.FastZip"); //Activator.CreateInstance(DLL.GetType("ICSharpCode.SharpZipLib.Zip.FastZip")); //new FastZip();
 
             string now = DateTime.Now.ToString("yyyy-MM-dd");
             int count = new DirectoryInfo(listenPath).GetFiles(string.Format("{0}*.{1}", now, sPath[1].Split('.')[1])).Length;
@@ -515,7 +542,7 @@ namespace Lerp2Console
         }
     }
 
-    class Parameter
+    /*class Parameter
     {
         public Parameter(string n, string v)
         {
@@ -538,5 +565,5 @@ namespace Lerp2Console
                         prms.Add(new Parameter(a.Substring(1), ""));
             return prms.ToArray();
         }
-    }
+    }*/
 }

@@ -34,7 +34,7 @@ goto :EOF
 ::Build API
 
 :build1
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Lerp2API.dll" ( copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%MAIN_PATH%\Assemblies\Lerp2API.dll" )
 
@@ -55,7 +55,7 @@ goto :EOF
 ::Build Editor
 
 :build2
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" ( copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%MAIN_PATH%\Assemblies\Lerp2APIEditor.dll" )
 
@@ -80,7 +80,7 @@ goto :EOF
 ::Build RAW
 
 :build3
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp "/p:ReferencePath=%REF_PATH%" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
+"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
 if exist "%MAIN_PATH%\Build\Raw\Lerp2APIRaw.dll" ( copy /y "%MAIN_PATH%\Build\Raw\Lerp2Raw.dll" "%MAIN_PATH%\Assemblies\Lerp2Raw.dll" )
 
