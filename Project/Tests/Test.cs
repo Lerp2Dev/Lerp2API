@@ -2,8 +2,8 @@
 {
     public class Test
     {
-        private string _hola = "";
-        public string Hola
+        private static string _hola = "";
+        public static string Hola
         {
             get
             {

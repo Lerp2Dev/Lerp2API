@@ -30,12 +30,12 @@ namespace Lerp2Console
         {
             get
             {
-                return this.ValueAsObject;
+                return ValueAsObject;
             }
 
             set
             {
-                this.ValueAsObject = value;
+                ValueAsObject = value;
             }
         }
 

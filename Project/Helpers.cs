@@ -568,6 +568,7 @@ namespace Lerp2API.DebugHandler
 
         public static void HookLog()
         {
+            UnityEngine.Debug.Log("Hooking debug!");
             Application.logMessageReceived += LogToFile;
         }
 

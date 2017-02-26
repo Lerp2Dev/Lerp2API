@@ -1,10 +1,11 @@
 ﻿using Lerp2API;
-using Lerp2API.Mono;
+//using Lerp2API.Mono;
+using UnityEngine;
 using Debug = Lerp2API.DebugHandler.Debug;
 
 namespace Lerp2Raw
 {
-    public class LerpedHook : LerpedMono
+    public class LerpedHook : MonoBehaviour
     {
         public bool m_runConsoleAtPlayEvent = true;
         private void Awake() //This must be onenable, only for hook log
@@ -16,6 +17,7 @@ namespace Lerp2Raw
 
         private void OnDisable()
         {
+            UnityEngine.Debug.Log("Unhooking log!");
             Debug.UnhookLog();
         }
     }

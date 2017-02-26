@@ -184,13 +184,20 @@ namespace Lerp2APIEditor
 
             //Detect file weight? No, by the moment the Editor makes everything...
             int i = 0;
-            foreach (string b in fbFiles)
+            try
             {
-                if (File.Exists(b))
-                    File.Copy(b, feFiles[i], true);
-                else
-                    UnityEngine.Debug.LogErrorFormat("{0} not found!", b);
-                ++i;
+                foreach (string b in fbFiles)
+                {
+                    if (File.Exists(b))
+                        File.Copy(b, feFiles[i], true);
+                    else
+                        UnityEngine.Debug.LogErrorFormat("{0} not found!", b);
+                    ++i;
+                }
+            }
+            catch
+            {
+                Debug.LogError("Something gone wrong copying files at Refreshing Dependencies, cancel all new bugged API Messages to Auto Refresh it dependencies! (If this continues, please, restart Unity, we're looking this issue)");
             }
             AssetDatabase.Refresh();
             int tc = LerpedCore.GetInt(timesCompiled);

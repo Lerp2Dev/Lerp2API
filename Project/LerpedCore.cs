@@ -1,4 +1,3 @@
-using ClientServerUsingNamedPipes.Client;
 using Lerp2API.Communication.Sockets;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ namespace Lerp2API
     {
         private static Dictionary<string, object> _storedInfo;
         private static string storePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L2API.sav");
-        public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH", 
+        public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH",
                             defaultLogFilePath = "Logs/Console.log";
         public static GameObject lerpedCore;
         public static string SystemTime
@@ -146,6 +145,20 @@ namespace Lerp2API
             if (lerpedCore.GetComponent(type) == null)
                 lerpedCore.AddComponent(type);
         }
+
+        public static void ChangeRequiredASM(string ASMName, string ASMFolder)
+        {
+            string destFile = Path.Combine(Application.streamingAssetsPath, "RequiredASM/" + ASMName + ".dll"),
+                   originFile = ASMFolder + "/" + ASMName + ".dll",
+                   destFolder = Path.Combine(Application.streamingAssetsPath, "RequiredASM");
+            if (!File.Exists(destFile))
+            {
+                if (!Directory.Exists(destFolder))
+                    Directory.CreateDirectory(destFolder);
+                if (File.Exists(originFile))
+                    File.Copy(originFile, destFile);
+            }
+        }
     }
 
     public class ConsoleListener
@@ -153,21 +166,36 @@ namespace Lerp2API
         public static void StartConsole()
         {
             //Debug.LogFormat("Attemping to open the console in {0}.", Application.dataPath);
-            string console = Application.dataPath + "/Lerp2API/Console/Lerp2Console.exe";
+            string console = Path.Combine(Application.dataPath, "Lerp2API/Console/Lerp2Console.exe"),
+                   curLoc = Assembly.GetExecutingAssembly().Location;
             if (!File.Exists(console))
             {
                 Debug.LogErrorFormat("Console app couldn't be found in its default path ({0}).", console);
                 return;
             }
-            var process = new Process
-            {
-                StartInfo =
-                {
-                    FileName = console,
-                    Arguments = string.Format(@"-projectPath={0}{1}", Application.dataPath, Application.isEditor ? " -editor" : "")
+            if (Application.isEditor)
+                LerpedCore.ChangeRequiredASM("UnityEngine", Path.Combine(Path.GetDirectoryName(Application.dataPath), "Library/UnityAssemblies"));
+            string[] mklinkspaths = new string[2] { Path.Combine(Path.GetDirectoryName(console), "Lerp2API.dll"), Path.Combine(Path.GetDirectoryName(console), "UnityEngine.dll") };
+            bool domklink = mklinkspaths.All(x => !File.Exists(x));
+            string mklinks = (!File.Exists(mklinkspaths[0]) ? string.Format(@"mklink ""{0}"" ""{1}""", mklinkspaths[0], curLoc) : "")
+                + (domklink ? " & " : "")
+                + (!File.Exists(mklinkspaths[1]) ? string.Format(@"mklink ""{0}"" ""{1}""", mklinkspaths[1], Path.Combine(Application.streamingAssetsPath, "RequiredASM/UnityEngine.dll")) : "");
+            if(domklink)
+                using (Process p = new Process())
+                { //This is a little bit problematic, because it can cause a crash due to a recompilation on the UnityEngine.dll (because of the smybolic link)
+                    p.StartInfo.FileName = "cmd.exe";
+                    p.StartInfo.Arguments = string.Format(@"/c " + mklinks);
+                    p.StartInfo.UseShellExecute = true;
+                    p.StartInfo.Verb = "runas";
+                    p.Start();
+                    p.WaitForExit();
                 }
-            };
-            process.Start();
+            using (Process p = new Process())
+            {
+                p.StartInfo.FileName = console;
+                p.StartInfo.Arguments = string.Format(@"-projectPath={0}{1}", Application.dataPath, Application.isEditor ? " -editor" : "");
+                p.Start();
+            }
         }
     }
 
@@ -198,6 +226,7 @@ namespace Lerp2API
             if (l2dClient == null)
                 l2dClient = new SocketClient();
 
+            UnityEngine.Debug.Log(ls);
             l2dClient.WriteLine(ls);
             //Tengo que quitar el path, tengo que ver lo de los colores y si pasando una instancia de una clase que exista en la Lerp2API me puedo evitar todo el engorro este.
         }
@@ -222,7 +251,7 @@ namespace Lerp2API
             {
                 Debug.LogErrorFormat("File '{0}' doesn't exists. Server ID couldn't be retrieved!", path);
                 return "";
-            } 
+            }
         }
     }
 

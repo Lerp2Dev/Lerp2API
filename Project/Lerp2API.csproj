@@ -139,8 +139,6 @@
     <Compile Include="Controllers\Utils\MouseLook.cs" />
     <Compile Include="Controllers\Utils\SmoothFollow.cs" />
     <Compile Include="Controllers\Utils\Teleporter.cs" />
-    <Compile Include="DynFixes\DynLerpedCore.cs" />
-    <Compile Include="DynFixes\DynSocketServer.cs" />
     <Compile Include="Game\FPSCounter.cs" />
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
