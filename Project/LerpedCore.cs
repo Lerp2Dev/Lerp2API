@@ -14,7 +14,7 @@ namespace Lerp2API
     {
         private static Dictionary<string, object> _storedInfo;
         private static string storePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "L2API.sav");
-        public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH",
+        public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH", consoleSymLinkPath = "CONSOLE_SYMLINK_PATH",
                             defaultLogFilePath = "Logs/Console.log";
         public static GameObject lerpedCore;
         public static string SystemTime
@@ -176,11 +176,14 @@ namespace Lerp2API
             if (Application.isEditor)
                 LerpedCore.ChangeRequiredASM("UnityEngine", Path.Combine(Path.GetDirectoryName(Application.dataPath), "Library/UnityAssemblies"));
             string[] mklinkspaths = new string[2] { Path.Combine(Path.GetDirectoryName(console), "Lerp2API.dll"), Path.Combine(Path.GetDirectoryName(console), "UnityEngine.dll") };
-            bool domklink = mklinkspaths.All(x => !File.Exists(x));
+            bool domklink = mklinkspaths.All(x => !File.Exists(x)), 
+                 redomklink = LerpedCore.GetString(LerpedCore.consoleSymLinkPath) != Path.GetDirectoryName(curLoc);
             string mklinks = (!File.Exists(mklinkspaths[0]) ? string.Format(@"mklink ""{0}"" ""{1}""", mklinkspaths[0], curLoc) : "")
                 + (domklink ? " & " : "")
                 + (!File.Exists(mklinkspaths[1]) ? string.Format(@"mklink ""{0}"" ""{1}""", mklinkspaths[1], Path.Combine(Application.streamingAssetsPath, "RequiredASM/UnityEngine.dll")) : "");
-            if(domklink)
+            if (domklink || redomklink)
+            {
+                LerpedCore.SetString(LerpedCore.consoleSymLinkPath, Path.GetDirectoryName(curLoc));
                 using (Process p = new Process())
                 { //This is a little bit problematic, because it can cause a crash due to a recompilation on the UnityEngine.dll (because of the smybolic link)
                     p.StartInfo.FileName = "cmd.exe";
@@ -190,6 +193,7 @@ namespace Lerp2API
                     p.Start();
                     p.WaitForExit();
                 }
+            }
             using (Process p = new Process())
             {
                 p.StartInfo.FileName = console;
@@ -201,19 +205,21 @@ namespace Lerp2API
 
     public class ConsoleSender
     {
-        private static List<string> paths = new List<string>();
+        //private static List<string> paths = new List<string>();
         //public static PipeClient l2dStream;
-        public static SocketClient l2dClient;
-        public static void InitClient()
+        public SocketClient l2dClient;
+        private ConsoleLogger logger;
+        public ConsoleSender(string path)
         {
-            //l2dStream = new PipeClient(serverID);
-            //l2dStream.Start();
-
             l2dClient = new SocketClient();
-
             l2dClient.DoConnection();
+
+            if (!File.Exists(path))
+                File.Create(path);
+
+            logger = new ConsoleLogger(path);
         }
-        public static void SendMessage(string path, LogType lt, string ls, string st)
+        public void SendMessage(LogType lt, string ls, string st)
         {
             //if (!paths.Contains(path))
             //    paths.Add(path);
@@ -224,13 +230,17 @@ namespace Lerp2API
             //l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
 
             if (l2dClient == null)
+            {
                 l2dClient = new SocketClient();
+                l2dClient.DoConnection();
+            }
 
-            UnityEngine.Debug.Log(ls);
             l2dClient.WriteLine(ls);
-            //Tengo que quitar el path, tengo que ver lo de los colores y si pasando una instancia de una clase que exista en la Lerp2API me puedo evitar todo el engorro este.
+            logger.SendLog(ls);
+
+            //Tengo que quitar el path, tengo que ver lo de los colores...
         }
-        public static void Quit()
+        /*public static void Quit()
         {
             //Tengo q comprimir el log... Todo esto cuando tenga una carpeta q se llame logs y este codigo este dentro de la api
             //Al tener la api ya no me va a hacer falta tener q estar diciendole q se ejecute todos los eventos, ni los archivos definidos en otros scripts ni nada
@@ -239,10 +249,10 @@ namespace Lerp2API
             foreach (string p in paths)
                 if (File.Exists(p))
                     File.Delete(p);
-        }
+        }*/
 
         //Obsolete?
-        private static string GetServerID()
+        /*private static string GetServerID()
         {
             string path = Path.Combine(Application.dataPath, "Lerp2API/Console/ServerID.GUID");
             if (File.Exists(path))
@@ -252,7 +262,7 @@ namespace Lerp2API
                 Debug.LogErrorFormat("File '{0}' doesn't exists. Server ID couldn't be retrieved!", path);
                 return "";
             }
-        }
+        }*/
     }
 
     public class ConsoleMessage
@@ -264,6 +274,24 @@ namespace Lerp2API
             logType = lt;
             logString = ls;
             stackTrace = st;
+        }
+    }
+
+    public class ConsoleLogger
+    {
+        public string path = "";
+        public ConsoleLogger(string path)
+        {
+            this.path = path;
+        }
+        public void SendLog(string msg)
+        {
+            File.AppendAllText(path, msg);
+        }
+
+        public void ClearLog()
+        {
+            File.WriteAllText(path, "");
         }
     }
 }

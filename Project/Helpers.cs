@@ -542,6 +542,7 @@ namespace Lerp2API.DebugHandler
 { //using Debug = Lerp2API.DebugHandler.Debug;
     public class Debug : GameConsole
     {
+        private static ConsoleSender sender;
         public static bool isEnabled
         {
             get
@@ -550,7 +551,7 @@ namespace Lerp2API.DebugHandler
             }
         }
 
-        private static string _logPath;
+        /*private static string _logPath;
         private static string logPath
         {
             get
@@ -564,12 +565,13 @@ namespace Lerp2API.DebugHandler
                 }
                 return _logPath;
             }
-        }
+        }*/
 
-        public static void HookLog()
+        public static void HookLog(string path)
         {
-            UnityEngine.Debug.Log("Hooking debug!");
+            //UnityEngine.Debug.Log("Hooking debug!");
             Application.logMessageReceived += LogToFile;
+            sender = new ConsoleSender(path);
         }
 
         public static void UnhookLog()
@@ -836,7 +838,7 @@ namespace Lerp2API.DebugHandler
 
         internal static void LogToFile(string logString, string stackTrace, LogType type)
         {
-            ConsoleSender.SendMessage(logPath, type, logString, stackTrace);
+            sender.SendMessage(type, logString, stackTrace);
         }
 
         public static void DrawCube(Vector3 pos, UnityEngine.Color col, Vector3 scale)

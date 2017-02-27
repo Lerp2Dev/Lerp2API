@@ -145,8 +145,11 @@ namespace Lerp2APIEditor
         {
             string bPath = LerpedCore.GetString(buildPath),
                    bePath = Path.Combine(bPath, "Editor"),
+                   bcPath = Path.Combine(bPath, "Console"),
+                   brPath = Path.Combine(Path.GetDirectoryName(bPath), "Project/Lerp2Raw"),
                    ePath = LerpedCore.GetString(editorPath),
                    eePath = Path.Combine(ePath, "Editor"),
+                   ecPath = Path.Combine(ePath, "Console"),
                    batchPath = Path.Combine(Path.GetDirectoryName(bPath), "Compile/compile.bat");
 
             LerpedCore.SetLong(lastBuildTime, Helpers.LatestModification(Path.GetDirectoryName(bPath)));
@@ -178,9 +181,11 @@ namespace Lerp2APIEditor
             }
 
             string[] fbFiles = new string[] { Path.Combine(bPath, "Lerp2API.dll"), Path.Combine(bPath, "Lerp2API.pdb"), Path.Combine(bPath, "Lerp2API.pdb"),
-                                              Path.Combine(bePath, "Lerp2APIEditor.dll"), Path.Combine(bePath, "Lerp2APIEditor.pdb"), Path.Combine(bePath, "Lerp2APIEditor.xml") },
+                                              Path.Combine(bePath, "Lerp2APIEditor.dll"), Path.Combine(bePath, "Lerp2APIEditor.pdb"), Path.Combine(bePath, "Lerp2APIEditor.xml"),
+                                              Path.Combine(bcPath, "Lerp2Console.exe"), Path.Combine(bcPath, "Lerp2Console.exe.config"), Path.Combine(bcPath, "Lerp2Console.pdb"), Path.Combine(bcPath, "Lerp2Console.xml") },
                      feFiles = new string[] { Path.Combine(ePath, "Lerp2API.dll"), Path.Combine(ePath, "Lerp2API.pdb"), Path.Combine(ePath, "Lerp2API.pdb"),
-                                              Path.Combine(eePath, "Lerp2APIEditor.dll"), Path.Combine(eePath, "Lerp2APIEditor.pdb"), Path.Combine(eePath, "Lerp2APIEditor.xml") };
+                                              Path.Combine(eePath, "Lerp2APIEditor.dll"), Path.Combine(eePath, "Lerp2APIEditor.pdb"), Path.Combine(eePath, "Lerp2APIEditor.xml"),
+                                              Path.Combine(ecPath, "Lerp2Console.exe"), Path.Combine(ecPath, "Lerp2Console.exe.config"), Path.Combine(ecPath, "Lerp2Console.pdb"), Path.Combine(ecPath, "Lerp2Console.xml")};
 
             //Detect file weight? No, by the moment the Editor makes everything...
             int i = 0;
@@ -199,6 +204,11 @@ namespace Lerp2APIEditor
             {
                 Debug.LogError("Something gone wrong copying files at Refreshing Dependencies, cancel all new bugged API Messages to Auto Refresh it dependencies! (If this continues, please, restart Unity, we're looking this issue)");
             }
+
+            //Also, copy Lerp2Raw files...
+            foreach (string file in Directory.GetFiles(brPath, "*.cs"))
+                File.Copy(file, Path.Combine(Application.dataPath, "Lerp2API/AttachedScripts/" + Path.GetFileName(file)), true);
+
             AssetDatabase.Refresh();
             int tc = LerpedCore.GetInt(timesCompiled);
             LerpedCore.SetInt(timesCompiled, ++tc);
