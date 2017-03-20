@@ -1,12 +1,17 @@
 using Lerp2API.Communication.Sockets;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
+using System.Security;
 using UnityEngine;
 using Debug = Lerp2API.DebugHandler.Debug;
+using Random = System.Random;
 
 namespace Lerp2API
 {
@@ -17,6 +22,13 @@ namespace Lerp2API
         public const string UnityBoot = "UNITY_STARTED_UP", enabledDebug = "ENABLE_DEBUG", loggerPath = "LOG_PATH", consoleSymLinkPath = "CONSOLE_SYMLINK_PATH",
                             defaultLogFilePath = "Logs/Console.log";
         public static GameObject lerpedCore;
+        public static MonoBehaviour lerpedHook;
+        public static bool socketDebug,
+                           safeECallEnabled,
+                           cancelSocketClient,
+                           cancelSocketServer;
+        public static SocketClient consoleClient;
+
         public static string SystemTime
         {
             get
@@ -161,11 +173,28 @@ namespace Lerp2API
         }
     }
 
-    public class ConsoleListener
+    public class ConsoleServer
     {
-        public static void StartConsole()
+        private static SocketServer signalServer;
+
+        public static void BeReady(string path)
         {
-            //Debug.LogFormat("Attemping to open the console in {0}.", Application.dataPath);
+            if (!LerpedCore.cancelSocketServer)
+            {
+                signalServer = new SocketServer(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, LerpedCore.socketDebug);
+
+                signalServer.ComeAlive();
+                signalServer.StartListening();
+
+                signalServer.ServerCallback = new AsyncCallback(SocketServer.AcceptCallback);
+
+                //This is also included, because, if we don't start the Socket server with shouldn't relwase any client
+                ConsoleSender.CreateInstance(path);
+            }
+        }
+
+        public static void StartConsole(string path)
+        {
             string console = Path.Combine(Application.dataPath, "Lerp2API/Console/Lerp2Console.exe"),
                    curLoc = Assembly.GetExecutingAssembly().Location;
             if (!File.Exists(console))
@@ -197,8 +226,14 @@ namespace Lerp2API
             using (Process p = new Process())
             {
                 p.StartInfo.FileName = console;
-                p.StartInfo.Arguments = string.Format(@"-projectPath={0}{1}", Application.dataPath, Application.isEditor ? " -editor" : "");
+                p.StartInfo.Arguments = string.Format(@"-projectPath='{0}'{1}", Application.dataPath, Application.isEditor ? " -editor" : "").SafeArguments();
                 p.Start();
+                UnityEngine.Debug.Log("Starting Console app!");
+                BeReady(path);
+                /*BeReady(() => {
+                    UnityEngine.Debug.Log("Ready to connect!");
+                    ConsoleSender.CreateInstance(path);
+                });*/
             }
         }
     }
@@ -207,17 +242,36 @@ namespace Lerp2API
     {
         //private static List<string> paths = new List<string>();
         //public static PipeClient l2dStream;
-        public SocketClient l2dClient;
+        public static ConsoleSender instance;
+        public SocketClient lerpedSocketUnityClient;
         private ConsoleLogger logger;
         public ConsoleSender(string path)
         {
-            l2dClient = new SocketClient();
-            l2dClient.DoConnection();
+            if (!LerpedCore.cancelSocketClient)
+            {
+                lerpedSocketUnityClient = new SocketClient(GetUnitySocketActions());
+                lerpedSocketUnityClient.DoConnection();
 
-            if (!File.Exists(path))
-                File.Create(path);
+                string dir = Path.GetDirectoryName(path);
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
 
-            logger = new ConsoleLogger(path);
+                if (!File.Exists(path))
+                    File.Create(path);
+
+                logger = new ConsoleLogger(path);
+            }
+        }
+        private Action GetUnitySocketActions()
+        {
+            return () => {
+                byte[] bytes = new byte[1024];
+                UnityEngine.Debug.LogWarning(lerpedSocketUnityClient.ReceiveMessage(bytes));
+            };
+        }
+        public static void CreateInstance(string path)
+        {
+            instance = new ConsoleSender(path);
         }
         public void SendMessage(LogType lt, string ls, string st)
         {
@@ -229,13 +283,13 @@ namespace Lerp2API
 
             //l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
 
-            if (l2dClient == null)
+            if (lerpedSocketUnityClient == null)
             {
-                l2dClient = new SocketClient();
-                l2dClient.DoConnection();
+                lerpedSocketUnityClient = new SocketClient();
+                lerpedSocketUnityClient.DoConnection();
             }
 
-            l2dClient.WriteLine(ls);
+            lerpedSocketUnityClient.WriteLine(ls);
             logger.SendLog(ls);
 
             //Tengo que quitar el path, tengo que ver lo de los colores...
@@ -294,4 +348,308 @@ namespace Lerp2API
             File.WriteAllText(path, "");
         }
     }
+
+    public enum TaskState { NotStarted, Running, Paused, Stopped }
+    public class CronTask
+    {
+        internal static Dictionary<ulong, CronTask> curTasks = new Dictionary<ulong, CronTask>();
+
+        public Action myAction;
+        public float delay = 1;
+        public float times = Mathf.Infinity;
+        internal ulong id;
+        private bool createdByConstructor;
+        private TaskState curState;
+
+        public static bool debugTasks;
+
+        private bool CheckValid()
+        {
+            if (createdByConstructor)
+                Debug.LogError("Cannot use an instance that has been created by using constructor, please, create a new instance by calling CreateInstance");
+            return createdByConstructor;
+        }
+
+        public CronTask()
+        {
+            Debug.LogWarning("Create a new instance by using CreateInstace instead! Returning null object.");
+        }
+
+        private CronTask(bool valid)
+        {
+            //if (!CoroutineDatabase.database.ContainsKey()) //Basicamente queria añadir las coroutinas desde aqui con un metodo, a partir de los metodos IEnumerator, todo esto para poder llamarla desde un comando... Logicamente solo si son publicas
+                foreach (var method in typeof(CronTask).GetMethods())
+                {
+                    var parameters = method.GetParameters();
+                    var parameterDescriptions = string.Join
+                        (", ", method.GetParameters()
+                                     .Select(x => x.ParameterType + " " + x.Name)
+                                     .ToArray());
+
+                    Console.WriteLine("{0} {1} ({2})",
+                                      method.ReturnType,
+                                      method.Name,
+                                      parameterDescriptions);
+                }
+        }
+
+        public static CronTask CreateInstance(Action a, float delay, float times = Mathf.Infinity, bool startInmediatly = false)
+        {
+            if (a == null)
+            {
+                Debug.LogError("Cannot create a Task with a null Action!");
+                return null;
+            }
+            CronTask ins = new CronTask(true);
+            ulong id = new Random().NextUInt64(ulong.MaxValue); //Tener cuidado con no añadir una id que ya exista
+            //runningTasks<T1>.Add(id, startInmediatly ? TaskState.Running : TaskState.NotStarted);
+
+            ins.id = id;
+            ins.myAction = a;
+            ins.delay = delay;
+            ins.times = times;
+
+            if (startInmediatly)
+                ins.RunDelayed();
+
+            curTasks.Add(id, ins);
+
+            return ins;
+        }
+
+        public void RunDelayed()
+        {
+            if (MultiRun(string.Format("Task with ID {0} is already running!", id)) && debugTasks)
+                Debug.LogFormat("Task with ID {0} started succesfully at {1}!", id, LerpedCore.SystemTime);
+        }
+
+        public void Resume()
+        {
+            if (MultiRun(string.Format("Task with ID {0} isn't paused!", id), TaskState.Paused, TaskState.Running) && debugTasks)
+                Debug.LogFormat("Task with ID {0} paused succesfully at {1}!", id, LerpedCore.SystemTime);
+        }
+
+        public void Stop()
+        {
+            if (MultiRun(string.Format("Task with ID {0} isn't stated to be stopped!", id), TaskState.Running, TaskState.Stopped) && debugTasks)
+                Debug.LogFormat("Task with ID {0} stopped succesfully at {1}!", id, LerpedCore.SystemTime);
+        }
+
+        private bool MultiRun(string errorMsg = "", TaskState ifis = TaskState.NotStarted, TaskState setas = TaskState.Running)
+        {
+            if (curState == ifis)
+            {
+                curState = setas;
+                if (LerpedCore.safeECallEnabled)
+                    RunSafe(LerpedCore.consoleClient);
+                else
+                    RunWild();
+                return true;
+            }
+            else
+                Debug.LogError(errorMsg);
+            return true;
+        }
+
+        private void RunSafe(SocketClient client)
+        {
+            /*new StackTrace(true).GetFrames().ForEach((frame) => {
+                Console.WriteLine("{0} {1}", frame.GetFileName(), frame.GetFileLineNumber());
+            });*/
+            if (client != null)
+                client.WriteLine("/runcoroutine InternalCoroutine");
+        }
+
+        private void RunWild()
+        {
+                if (LerpedCore.lerpedCore != null)
+                {
+                    if (debugTasks)
+                        UnityEngine.Debug.Log("Running this task in Unity!");
+                    LerpedCore.lerpedHook.StartCoroutine(InternalCoroutine());
+                }
+                else
+                    Debug.LogError("Cannot run tasks in the Editor!");
+        }
+
+        private IEnumerator InternalCoroutine()
+        {
+            ulong i = 0; //Puede ser que llegue un momento en el que pete?
+            while (i < times && IsValidState(curState))
+            {
+                yield return (curState != TaskState.Stopped);
+                myAction();
+                yield return new WaitForSeconds(delay);
+            }
+            //Aqui tenemos que borrar esa ID de los 2 diccionarios
+            if (curState == TaskState.Stopped)
+                curTasks.Remove(id);
+        }
+
+        private static bool IsValidState(TaskState state)
+        {
+            return state != TaskState.NotStarted && state != TaskState.Stopped;
+        }
+
+        public static bool ExistsTask(ulong id)
+        {
+            return curTasks.ContainsKey(id);
+        }
+
+        public static CronTask GetTask(ulong id)
+        {
+            if (!ExistsTask(id))
+            {
+                Debug.LogErrorFormat("There isn't any task with ID {0}", id);
+                return null;
+            }
+            return curTasks[id];
+        }
+    }
+
+    public class CoroutineDatabase
+    {
+        public static Dictionary<string, CoroutineEntity> database = new Dictionary<string, CoroutineEntity>();
+    }
+
+    public class CoroutineEntity
+    {
+        public string name;
+        public IEnumerator body;
+
+        public CoroutineEntity(string n, IEnumerator b)
+        {
+            name = n;
+            body = b;
+        }
+    }
+
+    /*    public class CronTask<T1> : LerpedCore
+        {
+            internal static Dictionary<ulong, object> curTasks = new Dictionary<ulong, object>();
+
+            public Action<T1> myAction;
+            public T1 obj1;
+            public float delay = 1;
+            public float times = Mathf.Infinity;
+            internal ulong id;
+            private bool createdByConstructor;
+            private TaskState curState;
+
+            public static bool debugTasks;
+
+            private bool CheckValid()
+            {
+                if (createdByConstructor)
+                    Debug.LogError("Cannot use an instance that has been created by using constructor, please, create a new instance by calling CreateInstance");
+                return createdByConstructor;
+            }
+
+            public CronTask()
+            {
+                Debug.LogWarning("Create a new instance by using CreateInstace instead! Returning null object.");
+            }
+
+            private CronTask(bool valid)
+            {
+
+            }
+
+            public static CronTask<T1> CreateInstance(Action<T1> a, T1 obj, float delay, float times = Mathf.Infinity, bool startInmediatly = false)
+            {
+                if (a == null)
+                {
+                    Debug.LogError("Cannot create a Task with a null Action!");
+                    return null;
+                }
+                CronTask<T1> ins = new CronTask<T1>(true);
+                ulong id = new Random().NextUInt64(ulong.MaxValue); //Tener cuidado con no añadir una id que ya exista
+                //runningTasks<T1>.Add(id, startInmediatly ? TaskState.Running : TaskState.NotStarted);
+
+                curTasks.Add(id, a);
+                ins.id = id;
+                ins.myAction = a;
+                ins.delay = delay;
+                ins.times = times;
+                ins.obj1 = obj;
+
+                if (startInmediatly)
+                    ins.RunDelayed();
+
+                return ins;
+            }
+
+            public void RunDelayed()
+            {
+                if (MultiRun(string.Format("Task with ID {0} is already running!", id)) && debugTasks)
+                    Debug.LogFormat("Task with ID {0} started succesfully at {1}!", id, SystemTime);
+            }
+
+            public void Resume()
+            {
+                if (MultiRun(string.Format("Task with ID {0} isn't paused!", id), TaskState.Paused, TaskState.Running) && debugTasks)
+                    Debug.LogFormat("Task with ID {0} paused succesfully at {1}!", id, SystemTime);
+            }
+
+            public void Stop()
+            {
+                if (MultiRun(string.Format("Task with ID {0} isn't stated to be stopped!", id), TaskState.Running, TaskState.Stopped) && debugTasks)
+                    Debug.LogFormat("Task with ID {0} stopped succesfully at {1}!", id, SystemTime);
+            }
+
+            private bool MultiRun(string errorMsg = "", TaskState ifis = TaskState.NotStarted, TaskState setas = TaskState.Running)
+            {
+                if(curState == ifis)
+                {
+                    curState = setas;
+                    Run();
+                    return true;
+                }
+                else
+                    Debug.LogError(errorMsg);
+                return true;
+            }
+
+            private void Run()
+            {
+                if (lerpedCore != null)
+                    ((MonoBehaviour)lerpedCore.GetComponent(Type.GetType("LerpedHook"))).StartCoroutine(InternalCoroutine());
+                else
+                    Debug.LogError("Cannot run tasks in the Editor!");
+            }
+
+            private IEnumerator InternalCoroutine()
+            {
+                ulong i = 0; //Puede ser que llegue un momento en el que pete?
+                while (i < times && IsValidState(curState))
+                {
+                    yield return (curState != TaskState.Stopped);
+                    myAction(obj1);
+                    yield return new WaitForSeconds(delay);
+                }
+                //Aqui tenemos que borrar esa ID de los 2 diccionarios
+                if (curState == TaskState.Stopped)
+                    curTasks.Remove(id);
+            }
+
+            private static bool IsValidState(TaskState state)
+            {
+                return state != TaskState.NotStarted && state != TaskState.Stopped;
+            }
+
+            public static bool ExistsTask(ulong id)
+            {
+                return curTasks.ContainsKey(id);
+            }
+
+            public static CronTask<T> GetTask<T>(ulong id)
+            {
+                if(!ExistsTask(id))
+                {
+                    Debug.LogErrorFormat("There isn't any task with ID {0}", id);
+                    return null;
+                }
+                return (CronTask<T>)curTasks[id];
+            }
+        }*/
 }

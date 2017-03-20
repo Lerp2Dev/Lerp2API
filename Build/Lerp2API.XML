@@ -2013,6 +2013,30 @@
             Dispose pattern
             </summary>
         </member>
+        <member name="M:Lerp2API.Communication.Sockets.SocketServer.AcceptCallback(System.IAsyncResult)">
+            <summary>
+            Asynchronously accepts an incoming connection attempt and creates
+            a new Socket to handle remote host communication.
+            </summary>     
+            <param name="ar">the status of an asynchronous operation
+            </param> 
+        </member>
+        <member name="M:Lerp2API.Communication.Sockets.SocketServer.ReceiveCallback(System.IAsyncResult)">
+            <summary>
+            Asynchronously receive data from a connected Socket.
+            </summary>
+            <param name="ar">
+            the status of an asynchronous operation
+            </param> 
+        </member>
+        <member name="M:Lerp2API.Communication.Sockets.SocketServer.SendCallback(System.IAsyncResult)">
+            <summary>
+            Sends data asynchronously to a connected Socket.
+            </summary>
+            <param name="ar">
+            The status of an asynchronous operation
+            </param> 
+        </member>
         <member name="M:Lerp2API.Helpers.FindIndex``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
             <summary>Finds the index of the first item matching an expression in an enumerable.</summary>
             <param name="items">The enumerable to search.</param>

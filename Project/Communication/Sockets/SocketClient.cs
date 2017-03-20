@@ -8,7 +8,7 @@ using System.Threading;
 namespace Lerp2API.Communication.Sockets
 {
     public class SocketClient
-    {
+    { //Hacer IDisposable?
         /*static void Main(string[] args)
         {
             // Receiving byte array 
@@ -88,10 +88,10 @@ namespace Lerp2API.Communication.Sockets
         public Socket ClientSocket;
         public IPAddress IP;
         public int Port;
-        private Timer thTimer;
+        //private Timer thTimer;
         private IPEndPoint _endpoint;
         private byte[] socketBuffer; //I will keep this static, but I think I will have problems
-        private int Period, DueTime;
+        private CronTask task;
 
         internal IPEndPoint IPEnd
         {
@@ -108,25 +108,29 @@ namespace Lerp2API.Communication.Sockets
         }
 
         public SocketClient(bool doConnection = false) : 
-            this(Dns.GetHostEntry("").AddressList[0], 22222, SocketType.Stream, ProtocolType.Tcp, null, null, 1, doConnection)
+            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, null, doConnection)
         { }
 
-        public SocketClient(TimerCallback cbTimer, object obj, int readEvery, bool doConnection = false) :
-            this(Dns.GetHostEntry("").AddressList[0], 22222, SocketType.Stream, ProtocolType.Tcp, cbTimer, obj, readEvery, doConnection)
+        public SocketClient(Action everyFunc, bool doConnection = false) :
+            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, doConnection)
         { }
 
-        public SocketClient(string ip, int port, bool doConnection = false) : 
-            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, null, null, 1, doConnection)
+        /*public SocketClient(TimerCallback cbTimer, object obj, int readEvery, bool doConnection = false) :
+            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, cbTimer, obj, readEvery, doConnection)
+        { } //Dns.GetHostEntry("").AddressList[0]*/
+
+        public SocketClient(string ip, int port, Action everyFunc, bool doConnection = false) : 
+            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, doConnection)
         { }
 
-        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, TimerCallback cbTimer, object obj, int readEvery, bool doConnection = false)
+        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, float readEvery, Action everyFunc, bool doConnection = false)
         {
             socketBuffer = new byte[1024];
 
-            DueTime = 5;
-            Period = readEvery;
+            //thTimer = new Timer(cbTimer != null ? cbTimer : SocketCallback, obj != null ? obj : socketBuffer, Timeout.Infinite, Timeout.Infinite);
 
-            thTimer = new Timer(cbTimer != null ? cbTimer : SocketCallback, obj != null ? obj : socketBuffer, Timeout.Infinite, Timeout.Infinite);
+            if(everyFunc != null)
+                task = CronTask.CreateInstance(everyFunc, readEvery);
 
             IP = ipAddr;
             Port = port;
@@ -144,12 +148,14 @@ namespace Lerp2API.Communication.Sockets
 
         public void StartReceiving()
         {
-            thTimer.Change(DueTime, Period);
+            if(task != null)
+                task.RunDelayed();
         }
 
         public void StopReceiving()
         {
-            thTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            if(task != null)
+                task.RunDelayed();
         }
 
         public void DoConnection()
@@ -185,7 +191,7 @@ namespace Lerp2API.Communication.Sockets
             ClientSocket.Send(Encoding.Unicode.GetBytes("<Client Quit>"));
         }
 
-        private string ReceiveMessage(byte[] bytes)
+        public string ReceiveMessage(byte[] bytes)
         {
             // Receives data from a bound Socket.
             int bytesRec = ClientSocket.Receive(bytes);

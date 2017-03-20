@@ -14,6 +14,8 @@ using System.Collections;
 using Lerp2API.Optimizers;
 using System.Reflection;
 using UnityEngine.Assertions;
+using System.Text.RegularExpressions;
+using Random = System.Random;
 
 namespace Lerp2API
 {
@@ -49,6 +51,39 @@ namespace Lerp2API
         {
             return str.Remove(index, Math.Min(length, str.Length - index))
                     .Insert(index, replace);
+        }
+
+        public static string OddEvenReplace(this string inpt, string find, string oddrpl, string evenrpl)
+        {
+            int i = 1;
+            MatchCollection matches = Regex.Matches(inpt, find);
+            foreach (Match m in matches)
+            {
+                string rpl = oddrpl;
+                if (i % 2 == 0)
+                    rpl = evenrpl;
+                inpt = inpt.ReplaceAt(m.Index, m.Length, rpl);
+                ++i;
+            }
+            return inpt;
+        }
+
+        public static string MultiReplace(this string inpt, string pattern, string find, string rpl)
+        {
+            MatchCollection col = Regex.Matches(inpt, pattern);
+            int oldlen = inpt.Length,
+                newlen = inpt.Length;
+            foreach (Match m in col)
+            {
+                inpt = inpt.ReplaceAt(m.Index - (oldlen - newlen), m.Length, m.Value.Replace(find, rpl));
+                newlen = inpt.Length;
+            }
+            return inpt;
+        }
+
+        public static string ReplaceSeveralChars(this string s, string newVal, params char[] seps)
+        {
+            return string.Join(newVal, s.Split(seps, StringSplitOptions.RemoveEmptyEntries));
         }
 
         #endregion "String Extensions"
@@ -292,6 +327,28 @@ namespace Lerp2API
         public static string PackNl(string str)
         {
             return str.Replace(Environment.NewLine, "\\n");
+        }
+
+        public static string Base64Encode(this string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static string Base64Decode(this string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+
+        public static string SafeArguments(this string args)
+        {
+            return args.Base64Encode();
+        }
+
+        public static string[] UnsafeArguments(this string unargs)
+        {
+            return unargs.Base64Decode().OddEvenReplace("'", "<", ">").MultiReplace(@"\<.+?\>", " ", "/*/").ReplaceSeveralChars("'", '<', '>').Split(' ').Select(x => x.Replace("/*/", " ")).ToArray();
         }
 
         #endregion
@@ -542,7 +599,16 @@ namespace Lerp2API.DebugHandler
 { //using Debug = Lerp2API.DebugHandler.Debug;
     public class Debug : GameConsole
     {
-        private static ConsoleSender sender;
+        internal static ConsoleSender _sender;
+        private static ConsoleSender sender
+        {
+            get
+            {
+                if (_sender == null)
+                    _sender = ConsoleSender.instance;
+                return _sender;
+            }
+        }
         public static bool isEnabled
         {
             get
@@ -567,11 +633,10 @@ namespace Lerp2API.DebugHandler
             }
         }*/
 
-        public static void HookLog(string path)
+        public static void HookLog()
         {
             //UnityEngine.Debug.Log("Hooking debug!");
             Application.logMessageReceived += LogToFile;
-            sender = new ConsoleSender(path);
         }
 
         public static void UnhookLog()
@@ -838,7 +903,10 @@ namespace Lerp2API.DebugHandler
 
         internal static void LogToFile(string logString, string stackTrace, LogType type)
         {
-            sender.SendMessage(type, logString, stackTrace);
+            if (sender != null)
+                sender.SendMessage(type, logString, stackTrace);
+            else
+                UnityEngine.Debug.LogError("Trying to send a message to the Console when it was closed, please start it before you do anything like this!"); //Guardar los mensajes a enviar y cuando se abra enviarlos todos de golpe
         }
 
         public static void DrawCube(Vector3 pos, UnityEngine.Color col, Vector3 scale)
@@ -1175,6 +1243,19 @@ public static class MathHelpers
         if (value >= max) return value % max;
         else if (value < 0) return max - Mathf.Abs(value);
         else return value;
+    }
+
+    /*public static ulong RandomUInt64(ulong min, ulong max)
+    {
+        return ((max - min) + min) * Random.value;
+    }*/
+
+    public static ulong NextUInt64(this Random rnd, ulong max)
+    {
+        int rawsize = System.Runtime.InteropServices.Marshal.SizeOf(max);
+        var buffer = new byte[rawsize];
+        rnd.NextBytes(buffer);
+        return BitConverter.ToUInt64(buffer, 0);
     }
 
     /*public static bool Orientation(this IEnumerable<Point> polygon, Point up)

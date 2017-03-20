@@ -2,6 +2,7 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace Lerp2API.Communication.Sockets
 {
@@ -48,7 +49,7 @@ namespace Lerp2API.Communication.Sockets
                 // Length of the pending connections queue
                 sListener.Listen(10);
 
-                Console.WriteLine("Waiting for a connection on port {0}",
+                UnityEngine.Debug.Log("Waiting for a connection on port {0}",
                     ipEndPoint);
 
                 // Begins an asynchronous operation to accept an attempt
@@ -57,11 +58,11 @@ namespace Lerp2API.Communication.Sockets
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: {0}", ex.ToString());
+                UnityEngine.Debug.Log("Exception: {0}", ex.ToString());
                 return;
             }
 
-            Console.WriteLine("Press the Enter key to exit ...");
+            UnityEngine.Debug.Log("Press the Enter key to exit ...");
             Console.ReadLine();
 
             if (sListener.Connected)
@@ -71,12 +72,16 @@ namespace Lerp2API.Communication.Sockets
             }
         }*/
 
+        public const int lerpedPort = 22222;
+
         public Socket ServerSocket;
         public SocketPermission Permision;
         public IPAddress IP;
         public int Port;
         private IPEndPoint _endpoint;
         private byte[] bytes;
+
+        private static bool debug;
 
         private AsyncCallback _callback;
         public AsyncCallback ServerCallback
@@ -102,20 +107,22 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
-        public SocketServer(bool doConnection = false) : 
-            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), Dns.GetHostEntry("").AddressList[0], 22222, SocketType.Stream, ProtocolType.Tcp, doConnection)
+        public SocketServer(bool debug, bool doConnection = false) : 
+            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), Dns.GetHostEntry("").AddressList[0], lerpedPort, SocketType.Stream, ProtocolType.Tcp, debug, doConnection)
         { }
 
-        public SocketServer(string ip, int port, bool doConnection = false) : 
-            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, doConnection)
+        public SocketServer(string ip, int port, bool debug, bool doConnection = false) : 
+            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, debug, doConnection)
         { }
 
-        public SocketServer(SocketPermission permission, IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, bool doConnection = false)
+        public SocketServer(SocketPermission permission, IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, bool curDebug, bool doConnection = false)
         {
             permission.Demand();
 
             IP = ipAddr;
             Port = port;
+
+            debug = curDebug;
 
             ServerSocket = new Socket(ipAddr.AddressFamily, sType, pType);
 
@@ -141,7 +148,7 @@ namespace Lerp2API.Communication.Sockets
         {
             if(aCallback == null)
             {
-                Debug.LogError("Server callbak cannot be null");
+                Debug.LogError("Server callback cannot be null");
                 return;
             }
             //aCallback = new AsyncCallback(AcceptCallback);
@@ -158,7 +165,7 @@ namespace Lerp2API.Communication.Sockets
             else Debug.LogError("If you want to close something, you have to be first connected!");
         }
 
-        /*/// <summary>
+        /// <summary>
         /// Asynchronously accepts an incoming connection attempt and creates
         /// a new Socket to handle remote host communication.
         /// </summary>     
@@ -203,7 +210,7 @@ namespace Lerp2API.Communication.Sockets
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: {0}", ex.ToString());
+                UnityEngine.Debug.LogErrorFormat("Exception: {0}", ex.ToString());
             }
         }
 
@@ -243,9 +250,10 @@ namespace Lerp2API.Communication.Sockets
                         // Convert byte array to string
                         string str =
                             content.Substring(0, content.LastIndexOf("<Client Quit>"));
-                        Console.WriteLine(
-                            "Read {0} bytes from client.\n Data: {1}",
-                            str.Length * 2, str);
+                        if(debug)
+                            UnityEngine.Debug.LogFormat(
+                                "Read {0} bytes from client.\n Data: {1}",
+                                str.Length * 2, str);
 
                         // Prepare the reply message
                         byte[] byteData =
@@ -269,7 +277,7 @@ namespace Lerp2API.Communication.Sockets
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: {0}", ex.ToString());
+                UnityEngine.Debug.LogErrorFormat("Exception: {0}", ex.ToString());
             }
         }
 
@@ -288,13 +296,14 @@ namespace Lerp2API.Communication.Sockets
 
                 // The number of bytes sent to the Socket
                 int bytesSend = handler.EndSend(ar);
-                Console.WriteLine(
-                    "Sent {0} bytes to Client", bytesSend);
+                if (debug)
+                    UnityEngine.Debug.LogFormat(
+                        "Sent {0} bytes to Client", bytesSend);
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: {0}", ex.ToString());
+                UnityEngine.Debug.LogFormat("Exception: {0}", ex.ToString());
             }
-        }*/
+        }
     }
 }
