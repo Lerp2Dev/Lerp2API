@@ -50,28 +50,28 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
-        public SocketClient(bool doConnection = false) :
-            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, null, doConnection)
+        public SocketClient(string fileLog, bool doConnection = false) :
+            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, null, fileLog, doConnection)
         { }
 
-        public SocketClient(Action everyFunc, bool doConnection = false) :
-            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, doConnection)
+        public SocketClient(Action everyFunc, string fileLog, bool doConnection = false) :
+            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, fileLog, doConnection)
         { }
 
-        public SocketClient(string ip, int port, bool doConnection = false) :
-            this(ip, port, -1, null, doConnection)
+        public SocketClient(string ip, int port, string fileLog, bool doConnection = false) :
+            this(ip, port, -1, null, fileLog, doConnection)
         { }
 
-        public SocketClient(string ip, int port, Action everyFunc, bool doConnection = false) :
-            this(ip, port, 1, everyFunc, doConnection)
+        public SocketClient(string ip, int port, Action everyFunc, string fileLog, bool doConnection = false) :
+            this(ip, port, 1, everyFunc, fileLog, doConnection)
         { }
 
 
-        public SocketClient(string ip, int port, int readEvery, Action everyFunc, bool doConnection = false) :
-            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, readEvery, everyFunc, doConnection)
+        public SocketClient(string ip, int port, int readEvery, Action everyFunc, string fileLog, bool doConnection = false) :
+            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, readEvery, everyFunc, fileLog, doConnection)
         { }
 
-        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, int readEvery, Action everyFunc, bool doConnection = false)
+        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, int readEvery, Action everyFunc, string fileLog, bool doConnection = false)
         {
             socketBuffer = new byte[1024];
 
@@ -91,7 +91,7 @@ namespace Lerp2API.Communication.Sockets
 
             Id = ClientSocket.GetHashCode();
 
-            logger = new Logger(Path.Combine(Path.GetDirectoryName(Path.Combine(Application.dataPath, LerpedCore.defaultLogFilePath)), "client-Logger.log"));
+            logger = new Logger(Path.Combine(Path.GetDirectoryName(Path.Combine(Application.dataPath, LerpedCore.defaultLogFilePath)), fileLog));
 
             if (doConnection)
             {

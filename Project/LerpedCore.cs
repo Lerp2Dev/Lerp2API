@@ -204,7 +204,7 @@ namespace Lerp2API
         {
             if (!LerpedCore.cancelSocketServer)
             {
-                lerpedServer = new SocketServer(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, LerpedCore.socketDebug);
+                lerpedServer = new SocketServer(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, LerpedCore.socketDebug, "server-Logger.log");
                 lerpedServer.ComeAlive();
 
                 //This is also included, because, if we don't start the Socket server with shouldn't relwase any client
@@ -286,7 +286,7 @@ namespace Lerp2API
         {
             if (!LerpedCore.cancelSocketClient)
             {
-                lerpedClient = new SocketClient(GetUnitySocketActions());
+                lerpedClient = new SocketClient(GetUnitySocketActions(), "unityClient-Logger.log");
                 lerpedClient.DoConnection();
 
                 string dir = Path.GetDirectoryName(path);
@@ -322,7 +322,7 @@ namespace Lerp2API
 
             if (lerpedClient == null)
             {
-                lerpedClient = new SocketClient();
+                lerpedClient = new SocketClient("unityCient-Logger.log");
                 lerpedClient.DoConnection();
             }
 

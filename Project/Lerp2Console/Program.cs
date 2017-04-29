@@ -84,7 +84,7 @@ namespace Lerp2Console
 
             l2dServer.ServerCallback = new AsyncCallback(AcceptCallback);*/
 
-            lerpedSocketConsoleClient = new SocketClient(WriteReceived());
+            lerpedSocketConsoleClient = new SocketClient(WriteReceived(), "consoleClient-Logger.log");
 
             LerpedCore.consoleClient = lerpedSocketConsoleClient;
 
@@ -134,6 +134,11 @@ namespace Lerp2Console
             int count = new DirectoryInfo(listenPath).GetFiles(string.Format("{0}*.{1}", now, sPath[1].Split('.')[1])).Length;
 
             fastZip.CreateZip(string.Format("{0}{1}.gz", now, (count > 0 ? "-" + (count - 1).ToString() : "")), listenPath, false, @"\.log$");
+
+            string pattern = "*.log";
+            var matches = Directory.GetFiles(listenPath, pattern);
+            foreach (string file in Directory.GetFiles(listenPath).Except(matches))
+                File.Delete(file);
         }
 
         private static string GetParam(string name)

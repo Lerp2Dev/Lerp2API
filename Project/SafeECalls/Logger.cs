@@ -105,8 +105,12 @@ namespace Lerp2API.SafeECalls
         internal void AppendLine(string str, LoggerType t)
         {
             string msg = string.Format("[{0}] [{1}/{2}: {3}]", DateTime.Now.ToString("hh:mm:ss"), Thread.CurrentThread.Name, t.ToString(), str);
-            if(!string.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(path))
+            {
+                if (!File.Exists(path))
+                    File.Create(path).Dispose();
                 File.AppendAllText(path, msg);
+            }
         }
     }
 }

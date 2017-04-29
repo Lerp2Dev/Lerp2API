@@ -60,15 +60,15 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
-        public SocketServer(bool debug, bool doConnection = false) :
-            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), Dns.GetHostEntry("").AddressList[0], lerpedPort, SocketType.Stream, ProtocolType.Tcp, debug, doConnection)
+        public SocketServer(bool debug, string fileLog, bool doConnection = false) :
+            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), Dns.GetHostEntry("").AddressList[0], lerpedPort, SocketType.Stream, ProtocolType.Tcp, debug, fileLog, doConnection)
         { }
 
-        public SocketServer(string ip, int port, bool debug, bool doConnection = false) :
-            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, debug, doConnection)
+        public SocketServer(string ip, int port, bool debug, string fileLog, bool doConnection = false) :
+            this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, debug, fileLog, doConnection)
         { }
 
-        public SocketServer(SocketPermission permission, IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, bool curDebug, bool doConnection = false)
+        public SocketServer(SocketPermission permission, IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, bool curDebug, string fileLog, bool doConnection = false)
         {
             permission.Demand();
 
