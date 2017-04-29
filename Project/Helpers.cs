@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using FullSerializer;
 using Object = UnityEngine.Object;
 using Debug = Lerp2API.DebugHandler.Debug;
+using Logger = Lerp2API.SafeECalls.Logger;
 using Color = Lerp2API.Optimizers.Color;
 using Lerp2API.Game;
 using System.Runtime.Serialization;
@@ -16,6 +17,8 @@ using System.Reflection;
 using UnityEngine.Assertions;
 using System.Text.RegularExpressions;
 using Random = System.Random;
+using System.Diagnostics;
+using Lerp2API.SafeECalls;
 
 namespace Lerp2API
 {
@@ -353,6 +356,23 @@ namespace Lerp2API
 
         #endregion
 
+        #region "UnityEngine Extensions"
+        public static LoggerType ToLoggerType(this LogType logtype)
+        {
+            switch(logtype)
+            {
+                case LogType.Log:
+                    return LoggerType.INFO;
+                case LogType.Warning:
+                    return LoggerType.WARN;
+                case LogType.Error:
+                    return LoggerType.ERROR;
+                default:
+                    return LoggerType.INFO;
+            }
+        }
+        #endregion
+
     }
 
     #region "JSON Helpers"
@@ -392,6 +412,13 @@ namespace Lerp2API
         public static T DeserializeFromFile<T>(string path)
         {
             return Deserialize<T>(File.ReadAllText(path));
+        }
+
+        public static bool IsJson(this string input)
+        {
+            input = input.Trim();
+            return input.StartsWith("{") && input.EndsWith("}")
+                   || input.StartsWith("[") && input.EndsWith("]");
         }
     }
 
@@ -461,7 +488,7 @@ namespace Lerp2API
             }
             if (typeof(T).Equals(typeof(GameObject)))
             {
-                //if (Application.isPlaying)
+                //if (IsPlaying())
                 //    Object.Destroy(GameObject.Find(((GameObject)(object)obj).name));
                 //else
                 if (Application.isEditor)
@@ -685,9 +712,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.Assert(condition, str ? message : (string)message, context);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message.ToUString(), DebugColor.assert);
             }
         }
@@ -696,9 +723,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.AssertFormat(condition, format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.assert);
             }
         }
@@ -713,9 +740,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.ClearDeveloperConsole();
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     Clear();
             }
         }
@@ -726,9 +753,9 @@ namespace Lerp2API.DebugHandler
                 color = DebugColor.normal;
             if (isEnabled)
             {
-                if (Application.isEditor && Application.isPlaying)
+                if (IsEditor() && IsPlaying())
                     UnityEngine.Debug.DrawLine(start, end, color, duration, depthTest);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     DebugLine.DrawLine(start, end, color, duration, width);
             }
         }
@@ -739,9 +766,9 @@ namespace Lerp2API.DebugHandler
                 color = DebugColor.normal;
             if (isEnabled)
             {
-                if (Application.isEditor && Application.isPlaying)
+                if (IsEditor() && IsPlaying())
                     UnityEngine.Debug.DrawRay(start, dir, color, duration, depthTest);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     DebugLine.DrawRay(start, dir, color, duration, width);
             }
         }
@@ -750,12 +777,12 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     if (context != null)
                         UnityEngine.Debug.LogAssertion(message, context);
                     else
                         UnityEngine.Debug.LogAssertion(message);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message.ToUString(), DebugColor.assertion);
             }
         }
@@ -769,9 +796,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogAssertionFormat(message, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message, DebugColor.assertion);
             }
         }
@@ -785,9 +812,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.Log(message);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message.ToUString(), DebugColor.normal);
             }
         }
@@ -796,9 +823,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogFormat(format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.normal);
             }
         }
@@ -807,9 +834,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogFormat(context, format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.normal);
             }
         }
@@ -823,9 +850,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogWarning(message);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message.ToUString(), DebugColor.warning);
             }
         }
@@ -834,9 +861,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogWarningFormat(format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.warning);
             }
         }
@@ -845,9 +872,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogWarningFormat(context, format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.warning);
             }
         }
@@ -861,9 +888,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogError(message);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(message.ToUString(), DebugColor.error);
             }
         }
@@ -872,9 +899,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogErrorFormat(format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.error);
             }
         }
@@ -883,9 +910,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogErrorFormat(context, format, args);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(string.Format(format, args), DebugColor.error);
             }
         }
@@ -894,9 +921,9 @@ namespace Lerp2API.DebugHandler
         {
             if (isEnabled)
             {
-                if (Application.isEditor)
+                if (IsEditor())
                     UnityEngine.Debug.LogException(exception, context);
-                if (Application.isPlaying && isGamingEnabled)
+                if (IsPlaying() && isGamingEnabled)
                     AddFormattedMessage(exception.Message, DebugColor.exception);
             }
         }
@@ -998,6 +1025,26 @@ namespace Lerp2API.DebugHandler
                 DrawLine(points[4], points[3], col);
                 DrawLine(points[5], points[2], col);
                 DrawLine(points[5], points[3], col);
+            }
+        }
+
+        public static void WriteSafeStacktrace()
+        {
+            WriteSafeStacktrace(LerpedCore.logger);
+        }
+
+        public static void WriteSafeStacktrace(Logger logger)
+        {
+            StackTrace st = new StackTrace(true);
+            for (int i = 0; i < st.FrameCount; ++i)
+            {
+                StackFrame sf = st.GetFrame(i);
+                string filename = sf.GetFileName();
+                logger.Log("{0}{1}", sf.GetMethod(), 
+                    string.IsNullOrEmpty(filename) ? "" : string.Format(" (at {0}:{1},{2})", 
+                                                                        filename, 
+                                                                        sf.GetFileLineNumber(), 
+                                                                        sf.GetFileColumnNumber()));
             }
         }
     }

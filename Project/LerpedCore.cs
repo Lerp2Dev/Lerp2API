@@ -8,10 +8,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
-using System.Security;
+using System.Threading;
 using UnityEngine;
 using Debug = Lerp2API.DebugHandler.Debug;
 using Random = System.Random;
+using Logger = Lerp2API.SafeECalls.Logger;
 
 namespace Lerp2API
 {
@@ -28,6 +29,9 @@ namespace Lerp2API
                            cancelSocketClient,
                            cancelSocketServer;
         public static SocketClient consoleClient;
+        private static Thread curThread;
+        private static bool _isEditor, _isPlaying;
+        public static Logger logger = new Logger(Path.Combine(Path.GetDirectoryName(Path.Combine(Application.dataPath, defaultLogFilePath)), "api-Logger.log"));
 
         public static string SystemTime
         {
@@ -44,6 +48,24 @@ namespace Lerp2API
                 return Time.fixedDeltaTime;
             }
         }
+
+        //Aki ai un vuj
+        //Clever way to compare if we are in Editor or Playing, using the main thread only.
+        //we only have to update the bool when we are, on the main thread. Normally, this state is not updated so many times in a minute. So, we don't have any problem.
+        internal static bool IsEditor()
+        {
+            if (ReferenceEquals(Thread.CurrentThread, curThread))
+                _isEditor = Application.isEditor;
+            return _isEditor;
+        }
+
+        internal static bool IsPlaying()
+        {
+            if (ReferenceEquals(Thread.CurrentThread, curThread))
+                _isPlaying = Application.isEditor;
+            return _isPlaying;
+        }
+        //End clever part
 
         public static bool CheckUnityVersion(int mainVer, int subVer)
         {
@@ -175,18 +197,15 @@ namespace Lerp2API
 
     public class ConsoleServer
     {
-        private static SocketServer signalServer;
+        private static SocketServer lerpedServer;
+        private static Process consoleProc;
 
         public static void BeReady(string path)
         {
             if (!LerpedCore.cancelSocketServer)
             {
-                signalServer = new SocketServer(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, LerpedCore.socketDebug);
-
-                signalServer.ComeAlive();
-                signalServer.StartListening();
-
-                signalServer.ServerCallback = new AsyncCallback(SocketServer.AcceptCallback);
+                lerpedServer = new SocketServer(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, LerpedCore.socketDebug);
+                lerpedServer.ComeAlive();
 
                 //This is also included, because, if we don't start the Socket server with shouldn't relwase any client
                 ConsoleSender.CreateInstance(path);
@@ -194,7 +213,7 @@ namespace Lerp2API
         }
 
         public static void StartConsole(string path)
-        {
+        { //Tendría q comentar esta parte
             string console = Path.Combine(Application.dataPath, "Lerp2API/Console/Lerp2Console.exe"),
                    curLoc = Assembly.GetExecutingAssembly().Location;
             if (!File.Exists(console))
@@ -213,28 +232,46 @@ namespace Lerp2API
             if (domklink || redomklink)
             {
                 LerpedCore.SetString(LerpedCore.consoleSymLinkPath, Path.GetDirectoryName(curLoc));
-                using (Process p = new Process())
+                using (consoleProc = new Process())
                 { //This is a little bit problematic, because it can cause a crash due to a recompilation on the UnityEngine.dll (because of the smybolic link)
-                    p.StartInfo.FileName = "cmd.exe";
-                    p.StartInfo.Arguments = string.Format(@"/c " + mklinks);
-                    p.StartInfo.UseShellExecute = true;
-                    p.StartInfo.Verb = "runas";
-                    p.Start();
-                    p.WaitForExit();
+                    consoleProc.StartInfo.FileName = "cmd.exe";
+                    consoleProc.StartInfo.Arguments = string.Format(@"/c " + mklinks);
+                    consoleProc.StartInfo.UseShellExecute = true;
+                    consoleProc.StartInfo.Verb = "runas";
+                    consoleProc.Start();
+                    consoleProc.WaitForExit();
                 }
             }
-            using (Process p = new Process())
+            using (consoleProc = new Process())
             {
-                p.StartInfo.FileName = console;
-                p.StartInfo.Arguments = string.Format(@"-projectPath='{0}'{1}", Application.dataPath, Application.isEditor ? " -editor" : "").SafeArguments();
-                p.Start();
-                UnityEngine.Debug.Log("Starting Console app!");
+                consoleProc.StartInfo.FileName = console;
+                consoleProc.StartInfo.Arguments = string.Format(@"-projectPath='{0}'{1}", Application.dataPath, Application.isEditor ? " -editor" : "").SafeArguments();
+                consoleProc.Start();
+                //UnityEngine.Debug.Log("Starting Console app!");
                 BeReady(path);
                 /*BeReady(() => {
                     UnityEngine.Debug.Log("Ready to connect!");
                     ConsoleSender.CreateInstance(path);
                 });*/
             }
+        }
+
+        public static void CloseConsole()
+        {
+            //consoleProc.CloseMainWindow();
+            //consoleProc.Close();
+
+            //Ya que como esto no funciona, tendré que enviarle un comando en pla, string <close_console>, y de alguna forma hacer q cuando le llegue este al servidor
+            //ejecute un metodo, de la clase SocketClient (esto a atraves de sólo el Socket, ojo), y este metodo tendrá un callback que habré yo puesto antes, o bien,
+            //podría hacer un callback para q cuandos e cierre se llame a esa función...
+
+            //Con este comando cierro todos los clientes...
+            ConsoleSender.instance.lerpedClient.WriteLine("<close_clients>");
+            ConsoleSender.instance.lerpedClient.Dispose(); 
+            
+            //Después de esto, el servidor se autocierra
+            
+            //lerpedServer.CloseServer(); //Y si envio un mensaje al servidor con <stop> por si tiene que hacer algo más?
         }
     }
 
@@ -243,14 +280,14 @@ namespace Lerp2API
         //private static List<string> paths = new List<string>();
         //public static PipeClient l2dStream;
         public static ConsoleSender instance;
-        public SocketClient lerpedSocketUnityClient;
-        private ConsoleLogger logger;
+        public SocketClient lerpedClient;
+        //private ConsoleLogger logger;
         public ConsoleSender(string path)
         {
             if (!LerpedCore.cancelSocketClient)
             {
-                lerpedSocketUnityClient = new SocketClient(GetUnitySocketActions());
-                lerpedSocketUnityClient.DoConnection();
+                lerpedClient = new SocketClient(GetUnitySocketActions());
+                lerpedClient.DoConnection();
 
                 string dir = Path.GetDirectoryName(path);
                 if (!Directory.Exists(dir))
@@ -259,14 +296,14 @@ namespace Lerp2API
                 if (!File.Exists(path))
                     File.Create(path);
 
-                logger = new ConsoleLogger(path);
+                //logger = new ConsoleLogger(path);
             }
         }
         private Action GetUnitySocketActions()
-        {
+        { //Esto no sirve de na
             return () => {
-                byte[] bytes = new byte[1024];
-                UnityEngine.Debug.LogWarning(lerpedSocketUnityClient.ReceiveMessage(bytes));
+                //byte[] bytes = new byte[1024];
+                //UnityEngine.Debug.LogWarning(lerpedClient.ReceiveMessage(bytes));
             };
         }
         public static void CreateInstance(string path)
@@ -283,14 +320,14 @@ namespace Lerp2API
 
             //l2dStream.SendMessage(string.Format("{0}\n{1}", ls, st));
 
-            if (lerpedSocketUnityClient == null)
+            if (lerpedClient == null)
             {
-                lerpedSocketUnityClient = new SocketClient();
-                lerpedSocketUnityClient.DoConnection();
+                lerpedClient = new SocketClient();
+                lerpedClient.DoConnection();
             }
 
-            lerpedSocketUnityClient.WriteLine(ls);
-            logger.SendLog(ls);
+            lerpedClient.WriteLine(ls);
+            LerpedCore.logger.AppendLine(ls, lt.ToLoggerType());
 
             //Tengo que quitar el path, tengo que ver lo de los colores...
         }
@@ -331,7 +368,7 @@ namespace Lerp2API
         }
     }
 
-    public class ConsoleLogger
+    /*public class ConsoleLogger
     {
         public string path = "";
         public ConsoleLogger(string path)
@@ -347,7 +384,7 @@ namespace Lerp2API
         {
             File.WriteAllText(path, "");
         }
-    }
+    }*/
 
     public enum TaskState { NotStarted, Running, Paused, Stopped }
     public class CronTask

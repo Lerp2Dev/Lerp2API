@@ -139,6 +139,9 @@
     <Compile Include="Controllers\Utils\MouseLook.cs" />
     <Compile Include="Controllers\Utils\SmoothFollow.cs" />
     <Compile Include="Controllers\Utils\Teleporter.cs" />
+    <Compile Include="Game\DoubleLogic\Mathd.cs" />
+    <Compile Include="Game\DoubleLogic\Vector2d.cs" />
+    <Compile Include="Game\DoubleLogic\Vector3d.cs" />
     <Compile Include="Game\FPSCounter.cs" />
     <Compile Include="Game\GameConsole.cs" />
     <Compile Include="Helpers.cs" />
@@ -189,6 +192,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SafeECalls\JsonUnity.cs" />
+    <Compile Include="SafeECalls\Logger.cs" />
+    <Compile Include="SafeECalls\SafeECall.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsArrayConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDateConverter.cs" />
     <Compile Include="Serializers\FullSerializer\Converters\fsDictionaryConverter.cs" />
@@ -243,6 +249,7 @@
     <Compile Include="Serializers\FullSerializer\Reflection\fsMetaType.cs" />
     <Compile Include="Serializers\FullSerializer\Reflection\fsReflectionUtility.cs" />
     <Compile Include="Serializers\FullSerializer\Reflection\fsTypeCache.cs" />
+    <Compile Include="Serializers\Ikillnukes\XMLTools.cs" />
     <Compile Include="Serializers\unityserializer-ng\Radical\System\Broadcaster.cs" />
     <Compile Include="Serializers\unityserializer-ng\Radical\System\Curves.cs" />
     <Compile Include="Serializers\unityserializer-ng\Radical\System\Delegates\DelegateSupport.cs" />
@@ -297,6 +304,7 @@
     <Compile Include="Serializers\unityserializer-ng\SevenZipHelper.cs" />
     <Compile Include="Serializers\unityserializer-ng\UnitySerializerVersion.cs" />
     <Compile Include="Serializers\unityserializer-ng\Utility\Types.cs" />
+    <Compile Include="Tests\GUITest.cs" />
     <Compile Include="Tests\Test.cs" />
     <Compile Include="Utility\ContinuationManager.cs" />
     <Compile Include="Utility\DebugLine.cs" />

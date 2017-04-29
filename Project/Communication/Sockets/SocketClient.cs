@@ -1,97 +1,40 @@
-﻿using Lerp2API.DebugHandler;
+﻿using Lerp2API.SafeECalls;
 using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using UnityEngine;
+using Logger = Lerp2API.SafeECalls.Logger;
+using JsonUtility = Lerp2API.SafeECalls.JsonUtility;
+using System.IO;
 
 namespace Lerp2API.Communication.Sockets
 {
+    public class SocketMessage
+    {
+        public int id;
+        //Name??
+        public string msg;
+
+        public SocketMessage(int i, string m)
+        {
+            id = i;
+            msg = m;
+        }
+    }
+
     public class SocketClient
     { //Hacer IDisposable?
-        /*static void Main(string[] args)
-        {
-            // Receiving byte array 
-            byte[] bytes = new byte[1024];
-            try
-            {
-                // Create one SocketPermission for socket access restrictions
-                SocketPermission permission = new SocketPermission(
-                    NetworkAccess.Connect,    // Connection permission
-                    TransportType.Tcp,        // Defines transport types
-                    "",                       // Gets the IP addresses
-                    SocketPermission.AllPorts // All ports
-                    );
-
-                // Ensures the code to have permission to access a Socket
-                permission.Demand();
-
-                // Resolves a host name to an IPHostEntry instance           
-                IPHostEntry ipHost = Dns.GetHostEntry("");
-
-                // Gets first IP address associated with a localhost
-                IPAddress ipAddr = ipHost.AddressList[0];
-
-                // Creates a network endpoint
-                IPEndPoint ipEndPoint = new IPEndPoint(ipAddr, 22222);
-
-                // Create one Socket object to setup Tcp connection
-                Socket sender = new Socket(
-                    ipAddr.AddressFamily,// Specifies the addressing scheme
-                    SocketType.Stream,   // The type of socket 
-                    ProtocolType.Tcp     // Specifies the protocols 
-                    );
-
-                sender.NoDelay = false;   // Using the Nagle algorithm
-
-                // Establishes a connection to a remote host
-                sender.Connect(ipEndPoint);
-                Console.WriteLine("Socket connected to {0}",
-                    sender.RemoteEndPoint.ToString());
-
-                // Sending message
-                //<Client Quit> is the sign for end of data
-                string theMessage = "Hello World!";
-                byte[] msg = Encoding.Unicode.GetBytes(theMessage + "<Client Quit>");
-
-                // Sends data to a connected Socket.
-                int bytesSend = sender.Send(msg);
-
-                // Receives data from a bound Socket.
-                int bytesRec = sender.Receive(bytes);
-
-                // Converts byte array to string
-                theMessage = Encoding.Unicode.GetString(bytes, 0, bytesRec);
-
-                // Continues to read the data till data isn't available
-                while (sender.Available > 0)
-                {
-                    bytesRec = sender.Receive(bytes);
-                    theMessage += Encoding.Unicode.GetString(bytes, 0, bytesRec);
-                }
-                Console.WriteLine("The server reply: {0}", theMessage);
-
-                // Disables sends and receives on a Socket.
-                sender.Shutdown(SocketShutdown.Both);
-
-                //Closes the Socket connection and releases all resources
-                sender.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception: {0}", ex.ToString());
-            }
-
-            Console.Read();
-        }*/
-
         public Socket ClientSocket;
         public IPAddress IP;
-        public int Port;
-        //private Timer thTimer;
+        public int Port, Id;
         private IPEndPoint _endpoint;
         private byte[] socketBuffer; //I will keep this static, but I think I will have problems
-        private CronTask task;
+        private Timer task;
+        private Action act;
+        private int period = 1;
+        private Logger logger;
 
         internal IPEndPoint IPEnd
         {
@@ -107,7 +50,7 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
-        public SocketClient(bool doConnection = false) : 
+        public SocketClient(bool doConnection = false) :
             this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, null, doConnection)
         { }
 
@@ -115,28 +58,40 @@ namespace Lerp2API.Communication.Sockets
             this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, doConnection)
         { }
 
-        /*public SocketClient(TimerCallback cbTimer, object obj, int readEvery, bool doConnection = false) :
-            this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, cbTimer, obj, readEvery, doConnection)
-        { } //Dns.GetHostEntry("").AddressList[0]*/
-
-        public SocketClient(string ip, int port, Action everyFunc, bool doConnection = false) : 
-            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, doConnection)
+        public SocketClient(string ip, int port, bool doConnection = false) :
+            this(ip, port, -1, null, doConnection)
         { }
 
-        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, float readEvery, Action everyFunc, bool doConnection = false)
+        public SocketClient(string ip, int port, Action everyFunc, bool doConnection = false) :
+            this(ip, port, 1, everyFunc, doConnection)
+        { }
+
+
+        public SocketClient(string ip, int port, int readEvery, Action everyFunc, bool doConnection = false) :
+            this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, readEvery, everyFunc, doConnection)
+        { }
+
+        public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, int readEvery, Action everyFunc, bool doConnection = false)
         {
             socketBuffer = new byte[1024];
 
-            //thTimer = new Timer(cbTimer != null ? cbTimer : SocketCallback, obj != null ? obj : socketBuffer, Timeout.Infinite, Timeout.Infinite);
+            period = readEvery;
 
-            if(everyFunc != null)
-                task = CronTask.CreateInstance(everyFunc, readEvery);
+            act = everyFunc;
+            TimerCallback timerDelegate = new TimerCallback(Timering);
+
+            if (everyFunc != null)
+                task = new Timer(timerDelegate, null, 5, readEvery);
 
             IP = ipAddr;
             Port = port;
 
             ClientSocket = new Socket(ipAddr.AddressFamily, sType, pType);
             ClientSocket.NoDelay = false;
+
+            Id = ClientSocket.GetHashCode();
+
+            logger = new Logger(Path.Combine(Path.GetDirectoryName(Path.Combine(Application.dataPath, LerpedCore.defaultLogFilePath)), "client-Logger.log"));
 
             if (doConnection)
             {
@@ -148,14 +103,14 @@ namespace Lerp2API.Communication.Sockets
 
         public void StartReceiving()
         {
-            if(task != null)
-                task.RunDelayed();
+            if (task != null)
+                task.Change(5, period);
         }
 
         public void StopReceiving()
         {
-            if(task != null)
-                task.RunDelayed();
+            if (task != null)
+                task.Change(5, 0);
         }
 
         public void DoConnection()
@@ -165,10 +120,12 @@ namespace Lerp2API.Communication.Sockets
             {
                 ClientSocket.Connect(end);
                 StartReceiving();
+                ClientSocket.Send(Encoding.Unicode.GetBytes(JsonUtility.ToJson(new SocketMessage(Id, "<conn>"))));
             }
-            else Debug.LogError("Destination IP isn't defined!");
+            else logger.LogError("Destination IP isn't defined!");
         }
 
+        //Esto lo tengo que arreglar
         public int Write(string msg)
         {
             return SendMessage(msg, false);
@@ -181,51 +138,85 @@ namespace Lerp2API.Communication.Sockets
 
         private int SendMessage(string msg, bool breakLine)
         {
-            int bytesSend = ClientSocket.Send(Encoding.Unicode.GetBytes(msg));
-            if (breakLine) BreakLine();
+            string message = JsonUtility.ToJson(new SocketMessage(Id, msg));
+            int bytesSend = ClientSocket.Send(Encoding.Unicode.GetBytes(message));
+            //if (breakLine) BreakLine(); //Voy a desactivar esto temporalmente
             return bytesSend;
         }
 
         private void BreakLine()
         {
-            ClientSocket.Send(Encoding.Unicode.GetBytes("<Client Quit>"));
+            ClientSocket.Send(Encoding.Unicode.GetBytes("<stop>"));
         }
 
-        public string ReceiveMessage(byte[] bytes)
-        {
-            // Receives data from a bound Socket.
-            int bytesRec = ClientSocket.Receive(bytes);
-
-            // Converts byte array to string
-            string msg = Encoding.Unicode.GetString(bytes, 0, bytesRec);
-
-            // Continues to read the data till data isn't available
-            while (ClientSocket.Available > 0)
+        public bool ReceiveMessage(out string msg) //No entiendo porque este es sincrono, deberia ser asincrono... Copy & paste rulez!
+        { //Esto solo devolverá falso cuando se cierre la conexión...
+            try
             {
-                bytesRec = ClientSocket.Receive(bytes);
-                msg += Encoding.Unicode.GetString(bytes, 0, bytesRec);
+                byte[] bytes = new byte[1024];
+
+                // Receives data from a bound Socket.
+                int bytesRec = ClientSocket.Receive(bytes);
+
+                // Converts byte array to string
+                msg = Encoding.Unicode.GetString(bytes, 0, bytesRec);
+
+                // Continues to read the data till data isn't available
+                while (ClientSocket.Available > 0)
+                {
+                    bytesRec = ClientSocket.Receive(bytes);
+                    msg += Encoding.Unicode.GetString(bytes, 0, bytesRec);
+                }
+
+                if (msg == "<close>")
+                {
+                    logger.Log("Closing connection...");
+                    WriteLine("<client_closed>");
+                    End();
+                    return false;
+                }
+
+                return true;
             }
-            return msg;
+            catch (Exception ex)
+            { //Forced connection close...
+                msg = ""; //Dead silence.
+                WriteLine("<client_closed>");
+                End();
+                return false;
+            }
         }
 
-        private void SocketCallback(object obj)
+        /*private void SocketCallback(object obj)
         {
             ReceiveMessage((byte[])obj);
-        }
+        }*/
 
-        public void CloseConnection(SocketShutdown soShutdown)
+        private void CloseConnection(SocketShutdown soShutdown)
         {
-            if(soShutdown == SocketShutdown.Receive)
+            if (soShutdown == SocketShutdown.Receive)
             {
-                Debug.LogError("Remember that you're in a Client, you, you can't only close Both connections or only your connection.");
+                logger.LogWarning("Remember that you're in a Client, you, you can't only close Both connections or only your connection.");
                 return;
             }
+            ClientSocket.Disconnect(false);
             ClientSocket.Shutdown(soShutdown);
         }
 
-        public void DisposeSocket()
+        public void Dispose()
         {
             ClientSocket.Close();
+        }
+
+        public void End()
+        {
+            CloseConnection(SocketShutdown.Both);
+            //Dispose();
+        }
+
+        private void Timering(object stateInfo)
+        {
+            act();
         }
 
     }

@@ -30,7 +30,10 @@ namespace Lerp2Raw
         private void OnDisable()
         {
             //UnityEngine.Debug.Log("Unhooking log!");
-            Debug.UnhookLog(); //Aquí tengo que guardar todo y mandarle la solicitud a la consola
+            Debug.UnhookLog();
+
+            //Aquí tengo que guardar todo y mandarle la solicitud a la consola
+            ConsoleServer.CloseConsole();
         }
     }
 }
