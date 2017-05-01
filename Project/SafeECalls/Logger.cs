@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Text;
-using System.Threading;
 
 namespace Lerp2API.SafeECalls
 {
@@ -31,24 +30,26 @@ namespace Lerp2API.SafeECalls
         
         public void Log(string message, params object[] pars)
         {
-            string msg = pars != null ? string.Format(message, pars) : message;
+            string str = pars != null ? string.Format(message, pars) : message,
+                   msg = str.DetailedMessage(LoggerType.INFO);
             try
             { //Probamos a hacer un debug...
                 if (LerpedCore.safeECallEnabled)
                     Console.WriteLine(msg);
                 else
-                    Debug.Log(msg);
+                    Debug.Log(str);
             }
             catch (Exception ex)
             { //Si hay problemas mostramos el por defecto.
                 Console.WriteLine(msg);
             }
-            AppendLine(message, LoggerType.INFO);
+            AppendLine(message);
         }
 
         public void LogWarning(string message, params object[] pars)
         {
-            string msg = pars != null ? string.Format(message, pars) : message;
+            string str = pars != null ? string.Format(message, pars) : message,
+                   msg = str.DetailedMessage(LoggerType.WARN);
             try
             {
                 if (LerpedCore.safeECallEnabled)
@@ -58,7 +59,7 @@ namespace Lerp2API.SafeECalls
                     Console.ResetColor();
                 }
                 else
-                    Debug.LogWarning(msg);
+                    Debug.LogWarning(str);
             }
             catch (Exception ex)
             {
@@ -66,12 +67,13 @@ namespace Lerp2API.SafeECalls
                 Console.WriteLine(msg);
                 Console.ResetColor();
             }
-            AppendLine(message, LoggerType.WARN);
+            AppendLine(message);
         }
 
         public void LogError(string message, params object[] pars)
         {
-            string msg = pars != null ? string.Format(message, pars) : message;
+            string str = pars != null ? string.Format(message, pars) : message,
+                   msg = str.DetailedMessage(LoggerType.ERROR);
             try
             {
                 if (LerpedCore.safeECallEnabled)
@@ -81,7 +83,7 @@ namespace Lerp2API.SafeECalls
                     Console.ResetColor();
                 }
                 else
-                    Debug.LogWarning(msg);
+                    Debug.LogError(str);
             }
             catch (Exception ex)
             {
@@ -89,7 +91,7 @@ namespace Lerp2API.SafeECalls
                 Console.WriteLine(msg);
                 Console.ResetColor();
             }
-            AppendLine(message, LoggerType.ERROR);
+            AppendLine(message);
         }
 
         public void Save()
@@ -102,14 +104,13 @@ namespace Lerp2API.SafeECalls
 
         }
 
-        internal void AppendLine(string str, LoggerType t)
+        internal void AppendLine(string str)
         {
-            string msg = string.Format("[{0}] [{1}/{2}: {3}]", DateTime.Now.ToString("hh:mm:ss"), Thread.CurrentThread.Name, t.ToString(), str);
             if (!string.IsNullOrEmpty(path))
             {
                 if (!File.Exists(path))
                     File.Create(path).Dispose();
-                File.AppendAllText(path, msg);
+                File.AppendAllText(path, str + Environment.NewLine);
             }
         }
     }

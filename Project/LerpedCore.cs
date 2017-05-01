@@ -327,7 +327,7 @@ namespace Lerp2API
             }
 
             lerpedClient.WriteLine(ls);
-            LerpedCore.logger.AppendLine(ls, lt.ToLoggerType());
+            LerpedCore.logger.AppendLine(ls.DetailedMessage(lt.ToLoggerType()));
 
             //Tengo que quitar el path, tengo que ver lo de los colores...
         }

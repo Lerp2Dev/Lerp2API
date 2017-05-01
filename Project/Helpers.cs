@@ -19,6 +19,7 @@ using System.Text.RegularExpressions;
 using Random = System.Random;
 using System.Diagnostics;
 using Lerp2API.SafeECalls;
+using System.Threading;
 
 namespace Lerp2API
 {
@@ -616,6 +617,15 @@ namespace Lerp2API
 
     #endregion
 
+    #region "Debug Helpers"
+    public static class DebugHelpers
+    {
+        public static string DetailedMessage(this string message, LoggerType t)
+        {
+            return string.Format("[{0}] [{1}/{2}: {3}]", DateTime.Now.ToString("hh:mm:ss"), Thread.CurrentThread.Name, t.ToString(), message);
+        }
+    }
+    #endregion
 }
 
 //This sould be in separate file

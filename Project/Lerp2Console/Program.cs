@@ -107,7 +107,7 @@ namespace Lerp2Console
                 {
                     SocketMessage sm = JsonUtility.FromJson<SocketMessage>(str);
                     //Console.WriteLine("My ID: {0}, Id received: {1}\nMessage: {2}", lerpedSocketConsoleClient.Id, sm.id, sm.msg);
-                    Console.WriteLine("{0}: {1}", DateTime.Now.ToString("dd'/'MM'/'yyyy HH:mm:ss"), sm.msg);
+                    Console.WriteLine(sm.msg.DetailedMessage(LoggerType.INFO));
                 }
                 else
                     ExitEvent(false);
