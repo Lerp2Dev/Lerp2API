@@ -1,0 +1,78 @@
+\hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{}\section{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client Class Reference}
+\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}\index{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client}}
+Inheritance diagram for Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}} 
+{\bfseries Pipe\+Client} (string server\+Id)
+\item 
+void \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a0bb2855199630657cdf070e3c4275b51}{Start} ()
+\begin{DoxyCompactList}\small\item\em Starts the client. Connects to the server. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a9d442b0b2a19c3d460185a8bb27e36e9}{Stop} ()
+\begin{DoxyCompactList}\small\item\em Stops the client. Waits for pipe drain, closes and disposes it. \end{DoxyCompactList}\item 
+\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}$<$ \hyperlink{class_client_server_using_named_pipes_1_1_utilities_1_1_task_result}{Task\+Result} $>$ \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_af1b876c52ee2cfc920dcf56ea7434839}{Send\+Message} (string message)
+\begin{DoxyCompactList}\small\item\em This method sends the given message asynchronously over the communication channel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_af1b876c52ee2cfc920dcf56ea7434839}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_af1b876c52ee2cfc920dcf56ea7434839}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}!Send\+Message@{Send\+Message}}
+\index{Send\+Message@{Send\+Message}!Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}}
+\subsubsection{\texorpdfstring{Send\+Message()}{SendMessage()}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}$<$\hyperlink{class_client_server_using_named_pipes_1_1_utilities_1_1_task_result}{Task\+Result}$>$ Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client.\+Send\+Message (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method sends the given message asynchronously over the communication channel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task of Task\+Result
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_client_a07c2acf92bd0b99d704156010b47eff1}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication\+Client}.
+
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a0bb2855199630657cdf070e3c4275b51}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a0bb2855199630657cdf070e3c4275b51}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}!Start@{Start}}
+\index{Start@{Start}!Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the client. Connects to the server. 
+
+
+
+Implements \hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_ac06ad36a2b8a02d82e385e0eade28671}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication}.
+
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a9d442b0b2a19c3d460185a8bb27e36e9}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a9d442b0b2a19c3d460185a8bb27e36e9}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}!Stop@{Stop}}
+\index{Stop@{Stop}!Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client.\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops the client. Waits for pipe drain, closes and disposes it. 
+
+
+
+Implements \hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_a85ce939996cde20d398e799ca6a900f3}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Communication/\+Named\+Pipes\+Utils/\+Client/Pipe\+Client.\+cs\end{DoxyCompactItemize}

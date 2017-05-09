@@ -1,0 +1,78 @@
+\hypertarget{namespace_system_1_1_collections_1_1_specialized}{}\section{System.\+Collections.\+Specialized Namespace Reference}
+\label{namespace_system_1_1_collections_1_1_specialized}\index{System.\+Collections.\+Specialized@{System.\+Collections.\+Specialized}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interface_system_1_1_collections_1_1_specialized_1_1_i_notify_collection_changed}{I\+Notify\+Collection\+Changed}
+\begin{DoxyCompactList}\small\item\em A collection implementing this interface will notify listeners of dynamic changes, e.\+g. when items get added and removed or the whole list is refreshed. \end{DoxyCompactList}\item 
+class \hyperlink{class_system_1_1_collections_1_1_specialized_1_1_notify_collection_changed_event_args}{Notify\+Collection\+Changed\+Event\+Args}
+\begin{DoxyCompactList}\small\item\em Arguments for the Collection\+Changed event. A collection that supports I\+Notify\+Collection\+Changed\+This raises this event whenever an item is added or removed, or when the contents of the collection changes dramatically. \end{DoxyCompactList}\item 
+class {\bfseries Read\+Only\+List}
+\item 
+class {\bfseries SR}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123}{Notify\+Collection\+Changed\+Action} \{ \newline
+\hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123aec211f7c20af43e742bf2570c3cb84f9}{Notify\+Collection\+Changed\+Action.\+Add}, 
+\hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a1063e38cb53d94d386f21227fcd84717}{Notify\+Collection\+Changed\+Action.\+Remove}, 
+\hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a0ebe6df8a3ac338e0512acc741823fdb}{Notify\+Collection\+Changed\+Action.\+Replace}, 
+\hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a6bc362dbf494c61ea117fe3c71ca48a5}{Notify\+Collection\+Changed\+Action.\+Move}, 
+\newline
+\hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a526d688f37a86d3c3f27d0c5016eb71d}{Notify\+Collection\+Changed\+Action.\+Reset}
+ \}\begin{DoxyCompactList}\small\item\em This enum describes the action that caused a Collection\+Changed event. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \hyperlink{namespace_system_1_1_collections_1_1_specialized_af0fd13c7ac27802127a046f55bf0b789}{Notify\+Collection\+Changed\+Event\+Handler} (object sender, \hyperlink{class_system_1_1_collections_1_1_specialized_1_1_notify_collection_changed_event_args}{Notify\+Collection\+Changed\+Event\+Args} e)
+\begin{DoxyCompactList}\small\item\em The delegate to use for handlers that receive the Collection\+Changed event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123}} 
+\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Notify\+Collection\+Changed\+Action@{Notify\+Collection\+Changed\+Action}}
+\index{Notify\+Collection\+Changed\+Action@{Notify\+Collection\+Changed\+Action}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}
+\subsubsection{\texorpdfstring{Notify\+Collection\+Changed\+Action}{NotifyCollectionChangedAction}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123}{System.\+Collections.\+Specialized.\+Notify\+Collection\+Changed\+Action}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+This enum describes the action that caused a Collection\+Changed event. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add@{Add}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Add@{Add}}}\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123aec211f7c20af43e742bf2570c3cb84f9}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123aec211f7c20af43e742bf2570c3cb84f9}} 
+Add&One or more items were added to the collection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Remove@{Remove}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Remove@{Remove}}}\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a1063e38cb53d94d386f21227fcd84717}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a1063e38cb53d94d386f21227fcd84717}} 
+Remove&One or more items were removed from the collection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Replace@{Replace}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Replace@{Replace}}}\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a0ebe6df8a3ac338e0512acc741823fdb}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a0ebe6df8a3ac338e0512acc741823fdb}} 
+Replace&One or more items were replaced in the collection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Move@{Move}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Move@{Move}}}\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a6bc362dbf494c61ea117fe3c71ca48a5}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a6bc362dbf494c61ea117fe3c71ca48a5}} 
+Move&One or more items were moved within the collection. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reset@{Reset}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Reset@{Reset}}}\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a526d688f37a86d3c3f27d0c5016eb71d}\label{namespace_system_1_1_collections_1_1_specialized_a7e21ea761562ed22011c3120bbb31123a526d688f37a86d3c3f27d0c5016eb71d}} 
+Reset&The contents of the collection changed dramatically. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespace_system_1_1_collections_1_1_specialized_af0fd13c7ac27802127a046f55bf0b789}\label{namespace_system_1_1_collections_1_1_specialized_af0fd13c7ac27802127a046f55bf0b789}} 
+\index{System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}!Notify\+Collection\+Changed\+Event\+Handler@{Notify\+Collection\+Changed\+Event\+Handler}}
+\index{Notify\+Collection\+Changed\+Event\+Handler@{Notify\+Collection\+Changed\+Event\+Handler}!System\+::\+Collections\+::\+Specialized@{System\+::\+Collections\+::\+Specialized}}
+\subsubsection{\texorpdfstring{Notify\+Collection\+Changed\+Event\+Handler()}{NotifyCollectionChangedEventHandler()}}
+{\footnotesize\ttfamily delegate void System.\+Collections.\+Specialized.\+Notify\+Collection\+Changed\+Event\+Handler (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{\hyperlink{class_system_1_1_collections_1_1_specialized_1_1_notify_collection_changed_event_args}{Notify\+Collection\+Changed\+Event\+Args}}]{e }\end{DoxyParamCaption})}
+
+
+
+The delegate to use for handlers that receive the Collection\+Changed event. 
+

@@ -1,0 +1,762 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream}}
+
+
+This filter stream is used to decompress data compressed using the \char`\"{}deflate\char`\"{} format. The \char`\"{}deflate\char`\"{} format is described in R\+FC 1951.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.962617cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream)
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the default decompressor and a default buffer size of 4\+KB. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3466996b573725de7021f7a74958514b}{inf})
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and a default buffer size of 4\+KB. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} inflater, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and the specified buffer size. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}{Skip} (long count)
+\begin{DoxyCompactList}\small\item\em Skip specified number of bytes of uncompressed data \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}{Flush} ()
+\begin{DoxyCompactList}\small\item\em Flushes the base\+Input\+Stream \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}{Seek} (long offset, Seek\+Origin origin)
+\begin{DoxyCompactList}\small\item\em Sets the position within the current stream Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}{Set\+Length} (long value)
+\begin{DoxyCompactList}\small\item\em Set the length of the current stream Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}{Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Writes a sequence of bytes to stream and advances the current position This method always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}{Write\+Byte} (byte value)
+\begin{DoxyCompactList}\small\item\em Writes one byte to the current stream and advances the current position Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override I\+Async\+Result \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}{Begin\+Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count, Async\+Callback callback, object state)
+\begin{DoxyCompactList}\small\item\em Entry point to begin an asynchronous write. Always throws a Not\+Supported\+Exception. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}{Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the input stream. When \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}{Is\+Stream\+Owner} is true the underlying stream is also closed. \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}{Read} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Reads decompressed data into the provided buffer byte array \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream)
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the default decompressor and a default buffer size of 4\+KB. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3466996b573725de7021f7a74958514b}{inf})
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and a default buffer size of 4\+KB. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}{Inflater\+Input\+Stream} (Stream base\+Input\+Stream, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} inflater, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and the specified buffer size. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}{Skip} (long count)
+\begin{DoxyCompactList}\small\item\em Skip specified number of bytes of uncompressed data \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}{Flush} ()
+\begin{DoxyCompactList}\small\item\em Flushes the base\+Input\+Stream \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}{Seek} (long offset, Seek\+Origin origin)
+\begin{DoxyCompactList}\small\item\em Sets the position within the current stream Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}{Set\+Length} (long value)
+\begin{DoxyCompactList}\small\item\em Set the length of the current stream Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}{Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Writes a sequence of bytes to stream and advances the current position This method always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}{Write\+Byte} (byte value)
+\begin{DoxyCompactList}\small\item\em Writes one byte to the current stream and advances the current position Always throws a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override I\+Async\+Result \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}{Begin\+Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count, Async\+Callback callback, object state)
+\begin{DoxyCompactList}\small\item\em Entry point to begin an asynchronous write. Always throws a Not\+Supported\+Exception. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}{Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the input stream. When \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}{Is\+Stream\+Owner} is true the underlying stream is also closed. \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}{Read} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Reads decompressed data into the provided buffer byte array \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}{Stop\+Decrypting} ()
+\begin{DoxyCompactList}\small\item\em Clear any cryptographic state. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}{Fill} ()
+\begin{DoxyCompactList}\small\item\em Fills the buffer with more data to decompress. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}{Stop\+Decrypting} ()
+\begin{DoxyCompactList}\small\item\em Clear any cryptographic state. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}{Fill} ()
+\begin{DoxyCompactList}\small\item\em Fills the buffer with more data to decompress. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3466996b573725de7021f7a74958514b}{inf}
+\begin{DoxyCompactList}\small\item\em Decompressor for this stream \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer}{Inflater\+Input\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a89de55389afc2b2544a21d0e555dc3b9}{input\+Buffer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer}{Input buffer} for this stream. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae02aed532a9d3ab472125bab5959271f}{csize}
+\begin{DoxyCompactList}\small\item\em The compressed size \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}{Is\+Stream\+Owner}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set flag indicating ownership of underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}{Close} will close the underlying stream also. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac9e68e3d341ac7ed248ee6ab9a5652b5}{Available}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns 0 once the end of the stream (E\+OF) has been reached. Otherwise returns 1. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7d24f65e04446cc742117f6cc690e986}{Can\+Read}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the current stream supports reading \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7fd0a95800acad7dced539af054ff635}{Can\+Seek}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value of false indicating seeking is not supported for this stream. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae3e27d013e177075c3af2116db5f4a2a}{Can\+Write}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value of false indicating that this stream is not writeable. \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a4fca96ec46a755bf99c0ac771513a359}{Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A value representing the length of the stream in bytes. \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a2134ebd177f2a8042123281cfc6f472d}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The current position within the stream. Throws a Not\+Supported\+Exception when attempting to set the position \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This filter stream is used to decompress data compressed using the \char`\"{}deflate\char`\"{} format. The \char`\"{}deflate\char`\"{} format is described in R\+FC 1951. 
+
+This stream may form the basis for other decompression filters, such as the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_input_stream}{G\+Zip\+Input\+Stream}.
+
+Author of the original java version \+: John Leuner. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the default decompressor and a default buffer size of 4\+KB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The Input\+Stream to read bytes from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream,  }\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}}]{inf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and a default buffer size of 4\+KB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The source of input data \\
+\hline
+{\em inf} & The decompressor used to decompress data read from base\+Input\+Stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream,  }\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}}]{inflater,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and the specified buffer size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The Input\+Stream to read bytes from \\
+\hline
+{\em inflater} & The decompressor to use \\
+\hline
+{\em buffer\+Size} & Size of the buffer to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6e3a380e11673b5851f14c5cec9b08ea}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the default decompressor and a default buffer size of 4\+KB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The Input\+Stream to read bytes from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3be51c98d69f9420259ea0a2a081dcd1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream,  }\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}}]{inf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and a default buffer size of 4\+KB. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The source of input data \\
+\hline
+{\em inf} & The decompressor used to decompress data read from base\+Input\+Stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_af988bfe68d18362c690e6f7cb0e7c0eb}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Inflater\+Input\+Stream@{Inflater\+Input\+Stream}}
+\index{Inflater\+Input\+Stream@{Inflater\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Inflater\+Input\+Stream()}{InflaterInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Inflater\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream,  }\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}}]{inflater,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream}{Inflater\+Input\+Stream} with the specified decompressor and the specified buffer size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The Input\+Stream to read bytes from \\
+\hline
+{\em inflater} & The decompressor to use \\
+\hline
+{\em buffer\+Size} & Size of the buffer to use \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Begin\+Write@{Begin\+Write}}
+\index{Begin\+Write@{Begin\+Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Begin\+Write()}{BeginWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override I\+Async\+Result I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Begin\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count,  }\item[{Async\+Callback}]{callback,  }\item[{object}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entry point to begin an asynchronous write. Always throws a Not\+Supported\+Exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to write data from\\
+\hline
+{\em offset} & Offset of first byte to write\\
+\hline
+{\em count} & The maximum number of bytes to write\\
+\hline
+{\em callback} & The method to be called when the asynchronous write operation is completed\\
+\hline
+{\em state} & A user-\/provided object that distinguishes this particular asynchronous write request from other requests\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{}{I\+Async\+Result} that references the asynchronous write
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a291a96116ec0c6b7de43df1de47d805d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Begin\+Write@{Begin\+Write}}
+\index{Begin\+Write@{Begin\+Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Begin\+Write()}{BeginWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override I\+Async\+Result I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Begin\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count,  }\item[{Async\+Callback}]{callback,  }\item[{object}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Entry point to begin an asynchronous write. Always throws a Not\+Supported\+Exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer to write data from\\
+\hline
+{\em offset} & Offset of first byte to write\\
+\hline
+{\em count} & The maximum number of bytes to write\\
+\hline
+{\em callback} & The method to be called when the asynchronous write operation is completed\\
+\hline
+{\em state} & A user-\/provided object that distinguishes this particular asynchronous write request from other requests\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{}{I\+Async\+Result} that references the asynchronous write
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the input stream. When \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}{Is\+Stream\+Owner} is true the underlying stream is also closed. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the input stream. When \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}{Is\+Stream\+Owner} is true the underlying stream is also closed. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Fill@{Fill}}
+\index{Fill@{Fill}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Fill()}{Fill()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Fills the buffer with more data to decompress. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & Stream ends early \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8436322c4ee3aa34638219b0f39b4ab5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Fill@{Fill}}
+\index{Fill@{Fill}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Fill()}{Fill()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Fills the buffer with more data to decompress. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & Stream ends early \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Flush@{Flush}}
+\index{Flush@{Flush}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Flush()}{Flush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Flushes the base\+Input\+Stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a8a6bdcbf6dad8f9b58ca65127e7ac523}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Flush@{Flush}}
+\index{Flush@{Flush}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Flush()}{Flush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Flushes the base\+Input\+Stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Read@{Read}}
+\index{Read@{Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads decompressed data into the provided buffer byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The array to read and decompress data into \\
+\hline
+{\em offset} & The offset indicating where the data should be placed \\
+\hline
+{\em count} & The number of bytes to decompress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read. Zero signals the end of stream
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} needs a dictionary \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a0ac9269f0c6b75c099605e3363eec65d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Read@{Read}}
+\index{Read@{Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads decompressed data into the provided buffer byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The array to read and decompress data into \\
+\hline
+{\em offset} & The offset indicating where the data should be placed \\
+\hline
+{\em count} & The number of bytes to decompress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read. Zero signals the end of stream
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} needs a dictionary \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Seek@{Seek}}
+\index{Seek@{Seek}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Seek()}{Seek()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Seek (\begin{DoxyParamCaption}\item[{long}]{offset,  }\item[{Seek\+Origin}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the position within the current stream Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The relative offset to seek to.\\
+\hline
+{\em origin} & The Seek\+Origin defining where to seek from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position in the stream.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ade431915c314b6f8fb4c08f6f55ce14d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Seek@{Seek}}
+\index{Seek@{Seek}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Seek()}{Seek()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Seek (\begin{DoxyParamCaption}\item[{long}]{offset,  }\item[{Seek\+Origin}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the position within the current stream Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The relative offset to seek to.\\
+\hline
+{\em origin} & The Seek\+Origin defining where to seek from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position in the stream.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Set\+Length@{Set\+Length}}
+\index{Set\+Length@{Set\+Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Length()}{SetLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Set\+Length (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the length of the current stream Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new length value for the stream.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aff76ed02af3493e545297c262127b370}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Set\+Length@{Set\+Length}}
+\index{Set\+Length@{Set\+Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Length()}{SetLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Set\+Length (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the length of the current stream Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new length value for the stream.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Skip@{Skip}}
+\index{Skip@{Skip}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Skip (\begin{DoxyParamCaption}\item[{long}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip specified number of bytes of uncompressed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Number of bytes to skip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes skipped, zero if the end of stream has been reached 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & {\itshape count} The number of bytes to skip is less than or equal to zero. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac10ceeea77e8db40068875b66ca86f42}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Skip@{Skip}}
+\index{Skip@{Skip}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Skip (\begin{DoxyParamCaption}\item[{long}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip specified number of bytes of uncompressed data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Number of bytes to skip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes skipped, zero if the end of stream has been reached 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & {\itshape count} The number of bytes to skip is less than or equal to zero. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Stop\+Decrypting@{Stop\+Decrypting}}
+\index{Stop\+Decrypting@{Stop\+Decrypting}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Stop\+Decrypting()}{StopDecrypting()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Stop\+Decrypting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clear any cryptographic state. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a6d506363680e0526607c965f3367c1c7}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Stop\+Decrypting@{Stop\+Decrypting}}
+\index{Stop\+Decrypting@{Stop\+Decrypting}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Stop\+Decrypting()}{StopDecrypting()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Stop\+Decrypting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clear any cryptographic state. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes a sequence of bytes to stream and advances the current position This method always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Thew buffer containing data to write.\\
+\hline
+{\em offset} & The offset of the first byte to write.\\
+\hline
+{\em count} & The number of bytes to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_aba845c76ab368c90a6e95de12e4d4d45}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes a sequence of bytes to stream and advances the current position This method always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Thew buffer containing data to write.\\
+\hline
+{\em offset} & The offset of the first byte to write.\\
+\hline
+{\em count} & The number of bytes to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Write\+Byte@{Write\+Byte}}
+\index{Write\+Byte@{Write\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write\+Byte()}{WriteByte()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Write\+Byte (\begin{DoxyParamCaption}\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes one byte to the current stream and advances the current position Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The byte to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a1bc0509214f208964facea233b8ff8f3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Write\+Byte@{Write\+Byte}}
+\index{Write\+Byte@{Write\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write\+Byte()}{WriteByte()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Write\+Byte (\begin{DoxyParamCaption}\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes one byte to the current stream and advances the current position Always throws a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The byte to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae02aed532a9d3ab472125bab5959271f}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae02aed532a9d3ab472125bab5959271f}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!csize@{csize}}
+\index{csize@{csize}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{csize}{csize}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+csize\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The compressed size 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3466996b573725de7021f7a74958514b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a3466996b573725de7021f7a74958514b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!inf@{inf}}
+\index{inf@{inf}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{inf}{inf}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+inf\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Decompressor for this stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a89de55389afc2b2544a21d0e555dc3b9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a89de55389afc2b2544a21d0e555dc3b9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!input\+Buffer@{input\+Buffer}}
+\index{input\+Buffer@{input\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{input\+Buffer}{inputBuffer}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer}{Inflater\+Input\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+input\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer}{Input buffer} for this stream. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac9e68e3d341ac7ed248ee6ab9a5652b5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ac9e68e3d341ac7ed248ee6ab9a5652b5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Available@{Available}}
+\index{Available@{Available}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Available}{Available}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Available\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns 0 once the end of the stream (E\+OF) has been reached. Otherwise returns 1. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7d24f65e04446cc742117f6cc690e986}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7d24f65e04446cc742117f6cc690e986}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Can\+Read@{Can\+Read}}
+\index{Can\+Read@{Can\+Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Read}{CanRead}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Can\+Read\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether the current stream supports reading 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7fd0a95800acad7dced539af054ff635}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a7fd0a95800acad7dced539af054ff635}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Can\+Seek@{Can\+Seek}}
+\index{Can\+Seek@{Can\+Seek}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Seek}{CanSeek}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Can\+Seek\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value of false indicating seeking is not supported for this stream. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae3e27d013e177075c3af2116db5f4a2a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ae3e27d013e177075c3af2116db5f4a2a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Can\+Write@{Can\+Write}}
+\index{Can\+Write@{Can\+Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Write}{CanWrite}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Can\+Write\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value of false indicating that this stream is not writeable. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_ab9b5354e07738945e2f1ff664441088e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Is\+Stream\+Owner@{Is\+Stream\+Owner}}
+\index{Is\+Stream\+Owner@{Is\+Stream\+Owner}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Is\+Stream\+Owner}{IsStreamOwner}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Is\+Stream\+Owner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set flag indicating ownership of underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a715fe9700f28d1b596de4414114f4c92}{Close} will close the underlying stream also. 
+
+The default value is true. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a4fca96ec46a755bf99c0ac771513a359}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a4fca96ec46a755bf99c0ac771513a359}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Length@{Length}}
+\index{Length@{Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+A value representing the length of the stream in bytes. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a2134ebd177f2a8042123281cfc6f472d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_stream_a2134ebd177f2a8042123281cfc6f472d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}!Position@{Position}}
+\index{Position@{Position}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Inflater\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Inflater\+Input\+Stream.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The current position within the stream. Throws a Not\+Supported\+Exception when attempting to set the position 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Attempting to set the position\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/\+Compression/\+Streams/Inflater\+Input\+Stream.\+cs\end{DoxyCompactItemize}

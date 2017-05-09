@@ -1,0 +1,547 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream}}
+
+
+The \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} reads a U\+N\+IX tar archive as an Input\+Stream. methods are provided to position at each successive entry in the archive, and the read each entry as a normal input stream using read().  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_entry_factory_adapter}{Entry\+Factory\+Adapter}
+\begin{DoxyCompactList}\small\item\em Standard entry factory class creating instances of the class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} \end{DoxyCompactList}\item 
+interface \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{I\+Entry\+Factory}
+\begin{DoxyCompactList}\small\item\em This interface is provided, along with the method \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}{Set\+Entry\+Factory}, to allow the programmer to have their own \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} subclass instantiated for the entries return from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}{Get\+Next\+Entry}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac2d03f1ad9b823d9d151bc38f969ae72}{Tar\+Input\+Stream} (Stream input\+Stream)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} with default block factor \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0249a27f3030b2b2d4df7acb1f5174e1}{Tar\+Input\+Stream} (Stream input\+Stream, int block\+Factor)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} with user specified block factor \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a11e34c8d1247f2b8194c04aa987aa8fe}{Flush} ()
+\begin{DoxyCompactList}\small\item\em Flushes the base\+Input\+Stream \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a8f91505f427260c2814c686d79b28ba4}{Seek} (long offset, Seek\+Origin origin)
+\begin{DoxyCompactList}\small\item\em Set the streams position. This operation is not supported and will throw a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a81fe60e776e8fba0a582a18dcd410113}{Set\+Length} (long value)
+\begin{DoxyCompactList}\small\item\em Sets the length of the stream This operation is not supported and will throw a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ace04f178d60a3b6533a52f35e2e9491a}{Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Writes a block of bytes to this stream using data from a buffer. This operation is not supported and will throw a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2b0ae4f029c710f3a217b2eef95ba4d5}{Write\+Byte} (byte value)
+\begin{DoxyCompactList}\small\item\em Writes a byte to the current position in the file stream. This operation is not supported and will throw a Not\+Supported\+Exception \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5028cafb46c015d0a44864d5fd8a79bd}{Read\+Byte} ()
+\begin{DoxyCompactList}\small\item\em Reads a byte from the current tar archive entry. \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_abbab3727270372439fd6c0646f66d431}{Read} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Reads bytes from the current tar archive entry. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e00dc015294bb80b69c144622a861e5}{Close} ()
+\begin{DoxyCompactList}\small\item\em Closes this stream. Calls the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}\textquotesingle{}s close() method. The underlying stream is closed by the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}{Set\+Entry\+Factory} (\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{I\+Entry\+Factory} factory)
+\begin{DoxyCompactList}\small\item\em Set the entry factory for this instance. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af1b1981acd96ff1e46b278a68a89ea80}{Get\+Record\+Size} ()
+\begin{DoxyCompactList}\small\item\em Get the record size being used by this stream\textquotesingle{}s \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5655d5d9c6aff286c0efa3cba12db494}{Skip} (long skip\+Count)
+\begin{DoxyCompactList}\small\item\em Skip bytes in the input buffer. This skips bytes in the current entry\textquotesingle{}s data, not the entire archive, and will stop at the end of the current entry\textquotesingle{}s data if the number to skip extends beyond that point. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_afd48ac983df597a6b5f1e7ecc175a28d}{Mark} (int mark\+Limit)
+\begin{DoxyCompactList}\small\item\em Since we do not support marking just yet, we do nothing. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a159d2d270fcaf85aabdf61a0fae6878c}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Since we do not support marking just yet, we do nothing. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}{Get\+Next\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Get the next entry in this tar archive. This will skip over any remaining data in the current entry, if there is one, and place the input stream at the header of the next entry, and read the header and instantiate a new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} from the header bytes and return that entry. If there are no more entries in the archive, null will be returned to indicate that the end of the archive has been reached. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0041b9be788dc2344bf3da9114f580b3}{Copy\+Entry\+Contents} (Stream output\+Stream)
+\begin{DoxyCompactList}\small\item\em Copies the contents of the current tar archive entry directly into an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac52db37b1ab369dff8b6c4665f71dd3e}{has\+Hit\+E\+OF}
+\begin{DoxyCompactList}\small\item\em Flag set when last block has been read \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e9a89e0348ff93611166c3874a43cc6}{entry\+Size}
+\begin{DoxyCompactList}\small\item\em Size of this entry as recorded in header \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2e87bca20437dbf1b4be118c8fc26694}{entry\+Offset}
+\begin{DoxyCompactList}\small\item\em Number of bytes read for this entry so far \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0efa6969952e2e8ae99e13dfa3ba65a0}{read\+Buffer}
+\begin{DoxyCompactList}\small\item\em Buffer used with calls to \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae56b1918805513aaf7bd03ded9a2bfad}{tar\+Buffer}
+\begin{DoxyCompactList}\small\item\em Working buffer \end{DoxyCompactList}\item 
+\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{I\+Entry\+Factory} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af4bb424ce3ff60281c217b17e8171b71}{entry\+Factory}
+\begin{DoxyCompactList}\small\item\em Factory used to create \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} or descendant class instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae8fdf574aaaf64100a02f6d6e77be306}{Is\+Stream\+Owner}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set flag indicating ownership of the underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e00dc015294bb80b69c144622a861e5}{Close} will close the underlying stream also. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5e0cbc0fa89fb4d18ef09c88868f00b6}{Can\+Read}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the current stream supports reading \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae4fea5c93ad8563af534c00e2af87d0b}{Can\+Seek}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether the current stream supports seeking This property always returns false. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_adce4dcdd21216906b8e8ad1b29683583}{Can\+Write}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating if the stream supports writing. This property always returns false. \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a1facbb0c4ec971bb26e8d6fc3037ee22}{Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The length in bytes of the stream \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ade825cd1a553ff9600ff06d824add4d2}{Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the position within the stream. Setting the Position is not supported and throws a Not\+Supported\+Exception\+Not\+Supported\+Exception \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a74f987c8bb8c56f157ee60345a644051}{Record\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the record size being used by this stream\textquotesingle{}s \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5b0ea83b0c6456455c255c165bdef8ef}{Available}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the available data that can be read from the current entry in the archive. This does not indicate how much data is left in the entire archive, only in the current entry. This value is determined from the entry\textquotesingle{}s size header field and the amount of data already read from the current entry. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ab459e5deaf638a070e1fd4a629c8e5fd}{Is\+Mark\+Supported}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Return a value of true if marking is supported; false otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} reads a U\+N\+IX tar archive as an Input\+Stream. methods are provided to position at each successive entry in the archive, and the read each entry as a normal input stream using read(). 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac2d03f1ad9b823d9d151bc38f969ae72}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac2d03f1ad9b823d9d151bc38f969ae72}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Tar\+Input\+Stream@{Tar\+Input\+Stream}}
+\index{Tar\+Input\+Stream@{Tar\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Tar\+Input\+Stream()}{TarInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Tar\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{input\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} with default block factor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream} & stream to source data from\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0249a27f3030b2b2d4df7acb1f5174e1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0249a27f3030b2b2d4df7acb1f5174e1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Tar\+Input\+Stream@{Tar\+Input\+Stream}}
+\index{Tar\+Input\+Stream@{Tar\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Tar\+Input\+Stream()}{TarInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Tar\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{input\+Stream,  }\item[{int}]{block\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream}{Tar\+Input\+Stream} with user specified block factor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream} & stream to source data from\\
+\hline
+{\em block\+Factor} & block factor to apply to archive\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e00dc015294bb80b69c144622a861e5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e00dc015294bb80b69c144622a861e5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes this stream. Calls the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}\textquotesingle{}s close() method. The underlying stream is closed by the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0041b9be788dc2344bf3da9114f580b3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0041b9be788dc2344bf3da9114f580b3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Copy\+Entry\+Contents@{Copy\+Entry\+Contents}}
+\index{Copy\+Entry\+Contents@{Copy\+Entry\+Contents}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Copy\+Entry\+Contents()}{CopyEntryContents()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Copy\+Entry\+Contents (\begin{DoxyParamCaption}\item[{Stream}]{output\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies the contents of the current tar archive entry directly into an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Stream} & The Output\+Stream into which to write the entry\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a11e34c8d1247f2b8194c04aa987aa8fe}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a11e34c8d1247f2b8194c04aa987aa8fe}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Flush@{Flush}}
+\index{Flush@{Flush}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Flush()}{Flush()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Flushes the base\+Input\+Stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Get\+Next\+Entry@{Get\+Next\+Entry}}
+\index{Get\+Next\+Entry@{Get\+Next\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Get\+Next\+Entry()}{GetNextEntry()}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Get\+Next\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the next entry in this tar archive. This will skip over any remaining data in the current entry, if there is one, and place the input stream at the header of the next entry, and read the header and instantiate a new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} from the header bytes and return that entry. If there are no more entries in the archive, null will be returned to indicate that the end of the archive has been reached. 
+
+\begin{DoxyReturn}{Returns}
+The next \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} in the archive, or null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af1b1981acd96ff1e46b278a68a89ea80}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af1b1981acd96ff1e46b278a68a89ea80}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Get\+Record\+Size@{Get\+Record\+Size}}
+\index{Get\+Record\+Size@{Get\+Record\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Get\+Record\+Size()}{GetRecordSize()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Get\+Record\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the record size being used by this stream\textquotesingle{}s \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} record size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_afd48ac983df597a6b5f1e7ecc175a28d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_afd48ac983df597a6b5f1e7ecc175a28d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Mark@{Mark}}
+\index{Mark@{Mark}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Mark()}{Mark()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Mark (\begin{DoxyParamCaption}\item[{int}]{mark\+Limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Since we do not support marking just yet, we do nothing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mark\+Limit} & The limit to mark. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_abbab3727270372439fd6c0646f66d431}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_abbab3727270372439fd6c0646f66d431}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Read@{Read}}
+\index{Read@{Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads bytes from the current tar archive entry. 
+
+This method is aware of the boundaries of the current entry in the archive and will deal with them appropriately 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer into which to place bytes read. \\
+\hline
+{\em offset} & The offset at which to place bytes read. \\
+\hline
+{\em count} & The number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read, or 0 at end of stream/\+E\+OF. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5028cafb46c015d0a44864d5fd8a79bd}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5028cafb46c015d0a44864d5fd8a79bd}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Read\+Byte@{Read\+Byte}}
+\index{Read\+Byte@{Read\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read\+Byte()}{ReadByte()}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a byte from the current tar archive entry. 
+
+\begin{DoxyReturn}{Returns}
+A byte cast to an int; -\/1 if the at the end of the stream.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a159d2d270fcaf85aabdf61a0fae6878c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a159d2d270fcaf85aabdf61a0fae6878c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Since we do not support marking just yet, we do nothing. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a8f91505f427260c2814c686d79b28ba4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a8f91505f427260c2814c686d79b28ba4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Seek@{Seek}}
+\index{Seek@{Seek}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Seek()}{Seek()}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Seek (\begin{DoxyParamCaption}\item[{long}]{offset,  }\item[{Seek\+Origin}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the streams position. This operation is not supported and will throw a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset relative to the origin to seek to.\\
+\hline
+{\em origin} & The Seek\+Origin to start seeking from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position in the stream.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Set\+Entry\+Factory@{Set\+Entry\+Factory}}
+\index{Set\+Entry\+Factory@{Set\+Entry\+Factory}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Entry\+Factory()}{SetEntryFactory()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Set\+Entry\+Factory (\begin{DoxyParamCaption}\item[{\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{I\+Entry\+Factory}}]{factory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the entry factory for this instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & The factory for creating new entries\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a81fe60e776e8fba0a582a18dcd410113}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a81fe60e776e8fba0a582a18dcd410113}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Set\+Length@{Set\+Length}}
+\index{Set\+Length@{Set\+Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Length()}{SetLength()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Set\+Length (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the length of the stream This operation is not supported and will throw a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new stream length.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5655d5d9c6aff286c0efa3cba12db494}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5655d5d9c6aff286c0efa3cba12db494}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Skip@{Skip}}
+\index{Skip@{Skip}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Skip (\begin{DoxyParamCaption}\item[{long}]{skip\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip bytes in the input buffer. This skips bytes in the current entry\textquotesingle{}s data, not the entire archive, and will stop at the end of the current entry\textquotesingle{}s data if the number to skip extends beyond that point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skip\+Count} & The number of bytes to skip. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ace04f178d60a3b6533a52f35e2e9491a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ace04f178d60a3b6533a52f35e2e9491a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes a block of bytes to this stream using data from a buffer. This operation is not supported and will throw a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer containing bytes to write.\\
+\hline
+{\em offset} & The offset in the buffer of the frist byte to write.\\
+\hline
+{\em count} & The number of bytes to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2b0ae4f029c710f3a217b2eef95ba4d5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2b0ae4f029c710f3a217b2eef95ba4d5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Write\+Byte@{Write\+Byte}}
+\index{Write\+Byte@{Write\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Write\+Byte()}{WriteByte()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Write\+Byte (\begin{DoxyParamCaption}\item[{byte}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes a byte to the current position in the file stream. This operation is not supported and will throw a Not\+Supported\+Exception 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The byte value to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any access\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af4bb424ce3ff60281c217b17e8171b71}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_af4bb424ce3ff60281c217b17e8171b71}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!entry\+Factory@{entry\+Factory}}
+\index{entry\+Factory@{entry\+Factory}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{entry\+Factory}{entryFactory}}
+{\footnotesize\ttfamily \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{I\+Entry\+Factory} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+entry\+Factory\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Factory used to create \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} or descendant class instance 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2e87bca20437dbf1b4be118c8fc26694}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a2e87bca20437dbf1b4be118c8fc26694}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!entry\+Offset@{entry\+Offset}}
+\index{entry\+Offset@{entry\+Offset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{entry\+Offset}{entryOffset}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+entry\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of bytes read for this entry so far 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e9a89e0348ff93611166c3874a43cc6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e9a89e0348ff93611166c3874a43cc6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!entry\+Size@{entry\+Size}}
+\index{entry\+Size@{entry\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{entry\+Size}{entrySize}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+entry\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of this entry as recorded in header 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac52db37b1ab369dff8b6c4665f71dd3e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ac52db37b1ab369dff8b6c4665f71dd3e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!has\+Hit\+E\+OF@{has\+Hit\+E\+OF}}
+\index{has\+Hit\+E\+OF@{has\+Hit\+E\+OF}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{has\+Hit\+E\+OF}{hasHitEOF}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+has\+Hit\+E\+OF\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag set when last block has been read 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0efa6969952e2e8ae99e13dfa3ba65a0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0efa6969952e2e8ae99e13dfa3ba65a0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!read\+Buffer@{read\+Buffer}}
+\index{read\+Buffer@{read\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{read\+Buffer}{readBuffer}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+read\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Buffer used with calls to 
+
+{\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_abbab3727270372439fd6c0646f66d431}{Read()}} \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae56b1918805513aaf7bd03ded9a2bfad}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae56b1918805513aaf7bd03ded9a2bfad}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!tar\+Buffer@{tar\+Buffer}}
+\index{tar\+Buffer@{tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{tar\+Buffer}{tarBuffer}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+tar\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Working buffer 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5b0ea83b0c6456455c255c165bdef8ef}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5b0ea83b0c6456455c255c165bdef8ef}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Available@{Available}}
+\index{Available@{Available}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Available}{Available}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Available\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the available data that can be read from the current entry in the archive. This does not indicate how much data is left in the entire archive, only in the current entry. This value is determined from the entry\textquotesingle{}s size header field and the amount of data already read from the current entry. 
+
+\begin{DoxyReturn}{Returns}
+The number of available bytes for the current entry. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5e0cbc0fa89fb4d18ef09c88868f00b6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a5e0cbc0fa89fb4d18ef09c88868f00b6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Can\+Read@{Can\+Read}}
+\index{Can\+Read@{Can\+Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Read}{CanRead}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Can\+Read\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether the current stream supports reading 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae4fea5c93ad8563af534c00e2af87d0b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae4fea5c93ad8563af534c00e2af87d0b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Can\+Seek@{Can\+Seek}}
+\index{Can\+Seek@{Can\+Seek}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Seek}{CanSeek}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Can\+Seek\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether the current stream supports seeking This property always returns false. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_adce4dcdd21216906b8e8ad1b29683583}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_adce4dcdd21216906b8e8ad1b29683583}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Can\+Write@{Can\+Write}}
+\index{Can\+Write@{Can\+Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Write}{CanWrite}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Can\+Write\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating if the stream supports writing. This property always returns false. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ab459e5deaf638a070e1fd4a629c8e5fd}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ab459e5deaf638a070e1fd4a629c8e5fd}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Is\+Mark\+Supported@{Is\+Mark\+Supported}}
+\index{Is\+Mark\+Supported@{Is\+Mark\+Supported}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Is\+Mark\+Supported}{IsMarkSupported}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Is\+Mark\+Supported\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Return a value of true if marking is supported; false otherwise. 
+
+Currently marking is not supported, the return value is always false.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae8fdf574aaaf64100a02f6d6e77be306}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ae8fdf574aaaf64100a02f6d6e77be306}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Is\+Stream\+Owner@{Is\+Stream\+Owner}}
+\index{Is\+Stream\+Owner@{Is\+Stream\+Owner}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Is\+Stream\+Owner}{IsStreamOwner}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Is\+Stream\+Owner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set flag indicating ownership of the underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a0e00dc015294bb80b69c144622a861e5}{Close} will close the underlying stream also. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a1facbb0c4ec971bb26e8d6fc3037ee22}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a1facbb0c4ec971bb26e8d6fc3037ee22}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Length@{Length}}
+\index{Length@{Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The length in bytes of the stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ade825cd1a553ff9600ff06d824add4d2}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ade825cd1a553ff9600ff06d824add4d2}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Position@{Position}}
+\index{Position@{Position}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the position within the stream. Setting the Position is not supported and throws a Not\+Supported\+Exception\+Not\+Supported\+Exception 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Any attempt to set position\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a74f987c8bb8c56f157ee60345a644051}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a74f987c8bb8c56f157ee60345a644051}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}!Record\+Size@{Record\+Size}}
+\index{Record\+Size@{Record\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Record\+Size}{RecordSize}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Record\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the record size being used by this stream\textquotesingle{}s \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Tar/Tar\+Input\+Stream.\+cs\end{DoxyCompactItemize}

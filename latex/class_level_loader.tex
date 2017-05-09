@@ -1,0 +1,82 @@
+\hypertarget{class_level_loader}{}\section{Level\+Loader Class Reference}
+\label{class_level_loader}\index{Level\+Loader@{Level\+Loader}}
+Inheritance diagram for Level\+Loader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_level_loader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_loader_a251c136aac0e65fff5fef1c339fad356}\label{class_level_loader_a251c136aac0e65fff5fef1c339fad356}} 
+delegate void {\bfseries Create\+Object\+Delegate} (Game\+Object prefab, ref bool cancel)
+\item 
+\mbox{\Hypertarget{class_level_loader_a233f68062303e5e0876c93646a9215ba}\label{class_level_loader_a233f68062303e5e0876c93646a9215ba}} 
+delegate void {\bfseries Serialized\+Component\+Delegate} (Game\+Object game\+Object, string component\+Name, ref bool cancel)
+\item 
+\mbox{\Hypertarget{class_level_loader_a4483f031503dac772decbd9beedd784a}\label{class_level_loader_a4483f031503dac772decbd9beedd784a}} 
+delegate void {\bfseries Serialized\+Object\+Delegate} (Game\+Object game\+Object, ref bool cancel)
+\item 
+\mbox{\Hypertarget{class_level_loader_a9db9397a70b0263acaa645576258777b}\label{class_level_loader_a9db9397a70b0263acaa645576258777b}} 
+I\+Enumerator {\bfseries Load} ()
+\item 
+\mbox{\Hypertarget{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}\label{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}} 
+I\+Enumerator {\bfseries Load} (int number\+Of\+Frames, float time\+Scale=0)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}\label{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}} 
+Game\+Object {\bfseries root\+Object}
+\item 
+\mbox{\Hypertarget{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}\label{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}} 
+\hyperlink{class_level_serializer_1_1_level_data}{Level\+Serializer.\+Level\+Data} {\bfseries Data}
+\item 
+\mbox{\Hypertarget{class_level_loader_a714e188fb9511faaf73917bb4ec05404}\label{class_level_loader_a714e188fb9511faaf73917bb4ec05404}} 
+bool {\bfseries Dont\+Delete} = false
+\item 
+\mbox{\Hypertarget{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}\label{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}} 
+Game\+Object {\bfseries Last}
+\item 
+\mbox{\Hypertarget{class_level_loader_a925df477df93274b0d6565a0978f8c76}\label{class_level_loader_a925df477df93274b0d6565a0978f8c76}} 
+bool {\bfseries show\+G\+UI} = true
+\item 
+\mbox{\Hypertarget{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}\label{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}} 
+float {\bfseries time\+Scale\+After\+Loading} = 1
+\item 
+\mbox{\Hypertarget{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}\label{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}} 
+Action$<$ Game\+Object, List$<$ Game\+Object $>$ $>$ {\bfseries when\+Completed} = delegate \{ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}\label{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}} 
+static \hyperlink{class_level_loader}{Level\+Loader} {\bfseries Current}
+\item 
+\mbox{\Hypertarget{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}\label{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}} 
+static Color {\bfseries gui\+Color} = Color.\+white
+\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_level_loader_a6467f227c2897f195d6c9f611d816cca}\label{class_level_loader_a6467f227c2897f195d6c9f611d816cca}} 
+static Create\+Object\+Delegate {\bfseries Create\+Game\+Object} = delegate \{ \}
+\item 
+\mbox{\Hypertarget{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}\label{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}} 
+static Serialized\+Object\+Delegate {\bfseries On\+Destroy\+Object} = delegate \{ \}
+\item 
+\mbox{\Hypertarget{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}\label{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}} 
+static Serialized\+Object\+Delegate {\bfseries Load\+Data} = delegate \{ \}
+\item 
+\mbox{\Hypertarget{class_level_loader_aeef57ebb788135e95410d8530a025403}\label{class_level_loader_aeef57ebb788135e95410d8530a025403}} 
+static Serialized\+Component\+Delegate {\bfseries Load\+Component} = delegate \{ \}
+\item 
+\mbox{\Hypertarget{class_level_loader_a7db5619e1031ce444bcd94441ee4d1ac}\label{class_level_loader_a7db5619e1031ce444bcd94441ee4d1ac}} 
+static Action$<$ Component $>$ {\bfseries Loaded\+Component} = delegate \{ \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Level\+Loader.\+cs\end{DoxyCompactItemize}

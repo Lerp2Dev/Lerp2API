@@ -1,0 +1,107 @@
+\hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node}{}\section{Shared\+Memory.\+Circular\+Buffer.\+Node Struct Reference}
+\label{struct_shared_memory_1_1_circular_buffer_1_1_node}\index{Shared\+Memory.\+Circular\+Buffer.\+Node@{Shared\+Memory.\+Circular\+Buffer.\+Node}}
+
+
+Represents a node within the buffer\textquotesingle{}s circular linked list  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a41f7820db0d0ea1e166923e1b19293e6}{Next}
+\begin{DoxyCompactList}\small\item\em The previous node. \end{DoxyCompactList}\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a9ccf25ec0824c8c98c15783889296f01}{Prev}
+\begin{DoxyCompactList}\small\item\em The next node. \end{DoxyCompactList}\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_aae426a592827275557a3bb265c25fa54}{Done\+Read}
+\begin{DoxyCompactList}\small\item\em A flag used while returning a node for writing after having been read. \end{DoxyCompactList}\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a5dc63ec61fe5fdaa3e9454ec79bfa202}{Done\+Write}
+\begin{DoxyCompactList}\small\item\em A flag used while posting a node for reading after writing is completed. \end{DoxyCompactList}\item 
+long \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_aa39234c3ab7451fabfd90bfebf6047cc}{Offset}
+\begin{DoxyCompactList}\small\item\em Represents the offset relative to \hyperlink{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}{Shared\+Buffer.\+Buffer\+Start\+Ptr} where the data for this node can be found. \end{DoxyCompactList}\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a4b2a3883579843b7b265a9a8f482e5d7}{Index}
+\begin{DoxyCompactList}\small\item\em Represents the index of the current node. \end{DoxyCompactList}\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a6af4949dfc5fb4b751fe774f29f4ce87}{Amount\+Written}
+\begin{DoxyCompactList}\small\item\em Holds the number of bytes written into this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a node within the buffer\textquotesingle{}s circular linked list 
+
+This structure is the same size on 32-\/bit and 64-\/bit architectures.
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_a6af4949dfc5fb4b751fe774f29f4ce87}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_a6af4949dfc5fb4b751fe774f29f4ce87}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Amount\+Written@{Amount\+Written}}
+\index{Amount\+Written@{Amount\+Written}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Amount\+Written}{AmountWritten}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Amount\+Written}
+
+
+
+Holds the number of bytes written into this node. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_aae426a592827275557a3bb265c25fa54}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_aae426a592827275557a3bb265c25fa54}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Done\+Read@{Done\+Read}}
+\index{Done\+Read@{Done\+Read}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Done\+Read}{DoneRead}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Done\+Read}
+
+
+
+A flag used while returning a node for writing after having been read. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_a5dc63ec61fe5fdaa3e9454ec79bfa202}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_a5dc63ec61fe5fdaa3e9454ec79bfa202}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Done\+Write@{Done\+Write}}
+\index{Done\+Write@{Done\+Write}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Done\+Write}{DoneWrite}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Done\+Write}
+
+
+
+A flag used while posting a node for reading after writing is completed. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_a4b2a3883579843b7b265a9a8f482e5d7}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_a4b2a3883579843b7b265a9a8f482e5d7}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Index@{Index}}
+\index{Index@{Index}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Index}{Index}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Index}
+
+
+
+Represents the index of the current node. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_a41f7820db0d0ea1e166923e1b19293e6}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_a41f7820db0d0ea1e166923e1b19293e6}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Next@{Next}}
+\index{Next@{Next}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Next}{Next}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Next}
+
+
+
+The previous node. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_aa39234c3ab7451fabfd90bfebf6047cc}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_aa39234c3ab7451fabfd90bfebf6047cc}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Offset@{Offset}}
+\index{Offset@{Offset}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Offset}{Offset}}
+{\footnotesize\ttfamily long Shared\+Memory.\+Circular\+Buffer.\+Node.\+Offset}
+
+
+
+Represents the offset relative to \hyperlink{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}{Shared\+Buffer.\+Buffer\+Start\+Ptr} where the data for this node can be found. 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_a9ccf25ec0824c8c98c15783889296f01}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_a9ccf25ec0824c8c98c15783889296f01}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}!Prev@{Prev}}
+\index{Prev@{Prev}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node}}
+\subsubsection{\texorpdfstring{Prev}{Prev}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node.\+Prev}
+
+
+
+The next node. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Shared\+Memory/Circular\+Buffer.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['getattributes',['GetAttributes',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry_factory.html#ade0dec51500cfbe274dfbfa0325e0c38',1,'ICSharpCode::SharpZipLib::Zip::ZipEntryFactory']]],
+  ['groupid',['GroupId',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_archive.html#a19f1b52f370508fcdc0785f3eb9202a8',1,'ICSharpCode.SharpZipLib.Tar.TarArchive.GroupId()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry.html#af106c01e135300df582517640f4627c2',1,'ICSharpCode.SharpZipLib.Tar.TarEntry.GroupId()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_header.html#a0a669ee68fd43fcc0f0eb30e6e64fb5d',1,'ICSharpCode.SharpZipLib.Tar.TarHeader.GroupId()']]],
+  ['groupname',['GroupName',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_archive.html#a326999cdbcfc9285fd468e136d791809',1,'ICSharpCode.SharpZipLib.Tar.TarArchive.GroupName()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry.html#ae15164a7a056c3367335c031f63c2ec5',1,'ICSharpCode.SharpZipLib.Tar.TarEntry.GroupName()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_header.html#a3953a2b87084b00531b8a57942039b9d',1,'ICSharpCode.SharpZipLib.Tar.TarHeader.GroupName()']]]
+];

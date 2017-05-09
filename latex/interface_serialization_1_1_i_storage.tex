@@ -1,0 +1,432 @@
+\hypertarget{interface_serialization_1_1_i_storage}{}\section{Serialization.\+I\+Storage Interface Reference}
+\label{interface_serialization_1_1_i_storage}\index{Serialization.\+I\+Storage@{Serialization.\+I\+Storage}}
+Inheritance diagram for Serialization.\+I\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_serialization_1_1_i_storage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_serialization_1_1_i_storage_a0f040f49872c3bf4ba92a350494e45af}{Start\+Serializing} ()
+\begin{DoxyCompactList}\small\item\em Starts the serialization process, the serializer should initialize and wait for data \end{DoxyCompactList}\item 
+void \hyperlink{interface_serialization_1_1_i_storage_a5a9811117c5fba81ff98854cfa2c48e1}{Finished\+Serializing} ()
+\begin{DoxyCompactList}\small\item\em Called when serialization is complete, should return the data or a key encoded as a byte array that will be used to reinitialize the serializer later \end{DoxyCompactList}\item 
+void \hyperlink{interface_serialization_1_1_i_storage_affc5c4e5bc5efaf0f1840943358b6bc9}{Finished\+Deserializing} ()
+\begin{DoxyCompactList}\small\item\em Called when deserialization is complete, so that resources may be released \end{DoxyCompactList}\item 
+bool \hyperlink{interface_serialization_1_1_i_storage_a62f447c10caea0bd0c2ec3bad36fe14a}{Start\+Serializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry, int id)
+\begin{DoxyCompactList}\small\item\em Called when serializing a new object, the \hyperlink{class_serialization_1_1_entry}{Entry} parameter may have Must\+Have\+Name set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns T\+R\+UE then no further processing is executed and the object is presumed persisted in its entirety \end{DoxyCompactList}\item 
+void \hyperlink{interface_serialization_1_1_i_storage_a03e6828bebedaa8ec17e5f01a7cbd689}{Finish\+Serializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called when the last information about an object has been written \end{DoxyCompactList}\item 
+object \hyperlink{interface_serialization_1_1_i_storage_a90aa19f79a51acf057f20da842ef09b3}{Start\+Deserializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called when deserializing an object. If the \hyperlink{class_serialization_1_1_entry}{Entry} parameter has Must\+Have\+Name set then the routine should return with the \hyperlink{class_serialization_1_1_entry}{Entry} parameter updated with the name and the type of the object in Stored\+Type If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after Deserialize\+Get\+Name \end{DoxyCompactList}\item 
+void \hyperlink{interface_serialization_1_1_i_storage_ad17a92256ad7a7196084e05bad968567}{Deserialize\+Get\+Name} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called to allow the storage to retrieve the name of the item being deserialized All entries must be named before a call to Start\+Deserializing, this enables the system to fill out the property setter and capture default stored type information before deserialization commences \end{DoxyCompactList}\item 
+void \hyperlink{interface_serialization_1_1_i_storage_a8377dea6764882fb9882d0bd92e03de6}{Finish\+Deserializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called when an object has deserialization complete \end{DoxyCompactList}\item 
+\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} \hyperlink{interface_serialization_1_1_i_storage_a0795ec3b6aa77280885c34e2822cb410}{Should\+Write\+Fields} (\hyperlink{class_serialization_1_1_entry}{Entry}\mbox{[}$\,$\mbox{]} fields)
+\begin{DoxyCompactList}\small\item\em Reads a simple type (or array of bytes) from storage \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0d4c95743d604600b55492194d54717b}\label{interface_serialization_1_1_i_storage_a0d4c95743d604600b55492194d54717b}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} {\bfseries Should\+Write\+Properties} (\hyperlink{class_serialization_1_1_entry}{Entry}\mbox{[}$\,$\mbox{]} properties)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ab0432907fec979aa0832b659b4bd8d67}\label{interface_serialization_1_1_i_storage_ab0432907fec979aa0832b659b4bd8d67}} 
+void {\bfseries Start\+Deserializing} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a167bf2c224e928c05446f0fde56e9d8d}\label{interface_serialization_1_1_i_storage_a167bf2c224e928c05446f0fde56e9d8d}} 
+bool {\bfseries Has\+More} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a4dab514d85acc8b9c97934025438cccf}\label{interface_serialization_1_1_i_storage_a4dab514d85acc8b9c97934025438cccf}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} {\bfseries Begin\+Read\+Property} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a5193e529b49bfccf51f893ebcabc8e80}\label{interface_serialization_1_1_i_storage_a5193e529b49bfccf51f893ebcabc8e80}} 
+void {\bfseries End\+Read\+Property} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a369241f5ffd8446da4a57c72a8646f09}\label{interface_serialization_1_1_i_storage_a369241f5ffd8446da4a57c72a8646f09}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} {\bfseries Begin\+Read\+Field} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad27a910b48b01fcee850465606cd2a6f}\label{interface_serialization_1_1_i_storage_ad27a910b48b01fcee850465606cd2a6f}} 
+void {\bfseries End\+Read\+Field} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a14c84cc7b9483b89881c5caef8e4f1a0}\label{interface_serialization_1_1_i_storage_a14c84cc7b9483b89881c5caef8e4f1a0}} 
+int {\bfseries Begin\+Read\+Properties} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_af7e9c21d8e723c2b7482d0ce7db7e3c5}\label{interface_serialization_1_1_i_storage_af7e9c21d8e723c2b7482d0ce7db7e3c5}} 
+int {\bfseries Begin\+Read\+Fields} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a5e3376134f3047f247eaa2a6844389f3}\label{interface_serialization_1_1_i_storage_a5e3376134f3047f247eaa2a6844389f3}} 
+void {\bfseries End\+Read\+Properties} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_af38f83f1eb0c5190fd0e4ad845ff0649}\label{interface_serialization_1_1_i_storage_af38f83f1eb0c5190fd0e4ad845ff0649}} 
+void {\bfseries End\+Read\+Fields} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ae1e7a60cc8b12071f1866d2cac454f99}\label{interface_serialization_1_1_i_storage_ae1e7a60cc8b12071f1866d2cac454f99}} 
+T {\bfseries Read\+Simple\+Value$<$ T $>$} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a32b60329697e7f1d128801cc4ac7e614}\label{interface_serialization_1_1_i_storage_a32b60329697e7f1d128801cc4ac7e614}} 
+object {\bfseries Read\+Simple\+Value} (Type type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a9fd65cc423dabd2b49021e0e7f333356}\label{interface_serialization_1_1_i_storage_a9fd65cc423dabd2b49021e0e7f333356}} 
+bool {\bfseries Is\+Multi\+Dimensional\+Array} (out int length)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a27e63deec5c78fd5013d1d3b7607e04c}\label{interface_serialization_1_1_i_storage_a27e63deec5c78fd5013d1d3b7607e04c}} 
+void {\bfseries Begin\+Read\+Multi\+Dimensional\+Array} (out int dimension, out int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a449e4d99ff1a5e1a792e22955fb13018}\label{interface_serialization_1_1_i_storage_a449e4d99ff1a5e1a792e22955fb13018}} 
+void {\bfseries End\+Read\+Multi\+Dimensional\+Array} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a395cc4c40bd55229df264d4187ebb018}\label{interface_serialization_1_1_i_storage_a395cc4c40bd55229df264d4187ebb018}} 
+int {\bfseries Read\+Array\+Dimension} (int index)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_abffb20a2280b9334bef338ccd2d7f5f5}\label{interface_serialization_1_1_i_storage_abffb20a2280b9334bef338ccd2d7f5f5}} 
+Array {\bfseries Read\+Simple\+Array} (Type element\+Type, int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a2178c0c68457e13a45fa7e80fa345037}\label{interface_serialization_1_1_i_storage_a2178c0c68457e13a45fa7e80fa345037}} 
+int {\bfseries Begin\+Read\+Object} (out bool is\+Reference)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_af7f518486ceab2b980b6b90a16b33a97}\label{interface_serialization_1_1_i_storage_af7f518486ceab2b980b6b90a16b33a97}} 
+void {\bfseries End\+Read\+Object} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_afe6be681d819bbfd7db4078f29230020}\label{interface_serialization_1_1_i_storage_afe6be681d819bbfd7db4078f29230020}} 
+int {\bfseries Begin\+Read\+List} (Type value\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_abfe338de53a6322dbd3832d426ae49a4}\label{interface_serialization_1_1_i_storage_abfe338de53a6322dbd3832d426ae49a4}} 
+object {\bfseries Begin\+Read\+List\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a8308151ce64440db9ac2c385e3b96d45}\label{interface_serialization_1_1_i_storage_a8308151ce64440db9ac2c385e3b96d45}} 
+void {\bfseries End\+Read\+List\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a2349911c359017baa76773f203b33ee5}\label{interface_serialization_1_1_i_storage_a2349911c359017baa76773f203b33ee5}} 
+void {\bfseries End\+Read\+List} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a57c3bee701eba61b73c8ea69f29d3ca3}\label{interface_serialization_1_1_i_storage_a57c3bee701eba61b73c8ea69f29d3ca3}} 
+int {\bfseries Begin\+Read\+Dictionary} (Type key\+Type, Type value\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ae44889714fb24b498bae004a9e6890ee}\label{interface_serialization_1_1_i_storage_ae44889714fb24b498bae004a9e6890ee}} 
+void {\bfseries Begin\+Read\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a3739c13259528b0042e3e150357638a2}\label{interface_serialization_1_1_i_storage_a3739c13259528b0042e3e150357638a2}} 
+object {\bfseries Begin\+Read\+Dictionary\+Key\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_afdfcddaf43f8c474af85a0667541f785}\label{interface_serialization_1_1_i_storage_afdfcddaf43f8c474af85a0667541f785}} 
+void {\bfseries End\+Read\+Dictionary\+Key\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a4d7be7471ebc9555ec62f3d1e91b53a8}\label{interface_serialization_1_1_i_storage_a4d7be7471ebc9555ec62f3d1e91b53a8}} 
+void {\bfseries End\+Read\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad25b5e89d4ae0b91dccf8c0ce2187f15}\label{interface_serialization_1_1_i_storage_ad25b5e89d4ae0b91dccf8c0ce2187f15}} 
+void {\bfseries Begin\+Read\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ab25360e5a7b453f7cbcf2a8d98ea0eb8}\label{interface_serialization_1_1_i_storage_ab25360e5a7b453f7cbcf2a8d98ea0eb8}} 
+object {\bfseries Begin\+Read\+Dictionary\+Value\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a34f240c50bd8a6811cdde7d564fab443}\label{interface_serialization_1_1_i_storage_a34f240c50bd8a6811cdde7d564fab443}} 
+void {\bfseries End\+Read\+Dictionary\+Value\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_af76c715808ff9cca9b89c995a556ec6b}\label{interface_serialization_1_1_i_storage_af76c715808ff9cca9b89c995a556ec6b}} 
+void {\bfseries End\+Read\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a361427cb53d37e663b456b97d087575b}\label{interface_serialization_1_1_i_storage_a361427cb53d37e663b456b97d087575b}} 
+void {\bfseries End\+Read\+Dictionary} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a4d7741da3862a1398e0566d362eb0827}\label{interface_serialization_1_1_i_storage_a4d7741da3862a1398e0566d362eb0827}} 
+int {\bfseries Begin\+Read\+Object\+Array} (Type value\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a3d3197fc76431c156d291c5e46240018}\label{interface_serialization_1_1_i_storage_a3d3197fc76431c156d291c5e46240018}} 
+object {\bfseries Begin\+Read\+Object\+Array\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0b02021d3b80d7a3b66657aca7e50683}\label{interface_serialization_1_1_i_storage_a0b02021d3b80d7a3b66657aca7e50683}} 
+void {\bfseries End\+Read\+Object\+Array\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_adcb0b93e93558a3ae5453c36bb04d8ff}\label{interface_serialization_1_1_i_storage_adcb0b93e93558a3ae5453c36bb04d8ff}} 
+void {\bfseries End\+Read\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a3fb97eb3491469373d49dfa190c66dd4}\label{interface_serialization_1_1_i_storage_a3fb97eb3491469373d49dfa190c66dd4}} 
+void {\bfseries Begin\+Write\+Object} (int id, Type object\+Type, bool was\+Seen)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a6e6a7469ad14b39e46cd746d4bf3d2ca}\label{interface_serialization_1_1_i_storage_a6e6a7469ad14b39e46cd746d4bf3d2ca}} 
+void {\bfseries End\+Write\+Object} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_afaa8cb1cee211688a43655b1f503ca12}\label{interface_serialization_1_1_i_storage_afaa8cb1cee211688a43655b1f503ca12}} 
+void {\bfseries Begin\+Write\+List} (int count, Type list\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a1f2891613afdde349dd1bede1187af08}\label{interface_serialization_1_1_i_storage_a1f2891613afdde349dd1bede1187af08}} 
+bool {\bfseries Begin\+Write\+List\+Item} (int index, object value)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a996ec10cec9f039c84f059ab511dce31}\label{interface_serialization_1_1_i_storage_a996ec10cec9f039c84f059ab511dce31}} 
+void {\bfseries End\+Write\+List\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a1698725786d0d7d7360a8ead45ebe3ea}\label{interface_serialization_1_1_i_storage_a1698725786d0d7d7360a8ead45ebe3ea}} 
+void {\bfseries End\+Write\+List} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_afc5be795dc2ef9b4fc64abbd764ac7e5}\label{interface_serialization_1_1_i_storage_afc5be795dc2ef9b4fc64abbd764ac7e5}} 
+void {\bfseries Begin\+Write\+Object\+Array} (int count, Type array\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a22a9b9ce868724387a5fe655089c08a7}\label{interface_serialization_1_1_i_storage_a22a9b9ce868724387a5fe655089c08a7}} 
+bool {\bfseries Begin\+Write\+Object\+Array\+Item} (int index, object value)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0cde5cf5cf0ba7a6a229213330619a49}\label{interface_serialization_1_1_i_storage_a0cde5cf5cf0ba7a6a229213330619a49}} 
+void {\bfseries End\+Write\+Object\+Array\+Item} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0b6c30b5cb2849e6b9a6e46416867c96}\label{interface_serialization_1_1_i_storage_a0b6c30b5cb2849e6b9a6e46416867c96}} 
+void {\bfseries End\+Write\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a72684673376a726a241741854652b3ba}\label{interface_serialization_1_1_i_storage_a72684673376a726a241741854652b3ba}} 
+void {\bfseries Begin\+Multi\+Dimension\+Array} (Type array\+Type, int dimensions, int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_aace2c7b698493c52356bff6422d37f74}\label{interface_serialization_1_1_i_storage_aace2c7b698493c52356bff6422d37f74}} 
+void {\bfseries End\+Multi\+Dimension\+Array} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a844c1dfe7f787cbf76d0521ca4ea11ef}\label{interface_serialization_1_1_i_storage_a844c1dfe7f787cbf76d0521ca4ea11ef}} 
+void {\bfseries Write\+Array\+Dimension} (int index, int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a94937afa442d505b3802f9dd19675ee2}\label{interface_serialization_1_1_i_storage_a94937afa442d505b3802f9dd19675ee2}} 
+void {\bfseries Write\+Simple\+Array} (int count, Array array)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad71e5330badb887d80a59b576dbd9e1e}\label{interface_serialization_1_1_i_storage_ad71e5330badb887d80a59b576dbd9e1e}} 
+void {\bfseries Write\+Simple\+Value} (object value)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ac8185d715cc5318790a408427e5bc113}\label{interface_serialization_1_1_i_storage_ac8185d715cc5318790a408427e5bc113}} 
+void {\bfseries Begin\+Write\+Dictionary} (int count, Type dictionary\+Type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a06dcc7ec3a100509abc863136d0cd6f3}\label{interface_serialization_1_1_i_storage_a06dcc7ec3a100509abc863136d0cd6f3}} 
+void {\bfseries Begin\+Write\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a73c60fce612a22b4832223b245688384}\label{interface_serialization_1_1_i_storage_a73c60fce612a22b4832223b245688384}} 
+bool {\bfseries Begin\+Write\+Dictionary\+Key} (int id, object value)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a67dd08c902044dab8fbc00ee081e4908}\label{interface_serialization_1_1_i_storage_a67dd08c902044dab8fbc00ee081e4908}} 
+void {\bfseries End\+Write\+Dictionary\+Key} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a3b92e2da24caf59872668c269d102e87}\label{interface_serialization_1_1_i_storage_a3b92e2da24caf59872668c269d102e87}} 
+void {\bfseries End\+Write\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_af44f1eb41f0ac51acf315388150bd6bf}\label{interface_serialization_1_1_i_storage_af44f1eb41f0ac51acf315388150bd6bf}} 
+void {\bfseries Begin\+Write\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a553edaa5a225986c161626c9ede9e594}\label{interface_serialization_1_1_i_storage_a553edaa5a225986c161626c9ede9e594}} 
+bool {\bfseries Begin\+Write\+Dictionary\+Value} (int id, object value)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ab14d2fe3fc5d3ed7171435152b060bf2}\label{interface_serialization_1_1_i_storage_ab14d2fe3fc5d3ed7171435152b060bf2}} 
+void {\bfseries End\+Write\+Dictionary\+Value} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad1d8b55f3ae8fa16cf2dc58103263999}\label{interface_serialization_1_1_i_storage_ad1d8b55f3ae8fa16cf2dc58103263999}} 
+void {\bfseries End\+Write\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad04875ff178a85ce0054eab86a277fd3}\label{interface_serialization_1_1_i_storage_ad04875ff178a85ce0054eab86a277fd3}} 
+void {\bfseries End\+Write\+Dictionary} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a4aa8e9eeb65572cabfd1163fd424f447}\label{interface_serialization_1_1_i_storage_a4aa8e9eeb65572cabfd1163fd424f447}} 
+void {\bfseries Begin\+Write\+Properties} (int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad922a8b40756c84f00aa6afd75b93735}\label{interface_serialization_1_1_i_storage_ad922a8b40756c84f00aa6afd75b93735}} 
+void {\bfseries End\+Write\+Properties} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0b810350295c5e78aca277ce929aaedd}\label{interface_serialization_1_1_i_storage_a0b810350295c5e78aca277ce929aaedd}} 
+void {\bfseries Begin\+Write\+Property} (string name, Type type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a978b5e23e42f8db83095b9dfd1102528}\label{interface_serialization_1_1_i_storage_a978b5e23e42f8db83095b9dfd1102528}} 
+void {\bfseries End\+Write\+Property} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a101b3acfd63c956c27cd9d45e2c4d7c1}\label{interface_serialization_1_1_i_storage_a101b3acfd63c956c27cd9d45e2c4d7c1}} 
+void {\bfseries Begin\+Write\+Fields} (int count)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a8584d495d876a2b05ba671de46e33006}\label{interface_serialization_1_1_i_storage_a8584d495d876a2b05ba671de46e33006}} 
+void {\bfseries End\+Write\+Fields} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a70f3334f87463abfe43c5d256c2486fe}\label{interface_serialization_1_1_i_storage_a70f3334f87463abfe43c5d256c2486fe}} 
+void {\bfseries Begin\+Write\+Field} (string name, Type type)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0e0c8f96ea2316bc9efc73cd27176897}\label{interface_serialization_1_1_i_storage_a0e0c8f96ea2316bc9efc73cd27176897}} 
+void {\bfseries End\+Write\+Field} ()
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_aa32f1588f15cdce160d47b06b1c8ec15}\label{interface_serialization_1_1_i_storage_aa32f1588f15cdce160d47b06b1c8ec15}} 
+void {\bfseries Begin\+On\+Demand} (int id)
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a40adb4b1e7b959e0b3baa509d3ce16f7}\label{interface_serialization_1_1_i_storage_a40adb4b1e7b959e0b3baa509d3ce16f7}} 
+void {\bfseries End\+On\+Demand} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a6096e94c37b632da7f415a4697f80f32}\label{interface_serialization_1_1_i_storage_a6096e94c37b632da7f415a4697f80f32}} 
+bool {\bfseries Supports\+On\+Demand}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_ad17a92256ad7a7196084e05bad968567}\label{interface_serialization_1_1_i_storage_ad17a92256ad7a7196084e05bad968567}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Deserialize\+Get\+Name@{Deserialize\+Get\+Name}}
+\index{Deserialize\+Get\+Name@{Deserialize\+Get\+Name}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Deserialize\+Get\+Name()}{DeserializeGetName()}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Deserialize\+Get\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})}
+
+
+
+Called to allow the storage to retrieve the name of the item being deserialized All entries must be named before a call to Start\+Deserializing, this enables the system to fill out the property setter and capture default stored type information before deserialization commences 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The entry whose name should be filled in\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_ac02802eda1961199b7e91adce7c33de7}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a8377dea6764882fb9882d0bd92e03de6}\label{interface_serialization_1_1_i_storage_a8377dea6764882fb9882d0bd92e03de6}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Finish\+Deserializing@{Finish\+Deserializing}}
+\index{Finish\+Deserializing@{Finish\+Deserializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Finish\+Deserializing()}{FinishDeserializing()}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Finish\+Deserializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})}
+
+
+
+Called when an object has deserialization complete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_ad89d25a0b56c1b568f6696ab8d04d10b}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_affc5c4e5bc5efaf0f1840943358b6bc9}\label{interface_serialization_1_1_i_storage_affc5c4e5bc5efaf0f1840943358b6bc9}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Finished\+Deserializing@{Finished\+Deserializing}}
+\index{Finished\+Deserializing@{Finished\+Deserializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Finished\+Deserializing()}{FinishedDeserializing()}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Finished\+Deserializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when deserialization is complete, so that resources may be released 
+
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_af70f7fb26c0b41d0f1126634df2de03a}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a5a9811117c5fba81ff98854cfa2c48e1}\label{interface_serialization_1_1_i_storage_a5a9811117c5fba81ff98854cfa2c48e1}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Finished\+Serializing@{Finished\+Serializing}}
+\index{Finished\+Serializing@{Finished\+Serializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Finished\+Serializing()}{FinishedSerializing()}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Finished\+Serializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when serialization is complete, should return the data or a key encoded as a byte array that will be used to reinitialize the serializer later 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_a33f7f74fffe31b07a96ab08fa545e990}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a03e6828bebedaa8ec17e5f01a7cbd689}\label{interface_serialization_1_1_i_storage_a03e6828bebedaa8ec17e5f01a7cbd689}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Finish\+Serializing@{Finish\+Serializing}}
+\index{Finish\+Serializing@{Finish\+Serializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Finish\+Serializing()}{FinishSerializing()}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Finish\+Serializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})}
+
+
+
+Called when the last information about an object has been written 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The object being written\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_a026959038d36c07fc77d6da1345ab4d2}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0795ec3b6aa77280885c34e2822cb410}\label{interface_serialization_1_1_i_storage_a0795ec3b6aa77280885c34e2822cb410}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Should\+Write\+Fields@{Should\+Write\+Fields}}
+\index{Should\+Write\+Fields@{Should\+Write\+Fields}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Should\+Write\+Fields()}{ShouldWriteFields()}}
+{\footnotesize\ttfamily \hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} Serialization.\+I\+Storage.\+Should\+Write\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]}}]{fields }\end{DoxyParamCaption})}
+
+
+
+Reads a simple type (or array of bytes) from storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the item\\
+\hline
+{\em type} & The type to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_a1813abad4bdfe9607f093e4df66a4414}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a90aa19f79a51acf057f20da842ef09b3}\label{interface_serialization_1_1_i_storage_a90aa19f79a51acf057f20da842ef09b3}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Start\+Deserializing@{Start\+Deserializing}}
+\index{Start\+Deserializing@{Start\+Deserializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Start\+Deserializing()}{StartDeserializing()}}
+{\footnotesize\ttfamily object Serialization.\+I\+Storage.\+Start\+Deserializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})}
+
+
+
+Called when deserializing an object. If the \hyperlink{class_serialization_1_1_entry}{Entry} parameter has Must\+Have\+Name set then the routine should return with the \hyperlink{class_serialization_1_1_entry}{Entry} parameter updated with the name and the type of the object in Stored\+Type If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after Deserialize\+Get\+Name 
+
+\begin{DoxyReturn}{Returns}
+Normally N\+U\+LL, it may also return a fully depersisted object
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_a9b376977bd19d9bfef1fce28e110220a}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a0f040f49872c3bf4ba92a350494e45af}\label{interface_serialization_1_1_i_storage_a0f040f49872c3bf4ba92a350494e45af}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Start\+Serializing@{Start\+Serializing}}
+\index{Start\+Serializing@{Start\+Serializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Start\+Serializing()}{StartSerializing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Serialization.\+I\+Storage.\+Start\+Serializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the serialization process, the serializer should initialize and wait for data 
+
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_a7266eb0f6366fe0d40bbcb9d4434f262}{Serialization.\+Binary\+Serializer}.
+
+\mbox{\Hypertarget{interface_serialization_1_1_i_storage_a62f447c10caea0bd0c2ec3bad36fe14a}\label{interface_serialization_1_1_i_storage_a62f447c10caea0bd0c2ec3bad36fe14a}} 
+\index{Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}!Start\+Serializing@{Start\+Serializing}}
+\index{Start\+Serializing@{Start\+Serializing}!Serialization\+::\+I\+Storage@{Serialization\+::\+I\+Storage}}
+\subsubsection{\texorpdfstring{Start\+Serializing()}{StartSerializing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Serialization.\+I\+Storage.\+Start\+Serializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Called when serializing a new object, the \hyperlink{class_serialization_1_1_entry}{Entry} parameter may have Must\+Have\+Name set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns T\+R\+UE then no further processing is executed and the object is presumed persisted in its entirety 
+
+\begin{DoxyReturn}{Returns}
+Normally F\+A\+L\+SE. True if the object is already fully persisted
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The item being serialized\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialization_1_1_binary_serializer_aef0fdf4b432dfe09b1bf9c11786dee58}{Serialization.\+Binary\+Serializer}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/I\+Storage.\+cs\end{DoxyCompactItemize}

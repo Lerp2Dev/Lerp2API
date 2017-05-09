@@ -1,0 +1,95 @@
+\hypertarget{class_full_serializer_1_1fs_object_attribute}{}\section{Full\+Serializer.\+fs\+Object\+Attribute Class Reference}
+\label{class_full_serializer_1_1fs_object_attribute}\index{Full\+Serializer.\+fs\+Object\+Attribute@{Full\+Serializer.\+fs\+Object\+Attribute}}
+
+
+This attribute controls some serialization behavior for a type. See the comments on each of the fields for more information.  
+
+
+Inheritance diagram for Full\+Serializer.\+fs\+Object\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_full_serializer_1_1fs_object_attribute}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_ab9564673f276f2e8b7b3865573abcce4}\label{class_full_serializer_1_1fs_object_attribute_ab9564673f276f2e8b7b3865573abcce4}} 
+{\bfseries fs\+Object\+Attribute} (string version\+String, params Type\mbox{[}$\,$\mbox{]} previous\+Models)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Type \mbox{[}$\,$\mbox{]} \hyperlink{class_full_serializer_1_1fs_object_attribute_ae82b6c5b9d90688cfa0ff8ecc5b53c9c}{Previous\+Models}
+\begin{DoxyCompactList}\small\item\em The previous model that should be used if an old version of this object is encountered. Using this attribute also requires that the type have a public constructor that takes only one parameter, an object instance of the given type. Use of this parameter {\itshape requires} that the Version\+String parameter is also set. \end{DoxyCompactList}\item 
+string \hyperlink{class_full_serializer_1_1fs_object_attribute_ac3208d9844485e25429cd4182d34111a}{Version\+String}
+\begin{DoxyCompactList}\small\item\em The version string to use for this model. This should be unique among all prior versions of this model that is supported for importation. If Previous\+Model is set, then this attribute must also be set. A good valid example for this is \char`\"{}v1\char`\"{}, \char`\"{}v2\char`\"{}, \char`\"{}v3\char`\"{}, ... \end{DoxyCompactList}\item 
+\hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}{fs\+Member\+Serialization} \hyperlink{class_full_serializer_1_1fs_object_attribute_afcdb79992b507e9e9c04111c6a9edadc}{Member\+Serialization} = \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}{fs\+Member\+Serialization.\+Default}
+\begin{DoxyCompactList}\small\item\em This controls the behavior for member serialization. The default behavior is \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}{fs\+Member\+Serialization.\+Default}. \end{DoxyCompactList}\item 
+Type \hyperlink{class_full_serializer_1_1fs_object_attribute_abe3f1e8c04164f6d951c70c15870df71}{Converter}
+\begin{DoxyCompactList}\small\item\em Specify a custom converter to use for serialization. The converter type needs to derive from \hyperlink{class_full_serializer_1_1fs_base_converter}{fs\+Base\+Converter}. This defaults to null. \end{DoxyCompactList}\item 
+Type \hyperlink{class_full_serializer_1_1fs_object_attribute_a2f71f5d718abe0eb30544ff6f8510664}{Processor}
+\begin{DoxyCompactList}\small\item\em Specify a custom processor to use during serialization. The processor type needs to derive from \hyperlink{class_full_serializer_1_1fs_object_processor}{fs\+Object\+Processor} and the call to Can\+Process is not invoked. This defaults to null. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This attribute controls some serialization behavior for a type. See the comments on each of the fields for more information. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_abe3f1e8c04164f6d951c70c15870df71}\label{class_full_serializer_1_1fs_object_attribute_abe3f1e8c04164f6d951c70c15870df71}} 
+\index{Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}!Converter@{Converter}}
+\index{Converter@{Converter}!Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}}
+\subsubsection{\texorpdfstring{Converter}{Converter}}
+{\footnotesize\ttfamily Type Full\+Serializer.\+fs\+Object\+Attribute.\+Converter}
+
+
+
+Specify a custom converter to use for serialization. The converter type needs to derive from \hyperlink{class_full_serializer_1_1fs_base_converter}{fs\+Base\+Converter}. This defaults to null. 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_afcdb79992b507e9e9c04111c6a9edadc}\label{class_full_serializer_1_1fs_object_attribute_afcdb79992b507e9e9c04111c6a9edadc}} 
+\index{Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}!Member\+Serialization@{Member\+Serialization}}
+\index{Member\+Serialization@{Member\+Serialization}!Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}}
+\subsubsection{\texorpdfstring{Member\+Serialization}{MemberSerialization}}
+{\footnotesize\ttfamily \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}{fs\+Member\+Serialization} Full\+Serializer.\+fs\+Object\+Attribute.\+Member\+Serialization = \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}{fs\+Member\+Serialization.\+Default}}
+
+
+
+This controls the behavior for member serialization. The default behavior is \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}{fs\+Member\+Serialization.\+Default}. 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_ae82b6c5b9d90688cfa0ff8ecc5b53c9c}\label{class_full_serializer_1_1fs_object_attribute_ae82b6c5b9d90688cfa0ff8ecc5b53c9c}} 
+\index{Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}!Previous\+Models@{Previous\+Models}}
+\index{Previous\+Models@{Previous\+Models}!Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}}
+\subsubsection{\texorpdfstring{Previous\+Models}{PreviousModels}}
+{\footnotesize\ttfamily Type \mbox{[}$\,$\mbox{]} Full\+Serializer.\+fs\+Object\+Attribute.\+Previous\+Models}
+
+
+
+The previous model that should be used if an old version of this object is encountered. Using this attribute also requires that the type have a public constructor that takes only one parameter, an object instance of the given type. Use of this parameter {\itshape requires} that the Version\+String parameter is also set. 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_a2f71f5d718abe0eb30544ff6f8510664}\label{class_full_serializer_1_1fs_object_attribute_a2f71f5d718abe0eb30544ff6f8510664}} 
+\index{Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}!Processor@{Processor}}
+\index{Processor@{Processor}!Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}}
+\subsubsection{\texorpdfstring{Processor}{Processor}}
+{\footnotesize\ttfamily Type Full\+Serializer.\+fs\+Object\+Attribute.\+Processor}
+
+
+
+Specify a custom processor to use during serialization. The processor type needs to derive from \hyperlink{class_full_serializer_1_1fs_object_processor}{fs\+Object\+Processor} and the call to Can\+Process is not invoked. This defaults to null. 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_object_attribute_ac3208d9844485e25429cd4182d34111a}\label{class_full_serializer_1_1fs_object_attribute_ac3208d9844485e25429cd4182d34111a}} 
+\index{Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}!Version\+String@{Version\+String}}
+\index{Version\+String@{Version\+String}!Full\+Serializer\+::fs\+Object\+Attribute@{Full\+Serializer\+::fs\+Object\+Attribute}}
+\subsubsection{\texorpdfstring{Version\+String}{VersionString}}
+{\footnotesize\ttfamily string Full\+Serializer.\+fs\+Object\+Attribute.\+Version\+String}
+
+
+
+The version string to use for this model. This should be unique among all prior versions of this model that is supported for importation. If Previous\+Model is set, then this attribute must also be set. A good valid example for this is \char`\"{}v1\char`\"{}, \char`\"{}v2\char`\"{}, \char`\"{}v3\char`\"{}, ... 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/fs\+Object\+Attribute.\+cs\end{DoxyCompactItemize}

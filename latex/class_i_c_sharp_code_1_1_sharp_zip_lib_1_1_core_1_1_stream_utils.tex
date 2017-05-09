@@ -1,0 +1,164 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils}}
+
+
+Provides simple Stream" utilities.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a35593e4cff75ba440a12f5778cf96b87}{Read\+Fully} (Stream stream, byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Read from a Stream ensuring all the required data is read. \end{DoxyCompactList}\item 
+static void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a310e2522c2517393a8a0bcb7b4e9f32f}{Read\+Fully} (Stream stream, byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Read from a Stream" ensuring all the required data is read. \end{DoxyCompactList}\item 
+static void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a4d28bd20f4b154a766948f7bb35e8788}{Copy} (Stream source, Stream destination, byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Copy the contents of one Stream to another. \end{DoxyCompactList}\item 
+static void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a6d2302d10d2ef42d04aabddfcab286bc}{Copy} (Stream source, Stream destination, byte\mbox{[}$\,$\mbox{]} buffer, \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{Progress\+Handler} progress\+Handler, Time\+Span update\+Interval, object sender, string name)
+\begin{DoxyCompactList}\small\item\em Copy the contents of one Stream to another. \end{DoxyCompactList}\item 
+static void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_ace932da98ae2c60d45deb7db4d9e1c02}{Copy} (Stream source, Stream destination, byte\mbox{[}$\,$\mbox{]} buffer, \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{Progress\+Handler} progress\+Handler, Time\+Span update\+Interval, object sender, string name, long fixed\+Target)
+\begin{DoxyCompactList}\small\item\em Copy the contents of one Stream to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides simple Stream" utilities. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a4d28bd20f4b154a766948f7bb35e8788}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a4d28bd20f4b154a766948f7bb35e8788}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}!Copy@{Copy}}
+\index{Copy@{Copy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}}
+\subsubsection{\texorpdfstring{Copy()}{Copy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils.\+Copy (\begin{DoxyParamCaption}\item[{Stream}]{source,  }\item[{Stream}]{destination,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Copy the contents of one Stream to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The stream to source data from.\\
+\hline
+{\em destination} & The stream to write data to.\\
+\hline
+{\em buffer} & The buffer to use during copying.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a6d2302d10d2ef42d04aabddfcab286bc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a6d2302d10d2ef42d04aabddfcab286bc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}!Copy@{Copy}}
+\index{Copy@{Copy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}}
+\subsubsection{\texorpdfstring{Copy()}{Copy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils.\+Copy (\begin{DoxyParamCaption}\item[{Stream}]{source,  }\item[{Stream}]{destination,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{Progress\+Handler}}]{progress\+Handler,  }\item[{Time\+Span}]{update\+Interval,  }\item[{object}]{sender,  }\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Copy the contents of one Stream to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The stream to source data from.\\
+\hline
+{\em destination} & The stream to write data to.\\
+\hline
+{\em buffer} & The buffer to use during copying.\\
+\hline
+{\em progress\+Handler} & The \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{progress handler delegate} to use.\\
+\hline
+{\em update\+Interval} & The minimum Time\+Span between progress updates.\\
+\hline
+{\em sender} & The source for this event.\\
+\hline
+{\em name} & The name to use with the event.\\
+\hline
+\end{DoxyParams}
+
+
+This form is specialised for use within \#\+Zip to support events during archive operations.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_ace932da98ae2c60d45deb7db4d9e1c02}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_ace932da98ae2c60d45deb7db4d9e1c02}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}!Copy@{Copy}}
+\index{Copy@{Copy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}}
+\subsubsection{\texorpdfstring{Copy()}{Copy()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils.\+Copy (\begin{DoxyParamCaption}\item[{Stream}]{source,  }\item[{Stream}]{destination,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{Progress\+Handler}}]{progress\+Handler,  }\item[{Time\+Span}]{update\+Interval,  }\item[{object}]{sender,  }\item[{string}]{name,  }\item[{long}]{fixed\+Target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Copy the contents of one Stream to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The stream to source data from.\\
+\hline
+{\em destination} & The stream to write data to.\\
+\hline
+{\em buffer} & The buffer to use during copying.\\
+\hline
+{\em progress\+Handler} & The \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_a55f409bd1114da81c14d18c4d8682968}{progress handler delegate} to use.\\
+\hline
+{\em update\+Interval} & The minimum Time\+Span between progress updates.\\
+\hline
+{\em sender} & The source for this event.\\
+\hline
+{\em name} & The name to use with the event.\\
+\hline
+{\em fixed\+Target} & A predetermined fixed target value to use with progress updates. If the value is negative the target is calculated by looking at the stream.\\
+\hline
+\end{DoxyParams}
+
+
+This form is specialised for use within \#\+Zip to support events during archive operations.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a35593e4cff75ba440a12f5778cf96b87}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a35593e4cff75ba440a12f5778cf96b87}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}!Read\+Fully@{Read\+Fully}}
+\index{Read\+Fully@{Read\+Fully}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}}
+\subsubsection{\texorpdfstring{Read\+Fully()}{ReadFully()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils.\+Read\+Fully (\begin{DoxyParamCaption}\item[{Stream}]{stream,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Read from a Stream ensuring all the required data is read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to read.\\
+\hline
+{\em buffer} & The buffer to fill.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Read\+Fully(\+Stream,byte\mbox{[}$\,$\mbox{]},int,int)
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a310e2522c2517393a8a0bcb7b4e9f32f}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_stream_utils_a310e2522c2517393a8a0bcb7b4e9f32f}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}!Read\+Fully@{Read\+Fully}}
+\index{Read\+Fully@{Read\+Fully}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Stream\+Utils}}
+\subsubsection{\texorpdfstring{Read\+Fully()}{ReadFully()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Stream\+Utils.\+Read\+Fully (\begin{DoxyParamCaption}\item[{Stream}]{stream,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Read from a Stream" ensuring all the required data is read. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to read data from.\\
+\hline
+{\em buffer} & The buffer to store data in.\\
+\hline
+{\em offset} & The offset at which to begin storing data.\\
+\hline
+{\em count} & The number of bytes of data to store.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Required parameter is null\\
+\hline
+{\em Argument\+Out\+Of\+Range\+Exception} & {\itshape offset}  and or {\itshape count}  are invalid.\\
+\hline
+{\em End\+Of\+Stream\+Exception} & End of stream is encountered before all the data has been read.\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Core/Stream\+Utils.\+cs\end{DoxyCompactItemize}

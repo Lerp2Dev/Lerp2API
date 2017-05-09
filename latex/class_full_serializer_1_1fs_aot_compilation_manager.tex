@@ -1,0 +1,84 @@
+\hypertarget{class_full_serializer_1_1fs_aot_compilation_manager}{}\section{Full\+Serializer.\+fs\+Aot\+Compilation\+Manager Class Reference}
+\label{class_full_serializer_1_1fs_aot_compilation_manager}\index{Full\+Serializer.\+fs\+Aot\+Compilation\+Manager@{Full\+Serializer.\+fs\+Aot\+Compilation\+Manager}}
+
+
+The A\+OT compilation manager  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_full_serializer_1_1fs_aot_compilation_manager_ad63036b8772e8717639e930d0d5415be}{Try\+To\+Perform\+Aot\+Compilation} (\hyperlink{class_full_serializer_1_1fs_config}{fs\+Config} config, Type type, out string aot\+Compiled\+Class\+In\+C\+Sharp)
+\begin{DoxyCompactList}\small\item\em This is a helper method that makes it simple to run an A\+OT compilation on the given type. \end{DoxyCompactList}\item 
+static void \hyperlink{class_full_serializer_1_1fs_aot_compilation_manager_a95d8b88a7886091eb43f70a4eeb20adc}{Add\+Aot\+Compilation} (Type type, \hyperlink{class_full_serializer_1_1_internal_1_1fs_meta_property}{fs\+Meta\+Property}\mbox{[}$\,$\mbox{]} members, bool is\+Constructor\+Public)
+\begin{DoxyCompactList}\small\item\em Adds a new A\+OT compilation unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ Type, string $>$ \hyperlink{class_full_serializer_1_1fs_aot_compilation_manager_afa91f1d1f6154eb766f650bc3abe631c}{Available\+Aot\+Compilations}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ahead of time compilations that are available. The type maps to the object type the generated converter will serialize/deserialize, and the string is the text content for a converter that will do the serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\+OT compilation manager 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1fs_aot_compilation_manager_a95d8b88a7886091eb43f70a4eeb20adc}\label{class_full_serializer_1_1fs_aot_compilation_manager_a95d8b88a7886091eb43f70a4eeb20adc}} 
+\index{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}!Add\+Aot\+Compilation@{Add\+Aot\+Compilation}}
+\index{Add\+Aot\+Compilation@{Add\+Aot\+Compilation}!Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Aot\+Compilation()}{AddAotCompilation()}}
+{\footnotesize\ttfamily static void Full\+Serializer.\+fs\+Aot\+Compilation\+Manager.\+Add\+Aot\+Compilation (\begin{DoxyParamCaption}\item[{Type}]{type,  }\item[{\hyperlink{class_full_serializer_1_1_internal_1_1fs_meta_property}{fs\+Meta\+Property} \mbox{[}$\,$\mbox{]}}]{members,  }\item[{bool}]{is\+Constructor\+Public }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adds a new A\+OT compilation unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of object we are A\+OT compiling.\\
+\hline
+{\em members} & The members on the object which will be serialized/deserialized.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_full_serializer_1_1fs_aot_compilation_manager_ad63036b8772e8717639e930d0d5415be}\label{class_full_serializer_1_1fs_aot_compilation_manager_ad63036b8772e8717639e930d0d5415be}} 
+\index{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}!Try\+To\+Perform\+Aot\+Compilation@{Try\+To\+Perform\+Aot\+Compilation}}
+\index{Try\+To\+Perform\+Aot\+Compilation@{Try\+To\+Perform\+Aot\+Compilation}!Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}}
+\subsubsection{\texorpdfstring{Try\+To\+Perform\+Aot\+Compilation()}{TryToPerformAotCompilation()}}
+{\footnotesize\ttfamily static bool Full\+Serializer.\+fs\+Aot\+Compilation\+Manager.\+Try\+To\+Perform\+Aot\+Compilation (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_config}{fs\+Config}}]{config,  }\item[{Type}]{type,  }\item[{out string}]{aot\+Compiled\+Class\+In\+C\+Sharp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+This is a helper method that makes it simple to run an A\+OT compilation on the given type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The configuration to use when running A\+OT compilation.\\
+\hline
+{\em type} & The type to perform the A\+OT compilation on.\\
+\hline
+{\em aot\+Compiled\+Class\+In\+C\+Sharp} & The A\+OT class. Add this C\# code to your project.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if A\+OT compilation was successful.
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1fs_aot_compilation_manager_afa91f1d1f6154eb766f650bc3abe631c}\label{class_full_serializer_1_1fs_aot_compilation_manager_afa91f1d1f6154eb766f650bc3abe631c}} 
+\index{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}!Available\+Aot\+Compilations@{Available\+Aot\+Compilations}}
+\index{Available\+Aot\+Compilations@{Available\+Aot\+Compilations}!Full\+Serializer\+::fs\+Aot\+Compilation\+Manager@{Full\+Serializer\+::fs\+Aot\+Compilation\+Manager}}
+\subsubsection{\texorpdfstring{Available\+Aot\+Compilations}{AvailableAotCompilations}}
+{\footnotesize\ttfamily Dictionary$<$Type, string$>$ Full\+Serializer.\+fs\+Aot\+Compilation\+Manager.\+Available\+Aot\+Compilations\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Ahead of time compilations that are available. The type maps to the object type the generated converter will serialize/deserialize, and the string is the text content for a converter that will do the serialization. 
+
+The generated serializer is completely independent and you don\textquotesingle{}t need to do anything. Simply add the file to your project and it\textquotesingle{}ll get used instead of the reflection based one. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/fs\+Aot\+Compilation\+Manager.\+cs\end{DoxyCompactItemize}

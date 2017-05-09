@@ -1,0 +1,178 @@
+\hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter}{}\section{Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter Class Reference}
+\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter}\index{Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter@{Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter}}
+
+
+Serializes and deserializes Weak\+References.  
+
+
+Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_ac0c327bc319e20e3648e58239ac90888}{Can\+Process} (Type type)
+\begin{DoxyCompactList}\small\item\em Can this converter serialize and deserialize the given object type? \end{DoxyCompactList}\item 
+override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a917bdcf70205871ef02577d31b3216f3}{Request\+Cycle\+Support} (Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em If true, then the serializer will support cyclic references with the given converted type. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a4f8dd86c002f7a3e6b25a1b16d791c60}{Request\+Inheritance\+Support} (Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em If true, then the serializer will include inheritance data for the given converter. \end{DoxyCompactList}\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a2faaa58d3ec0a68a9f8aed9e94d92b27}{Try\+Serialize} (object instance, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Serialize the actual object into the given data storage. \end{DoxyCompactList}\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a0b1b66f55b2e380a0b17f2944dc0ff84}{Try\+Deserialize} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, ref object instance, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Deserialize data into the object instance. \end{DoxyCompactList}\item 
+override object \hyperlink{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a8732fca2359367dbf78c687898625406}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Serializes and deserializes Weak\+References. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_ac0c327bc319e20e3648e58239ac90888}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_ac0c327bc319e20e3648e58239ac90888}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Can\+Process@{Can\+Process}}
+\index{Can\+Process@{Can\+Process}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Can\+Process()}{CanProcess()}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Can\+Process (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Can this converter serialize and deserialize the given object type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The given object type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the converter can serialize it, false otherwise.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_converter_a6d9e084c5e7f646a8d220705efaecb35}{Full\+Serializer.\+fs\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a8732fca2359367dbf78c687898625406}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a8732fca2359367dbf78c687898625406}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Create\+Instance@{Create\+Instance}}
+\index{Create\+Instance@{Create\+Instance}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Create\+Instance()}{CreateInstance()}}
+{\footnotesize\ttfamily override object Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Create\+Instance (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data the object was serialized with.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object instance
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a415ea2ac9429bbb9927346af7cb7c2e1}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a917bdcf70205871ef02577d31b3216f3}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a917bdcf70205871ef02577d31b3216f3}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Request\+Cycle\+Support@{Request\+Cycle\+Support}}
+\index{Request\+Cycle\+Support@{Request\+Cycle\+Support}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Request\+Cycle\+Support()}{RequestCycleSupport()}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Request\+Cycle\+Support (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+If true, then the serializer will support cyclic references with the given converted type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a4e850ab88cea1b89771c00e0b65febcd}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a4f8dd86c002f7a3e6b25a1b16d791c60}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a4f8dd86c002f7a3e6b25a1b16d791c60}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Request\+Inheritance\+Support@{Request\+Inheritance\+Support}}
+\index{Request\+Inheritance\+Support@{Request\+Inheritance\+Support}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Request\+Inheritance\+Support()}{RequestInheritanceSupport()}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Request\+Inheritance\+Support (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+If true, then the serializer will include inheritance data for the given converter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a84447285540ab6b51efc2399d144c60c}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a0b1b66f55b2e380a0b17f2944dc0ff84}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a0b1b66f55b2e380a0b17f2944dc0ff84}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Try\+Deserialize@{Try\+Deserialize}}
+\index{Try\+Deserialize@{Try\+Deserialize}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Try\+Deserialize()}{TryDeserialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{ref object}]{instance,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Deserialize data into the object instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \hyperlink{namespace_serialization}{Serialization} data to deserialize from.\\
+\hline
+{\em instance} & The object instance to deserialize into.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if serialization was successful, false otherwise.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_base_converter_a38d3d1b042eb788819883354073a224e}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a2faaa58d3ec0a68a9f8aed9e94d92b27}\label{class_full_serializer_1_1_internal_1_1fs_weak_reference_converter_a2faaa58d3ec0a68a9f8aed9e94d92b27}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}!Try\+Serialize@{Try\+Serialize}}
+\index{Try\+Serialize@{Try\+Serialize}!Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Weak\+Reference\+Converter}}
+\subsubsection{\texorpdfstring{Try\+Serialize()}{TrySerialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Weak\+Reference\+Converter.\+Try\+Serialize (\begin{DoxyParamCaption}\item[{object}]{instance,  }\item[{out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{serialized,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Serialize the actual object into the given data storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The object instance to serialize. This will never be null.\\
+\hline
+{\em serialized} & The serialized state.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing this instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If serialization was successful.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_base_converter_aeb0065770e53ecaac3f5dd3b5cd670d1}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/\+Converters/fs\+Weak\+Reference\+Converter.\+cs\end{DoxyCompactItemize}

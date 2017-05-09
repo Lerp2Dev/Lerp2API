@@ -1,0 +1,196 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter}}
+
+
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter} filters based on name, file size, and the last write time of the file.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a27d7833448d6596a63f2974765de4fd3}{Extended\+Path\+Filter} (string filter, long min\+Size, long max\+Size)
+\begin{DoxyCompactList}\small\item\em Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a0b3ca801aa21b1e6e70e469c53c898b8}{Extended\+Path\+Filter} (string filter, Date\+Time min\+Date, Date\+Time max\+Date)
+\begin{DoxyCompactList}\small\item\em Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_ab1c9bc916dae3b52681ac8db424b1c3e}{Extended\+Path\+Filter} (string filter, long min\+Size, long max\+Size, Date\+Time min\+Date, Date\+Time max\+Date)
+\begin{DoxyCompactList}\small\item\em Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a4d66921d72a1b16622a14083b2fb790d}{Is\+Match} (string name)
+\begin{DoxyCompactList}\small\item\em Test a filename to see if it matches the filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acdc6135cebbfca7a3263fe9ce1c72bc7}{Min\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set the minimum size/length for a file that will match this filter. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acd1bf418b764a27b2e7a87746e4b3867}{Max\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set the maximum size/length for a file that will match this filter. \end{DoxyCompactList}\item 
+Date\+Time \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a71a60192bcfcb2e79b4f3a01628c29ee}{Min\+Date}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set the minimum Date\+Time value that will match for this filter. \end{DoxyCompactList}\item 
+Date\+Time \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_aba31cfad2ecb1b385c93b2520455cf88}{Max\+Date}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set the maximum Date\+Time value that will match for this filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter} filters based on name, file size, and the last write time of the file. 
+
+Provides an example of how to customise filtering.
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a27d7833448d6596a63f2974765de4fd3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a27d7833448d6596a63f2974765de4fd3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Extended\+Path\+Filter@{Extended\+Path\+Filter}}
+\index{Extended\+Path\+Filter@{Extended\+Path\+Filter}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Extended\+Path\+Filter()}{ExtendedPathFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Extended\+Path\+Filter (\begin{DoxyParamCaption}\item[{string}]{filter,  }\item[{long}]{min\+Size,  }\item[{long}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter to apply.\\
+\hline
+{\em min\+Size} & The minimum file size to include.\\
+\hline
+{\em max\+Size} & The maximum file size to include.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a0b3ca801aa21b1e6e70e469c53c898b8}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a0b3ca801aa21b1e6e70e469c53c898b8}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Extended\+Path\+Filter@{Extended\+Path\+Filter}}
+\index{Extended\+Path\+Filter@{Extended\+Path\+Filter}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Extended\+Path\+Filter()}{ExtendedPathFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Extended\+Path\+Filter (\begin{DoxyParamCaption}\item[{string}]{filter,  }\item[{Date\+Time}]{min\+Date,  }\item[{Date\+Time}]{max\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter to apply.\\
+\hline
+{\em min\+Date} & The minimum Date\+Time to include.\\
+\hline
+{\em max\+Date} & The maximum Date\+Time to include.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_ab1c9bc916dae3b52681ac8db424b1c3e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_ab1c9bc916dae3b52681ac8db424b1c3e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Extended\+Path\+Filter@{Extended\+Path\+Filter}}
+\index{Extended\+Path\+Filter@{Extended\+Path\+Filter}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Extended\+Path\+Filter()}{ExtendedPathFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Extended\+Path\+Filter (\begin{DoxyParamCaption}\item[{string}]{filter,  }\item[{long}]{min\+Size,  }\item[{long}]{max\+Size,  }\item[{Date\+Time}]{min\+Date,  }\item[{Date\+Time}]{max\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise a new instance of \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter}{Extended\+Path\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter to apply.\\
+\hline
+{\em min\+Size} & The minimum file size to include.\\
+\hline
+{\em max\+Size} & The maximum file size to include.\\
+\hline
+{\em min\+Date} & The minimum Date\+Time to include.\\
+\hline
+{\em max\+Date} & The maximum Date\+Time to include.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a4d66921d72a1b16622a14083b2fb790d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a4d66921d72a1b16622a14083b2fb790d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Is\+Match@{Is\+Match}}
+\index{Is\+Match@{Is\+Match}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Match()}{IsMatch()}}
+{\footnotesize\ttfamily override bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Is\+Match (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Test a filename to see if it matches the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The filename to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the filter matches, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+I\+O.\+File\+Not\+Found\+Exception} & The  doesnt exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_path_filter_a9c140b289a97036cdfe4eb55e1b5d5b8}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Path\+Filter}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_aba31cfad2ecb1b385c93b2520455cf88}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_aba31cfad2ecb1b385c93b2520455cf88}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Max\+Date@{Max\+Date}}
+\index{Max\+Date@{Max\+Date}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Max\+Date}{MaxDate}}
+{\footnotesize\ttfamily Date\+Time I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Max\+Date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set the maximum Date\+Time value that will match for this filter. 
+
+Files with a Last\+Write time greater than this value are excluded by the filter.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acd1bf418b764a27b2e7a87746e4b3867}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acd1bf418b764a27b2e7a87746e4b3867}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Max\+Size@{Max\+Size}}
+\index{Max\+Size@{Max\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Max\+Size}{MaxSize}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Max\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set the maximum size/length for a file that will match this filter. 
+
+The default value is System.\+Int64.\+Max\+Value
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & value is less than zero or less than \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acdc6135cebbfca7a3263fe9ce1c72bc7}{Min\+Size}\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a71a60192bcfcb2e79b4f3a01628c29ee}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_a71a60192bcfcb2e79b4f3a01628c29ee}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Min\+Date@{Min\+Date}}
+\index{Min\+Date@{Min\+Date}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Min\+Date}{MinDate}}
+{\footnotesize\ttfamily Date\+Time I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Min\+Date\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set the minimum Date\+Time value that will match for this filter. 
+
+Files with a Last\+Write time less than this value are excluded by the filter.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acdc6135cebbfca7a3263fe9ce1c72bc7}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acdc6135cebbfca7a3263fe9ce1c72bc7}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}!Min\+Size@{Min\+Size}}
+\index{Min\+Size@{Min\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Extended\+Path\+Filter}}
+\subsubsection{\texorpdfstring{Min\+Size}{MinSize}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Extended\+Path\+Filter.\+Min\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set the minimum size/length for a file that will match this filter. 
+
+The default value is zero.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & value is less than zero; greater than \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_extended_path_filter_acd1bf418b764a27b2e7a87746e4b3867}{Max\+Size}\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Core/Path\+Filter.\+cs\end{DoxyCompactItemize}

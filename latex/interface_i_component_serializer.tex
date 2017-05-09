@@ -1,0 +1,63 @@
+\hypertarget{interface_i_component_serializer}{}\section{I\+Component\+Serializer Interface Reference}
+\label{interface_i_component_serializer}\index{I\+Component\+Serializer@{I\+Component\+Serializer}}
+Inheritance diagram for I\+Component\+Serializer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{interface_i_component_serializer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{Serialize} (Component component)
+\begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
+void \hyperlink{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
+\begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}\label{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}} 
+\index{I\+Component\+Serializer@{I\+Component\+Serializer}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!I\+Component\+Serializer@{I\+Component\+Serializer}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void I\+Component\+Serializer.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{Component}]{instance }\end{DoxyParamCaption})}
+
+
+
+Deserialize the specified data into the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data that represents the component, produced by Serialize \\
+\hline
+{\em instance} & The instance to target \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialize_event_system_a27ee6101f51abf181d2bdf755708cdeb}{Serialize\+Event\+System}, \hyperlink{class_serialize_audio_high_pass_filter_a12318bb13445fae737731dc3e1d7172b}{Serialize\+Audio\+High\+Pass\+Filter}, \hyperlink{class_serialize_audio_low_pass_filter_a041864b6e0b1f1a8bab893b5243ad880}{Serialize\+Audio\+Low\+Pass\+Filter}, \hyperlink{class_serialize_audio_echo_filter_ad5beda12b5d39b678ce291ee1c13374c}{Serialize\+Audio\+Echo\+Filter}, \hyperlink{class_serialize_audio_distortion_filter_ac48265d0fbc0547e5d316f09828ca086}{Serialize\+Audio\+Distortion\+Filter}, \hyperlink{class_serialize_audio_chorus_filter_a2e5e9eeee7a3053843911ddd0ca0ae00}{Serialize\+Audio\+Chorus\+Filter}, \hyperlink{class_serialize_skinned_mesh_renderer_ae689a9e0a41aa23ec86f46bffa56b7b5}{Serialize\+Skinned\+Mesh\+Renderer}, \hyperlink{class_serialize_trail_renderer_a9be87b05372daa6150e8e4522fa97568}{Serialize\+Trail\+Renderer}, \hyperlink{class_serialize_line_renderer_ae925ea66d21c259c560d2cbe5ccb762b}{Serialize\+Line\+Renderer}, \hyperlink{class_serialize_renderer_a98dc10a848db6d55165ce92ce5521c39}{Serialize\+Renderer}, \hyperlink{class_serialize_rigid_body_a5d6e7d0282184b45b23d579b872e89a2}{Serialize\+Rigid\+Body}, \hyperlink{class_serialize_camera_af71e86c5582df1d9eb1d4e652fe00f83}{Serialize\+Camera}, \hyperlink{class_serialize_nav_mesh_agent_ad5a28c80e751f4727a1a4b83c06b5428}{Serialize\+Nav\+Mesh\+Agent}, \hyperlink{class_serialize_animations_a70a93ea3a6ce6289e19f0552565cebba}{Serialize\+Animations}, \hyperlink{class_serialize_wheel_joint2_d_af4223b135bd9cf9be33639922944f9de}{Serialize\+Wheel\+Joint2D}, \hyperlink{class_serialize_spring_joint2_d_aac148dbf74d0b00fff9983e677ed4a10}{Serialize\+Spring\+Joint2D}, \hyperlink{class_serialize_slider_joint2_d_a50d76e3724e23d0acc752f75715be6e8}{Serialize\+Slider\+Joint2D}, \hyperlink{class_serialize_relative_joint2_d_a48e35c8c7fa333d24579df5f00128a50}{Serialize\+Relative\+Joint2D}, \hyperlink{class_serialize_hinge_joint2_d_aad33e878c1b722e388f05fe1892157e8}{Serialize\+Hinge\+Joint2D}, \hyperlink{class_serialize_friction_joint2_d_a54d659c051702c28e03ab1d9cb938605}{Serialize\+Friction\+Joint2D}, \hyperlink{class_serialize_fixed_joint2_d_aa2cc872282e6bb7c209ac406fb0b8335}{Serialize\+Fixed\+Joint2D}, \hyperlink{class_serialize_distance_joint2_d_a0b7341e25aba6354afa746c912bb20f5}{Serialize\+Distance\+Joint2D}, \hyperlink{class_serialize_polygon_collider2_d_a91694bef6812922cf021805d76b9d7e4}{Serialize\+Polygon\+Collider2D}, \hyperlink{class_serialize_edge_collider2_d_a6abc37b6168840eaea4bf0bdbdc4c624}{Serialize\+Edge\+Collider2D}, \hyperlink{class_serialize_circle_collider2_d_ae96fe731156dd3dad5f854f9fcb7ac19}{Serialize\+Circle\+Collider2D}, \hyperlink{class_serialize_box_collider2_d_ad00de81c7e9e81bc30beb97194f34e17}{Serialize\+Box\+Collider2D}, \hyperlink{class_serialize_rigid_body2_d_ae143c153be5caaaa898e0d7e2951fbd2}{Serialize\+Rigid\+Body2D}, \hyperlink{class_serialize_wheel_collider_aa0fb4372a07823644b82f0fc968b4fcf}{Serialize\+Wheel\+Collider}, and \hyperlink{class_component_serializer_extension_base_a003b02386876cd68c588aef276124b0c}{Component\+Serializer\+Extension\+Base$<$ T $>$}.
+
+\mbox{\Hypertarget{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}\label{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}} 
+\index{I\+Component\+Serializer@{I\+Component\+Serializer}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!I\+Component\+Serializer@{I\+Component\+Serializer}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} I\+Component\+Serializer.\+Serialize (\begin{DoxyParamCaption}\item[{Component}]{component }\end{DoxyParamCaption})}
+
+
+
+Serialize the specified component to a byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component to be serialized \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_serialize_event_system_a433cd679d73a8b4c4823e960b224231b}{Serialize\+Event\+System}, \hyperlink{class_serialize_audio_high_pass_filter_ae26f6c970a4912689ae3a7300fdc9139}{Serialize\+Audio\+High\+Pass\+Filter}, \hyperlink{class_serialize_audio_low_pass_filter_a3c3f8b730af67936ec7ddc4f318bd1c0}{Serialize\+Audio\+Low\+Pass\+Filter}, \hyperlink{class_serialize_audio_echo_filter_a05a44375abc89e383547960120fb55e6}{Serialize\+Audio\+Echo\+Filter}, \hyperlink{class_serialize_audio_distortion_filter_a035cc0e02b72b00fdc39d0fbfe5c2b96}{Serialize\+Audio\+Distortion\+Filter}, \hyperlink{class_serialize_audio_chorus_filter_a1cedba3237b73240c2fb96f8831dc834}{Serialize\+Audio\+Chorus\+Filter}, \hyperlink{class_serialize_skinned_mesh_renderer_a5537c5f2cab4580a75bd8f6ef3ef331d}{Serialize\+Skinned\+Mesh\+Renderer}, \hyperlink{class_serialize_trail_renderer_ab7177e5b5343bff3444f014b3a1f88de}{Serialize\+Trail\+Renderer}, \hyperlink{class_serialize_line_renderer_a2e58af3caf73c033912f59f8a568f6e4}{Serialize\+Line\+Renderer}, \hyperlink{class_serialize_renderer_afa879a8743291c478d35c50d9956c707}{Serialize\+Renderer}, \hyperlink{class_serialize_rigid_body_a5b70b8af5b0b775bc961eb553a36b438}{Serialize\+Rigid\+Body}, \hyperlink{class_serialize_camera_a003d716552672a6f3994a768aded2235}{Serialize\+Camera}, \hyperlink{class_serialize_nav_mesh_agent_a74cea446ba02a0814a3c215c27fa81d8}{Serialize\+Nav\+Mesh\+Agent}, \hyperlink{class_serialize_animations_a05552bb8c8baad409516f661845bc4e7}{Serialize\+Animations}, \hyperlink{class_serialize_wheel_joint2_d_a832d5d2bce3ce68dfb32b5b00fd45719}{Serialize\+Wheel\+Joint2D}, \hyperlink{class_serialize_spring_joint2_d_a74dc25a62ade31ed51b3f47d1097e5e7}{Serialize\+Spring\+Joint2D}, \hyperlink{class_serialize_slider_joint2_d_ad690d87ffc29815b59900bde784a1ed3}{Serialize\+Slider\+Joint2D}, \hyperlink{class_serialize_relative_joint2_d_a4769d5255430ffa12107acdc03a2e73a}{Serialize\+Relative\+Joint2D}, \hyperlink{class_serialize_hinge_joint2_d_a1e2a66811e08e2e87ea97ca28b65b844}{Serialize\+Hinge\+Joint2D}, \hyperlink{class_serialize_friction_joint2_d_a6063f9c73da7ddac92e9da48628f17c1}{Serialize\+Friction\+Joint2D}, \hyperlink{class_serialize_fixed_joint2_d_a9eb05bc525fe5cbf55dd5e917e2f36f2}{Serialize\+Fixed\+Joint2D}, \hyperlink{class_serialize_distance_joint2_d_a5eecfd9c48d46eb25958ffb301924b3b}{Serialize\+Distance\+Joint2D}, \hyperlink{class_serialize_polygon_collider2_d_a0f488a1150cc7f8786e659577a4d9488}{Serialize\+Polygon\+Collider2D}, \hyperlink{class_serialize_edge_collider2_d_aa0efa9c04d2981e21c8d7a66003b1cf9}{Serialize\+Edge\+Collider2D}, \hyperlink{class_serialize_circle_collider2_d_afc9c9861ba6c6c9949d56c851dd095fa}{Serialize\+Circle\+Collider2D}, \hyperlink{class_serialize_box_collider2_d_ab002b432810dbe5029e486b8f0a85878}{Serialize\+Box\+Collider2D}, \hyperlink{class_serialize_rigid_body2_d_a40d4ecd6dc6a136cb123fbb76d6ead00}{Serialize\+Rigid\+Body2D}, \hyperlink{class_serialize_wheel_collider_aeecc61865e7331afb0436aae4f53dc4d}{Serialize\+Wheel\+Collider}, and \hyperlink{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}{Component\+Serializer\+Extension\+Base$<$ T $>$}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Level\+Serializer.\+cs\end{DoxyCompactItemize}

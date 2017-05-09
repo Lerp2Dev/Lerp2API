@@ -1,0 +1,212 @@
+\hypertarget{struct_full_serializer_1_1fs_result}{}\section{Full\+Serializer.\+fs\+Result Struct Reference}
+\label{struct_full_serializer_1_1fs_result}\index{Full\+Serializer.\+fs\+Result@{Full\+Serializer.\+fs\+Result}}
+
+
+The result of some sort of operation. A result is either successful or not, but if it is successful then there may be a set of warnings/messages associated with it. These warnings describe the performed error recovery operations.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{struct_full_serializer_1_1fs_result_afe5ac00b5b1c6b4863a4a7870cbbd066}{Add\+Message} (string message)
+\begin{DoxyCompactList}\small\item\em Adds a new message to this result. \end{DoxyCompactList}\item 
+void \hyperlink{struct_full_serializer_1_1fs_result_a7aff2b2f78db0d8e0b9e0daeb08a8f70}{Add\+Messages} (\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} result)
+\begin{DoxyCompactList}\small\item\em Adds only the messages from the other result into this result, ignoring the success/failure status of the other result. \end{DoxyCompactList}\item 
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_abb53580c70996e49251eb1fd4bc62f4b}{Merge} (\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} other)
+\begin{DoxyCompactList}\small\item\em Merges the other result into this one. If the other result failed, then this one too will have failed. \end{DoxyCompactList}\item 
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a2f5ddbcfe4d51a087e1870df76cc2235}{Assert\+Success} ()
+\begin{DoxyCompactList}\small\item\em A simply utility method that will assert that this result is successful. If it is not, then an exception is thrown. \end{DoxyCompactList}\item 
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a0779492de62a8b952b37617c2e7ff362}{Assert\+Success\+Without\+Warnings} ()
+\begin{DoxyCompactList}\small\item\em A simple utility method that will assert that this result is successful and that there are no warning messages. This throws an exception if either of those asserts are false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a28eab13689fc7ff2b0a1d0326e044463}{Warn} (string warning)
+\begin{DoxyCompactList}\small\item\em Create a result that is successful but contains the given warning message. \end{DoxyCompactList}\item 
+static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a668c1169410a20364aa7c53f98d00617}{Fail} (string warning)
+\begin{DoxyCompactList}\small\item\em Create a result that failed. \end{DoxyCompactList}\item 
+static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a6625430da8b5013745d6eb7c1512f1e6}{operator+} (\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} a, \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} b)
+\begin{DoxyCompactList}\small\item\em Only use this as +=! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{struct_full_serializer_1_1fs_result_a21c921f6a0a99b1ba5acc993e669f3cc}{Success}
+\begin{DoxyCompactList}\small\item\em A successful result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_full_serializer_1_1fs_result_ac6770cd3b068004050fc45f82736564c}{Failed}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Did this result fail? If so, you can see the reasons why in {\ttfamily Raw\+Messages}. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_full_serializer_1_1fs_result_a09d500a429685b79bec14453423af551}{Succeeded}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Was the result a success? Note that even successful operations may have warning messages ({\ttfamily Raw\+Messages}) associated with them. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_full_serializer_1_1fs_result_a44ec04b6b1e0834f87fd82a10b120f71}{Has\+Warnings}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Does this result have any warnings? This says nothing about if it failed or succeeded, just if it has warning messages associated with it. \end{DoxyCompactList}\item 
+Exception \hyperlink{struct_full_serializer_1_1fs_result_a9bde651297a47eb80ca1e6d14d3647f2}{As\+Exception}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Utility method to convert the result to an exception. This method is only defined is {\ttfamily Failed} returns true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_aaeea44c75b0b24e759e6e46c7259eab1}\label{struct_full_serializer_1_1fs_result_aaeea44c75b0b24e759e6e46c7259eab1}} 
+I\+Enumerable$<$ string $>$ {\bfseries Raw\+Messages}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a4930e1ef04bc46c9b31b324bb130e251}\label{struct_full_serializer_1_1fs_result_a4930e1ef04bc46c9b31b324bb130e251}} 
+string {\bfseries Formatted\+Messages}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The result of some sort of operation. A result is either successful or not, but if it is successful then there may be a set of warnings/messages associated with it. These warnings describe the performed error recovery operations. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_afe5ac00b5b1c6b4863a4a7870cbbd066}\label{struct_full_serializer_1_1fs_result_afe5ac00b5b1c6b4863a4a7870cbbd066}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Add\+Message@{Add\+Message}}
+\index{Add\+Message@{Add\+Message}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Add\+Message()}{AddMessage()}}
+{\footnotesize\ttfamily void Full\+Serializer.\+fs\+Result.\+Add\+Message (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new message to this result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a7aff2b2f78db0d8e0b9e0daeb08a8f70}\label{struct_full_serializer_1_1fs_result_a7aff2b2f78db0d8e0b9e0daeb08a8f70}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Add\+Messages@{Add\+Messages}}
+\index{Add\+Messages@{Add\+Messages}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Add\+Messages()}{AddMessages()}}
+{\footnotesize\ttfamily void Full\+Serializer.\+fs\+Result.\+Add\+Messages (\begin{DoxyParamCaption}\item[{\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds only the messages from the other result into this result, ignoring the success/failure status of the other result. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a2f5ddbcfe4d51a087e1870df76cc2235}\label{struct_full_serializer_1_1fs_result_a2f5ddbcfe4d51a087e1870df76cc2235}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Assert\+Success@{Assert\+Success}}
+\index{Assert\+Success@{Assert\+Success}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Assert\+Success()}{AssertSuccess()}}
+{\footnotesize\ttfamily \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Assert\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A simply utility method that will assert that this result is successful. If it is not, then an exception is thrown. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a0779492de62a8b952b37617c2e7ff362}\label{struct_full_serializer_1_1fs_result_a0779492de62a8b952b37617c2e7ff362}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Assert\+Success\+Without\+Warnings@{Assert\+Success\+Without\+Warnings}}
+\index{Assert\+Success\+Without\+Warnings@{Assert\+Success\+Without\+Warnings}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Assert\+Success\+Without\+Warnings()}{AssertSuccessWithoutWarnings()}}
+{\footnotesize\ttfamily \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Assert\+Success\+Without\+Warnings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A simple utility method that will assert that this result is successful and that there are no warning messages. This throws an exception if either of those asserts are false. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a668c1169410a20364aa7c53f98d00617}\label{struct_full_serializer_1_1fs_result_a668c1169410a20364aa7c53f98d00617}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Fail@{Fail}}
+\index{Fail@{Fail}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Fail()}{Fail()}}
+{\footnotesize\ttfamily static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Fail (\begin{DoxyParamCaption}\item[{string}]{warning }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create a result that failed. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_abb53580c70996e49251eb1fd4bc62f4b}\label{struct_full_serializer_1_1fs_result_abb53580c70996e49251eb1fd4bc62f4b}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Merge@{Merge}}
+\index{Merge@{Merge}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Merge()}{Merge()}}
+{\footnotesize\ttfamily \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Merge (\begin{DoxyParamCaption}\item[{\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Merges the other result into this one. If the other result failed, then this one too will have failed. 
+
+Note that you can use += instead of this method so that you don\textquotesingle{}t bury the actual method call that is generating the other \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}. \mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a6625430da8b5013745d6eb7c1512f1e6}\label{struct_full_serializer_1_1fs_result_a6625430da8b5013745d6eb7c1512f1e6}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!operator+@{operator+}}
+\index{operator+@{operator+}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+operator+ (\begin{DoxyParamCaption}\item[{\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}}]{a,  }\item[{\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Only use this as +=! 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a28eab13689fc7ff2b0a1d0326e044463}\label{struct_full_serializer_1_1fs_result_a28eab13689fc7ff2b0a1d0326e044463}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Warn@{Warn}}
+\index{Warn@{Warn}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Warn()}{Warn()}}
+{\footnotesize\ttfamily static \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Warn (\begin{DoxyParamCaption}\item[{string}]{warning }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create a result that is successful but contains the given warning message. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a21c921f6a0a99b1ba5acc993e669f3cc}\label{struct_full_serializer_1_1fs_result_a21c921f6a0a99b1ba5acc993e669f3cc}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Success@{Success}}
+\index{Success@{Success}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Success}{Success}}
+{\footnotesize\ttfamily \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+fs\+Result.\+Success\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} fsResult
+        \{
+            \_success = \textcolor{keyword}{true}
+        \}
+\end{DoxyCode}
+
+
+A successful result. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a9bde651297a47eb80ca1e6d14d3647f2}\label{struct_full_serializer_1_1fs_result_a9bde651297a47eb80ca1e6d14d3647f2}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!As\+Exception@{As\+Exception}}
+\index{As\+Exception@{As\+Exception}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{As\+Exception}{AsException}}
+{\footnotesize\ttfamily Exception Full\+Serializer.\+fs\+Result.\+As\+Exception\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Utility method to convert the result to an exception. This method is only defined is {\ttfamily Failed} returns true. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_ac6770cd3b068004050fc45f82736564c}\label{struct_full_serializer_1_1fs_result_ac6770cd3b068004050fc45f82736564c}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Failed@{Failed}}
+\index{Failed@{Failed}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Failed}{Failed}}
+{\footnotesize\ttfamily bool Full\+Serializer.\+fs\+Result.\+Failed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Did this result fail? If so, you can see the reasons why in {\ttfamily Raw\+Messages}. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a44ec04b6b1e0834f87fd82a10b120f71}\label{struct_full_serializer_1_1fs_result_a44ec04b6b1e0834f87fd82a10b120f71}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Has\+Warnings@{Has\+Warnings}}
+\index{Has\+Warnings@{Has\+Warnings}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Has\+Warnings}{HasWarnings}}
+{\footnotesize\ttfamily bool Full\+Serializer.\+fs\+Result.\+Has\+Warnings\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Does this result have any warnings? This says nothing about if it failed or succeeded, just if it has warning messages associated with it. 
+
+\mbox{\Hypertarget{struct_full_serializer_1_1fs_result_a09d500a429685b79bec14453423af551}\label{struct_full_serializer_1_1fs_result_a09d500a429685b79bec14453423af551}} 
+\index{Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}!Succeeded@{Succeeded}}
+\index{Succeeded@{Succeeded}!Full\+Serializer\+::fs\+Result@{Full\+Serializer\+::fs\+Result}}
+\subsubsection{\texorpdfstring{Succeeded}{Succeeded}}
+{\footnotesize\ttfamily bool Full\+Serializer.\+fs\+Result.\+Succeeded\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Was the result a success? Note that even successful operations may have warning messages ({\ttfamily Raw\+Messages}) associated with them. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/fs\+Result.\+cs\end{DoxyCompactItemize}

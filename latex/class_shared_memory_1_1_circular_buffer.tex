@@ -1,0 +1,627 @@
+\hypertarget{class_shared_memory_1_1_circular_buffer}{}\section{Shared\+Memory.\+Circular\+Buffer Class Reference}
+\label{class_shared_memory_1_1_circular_buffer}\index{Shared\+Memory.\+Circular\+Buffer@{Shared\+Memory.\+Circular\+Buffer}}
+
+
+A lock-\/free F\+I\+FO shared memory circular buffer (or ring buffer) utilising a Memory\+Mapped\+File.  
+
+
+Inheritance diagram for Shared\+Memory.\+Circular\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_shared_memory_1_1_circular_buffer}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}
+\begin{DoxyCompactList}\small\item\em Represents a node within the buffer\textquotesingle{}s circular linked list \end{DoxyCompactList}\item 
+struct \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header}{Node\+Header}
+\begin{DoxyCompactList}\small\item\em Provides cursors for the circular buffer along with dimensions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shared_memory_1_1_circular_buffer_a50ab9ecafab3807e22fbadd32234830a}{Circular\+Buffer} (string name, int node\+Count, int node\+Buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Creates and opens a new \hyperlink{class_shared_memory_1_1_circular_buffer}{Circular\+Buffer} instance with the specified name, node count and buffer size per node. \end{DoxyCompactList}\item 
+\hyperlink{class_shared_memory_1_1_circular_buffer_aa701a9a1a0ce4daa043e45c803bfcbde}{Circular\+Buffer} (string name)
+\begin{DoxyCompactList}\small\item\em Opens an existing \hyperlink{class_shared_memory_1_1_circular_buffer}{Circular\+Buffer} with the specified name. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a988b37e45afb8a8576041ed350407a0a}{Write} (byte\mbox{[}$\,$\mbox{]} source, int start\+Index=0, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Writes the byte array buffer to the next available node for writing \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a588d16fbdffec14ee4d5e962ffae9bbf}{Write$<$ T $>$} (T\mbox{[}$\,$\mbox{]} source, int start\+Index=0, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Writes the structure array buffer to the next available node for writing \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a73580b2c9e51472d9e9561c532c392d4}{Write$<$ T $>$} (ref T source, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Writes the structure to the next available node for writing \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_aa119f1d2ffcf73a1ceff6a2a4adc29a3}{Write} (Int\+Ptr source, int length, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Writes {\itshape length}  bytes from {\itshape source}  to the next available node for writing \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_aea9b35786dbdb15df6bb21e2e85fdb29}{Write} (Func$<$ Int\+Ptr, int $>$ write\+Func, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reserves a node for writing and then calls the provided {\itshape write\+Func}  to perform the write operation. \end{DoxyCompactList}\item 
+\hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header}{Node\+Header} \hyperlink{class_shared_memory_1_1_circular_buffer_ad2c91fdb5a0fab9e89a2398a05354681}{Read\+Node\+Header} ()
+\begin{DoxyCompactList}\small\item\em Returns a copy of the shared memory header \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a67667de3539376aee8411d68574764e1}{Read} (byte\mbox{[}$\,$\mbox{]} destination, int start\+Index=0, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reads the next available node for reading into the specified byte array \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_ad58ea0beac997d6c4ad540f834fc54fb}{Read$<$ T $>$} (T\mbox{[}$\,$\mbox{]} destination, int start\+Index=0, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reads the next available node for reading into the specified structure array \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a8b66803c5cba5a40b9feb8f7e26b3fcd}{Read$<$ T $>$} (out T destination, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reads the next available node for reading into the a structure \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a43041d214848b12d2df5af075e6dbf71}{Read} (Int\+Ptr destination, int length, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reads the next available node for reading into the specified memory location with the specified length \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a5301c6f9237dd63eeaf57e4e0560f62e}{Read} (Func$<$ Int\+Ptr, int $>$ read\+Func, int timeout=1000)
+\begin{DoxyCompactList}\small\item\em Reserves a node for reading and then calls the provided {\itshape read\+Func}  to perform the read operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_shared_memory_1_1_circular_buffer_aff62bc6b9dbca60658ab979762dd073d}{Do\+Open} ()
+\begin{DoxyCompactList}\small\item\em Attempts to create the Event\+Wait\+Handle handles and initialise the node header and buffers. \end{DoxyCompactList}\item 
+override void \hyperlink{class_shared_memory_1_1_circular_buffer_a29c1e46f0d8a3b95c83a361ac7f84194}{Do\+Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the events. The shared memory could still be open within one or more other instances. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$ \hyperlink{class_shared_memory_1_1_circular_buffer_acbe3706f03284bceb02fde3b6dc2fcbe}{Get\+Node\+For\+Writing} (int timeout)
+\begin{DoxyCompactList}\small\item\em Attempts to reserve a node from the linked-\/list for writing with the specified timeout. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_circular_buffer_a76ce3579d8c7254fbd8e5b1bc32eafd1}{Post\+Node} (\hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Makes a node available for reading after writing is complete \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$ \hyperlink{class_shared_memory_1_1_circular_buffer_a2d906a5fe33490932bec3417750e5d6f}{Get\+Node\+For\+Reading} (int timeout)
+\begin{DoxyCompactList}\small\item\em Attempts to reserve a node from the linked-\/list for reading with the specified timeout \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_circular_buffer_ae7b68568186c9e2324d36990b3f2e101}{Return\+Node} (\hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Returns a node to the available list of nodes for writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_shared_memory_1_1_circular_buffer_a24a2dbcfbebc2544beba93cd5a64ed57}{Node\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of nodes within the circular linked-\/list \end{DoxyCompactList}\item 
+int \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The buffer size of each node \end{DoxyCompactList}\item 
+Event\+Wait\+Handle \hyperlink{class_shared_memory_1_1_circular_buffer_a5948a0e13aec25495912fb30f49466d9}{Data\+Exists}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Event signaled when data has been written if the reading index has caught up to the writing index \end{DoxyCompactList}\item 
+Event\+Wait\+Handle \hyperlink{class_shared_memory_1_1_circular_buffer_a6cb8d3b1110b14dcdfea740977451ace}{Node\+Available}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Event signaled when a node becomes available after reading if the writing index has caught up to the reading index \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_circular_buffer_a449c60929c1fa3d491952fcaedda1c72}{Node\+Header\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The offset relative to \hyperlink{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}{Shared\+Buffer.\+Buffer\+Start\+Ptr} where the node header starts within the buffer region of the shared memory \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_circular_buffer_a551af249ceca9d75331cf72de943a21d}{Node\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Where the linked-\/list nodes are located within the buffer \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_circular_buffer_a4ec1c53a1ba26daf9d6df25fad2f6621}{Node\+Buffer\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Where the list of buffers are located within the shared memory \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$ \hyperlink{class_shared_memory_1_1_circular_buffer_ab594664b851446512ae4ca11a6d44274}{this\mbox{[}int i\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Provide direct access to the \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}\mbox{[}\mbox{]} memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A lock-\/free F\+I\+FO shared memory circular buffer (or ring buffer) utilising a Memory\+Mapped\+File. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a50ab9ecafab3807e22fbadd32234830a}\label{class_shared_memory_1_1_circular_buffer_a50ab9ecafab3807e22fbadd32234830a}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Circular\+Buffer@{Circular\+Buffer}}
+\index{Circular\+Buffer@{Circular\+Buffer}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Circular\+Buffer()}{CircularBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shared\+Memory.\+Circular\+Buffer.\+Circular\+Buffer (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{node\+Count,  }\item[{int}]{node\+Buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates and opens a new \hyperlink{class_shared_memory_1_1_circular_buffer}{Circular\+Buffer} instance with the specified name, node count and buffer size per node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the shared memory to be created\\
+\hline
+{\em node\+Count} & The number of nodes within the circular linked-\/list (minimum of 2)\\
+\hline
+{\em node\+Buffer\+Size} & The buffer size per node in bytes. The total shared memory size will be 
+\begin{DoxyCode}
+Marshal.SizeOf(\hyperlink{namespace_shared_memory}{SharedMemory}.\hyperlink{struct_shared_memory_1_1_shared_header}{SharedHeader}) + Marshal.SizeOf(
+      \hyperlink{class_shared_memory_1_1_circular_buffer_a50ab9ecafab3807e22fbadd32234830a}{CircularBuffer}.NodeHeader) + (Marshal.SizeOf(\hyperlink{class_shared_memory_1_1_circular_buffer_a50ab9ecafab3807e22fbadd32234830a}{CircularBuffer}.Node) * nodeCount) 
+      + (bufferSize * nodeCount)
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyParams}
+
+
+The maximum total shared memory size is dependent upon the system and current memory fragmentation.
+
+The shared memory layout on 32-\/bit and 64-\/bit architectures is\+:~\newline
+ 
+\begin{DoxyCode}
+|       \hyperlink{class_shared_memory_1_1_shared_buffer_a3533d9212c8de47a5ad5d98c3b950c3a}{Header}       |   NodeHeader  | Node[0] | ... | Node[N-1] | buffer[0] | ... | buffer[N-1] |<br
+       />
+|      16-bytes      |    24-bytes   |       32-bytes * N        |     
+      \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{NodeBufferSize} * N        |<br />
+                     |---------------------------&mdash;\hyperlink{class_shared_memory_1_1_shared_buffer_a3f349a666f907c724a876c52c5fd63e9}{BufferSize}-------------------------------
+      -&mdash;|<br />
+|--------------------------------------&mdash;\hyperlink{class_shared_memory_1_1_shared_buffer_a733b9a53bf913e22a6b97334ffe054dc}{SharedMemorySize}-----------------------------
+      -------&mdash;|
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_aa701a9a1a0ce4daa043e45c803bfcbde}\label{class_shared_memory_1_1_circular_buffer_aa701a9a1a0ce4daa043e45c803bfcbde}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Circular\+Buffer@{Circular\+Buffer}}
+\index{Circular\+Buffer@{Circular\+Buffer}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Circular\+Buffer()}{CircularBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shared\+Memory.\+Circular\+Buffer.\+Circular\+Buffer (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Opens an existing \hyperlink{class_shared_memory_1_1_circular_buffer}{Circular\+Buffer} with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of an existing \hyperlink{class_shared_memory_1_1_circular_buffer}{Circular\+Buffer} previously created with \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Shared\+Buffer.\+Is\+Owner\+Of\+Shared\+Memory}=true\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a29c1e46f0d8a3b95c83a361ac7f84194}\label{class_shared_memory_1_1_circular_buffer_a29c1e46f0d8a3b95c83a361ac7f84194}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Do\+Close@{Do\+Close}}
+\index{Do\+Close@{Do\+Close}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Do\+Close()}{DoClose()}}
+{\footnotesize\ttfamily override void Shared\+Memory.\+Circular\+Buffer.\+Do\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Closes the events. The shared memory could still be open within one or more other instances. 
+
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_a2137a67b3309712bc1e9a540c919f9bc}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_aff62bc6b9dbca60658ab979762dd073d}\label{class_shared_memory_1_1_circular_buffer_aff62bc6b9dbca60658ab979762dd073d}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Do\+Open@{Do\+Open}}
+\index{Do\+Open@{Do\+Open}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Do\+Open()}{DoOpen()}}
+{\footnotesize\ttfamily override bool Shared\+Memory.\+Circular\+Buffer.\+Do\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to create the Event\+Wait\+Handle handles and initialise the node header and buffers. 
+
+\begin{DoxyReturn}{Returns}
+True if the events and nodes were initialised successfully.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_ae91f81f088cebf1bca375bfe0cb48d6e}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a2d906a5fe33490932bec3417750e5d6f}\label{class_shared_memory_1_1_circular_buffer_a2d906a5fe33490932bec3417750e5d6f}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Get\+Node\+For\+Reading@{Get\+Node\+For\+Reading}}
+\index{Get\+Node\+For\+Reading@{Get\+Node\+For\+Reading}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Node\+For\+Reading()}{GetNodeForReading()}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}$\ast$ Shared\+Memory.\+Circular\+Buffer.\+Get\+Node\+For\+Reading (\begin{DoxyParamCaption}\item[{int}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to reserve a node from the linked-\/list for reading with the specified timeout 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & The number of milliseconds to wait if a node is not immediately available for reading.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An unsafe pointer to the node if successful, otherwise null
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_acbe3706f03284bceb02fde3b6dc2fcbe}\label{class_shared_memory_1_1_circular_buffer_acbe3706f03284bceb02fde3b6dc2fcbe}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Get\+Node\+For\+Writing@{Get\+Node\+For\+Writing}}
+\index{Get\+Node\+For\+Writing@{Get\+Node\+For\+Writing}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Node\+For\+Writing()}{GetNodeForWriting()}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}$\ast$ Shared\+Memory.\+Circular\+Buffer.\+Get\+Node\+For\+Writing (\begin{DoxyParamCaption}\item[{int}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to reserve a node from the linked-\/list for writing with the specified timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & The number of milliseconds to wait if a node is not immediately available for writing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An unsafe pointer to the node if successful, otherwise null
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a76ce3579d8c7254fbd8e5b1bc32eafd1}\label{class_shared_memory_1_1_circular_buffer_a76ce3579d8c7254fbd8e5b1bc32eafd1}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Post\+Node@{Post\+Node}}
+\index{Post\+Node@{Post\+Node}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Post\+Node()}{PostNode()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Circular\+Buffer.\+Post\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Makes a node available for reading after writing is complete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & An unsafe pointer to the node to return\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a67667de3539376aee8411d68574764e1}\label{class_shared_memory_1_1_circular_buffer_a67667de3539376aee8411d68574764e1}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{destination,  }\item[{int}]{start\+Index = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads the next available node for reading into the specified byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Reference to the buffer\\
+\hline
+{\em start\+Index} & The index within the buffer to start writing from\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read
+\end{DoxyReturn}
+
+
+The maximum number of bytes that can be read is the minimum of the length of {\itshape destination}  subtracted by {\itshape start\+Index}  and \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}.\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a43041d214848b12d2df5af075e6dbf71}\label{class_shared_memory_1_1_circular_buffer_a43041d214848b12d2df5af075e6dbf71}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Read (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{destination,  }\item[{int}]{length,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads the next available node for reading into the specified memory location with the specified length 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Pointer to the buffer\\
+\hline
+{\em length} & The maximum length of {\itshape destination} \\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read
+\end{DoxyReturn}
+
+
+The maximum number of bytes that can be read is the minimum of the {\itshape length}  and \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a6af4949dfc5fb4b751fe774f29f4ce87}{Node.\+Amount\+Written}.\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a5301c6f9237dd63eeaf57e4e0560f62e}\label{class_shared_memory_1_1_circular_buffer_a5301c6f9237dd63eeaf57e4e0560f62e}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Read (\begin{DoxyParamCaption}\item[{Func$<$ Int\+Ptr, int $>$}]{read\+Func,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reserves a node for reading and then calls the provided {\itshape read\+Func}  to perform the read operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+Func} & A function used to read from the node\textquotesingle{}s buffer. The first parameter is a pointer to the node\textquotesingle{}s buffer. The provided function should return the number of bytes read.\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_ad58ea0beac997d6c4ad540f834fc54fb}\label{class_shared_memory_1_1_circular_buffer_ad58ea0beac997d6c4ad540f834fc54fb}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a67667de3539376aee8411d68574764e1}{Shared\+Memory.\+Circular\+Buffer.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{destination,  }\item[{int}]{start\+Index = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads the next available node for reading into the specified structure array 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The structure type to be read\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Reference to the buffer\\
+\hline
+{\em start\+Index} & The index within the destination to start writing to.\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements read into destination
+\end{DoxyReturn}
+
+
+The maximum number of elements that can be read is the minimum of the length of {\itshape destination}  subtracted by {\itshape start\+Index}  and \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_a6af4949dfc5fb4b751fe774f29f4ce87}{Node.\+Amount\+Written} divided by 
+\begin{DoxyCode}
+FastStructure.SizeOf>T<()
+\end{DoxyCode}
+.\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a8b66803c5cba5a40b9feb8f7e26b3fcd}\label{class_shared_memory_1_1_circular_buffer_a8b66803c5cba5a40b9feb8f7e26b3fcd}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a67667de3539376aee8411d68574764e1}{Shared\+Memory.\+Circular\+Buffer.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{out T}]{destination,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads the next available node for reading into the a structure 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The structure type to be read\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & The resulting structure if successful otherwise default(\+T)\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & If the size of {\itshape T}  is larger than \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}.\\
+\hline
+\end{DoxyExceptions}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_ad2c91fdb5a0fab9e89a2398a05354681}\label{class_shared_memory_1_1_circular_buffer_ad2c91fdb5a0fab9e89a2398a05354681}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Read\+Node\+Header@{Read\+Node\+Header}}
+\index{Read\+Node\+Header@{Read\+Node\+Header}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Read\+Node\+Header()}{ReadNodeHeader()}}
+{\footnotesize\ttfamily \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header}{Node\+Header} Shared\+Memory.\+Circular\+Buffer.\+Read\+Node\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a copy of the shared memory header 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_ae7b68568186c9e2324d36990b3f2e101}\label{class_shared_memory_1_1_circular_buffer_ae7b68568186c9e2324d36990b3f2e101}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Return\+Node@{Return\+Node}}
+\index{Return\+Node@{Return\+Node}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Return\+Node()}{ReturnNode()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Circular\+Buffer.\+Return\+Node (\begin{DoxyParamCaption}\item[{\hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Returns a node to the available list of nodes for writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & An unsafe pointer to the node to be returned\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a988b37e45afb8a8576041ed350407a0a}\label{class_shared_memory_1_1_circular_buffer_a988b37e45afb8a8576041ed350407a0a}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{start\+Index = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes the byte array buffer to the next available node for writing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Reference to the buffer to write\\
+\hline
+{\em start\+Index} & The index within the buffer to start writing from\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written
+\end{DoxyReturn}
+
+
+The maximum number of bytes that can be written is the minimum of the length of {\itshape source}  and \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}.\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_aa119f1d2ffcf73a1ceff6a2a4adc29a3}\label{class_shared_memory_1_1_circular_buffer_aa119f1d2ffcf73a1ceff6a2a4adc29a3}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Write (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{source,  }\item[{int}]{length,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes {\itshape length}  bytes from {\itshape source}  to the next available node for writing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Pointer to the buffer to copy\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available (default 1000ms)\\
+\hline
+{\em length} & The number of bytes to attempt to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written
+\end{DoxyReturn}
+
+
+The maximum number of bytes that can be written is the minimum of {\itshape length}  and \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}.\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_aea9b35786dbdb15df6bb21e2e85fdb29}\label{class_shared_memory_1_1_circular_buffer_aea9b35786dbdb15df6bb21e2e85fdb29}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual int Shared\+Memory.\+Circular\+Buffer.\+Write (\begin{DoxyParamCaption}\item[{Func$<$ Int\+Ptr, int $>$}]{write\+Func,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reserves a node for writing and then calls the provided {\itshape write\+Func}  to perform the write operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em write\+Func} & A function to used to write to the node\textquotesingle{}s buffer. The first parameter is a pointer to the node\textquotesingle{}s buffer. The provided function should return the number of bytes written.\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a588d16fbdffec14ee4d5e962ffae9bbf}\label{class_shared_memory_1_1_circular_buffer_a588d16fbdffec14ee4d5e962ffae9bbf}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a988b37e45afb8a8576041ed350407a0a}{Shared\+Memory.\+Circular\+Buffer.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{start\+Index = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes the structure array buffer to the next available node for writing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Reference to the buffer to write\\
+\hline
+{\em start\+Index} & The index within the buffer to start writing from\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements written
+\end{DoxyReturn}
+
+
+The maximum number of elements that can be written is the minimum of the length of {\itshape source}  subtracted by {\itshape start\+Index}  and \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size} divided by 
+\begin{DoxyCode}
+FastStructure.SizeOf>T<()
+\end{DoxyCode}
+.\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a73580b2c9e51472d9e9561c532c392d4}\label{class_shared_memory_1_1_circular_buffer_a73580b2c9e51472d9e9561c532c392d4}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int \hyperlink{class_shared_memory_1_1_circular_buffer_a988b37e45afb8a8576041ed350407a0a}{Shared\+Memory.\+Circular\+Buffer.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{ref T}]{source,  }\item[{int}]{timeout = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes the structure to the next available node for writing 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The structure type to be written\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The structure to be written\\
+\hline
+{\em timeout} & The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written -\/ larger than 0 if successful
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & If the size of the {\itshape T}  structure is larger than \hyperlink{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}{Node\+Buffer\+Size}.\\
+\hline
+\end{DoxyExceptions}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a5948a0e13aec25495912fb30f49466d9}\label{class_shared_memory_1_1_circular_buffer_a5948a0e13aec25495912fb30f49466d9}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Data\+Exists@{Data\+Exists}}
+\index{Data\+Exists@{Data\+Exists}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Data\+Exists}{DataExists}}
+{\footnotesize\ttfamily Event\+Wait\+Handle Shared\+Memory.\+Circular\+Buffer.\+Data\+Exists\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Event signaled when data has been written if the reading index has caught up to the writing index 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a6cb8d3b1110b14dcdfea740977451ace}\label{class_shared_memory_1_1_circular_buffer_a6cb8d3b1110b14dcdfea740977451ace}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Available@{Node\+Available}}
+\index{Node\+Available@{Node\+Available}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Available}{NodeAvailable}}
+{\footnotesize\ttfamily Event\+Wait\+Handle Shared\+Memory.\+Circular\+Buffer.\+Node\+Available\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Event signaled when a node becomes available after reading if the writing index has caught up to the reading index 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a4ec1c53a1ba26daf9d6df25fad2f6621}\label{class_shared_memory_1_1_circular_buffer_a4ec1c53a1ba26daf9d6df25fad2f6621}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Buffer\+Offset@{Node\+Buffer\+Offset}}
+\index{Node\+Buffer\+Offset@{Node\+Buffer\+Offset}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Buffer\+Offset}{NodeBufferOffset}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Circular\+Buffer.\+Node\+Buffer\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Where the list of buffers are located within the shared memory 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}\label{class_shared_memory_1_1_circular_buffer_a25a6c6b560e818ef1ba6d645e0e14018}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Buffer\+Size@{Node\+Buffer\+Size}}
+\index{Node\+Buffer\+Size@{Node\+Buffer\+Size}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Buffer\+Size}{NodeBufferSize}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node\+Buffer\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The buffer size of each node 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a24a2dbcfbebc2544beba93cd5a64ed57}\label{class_shared_memory_1_1_circular_buffer_a24a2dbcfbebc2544beba93cd5a64ed57}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Count@{Node\+Count}}
+\index{Node\+Count@{Node\+Count}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Count}{NodeCount}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The number of nodes within the circular linked-\/list 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a449c60929c1fa3d491952fcaedda1c72}\label{class_shared_memory_1_1_circular_buffer_a449c60929c1fa3d491952fcaedda1c72}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Header\+Offset@{Node\+Header\+Offset}}
+\index{Node\+Header\+Offset@{Node\+Header\+Offset}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Header\+Offset}{NodeHeaderOffset}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Circular\+Buffer.\+Node\+Header\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+The offset relative to \hyperlink{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}{Shared\+Buffer.\+Buffer\+Start\+Ptr} where the node header starts within the buffer region of the shared memory 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_a551af249ceca9d75331cf72de943a21d}\label{class_shared_memory_1_1_circular_buffer_a551af249ceca9d75331cf72de943a21d}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!Node\+Offset@{Node\+Offset}}
+\index{Node\+Offset@{Node\+Offset}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{Node\+Offset}{NodeOffset}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Circular\+Buffer.\+Node\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Where the linked-\/list nodes are located within the buffer 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_circular_buffer_ab594664b851446512ae4ca11a6d44274}\label{class_shared_memory_1_1_circular_buffer_ab594664b851446512ae4ca11a6d44274}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}!this\mbox{[}int i\mbox{]}@{this[int i]}}
+\index{this\mbox{[}int i\mbox{]}@{this[int i]}!Shared\+Memory\+::\+Circular\+Buffer@{Shared\+Memory\+::\+Circular\+Buffer}}
+\subsubsection{\texorpdfstring{this[int i]}{this[int i]}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}$\ast$ Shared\+Memory.\+Circular\+Buffer.\+this\mbox{[}int i\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Provide direct access to the \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node}{Node}\mbox{[}\mbox{]} memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Shared\+Memory/Circular\+Buffer.\+cs\end{DoxyCompactItemize}

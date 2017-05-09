@@ -1,0 +1,241 @@
+\hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{}\section{System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder Struct Reference}
+\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}\index{System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder@{System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder}}
+
+
+Provides a builder for asynchronous methods that return void. This type is intended for compiler use only.  
+
+
+
+
+Inherits System.\+Runtime.\+Compiler\+Services.\+I\+Async\+Method\+Builder.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a2b3bc9b0d5b793a8671f6846b51eebf3}{Start$<$ T\+State\+Machine $>$} (ref T\+State\+Machine state\+Machine)
+\begin{DoxyCompactList}\small\item\em Initiates the builder\textquotesingle{}s execution with the associated state machine.\end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ad2728cc2a036d8b12682364d1b25010b}{Set\+State\+Machine} (\hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_async_state_machine}{I\+Async\+State\+Machine} state\+Machine)
+\begin{DoxyCompactList}\small\item\em Associates the builder with the state machine it represents.\end{DoxyCompactList}\item 
+void I\+Async\+Method\+Builder. \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a663b7077696448270f562d50d3ca46b9}{Pre\+Box\+Initialization$<$ T\+State\+Machine $>$} (ref T\+State\+Machine state\+Machine)
+\begin{DoxyCompactList}\small\item\em Perform any initialization necessary prior to lifting the builder to the heap.\end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ab14a3a0fd8620657ecd75b0ef096aee7}{Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$} (ref T\+Awaiter awaiter, ref T\+State\+Machine state\+Machine)
+\begin{DoxyCompactList}\small\item\em Schedules the specified state machine to be pushed forward when the specified awaiter completes. \end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ae6c510dbdc77b3197b00fed939da2263}{Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$} (ref T\+Awaiter awaiter, ref T\+State\+Machine state\+Machine)
+\begin{DoxyCompactList}\small\item\em Schedules the specified state machine to be pushed forward when the specified awaiter completes. \end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_acef1f52e68e094163859f1d3a891a9af}{Set\+Result} ()
+\begin{DoxyCompactList}\small\item\em Completes the method builder successfully.\end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a3aaedab49b43335eebad1a9d3fc3dab5}{Set\+Exception} (Exception exception)
+\begin{DoxyCompactList}\small\item\em Faults the method builder with an exception.\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a59bcbc32c01ba5cc5247fc9f2be62fd1}{Async\+Void\+Method\+Builder} ()
+\begin{DoxyCompactList}\small\item\em Temporary support for disabling crashing if tasks go unobserved.\end{DoxyCompactList}\item 
+static \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{Async\+Void\+Method\+Builder} \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a235983bbb3e696c5831af5f6ed093994}{Create} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{Async\+Void\+Method\+Builder}.\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+object I\+Async\+Method\+Builder. \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a747b2a2fc6e09e415117f6610c5b9f21}{Object\+Id\+For\+Debugger}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets an object that may be used to uniquely identify this builder to the debugger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a builder for asynchronous methods that return void. This type is intended for compiler use only. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a59bcbc32c01ba5cc5247fc9f2be62fd1}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a59bcbc32c01ba5cc5247fc9f2be62fd1}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Async\+Void\+Method\+Builder@{Async\+Void\+Method\+Builder}}
+\index{Async\+Void\+Method\+Builder@{Async\+Void\+Method\+Builder}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Async\+Void\+Method\+Builder()}{AsyncVoidMethodBuilder()}}
+{\footnotesize\ttfamily static System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Async\+Void\+Method\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Temporary support for disabling crashing if tasks go unobserved.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ab14a3a0fd8620657ecd75b0ef096aee7}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ab14a3a0fd8620657ecd75b0ef096aee7}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$@{Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$}}
+\index{Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$@{Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$()}{AwaitOnCompleted< TAwaiter, TStateMachine >()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Await\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$ (\begin{DoxyParamCaption}\item[{ref T\+Awaiter}]{awaiter,  }\item[{ref T\+State\+Machine}]{state\+Machine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Schedules the specified state machine to be pushed forward when the specified awaiter completes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Awaiter} & Specifies the type of the awaiter.\\
+\hline
+{\em T\+State\+Machine} & Specifies the type of the state machine.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em awaiter} & The awaiter.\\
+\hline
+{\em state\+Machine} & The state machine.\\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T\+Awaiter} : {\em I\+Notify\+Completion}]\item[{\em T\+State\+Machine} : {\em I\+Async\+State\+Machine}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ae6c510dbdc77b3197b00fed939da2263}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ae6c510dbdc77b3197b00fed939da2263}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$@{Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$}}
+\index{Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$@{Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$()}{AwaitUnsafeOnCompleted< TAwaiter, TStateMachine >()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Await\+Unsafe\+On\+Completed$<$ T\+Awaiter, T\+State\+Machine $>$ (\begin{DoxyParamCaption}\item[{ref T\+Awaiter}]{awaiter,  }\item[{ref T\+State\+Machine}]{state\+Machine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Schedules the specified state machine to be pushed forward when the specified awaiter completes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Awaiter} & Specifies the type of the awaiter.\\
+\hline
+{\em T\+State\+Machine} & Specifies the type of the state machine.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em awaiter} & The awaiter.\\
+\hline
+{\em state\+Machine} & The state machine.\\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T\+Awaiter} : {\em I\+Critical\+Notify\+Completion}]\item[{\em T\+State\+Machine} : {\em I\+Async\+State\+Machine}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a235983bbb3e696c5831af5f6ed093994}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a235983bbb3e696c5831af5f6ed093994}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Create@{Create}}
+\index{Create@{Create}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily static \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{Async\+Void\+Method\+Builder} System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Initializes a new \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{Async\+Void\+Method\+Builder}.
+
+\begin{DoxyReturn}{Returns}
+The initialized \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder}{Async\+Void\+Method\+Builder}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a663b7077696448270f562d50d3ca46b9}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a663b7077696448270f562d50d3ca46b9}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Pre\+Box\+Initialization$<$ T\+State\+Machine $>$@{Pre\+Box\+Initialization$<$ T\+State\+Machine $>$}}
+\index{Pre\+Box\+Initialization$<$ T\+State\+Machine $>$@{Pre\+Box\+Initialization$<$ T\+State\+Machine $>$}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Pre\+Box\+Initialization$<$ T\+State\+Machine $>$()}{PreBoxInitialization< TStateMachine >()}}
+{\footnotesize\ttfamily void I\+Async\+Method\+Builder. System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Pre\+Box\+Initialization$<$ T\+State\+Machine $>$ (\begin{DoxyParamCaption}\item[{ref T\+State\+Machine}]{state\+Machine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Perform any initialization necessary prior to lifting the builder to the heap.
+
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a3aaedab49b43335eebad1a9d3fc3dab5}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a3aaedab49b43335eebad1a9d3fc3dab5}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Set\+Exception@{Set\+Exception}}
+\index{Set\+Exception@{Set\+Exception}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Exception()}{SetException()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Set\+Exception (\begin{DoxyParamCaption}\item[{Exception}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Faults the method builder with an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em exception} & The exception that is the cause of this fault.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If {\itshape exception}  is . \\
+\hline
+{\em Invalid\+Operation\+Exception} & The builder is not initialized.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_acef1f52e68e094163859f1d3a891a9af}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_acef1f52e68e094163859f1d3a891a9af}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Set\+Result@{Set\+Result}}
+\index{Set\+Result@{Set\+Result}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Set\+Result()}{SetResult()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Set\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Completes the method builder successfully.
+
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ad2728cc2a036d8b12682364d1b25010b}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_ad2728cc2a036d8b12682364d1b25010b}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Set\+State\+Machine@{Set\+State\+Machine}}
+\index{Set\+State\+Machine@{Set\+State\+Machine}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Set\+State\+Machine()}{SetStateMachine()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Set\+State\+Machine (\begin{DoxyParamCaption}\item[{\hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_async_state_machine}{I\+Async\+State\+Machine}}]{state\+Machine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Associates the builder with the state machine it represents.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Machine} & The heap-\/allocated state machine object.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If {\itshape state\+Machine}  is . \\
+\hline
+{\em Invalid\+Operation\+Exception} & The builder is incorrectly initialized.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a2b3bc9b0d5b793a8671f6846b51eebf3}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a2b3bc9b0d5b793a8671f6846b51eebf3}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Start$<$ T\+State\+Machine $>$@{Start$<$ T\+State\+Machine $>$}}
+\index{Start$<$ T\+State\+Machine $>$@{Start$<$ T\+State\+Machine $>$}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Start$<$ T\+State\+Machine $>$()}{Start< TStateMachine >()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Start$<$ T\+State\+Machine $>$ (\begin{DoxyParamCaption}\item[{ref T\+State\+Machine}]{state\+Machine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initiates the builder\textquotesingle{}s execution with the associated state machine.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+State\+Machine} & Specifies the type of the state machine.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em state\+Machine} & The state machine instance, passed by reference.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If {\itshape state\+Machine}  is . \\
+\hline
+\end{DoxyExceptions}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T\+State\+Machine} : {\em I\+Async\+State\+Machine}]\end{description}
+\end{Desc}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a747b2a2fc6e09e415117f6610c5b9f21}\label{struct_system_1_1_runtime_1_1_compiler_services_1_1_async_void_method_builder_a747b2a2fc6e09e415117f6610c5b9f21}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}!Object\+Id\+For\+Debugger@{Object\+Id\+For\+Debugger}}
+\index{Object\+Id\+For\+Debugger@{Object\+Id\+For\+Debugger}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+Async\+Void\+Method\+Builder}}
+\subsubsection{\texorpdfstring{Object\+Id\+For\+Debugger}{ObjectIdForDebugger}}
+{\footnotesize\ttfamily object I\+Async\+Method\+Builder. System.\+Runtime.\+Compiler\+Services.\+Async\+Void\+Method\+Builder.\+Object\+Id\+For\+Debugger\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets an object that may be used to uniquely identify this builder to the debugger. 
+
+This property lazily instantiates the ID in a non-\/thread-\/safe manner. It must only be used by the debugger and only in a single-\/threaded manner. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Minimum\+Async\+Bridge/\+Minimum\+Async\+Bridge/\+Runtime/\+Compiler\+Services/Async\+Void\+Method\+Builder.\+cs\end{DoxyCompactItemize}

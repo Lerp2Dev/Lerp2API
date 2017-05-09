@@ -8,7 +8,7 @@ namespace Lerp2Raw
     public class LerpedHook : MonoBehaviour
     {
         public static LerpedHook me;
-        public bool m_runConsoleAtPlayEvent = true, 
+        public bool m_runConsoleAtPlayEvent = false, //There is a bug...
                     m_socketDebug = true,
                     m_cronTasksDebug = true,
                     m_disableClientSocket,

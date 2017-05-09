@@ -1,0 +1,133 @@
+\hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{}\section{System.\+Threading.\+Tasks.\+Task\+Completion\+Source$<$ T\+Result $>$ Class Template Reference}
+\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}\index{System.\+Threading.\+Tasks.\+Task\+Completion\+Source$<$ T\+Result $>$@{System.\+Threading.\+Tasks.\+Task\+Completion\+Source$<$ T\+Result $>$}}
+
+
+Represents the producer side of a \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} unbound to a delegate, providing access to the consumer side through the \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} property.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a892fea1287343b8905bbe8b4fa0407af}{Try\+Set\+Canceled} ()
+\begin{DoxyCompactList}\small\item\em Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}{Task\+Status.\+Canceled} state. \end{DoxyCompactList}\item 
+bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a1a154209ebd190f5e9d2bff149ed3a6b}{Try\+Set\+Exception} (Exception exception)
+\begin{DoxyCompactList}\small\item\em Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}{Task\+Status.\+Faulted} state. \end{DoxyCompactList}\item 
+bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a72372c2eee59e4221bd2f7c856046aff}{Try\+Set\+Result} (T\+Result result)
+\begin{DoxyCompactList}\small\item\em Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}{Task\+Status.\+Ran\+To\+Completion} state. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a051f19b8e8e34b2a19169420d6f49855}{Set\+Canceled} ()
+\begin{DoxyCompactList}\small\item\em Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}{Task\+Status.\+Canceled} state. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a8d3f5e987ba59b9e13bec97fe318474f}{Set\+Exception} (Exception exception)
+\begin{DoxyCompactList}\small\item\em Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}{Task\+Status.\+Faulted} state. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a36ab907315892a8b35ac4372c3f408c4}{Set\+Result} (T\+Result result)
+\begin{DoxyCompactList}\small\item\em Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}{Task\+Status.\+Ran\+To\+Completion} state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}$<$ T\+Result $>$ \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_ae2f74ab5ed620ed6590e5f92637b3510}{Task}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} created by this Task\+Completion\+Source$<$\+T\+Result$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents the producer side of a \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} unbound to a delegate, providing access to the consumer side through the \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} property. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a051f19b8e8e34b2a19169420d6f49855}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a051f19b8e8e34b2a19169420d6f49855}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Set\+Canceled@{Set\+Canceled}}
+\index{Set\+Canceled@{Set\+Canceled}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Set\+Canceled()}{SetCanceled()}}
+{\footnotesize\ttfamily void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Set\+Canceled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}{Task\+Status.\+Canceled} state. 
+
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a8d3f5e987ba59b9e13bec97fe318474f}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a8d3f5e987ba59b9e13bec97fe318474f}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Set\+Exception@{Set\+Exception}}
+\index{Set\+Exception@{Set\+Exception}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Set\+Exception()}{SetException()}}
+{\footnotesize\ttfamily void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Set\+Exception (\begin{DoxyParamCaption}\item[{Exception}]{exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}{Task\+Status.\+Faulted} state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exception} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a36ab907315892a8b35ac4372c3f408c4}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a36ab907315892a8b35ac4372c3f408c4}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Set\+Result@{Set\+Result}}
+\index{Set\+Result@{Set\+Result}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Set\+Result()}{SetResult()}}
+{\footnotesize\ttfamily void \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Set\+Result (\begin{DoxyParamCaption}\item[{T\+Result}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transitions the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}{Task\+Status.\+Ran\+To\+Completion} state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a892fea1287343b8905bbe8b4fa0407af}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a892fea1287343b8905bbe8b4fa0407af}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Try\+Set\+Canceled@{Try\+Set\+Canceled}}
+\index{Try\+Set\+Canceled@{Try\+Set\+Canceled}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Try\+Set\+Canceled()}{TrySetCanceled()}}
+{\footnotesize\ttfamily bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Try\+Set\+Canceled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}{Task\+Status.\+Canceled} state. 
+
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a1a154209ebd190f5e9d2bff149ed3a6b}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a1a154209ebd190f5e9d2bff149ed3a6b}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Try\+Set\+Exception@{Try\+Set\+Exception}}
+\index{Try\+Set\+Exception@{Try\+Set\+Exception}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Try\+Set\+Exception()}{TrySetException()}}
+{\footnotesize\ttfamily bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Try\+Set\+Exception (\begin{DoxyParamCaption}\item[{Exception}]{exception }\end{DoxyParamCaption})}
+
+
+
+Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}{Task\+Status.\+Faulted} state. 
+
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a72372c2eee59e4221bd2f7c856046aff}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_a72372c2eee59e4221bd2f7c856046aff}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Try\+Set\+Result@{Try\+Set\+Result}}
+\index{Try\+Set\+Result@{Try\+Set\+Result}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Try\+Set\+Result()}{TrySetResult()}}
+{\footnotesize\ttfamily bool \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.Try\+Set\+Result (\begin{DoxyParamCaption}\item[{T\+Result}]{result }\end{DoxyParamCaption})}
+
+
+
+Attempts to transition the underlying \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$}into the \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}{Task\+Status.\+Ran\+To\+Completion} state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_ae2f74ab5ed620ed6590e5f92637b3510}\label{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source_ae2f74ab5ed620ed6590e5f92637b3510}} 
+\index{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}!Task@{Task}}
+\index{Task@{Task}!System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source@{System\+::\+Threading\+::\+Tasks\+::\+Task\+Completion\+Source}}
+\subsubsection{\texorpdfstring{Task}{Task}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}$<$T\+Result$>$ \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{System.\+Threading.\+Tasks.\+Task\+Completion\+Source}$<$ T\+Result $>$.\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} created by this Task\+Completion\+Source$<$\+T\+Result$>$. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Minimum\+Async\+Bridge/\+Minimum\+Async\+Bridge/\+Threading/\+Tasks/Task\+Completion\+Source.\+cs\end{DoxyCompactItemize}

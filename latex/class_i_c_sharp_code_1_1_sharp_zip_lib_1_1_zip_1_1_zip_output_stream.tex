@@ -1,0 +1,294 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream}}
+
+
+This is a Deflater\+Output\+Stream that writes the files into a zip archive one after another. It has a special method to start a new zip entry. The zip entries contains information about the file name size, compressed size, C\+RC, etc.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.891892cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{Zip\+Output\+Stream} (Stream base\+Output\+Stream)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} output stream, writing a zip archive. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a063fe079e43f665253478472c7ab39a3}{Zip\+Output\+Stream} (Stream base\+Output\+Stream, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} output stream, writing a zip archive. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afb5f98da9635086a3836764e7daf4047}{Set\+Comment} (string comment)
+\begin{DoxyCompactList}\small\item\em Set the zip file comment. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4ec27661acea8617a722f24abf8fe7b0}{Set\+Level} (int level)
+\begin{DoxyCompactList}\small\item\em Sets the compression level. The new level will be activated immediately. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_aac2f1bfe79b9ed9d53d2f7422b45593d}{Get\+Level} ()
+\begin{DoxyCompactList}\small\item\em Get the current deflater compression level \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a1eb2730350237fd6e7e41a06e3ede119}{Put\+Next\+Entry} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{Zip\+Entry} entry)
+\begin{DoxyCompactList}\small\item\em Starts a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} entry. It automatically closes the previous entry if present. All entry elements bar name are optional, but must be correct if present. If the compression method is stored and the output is not patchable the compression for that entry is automatically changed to deflate level 0 \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afbc26f3bc0a0ae858e60f168714960ff}{Close\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Closes the current entry, updating header and footer information as required \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a7534b9ce4f3ad0aa390b0dd4b8314c88}{Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Writes the given buffer to the current entry. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4d08a1654b19d3ed90377c11c3459c94}{Finish} ()
+\begin{DoxyCompactList}\small\item\em Finishes the stream. This will write the central directory at the end of the zip file and flush the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a2390775f9b8e41b277fc88c517e09ef0}{Is\+Finished}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a flag value of true if the central header has been added for this archive; false if it has not been added. \end{DoxyCompactList}\item 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_aaa66f18625e7ce19069972caf7bc69a0}{Use\+Zip64} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_acf7213e45d7ef52f3422d07a9e67a9c3}{Use\+Zip64}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get / set a value indicating how Zip64 Extension usage is determined when adding entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is a Deflater\+Output\+Stream that writes the files into a zip archive one after another. It has a special method to start a new zip entry. The zip entries contains information about the file name size, compressed size, C\+RC, etc. 
+
+It includes support for Stored and Deflated entries. This class is not thread safe. ~\newline
+ ~\newline
+Author of the original java version \+: Jochen Hoenicke 
+
+This sample shows how to create a zip file 
+\begin{DoxyCode}
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System};
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System}.\hyperlink{namespace_system_1_1_i_o}{IO};
+
+\textcolor{keyword}{using} \hyperlink{namespace_i_c_sharp_code}{ICSharpCode}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib}{SharpZipLib}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core}{Core};
+\textcolor{keyword}{using} \hyperlink{namespace_i_c_sharp_code}{ICSharpCode}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib}{SharpZipLib}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip};
+
+\textcolor{keyword}{class }MainClass
+\{
+    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
+    \{
+        \textcolor{keywordtype}{string}[] filenames = Directory.GetFiles(args[0]);
+        byte[] buffer = \textcolor{keyword}{new} byte[4096];
+
+        \textcolor{keyword}{using} ( \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream} s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream}(File.Create(args[1]))
+       ) \{
+@verbatim
+s.SetLevel(9); \textcolor{comment}{// 0 - store only to 9 - means best compression}
+
+\textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} file \textcolor{keywordflow}{in} filenames) \{
+    ZipEntry entry = \textcolor{keyword}{new} ZipEntry(file);
+    s.PutNextEntry(entry);
+
+    \textcolor{keyword}{using} (FileStream fs = File.OpenRead(file)) \{
+        StreamUtils.Copy(fs, s, buffer);
+    \}
+\}
+\textcolor{keyword}{@end}verbatim
+        \}
+    \}
+\}   
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Zip\+Output\+Stream@{Zip\+Output\+Stream}}
+\index{Zip\+Output\+Stream@{Zip\+Output\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Zip\+Output\+Stream()}{ZipOutputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Zip\+Output\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Output\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} output stream, writing a zip archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Output\+Stream} & The output stream to which the archive contents are written. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a063fe079e43f665253478472c7ab39a3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a063fe079e43f665253478472c7ab39a3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Zip\+Output\+Stream@{Zip\+Output\+Stream}}
+\index{Zip\+Output\+Stream@{Zip\+Output\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Zip\+Output\+Stream()}{ZipOutputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Zip\+Output\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Output\+Stream,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} output stream, writing a zip archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Output\+Stream} & The output stream to which the archive contents are written.\\
+\hline
+{\em buffer\+Size} & Size of the buffer to use.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afbc26f3bc0a0ae858e60f168714960ff}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afbc26f3bc0a0ae858e60f168714960ff}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Close\+Entry@{Close\+Entry}}
+\index{Close\+Entry@{Close\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Close\+Entry()}{CloseEntry()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Close\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the current entry, updating header and footer information as required 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+I\+O.\+I\+O\+Exception} & An I/O error occurs. \\
+\hline
+{\em System.\+Invalid\+Operation\+Exception} & No entry is active. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4d08a1654b19d3ed90377c11c3459c94}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4d08a1654b19d3ed90377c11c3459c94}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Finish@{Finish}}
+\index{Finish@{Finish}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Finishes the stream. This will write the central directory at the end of the zip file and flush the stream. 
+
+This is automatically called when the stream is closed. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+I\+O.\+I\+O\+Exception} & An I/O error occurs. \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & Comment exceeds the maximum length~\newline
+ Entry name exceeds the maximum length \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_deflater_output_stream_ac81f3e741a1ffdf98c02a171ad7cb334}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Deflater\+Output\+Stream}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_aac2f1bfe79b9ed9d53d2f7422b45593d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_aac2f1bfe79b9ed9d53d2f7422b45593d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Get\+Level@{Get\+Level}}
+\index{Get\+Level@{Get\+Level}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Get\+Level()}{GetLevel()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current deflater compression level 
+
+\begin{DoxyReturn}{Returns}
+The current compression level
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a1eb2730350237fd6e7e41a06e3ede119}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a1eb2730350237fd6e7e41a06e3ede119}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Put\+Next\+Entry@{Put\+Next\+Entry}}
+\index{Put\+Next\+Entry@{Put\+Next\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Put\+Next\+Entry()}{PutNextEntry()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Put\+Next\+Entry (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{Zip\+Entry}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} entry. It automatically closes the previous entry if present. All entry elements bar name are optional, but must be correct if present. If the compression method is stored and the output is not patchable the compression for that entry is automatically changed to deflate level 0 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & the entry. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & if entry passed is null. \\
+\hline
+{\em System.\+I\+O.\+I\+O\+Exception} & if an I/O error occured. \\
+\hline
+{\em System.\+Invalid\+Operation\+Exception} & if stream was finished \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & Too many entries in the \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} file~\newline
+ Entry name is too long~\newline
+ Finish has already been called~\newline
+ \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afb5f98da9635086a3836764e7daf4047}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_afb5f98da9635086a3836764e7daf4047}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Set\+Comment@{Set\+Comment}}
+\index{Set\+Comment@{Set\+Comment}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Comment()}{SetComment()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Set\+Comment (\begin{DoxyParamCaption}\item[{string}]{comment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the zip file comment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comment} & The comment text for the entire archive. \\
+\hline
+\end{DoxyParams}
+The converted comment is longer than 0xffff bytes. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4ec27661acea8617a722f24abf8fe7b0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a4ec27661acea8617a722f24abf8fe7b0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Set\+Level@{Set\+Level}}
+\index{Set\+Level@{Set\+Level}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Level()}{SetLevel()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Set\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the compression level. The new level will be activated immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The new compression level (1 to 9).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & Level specified is not supported. \\
+\hline
+\end{DoxyExceptions}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Deflater} \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a7534b9ce4f3ad0aa390b0dd4b8314c88}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a7534b9ce4f3ad0aa390b0dd4b8314c88}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes the given buffer to the current entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer containing data to write.\\
+\hline
+{\em offset} & The offset of the first byte to write.\\
+\hline
+{\em count} & The number of bytes to write.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & Archive size is invalid\\
+\hline
+{\em System.\+Invalid\+Operation\+Exception} & No entry is active.\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a2390775f9b8e41b277fc88c517e09ef0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a2390775f9b8e41b277fc88c517e09ef0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Is\+Finished@{Is\+Finished}}
+\index{Is\+Finished@{Is\+Finished}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Is\+Finished}{IsFinished}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Is\+Finished\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a flag value of true if the central header has been added for this archive; false if it has not been added. 
+
+No further entries can be added once this has been done.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_acf7213e45d7ef52f3422d07a9e67a9c3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_acf7213e45d7ef52f3422d07a9e67a9c3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}!Use\+Zip64@{Use\+Zip64}}
+\index{Use\+Zip64@{Use\+Zip64}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Use\+Zip64}{UseZip64}}
+{\footnotesize\ttfamily \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_aaa66f18625e7ce19069972caf7bc69a0}{Use\+Zip64} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Output\+Stream.\+Use\+Zip64\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get / set a value indicating how Zip64 Extension usage is determined when adding entries. 
+
+Older archivers may not understand Zip64 extensions. If backwards compatability is an issue be careful when adding \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry_a02ebed1814a50d1edc30579332ac74d3}{entries} to an archive. Setting this property to off is workable but less desirable as in those circumstances adding a file larger then 4\+GB will fail.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/Zip\+Output\+Stream.\+cs\end{DoxyCompactItemize}

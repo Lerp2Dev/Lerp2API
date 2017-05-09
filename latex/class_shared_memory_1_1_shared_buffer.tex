@@ -1,0 +1,668 @@
+\hypertarget{class_shared_memory_1_1_shared_buffer}{}\section{Shared\+Memory.\+Shared\+Buffer Class Reference}
+\label{class_shared_memory_1_1_shared_buffer}\index{Shared\+Memory.\+Shared\+Buffer@{Shared\+Memory.\+Shared\+Buffer}}
+
+
+Abstract base class that provides client/server support for reading/writing structures to a buffer within a Memory\+Mapped\+File. A header structure allows clients to open the buffer without knowing the size.  
+
+
+Inheritance diagram for Shared\+Memory.\+Shared\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.456790cm]{class_shared_memory_1_1_shared_buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}{Close} ()
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{class_shared_memory_1_1_shared_buffer_a598ee38e06ba63929f51946963694b72}{Shutting\+Down} flag, and disposes of the Memory\+Mapped\+File and Memory\+Mapped\+View\+Accessor.~\newline
+ Attempting to read/write to the buffer after closing will result in a System.\+Null\+Reference\+Exception. \end{DoxyCompactList}\item 
+void \hyperlink{class_shared_memory_1_1_shared_buffer_ab6e7d8bec7cdce8c450ff697c151ea36}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shared_memory_1_1_shared_buffer_adc3066fb64b6f7cfa2b6b50d8cf53b78}{Shared\+Buffer} (string name, long buffer\+Size, bool owns\+Shared\+Memory)
+\begin{DoxyCompactList}\small\item\em Create a new \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} instance with the specified name and buffer size \end{DoxyCompactList}\item 
+bool \hyperlink{class_shared_memory_1_1_shared_buffer_abf7e37d0b654ad76bcfca63543766445}{Open} ()
+\begin{DoxyCompactList}\small\item\em Creates a new or opens an existing shared memory buffer with the name of \hyperlink{class_shared_memory_1_1_shared_buffer_ada2e0253ecaba264da7f2855a02e9ccc}{Name} depending on the value of \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory}. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_shared_memory_1_1_shared_buffer_ae91f81f088cebf1bca375bfe0cb48d6e}{Do\+Open} ()
+\begin{DoxyCompactList}\small\item\em Allows any classes that inherit from \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} to perform additional open logic. There is no need to call base.\+Do\+Open() from these implementations. \end{DoxyCompactList}\item 
+void \hyperlink{class_shared_memory_1_1_shared_buffer_a13327700d0b6f45870c127f98f36d159}{Initialise\+Header} ()
+\begin{DoxyCompactList}\small\item\em Initialises the header within the shared memory. Only applicable if \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory} is true. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a2137a67b3309712bc1e9a540c919f9bc}{Do\+Close} ()
+\begin{DoxyCompactList}\small\item\em Any classes that inherit from \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} should implement any \hyperlink{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}{Close} logic here, \hyperlink{class_shared_memory_1_1_shared_buffer_a10466aaf4679f286101dfe69e187ca18}{Mmf} and \hyperlink{class_shared_memory_1_1_shared_buffer_a8ac57fdf6cb9e181d10f4af066f36d41}{View} are still active at this point. There is no need to call base.\+Do\+Close() from these classes. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a82edbe6f30b012bc93f098db46a582ec}{Write$<$ T $>$} (ref T source, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an instance of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_aff9ac6982aca4308738395c9a583d50e}{Write$<$ T $>$} (T\mbox{[}$\,$\mbox{]} source, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an array of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a70df6df643ac66849ced0ccca5f7c535}{Write$<$ T $>$} (T\mbox{[}$\,$\mbox{]} source, int index, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an array of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a6a412911425c1d0eade55f96c8ae8b20}{Write\+Array$<$ T $>$} (T\mbox{[}$\,$\mbox{]} source, int index, int count, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an array of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}{Write} (Int\+Ptr source, int length, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes {\itshape length}  bytes from the {\itshape source}  into the shared memory buffer. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_abc575d2ef1f8df8cc05fadb1b96b22e8}{Write} (Action$<$ Int\+Ptr $>$ write\+Func, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Prepares an Int\+Ptr to the buffer position and calls {\itshape write\+Func}  to perform the writing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a27d48f6be3b300882aa9aa71339421be}{Read$<$ T $>$} (out T data, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads an instance of {\itshape T}  from the buffer \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_aba5489c699f444012792fd6331affb03}{Read$<$ T $>$} (T\mbox{[}$\,$\mbox{]} destination, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads an array of {\itshape T}  from the buffer. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_aca716450a74551277e53000d61a59fcd}{Read\+Array$<$ T $>$} (T\mbox{[}$\,$\mbox{]} destination, int index, int count, long buffer\+Position)
+\begin{DoxyCompactList}\small\item\em Reads a number of elements from a memory location into the provided buffer starting at the specified index. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}{Read} (Int\+Ptr destination, int length, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads {\itshape length}  bytes into the memory location {\itshape destination}  from the buffer region of the shared memory. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_aea88361c8c00b0159fe3dacc769a8465}{Read} (Action$<$ Int\+Ptr $>$ read\+Func, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Prepares an Int\+Ptr to the buffer position and calls {\itshape read\+Func}  to perform the reading. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_aa3db897346aa2c22a9d0d6b05ff7c058}{Dispose} (bool dispose\+Managed\+Resources)
+\begin{DoxyCompactList}\small\item\em I\+Disposable pattern -\/ dispose of managed/unmanaged resources \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_file}{Memory\+Mapped\+File} \hyperlink{class_shared_memory_1_1_shared_buffer_a10466aaf4679f286101dfe69e187ca18}{Mmf}
+\begin{DoxyCompactList}\small\item\em Memory mapped file \end{DoxyCompactList}\item 
+\hyperlink{class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_view_accessor}{Memory\+Mapped\+View\+Accessor} \hyperlink{class_shared_memory_1_1_shared_buffer_a8ac57fdf6cb9e181d10f4af066f36d41}{View}
+\begin{DoxyCompactList}\small\item\em Memory mapped view \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{class_shared_memory_1_1_shared_buffer_a9a5712bd63bfd102c3b4776c7431a5cd}{View\+Ptr} = null
+\begin{DoxyCompactList}\small\item\em Pointer to the memory mapped view \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}{Buffer\+Start\+Ptr} = null
+\begin{DoxyCompactList}\small\item\em Pointer to the start of the buffer region of the memory mapped view \end{DoxyCompactList}\item 
+\hyperlink{struct_shared_memory_1_1_shared_header}{Shared\+Header} $\ast$ \hyperlink{class_shared_memory_1_1_shared_buffer_a3533d9212c8de47a5ad5d98c3b950c3a}{Header} = null
+\begin{DoxyCompactList}\small\item\em Pointer to the header within shared memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_shared_memory_1_1_shared_buffer_ada2e0253ecaba264da7f2855a02e9ccc}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The name of the Shared Memory instance \end{DoxyCompactList}\item 
+long \hyperlink{class_shared_memory_1_1_shared_buffer_a3f349a666f907c724a876c52c5fd63e9}{Buffer\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The buffer size \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_shared_buffer_a733b9a53bf913e22a6b97334ffe054dc}{Shared\+Memory\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The total shared memory size, including header and buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates whether this instance owns the shared memory (i.\+e. creator of the shared memory) \end{DoxyCompactList}\item 
+bool \hyperlink{class_shared_memory_1_1_shared_buffer_a598ee38e06ba63929f51946963694b72}{Shutting\+Down}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true if the \hyperlink{namespace_shared_memory}{Shared\+Memory} owner has/is shutting down \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_shared_buffer_a40517ed1660e6b9c72e0dd7c209325dc}{Header\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Where the header starts within the shared memory \end{DoxyCompactList}\item 
+virtual long \hyperlink{class_shared_memory_1_1_shared_buffer_a0884f436845680ed51e78f972a434f19}{Buffer\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Where the buffer is located within the shared memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class that provides client/server support for reading/writing structures to a buffer within a Memory\+Mapped\+File. A header structure allows clients to open the buffer without knowing the size. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_adc3066fb64b6f7cfa2b6b50d8cf53b78}\label{class_shared_memory_1_1_shared_buffer_adc3066fb64b6f7cfa2b6b50d8cf53b78}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Shared\+Buffer@{Shared\+Buffer}}
+\index{Shared\+Buffer@{Shared\+Buffer}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Shared\+Buffer()}{SharedBuffer()}}
+{\footnotesize\ttfamily Shared\+Memory.\+Shared\+Buffer.\+Shared\+Buffer (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{long}]{buffer\+Size,  }\item[{bool}]{owns\+Shared\+Memory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Create a new \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} instance with the specified name and buffer size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the shared memory\\
+\hline
+{\em buffer\+Size} & The buffer size in bytes. The total shared memory size will be 
+\begin{DoxyCode}
+Marshal.SizeOf(\hyperlink{namespace_shared_memory}{SharedMemory}.\hyperlink{struct_shared_memory_1_1_shared_header}{SharedHeader}) + bufferSize
+\end{DoxyCode}
+\\
+\hline
+{\em owns\+Shared\+Memory} & Whether or not the current instance owns the shared memory. If true a new shared memory will be created and initialised otherwise an existing one is opened.\\
+\hline
+\end{DoxyParams}
+
+
+The maximum total shared memory size is dependent upon the system and current memory fragmentation.
+
+The shared memory layout on 32-\/bit and 64-\/bit is\+:~\newline
+ 
+\begin{DoxyCode}
+|       \hyperlink{class_shared_memory_1_1_shared_buffer_a3533d9212c8de47a5ad5d98c3b950c3a}{Header}       |    Buffer    |<br />
+|      16-bytes      |  bufferSize  |
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}\label{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Close@{Close}}
+\index{Close@{Close}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the \hyperlink{class_shared_memory_1_1_shared_buffer_a598ee38e06ba63929f51946963694b72}{Shutting\+Down} flag, and disposes of the Memory\+Mapped\+File and Memory\+Mapped\+View\+Accessor.~\newline
+ Attempting to read/write to the buffer after closing will result in a System.\+Null\+Reference\+Exception. 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_ab6e7d8bec7cdce8c450ff697c151ea36}\label{class_shared_memory_1_1_shared_buffer_ab6e7d8bec7cdce8c450ff697c151ea36}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Shared\+Memory.\+Shared\+Buffer.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs application-\/defined tasks associated with freeing, releasing, or resetting unmanaged resources. 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_aa3db897346aa2c22a9d0d6b05ff7c058}\label{class_shared_memory_1_1_shared_buffer_aa3db897346aa2c22a9d0d6b05ff7c058}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{dispose\+Managed\+Resources }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+I\+Disposable pattern -\/ dispose of managed/unmanaged resources 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dispose\+Managed\+Resources} & true to dispose of managed resources as well as unmanaged.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a3b01026691fcd0c1b2088ebabb0780d4}{Shared\+Memory.\+Buffer\+With\+Locks}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a2137a67b3309712bc1e9a540c919f9bc}\label{class_shared_memory_1_1_shared_buffer_a2137a67b3309712bc1e9a540c919f9bc}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Do\+Close@{Do\+Close}}
+\index{Do\+Close@{Do\+Close}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Do\+Close()}{DoClose()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Do\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Any classes that inherit from \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} should implement any \hyperlink{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}{Close} logic here, \hyperlink{class_shared_memory_1_1_shared_buffer_a10466aaf4679f286101dfe69e187ca18}{Mmf} and \hyperlink{class_shared_memory_1_1_shared_buffer_a8ac57fdf6cb9e181d10f4af066f36d41}{View} are still active at this point. There is no need to call base.\+Do\+Close() from these classes. 
+
+It is possible for \hyperlink{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}{Close} to be called before \hyperlink{class_shared_memory_1_1_shared_buffer_abf7e37d0b654ad76bcfca63543766445}{Open} has completed successfully, in this situation \hyperlink{class_shared_memory_1_1_shared_buffer_a2137a67b3309712bc1e9a540c919f9bc}{Do\+Close} should fail gracefully.
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_circular_buffer_a29c1e46f0d8a3b95c83a361ac7f84194}{Shared\+Memory.\+Circular\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_ae91f81f088cebf1bca375bfe0cb48d6e}\label{class_shared_memory_1_1_shared_buffer_ae91f81f088cebf1bca375bfe0cb48d6e}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Do\+Open@{Do\+Open}}
+\index{Do\+Open@{Do\+Open}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Do\+Open()}{DoOpen()}}
+{\footnotesize\ttfamily virtual bool Shared\+Memory.\+Shared\+Buffer.\+Do\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Allows any classes that inherit from \hyperlink{class_shared_memory_1_1_shared_buffer}{Shared\+Buffer} to perform additional open logic. There is no need to call base.\+Do\+Open() from these implementations. 
+
+\begin{DoxyReturn}{Returns}
+True if successful, otherwise false.
+\end{DoxyReturn}
+
+
+By throwing an exception or returning false, the call to \hyperlink{class_shared_memory_1_1_shared_buffer_abf7e37d0b654ad76bcfca63543766445}{Open} will fail and \hyperlink{class_shared_memory_1_1_shared_buffer_a137e5d49a530fd990c6d22d30b92250a}{Close} will be called.
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_circular_buffer_aff62bc6b9dbca60658ab979762dd073d}{Shared\+Memory.\+Circular\+Buffer}, and \hyperlink{class_shared_memory_1_1_shared_array_ac6a9a9606b9287538a148eb3175f7562}{Shared\+Memory.\+Shared\+Array$<$ T $>$}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a13327700d0b6f45870c127f98f36d159}\label{class_shared_memory_1_1_shared_buffer_a13327700d0b6f45870c127f98f36d159}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Initialise\+Header@{Initialise\+Header}}
+\index{Initialise\+Header@{Initialise\+Header}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Initialise\+Header()}{InitialiseHeader()}}
+{\footnotesize\ttfamily void Shared\+Memory.\+Shared\+Buffer.\+Initialise\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Initialises the header within the shared memory. Only applicable if \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory} is true. 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_abf7e37d0b654ad76bcfca63543766445}\label{class_shared_memory_1_1_shared_buffer_abf7e37d0b654ad76bcfca63543766445}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Open@{Open}}
+\index{Open@{Open}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily bool Shared\+Memory.\+Shared\+Buffer.\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Creates a new or opens an existing shared memory buffer with the name of \hyperlink{class_shared_memory_1_1_shared_buffer_ada2e0253ecaba264da7f2855a02e9ccc}{Name} depending on the value of \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory}. 
+
+\begin{DoxyReturn}{Returns}
+True if the memory was successfully mapped
+\end{DoxyReturn}
+
+
+If \hyperlink{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}{Is\+Owner\+Of\+Shared\+Memory} is true then the shared memory buffer will be created, opening will fail in this case if the shared memory already exists. Otherwise if Is\+Owner\+Of\+Shared\+Memory is false then the shared memory buffer will be opened, which will fail if it doesn\textquotesingle{}t already exist.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+I\+O.\+I\+O\+Exception} & If trying to create a new shared memory buffer with a duplicate name as buffer owner.\\
+\hline
+{\em System.\+I\+O.\+File\+Not\+Found\+Exception} & If trying to open a new shared memory buffer that does not exist as a consumer of existing buffer.\\
+\hline
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & If trying to create a new shared memory buffer with a size larger than the logical addressable space.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}\label{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Read (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{destination,  }\item[{int}]{length,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reads {\itshape length}  bytes into the memory location {\itshape destination}  from the buffer region of the shared memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & A managed pointer to the memory location to copy data into from the buffer\\
+\hline
+{\em length} & The number of bytes to be copied\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_adf97b7891d30d2cc24ea39e232a0b238}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_aea88361c8c00b0159fe3dacc769a8465}\label{class_shared_memory_1_1_shared_buffer_aea88361c8c00b0159fe3dacc769a8465}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Read (\begin{DoxyParamCaption}\item[{Action$<$ Int\+Ptr $>$}]{read\+Func,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Prepares an Int\+Ptr to the buffer position and calls {\itshape read\+Func}  to perform the reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+Func} & A function used to read from the buffer. The Int\+Ptr parameter is a pointer to the buffer offset by {\itshape buffer\+Position} .\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a61d2f003963ccbedaff237c69814104d}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_ad8e09d6fb5fd4f72170e768f7b84911d}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a27d48f6be3b300882aa9aa71339421be}\label{class_shared_memory_1_1_shared_buffer_a27d48f6be3b300882aa9aa71339421be}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}{Shared\+Memory.\+Shared\+Buffer.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{out T}]{data,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reads an instance of {\itshape T}  from the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Output parameter that will contain the value read from the buffer\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a1c83bd463abef7c618efdcbe6e9fb317}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_a4fc92192136290cea195db4ee573843e}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_aba5489c699f444012792fd6331affb03}\label{class_shared_memory_1_1_shared_buffer_aba5489c699f444012792fd6331affb03}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}{Shared\+Memory.\+Shared\+Buffer.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{destination,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reads an array of {\itshape T}  from the buffer. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Array that will contain the values read from the buffer. The length of this array controls the number of elements to read.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a247e1e8f8f2849b65ee985f3b08cca97}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_a3c49b75b3b06a22c73bfd26c90d220d6}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_aca716450a74551277e53000d61a59fcd}\label{class_shared_memory_1_1_shared_buffer_aca716450a74551277e53000d61a59fcd}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Read\+Array$<$ T $>$@{Read\+Array$<$ T $>$}}
+\index{Read\+Array$<$ T $>$@{Read\+Array$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Read\+Array$<$ T $>$()}{ReadArray< T >()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Read\+Array$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{destination,  }\item[{int}]{index,  }\item[{int}]{count,  }\item[{long}]{buffer\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reads a number of elements from a memory location into the provided buffer starting at the specified index. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & The destination buffer.\\
+\hline
+{\em index} & The start index within {\itshape destination} .\\
+\hline
+{\em count} & The number of elements to read.\\
+\hline
+{\em buffer\+Position} & The source offset within the buffer region of the shared memory.\\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}\label{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Write (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{source,  }\item[{int}]{length,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes {\itshape length}  bytes from the {\itshape source}  into the shared memory buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & A managed pointer to the memory location to be copied into the buffer\\
+\hline
+{\em length} & The number of bytes to be copied\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a13ed00d01404247565ad3caf1fc4a032}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_abc575d2ef1f8df8cc05fadb1b96b22e8}\label{class_shared_memory_1_1_shared_buffer_abc575d2ef1f8df8cc05fadb1b96b22e8}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Write (\begin{DoxyParamCaption}\item[{Action$<$ Int\+Ptr $>$}]{write\+Func,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Prepares an Int\+Ptr to the buffer position and calls {\itshape write\+Func}  to perform the writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em write\+Func} & A function used to write to the buffer. The Int\+Ptr parameter is a pointer to the buffer location offset by {\itshape buffer\+Position} .\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region to start writing to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a80c23992356dd3b7613f34223cf6b1fb}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_aa4ee6183b43f3bb1728f3296967e586e}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a82edbe6f30b012bc93f098db46a582ec}\label{class_shared_memory_1_1_shared_buffer_a82edbe6f30b012bc93f098db46a582ec}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}{Shared\+Memory.\+Shared\+Buffer.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{ref T}]{source,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes an instance of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & A reference to an instance of {\itshape T}  to be written into the buffer\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a270a03b398be5cb2c9d3fca8be14129b}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_a277110184ecebdd2d6337c5d6b52f3fa}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_aff9ac6982aca4308738395c9a583d50e}\label{class_shared_memory_1_1_shared_buffer_aff9ac6982aca4308738395c9a583d50e}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}{Shared\+Memory.\+Shared\+Buffer.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{source,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes an array of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & An array of {\itshape T}  to be written. The length of this array controls the number of elements to be written.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_shared_memory_1_1_buffer_with_locks_a8abfbb585b8bdea85b9ff71111b55679}{Shared\+Memory.\+Buffer\+With\+Locks}, and \hyperlink{class_shared_memory_1_1_buffer_read_write_a12cdb995bc498bef477b8f91355eef3f}{Shared\+Memory.\+Buffer\+Read\+Write}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a70df6df643ac66849ced0ccca5f7c535}\label{class_shared_memory_1_1_shared_buffer_a70df6df643ac66849ced0ccca5f7c535}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void \hyperlink{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}{Shared\+Memory.\+Shared\+Buffer.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{index,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes an array of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & An array of {\itshape T}  to be written. The length of this array controls the number of elements to be written.\\
+\hline
+{\em index} & The index within the array to start writing from.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a6a412911425c1d0eade55f96c8ae8b20}\label{class_shared_memory_1_1_shared_buffer_a6a412911425c1d0eade55f96c8ae8b20}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Write\+Array$<$ T $>$@{Write\+Array$<$ T $>$}}
+\index{Write\+Array$<$ T $>$@{Write\+Array$<$ T $>$}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Write\+Array$<$ T $>$()}{WriteArray< T >()}}
+{\footnotesize\ttfamily virtual void Shared\+Memory.\+Shared\+Buffer.\+Write\+Array$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{source,  }\item[{int}]{index,  }\item[{int}]{count,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Writes an array of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source data to be written to the buffer\\
+\hline
+{\em index} & The start index within {\itshape source} .\\
+\hline
+{\em count} & The number of elements to write.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}\label{class_shared_memory_1_1_shared_buffer_a2332338ba9693ee545a34faa7c64483a}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Buffer\+Start\+Ptr@{Buffer\+Start\+Ptr}}
+\index{Buffer\+Start\+Ptr@{Buffer\+Start\+Ptr}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Buffer\+Start\+Ptr}{BufferStartPtr}}
+{\footnotesize\ttfamily byte$\ast$ Shared\+Memory.\+Shared\+Buffer.\+Buffer\+Start\+Ptr = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the start of the buffer region of the memory mapped view 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a3533d9212c8de47a5ad5d98c3b950c3a}\label{class_shared_memory_1_1_shared_buffer_a3533d9212c8de47a5ad5d98c3b950c3a}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Header@{Header}}
+\index{Header@{Header}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Header}{Header}}
+{\footnotesize\ttfamily \hyperlink{struct_shared_memory_1_1_shared_header}{Shared\+Header}$\ast$ Shared\+Memory.\+Shared\+Buffer.\+Header = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the header within shared memory 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a10466aaf4679f286101dfe69e187ca18}\label{class_shared_memory_1_1_shared_buffer_a10466aaf4679f286101dfe69e187ca18}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Mmf@{Mmf}}
+\index{Mmf@{Mmf}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Mmf}{Mmf}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_file}{Memory\+Mapped\+File} Shared\+Memory.\+Shared\+Buffer.\+Mmf\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Memory mapped file 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a8ac57fdf6cb9e181d10f4af066f36d41}\label{class_shared_memory_1_1_shared_buffer_a8ac57fdf6cb9e181d10f4af066f36d41}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!View@{View}}
+\index{View@{View}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{View}{View}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_view_accessor}{Memory\+Mapped\+View\+Accessor} Shared\+Memory.\+Shared\+Buffer.\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Memory mapped view 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a9a5712bd63bfd102c3b4776c7431a5cd}\label{class_shared_memory_1_1_shared_buffer_a9a5712bd63bfd102c3b4776c7431a5cd}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!View\+Ptr@{View\+Ptr}}
+\index{View\+Ptr@{View\+Ptr}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{View\+Ptr}{ViewPtr}}
+{\footnotesize\ttfamily byte$\ast$ Shared\+Memory.\+Shared\+Buffer.\+View\+Ptr = null\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to the memory mapped view 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a0884f436845680ed51e78f972a434f19}\label{class_shared_memory_1_1_shared_buffer_a0884f436845680ed51e78f972a434f19}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Buffer\+Offset@{Buffer\+Offset}}
+\index{Buffer\+Offset@{Buffer\+Offset}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Buffer\+Offset}{BufferOffset}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Shared\+Buffer.\+Buffer\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Where the buffer is located within the shared memory 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a3f349a666f907c724a876c52c5fd63e9}\label{class_shared_memory_1_1_shared_buffer_a3f349a666f907c724a876c52c5fd63e9}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Buffer\+Size@{Buffer\+Size}}
+\index{Buffer\+Size@{Buffer\+Size}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Buffer\+Size}{BufferSize}}
+{\footnotesize\ttfamily long Shared\+Memory.\+Shared\+Buffer.\+Buffer\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The buffer size 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a40517ed1660e6b9c72e0dd7c209325dc}\label{class_shared_memory_1_1_shared_buffer_a40517ed1660e6b9c72e0dd7c209325dc}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Header\+Offset@{Header\+Offset}}
+\index{Header\+Offset@{Header\+Offset}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Header\+Offset}{HeaderOffset}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Shared\+Buffer.\+Header\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Where the header starts within the shared memory 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}\label{class_shared_memory_1_1_shared_buffer_a3cd1658c35b0a9234faf1e65eba5088e}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Is\+Owner\+Of\+Shared\+Memory@{Is\+Owner\+Of\+Shared\+Memory}}
+\index{Is\+Owner\+Of\+Shared\+Memory@{Is\+Owner\+Of\+Shared\+Memory}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Is\+Owner\+Of\+Shared\+Memory}{IsOwnerOfSharedMemory}}
+{\footnotesize\ttfamily bool Shared\+Memory.\+Shared\+Buffer.\+Is\+Owner\+Of\+Shared\+Memory\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicates whether this instance owns the shared memory (i.\+e. creator of the shared memory) 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_ada2e0253ecaba264da7f2855a02e9ccc}\label{class_shared_memory_1_1_shared_buffer_ada2e0253ecaba264da7f2855a02e9ccc}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Name@{Name}}
+\index{Name@{Name}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Shared\+Memory.\+Shared\+Buffer.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The name of the Shared Memory instance 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a733b9a53bf913e22a6b97334ffe054dc}\label{class_shared_memory_1_1_shared_buffer_a733b9a53bf913e22a6b97334ffe054dc}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Shared\+Memory\+Size@{Shared\+Memory\+Size}}
+\index{Shared\+Memory\+Size@{Shared\+Memory\+Size}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Shared\+Memory\+Size}{SharedMemorySize}}
+{\footnotesize\ttfamily virtual long Shared\+Memory.\+Shared\+Buffer.\+Shared\+Memory\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The total shared memory size, including header and buffer. 
+
+\mbox{\Hypertarget{class_shared_memory_1_1_shared_buffer_a598ee38e06ba63929f51946963694b72}\label{class_shared_memory_1_1_shared_buffer_a598ee38e06ba63929f51946963694b72}} 
+\index{Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}!Shutting\+Down@{Shutting\+Down}}
+\index{Shutting\+Down@{Shutting\+Down}!Shared\+Memory\+::\+Shared\+Buffer@{Shared\+Memory\+::\+Shared\+Buffer}}
+\subsubsection{\texorpdfstring{Shutting\+Down}{ShuttingDown}}
+{\footnotesize\ttfamily bool Shared\+Memory.\+Shared\+Buffer.\+Shutting\+Down\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true if the \hyperlink{namespace_shared_memory}{Shared\+Memory} owner has/is shutting down 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Shared\+Memory/Shared\+Buffer.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,319 @@
+\hypertarget{struct_system_1_1_threading_1_1_cancellation_token}{}\section{System.\+Threading.\+Cancellation\+Token Struct Reference}
+\label{struct_system_1_1_threading_1_1_cancellation_token}\index{System.\+Threading.\+Cancellation\+Token@{System.\+Threading.\+Cancellation\+Token}}
+
+
+Propagates notification that operations should be canceled.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a95dbce917e10c35de78ca57155fdfee4}{Cancellation\+Token} (bool canceled)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{}{Cancellation\+Token}. \end{DoxyCompactList}\item 
+\hyperlink{struct_system_1_1_threading_1_1_cancellation_token_registration}{Cancellation\+Token\+Registration} \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a62e3229ea2687c0b5f6e7ede454b8236}{Register} (Action callback)
+\begin{DoxyCompactList}\small\item\em Registers a delegate that will be called when this \hyperlink{}{Cancellation\+Token} is canceled. \end{DoxyCompactList}\item 
+\hyperlink{struct_system_1_1_threading_1_1_cancellation_token_registration}{Cancellation\+Token\+Registration} \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a85a6199ca14938b28a3fd418c145ff85}{Register} (Action$<$ Object $>$ callback, Object state)
+\begin{DoxyCompactList}\small\item\em Registers a delegate that will be called when this \hyperlink{}{Cancellation\+Token} is canceled. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a774b38149683d6b99a6a5190198ad629}{Equals} (\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} other)
+\begin{DoxyCompactList}\small\item\em Determines whether the current \hyperlink{}{Cancellation\+Token} instance is equal to the specified token. \end{DoxyCompactList}\item 
+override bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a4ceccecd3848e694f1b5e4d7d8c60002}{Equals} (Object other)
+\begin{DoxyCompactList}\small\item\em Determines whether the current \hyperlink{}{Cancellation\+Token} instance is equal to the specified T\+:\+System.\+Object. \end{DoxyCompactList}\item 
+override Int32 \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ae540b6a9c1fa9814d58e69a1703fbeef}{Get\+Hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em Serves as a hash function for a \hyperlink{}{Cancellation\+Token}. \end{DoxyCompactList}\item 
+void \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ab98969cae74910bdbdde565b167c5499}{Throw\+If\+Cancellation\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Throws a \hyperlink{}{Operation\+Canceled\+Exception} if this token has had cancellation requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_aeae5dad6fee04e98d7bf306b08c365fd}{operator==} (\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} left, \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} right)
+\begin{DoxyCompactList}\small\item\em Determines whether two \hyperlink{}{Cancellation\+Token} instances are equal. \end{DoxyCompactList}\item 
+static bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a091d6753aa02ca1f255a7b7e919be086}{operator!=} (\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} left, \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} right)
+\begin{DoxyCompactList}\small\item\em Determines whether two \hyperlink{}{Cancellation\+Token} instances are not equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_aa93a5902f076f45412f5e8fbfece237a}{None}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em ! warning. If more fields are added, the assumptions in Create\+Linked\+Token may no longer be valid \end{DoxyCompactList}\item 
+bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets whether cancellation has been requested for this token. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}{Can\+Be\+Canceled}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets whether this token is capable of being in the canceled state. \end{DoxyCompactList}\item 
+Wait\+Handle \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_afa0dab8fb50808aa34e813683d47611b}{Wait\+Handle}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a T\+:\+System.\+Threading.\+Wait\+Handle that is signaled when the token is canceled.\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Propagates notification that operations should be canceled. 
+
+A \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} may be created directly in an unchangeable canceled or non-\/canceled state using the \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}\textquotesingle{}s constructors. However, to have a \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} that can change from a non-\/canceled to a canceled state, \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source}{Cancellation\+Token\+Source} must be used. \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source}{Cancellation\+Token\+Source} exposes the associated \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} that may be canceled by the source through its \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source_a2ab44a79f438139faf4f7dcce1b3e5b2}{Token} property. 
+
+Once canceled, a token may not transition to a non-\/canceled state, and a token whose \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}{Can\+Be\+Canceled} is false will never change to one that can be canceled. 
+
+All members of this struct are thread-\/safe and may be used concurrently from multiple threads. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a95dbce917e10c35de78ca57155fdfee4}\label{struct_system_1_1_threading_1_1_cancellation_token_a95dbce917e10c35de78ca57155fdfee4}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Cancellation\+Token@{Cancellation\+Token}}
+\index{Cancellation\+Token@{Cancellation\+Token}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Cancellation\+Token()}{CancellationToken()}}
+{\footnotesize\ttfamily System.\+Threading.\+Cancellation\+Token.\+Cancellation\+Token (\begin{DoxyParamCaption}\item[{bool}]{canceled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes the \hyperlink{}{Cancellation\+Token}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canceled} & The canceled state for the token. \\
+\hline
+\end{DoxyParams}
+
+
+Tokens created with this constructor will remain in the canceled state specified by the {\itshape canceled}  parameter. If {\itshape canceled}  is false, both \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}{Can\+Be\+Canceled} and \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested} will be false. If {\itshape canceled}  is true, both \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}{Can\+Be\+Canceled} and \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested} will be true. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a774b38149683d6b99a6a5190198ad629}\label{struct_system_1_1_threading_1_1_cancellation_token_a774b38149683d6b99a6a5190198ad629}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Equals@{Equals}}
+\index{Equals@{Equals}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool System.\+Threading.\+Cancellation\+Token.\+Equals (\begin{DoxyParamCaption}\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines whether the current \hyperlink{}{Cancellation\+Token} instance is equal to the specified token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \hyperlink{}{Cancellation\+Token} to which to compare this instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the instances are equal; otherwise, false. Two tokens are equal if they are associated with the same \hyperlink{}{Cancellation\+Token\+Source} or if they were both constructed from public \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} constructors and their \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested} values are equal.
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a4ceccecd3848e694f1b5e4d7d8c60002}\label{struct_system_1_1_threading_1_1_cancellation_token_a4ceccecd3848e694f1b5e4d7d8c60002}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Equals@{Equals}}
+\index{Equals@{Equals}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily override bool System.\+Threading.\+Cancellation\+Token.\+Equals (\begin{DoxyParamCaption}\item[{Object}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines whether the current \hyperlink{}{Cancellation\+Token} instance is equal to the specified T\+:\+System.\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other object to which to compare this instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape other}  is a \hyperlink{}{Cancellation\+Token} and if the two instances are equal; otherwise, false. Two tokens are equal if they are associated with the same \hyperlink{}{Cancellation\+Token\+Source} or if they were both constructed from public \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} constructors and their \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested} values are equal.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Object\+Disposed\+Exception} & An associated \hyperlink{}{Cancellation\+Token\+Source} has been disposed.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_ae540b6a9c1fa9814d58e69a1703fbeef}\label{struct_system_1_1_threading_1_1_cancellation_token_ae540b6a9c1fa9814d58e69a1703fbeef}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override Int32 System.\+Threading.\+Cancellation\+Token.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serves as a hash function for a \hyperlink{}{Cancellation\+Token}. 
+
+\begin{DoxyReturn}{Returns}
+A hash code for the current \hyperlink{}{Cancellation\+Token} instance.
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a091d6753aa02ca1f255a7b7e919be086}\label{struct_system_1_1_threading_1_1_cancellation_token_a091d6753aa02ca1f255a7b7e919be086}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily static bool System.\+Threading.\+Cancellation\+Token.\+operator!= (\begin{DoxyParamCaption}\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{left,  }\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Determines whether two \hyperlink{}{Cancellation\+Token} instances are not equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The first instance.\\
+\hline
+{\em right} & The second instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the instances are not equal; otherwise, false.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Object\+Disposed\+Exception} & An associated \hyperlink{}{Cancellation\+Token\+Source} has been disposed.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_aeae5dad6fee04e98d7bf306b08c365fd}\label{struct_system_1_1_threading_1_1_cancellation_token_aeae5dad6fee04e98d7bf306b08c365fd}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!operator==@{operator==}}
+\index{operator==@{operator==}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily static bool System.\+Threading.\+Cancellation\+Token.\+operator== (\begin{DoxyParamCaption}\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{left,  }\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Determines whether two \hyperlink{}{Cancellation\+Token} instances are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The first instance.\\
+\hline
+{\em right} & The second instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the instances are equal; otherwise, false.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Object\+Disposed\+Exception} & An associated \hyperlink{}{Cancellation\+Token\+Source} has been disposed.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a62e3229ea2687c0b5f6e7ede454b8236}\label{struct_system_1_1_threading_1_1_cancellation_token_a62e3229ea2687c0b5f6e7ede454b8236}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Register@{Register}}
+\index{Register@{Register}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_registration}{Cancellation\+Token\+Registration} System.\+Threading.\+Cancellation\+Token.\+Register (\begin{DoxyParamCaption}\item[{Action}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers a delegate that will be called when this \hyperlink{}{Cancellation\+Token} is canceled. 
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call. 
+
+The current \hyperlink{}{Execution\+Context}, if one exists, will be captured along with the delegate and will be used when executing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The delegate to be executed when the \hyperlink{}{Cancellation\+Token} is canceled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The T\+:\+System.\+Threading.\+Cancellation\+Token\+Registration instance that can be used to deregister the callback.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & {\itshape callback}  is null.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a85a6199ca14938b28a3fd418c145ff85}\label{struct_system_1_1_threading_1_1_cancellation_token_a85a6199ca14938b28a3fd418c145ff85}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Register@{Register}}
+\index{Register@{Register}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_registration}{Cancellation\+Token\+Registration} System.\+Threading.\+Cancellation\+Token.\+Register (\begin{DoxyParamCaption}\item[{Action$<$ Object $>$}]{callback,  }\item[{Object}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers a delegate that will be called when this \hyperlink{}{Cancellation\+Token} is canceled. 
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call. 
+
+The current \hyperlink{}{Execution\+Context}, if one exists, will be captured along with the delegate and will be used when executing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & The delegate to be executed when the \hyperlink{}{Cancellation\+Token} is canceled.\\
+\hline
+{\em state} & The state to pass to the {\itshape callback}  when the delegate is invoked. This may be null.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The T\+:\+System.\+Threading.\+Cancellation\+Token\+Registration instance that can be used to deregister the callback.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Argument\+Null\+Exception} & {\itshape callback}  is null.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_ab98969cae74910bdbdde565b167c5499}\label{struct_system_1_1_threading_1_1_cancellation_token_ab98969cae74910bdbdde565b167c5499}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Throw\+If\+Cancellation\+Requested@{Throw\+If\+Cancellation\+Requested}}
+\index{Throw\+If\+Cancellation\+Requested@{Throw\+If\+Cancellation\+Requested}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Throw\+If\+Cancellation\+Requested()}{ThrowIfCancellationRequested()}}
+{\footnotesize\ttfamily void System.\+Threading.\+Cancellation\+Token.\+Throw\+If\+Cancellation\+Requested (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Throws a \hyperlink{}{Operation\+Canceled\+Exception} if this token has had cancellation requested. 
+
+This method provides functionality equivalent to\+: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (token.IsCancellationRequested) 
+   \textcolor{keywordflow}{throw} \textcolor{keyword}{new} OperationCanceledException(token);
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Operation\+Canceled\+Exception} & The token has had cancellation requested.\\
+\hline
+{\em T\+:\+System.\+Object\+Disposed\+Exception} & The associated \hyperlink{}{Cancellation\+Token\+Source} has been disposed.\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}\label{struct_system_1_1_threading_1_1_cancellation_token_ae9726dbc54733ce5d174707fc596b8e9}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Can\+Be\+Canceled@{Can\+Be\+Canceled}}
+\index{Can\+Be\+Canceled@{Can\+Be\+Canceled}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Can\+Be\+Canceled}{CanBeCanceled}}
+{\footnotesize\ttfamily bool System.\+Threading.\+Cancellation\+Token.\+Can\+Be\+Canceled\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets whether this token is capable of being in the canceled state. 
+
+If Can\+Be\+Canceled returns false, it is guaranteed that the token will never transition into a canceled state, meaning that \hyperlink{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}{Is\+Cancellation\+Requested} will never return true. \mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}\label{struct_system_1_1_threading_1_1_cancellation_token_a1b0338d63f9b268339e7348629301748}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Is\+Cancellation\+Requested@{Is\+Cancellation\+Requested}}
+\index{Is\+Cancellation\+Requested@{Is\+Cancellation\+Requested}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Is\+Cancellation\+Requested}{IsCancellationRequested}}
+{\footnotesize\ttfamily bool System.\+Threading.\+Cancellation\+Token.\+Is\+Cancellation\+Requested\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets whether cancellation has been requested for this token. 
+
+Whether cancellation has been requested for this token.
+
+This property indicates whether cancellation has been requested for this token, either through the token initially being construted in a canceled state, or through calling \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source_a1c5aa6f903b7d50df87b7969f9ad10da}{Cancel} on the token\textquotesingle{}s associated \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source}{Cancellation\+Token\+Source}. 
+
+If this property is true, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently. \mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_aa93a5902f076f45412f5e8fbfece237a}\label{struct_system_1_1_threading_1_1_cancellation_token_aa93a5902f076f45412f5e8fbfece237a}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!None@{None}}
+\index{None@{None}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{None}{None}}
+{\footnotesize\ttfamily \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} System.\+Threading.\+Cancellation\+Token.\+None\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+! warning. If more fields are added, the assumptions in Create\+Linked\+Token may no longer be valid 
+
+Returns an empty \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} value. 
+
+The \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} value returned by this property will be non-\/cancelable by default. \mbox{\Hypertarget{struct_system_1_1_threading_1_1_cancellation_token_afa0dab8fb50808aa34e813683d47611b}\label{struct_system_1_1_threading_1_1_cancellation_token_afa0dab8fb50808aa34e813683d47611b}} 
+\index{System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}!Wait\+Handle@{Wait\+Handle}}
+\index{Wait\+Handle@{Wait\+Handle}!System\+::\+Threading\+::\+Cancellation\+Token@{System\+::\+Threading\+::\+Cancellation\+Token}}
+\subsubsection{\texorpdfstring{Wait\+Handle}{WaitHandle}}
+{\footnotesize\ttfamily Wait\+Handle System.\+Threading.\+Cancellation\+Token.\+Wait\+Handle\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a T\+:\+System.\+Threading.\+Wait\+Handle that is signaled when the token is canceled.
+
+Accessing this property causes a \hyperlink{}{Wait\+Handle} to be instantiated. It is preferable to only use this property when necessary, and to then dispose the associated \hyperlink{class_system_1_1_threading_1_1_cancellation_token_source}{Cancellation\+Token\+Source} instance at the earliest opportunity (disposing the source will dispose of this allocated handle). The handle should not be closed or disposed directly. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em T\+:\+System.\+Object\+Disposed\+Exception} & The associated \hyperlink{}{Cancellation\+Token\+Source} has been disposed.\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Minimum\+Async\+Bridge/\+Minimum\+Threading\+Bridge/\+Threading/Cancellation\+Token.\+cs\end{DoxyCompactItemize}

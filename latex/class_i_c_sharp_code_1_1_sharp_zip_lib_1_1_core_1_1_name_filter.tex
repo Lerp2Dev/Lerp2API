@@ -1,0 +1,191 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter}}
+
+
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter}{Name\+Filter} is a string matching class which allows for both positive and negative matching. A filter is a sequence of independant \hyperlink{}{regular expressions} separated by semi-\/colons \textquotesingle{};\textquotesingle{}. To include a semi-\/colon it may be quoted as in \textbackslash{};. Each expression can be prefixed by a plus \textquotesingle{}+\textquotesingle{} sign or a minus \textquotesingle{}-\/\textquotesingle{} sign to denote the expression is intended to include or exclude names. If neither a plus or minus sign is found include is the default. A given name is tested for inclusion before checking exclusions. Only names matching an include spec and not matching an exclude spec are deemed to match the filter. An empty filter matches any name.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a2fc128fc211a00a0bf41e31d2eec93a4}{Name\+Filter} (string filter)
+\begin{DoxyCompactList}\small\item\em Construct an instance based on the filter expression passed \end{DoxyCompactList}\item 
+override string \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a4986231d79362a5ff8e08cffd6a747eb}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em Convert this filter to its string equivalent. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_aa2a8ceae045d15b348529542eece8b32}{Is\+Included} (string name)
+\begin{DoxyCompactList}\small\item\em Test a value to see if it is included by the filter. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a69a6e50b0d406419ce7dd6dbbd1a70a9}{Is\+Excluded} (string name)
+\begin{DoxyCompactList}\small\item\em Test a value to see if it is excluded by the filter. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a0c289d44f367f90e2369cfb24bd159e1}{Is\+Match} (string name)
+\begin{DoxyCompactList}\small\item\em Test a value to see if it matches the filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_ae15c93155448a7efc04c5d02f0825efc}{Is\+Valid\+Expression} (string expression)
+\begin{DoxyCompactList}\small\item\em Test a string to see if it is a valid regular expression. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a861e7d6873266c46847e7bb176afe70a}{Is\+Valid\+Filter\+Expression} (string to\+Test)
+\begin{DoxyCompactList}\small\item\em Test an expression to see if it is valid as a filter. \end{DoxyCompactList}\item 
+static string \mbox{[}$\,$\mbox{]} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a8f148c5fbbd3a28f27b9602865333cb9}{Split\+Quoted} (string original)
+\begin{DoxyCompactList}\small\item\em Split a string into its component pieces \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter}{Name\+Filter} is a string matching class which allows for both positive and negative matching. A filter is a sequence of independant \hyperlink{}{regular expressions} separated by semi-\/colons \textquotesingle{};\textquotesingle{}. To include a semi-\/colon it may be quoted as in \textbackslash{};. Each expression can be prefixed by a plus \textquotesingle{}+\textquotesingle{} sign or a minus \textquotesingle{}-\/\textquotesingle{} sign to denote the expression is intended to include or exclude names. If neither a plus or minus sign is found include is the default. A given name is tested for inclusion before checking exclusions. Only names matching an include spec and not matching an exclude spec are deemed to match the filter. An empty filter matches any name. 
+
+The following expression includes all name ending in \textquotesingle{}.dat\textquotesingle{} with the exception of \textquotesingle{}dummy.\+dat\textquotesingle{} \char`\"{}+\textbackslash{}.\+dat\$;-\/$^\wedge$dummy\textbackslash{}.\+dat\$\char`\"{} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a2fc128fc211a00a0bf41e31d2eec93a4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a2fc128fc211a00a0bf41e31d2eec93a4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Name\+Filter@{Name\+Filter}}
+\index{Name\+Filter@{Name\+Filter}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Name\+Filter()}{NameFilter()}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Name\+Filter (\begin{DoxyParamCaption}\item[{string}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an instance based on the filter expression passed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter expression.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a69a6e50b0d406419ce7dd6dbbd1a70a9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a69a6e50b0d406419ce7dd6dbbd1a70a9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Is\+Excluded@{Is\+Excluded}}
+\index{Is\+Excluded@{Is\+Excluded}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Excluded()}{IsExcluded()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Is\+Excluded (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test a value to see if it is excluded by the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The value to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the value is excluded, false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_aa2a8ceae045d15b348529542eece8b32}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_aa2a8ceae045d15b348529542eece8b32}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Is\+Included@{Is\+Included}}
+\index{Is\+Included@{Is\+Included}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Included()}{IsIncluded()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Is\+Included (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test a value to see if it is included by the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The value to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the value is included, false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a0c289d44f367f90e2369cfb24bd159e1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a0c289d44f367f90e2369cfb24bd159e1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Is\+Match@{Is\+Match}}
+\index{Is\+Match@{Is\+Match}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Match()}{IsMatch()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Is\+Match (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test a value to see if it matches the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The value to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the value matches, false otherwise.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_i_scan_filter_aea9e60fe7abb0e8c969d884b96b84096}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+I\+Scan\+Filter}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_ae15c93155448a7efc04c5d02f0825efc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_ae15c93155448a7efc04c5d02f0825efc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Is\+Valid\+Expression@{Is\+Valid\+Expression}}
+\index{Is\+Valid\+Expression@{Is\+Valid\+Expression}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Valid\+Expression()}{IsValidExpression()}}
+{\footnotesize\ttfamily static bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Is\+Valid\+Expression (\begin{DoxyParamCaption}\item[{string}]{expression }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Test a string to see if it is a valid regular expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expression} & The expression to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if expression is a valid System.\+Text.\+Regular\+Expressions.\+Regex false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a861e7d6873266c46847e7bb176afe70a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a861e7d6873266c46847e7bb176afe70a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Is\+Valid\+Filter\+Expression@{Is\+Valid\+Filter\+Expression}}
+\index{Is\+Valid\+Filter\+Expression@{Is\+Valid\+Filter\+Expression}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Is\+Valid\+Filter\+Expression()}{IsValidFilterExpression()}}
+{\footnotesize\ttfamily static bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Is\+Valid\+Filter\+Expression (\begin{DoxyParamCaption}\item[{string}]{to\+Test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Test an expression to see if it is valid as a filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Test} & The filter expression to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the expression is valid, false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a8f148c5fbbd3a28f27b9602865333cb9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a8f148c5fbbd3a28f27b9602865333cb9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!Split\+Quoted@{Split\+Quoted}}
+\index{Split\+Quoted@{Split\+Quoted}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{Split\+Quoted()}{SplitQuoted()}}
+{\footnotesize\ttfamily static string \mbox{[}$\,$\mbox{]} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+Split\+Quoted (\begin{DoxyParamCaption}\item[{string}]{original }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Split a string into its component pieces 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The original string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an array of T\+:\+System.\+String values containing the individual filter elements.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a4986231d79362a5ff8e08cffd6a747eb}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core_1_1_name_filter_a4986231d79362a5ff8e08cffd6a747eb}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Core\+::\+Name\+Filter}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Core.\+Name\+Filter.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert this filter to its string equivalent. 
+
+\begin{DoxyReturn}{Returns}
+The string equivalent for this filter.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Core/Name\+Filter.\+cs\end{DoxyCompactItemize}

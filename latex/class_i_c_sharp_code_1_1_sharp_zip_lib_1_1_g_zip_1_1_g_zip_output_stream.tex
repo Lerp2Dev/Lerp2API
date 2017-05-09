@@ -1,0 +1,196 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream}}
+
+
+This filter stream is used to compress a stream into a \char`\"{}\+G\+Z\+I\+P\char`\"{} stream. The \char`\"{}\+G\+Z\+I\+P\char`\"{} format is described in R\+FC 1952.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.891892cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}{G\+Zip\+Output\+Stream} (Stream base\+Output\+Stream)
+\begin{DoxyCompactList}\small\item\em Creates a Gzip\+Output\+Stream with the default buffer size \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ab3537d9d8872a588a9cf62ae4530a5a6}{G\+Zip\+Output\+Stream} (Stream base\+Output\+Stream, int size)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream}{G\+Zip\+Output\+Stream} with the specified buffer size \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aef311ac63321adbb56a01b3411b087f2}{Set\+Level} (int level)
+\begin{DoxyCompactList}\small\item\em Sets the active compression level (1-\/9). The new level will be activated immediately. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ac81ca0f33912969eeb665f869496b7ba}{Get\+Level} ()
+\begin{DoxyCompactList}\small\item\em Get the current compression level. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae2563272a7d1c880a2e932985c7a79cd}{Write} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Write given buffer to output updating crc \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a0521462daeefec738f019334f1d756ad}{Close} ()
+\begin{DoxyCompactList}\small\item\em Writes remaining compressed output data to the output stream and closes it. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aa05826de1aa44d880f643cf489fd7f24}{Finish} ()
+\begin{DoxyCompactList}\small\item\em Finish compression and write any footer information required to stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_checksums_1_1_crc32}{Crc32} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae522d9fb4e175250e7c4b6325c071b52}{crc} = new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_checksums_1_1_crc32}{Crc32}()
+\begin{DoxyCompactList}\small\item\em C\+R\+C-\/32 value for uncompressed data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This filter stream is used to compress a stream into a \char`\"{}\+G\+Z\+I\+P\char`\"{} stream. The \char`\"{}\+G\+Z\+I\+P\char`\"{} format is described in R\+FC 1952. 
+
+author of the original java version \+: John Leuner 
+
+This sample shows how to gzip a file 
+\begin{DoxyCode}
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System};
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System}.\hyperlink{namespace_system_1_1_i_o}{IO};
+
+\textcolor{keyword}{using} \hyperlink{namespace_i_c_sharp_code}{ICSharpCode}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib}{SharpZipLib}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip}{GZip};
+\textcolor{keyword}{using} \hyperlink{namespace_i_c_sharp_code}{ICSharpCode}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib}{SharpZipLib}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_core}{Core};
+
+\textcolor{keyword}{class }MainClass
+\{
+    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
+    \{
+            \textcolor{keyword}{using} (Stream s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}{GZipOutputStream}(File.Create(args[0] + \textcolor{stringliteral}{".gz"})))
+            \textcolor{keyword}{using} (FileStream fs = File.OpenRead(args[0])) \{
+                byte[] writeData = \textcolor{keyword}{new} byte[4096];
+                Streamutils.Copy(s, fs, writeData);
+            \}
+        \}
+    \}
+\}   
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!G\+Zip\+Output\+Stream@{G\+Zip\+Output\+Stream}}
+\index{G\+Zip\+Output\+Stream@{G\+Zip\+Output\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{G\+Zip\+Output\+Stream()}{GZipOutputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+G\+Zip\+Output\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Output\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a Gzip\+Output\+Stream with the default buffer size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Output\+Stream} & The stream to read data (to be compressed) from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ab3537d9d8872a588a9cf62ae4530a5a6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ab3537d9d8872a588a9cf62ae4530a5a6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!G\+Zip\+Output\+Stream@{G\+Zip\+Output\+Stream}}
+\index{G\+Zip\+Output\+Stream@{G\+Zip\+Output\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{G\+Zip\+Output\+Stream()}{GZipOutputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+G\+Zip\+Output\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Output\+Stream,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream}{G\+Zip\+Output\+Stream} with the specified buffer size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Output\+Stream} & The stream to read data (to be compressed) from \\
+\hline
+{\em size} & Size of the buffer to use \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a0521462daeefec738f019334f1d756ad}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a0521462daeefec738f019334f1d756ad}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Writes remaining compressed output data to the output stream and closes it. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aa05826de1aa44d880f643cf489fd7f24}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aa05826de1aa44d880f643cf489fd7f24}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!Finish@{Finish}}
+\index{Finish@{Finish}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Finish compression and write any footer information required to stream 
+
+
+
+Reimplemented from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_deflater_output_stream_ac81f3e741a1ffdf98c02a171ad7cb334}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Deflater\+Output\+Stream}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ac81ca0f33912969eeb665f869496b7ba}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ac81ca0f33912969eeb665f869496b7ba}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!Get\+Level@{Get\+Level}}
+\index{Get\+Level@{Get\+Level}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Get\+Level()}{GetLevel()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+Get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current compression level. 
+
+\begin{DoxyReturn}{Returns}
+The current compression level.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aef311ac63321adbb56a01b3411b087f2}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_aef311ac63321adbb56a01b3411b087f2}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!Set\+Level@{Set\+Level}}
+\index{Set\+Level@{Set\+Level}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Set\+Level()}{SetLevel()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+Set\+Level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the active compression level (1-\/9). The new level will be activated immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The compression level to set.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & Level specified is not supported. \\
+\hline
+\end{DoxyExceptions}
+Deflater \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae2563272a7d1c880a2e932985c7a79cd}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae2563272a7d1c880a2e932985c7a79cd}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+Write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write given buffer to output updating crc 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer to write\\
+\hline
+{\em offset} & Offset of first byte in buf to write\\
+\hline
+{\em count} & Number of bytes to write\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae522d9fb4e175250e7c4b6325c071b52}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_ae522d9fb4e175250e7c4b6325c071b52}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}!crc@{crc}}
+\index{crc@{crc}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+G\+Zip\+::\+G\+Zip\+Output\+Stream}}
+\subsubsection{\texorpdfstring{crc}{crc}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_checksums_1_1_crc32}{Crc32} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+G\+Zip.\+G\+Zip\+Output\+Stream.\+crc = new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_checksums_1_1_crc32}{Crc32}()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+C\+R\+C-\/32 value for uncompressed data 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+G\+Zip/Gzip\+Output\+Stream.\+cs\end{DoxyCompactItemize}

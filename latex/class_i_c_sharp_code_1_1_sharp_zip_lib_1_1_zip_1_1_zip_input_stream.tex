@@ -1,0 +1,271 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream}}
+
+
+This is an Inflater\+Input\+Stream that reads the files base\+Input\+Stream an zip archive one after another. It has a special method to get the zip entry of the next file. The zip entry contains information about the file name size, compressed size, Crc, etc. It includes support for Stored and Deflated entries. ~\newline
+ ~\newline
+Author of the original java version \+: Jochen Hoenicke  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.962617cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a453c9cf3787f5fa5210c415e3f1d8ae4}{Zip\+Input\+Stream} (Stream base\+Input\+Stream)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} input stream, for reading a zip archive. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a8c1051f3e713730e937f742264262b24}{Zip\+Input\+Stream} (Stream base\+Input\+Stream, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} input stream, for reading a zip archive. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{Zip\+Entry} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a800051faf6c618dd96027a5650aef46f}{Get\+Next\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Advances to the next entry in the archive \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a4f57fd826e3723f23998b1a2769fa712}{Close\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Closes the current zip entry and moves to the next one. \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aff6a0f10f3aa6616490ad0b772ba81ae}{Read\+Byte} ()
+\begin{DoxyCompactList}\small\item\em Reads a byte from the current zip entry. \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aa0888d2168f1f365c4b5d89a6ad55ba9}{Read} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Read a block of bytes from the stream. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a726748563aeb79d22f65546352bec318}{Close} ()
+\begin{DoxyCompactList}\small\item\em Closes the zip input stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a49de355342270384674e6dbeabd12499}{Password}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Optional password used for encryption when non-\/null \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a9e0fd72568e6716431d93ba09dc205b9}{Can\+Decompress\+Entry}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating if there is a current entry and it can be decompressed \end{DoxyCompactList}\item 
+override int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aac8a4aae90c30d46be0e570a23ade71c}{Available}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns 1 if there is an entry available Otherwise returns 0. \end{DoxyCompactList}\item 
+override long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aabfedc685a5bf73b77bff811dfc57d40}{Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the current size that can be read from the current entry if available \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is an Inflater\+Input\+Stream that reads the files base\+Input\+Stream an zip archive one after another. It has a special method to get the zip entry of the next file. The zip entry contains information about the file name size, compressed size, Crc, etc. It includes support for Stored and Deflated entries. ~\newline
+ ~\newline
+Author of the original java version \+: Jochen Hoenicke 
+
+This sample shows how to read a zip file 
+\begin{DoxyCode}
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System};
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System}.Text;
+\textcolor{keyword}{using} \hyperlink{namespace_system}{System}.\hyperlink{namespace_system_1_1_i_o}{IO};
+
+\textcolor{keyword}{using} \hyperlink{namespace_i_c_sharp_code}{ICSharpCode}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib}{SharpZipLib}.\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip};
+
+\textcolor{keyword}{class }MainClass
+\{
+    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
+    \{
+        \textcolor{keyword}{using} ( \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a453c9cf3787f5fa5210c415e3f1d8ae4}{ZipInputStream} s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a453c9cf3787f5fa5210c415e3f1d8ae4}{ZipInputStream}(File.OpenRead(args[0]))) 
+      \{
+@verbatim
+ZipEntry theEntry;
+\textcolor{keyword}{const} \textcolor{keywordtype}{int} size = 2048;
+byte[] data = \textcolor{keyword}{new} byte[2048];
+
+\textcolor{keywordflow}{while} ((theEntry = s.GetNextEntry()) != null) \{
+    \textcolor{keywordflow}{if} ( entry.IsFile ) \{
+        Console.Write(\textcolor{stringliteral}{"Show contents (y/n) ?"});
+        \textcolor{keywordflow}{if} (Console.ReadLine() == \textcolor{stringliteral}{"y"}) \{
+            \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{
+                size = s.Read(data, 0, data.Length);
+                \textcolor{keywordflow}{if} (size > 0) \{
+                    Console.Write(\textcolor{keyword}{new} ASCIIEncoding().GetString(data, 0, size));
+                \} \textcolor{keywordflow}{else} \{
+                    \textcolor{keywordflow}{break};
+                \}
+            \}
+        \}
+    \}
+\}
+\textcolor{keyword}{@end}verbatim
+        \}
+    \}
+\}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a453c9cf3787f5fa5210c415e3f1d8ae4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a453c9cf3787f5fa5210c415e3f1d8ae4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Zip\+Input\+Stream@{Zip\+Input\+Stream}}
+\index{Zip\+Input\+Stream@{Zip\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Zip\+Input\+Stream()}{ZipInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Zip\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} input stream, for reading a zip archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The underlying Stream providing data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a8c1051f3e713730e937f742264262b24}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a8c1051f3e713730e937f742264262b24}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Zip\+Input\+Stream@{Zip\+Input\+Stream}}
+\index{Zip\+Input\+Stream@{Zip\+Input\+Stream}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Zip\+Input\+Stream()}{ZipInputStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Zip\+Input\+Stream (\begin{DoxyParamCaption}\item[{Stream}]{base\+Input\+Stream,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} input stream, for reading a zip archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Input\+Stream} & The underlying Stream providing data.\\
+\hline
+{\em buffer\+Size} & Size of the buffer.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a726748563aeb79d22f65546352bec318}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a726748563aeb79d22f65546352bec318}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the zip input stream 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a4f57fd826e3723f23998b1a2769fa712}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a4f57fd826e3723f23998b1a2769fa712}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Close\+Entry@{Close\+Entry}}
+\index{Close\+Entry@{Close\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Close\+Entry()}{CloseEntry()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Close\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Closes the current zip entry and moves to the next one. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & The stream is closed \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & The \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} stream ends early \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a800051faf6c618dd96027a5650aef46f}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a800051faf6c618dd96027a5650aef46f}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Get\+Next\+Entry@{Get\+Next\+Entry}}
+\index{Get\+Next\+Entry@{Get\+Next\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Get\+Next\+Entry()}{GetNextEntry()}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{Zip\+Entry} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Get\+Next\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advances to the next entry in the archive 
+
+\begin{DoxyReturn}{Returns}
+The next \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{entry} in the archive or null if there are no more entries. 
+\end{DoxyReturn}
+
+
+If the previous entry is still open \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a4f57fd826e3723f23998b1a2769fa712}{Close\+Entry} is called. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & Input stream is closed \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & Password is not set, password is invalid, compression method is invalid, version required to extract is not supported \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aa0888d2168f1f365c4b5d89a6ad55ba9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aa0888d2168f1f365c4b5d89a6ad55ba9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Read@{Read}}
+\index{Read@{Read}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a block of bytes from the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The destination for the bytes.\\
+\hline
+{\em offset} & The index to start storing data.\\
+\hline
+{\em count} & The number of bytes to attempt to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes read.
+\end{DoxyReturn}
+
+
+Zero bytes read means end of stream.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aff6a0f10f3aa6616490ad0b772ba81ae}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aff6a0f10f3aa6616490ad0b772ba81ae}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Read\+Byte@{Read\+Byte}}
+\index{Read\+Byte@{Read\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Read\+Byte()}{ReadByte()}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a byte from the current zip entry. 
+
+\begin{DoxyReturn}{Returns}
+The byte or -\/1 if end of stream is reached. 
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aac8a4aae90c30d46be0e570a23ade71c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aac8a4aae90c30d46be0e570a23ade71c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Available@{Available}}
+\index{Available@{Available}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Available}{Available}}
+{\footnotesize\ttfamily override int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Available\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns 1 if there is an entry available Otherwise returns 0. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a9e0fd72568e6716431d93ba09dc205b9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a9e0fd72568e6716431d93ba09dc205b9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Can\+Decompress\+Entry@{Can\+Decompress\+Entry}}
+\index{Can\+Decompress\+Entry@{Can\+Decompress\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Can\+Decompress\+Entry}{CanDecompressEntry}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Can\+Decompress\+Entry\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating if there is a current entry and it can be decompressed 
+
+The entry can only be decompressed if the library supports the zip features required to extract it. See the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry_a307247336a78d36b538666d7581f6136}{Zip\+Entry Version} property for more details. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aabfedc685a5bf73b77bff811dfc57d40}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_aabfedc685a5bf73b77bff811dfc57d40}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Length@{Length}}
+\index{Length@{Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily override long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the current size that can be read from the current entry if available 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_exception}{Zip\+Exception}} & Thrown if the entry size is not known.\\
+\hline
+{\em Invalid\+Operation\+Exception} & Thrown if no entry is currently available.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a49de355342270384674e6dbeabd12499}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream_a49de355342270384674e6dbeabd12499}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}!Password@{Password}}
+\index{Password@{Password}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Input\+Stream}}
+\subsubsection{\texorpdfstring{Password}{Password}}
+{\footnotesize\ttfamily string I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Input\+Stream.\+Password\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Optional password used for encryption when non-\/null 
+
+A password for all encrypted \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_entry}{entries } in this \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_input_stream}{Zip\+Input\+Stream}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/Zip\+Input\+Stream.\+cs\end{DoxyCompactItemize}

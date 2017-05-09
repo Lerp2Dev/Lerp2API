@@ -1,0 +1,234 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events}}
+
+
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events}{Fast\+Zip\+Events} supports all events applicable to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip}{Fast\+Zip} operations.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae04e152690da472b63336c8640f1d5db}{On\+Directory\+Failure} (string directory, Exception e)
+\begin{DoxyCompactList}\small\item\em Raise the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a33d748361c7dcfd4c40518b99a689979}{directory failure} event. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a20ff661e5c72d8a07cbc062ee0851c46}{On\+File\+Failure} (string file, Exception e)
+\begin{DoxyCompactList}\small\item\em Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae1451c8ef2694b3606c436a6769b917d}{file failure handler delegate}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a82c21c7003b64f14420145dd4f41db46}{On\+Process\+File} (string file)
+\begin{DoxyCompactList}\small\item\em Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a3dd9d1b4b6453229cc18b2899ab43788}{Process\+File delegate}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_af8ca877e79d18f08f51abb7323397229}{On\+Completed\+File} (string file)
+\begin{DoxyCompactList}\small\item\em Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_acd15d699c15334063f1500ff5f0633cd}{Completed\+File} delegate \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ac662ee939e011224cb3cd20dec9e5e10}{On\+Process\+Directory} (string directory, bool has\+Matching\+Files)
+\begin{DoxyCompactList}\small\item\em Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a159a89c479511187e4c989ae149796af}{process directory} delegate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Process\+Directory\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a159a89c479511187e4c989ae149796af}{Process\+Directory}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke when processing directories. \end{DoxyCompactList}\item 
+Process\+File\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a3dd9d1b4b6453229cc18b2899ab43788}{Process\+File}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke when processing files. \end{DoxyCompactList}\item 
+Progress\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}{Progress}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke during processing of files. \end{DoxyCompactList}\item 
+Completed\+File\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_acd15d699c15334063f1500ff5f0633cd}{Completed\+File}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke when processing for a file has been completed. \end{DoxyCompactList}\item 
+Directory\+Failure\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a33d748361c7dcfd4c40518b99a689979}{Directory\+Failure}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke when processing directory failures. \end{DoxyCompactList}\item 
+File\+Failure\+Handler \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae1451c8ef2694b3606c436a6769b917d}{File\+Failure}
+\begin{DoxyCompactList}\small\item\em Delegate to invoke when processing file failures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Time\+Span \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a69b0a98a7d78d1fd0a33b38e693f7800}{Progress\+Interval}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The minimum timespan between \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}{Progress} events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events}{Fast\+Zip\+Events} supports all events applicable to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip}{Fast\+Zip} operations. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_af8ca877e79d18f08f51abb7323397229}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_af8ca877e79d18f08f51abb7323397229}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!On\+Completed\+File@{On\+Completed\+File}}
+\index{On\+Completed\+File@{On\+Completed\+File}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{On\+Completed\+File()}{OnCompletedFile()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+On\+Completed\+File (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_acd15d699c15334063f1500ff5f0633cd}{Completed\+File} delegate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file whose processing has been completed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating if execution should continue or not.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae04e152690da472b63336c8640f1d5db}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae04e152690da472b63336c8640f1d5db}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!On\+Directory\+Failure@{On\+Directory\+Failure}}
+\index{On\+Directory\+Failure@{On\+Directory\+Failure}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{On\+Directory\+Failure()}{OnDirectoryFailure()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+On\+Directory\+Failure (\begin{DoxyParamCaption}\item[{string}]{directory,  }\item[{Exception}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Raise the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a33d748361c7dcfd4c40518b99a689979}{directory failure} event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory causing the failure.\\
+\hline
+{\em e} & The exception for this event.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating if execution should continue or not.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a20ff661e5c72d8a07cbc062ee0851c46}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a20ff661e5c72d8a07cbc062ee0851c46}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!On\+File\+Failure@{On\+File\+Failure}}
+\index{On\+File\+Failure@{On\+File\+Failure}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{On\+File\+Failure()}{OnFileFailure()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+On\+File\+Failure (\begin{DoxyParamCaption}\item[{string}]{file,  }\item[{Exception}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae1451c8ef2694b3606c436a6769b917d}{file failure handler delegate}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file causing the failure.\\
+\hline
+{\em e} & The exception for this failure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating if execution should continue or not.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ac662ee939e011224cb3cd20dec9e5e10}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ac662ee939e011224cb3cd20dec9e5e10}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!On\+Process\+Directory@{On\+Process\+Directory}}
+\index{On\+Process\+Directory@{On\+Process\+Directory}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{On\+Process\+Directory()}{OnProcessDirectory()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+On\+Process\+Directory (\begin{DoxyParamCaption}\item[{string}]{directory,  }\item[{bool}]{has\+Matching\+Files }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a159a89c479511187e4c989ae149796af}{process directory} delegate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The directory being processed.\\
+\hline
+{\em has\+Matching\+Files} & Flag indicating if the directory has matching files as determined by the current filter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool of true if the operation should continue; false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a82c21c7003b64f14420145dd4f41db46}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a82c21c7003b64f14420145dd4f41db46}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!On\+Process\+File@{On\+Process\+File}}
+\index{On\+Process\+File@{On\+Process\+File}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{On\+Process\+File()}{OnProcessFile()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+On\+Process\+File (\begin{DoxyParamCaption}\item[{string}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fires the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a3dd9d1b4b6453229cc18b2899ab43788}{Process\+File delegate}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file being processed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating if execution should continue or not.
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_acd15d699c15334063f1500ff5f0633cd}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_acd15d699c15334063f1500ff5f0633cd}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Completed\+File@{Completed\+File}}
+\index{Completed\+File@{Completed\+File}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Completed\+File}{CompletedFile}}
+{\footnotesize\ttfamily Completed\+File\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Completed\+File}
+
+
+
+Delegate to invoke when processing for a file has been completed. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a33d748361c7dcfd4c40518b99a689979}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a33d748361c7dcfd4c40518b99a689979}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Directory\+Failure@{Directory\+Failure}}
+\index{Directory\+Failure@{Directory\+Failure}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Directory\+Failure}{DirectoryFailure}}
+{\footnotesize\ttfamily Directory\+Failure\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Directory\+Failure}
+
+
+
+Delegate to invoke when processing directory failures. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae1451c8ef2694b3606c436a6769b917d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ae1451c8ef2694b3606c436a6769b917d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!File\+Failure@{File\+Failure}}
+\index{File\+Failure@{File\+Failure}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{File\+Failure}{FileFailure}}
+{\footnotesize\ttfamily File\+Failure\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+File\+Failure}
+
+
+
+Delegate to invoke when processing file failures. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a159a89c479511187e4c989ae149796af}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a159a89c479511187e4c989ae149796af}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Process\+Directory@{Process\+Directory}}
+\index{Process\+Directory@{Process\+Directory}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Process\+Directory}{ProcessDirectory}}
+{\footnotesize\ttfamily Process\+Directory\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Process\+Directory}
+
+
+
+Delegate to invoke when processing directories. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a3dd9d1b4b6453229cc18b2899ab43788}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a3dd9d1b4b6453229cc18b2899ab43788}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Process\+File@{Process\+File}}
+\index{Process\+File@{Process\+File}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Process\+File}{ProcessFile}}
+{\footnotesize\ttfamily Process\+File\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Process\+File}
+
+
+
+Delegate to invoke when processing files. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Progress@{Progress}}
+\index{Progress@{Progress}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Progress}{Progress}}
+{\footnotesize\ttfamily Progress\+Handler I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Progress}
+
+
+
+Delegate to invoke during processing of files. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a69b0a98a7d78d1fd0a33b38e693f7800}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_a69b0a98a7d78d1fd0a33b38e693f7800}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}!Progress\+Interval@{Progress\+Interval}}
+\index{Progress\+Interval@{Progress\+Interval}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Fast\+Zip\+Events}}
+\subsubsection{\texorpdfstring{Progress\+Interval}{ProgressInterval}}
+{\footnotesize\ttfamily Time\+Span I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Fast\+Zip\+Events.\+Progress\+Interval\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The minimum timespan between \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}{Progress} events. 
+
+The minimum period of time between \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}{Progress} events.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip_events_ad53701f02850d1e5939d1b7638bb5e71}{Progress}
+
+
+\end{DoxySeeAlso}
+
+
+The default interval is three seconds.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/Fast\+Zip.\+cs\end{DoxyCompactItemize}

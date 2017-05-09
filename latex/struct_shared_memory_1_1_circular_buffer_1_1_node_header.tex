@@ -1,0 +1,95 @@
+\hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header}{}\section{Shared\+Memory.\+Circular\+Buffer.\+Node\+Header Struct Reference}
+\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header}\index{Shared\+Memory.\+Circular\+Buffer.\+Node\+Header@{Shared\+Memory.\+Circular\+Buffer.\+Node\+Header}}
+
+
+Provides cursors for the circular buffer along with dimensions  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a76f6ce2a18e7aa6256ddf4c94778c1c6}{Read\+End}
+\begin{DoxyCompactList}\small\item\em The index of the first unreadable node \end{DoxyCompactList}\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_ad0dcc27048e0567fa72cca467ef97db0}{Read\+Start}
+\begin{DoxyCompactList}\small\item\em The index of the next readable node \end{DoxyCompactList}\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a2a643c3dd7d6344ed9bf16fd613b27f6}{Write\+End}
+\begin{DoxyCompactList}\small\item\em The index of the first unwritable node \end{DoxyCompactList}\item 
+volatile int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a7fc8c2c6403cba9549ca7673a393b1b4}{Write\+Start}
+\begin{DoxyCompactList}\small\item\em The index of the next writable node \end{DoxyCompactList}\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5bcbd547f640a9b5cbc5bc05af42c564}{Node\+Count}
+\begin{DoxyCompactList}\small\item\em The number of nodes within the buffer \end{DoxyCompactList}\item 
+int \hyperlink{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5dbe6b2941fea882c3d253d8eee9ef10}{Node\+Buffer\+Size}
+\begin{DoxyCompactList}\small\item\em The size of the buffer for each node \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides cursors for the circular buffer along with dimensions 
+
+This structure is the same size on 32-\/bit and 64-\/bit architectures.
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5dbe6b2941fea882c3d253d8eee9ef10}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5dbe6b2941fea882c3d253d8eee9ef10}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Node\+Buffer\+Size@{Node\+Buffer\+Size}}
+\index{Node\+Buffer\+Size@{Node\+Buffer\+Size}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Node\+Buffer\+Size}{NodeBufferSize}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Node\+Buffer\+Size}
+
+
+
+The size of the buffer for each node 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5bcbd547f640a9b5cbc5bc05af42c564}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a5bcbd547f640a9b5cbc5bc05af42c564}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Node\+Count@{Node\+Count}}
+\index{Node\+Count@{Node\+Count}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Node\+Count}{NodeCount}}
+{\footnotesize\ttfamily int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Node\+Count}
+
+
+
+The number of nodes within the buffer 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a76f6ce2a18e7aa6256ddf4c94778c1c6}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a76f6ce2a18e7aa6256ddf4c94778c1c6}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Read\+End@{Read\+End}}
+\index{Read\+End@{Read\+End}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Read\+End}{ReadEnd}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Read\+End}
+
+
+
+The index of the first unreadable node 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_ad0dcc27048e0567fa72cca467ef97db0}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_ad0dcc27048e0567fa72cca467ef97db0}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Read\+Start@{Read\+Start}}
+\index{Read\+Start@{Read\+Start}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Read\+Start}{ReadStart}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Read\+Start}
+
+
+
+The index of the next readable node 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a2a643c3dd7d6344ed9bf16fd613b27f6}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a2a643c3dd7d6344ed9bf16fd613b27f6}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Write\+End@{Write\+End}}
+\index{Write\+End@{Write\+End}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Write\+End}{WriteEnd}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Write\+End}
+
+
+
+The index of the first unwritable node 
+
+\mbox{\Hypertarget{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a7fc8c2c6403cba9549ca7673a393b1b4}\label{struct_shared_memory_1_1_circular_buffer_1_1_node_header_a7fc8c2c6403cba9549ca7673a393b1b4}} 
+\index{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}!Write\+Start@{Write\+Start}}
+\index{Write\+Start@{Write\+Start}!Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header@{Shared\+Memory\+::\+Circular\+Buffer\+::\+Node\+Header}}
+\subsubsection{\texorpdfstring{Write\+Start}{WriteStart}}
+{\footnotesize\ttfamily volatile int Shared\+Memory.\+Circular\+Buffer.\+Node\+Header.\+Write\+Start}
+
+
+
+The index of the next writable node 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Shared\+Memory/Circular\+Buffer.\+cs\end{DoxyCompactItemize}

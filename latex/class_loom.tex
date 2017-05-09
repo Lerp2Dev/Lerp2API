@@ -1,0 +1,108 @@
+\hypertarget{class_loom}{}\section{Loom Class Reference}
+\label{class_loom}\index{Loom@{Loom}}
+
+
+Multithreading support  
+
+
+Inheritance diagram for Loom\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_loom}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_loom_1_1_delayed_queue_item}{Delayed\+Queue\+Item}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_loom_aa8179ae2588826a3feb739b2540e710a}\label{class_loom_aa8179ae2588826a3feb739b2540e710a}} 
+static void {\bfseries Initialize} ()
+\item 
+static void \hyperlink{class_loom_a0d38a65c449aacb444a14074f3d62574}{Queue\+On\+Main\+Thread} (Action action)
+\begin{DoxyCompactList}\small\item\em Queues an action on the main thread \end{DoxyCompactList}\item 
+static void \hyperlink{class_loom_a9003659e5b32d18ddb3c9204dcff343f}{Queue\+On\+Main\+Thread} (Action action, float time)
+\begin{DoxyCompactList}\small\item\em Queues an action on the main thread after a delay \end{DoxyCompactList}\item 
+static void \hyperlink{class_loom_a96dca2cf633909a32613b23bf7006f80}{Run\+Async} (Action action)
+\begin{DoxyCompactList}\small\item\em Runs an action on another thread \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_loom}{Loom} \hyperlink{class_loom_a755c2c53122fe9c9a7447699f6fa27b8}{Current}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Return the current instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multithreading support 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loom_a0d38a65c449aacb444a14074f3d62574}\label{class_loom_a0d38a65c449aacb444a14074f3d62574}} 
+\index{Loom@{Loom}!Queue\+On\+Main\+Thread@{Queue\+On\+Main\+Thread}}
+\index{Queue\+On\+Main\+Thread@{Queue\+On\+Main\+Thread}!Loom@{Loom}}
+\subsubsection{\texorpdfstring{Queue\+On\+Main\+Thread()}{QueueOnMainThread()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Loom.\+Queue\+On\+Main\+Thread (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Queues an action on the main thread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action to execute \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_loom_a9003659e5b32d18ddb3c9204dcff343f}\label{class_loom_a9003659e5b32d18ddb3c9204dcff343f}} 
+\index{Loom@{Loom}!Queue\+On\+Main\+Thread@{Queue\+On\+Main\+Thread}}
+\index{Queue\+On\+Main\+Thread@{Queue\+On\+Main\+Thread}!Loom@{Loom}}
+\subsubsection{\texorpdfstring{Queue\+On\+Main\+Thread()}{QueueOnMainThread()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Loom.\+Queue\+On\+Main\+Thread (\begin{DoxyParamCaption}\item[{Action}]{action,  }\item[{float}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Queues an action on the main thread after a delay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action to run \\
+\hline
+{\em time} & The amount of time to delay \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_loom_a96dca2cf633909a32613b23bf7006f80}\label{class_loom_a96dca2cf633909a32613b23bf7006f80}} 
+\index{Loom@{Loom}!Run\+Async@{Run\+Async}}
+\index{Run\+Async@{Run\+Async}!Loom@{Loom}}
+\subsubsection{\texorpdfstring{Run\+Async()}{RunAsync()}}
+{\footnotesize\ttfamily static void Loom.\+Run\+Async (\begin{DoxyParamCaption}\item[{Action}]{action }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Runs an action on another thread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action to execute on another thread \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_loom_a755c2c53122fe9c9a7447699f6fa27b8}\label{class_loom_a755c2c53122fe9c9a7447699f6fa27b8}} 
+\index{Loom@{Loom}!Current@{Current}}
+\index{Current@{Current}!Loom@{Loom}}
+\subsubsection{\texorpdfstring{Current}{Current}}
+{\footnotesize\ttfamily \hyperlink{class_loom}{Loom} Loom.\+Current\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Return the current instance 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Radical/\+System/Loom.\+cs\end{DoxyCompactItemize}

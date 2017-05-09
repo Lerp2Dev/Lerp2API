@@ -1,0 +1,325 @@
+\hypertarget{interface_i_generic_menu_add_item_context}{}\section{I\+Generic\+Menu\+Add\+Item\+Context Interface Reference}
+\label{interface_i_generic_menu_add_item_context}\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+
+
+Describes current context of adding an item to a Generic\+Menu.  
+
+
+
+
+Inherited by Generic\+Menu\+Add\+Item\+Context.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_a682571e8c3fd7f58b8ae3c44fa4c1788}{Enable} (bool enable)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be enabled. \end{DoxyCompactList}\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_ac97d8817141d805bb775570155634167}{Enable} (Func$<$ bool $>$ predicate)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be enabled. \end{DoxyCompactList}\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_a997ba7515e31c40ecaae9a5a4a5e8b1c}{Visible} (bool visible)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be visible in menu. \end{DoxyCompactList}\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_a02cbabcb5e584a278107f71f822a190d}{Visible} (Func$<$ bool $>$ predicate)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be visible. \end{DoxyCompactList}\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_aa9cbeb32f7807860a29493d9a3b9d0ab}{On} (bool on)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be in an \char`\"{}on\char`\"{} state (aka checked). \end{DoxyCompactList}\item 
+\hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} \hyperlink{interface_i_generic_menu_add_item_context_acd587887ffb0ad237341bbcae9c6c479}{On} (Func$<$ bool $>$ predicate)
+\begin{DoxyCompactList}\small\item\em Specifies whether menu item should be in an \char`\"{}on\char`\"{} state (aka checked). \end{DoxyCompactList}\item 
+void \hyperlink{interface_i_generic_menu_add_item_context_a7aa0dae2d629ef16b5fdf1244642b7ca}{Action} (Generic\+Menu.\+Menu\+Function action)
+\begin{DoxyCompactList}\small\item\em Finalize addition of menu item by assigning an action to it. \end{DoxyCompactList}\item 
+void \hyperlink{interface_i_generic_menu_add_item_context_ac880f540cc2f2cba3ec9f47a16f7742f}{Action} (Generic\+Menu.\+Menu\+Function2 action, object user\+Data)
+\begin{DoxyCompactList}\small\item\em Finalize addition of menu item by assigning an action to it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes current context of adding an item to a Generic\+Menu. 
+
+\begin{DoxySeeAlso}{See also}
+Generic\+Menu\+Extensions.\+Add\+Item(\+Generic\+Menu, G\+U\+I\+Content), Generic\+Menu\+Extensions.\+Add\+Item(\+Generic\+Menu, string)
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_a7aa0dae2d629ef16b5fdf1244642b7ca}\label{interface_i_generic_menu_add_item_context_a7aa0dae2d629ef16b5fdf1244642b7ca}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Action@{Action}}
+\index{Action@{Action}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Action()}{Action()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+Generic\+Menu\+Add\+Item\+Context.\+Action (\begin{DoxyParamCaption}\item[{Generic\+Menu.\+Menu\+Function}]{action }\end{DoxyParamCaption})}
+
+
+
+Finalize addition of menu item by assigning an action to it. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Log message to console!"})
+    .Action(() => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"Hello, world!"});
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & Delegate to perform menu action.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & If {\itshape action}  is a value of {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_ac880f540cc2f2cba3ec9f47a16f7742f}\label{interface_i_generic_menu_add_item_context_ac880f540cc2f2cba3ec9f47a16f7742f}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Action@{Action}}
+\index{Action@{Action}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Action()}{Action()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+Generic\+Menu\+Add\+Item\+Context.\+Action (\begin{DoxyParamCaption}\item[{Generic\+Menu.\+Menu\+Function2}]{action,  }\item[{object}]{user\+Data }\end{DoxyParamCaption})}
+
+
+
+Finalize addition of menu item by assigning an action to it. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Log message to console!"})
+    .Action(userData => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"Hello, \{0\}!"}, (\textcolor{keywordtype}{string})userData);
+    \}, \textcolor{stringliteral}{"my friend"});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & Delegate to perform menu action.\\
+\hline
+{\em user\+Data} & Additional data that is made available to menu action.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & If {\itshape action}  is a value of {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_a682571e8c3fd7f58b8ae3c44fa4c1788}\label{interface_i_generic_menu_add_item_context_a682571e8c3fd7f58b8ae3c44fa4c1788}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Enable@{Enable}}
+\index{Enable@{Enable}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be enabled. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"This item is disabled!"})
+    .Enable(\textcolor{keyword}{false})
+    .Action(() => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"User cannot make this appear in log!"});
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Specifies whether item is enabled.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_ac97d8817141d805bb775570155634167}\label{interface_i_generic_menu_add_item_context_ac97d8817141d805bb775570155634167}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Enable@{Enable}}
+\index{Enable@{Enable}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+Enable (\begin{DoxyParamCaption}\item[{Func$<$ bool $>$}]{predicate }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be enabled. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"This item is disabled!"})
+    .Enable(() => \textcolor{keyword}{false})
+    .Action(() => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"User cannot make this appear in log!"});
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & Predicate that determines whether item is enabled by by returning a value of {\ttfamily true}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & If {\itshape predicate}  is a value of {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_aa9cbeb32f7807860a29493d9a3b9d0ab}\label{interface_i_generic_menu_add_item_context_aa9cbeb32f7807860a29493d9a3b9d0ab}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!On@{On}}
+\index{On@{On}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{On()}{On()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+On (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be in an \char`\"{}on\char`\"{} state (aka checked). 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Item is checked!"})
+    .On(\textcolor{keyword}{true})
+    .Action(() => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"Selected checked menu item!"});
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on} & Indicates if menu item is \char`\"{}on\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_acd587887ffb0ad237341bbcae9c6c479}\label{interface_i_generic_menu_add_item_context_acd587887ffb0ad237341bbcae9c6c479}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!On@{On}}
+\index{On@{On}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{On()}{On()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+On (\begin{DoxyParamCaption}\item[{Func$<$ bool $>$}]{predicate }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be in an \char`\"{}on\char`\"{} state (aka checked). 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Item is checked!"})
+    .On(() => \textcolor{keyword}{true})
+    .Action(() => \{
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{stringliteral}{"Selected checked menu item!"});
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & Predicate that determines whether item is \char`\"{}on\char`\"{} by returning a value of {\ttfamily true}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & If {\itshape predicate}  is a value of {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_a997ba7515e31c40ecaae9a5a4a5e8b1c}\label{interface_i_generic_menu_add_item_context_a997ba7515e31c40ecaae9a5a4a5e8b1c}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Visible@{Visible}}
+\index{Visible@{Visible}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Visible()}{Visible()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be visible in menu. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Visible when item is selected!"})
+    .Visible(Selection.activeObject != null)
+    .Action(() => \{
+        \textcolor{keywordtype}{string} objectName = Selection.activeObject.name;
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"Selected object is called '\{0\}'."}, objectName));
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & Specifies whether item is visible.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_i_generic_menu_add_item_context_a02cbabcb5e584a278107f71f822a190d}\label{interface_i_generic_menu_add_item_context_a02cbabcb5e584a278107f71f822a190d}} 
+\index{I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}!Visible@{Visible}}
+\index{Visible@{Visible}!I\+Generic\+Menu\+Add\+Item\+Context@{I\+Generic\+Menu\+Add\+Item\+Context}}
+\subsubsection{\texorpdfstring{Visible()}{Visible()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} I\+Generic\+Menu\+Add\+Item\+Context.\+Visible (\begin{DoxyParamCaption}\item[{Func$<$ bool $>$}]{predicate }\end{DoxyParamCaption})}
+
+
+
+Specifies whether menu item should be visible. 
+
+
+\begin{DoxyCode}
+<![CDATA[
+var menu = \textcolor{keyword}{new} GenericMenu();
+
+menu.AddItem(\textcolor{stringliteral}{"Visible when item is selected!"})
+    .Visible(() => Selection.activeObject != null)
+    .Action(() => \{
+        \textcolor{keywordtype}{string} objectName = Selection.activeObject.name;
+        \hyperlink{namespace_debug}{Debug}.Log(\textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"Selected object is called '\{0\}'."}, objectName));
+    \});
+]]>
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & Predicate that determines whether item is visible by returning a value of {\ttfamily true}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{interface_i_generic_menu_add_item_context}{I\+Generic\+Menu\+Add\+Item\+Context} instance for chained method calls. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Null\+Exception} & If {\itshape predicate}  is a value of {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Editor/\+Utility/Generic\+Menu\+Extensions.\+cs\end{DoxyCompactItemize}

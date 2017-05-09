@@ -1,0 +1,89 @@
+\hypertarget{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor}{}\section{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor Class Reference}
+\label{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor}\index{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor}}
+Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_ae3e6db6e345aea48bb0cb8e63e8f4d6f}{Can\+Process} (Type type)
+\begin{DoxyCompactList}\small\item\em Is the processor interested in objects of the given type? \end{DoxyCompactList}\item 
+override void \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a8013e3b964d24ee85c19fcd33997c104}{On\+Before\+Serialize} (Type storage\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Called before serialization. \end{DoxyCompactList}\item 
+override void \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a29733358c2bfa204e3a043fbc28d644d}{On\+After\+Deserialize} (Type storage\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Called after deserialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_ae3e6db6e345aea48bb0cb8e63e8f4d6f}\label{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_ae3e6db6e345aea48bb0cb8e63e8f4d6f}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}!Can\+Process@{Can\+Process}}
+\index{Can\+Process@{Can\+Process}!Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}}
+\subsubsection{\texorpdfstring{Can\+Process()}{CanProcess()}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor.\+Can\+Process (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Is the processor interested in objects of the given type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The given type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the processor should be applied, false otherwise.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_object_processor_a5dc981f868302d15a59def67ed4e8a5d}{Full\+Serializer.\+fs\+Object\+Processor}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a29733358c2bfa204e3a043fbc28d644d}\label{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a29733358c2bfa204e3a043fbc28d644d}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}!On\+After\+Deserialize@{On\+After\+Deserialize}}
+\index{On\+After\+Deserialize@{On\+After\+Deserialize}!Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}}
+\subsubsection{\texorpdfstring{On\+After\+Deserialize()}{OnAfterDeserialize()}}
+{\footnotesize\ttfamily override void Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor.\+On\+After\+Deserialize (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called after deserialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+{\em instance} & The type of the instance.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_object_processor_a147c5f6828b9cf92703152ee7e1611dd}{Full\+Serializer.\+fs\+Object\+Processor}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a8013e3b964d24ee85c19fcd33997c104}\label{class_full_serializer_1_1_internal_1_1fs_serialization_callback_receiver_processor_a8013e3b964d24ee85c19fcd33997c104}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}!On\+Before\+Serialize@{On\+Before\+Serialize}}
+\index{On\+Before\+Serialize@{On\+Before\+Serialize}!Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor@{Full\+Serializer\+::\+Internal\+::fs\+Serialization\+Callback\+Receiver\+Processor}}
+\subsubsection{\texorpdfstring{On\+Before\+Serialize()}{OnBeforeSerialize()}}
+{\footnotesize\ttfamily override void Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Receiver\+Processor.\+On\+Before\+Serialize (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called before serialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+{\em instance} & The type of the instance.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_object_processor_a48818569c78a826069594fb5ce6e32f2}{Full\+Serializer.\+fs\+Object\+Processor}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/fs\+I\+Serialization\+Callbacks.\+cs\end{DoxyCompactItemize}

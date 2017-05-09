@@ -1,0 +1,55 @@
+\hypertarget{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion}{}\section{System.\+Runtime.\+Compiler\+Services.\+I\+Critical\+Notify\+Completion Interface Reference}
+\label{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion}\index{System.\+Runtime.\+Compiler\+Services.\+I\+Critical\+Notify\+Completion@{System.\+Runtime.\+Compiler\+Services.\+I\+Critical\+Notify\+Completion}}
+
+
+Represents an awaiter used to schedule continuations when an await operation completes.  
+
+
+Inheritance diagram for System.\+Runtime.\+Compiler\+Services.\+I\+Critical\+Notify\+Completion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.748663cm]{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion_ad3e2080f494cf5b51ee57d9c4d704fc6}{Unsafe\+On\+Completed} (Action continuation)
+\begin{DoxyCompactList}\small\item\em Schedules the continuation action to be invoked when the instance completes.\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an awaiter used to schedule continuations when an await operation completes. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion_ad3e2080f494cf5b51ee57d9c4d704fc6}\label{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion_ad3e2080f494cf5b51ee57d9c4d704fc6}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Critical\+Notify\+Completion@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Critical\+Notify\+Completion}!Unsafe\+On\+Completed@{Unsafe\+On\+Completed}}
+\index{Unsafe\+On\+Completed@{Unsafe\+On\+Completed}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Critical\+Notify\+Completion@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Critical\+Notify\+Completion}}
+\subsubsection{\texorpdfstring{Unsafe\+On\+Completed()}{UnsafeOnCompleted()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+I\+Critical\+Notify\+Completion.\+Unsafe\+On\+Completed (\begin{DoxyParamCaption}\item[{Action}]{continuation }\end{DoxyParamCaption})}
+
+
+
+Schedules the continuation action to be invoked when the instance completes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em continuation} & The action to invoke when the operation completes.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If {\itshape continuation}  is . \\
+\hline
+\end{DoxyExceptions}
+Unlike \hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion_ac999a22b9bc2d384bbef4d58db192efe}{I\+Notify\+Completion.\+On\+Completed}, \hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_critical_notify_completion_ad3e2080f494cf5b51ee57d9c4d704fc6}{Unsafe\+On\+Completed} need not propagate Execution\+Context information. 
+
+Implemented in \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter_ab8514ee763a005be7b0fc9af50705861}{System.\+Runtime.\+Compiler\+Services.\+Configured\+Task\+Awaitable$<$ T\+Result $>$.\+Configured\+Task\+Awaiter}, \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter_ab8514ee763a005be7b0fc9af50705861}{System.\+Runtime.\+Compiler\+Services.\+Configured\+Task\+Awaitable$<$ T\+Result $>$.\+Configured\+Task\+Awaiter}, \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_task_awaiter_af057913665b7968eeb237cca41d1ac73}{System.\+Runtime.\+Compiler\+Services.\+Task\+Awaiter$<$ T\+Result $>$}, and \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_task_awaiter_af057913665b7968eeb237cca41d1ac73}{System.\+Runtime.\+Compiler\+Services.\+Task\+Awaiter$<$ T\+Result $>$}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Minimum\+Async\+Bridge/\+Minimum\+Async\+Bridge/\+Runtime/\+Compiler\+Services/I\+Critical\+Notify\+Completion.\+cs\end{DoxyCompactItemize}

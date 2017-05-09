@@ -1,0 +1,101 @@
+\hypertarget{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory Interface Reference}
+\label{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory}}
+
+
+This interface is provided, along with the method \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}{Set\+Entry\+Factory}, to allow the programmer to have their own \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} subclass instantiated for the entries return from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}{Get\+Next\+Entry}.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a2534ff030c9132b43c76e4ad812558f9}{Create\+Entry} (string name)
+\begin{DoxyCompactList}\small\item\em Create an entry based on name alone \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a65fd272011cf65d0e43b9be928edab73}{Create\+Entry\+From\+File} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Create an instance based on an actual file \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a689709831847a5c6f896dc3ebc7d0b4f}{Create\+Entry} (byte\mbox{[}$\,$\mbox{]} header\+Buffer)
+\begin{DoxyCompactList}\small\item\em Create a tar entry based on the header information passed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This interface is provided, along with the method \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_a9d78240fd9fa35d7855939ab89c84e47}{Set\+Entry\+Factory}, to allow the programmer to have their own \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} subclass instantiated for the entries return from \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_ad1c9380146d8de1f637e7a41868b765d}{Get\+Next\+Entry}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a2534ff030c9132b43c76e4ad812558f9}\label{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a2534ff030c9132b43c76e4ad812558f9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}!Create\+Entry@{Create\+Entry}}
+\index{Create\+Entry@{Create\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Entry()}{CreateEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory.\+Create\+Entry (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Create an entry based on name alone 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the new Entry\+Point\+Not\+Found\+Exception to create \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} or descendant class
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_entry_factory_adapter_ae6f5f3df4f39bc1f87f2307d32a5ca04}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Entry\+Factory\+Adapter}.
+
+\mbox{\Hypertarget{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a689709831847a5c6f896dc3ebc7d0b4f}\label{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a689709831847a5c6f896dc3ebc7d0b4f}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}!Create\+Entry@{Create\+Entry}}
+\index{Create\+Entry@{Create\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Entry()}{CreateEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory.\+Create\+Entry (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{header\+Buffer }\end{DoxyParamCaption})}
+
+
+
+Create a tar entry based on the header information passed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+Buffer} & Buffer containing header information to create an an entry from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} or descendant class 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_entry_factory_adapter_a1d1d5f14b5bef37cc2f8a999316ca5fd}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Entry\+Factory\+Adapter}.
+
+\mbox{\Hypertarget{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a65fd272011cf65d0e43b9be928edab73}\label{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_i_entry_factory_a65fd272011cf65d0e43b9be928edab73}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}!Create\+Entry\+From\+File@{Create\+Entry\+From\+File}}
+\index{Create\+Entry\+From\+File@{Create\+Entry\+From\+File}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Input\+Stream\+::\+I\+Entry\+Factory}}
+\subsubsection{\texorpdfstring{Create\+Entry\+From\+File()}{CreateEntryFromFile()}}
+{\footnotesize\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+I\+Entry\+Factory.\+Create\+Entry\+From\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Create an instance based on an actual file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of file to represent in the entry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Created \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_entry}{Tar\+Entry} or descendant class 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream_1_1_entry_factory_adapter_ac36b2a846d3148d82ebba5cc1db97ad7}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Input\+Stream.\+Entry\+Factory\+Adapter}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Tar/Tar\+Input\+Stream.\+cs\end{DoxyCompactItemize}

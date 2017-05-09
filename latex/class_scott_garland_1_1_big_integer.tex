@@ -1,0 +1,1045 @@
+\hypertarget{class_scott_garland_1_1_big_integer}{}\section{Scott\+Garland.\+Big\+Integer Class Reference}
+\label{class_scott_garland_1_1_big_integer}\index{Scott\+Garland.\+Big\+Integer@{Scott\+Garland.\+Big\+Integer}}
+
+
+Represents a integer of abitrary length.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{Big\+Integer} ()
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with an integer value of 0. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_a814a50a2d47afab9a43e74204a53fcf0}{Big\+Integer} (long number)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with the value of the operand. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_a0ff4d1469a5c9cdb39cc6bdd0ec995b2}{Big\+Integer} (ulong number)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with the value of the operand. Can never be negative. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_a780777418993360461e0fe7c46537860}{Big\+Integer} (byte\mbox{[}$\,$\mbox{]} array)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from the byte array. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_a018f88f4c41760ccc0c7c76e1e6794a9}{Big\+Integer} (byte\mbox{[}$\,$\mbox{]} array, int length)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from the byte array ending at {\itshape length} . \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_aaee24d2962eea848eaa86c7607676b8b}{Big\+Integer} (byte\mbox{[}$\,$\mbox{]} array, int offset, int length)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from {\itshape length}  bytes starting at {\itshape offset} . \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_ad4bed1a734cd43fdfa188d4c94fe9577}{Big\+Integer} (string digits)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} in base-\/10 from the parameter. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer_aa998ee8f5c1fc81395b3acdd695c82f5}{Big\+Integer} (string digits, int radix)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} in base and value from the parameters. \end{DoxyCompactList}\item 
+\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a91144e3aedfda684b3d5e5cdb4b86cbb}{Negate} ()
+\begin{DoxyCompactList}\small\item\em Negates the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, that is, if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return a positive \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, and if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return the postive. \end{DoxyCompactList}\item 
+int \hyperlink{class_scott_garland_1_1_big_integer_af0dbbd3bc5d77875df55f35d92f1e2b6}{Compare\+To} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Compare this instance to a specified object and returns indication of their relative value. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_scott_garland_1_1_big_integer_a1d708cffb8ea8f6667cf69dfd60e41d1}{Equals} (object obj)
+\begin{DoxyCompactList}\small\item\em Determines whether two Object instances are equal. \end{DoxyCompactList}\item 
+override int \hyperlink{class_scott_garland_1_1_big_integer_a8437c07ab30cda55c559bf17f4466ead}{Get\+Hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em Returns the hash code for this instance. \end{DoxyCompactList}\item 
+override string \hyperlink{class_scott_garland_1_1_big_integer_ac650e505ca8c6b7c86731ff4c158f006}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em Converts the numeric value of this instance to its equivalent base 10 string representation. \end{DoxyCompactList}\item 
+string \hyperlink{class_scott_garland_1_1_big_integer_a975b135a066ddff12cbef21adf338357}{To\+String} (int radix)
+\begin{DoxyCompactList}\small\item\em Converts the numeric value of this instance to its equivalent string representation in specified base. \end{DoxyCompactList}\item 
+string \hyperlink{class_scott_garland_1_1_big_integer_a743cb38de54da022a77772bcbb0d80ec}{To\+Hex\+String} ()
+\begin{DoxyCompactList}\small\item\em Returns string in hexidecimal of the internal digit representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static implicit \hyperlink{class_scott_garland_1_1_big_integer_ab7ca7bc80abdb8236d2a02468c7025ec}{operator Big\+Integer} (long value)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a long. \end{DoxyCompactList}\item 
+static implicit \hyperlink{class_scott_garland_1_1_big_integer_a969d60de29a3f809ea166e6bd1c77302}{operator Big\+Integer} (ulong value)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a ulong. \end{DoxyCompactList}\item 
+static implicit \hyperlink{class_scott_garland_1_1_big_integer_a3a17f77a3e90cf657d105559ad35fecf}{operator Big\+Integer} (int value)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a int. \end{DoxyCompactList}\item 
+static implicit \hyperlink{class_scott_garland_1_1_big_integer_a4058c6d81e843425ed6b1ceb98706abe}{operator Big\+Integer} (uint value)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a uint. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_aa0f043b20ba83229df2817492330c966}{operator+} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Adds two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_ac2c1dce674b509a0602a4bd8e3fa0e7f}{Add} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Adds two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a587f039d590d2dd6e8135fc1b74c82c1}{operator++} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Increments the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a21e007e5a3c6fdd5c1fbd7daa41e9f8c}{Increment} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Increments the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a7ce71794183add63e9e97151290b65b3}{operator-\/} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Substracts two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a7e0f9a9d2a70f35407d808b143ac7a0a}{Subtract} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Substracts two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_af2f8450c10cface5a4b597f1a7c53945}{operator-\/-\/} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Decrements the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_affa766b6b0b77a333971307b90a66aa0}{Decrement} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Decrements the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a8584125cc3f3256f1496a1f6ca32720e}{operator-\/} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Negates the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, that is, if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return a positive \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, and if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return the postive. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a885dbd49d878ba22013da4efda83545a}{Abs} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} absolute value of the operand. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_ae893cd71c07858e3ced194d364a5c1ba}{operator$\ast$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Multiply two Big\+Integers returning the result. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a003b5c4564964f03ffa49a74bad0f4fd}{Multiply} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Multiply two Big\+Integers returning the result. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a021e7c5201d241d86b1fbdc4efa3c137}{operator/} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Divide a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} by another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and returning the result. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a98eadd02148a503be9ca7fb7929224da}{Divide} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Divide a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} by another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and returning the result. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a6660cf490e242eed91928fca289e7b7f}{operator\%} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Perform the modulus of a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and return the result. \end{DoxyCompactList}\item 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} \hyperlink{class_scott_garland_1_1_big_integer_a99ca834445147bc4de1d108376a790c3}{Modulus} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Perform the modulus of a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and return the result. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a41718b5e26902e535502174c88229302}\label{class_scott_garland_1_1_big_integer_a41718b5e26902e535502174c88229302}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator\&} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a05ff68999479aa04b422ddb59ea5fd61}\label{class_scott_garland_1_1_big_integer_a05ff68999479aa04b422ddb59ea5fd61}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Bitwise\+And} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a8fb34bd1a5f4e2b8bfdf5f28dc623e63}\label{class_scott_garland_1_1_big_integer_a8fb34bd1a5f4e2b8bfdf5f28dc623e63}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator$\vert$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a6ef707f9d6bdf4add7be91ab89a7ac05}\label{class_scott_garland_1_1_big_integer_a6ef707f9d6bdf4add7be91ab89a7ac05}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Bitwise\+Or} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a68e9425800f6323298410d15c5d7ba83}\label{class_scott_garland_1_1_big_integer_a68e9425800f6323298410d15c5d7ba83}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator$^\wedge$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a161209fa83f1b81fac13a0256b07c80e}\label{class_scott_garland_1_1_big_integer_a161209fa83f1b81fac13a0256b07c80e}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Xor} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a1028f3352a4a6558c1cd8f9048068337}\label{class_scott_garland_1_1_big_integer_a1028f3352a4a6558c1cd8f9048068337}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator$\sim$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ac47135fd6f248d218993915446bf5eb5}\label{class_scott_garland_1_1_big_integer_ac47135fd6f248d218993915446bf5eb5}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Ones\+Complement} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_af1e7806be3cb647088bf461b03052fc4}\label{class_scott_garland_1_1_big_integer_af1e7806be3cb647088bf461b03052fc4}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator$<$$<$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, int shift\+Count)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a1d2dd59a7603d7ceaecbf2b1c51bf7bd}\label{class_scott_garland_1_1_big_integer_a1d2dd59a7603d7ceaecbf2b1c51bf7bd}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Left\+Shift} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, int shift\+Count)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a9353164b18bcdd76a5abf016025f419e}\label{class_scott_garland_1_1_big_integer_a9353164b18bcdd76a5abf016025f419e}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries operator$>$$>$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, int shift\+Count)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a736003e9128e125c4800c63f6c1b0073}\label{class_scott_garland_1_1_big_integer_a736003e9128e125c4800c63f6c1b0073}} 
+static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} {\bfseries Right\+Shift} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, int shift\+Count)
+\item 
+static int \hyperlink{class_scott_garland_1_1_big_integer_a3724ad4d98940f216c8abce7834d5bf4}{Compare} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\begin{DoxyCompactList}\small\item\em Compare two objects and return an indication of their relative value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a55ec557dd4fe3895e28f8e02473ad5c9}\label{class_scott_garland_1_1_big_integer_a55ec557dd4fe3895e28f8e02473ad5c9}} 
+static bool {\bfseries operator==} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a55d1606d8b5694c6f6cd69aa658e1ad6}\label{class_scott_garland_1_1_big_integer_a55d1606d8b5694c6f6cd69aa658e1ad6}} 
+static bool {\bfseries operator!=} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a3d6351f6e8a56bb19b48fa232308f0b2}\label{class_scott_garland_1_1_big_integer_a3d6351f6e8a56bb19b48fa232308f0b2}} 
+static bool {\bfseries operator$>$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_aff57d146e2a3e57c5a291b45bbb25636}\label{class_scott_garland_1_1_big_integer_aff57d146e2a3e57c5a291b45bbb25636}} 
+static bool {\bfseries operator$<$} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ab8fca82975dcac550a798d63ee147133}\label{class_scott_garland_1_1_big_integer_ab8fca82975dcac550a798d63ee147133}} 
+static bool {\bfseries operator$>$=} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_aeed3d904b36d585e151be95cd12e798a}\label{class_scott_garland_1_1_big_integer_aeed3d904b36d585e151be95cd12e798a}} 
+static bool {\bfseries operator$<$=} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} left\+Side, \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} right\+Side)
+\item 
+static int \hyperlink{class_scott_garland_1_1_big_integer_a282c756614e3530c7ca3db75122df382}{To\+Int16} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int16 if possible. \end{DoxyCompactList}\item 
+static uint \hyperlink{class_scott_garland_1_1_big_integer_a2a619b20c5463022dd1f6d21b3816a22}{To\+U\+Int16} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int16 if possible. \end{DoxyCompactList}\item 
+static int \hyperlink{class_scott_garland_1_1_big_integer_ae3db4ced22f3c869e6093fe0dc3f7b73}{To\+Int32} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int32 if possible. \end{DoxyCompactList}\item 
+static uint \hyperlink{class_scott_garland_1_1_big_integer_a89c18ca36b64bb368c7e96906a750537}{To\+U\+Int32} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int32 if possible. \end{DoxyCompactList}\item 
+static long \hyperlink{class_scott_garland_1_1_big_integer_ae0fc996dd71a2fb206e03230c1534a6a}{To\+Int64} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int64 if possible. \end{DoxyCompactList}\item 
+static ulong \hyperlink{class_scott_garland_1_1_big_integer_a5b75b559d0c7ec75ff4eaceb1cdee2a4}{To\+U\+Int64} (\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} value)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int64 if possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_scott_garland_1_1_big_integer_a3bed3f2524ecfac198f5d93cfccad0b0}{Is\+Negative}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative (less than zero). \end{DoxyCompactList}\item 
+bool \hyperlink{class_scott_garland_1_1_big_integer_ad925705201ff656dc819599e78a19ccd}{Is\+Zero}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is exactly zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a integer of abitrary length. 
+
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} object is immutable like System.\+String. The object can not be modifed, and new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} objects are created by using the operations of existing \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} objects. 
+
+Internally a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} object is an array of ? that is represents the digits of the n-\/place integer. Negative Big\+Integers are stored internally as 1\textquotesingle{}s complements, thus every \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} object contains 1 or more padding elements to hold the sign. 
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{public} \textcolor{keyword}{class }MainProgram
+\{
+    [STAThread]
+    \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
+    \{
+        \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger} a = \textcolor{keyword}{new} \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger}(25);
+        a = a + 100;
+
+        \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger} b = \textcolor{keyword}{new} \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger}(\textcolor{stringliteral}{"139435810094598308945890230913"});
+
+        \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger} c = b / a;
+        \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger} d = b % a;
+
+        \hyperlink{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}{BigInteger} e = (c * a) + d;
+        \textcolor{keywordflow}{if} (e != b)
+        \{
+            Console.WriteLine(\textcolor{stringliteral}{"Can never be true."});
+        \}
+    \}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}\label{class_scott_garland_1_1_big_integer_a8255378a9b7d296d78d3bc446f7b3949}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with an integer value of 0. 
+
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a814a50a2d47afab9a43e74204a53fcf0}\label{class_scott_garland_1_1_big_integer_a814a50a2d47afab9a43e74204a53fcf0}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{long}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with the value of the operand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & A long.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a0ff4d1469a5c9cdb39cc6bdd0ec995b2}\label{class_scott_garland_1_1_big_integer_a0ff4d1469a5c9cdb39cc6bdd0ec995b2}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{ulong}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with the value of the operand. Can never be negative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & A unsigned long.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a780777418993360461e0fe7c46537860}\label{class_scott_garland_1_1_big_integer_a780777418993360461e0fe7c46537860}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from the byte array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a018f88f4c41760ccc0c7c76e1e6794a9}\label{class_scott_garland_1_1_big_integer_a018f88f4c41760ccc0c7c76e1e6794a9}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from the byte array ending at {\itshape length} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & A byte array.\\
+\hline
+{\em length} & Int number of bytes to use.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_aaee24d2962eea848eaa86c7607676b8b}\label{class_scott_garland_1_1_big_integer_aaee24d2962eea848eaa86c7607676b8b}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{offset,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialized from {\itshape length}  bytes starting at {\itshape offset} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & A byte array.\\
+\hline
+{\em offset} & Int offset into the {\itshape array} .\\
+\hline
+{\em length} & Int number of bytes.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ad4bed1a734cd43fdfa188d4c94fe9577}\label{class_scott_garland_1_1_big_integer_ad4bed1a734cd43fdfa188d4c94fe9577}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{string}]{digits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} in base-\/10 from the parameter. 
+
+The new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative if the {\itshape digits}  has a leading -\/ (minus). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digits} & A string\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_aa998ee8f5c1fc81395b3acdd695c82f5}\label{class_scott_garland_1_1_big_integer_aa998ee8f5c1fc81395b3acdd695c82f5}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Big\+Integer@{Big\+Integer}}
+\index{Big\+Integer@{Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Big\+Integer()}{BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily Scott\+Garland.\+Big\+Integer.\+Big\+Integer (\begin{DoxyParamCaption}\item[{string}]{digits,  }\item[{int}]{radix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} in base and value from the parameters. 
+
+The new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative if the {\itshape digits}  has a leading -\/ (minus). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digits} & A string\\
+\hline
+{\em radix} & A int between 2 and 36.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a885dbd49d878ba22013da4efda83545a}\label{class_scott_garland_1_1_big_integer_a885dbd49d878ba22013da4efda83545a}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Abs@{Abs}}
+\index{Abs@{Abs}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Abs()}{Abs()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Abs (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} absolute value of the operand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the absolute value of {\itshape left\+Side} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ac2c1dce674b509a0602a4bd8e3fa0e7f}\label{class_scott_garland_1_1_big_integer_ac2c1dce674b509a0602a4bd8e3fa0e7f}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Add@{Add}}
+\index{Add@{Add}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Add (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adds two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result of adding {\itshape left\+Side}  and {\itshape right\+Side} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a3724ad4d98940f216c8abce7834d5bf4}\label{class_scott_garland_1_1_big_integer_a3724ad4d98940f216c8abce7834d5bf4}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Compare@{Compare}}
+\index{Compare@{Compare}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Compare()}{Compare()}}
+{\footnotesize\ttfamily static int Scott\+Garland.\+Big\+Integer.\+Compare (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compare two objects and return an indication of their relative value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & An object to compare, or a null reference ({\bfseries Nothing} in Visual Basic).\\
+\hline
+{\em right\+Side} & An object to compare, or a null reference ({\bfseries Nothing} in Visual Basic).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A signed number indicating the relative value of this instance and {\itshape value}. \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return Value }&\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return Value }&\textbf{ Description  }\\\cline{1-2}
+\endhead
+Less than zero &This instance is less than {\itshape value}.  \\\cline{1-2}
+Zero &This instance is equal to {\itshape value}.  \\\cline{1-2}
+Greater than zero &This instance is greater than {\itshape value}. 
+
+-\/or-\/\\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyReturn}
+{\itshape value} is a null reference ({\bfseries Nothing} in Visual Basic).   \mbox{\Hypertarget{class_scott_garland_1_1_big_integer_af0dbbd3bc5d77875df55f35d92f1e2b6}\label{class_scott_garland_1_1_big_integer_af0dbbd3bc5d77875df55f35d92f1e2b6}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Compare\+To@{Compare\+To}}
+\index{Compare\+To@{Compare\+To}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Compare\+To()}{CompareTo()}}
+{\footnotesize\ttfamily int Scott\+Garland.\+Big\+Integer.\+Compare\+To (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare this instance to a specified object and returns indication of their relative value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & An object to compare, or a null reference ({\bfseries Nothing} in Visual Basic).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A signed number indicating the relative value of this instance and {\itshape value}. \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return Value }&\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Return Value }&\textbf{ Description  }\\\cline{1-2}
+\endhead
+Less than zero &This instance is less than {\itshape value}.  \\\cline{1-2}
+Zero &This instance is equal to {\itshape value}.  \\\cline{1-2}
+Greater than zero &This instance is greater than {\itshape value}. 
+
+-\/or-\/\\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyReturn}
+{\itshape value} is a null reference ({\bfseries Nothing} in Visual Basic).   \mbox{\Hypertarget{class_scott_garland_1_1_big_integer_affa766b6b0b77a333971307b90a66aa0}\label{class_scott_garland_1_1_big_integer_affa766b6b0b77a333971307b90a66aa0}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Decrement@{Decrement}}
+\index{Decrement@{Decrement}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Decrement()}{Decrement()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Decrement (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Decrements the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the {\itshape left\+Side}  decremented by 1.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a98eadd02148a503be9ca7fb7929224da}\label{class_scott_garland_1_1_big_integer_a98eadd02148a503be9ca7fb7929224da}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Divide@{Divide}}
+\index{Divide@{Divide}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Divide()}{Divide()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Divide (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Divide a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} by another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and returning the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} divisor.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} dividend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a1d708cffb8ea8f6667cf69dfd60e41d1}\label{class_scott_garland_1_1_big_integer_a1d708cffb8ea8f6667cf69dfd60e41d1}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Equals@{Equals}}
+\index{Equals@{Equals}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily override bool Scott\+Garland.\+Big\+Integer.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines whether two Object instances are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & An \hyperlink{}{Object} to compare with this instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+System.\+Object
+
+
+\end{DoxySeeAlso}
+System.\+Object\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a8437c07ab30cda55c559bf17f4466ead}\label{class_scott_garland_1_1_big_integer_a8437c07ab30cda55c559bf17f4466ead}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Get\+Hash\+Code()}{GetHashCode()}}
+{\footnotesize\ttfamily override int Scott\+Garland.\+Big\+Integer.\+Get\+Hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the hash code for this instance. 
+
+\begin{DoxyReturn}{Returns}
+A 32-\/bit signed integer has code.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+System.\+Object
+
+
+\end{DoxySeeAlso}
+System.\+Object\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a21e007e5a3c6fdd5c1fbd7daa41e9f8c}\label{class_scott_garland_1_1_big_integer_a21e007e5a3c6fdd5c1fbd7daa41e9f8c}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Increment@{Increment}}
+\index{Increment@{Increment}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Increment()}{Increment()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Increment (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Increments the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of {\itshape left\+Side}  incremented by 1.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a99ca834445147bc4de1d108376a790c3}\label{class_scott_garland_1_1_big_integer_a99ca834445147bc4de1d108376a790c3}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Modulus@{Modulus}}
+\index{Modulus@{Modulus}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Modulus()}{Modulus()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Modulus (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Perform the modulus of a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and return the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} divisor.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} dividend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a003b5c4564964f03ffa49a74bad0f4fd}\label{class_scott_garland_1_1_big_integer_a003b5c4564964f03ffa49a74bad0f4fd}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Multiply@{Multiply}}
+\index{Multiply@{Multiply}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Multiply()}{Multiply()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Multiply (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Multiply two Big\+Integers returning the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a91144e3aedfda684b3d5e5cdb4b86cbb}\label{class_scott_garland_1_1_big_integer_a91144e3aedfda684b3d5e5cdb4b86cbb}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Negate@{Negate}}
+\index{Negate@{Negate}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Negate()}{Negate()}}
+{\footnotesize\ttfamily \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Negates the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, that is, if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return a positive \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, and if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return the postive. 
+
+\begin{DoxyReturn}{Returns}
+The value of the {\itshape this}  negated.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ab7ca7bc80abdb8236d2a02468c7025ec}\label{class_scott_garland_1_1_big_integer_ab7ca7bc80abdb8236d2a02468c7025ec}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator Big\+Integer@{operator Big\+Integer}}
+\index{operator Big\+Integer@{operator Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator Big\+Integer()}{operator BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static implicit Scott\+Garland.\+Big\+Integer.\+operator \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a long. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A long.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialzed by {\itshape value} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a969d60de29a3f809ea166e6bd1c77302}\label{class_scott_garland_1_1_big_integer_a969d60de29a3f809ea166e6bd1c77302}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator Big\+Integer@{operator Big\+Integer}}
+\index{operator Big\+Integer@{operator Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator Big\+Integer()}{operator BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static implicit Scott\+Garland.\+Big\+Integer.\+operator \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} (\begin{DoxyParamCaption}\item[{ulong}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a ulong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A ulong.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialzed by {\itshape value} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a3a17f77a3e90cf657d105559ad35fecf}\label{class_scott_garland_1_1_big_integer_a3a17f77a3e90cf657d105559ad35fecf}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator Big\+Integer@{operator Big\+Integer}}
+\index{operator Big\+Integer@{operator Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator Big\+Integer()}{operator BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily static implicit Scott\+Garland.\+Big\+Integer.\+operator \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A int.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialzed by {\itshape value} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a4058c6d81e843425ed6b1ceb98706abe}\label{class_scott_garland_1_1_big_integer_a4058c6d81e843425ed6b1ceb98706abe}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator Big\+Integer@{operator Big\+Integer}}
+\index{operator Big\+Integer@{operator Big\+Integer}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator Big\+Integer()}{operator BigInteger()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static implicit Scott\+Garland.\+Big\+Integer.\+operator \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} (\begin{DoxyParamCaption}\item[{uint}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} from a uint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A uint.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} initialzed by {\itshape value} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a6660cf490e242eed91928fca289e7b7f}\label{class_scott_garland_1_1_big_integer_a6660cf490e242eed91928fca289e7b7f}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator\%()}{operator\%()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator\% (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Perform the modulus of a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} with another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and return the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} divisor.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} dividend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ae893cd71c07858e3ced194d364a5c1ba}\label{class_scott_garland_1_1_big_integer_ae893cd71c07858e3ced194d364a5c1ba}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator$\ast$ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Multiply two Big\+Integers returning the result. 
+
+See Knuth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_aa0f043b20ba83229df2817492330c966}\label{class_scott_garland_1_1_big_integer_aa0f043b20ba83229df2817492330c966}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator+@{operator+}}
+\index{operator+@{operator+}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator+ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adds two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result of adding {\itshape left\+Side}  and {\itshape right\+Side} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a587f039d590d2dd6e8135fc1b74c82c1}\label{class_scott_garland_1_1_big_integer_a587f039d590d2dd6e8135fc1b74c82c1}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator++@{operator++}}
+\index{operator++@{operator++}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator++ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Increments the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of {\itshape left\+Side}  incremented by 1.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a7ce71794183add63e9e97151290b65b3}\label{class_scott_garland_1_1_big_integer_a7ce71794183add63e9e97151290b65b3}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator-\/ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Substracts two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result of substracting {\itshape left\+Side}  and {\itshape right\+Side} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a8584125cc3f3256f1496a1f6ca32720e}\label{class_scott_garland_1_1_big_integer_a8584125cc3f3256f1496a1f6ca32720e}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator-\/ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Negates the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, that is, if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return a positive \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}, and if the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative return the postive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the {\itshape this}  negated.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_af2f8450c10cface5a4b597f1a7c53945}\label{class_scott_garland_1_1_big_integer_af2f8450c10cface5a4b597f1a7c53945}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator-\/-\/ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Decrements the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} operand.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the {\itshape left\+Side}  decremented by 1.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a021e7c5201d241d86b1fbdc4efa3c137}\label{class_scott_garland_1_1_big_integer_a021e7c5201d241d86b1fbdc4efa3c137}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!operator/@{operator/}}
+\index{operator/@{operator/}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+operator/ (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Divide a \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} by another \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} and returning the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} divisor.\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} dividend.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a7e0f9a9d2a70f35407d808b143ac7a0a}\label{class_scott_garland_1_1_big_integer_a7e0f9a9d2a70f35407d808b143ac7a0a}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Subtract@{Subtract}}
+\index{Subtract@{Subtract}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Subtract()}{Subtract()}}
+{\footnotesize\ttfamily static \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} Scott\+Garland.\+Big\+Integer.\+Subtract (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{left\+Side,  }\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{right\+Side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Substracts two Big\+Integers and returns a new \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} that represents the sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+{\em right\+Side} & A \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} result of substracting {\itshape left\+Side}  and {\itshape right\+Side} .
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a743cb38de54da022a77772bcbb0d80ec}\label{class_scott_garland_1_1_big_integer_a743cb38de54da022a77772bcbb0d80ec}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+Hex\+String@{To\+Hex\+String}}
+\index{To\+Hex\+String@{To\+Hex\+String}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+Hex\+String()}{ToHexString()}}
+{\footnotesize\ttfamily string Scott\+Garland.\+Big\+Integer.\+To\+Hex\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns string in hexidecimal of the internal digit representation. 
+
+This is not the same as To\+String(16). This method does not return the sign, but instead dumps the digits array into a string representation in base 16. 
+
+\begin{DoxyReturn}{Returns}
+A string in base 16.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a282c756614e3530c7ca3db75122df382}\label{class_scott_garland_1_1_big_integer_a282c756614e3530c7ca3db75122df382}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+Int16@{To\+Int16}}
+\index{To\+Int16@{To\+Int16}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+Int16()}{ToInt16()}}
+{\footnotesize\ttfamily static int Scott\+Garland.\+Big\+Integer.\+To\+Int16 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int16 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int value of \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+Int16\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ae3db4ced22f3c869e6093fe0dc3f7b73}\label{class_scott_garland_1_1_big_integer_ae3db4ced22f3c869e6093fe0dc3f7b73}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+Int32@{To\+Int32}}
+\index{To\+Int32@{To\+Int32}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+Int32()}{ToInt32()}}
+{\footnotesize\ttfamily static int Scott\+Garland.\+Big\+Integer.\+To\+Int32 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int32 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+Int32\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ae0fc996dd71a2fb206e03230c1534a6a}\label{class_scott_garland_1_1_big_integer_ae0fc996dd71a2fb206e03230c1534a6a}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+Int64@{To\+Int64}}
+\index{To\+Int64@{To\+Int64}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+Int64()}{ToInt64()}}
+{\footnotesize\ttfamily static long Scott\+Garland.\+Big\+Integer.\+To\+Int64 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+Int64 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+Int64\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ac650e505ca8c6b7c86731ff4c158f006}\label{class_scott_garland_1_1_big_integer_ac650e505ca8c6b7c86731ff4c158f006}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily override string Scott\+Garland.\+Big\+Integer.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts the numeric value of this instance to its equivalent base 10 string representation. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{}{String} in base 10.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+System.\+Object
+
+
+\end{DoxySeeAlso}
+System.\+Object\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a975b135a066ddff12cbef21adf338357}\label{class_scott_garland_1_1_big_integer_a975b135a066ddff12cbef21adf338357}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Scott\+Garland.\+Big\+Integer.\+To\+String (\begin{DoxyParamCaption}\item[{int}]{radix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts the numeric value of this instance to its equivalent string representation in specified base. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radix} & Int radix between 2 and 36\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a2a619b20c5463022dd1f6d21b3816a22}\label{class_scott_garland_1_1_big_integer_a2a619b20c5463022dd1f6d21b3816a22}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+U\+Int16@{To\+U\+Int16}}
+\index{To\+U\+Int16@{To\+U\+Int16}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+U\+Int16()}{ToUInt16()}}
+{\footnotesize\ttfamily static uint Scott\+Garland.\+Big\+Integer.\+To\+U\+Int16 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int16 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+U\+Int16\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a89c18ca36b64bb368c7e96906a750537}\label{class_scott_garland_1_1_big_integer_a89c18ca36b64bb368c7e96906a750537}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+U\+Int32@{To\+U\+Int32}}
+\index{To\+U\+Int32@{To\+U\+Int32}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+U\+Int32()}{ToUInt32()}}
+{\footnotesize\ttfamily static uint Scott\+Garland.\+Big\+Integer.\+To\+U\+Int32 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int32 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+U\+Int32\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a5b75b559d0c7ec75ff4eaceb1cdee2a4}\label{class_scott_garland_1_1_big_integer_a5b75b559d0c7ec75ff4eaceb1cdee2a4}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!To\+U\+Int64@{To\+U\+Int64}}
+\index{To\+U\+Int64@{To\+U\+Int64}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{To\+U\+Int64()}{ToUInt64()}}
+{\footnotesize\ttfamily static ulong Scott\+Garland.\+Big\+Integer.\+To\+U\+Int64 (\begin{DoxyParamCaption}\item[{\hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} as System.\+U\+Int64 if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Exception} & When \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is too large to fit into System.\+U\+Int64\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_scott_garland_1_1_big_integer_a3bed3f2524ecfac198f5d93cfccad0b0}\label{class_scott_garland_1_1_big_integer_a3bed3f2524ecfac198f5d93cfccad0b0}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Is\+Negative@{Is\+Negative}}
+\index{Is\+Negative@{Is\+Negative}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Is\+Negative}{IsNegative}}
+{\footnotesize\ttfamily bool Scott\+Garland.\+Big\+Integer.\+Is\+Negative\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative (less than zero). 
+
+A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is negative (less than zero). \mbox{\Hypertarget{class_scott_garland_1_1_big_integer_ad925705201ff656dc819599e78a19ccd}\label{class_scott_garland_1_1_big_integer_ad925705201ff656dc819599e78a19ccd}} 
+\index{Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}!Is\+Zero@{Is\+Zero}}
+\index{Is\+Zero@{Is\+Zero}!Scott\+Garland\+::\+Big\+Integer@{Scott\+Garland\+::\+Big\+Integer}}
+\subsubsection{\texorpdfstring{Is\+Zero}{IsZero}}
+{\footnotesize\ttfamily bool Scott\+Garland.\+Big\+Integer.\+Is\+Zero\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is exactly zero. 
+
+A bool value that is true when the \hyperlink{class_scott_garland_1_1_big_integer}{Big\+Integer} is exactly zero. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Other A\+P\+Is/\+Big\+Integer/Big\+Integer.\+cs\end{DoxyCompactItemize}

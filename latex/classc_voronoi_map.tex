@@ -1,0 +1,160 @@
+\hypertarget{classc_voronoi_map}{}\section{c\+Voronoi\+Map Class Reference}
+\label{classc_voronoi_map}\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classc_voronoi_map_a9b450ab8f0bcc1fbb80a9c9583157faf}\label{classc_voronoi_map_a9b450ab8f0bcc1fbb80a9c9583157faf}} 
+{\bfseries c\+Voronoi\+Map} (int a\+\_\+\+Seed, int a\+\_\+\+Cell\+Size)
+\item 
+\mbox{\Hypertarget{classc_voronoi_map_a809169452b3942fcf3f2716b0a215c78}\label{classc_voronoi_map_a809169452b3942fcf3f2716b0a215c78}} 
+{\bfseries c\+Voronoi\+Map} (int a\+\_\+\+Seed)
+\item 
+\mbox{\Hypertarget{classc_voronoi_map_a9be89da217e8252b90de1e11407ea467}\label{classc_voronoi_map_a9be89da217e8252b90de1e11407ea467}} 
+{\bfseries c\+Voronoi\+Map} (int a\+\_\+\+Seed, int a\+\_\+\+Cell\+Size, int a\+\_\+\+Jitter\+Size)
+\item 
+void \hyperlink{classc_voronoi_map_a8764d5ec75eb46d721d10f9d4369bfb9}{Set\+Cell\+Size} (int a\+\_\+\+Cell\+Size)
+\item 
+void \hyperlink{classc_voronoi_map_ab9f95a3c7799d9010885145f19ce77b1}{Set\+Jitter\+Size} (int a\+\_\+\+Jitter\+Size)
+\item 
+void \hyperlink{classc_voronoi_map_a7c2196f0a071bb4f1ed9dbc82f42faed}{Set\+Odd\+Row\+Offset} (int a\+\_\+\+Odd\+Row\+Offset)
+\item 
+int \hyperlink{classc_voronoi_map_a33e0871361414e9485ce2f6b76e8aad2}{Get\+Value\+At} (int a\+\_\+X, int a\+\_\+Y)
+\item 
+int \hyperlink{classc_voronoi_map_ae9b7f43fdbdefbcc6345ffcd93972575}{Get\+Value\+At} (int a\+\_\+X, int a\+\_\+Y, ref int a\+\_\+\+Min\+Dist)
+\item 
+int \hyperlink{classc_voronoi_map_ae3363ea6fa041e1e59701173a9b26f34}{Get\+Value\+At} (int a\+\_\+X, int a\+\_\+Y, ref int a\+\_\+\+Nearest\+SeedX, ref int a\+\_\+\+Nearest\+SeedY, ref int a\+\_\+\+Min\+Dist2)
+\item 
+void \hyperlink{classc_voronoi_map_a133dc37d5d65b9568298853af3dfc0ae}{Find\+Nearest\+Seeds} (int a\+\_\+X, int a\+\_\+Y, ref int a\+\_\+\+Nearest\+SeedX, ref int a\+\_\+\+Nearest\+SeedY, ref int a\+\_\+\+Second\+Nearest\+SeedX, ref int a\+\_\+\+Second\+Nearest\+SeedY)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classc_voronoi_map_a39a8d8c3c8c0c4adc3d953dfc5e29b87}{Update\+Cell} (int a\+\_\+\+CellX, int a\+\_\+\+CellZ)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classc_voronoi_map_a2565e8e2bb4ba10e7923eb7e0dbea6b2}\label{classc_voronoi_map_a2565e8e2bb4ba10e7923eb7e0dbea6b2}} 
+\hyperlink{classc_noise}{c\+Noise} \hyperlink{classc_voronoi_map_a2565e8e2bb4ba10e7923eb7e0dbea6b2}{m\+\_\+\+Noise1}
+\begin{DoxyCompactList}\small\item\em The noise used for generating Voronoi seeds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classc_voronoi_map_a3f736d8c9bc58272b6584c6a3b4b8b8b}\label{classc_voronoi_map_a3f736d8c9bc58272b6584c6a3b4b8b8b}} 
+\hyperlink{classc_noise}{c\+Noise} {\bfseries m\+\_\+\+Noise2}
+\item 
+\mbox{\Hypertarget{classc_voronoi_map_a9259dff98ecde7bf8e86587f840cd183}\label{classc_voronoi_map_a9259dff98ecde7bf8e86587f840cd183}} 
+\hyperlink{classc_noise}{c\+Noise} {\bfseries m\+\_\+\+Noise3}
+\item 
+int \hyperlink{classc_voronoi_map_a4499b76db7e044d52c40482191ada510}{m\+\_\+\+Cell\+Size}
+\item 
+int \hyperlink{classc_voronoi_map_a4645ec081dfc565552f244fc4bd1ec01}{m\+\_\+\+Jitter\+Size}
+\item 
+int \hyperlink{classc_voronoi_map_ad9ad1936c8ef202c65c51d4524684094}{m\+\_\+\+Odd\+Row\+Offset}
+\item 
+int \hyperlink{classc_voronoi_map_a7a3f75df3996c131803da750682b2c6b}{m\+\_\+\+Current\+CellX}
+\item 
+int \hyperlink{classc_voronoi_map_a8d4fa63e05ea65cec36e4a09bd2433c0}{m\+\_\+\+Current\+CellZ}
+\item 
+int \mbox{[},\mbox{]} \hyperlink{classc_voronoi_map_a66f740639832ef2ac10e9031387cbd27}{m\+\_\+\+SeedX} = new int\mbox{[}5, 5\mbox{]}
+\item 
+int \mbox{[},\mbox{]} \hyperlink{classc_voronoi_map_afbaf9b18957ec7e155dae273f9178cf9}{m\+\_\+\+SeedZ} = new int\mbox{[}5, 5\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classc_voronoi_map_a133dc37d5d65b9568298853af3dfc0ae}\label{classc_voronoi_map_a133dc37d5d65b9568298853af3dfc0ae}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Find\+Nearest\+Seeds@{Find\+Nearest\+Seeds}}
+\index{Find\+Nearest\+Seeds@{Find\+Nearest\+Seeds}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Find\+Nearest\+Seeds()}{FindNearestSeeds()}}
+{\footnotesize\ttfamily void c\+Voronoi\+Map.\+Find\+Nearest\+Seeds (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+X,  }\item[{int}]{a\+\_\+Y,  }\item[{ref int}]{a\+\_\+\+Nearest\+SeedX,  }\item[{ref int}]{a\+\_\+\+Nearest\+SeedY,  }\item[{ref int}]{a\+\_\+\+Second\+Nearest\+SeedX,  }\item[{ref int}]{a\+\_\+\+Second\+Nearest\+SeedY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Finds the nearest and second nearest seeds, returns their coords. \mbox{\Hypertarget{classc_voronoi_map_a33e0871361414e9485ce2f6b76e8aad2}\label{classc_voronoi_map_a33e0871361414e9485ce2f6b76e8aad2}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Get\+Value\+At@{Get\+Value\+At}}
+\index{Get\+Value\+At@{Get\+Value\+At}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Get\+Value\+At()}{GetValueAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+Get\+Value\+At (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+X,  }\item[{int}]{a\+\_\+Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the value in the cell into which the specified point lies. \mbox{\Hypertarget{classc_voronoi_map_ae9b7f43fdbdefbcc6345ffcd93972575}\label{classc_voronoi_map_ae9b7f43fdbdefbcc6345ffcd93972575}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Get\+Value\+At@{Get\+Value\+At}}
+\index{Get\+Value\+At@{Get\+Value\+At}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Get\+Value\+At()}{GetValueAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+Get\+Value\+At (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+X,  }\item[{int}]{a\+\_\+Y,  }\item[{ref int}]{a\+\_\+\+Min\+Dist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the value in the cell into which the specified point lies, and the distance to the nearest Voronoi seed. \mbox{\Hypertarget{classc_voronoi_map_ae3363ea6fa041e1e59701173a9b26f34}\label{classc_voronoi_map_ae3363ea6fa041e1e59701173a9b26f34}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Get\+Value\+At@{Get\+Value\+At}}
+\index{Get\+Value\+At@{Get\+Value\+At}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Get\+Value\+At()}{GetValueAt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+Get\+Value\+At (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+X,  }\item[{int}]{a\+\_\+Y,  }\item[{ref int}]{a\+\_\+\+Nearest\+SeedX,  }\item[{ref int}]{a\+\_\+\+Nearest\+SeedY,  }\item[{ref int}]{a\+\_\+\+Min\+Dist2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the value in the cell into which the specified point lies, and the distances to the 2 nearest Voronoi seeds. Uses a cache. \mbox{\Hypertarget{classc_voronoi_map_a8764d5ec75eb46d721d10f9d4369bfb9}\label{classc_voronoi_map_a8764d5ec75eb46d721d10f9d4369bfb9}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Set\+Cell\+Size@{Set\+Cell\+Size}}
+\index{Set\+Cell\+Size@{Set\+Cell\+Size}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Set\+Cell\+Size()}{SetCellSize()}}
+{\footnotesize\ttfamily void c\+Voronoi\+Map.\+Set\+Cell\+Size (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+\+Cell\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets both the cell size and jitter size used for generating the Voronoi seeds. \mbox{\Hypertarget{classc_voronoi_map_ab9f95a3c7799d9010885145f19ce77b1}\label{classc_voronoi_map_ab9f95a3c7799d9010885145f19ce77b1}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Set\+Jitter\+Size@{Set\+Jitter\+Size}}
+\index{Set\+Jitter\+Size@{Set\+Jitter\+Size}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Set\+Jitter\+Size()}{SetJitterSize()}}
+{\footnotesize\ttfamily void c\+Voronoi\+Map.\+Set\+Jitter\+Size (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+\+Jitter\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the jitter size. Clamps it to current cell size. \mbox{\Hypertarget{classc_voronoi_map_a7c2196f0a071bb4f1ed9dbc82f42faed}\label{classc_voronoi_map_a7c2196f0a071bb4f1ed9dbc82f42faed}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Set\+Odd\+Row\+Offset@{Set\+Odd\+Row\+Offset}}
+\index{Set\+Odd\+Row\+Offset@{Set\+Odd\+Row\+Offset}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Set\+Odd\+Row\+Offset()}{SetOddRowOffset()}}
+{\footnotesize\ttfamily void c\+Voronoi\+Map.\+Set\+Odd\+Row\+Offset (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+\+Odd\+Row\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the offset that is added to each odd row of cells. This offset makes the voronoi cells align to a non-\/grid. Clamps the value to \mbox{[}-\/m\+\_\+\+Cell\+Size, +m\+\_\+\+Cell\+Size\mbox{]}. \mbox{\Hypertarget{classc_voronoi_map_a39a8d8c3c8c0c4adc3d953dfc5e29b87}\label{classc_voronoi_map_a39a8d8c3c8c0c4adc3d953dfc5e29b87}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!Update\+Cell@{Update\+Cell}}
+\index{Update\+Cell@{Update\+Cell}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{Update\+Cell()}{UpdateCell()}}
+{\footnotesize\ttfamily void c\+Voronoi\+Map.\+Update\+Cell (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+\+CellX,  }\item[{int}]{a\+\_\+\+CellZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Updates the cached cell seeds to match the specified cell. Noop if cell pos already matches. Updates m\+\_\+\+SeedX and m\+\_\+\+SeedZ. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classc_voronoi_map_a4499b76db7e044d52c40482191ada510}\label{classc_voronoi_map_a4499b76db7e044d52c40482191ada510}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+Cell\+Size@{m\+\_\+\+Cell\+Size}}
+\index{m\+\_\+\+Cell\+Size@{m\+\_\+\+Cell\+Size}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Cell\+Size}{m\_CellSize}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+m\+\_\+\+Cell\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+Size of the Voronoi cells (avg X/Y distance between the seeds). Expected to be at least 2. \mbox{\Hypertarget{classc_voronoi_map_a7a3f75df3996c131803da750682b2c6b}\label{classc_voronoi_map_a7a3f75df3996c131803da750682b2c6b}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+Current\+CellX@{m\+\_\+\+Current\+CellX}}
+\index{m\+\_\+\+Current\+CellX@{m\+\_\+\+Current\+CellX}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Current\+CellX}{m\_CurrentCellX}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+m\+\_\+\+Current\+CellX\hspace{0.3cm}{\ttfamily [protected]}}
+
+The X coordinate of the currently cached cell neighborhood \mbox{\Hypertarget{classc_voronoi_map_a8d4fa63e05ea65cec36e4a09bd2433c0}\label{classc_voronoi_map_a8d4fa63e05ea65cec36e4a09bd2433c0}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+Current\+CellZ@{m\+\_\+\+Current\+CellZ}}
+\index{m\+\_\+\+Current\+CellZ@{m\+\_\+\+Current\+CellZ}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Current\+CellZ}{m\_CurrentCellZ}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+m\+\_\+\+Current\+CellZ\hspace{0.3cm}{\ttfamily [protected]}}
+
+The Z coordinate of the currently cached cell neighborhood \mbox{\Hypertarget{classc_voronoi_map_a4645ec081dfc565552f244fc4bd1ec01}\label{classc_voronoi_map_a4645ec081dfc565552f244fc4bd1ec01}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+Jitter\+Size@{m\+\_\+\+Jitter\+Size}}
+\index{m\+\_\+\+Jitter\+Size@{m\+\_\+\+Jitter\+Size}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Jitter\+Size}{m\_JitterSize}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+m\+\_\+\+Jitter\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+The amount that the cell seeds may be offset from the grid. Expected to be at least 1 and less than m\+\_\+\+Cell\+Size. \mbox{\Hypertarget{classc_voronoi_map_ad9ad1936c8ef202c65c51d4524684094}\label{classc_voronoi_map_ad9ad1936c8ef202c65c51d4524684094}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+Odd\+Row\+Offset@{m\+\_\+\+Odd\+Row\+Offset}}
+\index{m\+\_\+\+Odd\+Row\+Offset@{m\+\_\+\+Odd\+Row\+Offset}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+Odd\+Row\+Offset}{m\_OddRowOffset}}
+{\footnotesize\ttfamily int c\+Voronoi\+Map.\+m\+\_\+\+Odd\+Row\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+The constant amount that the cell seeds of every odd row will be offset from the grid. This allows us to have non-\/rectangular grids. Expected to be between -\/m\+\_\+\+Cell\+Size and +m\+\_\+\+Cell\+Size. \mbox{\Hypertarget{classc_voronoi_map_a66f740639832ef2ac10e9031387cbd27}\label{classc_voronoi_map_a66f740639832ef2ac10e9031387cbd27}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+SeedX@{m\+\_\+\+SeedX}}
+\index{m\+\_\+\+SeedX@{m\+\_\+\+SeedX}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+SeedX}{m\_SeedX}}
+{\footnotesize\ttfamily int \mbox{[},\mbox{]} c\+Voronoi\+Map.\+m\+\_\+\+SeedX = new int\mbox{[}5, 5\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+The seeds of cells around m\+\_\+\+Current\+CellX, m\+\_\+\+Current\+CellZ, X-\/coords \mbox{\Hypertarget{classc_voronoi_map_afbaf9b18957ec7e155dae273f9178cf9}\label{classc_voronoi_map_afbaf9b18957ec7e155dae273f9178cf9}} 
+\index{c\+Voronoi\+Map@{c\+Voronoi\+Map}!m\+\_\+\+SeedZ@{m\+\_\+\+SeedZ}}
+\index{m\+\_\+\+SeedZ@{m\+\_\+\+SeedZ}!c\+Voronoi\+Map@{c\+Voronoi\+Map}}
+\subsubsection{\texorpdfstring{m\+\_\+\+SeedZ}{m\_SeedZ}}
+{\footnotesize\ttfamily int \mbox{[},\mbox{]} c\+Voronoi\+Map.\+m\+\_\+\+SeedZ = new int\mbox{[}5, 5\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+The seeds of cells around m\+\_\+\+Current\+CellX, m\+\_\+\+Current\+CellZ, X-\/coords 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+All Noises/\+Voronoi/Voronoi.\+cs\end{DoxyCompactItemize}

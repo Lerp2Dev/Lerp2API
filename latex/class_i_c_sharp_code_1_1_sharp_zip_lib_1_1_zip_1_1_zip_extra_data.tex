@@ -1,0 +1,864 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data}}
+
+
+A class to handle the extra data field for \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} entries  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}{Zip\+Extra\+Data} ()
+\begin{DoxyCompactList}\small\item\em Initialise a default instance. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}{Zip\+Extra\+Data} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Initialise with known extra data. \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}{Get\+Entry\+Data} ()
+\begin{DoxyCompactList}\small\item\em Get the raw extra data value \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the stored data. \end{DoxyCompactList}\item 
+Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}{Get\+Stream\+For\+Tag} (int tag)
+\begin{DoxyCompactList}\small\item\em Get a read-\/only Stream for the associated tag. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Find an extra data value \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}{Add\+Entry} (\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data} tagged\+Data)
+\begin{DoxyCompactList}\small\item\em Add a new entry to extra data. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}{Add\+Entry} (int header\+ID, byte\mbox{[}$\,$\mbox{]} field\+Data)
+\begin{DoxyCompactList}\small\item\em Add a new entry to extra data \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Start adding a new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}{Add\+New\+Entry} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Add entry data added since \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} using the ID passed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}{Add\+Data} (byte data)
+\begin{DoxyCompactList}\small\item\em Add a byte of data to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}{Add\+Data} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Add data to a pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}{Add\+Le\+Short} (int to\+Add)
+\begin{DoxyCompactList}\small\item\em Add a short value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}{Add\+Le\+Int} (int to\+Add)
+\begin{DoxyCompactList}\small\item\em Add an integer value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}{Add\+Le\+Long} (long to\+Add)
+\begin{DoxyCompactList}\small\item\em Add a long value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}{Delete} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Delete an extra data field. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}{Read\+Long} ()
+\begin{DoxyCompactList}\small\item\em Read a long in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}{Read\+Int} ()
+\begin{DoxyCompactList}\small\item\em Read an integer in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}{Read\+Short} ()
+\begin{DoxyCompactList}\small\item\em Read a short value in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}{Read\+Byte} ()
+\begin{DoxyCompactList}\small\item\em Read a byte from an extra data \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}{Skip} (int amount)
+\begin{DoxyCompactList}\small\item\em Skip data during reading. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Dispose of this instance. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}{Zip\+Extra\+Data} ()
+\begin{DoxyCompactList}\small\item\em Initialise a default instance. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}{Zip\+Extra\+Data} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Initialise with known extra data. \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}{Get\+Entry\+Data} ()
+\begin{DoxyCompactList}\small\item\em Get the raw extra data value \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the stored data. \end{DoxyCompactList}\item 
+Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}{Get\+Stream\+For\+Tag} (int tag)
+\begin{DoxyCompactList}\small\item\em Get a read-\/only Stream for the associated tag. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Find an extra data value \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}{Add\+Entry} (\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data} tagged\+Data)
+\begin{DoxyCompactList}\small\item\em Add a new entry to extra data. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}{Add\+Entry} (int header\+ID, byte\mbox{[}$\,$\mbox{]} field\+Data)
+\begin{DoxyCompactList}\small\item\em Add a new entry to extra data \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Start adding a new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}{Add\+New\+Entry} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Add entry data added since \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} using the ID passed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}{Add\+Data} (byte data)
+\begin{DoxyCompactList}\small\item\em Add a byte of data to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}{Add\+Data} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Add data to a pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}{Add\+Le\+Short} (int to\+Add)
+\begin{DoxyCompactList}\small\item\em Add a short value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}{Add\+Le\+Int} (int to\+Add)
+\begin{DoxyCompactList}\small\item\em Add an integer value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}{Add\+Le\+Long} (long to\+Add)
+\begin{DoxyCompactList}\small\item\em Add a long value in little endian order to the pending new entry. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}{Delete} (int header\+ID)
+\begin{DoxyCompactList}\small\item\em Delete an extra data field. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}{Read\+Long} ()
+\begin{DoxyCompactList}\small\item\em Read a long in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}{Read\+Int} ()
+\begin{DoxyCompactList}\small\item\em Read an integer in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}{Read\+Short} ()
+\begin{DoxyCompactList}\small\item\em Read a short value in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}{Read\+Byte} ()
+\begin{DoxyCompactList}\small\item\em Read a byte from an extra data \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}{Skip} (int amount)
+\begin{DoxyCompactList}\small\item\em Skip data during reading. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Dispose of this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a4e9d9554243ef4e4712b4eb7b0a10ba9}{Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the current extra data length. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a907c421a470d5c038fa18e696a84166c}{Value\+Length}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the length of the last value found by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7444c45305d5bc46bd2ca2cba71a9ea0}{Current\+Read\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the index for the current read value. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a9d45dc3d898302d0fcff35e6960edccc}{Unread\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the number of bytes remaining to be read for the current value; \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to handle the extra data field for \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip}{Zip} entries 
+
+Extra data contains 0 or more values each prefixed by a header tag and length. They contain zero or more bytes of actual data. The data is held internally using a copy on write strategy. This is more efficient but means that for extra data created by passing in data can have the values modified by the caller in some circumstances. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Zip\+Extra\+Data@{Zip\+Extra\+Data}}
+\index{Zip\+Extra\+Data@{Zip\+Extra\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Zip\+Extra\+Data()}{ZipExtraData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Zip\+Extra\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise a default instance. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Zip\+Extra\+Data@{Zip\+Extra\+Data}}
+\index{Zip\+Extra\+Data@{Zip\+Extra\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Zip\+Extra\+Data()}{ZipExtraData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Zip\+Extra\+Data (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise with known extra data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The extra data.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a16c63f6fd53ff88f18cd509fce6ba9e0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Zip\+Extra\+Data@{Zip\+Extra\+Data}}
+\index{Zip\+Extra\+Data@{Zip\+Extra\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Zip\+Extra\+Data()}{ZipExtraData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Zip\+Extra\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise a default instance. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a502553a7e72471833236dad3f46ab409}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Zip\+Extra\+Data@{Zip\+Extra\+Data}}
+\index{Zip\+Extra\+Data@{Zip\+Extra\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Zip\+Extra\+Data()}{ZipExtraData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Zip\+Extra\+Data (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialise with known extra data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The extra data.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Data@{Add\+Data}}
+\index{Add\+Data@{Add\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Data()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Data (\begin{DoxyParamCaption}\item[{byte}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a byte of data to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Data@{Add\+Data}}
+\index{Add\+Data@{Add\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Data()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Data (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add data to a pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a5a4382d76458422b6e5c9c353430eaa8}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Data@{Add\+Data}}
+\index{Add\+Data@{Add\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Data()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Data (\begin{DoxyParamCaption}\item[{byte}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a byte of data to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aadf236a3ef6fc9c6a033ca14f931734c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Data@{Add\+Data}}
+\index{Add\+Data@{Add\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Data()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Data (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add data to a pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Entry@{Add\+Entry}}
+\index{Add\+Entry@{Add\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Entry()}{AddEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Entry (\begin{DoxyParamCaption}\item[{\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data}}]{tagged\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new entry to extra data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tagged\+Data} & The \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data} value to add.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Entry@{Add\+Entry}}
+\index{Add\+Entry@{Add\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Entry()}{AddEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Entry (\begin{DoxyParamCaption}\item[{int}]{header\+ID,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{field\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new entry to extra data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The ID for this entry.\\
+\hline
+{\em field\+Data} & The data to add.\\
+\hline
+\end{DoxyParams}
+
+
+If the ID already exists its contents are replaced.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Entry@{Add\+Entry}}
+\index{Add\+Entry@{Add\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Entry()}{AddEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Entry (\begin{DoxyParamCaption}\item[{\hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data}}]{tagged\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new entry to extra data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tagged\+Data} & The \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_tagged_data}{I\+Tagged\+Data} value to add.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7b8994c059c3b2ecf4cc7a6a60e592ff}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Entry@{Add\+Entry}}
+\index{Add\+Entry@{Add\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Entry()}{AddEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Entry (\begin{DoxyParamCaption}\item[{int}]{header\+ID,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{field\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new entry to extra data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The ID for this entry.\\
+\hline
+{\em field\+Data} & The data to add.\\
+\hline
+\end{DoxyParams}
+
+
+If the ID already exists its contents are replaced.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Int@{Add\+Le\+Int}}
+\index{Add\+Le\+Int@{Add\+Le\+Int}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Int()}{AddLeInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Int (\begin{DoxyParamCaption}\item[{int}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an integer value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Int@{Add\+Le\+Int}}
+\index{Add\+Le\+Int@{Add\+Le\+Int}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Int()}{AddLeInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Int (\begin{DoxyParamCaption}\item[{int}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an integer value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Long@{Add\+Le\+Long}}
+\index{Add\+Le\+Long@{Add\+Le\+Long}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Long()}{AddLeLong()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Long (\begin{DoxyParamCaption}\item[{long}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a long value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Long@{Add\+Le\+Long}}
+\index{Add\+Le\+Long@{Add\+Le\+Long}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Long()}{AddLeLong()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Long (\begin{DoxyParamCaption}\item[{long}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a long value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Short@{Add\+Le\+Short}}
+\index{Add\+Le\+Short@{Add\+Le\+Short}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Short()}{AddLeShort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Short (\begin{DoxyParamCaption}\item[{int}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a short value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+Le\+Short@{Add\+Le\+Short}}
+\index{Add\+Le\+Short@{Add\+Le\+Short}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+Le\+Short()}{AddLeShort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+Le\+Short (\begin{DoxyParamCaption}\item[{int}]{to\+Add }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a short value in little endian order to the pending new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Add} & The data to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+New\+Entry@{Add\+New\+Entry}}
+\index{Add\+New\+Entry@{Add\+New\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+New\+Entry()}{AddNewEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+New\+Entry (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add entry data added since \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} using the ID passed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier to use for this entry.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Add\+New\+Entry@{Add\+New\+Entry}}
+\index{Add\+New\+Entry@{Add\+New\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Add\+New\+Entry()}{AddNewEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Add\+New\+Entry (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add entry data added since \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}{Start\+New\+Entry} using the ID passed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier to use for this entry.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Clear@{Clear}}
+\index{Clear@{Clear}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the stored data. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3ef708be128a41a9dafd3a6b8c372a94}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Clear@{Clear}}
+\index{Clear@{Clear}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the stored data. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Delete@{Delete}}
+\index{Delete@{Delete}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Delete (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delete an extra data field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier of the field to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the field was found and deleted.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a6726b4cecc913a3a09cea0b97e2edf7b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Delete@{Delete}}
+\index{Delete@{Delete}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Delete (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delete an extra data field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier of the field to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the field was found and deleted.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dispose of this instance. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a05471c32c736f77ac7855925048988ef}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dispose of this instance. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Find@{Find}}
+\index{Find@{Find}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Find()}{Find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Find (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find an extra data value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier for the value to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the value was found; false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Find@{Find}}
+\index{Find@{Find}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Find()}{Find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Find (\begin{DoxyParamCaption}\item[{int}]{header\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find an extra data value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header\+ID} & The identifier for the value to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the value was found; false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Get\+Entry\+Data@{Get\+Entry\+Data}}
+\index{Get\+Entry\+Data@{Get\+Entry\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Get\+Entry\+Data()}{GetEntryData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Get\+Entry\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the raw extra data value 
+
+\begin{DoxyReturn}{Returns}
+Returns the raw byte\mbox{[}\mbox{]} extra data this instance represents.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a89f01603c315e957a094a40756dd1cf9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Get\+Entry\+Data@{Get\+Entry\+Data}}
+\index{Get\+Entry\+Data@{Get\+Entry\+Data}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Get\+Entry\+Data()}{GetEntryData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Get\+Entry\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the raw extra data value 
+
+\begin{DoxyReturn}{Returns}
+Returns the raw byte\mbox{[}\mbox{]} extra data this instance represents.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Get\+Stream\+For\+Tag@{Get\+Stream\+For\+Tag}}
+\index{Get\+Stream\+For\+Tag@{Get\+Stream\+For\+Tag}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Get\+Stream\+For\+Tag()}{GetStreamForTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Get\+Stream\+For\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a read-\/only Stream for the associated tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to locate data for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a Stream containing tag data or null if no tag was found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a511506164310e864f98bea4223737d00}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Get\+Stream\+For\+Tag@{Get\+Stream\+For\+Tag}}
+\index{Get\+Stream\+For\+Tag@{Get\+Stream\+For\+Tag}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Get\+Stream\+For\+Tag()}{GetStreamForTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Get\+Stream\+For\+Tag (\begin{DoxyParamCaption}\item[{int}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a read-\/only Stream for the associated tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to locate data for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a Stream containing tag data or null if no tag was found.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Byte@{Read\+Byte}}
+\index{Read\+Byte@{Read\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Byte()}{ReadByte()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a byte from an extra data 
+
+\begin{DoxyReturn}{Returns}
+The byte value read or -\/1 if the end of data has been reached.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ae4b31cc84f7085ace9656c3bff5bd3cc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Byte@{Read\+Byte}}
+\index{Read\+Byte@{Read\+Byte}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Byte()}{ReadByte()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a byte from an extra data 
+
+\begin{DoxyReturn}{Returns}
+The byte value read or -\/1 if the end of data has been reached.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Int@{Read\+Int}}
+\index{Read\+Int@{Read\+Int}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Int()}{ReadInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read an integer in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. 
+
+\begin{DoxyReturn}{Returns}
+Returns the integer read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Int@{Read\+Int}}
+\index{Read\+Int@{Read\+Int}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Int()}{ReadInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read an integer in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. 
+
+\begin{DoxyReturn}{Returns}
+Returns the integer read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Long@{Read\+Long}}
+\index{Read\+Long@{Read\+Long}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Long()}{ReadLong()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Long (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a long in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value 
+
+\begin{DoxyReturn}{Returns}
+Returns the long value read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Long@{Read\+Long}}
+\index{Read\+Long@{Read\+Long}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Long()}{ReadLong()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Long (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a long in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value 
+
+\begin{DoxyReturn}{Returns}
+Returns the long value read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Short@{Read\+Short}}
+\index{Read\+Short@{Read\+Short}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Short()}{ReadShort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Short (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a short value in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. 
+
+\begin{DoxyReturn}{Returns}
+Returns the short value read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Read\+Short@{Read\+Short}}
+\index{Read\+Short@{Read\+Short}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Read\+Short()}{ReadShort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Read\+Short (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a short value in little endian form from the last \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{found} data value. 
+
+\begin{DoxyReturn}{Returns}
+Returns the short value read.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Skip@{Skip}}
+\index{Skip@{Skip}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Skip (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip data during reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The number of bytes to skip.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_afb83d24996e6234cdd6ed3b03785ec9c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Skip@{Skip}}
+\index{Skip@{Skip}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Skip()}{Skip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Skip (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip data during reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The number of bytes to skip.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Start\+New\+Entry@{Start\+New\+Entry}}
+\index{Start\+New\+Entry@{Start\+New\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Start\+New\+Entry()}{StartNewEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Start\+New\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start adding a new entry. 
+
+Add data using Add\+Data(byte\mbox{[}$\,$\mbox{]}), \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}{Add\+Le\+Short}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}{Add\+Le\+Int}, or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}{Add\+Le\+Long}. The new entry is completed and actually added by calling \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}{Add\+New\+Entry}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}{Add\+Entry(\+I\+Tagged\+Data)}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a3fd5ac216b1b6a0fe5ae92ea8156f20a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Start\+New\+Entry@{Start\+New\+Entry}}
+\index{Start\+New\+Entry@{Start\+New\+Entry}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Start\+New\+Entry()}{StartNewEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Start\+New\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start adding a new entry. 
+
+Add data using Add\+Data(byte\mbox{[}$\,$\mbox{]}), \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_acc356859af6fe44b71ca605473385dec}{Add\+Le\+Short}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_ac688733a0684d0e2a32da357d444212a}{Add\+Le\+Int}, or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aafc11e296c9769e11ddfbc07dee754e7}{Add\+Le\+Long}. The new entry is completed and actually added by calling \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_aba673aeb5ed08038a5c76377c0607ca9}{Add\+New\+Entry}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a86f3cb0b8dcd274f0bc84d75e06ba703}{Add\+Entry(\+I\+Tagged\+Data)}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7444c45305d5bc46bd2ca2cba71a9ea0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a7444c45305d5bc46bd2ca2cba71a9ea0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Current\+Read\+Index@{Current\+Read\+Index}}
+\index{Current\+Read\+Index@{Current\+Read\+Index}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Current\+Read\+Index}{CurrentReadIndex}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Current\+Read\+Index\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the index for the current read value. 
+
+This is only valid if \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} has previously returned true. Initially the result will be the index of the first byte of actual data. The value is updated after calls to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a77039b5fe5d0c56be598b5eadb669a62}{Read\+Int}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a13e4cefe2f4873f46fc93cc043852e57}{Read\+Short} and \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a06f9836c2c567c9f223810d3e2d9b51c}{Read\+Long}. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a4e9d9554243ef4e4712b4eb7b0a10ba9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a4e9d9554243ef4e4712b4eb7b0a10ba9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Length@{Length}}
+\index{Length@{Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the current extra data length. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a9d45dc3d898302d0fcff35e6960edccc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a9d45dc3d898302d0fcff35e6960edccc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Unread\+Count@{Unread\+Count}}
+\index{Unread\+Count@{Unread\+Count}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Unread\+Count}{UnreadCount}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Unread\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the number of bytes remaining to be read for the current value; 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a907c421a470d5c038fa18e696a84166c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a907c421a470d5c038fa18e696a84166c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}!Value\+Length@{Value\+Length}}
+\index{Value\+Length@{Value\+Length}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Zip\+Extra\+Data}}
+\subsubsection{\texorpdfstring{Value\+Length}{ValueLength}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Zip\+Extra\+Data.\+Value\+Length\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the length of the last value found by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} 
+
+This is only valid if \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_extra_data_a91e0c6c1d11967653256ccb161f9818c}{Find} has previously returned true.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/Zip\+Extra\+Data.\+cs\end{DoxyCompactItemize}

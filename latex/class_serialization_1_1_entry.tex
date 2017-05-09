@@ -1,0 +1,109 @@
+\hypertarget{class_serialization_1_1_entry}{}\section{Serialization.\+Entry Class Reference}
+\label{class_serialization_1_1_entry}\index{Serialization.\+Entry@{Serialization.\+Entry}}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_serialization_1_1_entry_a27386eb83718b39bfc36c67585639247}{Name}
+\begin{DoxyCompactList}\small\item\em The name of the item being read or written This should be filled out by the storage when Must\+Have\+Name = true and deserializing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}\label{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}} 
+Type {\bfseries Stored\+Type}
+\item 
+object \hyperlink{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}{Value}
+\begin{DoxyCompactList}\small\item\em On writing, the value of the object for reference, not needed on deserialization \end{DoxyCompactList}\item 
+bool \hyperlink{class_serialization_1_1_entry_aa2f98ee039ca25cefe57774a76903556}{Is\+Static}
+\begin{DoxyCompactList}\small\item\em Indicates whether this entry is static \end{DoxyCompactList}\item 
+bool \hyperlink{class_serialization_1_1_entry_a09a13ff1f6b299c4728a734b307de2b5}{Must\+Have\+Name}
+\begin{DoxyCompactList}\small\item\em Set to indicate that the name provided is that of a field or property and is needed to reset the value later \end{DoxyCompactList}\item 
+Type \hyperlink{class_serialization_1_1_entry_a1fd7fb4ac04afda6919998688f741e33}{Owning\+Type}
+\begin{DoxyCompactList}\small\item\em The type of the object which owns the item being serialized or null if not directly owned. This will always be set on serialization and deserialization when Must\+Have\+Name = true and can be used to look up field and property information. Or you can ignore it if you don\textquotesingle{}t need it \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}\label{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}} 
+\hyperlink{class_serialization_1_1_get_set}{Get\+Set} {\bfseries Setter}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Property\+Info \hyperlink{class_serialization_1_1_entry_a079414059819b92c873921247bc0686b}{Property\+Info}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The property info or null, if the value did not come from a property. You might want to use the to look up attributes attached to the property definition \end{DoxyCompactList}\item 
+Field\+Info \hyperlink{class_serialization_1_1_entry_ac9c4d67292047b6a3f9a3d3fcdccb09e}{Field\+Info}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The field info or null, if the value did not come from a field. You might want to use it to look up attributes attached to the field definition \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_serialization_1_1_entry_aa2f98ee039ca25cefe57774a76903556}\label{class_serialization_1_1_entry_aa2f98ee039ca25cefe57774a76903556}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Is\+Static@{Is\+Static}}
+\index{Is\+Static@{Is\+Static}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Is\+Static}{IsStatic}}
+{\footnotesize\ttfamily bool Serialization.\+Entry.\+Is\+Static}
+
+
+
+Indicates whether this entry is static 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a09a13ff1f6b299c4728a734b307de2b5}\label{class_serialization_1_1_entry_a09a13ff1f6b299c4728a734b307de2b5}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Must\+Have\+Name@{Must\+Have\+Name}}
+\index{Must\+Have\+Name@{Must\+Have\+Name}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Must\+Have\+Name}{MustHaveName}}
+{\footnotesize\ttfamily bool Serialization.\+Entry.\+Must\+Have\+Name}
+
+
+
+Set to indicate that the name provided is that of a field or property and is needed to reset the value later 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a27386eb83718b39bfc36c67585639247}\label{class_serialization_1_1_entry_a27386eb83718b39bfc36c67585639247}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Name@{Name}}
+\index{Name@{Name}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string Serialization.\+Entry.\+Name}
+
+
+
+The name of the item being read or written This should be filled out by the storage when Must\+Have\+Name = true and deserializing 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a1fd7fb4ac04afda6919998688f741e33}\label{class_serialization_1_1_entry_a1fd7fb4ac04afda6919998688f741e33}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Owning\+Type@{Owning\+Type}}
+\index{Owning\+Type@{Owning\+Type}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Owning\+Type}{OwningType}}
+{\footnotesize\ttfamily Type Serialization.\+Entry.\+Owning\+Type}
+
+
+
+The type of the object which owns the item being serialized or null if not directly owned. This will always be set on serialization and deserialization when Must\+Have\+Name = true and can be used to look up field and property information. Or you can ignore it if you don\textquotesingle{}t need it 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}\label{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Value@{Value}}
+\index{Value@{Value}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily object Serialization.\+Entry.\+Value}
+
+
+
+On writing, the value of the object for reference, not needed on deserialization 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_serialization_1_1_entry_ac9c4d67292047b6a3f9a3d3fcdccb09e}\label{class_serialization_1_1_entry_ac9c4d67292047b6a3f9a3d3fcdccb09e}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Field\+Info@{Field\+Info}}
+\index{Field\+Info@{Field\+Info}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Field\+Info}{FieldInfo}}
+{\footnotesize\ttfamily Field\+Info Serialization.\+Entry.\+Field\+Info\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The field info or null, if the value did not come from a field. You might want to use it to look up attributes attached to the field definition 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a079414059819b92c873921247bc0686b}\label{class_serialization_1_1_entry_a079414059819b92c873921247bc0686b}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Property\+Info@{Property\+Info}}
+\index{Property\+Info@{Property\+Info}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Property\+Info}{PropertyInfo}}
+{\footnotesize\ttfamily Property\+Info Serialization.\+Entry.\+Property\+Info\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The property info or null, if the value did not come from a property. You might want to use the to look up attributes attached to the property definition 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Entry.\+cs\end{DoxyCompactItemize}

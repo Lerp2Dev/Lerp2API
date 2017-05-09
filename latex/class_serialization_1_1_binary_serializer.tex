@@ -1,0 +1,467 @@
+\hypertarget{class_serialization_1_1_binary_serializer}{}\section{Serialization.\+Binary\+Serializer Class Reference}
+\label{class_serialization_1_1_binary_serializer}\index{Serialization.\+Binary\+Serializer@{Serialization.\+Binary\+Serializer}}
+Inheritance diagram for Serialization.\+Binary\+Serializer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_serialization_1_1_binary_serializer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_serialization_1_1_binary_serializer_ae554963a22e35f96cd09c44b33a8370f}{Binary\+Serializer} ()
+\begin{DoxyCompactList}\small\item\em Used when serializing \end{DoxyCompactList}\item 
+\hyperlink{class_serialization_1_1_binary_serializer_a28b39ec2276e718a01c09401054e9160}{Binary\+Serializer} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Used when deserializaing \end{DoxyCompactList}\item 
+bool \hyperlink{class_serialization_1_1_binary_serializer_aef0fdf4b432dfe09b1bf9c11786dee58}{Start\+Serializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry, int id)
+\begin{DoxyCompactList}\small\item\em Called when serializing a new object, the \hyperlink{class_serialization_1_1_entry}{Entry} parameter may have Must\+Have\+Name set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns T\+R\+UE then no further processing is executed and the object is presumed persisted in its entirety \end{DoxyCompactList}\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_a7266eb0f6366fe0d40bbcb9d4434f262}{Start\+Serializing} ()
+\begin{DoxyCompactList}\small\item\em Starts the serialization process, the serializer should initialize and wait for data \end{DoxyCompactList}\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_a33f7f74fffe31b07a96ab08fa545e990}{Finished\+Serializing} ()
+\begin{DoxyCompactList}\small\item\em Called when serialization is complete, should return the data or a key encoded as a byte array that will be used to reinitialize the serializer later \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a6b09a7f66a88dc5488ed1fc5996f5452}\label{class_serialization_1_1_binary_serializer_a6b09a7f66a88dc5488ed1fc5996f5452}} 
+void {\bfseries Begin\+On\+Demand} (int id)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a6a8d02da39538d740b84832d03a58766}\label{class_serialization_1_1_binary_serializer_a6a8d02da39538d740b84832d03a58766}} 
+void {\bfseries End\+On\+Demand} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ad2a4bb14be8f85f4de4539f8aaddac49}\label{class_serialization_1_1_binary_serializer_ad2a4bb14be8f85f4de4539f8aaddac49}} 
+void {\bfseries Begin\+Write\+Object} (int id, Type object\+Type, bool was\+Seen)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a021a50d6702e32e15c197783a0bad05a}\label{class_serialization_1_1_binary_serializer_a021a50d6702e32e15c197783a0bad05a}} 
+void {\bfseries Begin\+Write\+Properties} (int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a40709bdcdae381b2138a48e005e96ab2}\label{class_serialization_1_1_binary_serializer_a40709bdcdae381b2138a48e005e96ab2}} 
+void {\bfseries Begin\+Write\+Fields} (int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a91a35ade763c6b2def327e82a5ea7dad}\label{class_serialization_1_1_binary_serializer_a91a35ade763c6b2def327e82a5ea7dad}} 
+void {\bfseries Write\+Simple\+Value} (object value)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a70c5b0751ea84a7db8cb2b4a89576db3}\label{class_serialization_1_1_binary_serializer_a70c5b0751ea84a7db8cb2b4a89576db3}} 
+void {\bfseries Begin\+Write\+List} (int count, Type list\+Type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_afd9aec76b7b20ab88a9e3caca7470c8b}\label{class_serialization_1_1_binary_serializer_afd9aec76b7b20ab88a9e3caca7470c8b}} 
+void {\bfseries Begin\+Write\+Dictionary} (int count, Type dictionary\+Type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ad694b37d2693fb305f569bebe076b9f8}\label{class_serialization_1_1_binary_serializer_ad694b37d2693fb305f569bebe076b9f8}} 
+void {\bfseries Write\+Simple\+Array} (int count, Array array)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_acbd47a7b1720dff38a36f4c645fe0df7}\label{class_serialization_1_1_binary_serializer_acbd47a7b1720dff38a36f4c645fe0df7}} 
+void {\bfseries Begin\+Multi\+Dimension\+Array} (Type array\+Type, int dimensions, int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_adf00734419149ffd0f8999876c1120b0}\label{class_serialization_1_1_binary_serializer_adf00734419149ffd0f8999876c1120b0}} 
+void {\bfseries Write\+Array\+Dimension} (int dimension, int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ab5c4d7c504b6766c9a1e7ee217ddfce6}\label{class_serialization_1_1_binary_serializer_ab5c4d7c504b6766c9a1e7ee217ddfce6}} 
+void {\bfseries Begin\+Write\+Object\+Array} (int count, Type array\+Type)
+\item 
+\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} \hyperlink{class_serialization_1_1_binary_serializer_a1813abad4bdfe9607f093e4df66a4414}{Should\+Write\+Fields} (\hyperlink{class_serialization_1_1_entry}{Entry}\mbox{[}$\,$\mbox{]} fields)
+\begin{DoxyCompactList}\small\item\em Reads a simple type (or array of bytes) from storage \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_adb05a4a6e028617fe748ae28dc97d7c7}\label{class_serialization_1_1_binary_serializer_adb05a4a6e028617fe748ae28dc97d7c7}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} {\bfseries Should\+Write\+Properties} (\hyperlink{class_serialization_1_1_entry}{Entry}\mbox{[}$\,$\mbox{]} properties)
+\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_af70f7fb26c0b41d0f1126634df2de03a}{Finished\+Deserializing} ()
+\begin{DoxyCompactList}\small\item\em Called when deserialization is complete, so that resources may be released \end{DoxyCompactList}\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_ac02802eda1961199b7e91adce7c33de7}{Deserialize\+Get\+Name} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called to allow the storage to retrieve the name of the item being deserialized All entries must be named before a call to Start\+Deserializing, this enables the system to fill out the property setter and capture default stored type information before deserialization commences \end{DoxyCompactList}\item 
+object \hyperlink{class_serialization_1_1_binary_serializer_a9b376977bd19d9bfef1fce28e110220a}{Start\+Deserializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Starts to deserialize the object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a0c77f70b9259bc13d96eafe34b092f3b}\label{class_serialization_1_1_binary_serializer_a0c77f70b9259bc13d96eafe34b092f3b}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} {\bfseries Begin\+Read\+Property} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a0b50b703f7b33e2b60421611a3757716}\label{class_serialization_1_1_binary_serializer_a0b50b703f7b33e2b60421611a3757716}} 
+void {\bfseries End\+Read\+Property} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ab6dd090acf50ee9f39d461fa7e7c61d6}\label{class_serialization_1_1_binary_serializer_ab6dd090acf50ee9f39d461fa7e7c61d6}} 
+\hyperlink{class_serialization_1_1_entry}{Entry} {\bfseries Begin\+Read\+Field} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a0c52bbac20e29e59f6c48868d4729928}\label{class_serialization_1_1_binary_serializer_a0c52bbac20e29e59f6c48868d4729928}} 
+void {\bfseries End\+Read\+Field} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a379a76963492f1fb3a8168e794148683}\label{class_serialization_1_1_binary_serializer_a379a76963492f1fb3a8168e794148683}} 
+void {\bfseries Start\+Deserializing} ()
+\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_ad89d25a0b56c1b568f6696ab8d04d10b}{Finish\+Deserializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called when an object has deserialization complete \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a611b0f83ba611a0ecf394a9920dbab1b}\label{class_serialization_1_1_binary_serializer_a611b0f83ba611a0ecf394a9920dbab1b}} 
+Array {\bfseries Read\+Simple\+Array} (Type element\+Type, int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ae6b1ddb821a9809f1428640e3bd75e7b}\label{class_serialization_1_1_binary_serializer_ae6b1ddb821a9809f1428640e3bd75e7b}} 
+int {\bfseries Begin\+Read\+Properties} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa92efbd2f56eeb65e80890ed4bf3bdbe}\label{class_serialization_1_1_binary_serializer_aa92efbd2f56eeb65e80890ed4bf3bdbe}} 
+int {\bfseries Begin\+Read\+Fields} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ad46b4de7951611009e2e85d00ad8178d}\label{class_serialization_1_1_binary_serializer_ad46b4de7951611009e2e85d00ad8178d}} 
+T {\bfseries Read\+Simple\+Value$<$ T $>$} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a7b85fa9bbbd8e2b9167abb58e45b2a82}\label{class_serialization_1_1_binary_serializer_a7b85fa9bbbd8e2b9167abb58e45b2a82}} 
+object {\bfseries Read\+Simple\+Value} (Type type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a87e06dfca74d1ebc475999bd0c2f9596}\label{class_serialization_1_1_binary_serializer_a87e06dfca74d1ebc475999bd0c2f9596}} 
+bool {\bfseries Is\+Multi\+Dimensional\+Array} (out int length)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_adbc9aab40ec3aa70f3cd72ddbd6bbcba}\label{class_serialization_1_1_binary_serializer_adbc9aab40ec3aa70f3cd72ddbd6bbcba}} 
+int {\bfseries Begin\+Read\+Dictionary} (Type key\+Type, Type value\+Type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aeacb7cb7b4c86a1ad310ac1b0674c18c}\label{class_serialization_1_1_binary_serializer_aeacb7cb7b4c86a1ad310ac1b0674c18c}} 
+void {\bfseries End\+Read\+Dictionary} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a0d547b6b511f0e0e547f3e2b231d2b68}\label{class_serialization_1_1_binary_serializer_a0d547b6b511f0e0e547f3e2b231d2b68}} 
+int {\bfseries Begin\+Read\+Object\+Array} (Type value\+Type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a3e796b301e9539b9082e0b32e3f61d49}\label{class_serialization_1_1_binary_serializer_a3e796b301e9539b9082e0b32e3f61d49}} 
+void {\bfseries End\+Read\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ac4d785eb39bba193195761ff9bacd98c}\label{class_serialization_1_1_binary_serializer_ac4d785eb39bba193195761ff9bacd98c}} 
+void {\bfseries Begin\+Read\+Multi\+Dimensional\+Array} (out int dimension, out int count)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a174c1b111506dcf2be86461ab54b00bc}\label{class_serialization_1_1_binary_serializer_a174c1b111506dcf2be86461ab54b00bc}} 
+void {\bfseries End\+Read\+Multi\+Dimensional\+Array} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a82cdd27cb419e14f93f62e0947d3c109}\label{class_serialization_1_1_binary_serializer_a82cdd27cb419e14f93f62e0947d3c109}} 
+int {\bfseries Read\+Array\+Dimension} (int index)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ace00f8cacc0ff79bb16197d641964e4c}\label{class_serialization_1_1_binary_serializer_ace00f8cacc0ff79bb16197d641964e4c}} 
+int {\bfseries Begin\+Read\+List} (Type value\+Type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa4cb3eb6253054c5fe8bbebdc9c30c2f}\label{class_serialization_1_1_binary_serializer_aa4cb3eb6253054c5fe8bbebdc9c30c2f}} 
+void {\bfseries End\+Read\+List} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a44117e9f1e92e01af20f98cbd674f638}\label{class_serialization_1_1_binary_serializer_a44117e9f1e92e01af20f98cbd674f638}} 
+int {\bfseries Begin\+Read\+Object} (out bool is\+Reference)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_acc36437ec400bb791655857fa98cfd40}\label{class_serialization_1_1_binary_serializer_acc36437ec400bb791655857fa98cfd40}} 
+void {\bfseries End\+Write\+Object\+Array} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a71b4595291913c4cdc62b860da2ffa7c}\label{class_serialization_1_1_binary_serializer_a71b4595291913c4cdc62b860da2ffa7c}} 
+void {\bfseries End\+Write\+List} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a16b991b1614cfe83fbb7479b0de03368}\label{class_serialization_1_1_binary_serializer_a16b991b1614cfe83fbb7479b0de03368}} 
+void {\bfseries End\+Write\+Dictionary} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a07ccc4cc72e4c414f60de04ace5a6459}\label{class_serialization_1_1_binary_serializer_a07ccc4cc72e4c414f60de04ace5a6459}} 
+bool {\bfseries Begin\+Write\+Dictionary\+Key} (int id, object value)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a82fe2baa2c969b618c2729a8113edaa1}\label{class_serialization_1_1_binary_serializer_a82fe2baa2c969b618c2729a8113edaa1}} 
+void {\bfseries End\+Write\+Dictionary\+Key} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a4dc4587767b33a9c6310da4de7314cc8}\label{class_serialization_1_1_binary_serializer_a4dc4587767b33a9c6310da4de7314cc8}} 
+bool {\bfseries Begin\+Write\+Dictionary\+Value} (int id, object value)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ad8d7709505dfa6e3e973223411397fa0}\label{class_serialization_1_1_binary_serializer_ad8d7709505dfa6e3e973223411397fa0}} 
+void {\bfseries End\+Write\+Dictionary\+Value} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a93ce28fd88cc7a06daac35287b46664b}\label{class_serialization_1_1_binary_serializer_a93ce28fd88cc7a06daac35287b46664b}} 
+void {\bfseries End\+Multi\+Dimension\+Array} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa58ba842b871ad7030d126215a85c8cc}\label{class_serialization_1_1_binary_serializer_aa58ba842b871ad7030d126215a85c8cc}} 
+void {\bfseries End\+Read\+Object} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_abc94830de965bf945253bc73cc3b7b5c}\label{class_serialization_1_1_binary_serializer_abc94830de965bf945253bc73cc3b7b5c}} 
+bool {\bfseries Begin\+Write\+List\+Item} (int index, object value)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa0099aa23887ecaba8eee43f474fed04}\label{class_serialization_1_1_binary_serializer_aa0099aa23887ecaba8eee43f474fed04}} 
+void {\bfseries End\+Write\+List\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a3853730f36226738133280f47ee43550}\label{class_serialization_1_1_binary_serializer_a3853730f36226738133280f47ee43550}} 
+bool {\bfseries Begin\+Write\+Object\+Array\+Item} (int index, object value)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a690c73b90c4f755f4ae1b87fa70eda67}\label{class_serialization_1_1_binary_serializer_a690c73b90c4f755f4ae1b87fa70eda67}} 
+void {\bfseries End\+Write\+Object\+Array\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_af889e7729b3bf07d18a86fe32064d4c0}\label{class_serialization_1_1_binary_serializer_af889e7729b3bf07d18a86fe32064d4c0}} 
+void {\bfseries End\+Read\+Properties} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a5083f578f8a2aff5fd5163edc802a0d1}\label{class_serialization_1_1_binary_serializer_a5083f578f8a2aff5fd5163edc802a0d1}} 
+void {\bfseries End\+Read\+Fields} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a8d689325716bdb8c393e16414fefd59f}\label{class_serialization_1_1_binary_serializer_a8d689325716bdb8c393e16414fefd59f}} 
+object {\bfseries Begin\+Read\+List\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_af0b58fefbd4bea88a09cffc7bdcef862}\label{class_serialization_1_1_binary_serializer_af0b58fefbd4bea88a09cffc7bdcef862}} 
+void {\bfseries End\+Read\+List\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ae4b30ced98b913465edd4dafb21da8c4}\label{class_serialization_1_1_binary_serializer_ae4b30ced98b913465edd4dafb21da8c4}} 
+object {\bfseries Begin\+Read\+Dictionary\+Key\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a40a35f67bceb9c7c1cac774afe4b5fd0}\label{class_serialization_1_1_binary_serializer_a40a35f67bceb9c7c1cac774afe4b5fd0}} 
+void {\bfseries End\+Read\+Dictionary\+Key\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_afd286629a7b6d4be74e344f7b692ce4d}\label{class_serialization_1_1_binary_serializer_afd286629a7b6d4be74e344f7b692ce4d}} 
+object {\bfseries Begin\+Read\+Dictionary\+Value\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa8214913ce84b050614e38c5aadc0b71}\label{class_serialization_1_1_binary_serializer_aa8214913ce84b050614e38c5aadc0b71}} 
+void {\bfseries End\+Read\+Dictionary\+Value\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ac4a4d8051a5c10d82e23fd004ad344fb}\label{class_serialization_1_1_binary_serializer_ac4a4d8051a5c10d82e23fd004ad344fb}} 
+object {\bfseries Begin\+Read\+Object\+Array\+Item} (int index, \hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a3a649cab5370bcfe131307bcaf9156d2}\label{class_serialization_1_1_binary_serializer_a3a649cab5370bcfe131307bcaf9156d2}} 
+void {\bfseries End\+Read\+Object\+Array\+Item} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_afa2c3e312cbe5f67a4b963cb0dadaa75}\label{class_serialization_1_1_binary_serializer_afa2c3e312cbe5f67a4b963cb0dadaa75}} 
+void {\bfseries End\+Write\+Object} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_adbfae0ca57e2c848c4efa0ae23b25e62}\label{class_serialization_1_1_binary_serializer_adbfae0ca57e2c848c4efa0ae23b25e62}} 
+void {\bfseries Begin\+Write\+Property} (string name, Type type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a481fce2c7372e97a46ab15316c33a395}\label{class_serialization_1_1_binary_serializer_a481fce2c7372e97a46ab15316c33a395}} 
+void {\bfseries End\+Write\+Property} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a33ed72f54b3502aa05c62bf777027fde}\label{class_serialization_1_1_binary_serializer_a33ed72f54b3502aa05c62bf777027fde}} 
+void {\bfseries Begin\+Write\+Field} (string name, Type type)
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a3fa0ec1f937e4009887ea69b42461c04}\label{class_serialization_1_1_binary_serializer_a3fa0ec1f937e4009887ea69b42461c04}} 
+void {\bfseries End\+Write\+Field} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_af242d8344e351d53f4cb1dca1f0d321c}\label{class_serialization_1_1_binary_serializer_af242d8344e351d53f4cb1dca1f0d321c}} 
+void {\bfseries End\+Write\+Properties} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a09fa1076cad8e42856d57a62d693c4cf}\label{class_serialization_1_1_binary_serializer_a09fa1076cad8e42856d57a62d693c4cf}} 
+void {\bfseries End\+Write\+Fields} ()
+\item 
+void \hyperlink{class_serialization_1_1_binary_serializer_a026959038d36c07fc77d6da1345ab4d2}{Finish\+Serializing} (\hyperlink{class_serialization_1_1_entry}{Entry} entry)
+\begin{DoxyCompactList}\small\item\em Called when the last information about an object has been written \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aa91a1c6b09260e35b8342d1254e15d3c}\label{class_serialization_1_1_binary_serializer_aa91a1c6b09260e35b8342d1254e15d3c}} 
+void {\bfseries Begin\+Read\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ab8d362901844c2b1aa7420269f72fa50}\label{class_serialization_1_1_binary_serializer_ab8d362901844c2b1aa7420269f72fa50}} 
+void {\bfseries End\+Read\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ade68463fa1bf913dd9f768b4edfed5bc}\label{class_serialization_1_1_binary_serializer_ade68463fa1bf913dd9f768b4edfed5bc}} 
+void {\bfseries Begin\+Read\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a37b4e1255ab937e041a3c8d0786b461c}\label{class_serialization_1_1_binary_serializer_a37b4e1255ab937e041a3c8d0786b461c}} 
+void {\bfseries End\+Read\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_afb882e22e8a0215c525810ea8c2375d8}\label{class_serialization_1_1_binary_serializer_afb882e22e8a0215c525810ea8c2375d8}} 
+void {\bfseries Begin\+Write\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a53b70a443f3bddc10ab34444ab58b08e}\label{class_serialization_1_1_binary_serializer_a53b70a443f3bddc10ab34444ab58b08e}} 
+void {\bfseries End\+Write\+Dictionary\+Keys} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_af0bf198e95f7bac8d27a41d4dbf9a7ce}\label{class_serialization_1_1_binary_serializer_af0bf198e95f7bac8d27a41d4dbf9a7ce}} 
+void {\bfseries Begin\+Write\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a73fd29b68829c4662864e9f922800c1f}\label{class_serialization_1_1_binary_serializer_a73fd29b68829c4662864e9f922800c1f}} 
+void {\bfseries End\+Write\+Dictionary\+Values} ()
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a17489c518844ba789eed665e716db38d}\label{class_serialization_1_1_binary_serializer_a17489c518844ba789eed665e716db38d}} 
+bool {\bfseries Has\+More} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a52da00a6deec8ded666bc8de60009519}\label{class_serialization_1_1_binary_serializer_a52da00a6deec8ded666bc8de60009519}} 
+byte \mbox{[}$\,$\mbox{]} {\bfseries Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_adfc81495319b13b39a24b79993e51213}\label{class_serialization_1_1_binary_serializer_adfc81495319b13b39a24b79993e51213}} 
+bool {\bfseries Supports\+On\+Demand}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ae554963a22e35f96cd09c44b33a8370f}\label{class_serialization_1_1_binary_serializer_ae554963a22e35f96cd09c44b33a8370f}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Binary\+Serializer@{Binary\+Serializer}}
+\index{Binary\+Serializer@{Binary\+Serializer}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Binary\+Serializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Serialization.\+Binary\+Serializer.\+Binary\+Serializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used when serializing 
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a28b39ec2276e718a01c09401054e9160}\label{class_serialization_1_1_binary_serializer_a28b39ec2276e718a01c09401054e9160}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Binary\+Serializer@{Binary\+Serializer}}
+\index{Binary\+Serializer@{Binary\+Serializer}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Binary\+Serializer()}{BinarySerializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Serialization.\+Binary\+Serializer.\+Binary\+Serializer (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used when deserializaing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ac02802eda1961199b7e91adce7c33de7}\label{class_serialization_1_1_binary_serializer_ac02802eda1961199b7e91adce7c33de7}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Deserialize\+Get\+Name@{Deserialize\+Get\+Name}}
+\index{Deserialize\+Get\+Name@{Deserialize\+Get\+Name}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Deserialize\+Get\+Name()}{DeserializeGetName()}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Deserialize\+Get\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called to allow the storage to retrieve the name of the item being deserialized All entries must be named before a call to Start\+Deserializing, this enables the system to fill out the property setter and capture default stored type information before deserialization commences 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The entry whose name should be filled in\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_ad17a92256ad7a7196084e05bad968567}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_ad89d25a0b56c1b568f6696ab8d04d10b}\label{class_serialization_1_1_binary_serializer_ad89d25a0b56c1b568f6696ab8d04d10b}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Finish\+Deserializing@{Finish\+Deserializing}}
+\index{Finish\+Deserializing@{Finish\+Deserializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Finish\+Deserializing()}{FinishDeserializing()}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Finish\+Deserializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called when an object has deserialization complete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a8377dea6764882fb9882d0bd92e03de6}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_af70f7fb26c0b41d0f1126634df2de03a}\label{class_serialization_1_1_binary_serializer_af70f7fb26c0b41d0f1126634df2de03a}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Finished\+Deserializing@{Finished\+Deserializing}}
+\index{Finished\+Deserializing@{Finished\+Deserializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Finished\+Deserializing()}{FinishedDeserializing()}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Finished\+Deserializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called when deserialization is complete, so that resources may be released 
+
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_affc5c4e5bc5efaf0f1840943358b6bc9}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a33f7f74fffe31b07a96ab08fa545e990}\label{class_serialization_1_1_binary_serializer_a33f7f74fffe31b07a96ab08fa545e990}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Finished\+Serializing@{Finished\+Serializing}}
+\index{Finished\+Serializing@{Finished\+Serializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Finished\+Serializing()}{FinishedSerializing()}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Finished\+Serializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called when serialization is complete, should return the data or a key encoded as a byte array that will be used to reinitialize the serializer later 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a5a9811117c5fba81ff98854cfa2c48e1}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a026959038d36c07fc77d6da1345ab4d2}\label{class_serialization_1_1_binary_serializer_a026959038d36c07fc77d6da1345ab4d2}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Finish\+Serializing@{Finish\+Serializing}}
+\index{Finish\+Serializing@{Finish\+Serializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Finish\+Serializing()}{FinishSerializing()}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Finish\+Serializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called when the last information about an object has been written 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The object being written\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a03e6828bebedaa8ec17e5f01a7cbd689}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a1813abad4bdfe9607f093e4df66a4414}\label{class_serialization_1_1_binary_serializer_a1813abad4bdfe9607f093e4df66a4414}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Should\+Write\+Fields@{Should\+Write\+Fields}}
+\index{Should\+Write\+Fields@{Should\+Write\+Fields}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Should\+Write\+Fields()}{ShouldWriteFields()}}
+{\footnotesize\ttfamily \hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]} Serialization.\+Binary\+Serializer.\+Should\+Write\+Fields (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry} \mbox{[}$\,$\mbox{]}}]{fields }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a simple type (or array of bytes) from storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the item\\
+\hline
+{\em type} & The type to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a0795ec3b6aa77280885c34e2822cb410}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a9b376977bd19d9bfef1fce28e110220a}\label{class_serialization_1_1_binary_serializer_a9b376977bd19d9bfef1fce28e110220a}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Start\+Deserializing@{Start\+Deserializing}}
+\index{Start\+Deserializing@{Start\+Deserializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Start\+Deserializing()}{StartDeserializing()}}
+{\footnotesize\ttfamily object Serialization.\+Binary\+Serializer.\+Start\+Deserializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts to deserialize the object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a90aa19f79a51acf057f20da842ef09b3}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_aef0fdf4b432dfe09b1bf9c11786dee58}\label{class_serialization_1_1_binary_serializer_aef0fdf4b432dfe09b1bf9c11786dee58}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Start\+Serializing@{Start\+Serializing}}
+\index{Start\+Serializing@{Start\+Serializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Start\+Serializing()}{StartSerializing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Serialization.\+Binary\+Serializer.\+Start\+Serializing (\begin{DoxyParamCaption}\item[{\hyperlink{class_serialization_1_1_entry}{Entry}}]{entry,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Called when serializing a new object, the \hyperlink{class_serialization_1_1_entry}{Entry} parameter may have Must\+Have\+Name set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns T\+R\+UE then no further processing is executed and the object is presumed persisted in its entirety 
+
+\begin{DoxyReturn}{Returns}
+Normally F\+A\+L\+SE. True if the object is already fully persisted
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The item being serialized\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a62f447c10caea0bd0c2ec3bad36fe14a}{Serialization.\+I\+Storage}.
+
+\mbox{\Hypertarget{class_serialization_1_1_binary_serializer_a7266eb0f6366fe0d40bbcb9d4434f262}\label{class_serialization_1_1_binary_serializer_a7266eb0f6366fe0d40bbcb9d4434f262}} 
+\index{Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}!Start\+Serializing@{Start\+Serializing}}
+\index{Start\+Serializing@{Start\+Serializing}!Serialization\+::\+Binary\+Serializer@{Serialization\+::\+Binary\+Serializer}}
+\subsubsection{\texorpdfstring{Start\+Serializing()}{StartSerializing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Serialization.\+Binary\+Serializer.\+Start\+Serializing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the serialization process, the serializer should initialize and wait for data 
+
+
+
+Implements \hyperlink{interface_serialization_1_1_i_storage_a0f040f49872c3bf4ba92a350494e45af}{Serialization.\+I\+Storage}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Serialization\+Units.\+cs\end{DoxyCompactItemize}

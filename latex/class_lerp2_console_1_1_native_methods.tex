@@ -1,0 +1,63 @@
+\hypertarget{class_lerp2_console_1_1_native_methods}{}\section{Lerp2\+Console.\+Native\+Methods Class Reference}
+\label{class_lerp2_console_1_1_native_methods}\index{Lerp2\+Console.\+Native\+Methods@{Lerp2\+Console.\+Native\+Methods}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_lerp2_console_1_1_native_methods_a66b966f8621e0c2a7237ccb8d6f463ca}{Create\+Symbolic\+Link} (string dst\+File\+Path, string src\+File\+Path, \mbox{[}Marshal\+As(Unmanaged\+Type.\+I4)\mbox{]} \hyperlink{class_lerp2_console_1_1_native_enums_a4eb3b3db1c6666b1e520bd67a14d9727}{Native\+Enums.\+Symbolic\+Link\+Flags} flags)
+\begin{DoxyCompactList}\small\item\em Creates a symbolic link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lerp2_console_1_1_native_methods_a66b966f8621e0c2a7237ccb8d6f463ca}\label{class_lerp2_console_1_1_native_methods_a66b966f8621e0c2a7237ccb8d6f463ca}} 
+\index{Lerp2\+Console\+::\+Native\+Methods@{Lerp2\+Console\+::\+Native\+Methods}!Create\+Symbolic\+Link@{Create\+Symbolic\+Link}}
+\index{Create\+Symbolic\+Link@{Create\+Symbolic\+Link}!Lerp2\+Console\+::\+Native\+Methods@{Lerp2\+Console\+::\+Native\+Methods}}
+\subsubsection{\texorpdfstring{Create\+Symbolic\+Link()}{CreateSymbolicLink()}}
+{\footnotesize\ttfamily static bool Lerp2\+Console.\+Native\+Methods.\+Create\+Symbolic\+Link (\begin{DoxyParamCaption}\item[{string}]{dst\+File\+Path,  }\item[{string}]{src\+File\+Path,  }\item[{\mbox{[}\+Marshal\+As(\+Unmanaged\+Type.\+I4)\mbox{]} \hyperlink{class_lerp2_console_1_1_native_enums_a4eb3b3db1c6666b1e520bd67a14d9727}{Native\+Enums.\+Symbolic\+Link\+Flags}}]{flags }\end{DoxyParamCaption})}
+
+
+
+Creates a symbolic link. 
+
+
+
+ 
+
+ 
+
+\subsubsection*{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst\+File\+Path} & The path of the symbolic link to be created. \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+File\+Path} & The path of the target for the symbolic link to be created. \\
+\hline
+\end{DoxyParams}
+
+
+If {\itshape src\+File\+Path}  has a device name associated with it, the link is treated as an absolute link; otherwise, the link is treated as a relative link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Indicates whether the link target is a file or is a directory. \subsubsection*{}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the function succeeds, the return value is . 
+
+
+\end{DoxyReturn}
+If the function fails, the return value is . 
+
+To get extended error information, call Marshal.\+Get\+Last\+Win32\+Error. 
+
+\subsubsection*{}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Lerp2\+Console/Native\+Linking.\+cs\end{DoxyCompactItemize}

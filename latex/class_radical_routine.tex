@@ -1,0 +1,268 @@
+\hypertarget{class_radical_routine}{}\section{Radical\+Routine Class Reference}
+\label{class_radical_routine}\index{Radical\+Routine@{Radical\+Routine}}
+
+
+A coroutine that can be serialized and resumed later  
+
+
+Inheritance diagram for Radical\+Routine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_radical_routine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_radical_routine_ae628b04cef3d0780dcbef12be3d910a0}{Cancel} ()
+\begin{DoxyCompactList}\small\item\em Cancel this coroutine \end{DoxyCompactList}\item 
+void \hyperlink{class_radical_routine_a9449de246564f0d82a2890db45cbad94}{Run} ()
+\begin{DoxyCompactList}\small\item\em Run this instance. \end{DoxyCompactList}\item 
+void \hyperlink{class_radical_routine_a2e4e2003e922bb66ff5352b1fa33a6fa}{Run} (string method\+Name)
+\begin{DoxyCompactList}\small\item\em Run this instance, calling a method at completion \end{DoxyCompactList}\item 
+void \hyperlink{class_radical_routine_ab638af87a31b27630da41523771ea764}{Run} (string method\+Name, object target)
+\begin{DoxyCompactList}\small\item\em Runs the routine calling a method on a target when complete \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_radical_routine_a4e2d17f21fc9df7ef8bb06ba3a22e9e0}\label{class_radical_routine_a4e2d17f21fc9df7ef8bb06ba3a22e9e0}} 
+void {\bfseries Deserialized} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_radical_routine}{Radical\+Routine} \hyperlink{class_radical_routine_a548acf1cd3335a543c8014a87d2fa26b}{Run} (I\+Enumerator extended\+Co\+Routine)
+\begin{DoxyCompactList}\small\item\em Run the specified extended\+Co\+Routine \end{DoxyCompactList}\item 
+static \hyperlink{class_radical_routine}{Radical\+Routine} \hyperlink{class_radical_routine_ac64373a158f06b92f5d1c0052a49c3b6}{Run} (I\+Enumerator extended\+Co\+Routine, string method\+Name)
+\begin{DoxyCompactList}\small\item\em Run the specified coroutine, invoking a particular method on completion \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_radical_routine_a569f25f7a79cec6bee8998d2927e1de2}\label{class_radical_routine_a569f25f7a79cec6bee8998d2927e1de2}} 
+static \hyperlink{class_radical_routine}{Radical\+Routine} {\bfseries Run} (I\+Enumerator extended\+Co\+Routine, string method\+Name, object target)
+\item 
+static \hyperlink{class_radical_routine}{Radical\+Routine} \hyperlink{class_radical_routine_ac6e7a37c8a2b76dde3bbaf486faffd4b}{Create} (I\+Enumerator extended\+Co\+Routine)
+\begin{DoxyCompactList}\small\item\em Creates a radical coroutine for a specific function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_radical_routine_a6df3c3e067bcfb939c9d1b6c0e08cc9c}{cancel}
+\begin{DoxyCompactList}\small\item\em Cancel the coroutine if true \end{DoxyCompactList}\item 
+I\+Enumerator \hyperlink{class_radical_routine_a001dcc418773639592a9a4e1671c4e9d}{enumerator}
+\begin{DoxyCompactList}\small\item\em The enumerator of the running coroutine \end{DoxyCompactList}\item 
+object \hyperlink{class_radical_routine_ae35334ed495c3b720bf7f797777f12af}{Notify}
+\begin{DoxyCompactList}\small\item\em The object to notify when completed \end{DoxyCompactList}\item 
+string \hyperlink{class_radical_routine_a2bb230163b0827ab0c643cff9cc8523b}{Method}
+\begin{DoxyCompactList}\small\item\em The method that will be called when the routine is complete \end{DoxyCompactList}\item 
+bool \hyperlink{class_radical_routine_a703633102ff8fd31f582c0e18def8680}{finished}
+\begin{DoxyCompactList}\small\item\em True when the coroutine is finished \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_radical_routine_a6ee5e181a83dadd6d9a52a398f4b84f2}\label{class_radical_routine_a6ee5e181a83dadd6d9a52a398f4b84f2}} 
+object {\bfseries Target}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Mono\+Behaviour \hyperlink{class_radical_routine_a235e7bd6879257332c2836c021bae75e}{tracked\+Object}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the tracked object -\/ which is the object that is running the coroutine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \hyperlink{class_radical_routine_ad10d1a30c327b9c8613b10c7a274a57e}{Cancelled} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Event raised if the routine is cancelled \end{DoxyCompactList}\item 
+Action \hyperlink{class_radical_routine_a4c372aa10c0c69be8156aa821ec7dd46}{Finished} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Event raised when the coroutine finished \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A coroutine that can be serialized and resumed later 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_radical_routine_ae628b04cef3d0780dcbef12be3d910a0}\label{class_radical_routine_ae628b04cef3d0780dcbef12be3d910a0}} 
+\index{Radical\+Routine@{Radical\+Routine}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Cancel()}{Cancel()}}
+{\footnotesize\ttfamily void Radical\+Routine.\+Cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cancel this coroutine 
+
+\mbox{\Hypertarget{class_radical_routine_ac6e7a37c8a2b76dde3bbaf486faffd4b}\label{class_radical_routine_ac6e7a37c8a2b76dde3bbaf486faffd4b}} 
+\index{Radical\+Routine@{Radical\+Routine}!Create@{Create}}
+\index{Create@{Create}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily static \hyperlink{class_radical_routine}{Radical\+Routine} Radical\+Routine.\+Create (\begin{DoxyParamCaption}\item[{I\+Enumerator}]{extended\+Co\+Routine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a radical coroutine for a specific function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extended\+Co\+Routine} & The function to use as a coroutine \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_radical_routine_a548acf1cd3335a543c8014a87d2fa26b}\label{class_radical_routine_a548acf1cd3335a543c8014a87d2fa26b}} 
+\index{Radical\+Routine@{Radical\+Routine}!Run@{Run}}
+\index{Run@{Run}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily static \hyperlink{class_radical_routine}{Radical\+Routine} Radical\+Routine.\+Run (\begin{DoxyParamCaption}\item[{I\+Enumerator}]{extended\+Co\+Routine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Run the specified extended\+Co\+Routine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extended\+Co\+Routine} & The coroutine to make serializable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_radical_routine_ac64373a158f06b92f5d1c0052a49c3b6}\label{class_radical_routine_ac64373a158f06b92f5d1c0052a49c3b6}} 
+\index{Radical\+Routine@{Radical\+Routine}!Run@{Run}}
+\index{Run@{Run}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily static \hyperlink{class_radical_routine}{Radical\+Routine} Radical\+Routine.\+Run (\begin{DoxyParamCaption}\item[{I\+Enumerator}]{extended\+Co\+Routine,  }\item[{string}]{method\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Run the specified coroutine, invoking a particular method on completion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em extended\+Co\+Routine} & The coroutine to exten \\
+\hline
+{\em method\+Name} & Method to call \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_radical_routine_a9449de246564f0d82a2890db45cbad94}\label{class_radical_routine_a9449de246564f0d82a2890db45cbad94}} 
+\index{Radical\+Routine@{Radical\+Routine}!Run@{Run}}
+\index{Run@{Run}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Radical\+Routine.\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Run this instance. 
+
+\mbox{\Hypertarget{class_radical_routine_a2e4e2003e922bb66ff5352b1fa33a6fa}\label{class_radical_routine_a2e4e2003e922bb66ff5352b1fa33a6fa}} 
+\index{Radical\+Routine@{Radical\+Routine}!Run@{Run}}
+\index{Run@{Run}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Radical\+Routine.\+Run (\begin{DoxyParamCaption}\item[{string}]{method\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Run this instance, calling a method at completion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\+Name} & Method to call \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_radical_routine_ab638af87a31b27630da41523771ea764}\label{class_radical_routine_ab638af87a31b27630da41523771ea764}} 
+\index{Radical\+Routine@{Radical\+Routine}!Run@{Run}}
+\index{Run@{Run}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Radical\+Routine.\+Run (\begin{DoxyParamCaption}\item[{string}]{method\+Name,  }\item[{object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Runs the routine calling a method on a target when complete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\+Name} & The method to call \\
+\hline
+{\em target} & The target object to call it on \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_radical_routine_a6df3c3e067bcfb939c9d1b6c0e08cc9c}\label{class_radical_routine_a6df3c3e067bcfb939c9d1b6c0e08cc9c}} 
+\index{Radical\+Routine@{Radical\+Routine}!cancel@{cancel}}
+\index{cancel@{cancel}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{cancel}{cancel}}
+{\footnotesize\ttfamily bool Radical\+Routine.\+cancel}
+
+
+
+Cancel the coroutine if true 
+
+\mbox{\Hypertarget{class_radical_routine_a001dcc418773639592a9a4e1671c4e9d}\label{class_radical_routine_a001dcc418773639592a9a4e1671c4e9d}} 
+\index{Radical\+Routine@{Radical\+Routine}!enumerator@{enumerator}}
+\index{enumerator@{enumerator}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{enumerator}{enumerator}}
+{\footnotesize\ttfamily I\+Enumerator Radical\+Routine.\+enumerator}
+
+
+
+The enumerator of the running coroutine 
+
+\mbox{\Hypertarget{class_radical_routine_a703633102ff8fd31f582c0e18def8680}\label{class_radical_routine_a703633102ff8fd31f582c0e18def8680}} 
+\index{Radical\+Routine@{Radical\+Routine}!finished@{finished}}
+\index{finished@{finished}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily bool Radical\+Routine.\+finished}
+
+
+
+True when the coroutine is finished 
+
+\mbox{\Hypertarget{class_radical_routine_a2bb230163b0827ab0c643cff9cc8523b}\label{class_radical_routine_a2bb230163b0827ab0c643cff9cc8523b}} 
+\index{Radical\+Routine@{Radical\+Routine}!Method@{Method}}
+\index{Method@{Method}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Method}{Method}}
+{\footnotesize\ttfamily string Radical\+Routine.\+Method}
+
+
+
+The method that will be called when the routine is complete 
+
+\mbox{\Hypertarget{class_radical_routine_ae35334ed495c3b720bf7f797777f12af}\label{class_radical_routine_ae35334ed495c3b720bf7f797777f12af}} 
+\index{Radical\+Routine@{Radical\+Routine}!Notify@{Notify}}
+\index{Notify@{Notify}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Notify}{Notify}}
+{\footnotesize\ttfamily object Radical\+Routine.\+Notify}
+
+
+
+The object to notify when completed 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_radical_routine_a235e7bd6879257332c2836c021bae75e}\label{class_radical_routine_a235e7bd6879257332c2836c021bae75e}} 
+\index{Radical\+Routine@{Radical\+Routine}!tracked\+Object@{tracked\+Object}}
+\index{tracked\+Object@{tracked\+Object}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{tracked\+Object}{trackedObject}}
+{\footnotesize\ttfamily Mono\+Behaviour Radical\+Routine.\+tracked\+Object\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the tracked object -\/ which is the object that is running the coroutine 
+
+The tracked object. 
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_radical_routine_ad10d1a30c327b9c8613b10c7a274a57e}\label{class_radical_routine_ad10d1a30c327b9c8613b10c7a274a57e}} 
+\index{Radical\+Routine@{Radical\+Routine}!Cancelled@{Cancelled}}
+\index{Cancelled@{Cancelled}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Cancelled}{Cancelled}}
+{\footnotesize\ttfamily Action Radical\+Routine.\+Cancelled = delegate \{ \}}
+
+
+
+Event raised if the routine is cancelled 
+
+\mbox{\Hypertarget{class_radical_routine_a4c372aa10c0c69be8156aa821ec7dd46}\label{class_radical_routine_a4c372aa10c0c69be8156aa821ec7dd46}} 
+\index{Radical\+Routine@{Radical\+Routine}!Finished@{Finished}}
+\index{Finished@{Finished}!Radical\+Routine@{Radical\+Routine}}
+\subsubsection{\texorpdfstring{Finished}{Finished}}
+{\footnotesize\ttfamily Action Radical\+Routine.\+Finished = delegate \{ \}}
+
+
+
+Event raised when the coroutine finished 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Radical/\+System/Radical\+Routine.\+cs\end{DoxyCompactItemize}

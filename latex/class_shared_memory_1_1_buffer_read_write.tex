@@ -1,0 +1,293 @@
+\hypertarget{class_shared_memory_1_1_buffer_read_write}{}\section{Shared\+Memory.\+Buffer\+Read\+Write Class Reference}
+\label{class_shared_memory_1_1_buffer_read_write}\index{Shared\+Memory.\+Buffer\+Read\+Write@{Shared\+Memory.\+Buffer\+Read\+Write}}
+
+
+Read/\+Write buffer with support for simple inter-\/process read/write synchronisation.  
+
+
+Inheritance diagram for Shared\+Memory.\+Buffer\+Read\+Write\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_shared_memory_1_1_buffer_read_write}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shared_memory_1_1_buffer_read_write_ac672225accdac4dc8abd9d2e8a4aed30}{Buffer\+Read\+Write} (string name, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Creates a new shared memory buffer with the specified name and size \end{DoxyCompactList}\item 
+\hyperlink{class_shared_memory_1_1_buffer_read_write_a64253e44bd62672502533b1644d85420}{Buffer\+Read\+Write} (string name)
+\begin{DoxyCompactList}\small\item\em Opens an existing shared memory buffer with the specified name \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a277110184ecebdd2d6337c5d6b52f3fa}{Write$<$ T $>$} (ref T data, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an instance of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a12cdb995bc498bef477b8f91355eef3f}{Write$<$ T $>$} (T\mbox{[}$\,$\mbox{]} buffer, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes an array of {\itshape T}  into the buffer \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}{Write} (Int\+Ptr ptr, int length, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Writes {\itshape length}  bytes from the {\itshape ptr}  into the shared memory buffer. \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_aa4ee6183b43f3bb1728f3296967e586e}{Write} (Action$<$ Int\+Ptr $>$ write\+Func, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Prepares an Int\+Ptr to the buffer position and calls {\itshape write\+Func}  to perform the writing. \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a4fc92192136290cea195db4ee573843e}{Read$<$ T $>$} (out T data, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads an instance of {\itshape T}  from the buffer \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a3c49b75b3b06a22c73bfd26c90d220d6}{Read$<$ T $>$} (T\mbox{[}$\,$\mbox{]} buffer, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads an array of {\itshape T}  from the buffer \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}{Read} (Int\+Ptr destination, int length, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Reads {\itshape length}  bytes into the memory location {\itshape destination}  from the shared memory buffer. \end{DoxyCompactList}\item 
+new void \hyperlink{class_shared_memory_1_1_buffer_read_write_ad8e09d6fb5fd4f72170e768f7b84911d}{Read} (Action$<$ Int\+Ptr $>$ read\+Func, long buffer\+Position=0)
+\begin{DoxyCompactList}\small\item\em Prepares an Int\+Ptr to the buffer position and calls {\itshape read\+Func}  to perform the reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Read/\+Write buffer with support for simple inter-\/process read/write synchronisation. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_ac672225accdac4dc8abd9d2e8a4aed30}\label{class_shared_memory_1_1_buffer_read_write_ac672225accdac4dc8abd9d2e8a4aed30}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Buffer\+Read\+Write@{Buffer\+Read\+Write}}
+\index{Buffer\+Read\+Write@{Buffer\+Read\+Write}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Buffer\+Read\+Write()}{BufferReadWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shared\+Memory.\+Buffer\+Read\+Write.\+Buffer\+Read\+Write (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new shared memory buffer with the specified name and size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the shared memory to create\\
+\hline
+{\em buffer\+Size} & The size of the buffer\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a64253e44bd62672502533b1644d85420}\label{class_shared_memory_1_1_buffer_read_write_a64253e44bd62672502533b1644d85420}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Buffer\+Read\+Write@{Buffer\+Read\+Write}}
+\index{Buffer\+Read\+Write@{Buffer\+Read\+Write}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Buffer\+Read\+Write()}{BufferReadWrite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shared\+Memory.\+Buffer\+Read\+Write.\+Buffer\+Read\+Write (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Opens an existing shared memory buffer with the specified name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the shared memory to open\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}\label{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily new void Shared\+Memory.\+Buffer\+Read\+Write.\+Read (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{destination,  }\item[{int}]{length,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads {\itshape length}  bytes into the memory location {\itshape destination}  from the shared memory buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & A managed pointer to the memory location to copy data into from the buffer\\
+\hline
+{\em length} & The number of bytes to be copied\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_a95407dfdc38af1afeeb9a9c4a8569982}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_ad8e09d6fb5fd4f72170e768f7b84911d}\label{class_shared_memory_1_1_buffer_read_write_ad8e09d6fb5fd4f72170e768f7b84911d}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Read@{Read}}
+\index{Read@{Read}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Read()}{Read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily new void Shared\+Memory.\+Buffer\+Read\+Write.\+Read (\begin{DoxyParamCaption}\item[{Action$<$ Int\+Ptr $>$}]{read\+Func,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Prepares an Int\+Ptr to the buffer position and calls {\itshape read\+Func}  to perform the reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+Func} & A function used to read from the buffer. The Int\+Ptr parameter is a pointer to the buffer offset by {\itshape buffer\+Position} .\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_aea88361c8c00b0159fe3dacc769a8465}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a4fc92192136290cea195db4ee573843e}\label{class_shared_memory_1_1_buffer_read_write_a4fc92192136290cea195db4ee573843e}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}{Shared\+Memory.\+Buffer\+Read\+Write.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{out T}]{data,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads an instance of {\itshape T}  from the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Output parameter that will contain the value read from the buffer\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_a27d48f6be3b300882aa9aa71339421be}{Shared\+Memory.\+Shared\+Buffer}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a3c49b75b3b06a22c73bfd26c90d220d6}\label{class_shared_memory_1_1_buffer_read_write_a3c49b75b3b06a22c73bfd26c90d220d6}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Read$<$ T $>$@{Read$<$ T $>$}}
+\index{Read$<$ T $>$@{Read$<$ T $>$}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Read$<$ T $>$()}{Read< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily new void \hyperlink{class_shared_memory_1_1_buffer_read_write_a5d187c340e0f342a2f1be07d4f9957f7}{Shared\+Memory.\+Buffer\+Read\+Write.\+Read}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reads an array of {\itshape T}  from the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Array that will contain the values read from the buffer. The length of this array controls the number of elements to read.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to read from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_aba5489c699f444012792fd6331affb03}{Shared\+Memory.\+Shared\+Buffer}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}\label{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily new void Shared\+Memory.\+Buffer\+Read\+Write.\+Write (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{ptr,  }\item[{int}]{length,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes {\itshape length}  bytes from the {\itshape ptr}  into the shared memory buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & A managed pointer to the memory location to be copied into the buffer\\
+\hline
+{\em length} & The number of bytes to be copied\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_acbe85aa71eaf1624fa5e03c0b026fa52}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_aa4ee6183b43f3bb1728f3296967e586e}\label{class_shared_memory_1_1_buffer_read_write_aa4ee6183b43f3bb1728f3296967e586e}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Write@{Write}}
+\index{Write@{Write}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily new void Shared\+Memory.\+Buffer\+Read\+Write.\+Write (\begin{DoxyParamCaption}\item[{Action$<$ Int\+Ptr $>$}]{write\+Func,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Prepares an Int\+Ptr to the buffer position and calls {\itshape write\+Func}  to perform the writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em write\+Func} & A function used to write to the buffer. The Int\+Ptr parameter is a pointer to the buffer offset by {\itshape buffer\+Position} .\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region to start writing from.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_abc575d2ef1f8df8cc05fadb1b96b22e8}{Shared\+Memory.\+Shared\+Buffer}.
+
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a277110184ecebdd2d6337c5d6b52f3fa}\label{class_shared_memory_1_1_buffer_read_write_a277110184ecebdd2d6337c5d6b52f3fa}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily new void \hyperlink{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}{Shared\+Memory.\+Buffer\+Read\+Write.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{ref T}]{data,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes an instance of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A reference to an instance of {\itshape T}  to be written\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_a82edbe6f30b012bc93f098db46a582ec}{Shared\+Memory.\+Shared\+Buffer}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_shared_memory_1_1_buffer_read_write_a12cdb995bc498bef477b8f91355eef3f}\label{class_shared_memory_1_1_buffer_read_write_a12cdb995bc498bef477b8f91355eef3f}} 
+\index{Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}!Write$<$ T $>$@{Write$<$ T $>$}}
+\index{Write$<$ T $>$@{Write$<$ T $>$}!Shared\+Memory\+::\+Buffer\+Read\+Write@{Shared\+Memory\+::\+Buffer\+Read\+Write}}
+\subsubsection{\texorpdfstring{Write$<$ T $>$()}{Write< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily new void \hyperlink{class_shared_memory_1_1_buffer_read_write_afc484df280665f9d63ae28a21e46988d}{Shared\+Memory.\+Buffer\+Read\+Write.\+Write}$<$ T $>$ (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{long}]{buffer\+Position = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Writes an array of {\itshape T}  into the buffer 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A structure type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & An array of {\itshape T}  to be written. The length of this array controls the number of elements to be written.\\
+\hline
+{\em buffer\+Position} & The offset within the buffer region of the shared memory to write to.\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_shared_memory_1_1_shared_buffer_aff9ac6982aca4308738395c9a583d50e}{Shared\+Memory.\+Shared\+Buffer}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em struct}]\end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Shared\+Memory/Buffer\+Read\+Write.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{class_lerp2_console_1_1_program}{}\section{Lerp2\+Console.\+Program Class Reference}
+\label{class_lerp2_console_1_1_program}\index{Lerp2\+Console.\+Program@{Lerp2\+Console.\+Program}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_a6449c3395adb6c08eee64948ff31cf41}\label{class_lerp2_console_1_1_program_a6449c3395adb6c08eee64948ff31cf41}} 
+enum {\bfseries Ctrl\+Types} \{ \newline
+{\bfseries C\+T\+R\+L\+\_\+\+C\+\_\+\+E\+V\+E\+NT} = 0, 
+{\bfseries C\+T\+R\+L\+\_\+\+B\+R\+E\+A\+K\+\_\+\+E\+V\+E\+NT}, 
+{\bfseries C\+T\+R\+L\+\_\+\+C\+L\+O\+S\+E\+\_\+\+E\+V\+E\+NT}, 
+{\bfseries C\+T\+R\+L\+\_\+\+L\+O\+G\+O\+F\+F\+\_\+\+E\+V\+E\+NT} = 5, 
+\newline
+{\bfseries C\+T\+R\+L\+\_\+\+S\+H\+U\+T\+D\+O\+W\+N\+\_\+\+E\+V\+E\+NT}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_aa0840f9a141387941e7d12ae8d021137}\label{class_lerp2_console_1_1_program_aa0840f9a141387941e7d12ae8d021137}} 
+static bool {\bfseries Set\+Console\+Ctrl\+Handler} (Handler\+Routine Handler, bool Add)
+\item 
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_ac1511d0b80be63639fb28f914ab17e74}\label{class_lerp2_console_1_1_program_ac1511d0b80be63639fb28f914ab17e74}} 
+delegate bool {\bfseries Handler\+Routine} (Ctrl\+Types Ctrl\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_lerp2_console_1_1_program_a25f594d0fd6628c66c0378f0d564b7e9}{Accept\+Callback} (I\+Async\+Result ar)
+\begin{DoxyCompactList}\small\item\em Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication. \end{DoxyCompactList}\item 
+static void \hyperlink{class_lerp2_console_1_1_program_a2b495a0ca81fe3e74a1978acceddf73c}{Receive\+Callback} (I\+Async\+Result ar)
+\begin{DoxyCompactList}\small\item\em Asynchronously receive data from a connected Socket. \end{DoxyCompactList}\item 
+static void \hyperlink{class_lerp2_console_1_1_program_a9e872ccff3eae10393e4dc55c62ba04e}{Send\+Callback} (I\+Async\+Result ar)
+\begin{DoxyCompactList}\small\item\em Sends data asynchronously to a connected Socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_a365de24d5716a18897945ed083e6afae}\label{class_lerp2_console_1_1_program_a365de24d5716a18897945ed083e6afae}} 
+static \hyperlink{class_lerp2_console_1_1_instancials}{Instancials} {\bfseries instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_a25f594d0fd6628c66c0378f0d564b7e9}\label{class_lerp2_console_1_1_program_a25f594d0fd6628c66c0378f0d564b7e9}} 
+\index{Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}!Accept\+Callback@{Accept\+Callback}}
+\index{Accept\+Callback@{Accept\+Callback}!Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}}
+\subsubsection{\texorpdfstring{Accept\+Callback()}{AcceptCallback()}}
+{\footnotesize\ttfamily static void Lerp2\+Console.\+Program.\+Accept\+Callback (\begin{DoxyParamCaption}\item[{I\+Async\+Result}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & the status of an asynchronous operation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_a2b495a0ca81fe3e74a1978acceddf73c}\label{class_lerp2_console_1_1_program_a2b495a0ca81fe3e74a1978acceddf73c}} 
+\index{Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}!Receive\+Callback@{Receive\+Callback}}
+\index{Receive\+Callback@{Receive\+Callback}!Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}}
+\subsubsection{\texorpdfstring{Receive\+Callback()}{ReceiveCallback()}}
+{\footnotesize\ttfamily static void Lerp2\+Console.\+Program.\+Receive\+Callback (\begin{DoxyParamCaption}\item[{I\+Async\+Result}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Asynchronously receive data from a connected Socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & the status of an asynchronous operation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lerp2_console_1_1_program_a9e872ccff3eae10393e4dc55c62ba04e}\label{class_lerp2_console_1_1_program_a9e872ccff3eae10393e4dc55c62ba04e}} 
+\index{Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}!Send\+Callback@{Send\+Callback}}
+\index{Send\+Callback@{Send\+Callback}!Lerp2\+Console\+::\+Program@{Lerp2\+Console\+::\+Program}}
+\subsubsection{\texorpdfstring{Send\+Callback()}{SendCallback()}}
+{\footnotesize\ttfamily static void Lerp2\+Console.\+Program.\+Send\+Callback (\begin{DoxyParamCaption}\item[{I\+Async\+Result}]{ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sends data asynchronously to a connected Socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The status of an asynchronous operation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Lerp2\+Console/Program -\/ Copia.\+cs\item 
+Project/\+Lerp2\+Console/Program.\+cs\end{DoxyCompactItemize}

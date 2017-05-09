@@ -1,0 +1,136 @@
+\hypertarget{class_full_serializer_1_1_internal_1_1fs_nullable_converter}{}\section{Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter Class Reference}
+\label{class_full_serializer_1_1_internal_1_1fs_nullable_converter}\index{Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter@{Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter}}
+
+
+The reflected converter will properly serialize nullable types. However, we do it here instead as we can emit less serialization data.  
+
+
+Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_full_serializer_1_1_internal_1_1fs_nullable_converter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_nullable_converter_aae7da556bba4e45495162611e24e8d68}{Can\+Process} (Type type)
+\begin{DoxyCompactList}\small\item\em Can this converter serialize and deserialize the given object type? \end{DoxyCompactList}\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab4bb180f4c413c45ef22bbf4d2a34d60}{Try\+Serialize} (object instance, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Serialize the actual object into the given data storage. \end{DoxyCompactList}\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_nullable_converter_a6b72c06300a1efb2daf2a35753aa0ed9}{Try\+Deserialize} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, ref object instance, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Deserialize data into the object instance. \end{DoxyCompactList}\item 
+override object \hyperlink{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab47b05197a1f68036cecb45318b49233}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The reflected converter will properly serialize nullable types. However, we do it here instead as we can emit less serialization data. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_nullable_converter_aae7da556bba4e45495162611e24e8d68}\label{class_full_serializer_1_1_internal_1_1fs_nullable_converter_aae7da556bba4e45495162611e24e8d68}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}!Can\+Process@{Can\+Process}}
+\index{Can\+Process@{Can\+Process}!Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}}
+\subsubsection{\texorpdfstring{Can\+Process()}{CanProcess()}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter.\+Can\+Process (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Can this converter serialize and deserialize the given object type? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The given object type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the converter can serialize it, false otherwise.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_converter_a6d9e084c5e7f646a8d220705efaecb35}{Full\+Serializer.\+fs\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab47b05197a1f68036cecb45318b49233}\label{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab47b05197a1f68036cecb45318b49233}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}!Create\+Instance@{Create\+Instance}}
+\index{Create\+Instance@{Create\+Instance}!Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}}
+\subsubsection{\texorpdfstring{Create\+Instance()}{CreateInstance()}}
+{\footnotesize\ttfamily override object Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter.\+Create\+Instance (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data the object was serialized with.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object instance
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a415ea2ac9429bbb9927346af7cb7c2e1}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_nullable_converter_a6b72c06300a1efb2daf2a35753aa0ed9}\label{class_full_serializer_1_1_internal_1_1fs_nullable_converter_a6b72c06300a1efb2daf2a35753aa0ed9}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}!Try\+Deserialize@{Try\+Deserialize}}
+\index{Try\+Deserialize@{Try\+Deserialize}!Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}}
+\subsubsection{\texorpdfstring{Try\+Deserialize()}{TryDeserialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{ref object}]{instance,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Deserialize data into the object instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \hyperlink{namespace_serialization}{Serialization} data to deserialize from.\\
+\hline
+{\em instance} & The object instance to deserialize into.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if serialization was successful, false otherwise.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_base_converter_a38d3d1b042eb788819883354073a224e}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab4bb180f4c413c45ef22bbf4d2a34d60}\label{class_full_serializer_1_1_internal_1_1fs_nullable_converter_ab4bb180f4c413c45ef22bbf4d2a34d60}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}!Try\+Serialize@{Try\+Serialize}}
+\index{Try\+Serialize@{Try\+Serialize}!Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Nullable\+Converter}}
+\subsubsection{\texorpdfstring{Try\+Serialize()}{TrySerialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Nullable\+Converter.\+Try\+Serialize (\begin{DoxyParamCaption}\item[{object}]{instance,  }\item[{out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{serialized,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Serialize the actual object into the given data storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The object instance to serialize. This will never be null.\\
+\hline
+{\em serialized} & The serialized state.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing this instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If serialization was successful.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_full_serializer_1_1fs_base_converter_aeb0065770e53ecaac3f5dd3b5cd670d1}{Full\+Serializer.\+fs\+Base\+Converter}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/\+Full\+Serializer/\+Converters/fs\+Nullable\+Converter.\+cs\end{DoxyCompactItemize}

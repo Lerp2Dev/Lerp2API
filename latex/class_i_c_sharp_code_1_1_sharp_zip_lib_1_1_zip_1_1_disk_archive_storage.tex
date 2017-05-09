@@ -1,0 +1,173 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage}}
+
+
+An \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_archive_storage}{I\+Archive\+Storage} implementation suitable for hard disks.  
+
+
+Inheritance diagram for I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a3eb9cf48fc26e29b96cb3e1a7119f546}{Disk\+Archive\+Storage} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_file}{Zip\+File} file, \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_a626313bc452203ca2bdb092947541027}{File\+Update\+Mode} update\+Mode)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}{Disk\+Archive\+Storage} class. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a450194560007dfa524612919eee546b0}{Disk\+Archive\+Storage} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_file}{Zip\+File} file)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}{Disk\+Archive\+Storage} class. \end{DoxyCompactList}\item 
+override Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a5f99f82e221c964f9177c16c7c775e3f}{Get\+Temporary\+Output} ()
+\begin{DoxyCompactList}\small\item\em Gets a temporary output Stream for performing updates on. \end{DoxyCompactList}\item 
+override Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a90e6fad96f28a6539c5ea2b4a0ac28c0}{Convert\+Temporary\+To\+Final} ()
+\begin{DoxyCompactList}\small\item\em Converts a temporary Stream to its final form. \end{DoxyCompactList}\item 
+override Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_abe8267ae880501446aa0892c8f93a657}{Make\+Temporary\+Copy} (Stream stream)
+\begin{DoxyCompactList}\small\item\em Make a temporary copy of a stream. \end{DoxyCompactList}\item 
+override Stream \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_afa463d93f03caa3af6e4ea89a1314a99}{Open\+For\+Direct\+Update} (Stream stream)
+\begin{DoxyCompactList}\small\item\em Return a stream suitable for performing direct updates on the original source. \end{DoxyCompactList}\item 
+override void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a55cb8ad8e73dcd8196fce9c0b41336d9}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Disposes this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An \hyperlink{interface_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_i_archive_storage}{I\+Archive\+Storage} implementation suitable for hard disks. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a3eb9cf48fc26e29b96cb3e1a7119f546}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a3eb9cf48fc26e29b96cb3e1a7119f546}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Disk\+Archive\+Storage@{Disk\+Archive\+Storage}}
+\index{Disk\+Archive\+Storage@{Disk\+Archive\+Storage}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Disk\+Archive\+Storage()}{DiskArchiveStorage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Disk\+Archive\+Storage (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_file}{Zip\+File}}]{file,  }\item[{\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_a626313bc452203ca2bdb092947541027}{File\+Update\+Mode}}]{update\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}{Disk\+Archive\+Storage} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file.\\
+\hline
+{\em update\+Mode} & The update mode.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a450194560007dfa524612919eee546b0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a450194560007dfa524612919eee546b0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Disk\+Archive\+Storage@{Disk\+Archive\+Storage}}
+\index{Disk\+Archive\+Storage@{Disk\+Archive\+Storage}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Disk\+Archive\+Storage()}{DiskArchiveStorage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Disk\+Archive\+Storage (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_file}{Zip\+File}}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage}{Disk\+Archive\+Storage} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a90e6fad96f28a6539c5ea2b4a0ac28c0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a90e6fad96f28a6539c5ea2b4a0ac28c0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Convert\+Temporary\+To\+Final@{Convert\+Temporary\+To\+Final}}
+\index{Convert\+Temporary\+To\+Final@{Convert\+Temporary\+To\+Final}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Convert\+Temporary\+To\+Final()}{ConvertTemporaryToFinal()}}
+{\footnotesize\ttfamily override Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Convert\+Temporary\+To\+Final (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Converts a temporary Stream to its final form. 
+
+\begin{DoxyReturn}{Returns}
+Returns a Stream that can be used to read the final storage for the archive.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_base_archive_storage_ab20872fd7a5c31f1765bc36f3a37040f}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Base\+Archive\+Storage}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a55cb8ad8e73dcd8196fce9c0b41336d9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a55cb8ad8e73dcd8196fce9c0b41336d9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Disposes this instance. 
+
+
+
+Implements \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_base_archive_storage_a570815be2a90ac68ada8a48eb4f5415b}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Base\+Archive\+Storage}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a5f99f82e221c964f9177c16c7c775e3f}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_a5f99f82e221c964f9177c16c7c775e3f}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Get\+Temporary\+Output@{Get\+Temporary\+Output}}
+\index{Get\+Temporary\+Output@{Get\+Temporary\+Output}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Get\+Temporary\+Output()}{GetTemporaryOutput()}}
+{\footnotesize\ttfamily override Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Get\+Temporary\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets a temporary output Stream for performing updates on. 
+
+\begin{DoxyReturn}{Returns}
+Returns the temporary output stream.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_base_archive_storage_a1327afcc22749a88959c9d8614cf4c75}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Base\+Archive\+Storage}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_abe8267ae880501446aa0892c8f93a657}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_abe8267ae880501446aa0892c8f93a657}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Make\+Temporary\+Copy@{Make\+Temporary\+Copy}}
+\index{Make\+Temporary\+Copy@{Make\+Temporary\+Copy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Make\+Temporary\+Copy()}{MakeTemporaryCopy()}}
+{\footnotesize\ttfamily override Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Make\+Temporary\+Copy (\begin{DoxyParamCaption}\item[{Stream}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Make a temporary copy of a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The Stream to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a temporary output Stream that is a copy of the input.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_base_archive_storage_a3580cacd0a0e6b3045bdeeaed72cb492}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Base\+Archive\+Storage}.
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_afa463d93f03caa3af6e4ea89a1314a99}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_disk_archive_storage_afa463d93f03caa3af6e4ea89a1314a99}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}!Open\+For\+Direct\+Update@{Open\+For\+Direct\+Update}}
+\index{Open\+For\+Direct\+Update@{Open\+For\+Direct\+Update}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Disk\+Archive\+Storage}}
+\subsubsection{\texorpdfstring{Open\+For\+Direct\+Update()}{OpenForDirectUpdate()}}
+{\footnotesize\ttfamily override Stream I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Disk\+Archive\+Storage.\+Open\+For\+Direct\+Update (\begin{DoxyParamCaption}\item[{Stream}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return a stream suitable for performing direct updates on the original source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The current stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a stream suitable for direct updating.
+\end{DoxyReturn}
+
+
+If the {\itshape current}  stream is not null this is used as is.
+
+Implements \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_base_archive_storage_a2e718c69eceae215d38d997e7b0d3693}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Base\+Archive\+Storage}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/Zip\+File.\+cs\end{DoxyCompactItemize}

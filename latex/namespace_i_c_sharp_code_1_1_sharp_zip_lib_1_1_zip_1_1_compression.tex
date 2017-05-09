@@ -1,0 +1,124 @@
+\hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression Namespace Reference}
+\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater}{Deflater}
+\begin{DoxyCompactList}\small\item\em This is the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater}{Deflater} class. The deflater class compresses input with the deflate algorithm described in R\+FC 1951. It has several compression levels and three different strategies described below. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater_constants}{Deflater\+Constants}
+\begin{DoxyCompactList}\small\item\em This class contains constants used for deflation. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater_engine}{Deflater\+Engine}
+\begin{DoxyCompactList}\small\item\em Low level compression engine for deflate algorithm which uses a 32K sliding window with secondary compression from Huffman/\+Shannon-\/\+Fano codes. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater_huffman}{Deflater\+Huffman}
+\begin{DoxyCompactList}\small\item\em This is the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater_huffman}{Deflater\+Huffman} class. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater_pending}{Deflater\+Pending}
+\begin{DoxyCompactList}\small\item\em This class stores the pending output of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_deflater}{Deflater}. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} is used to decompress data that has been compressed according to the \char`\"{}deflate\char`\"{} standard described in rfc1951. \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_dyn_header}{Inflater\+Dyn\+Header}
+\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{Inflater\+Huffman\+Tree}
+\begin{DoxyCompactList}\small\item\em Huffman tree used for inflation \end{DoxyCompactList}\item 
+class \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_pending_buffer}{Pending\+Buffer}
+\begin{DoxyCompactList}\small\item\em This class is general purpose class for writing data to a buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}{Deflate\+Strategy} \{ \newline
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}{Deflate\+Strategy.\+Default} = 0, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}{Deflate\+Strategy.\+Filtered} = 1, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}{Deflate\+Strategy.\+Huffman\+Only} = 2, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}{Deflate\+Strategy.\+Default} = 0, 
+\newline
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}{Deflate\+Strategy.\+Filtered} = 1, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}{Deflate\+Strategy.\+Huffman\+Only} = 2
+ \}\begin{DoxyCompactList}\small\item\em Strategies for deflater \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}{Deflate\+Strategy} \{ \newline
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}{Deflate\+Strategy.\+Default} = 0, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}{Deflate\+Strategy.\+Filtered} = 1, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}{Deflate\+Strategy.\+Huffman\+Only} = 2, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}{Deflate\+Strategy.\+Default} = 0, 
+\newline
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}{Deflate\+Strategy.\+Filtered} = 1, 
+\hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}{Deflate\+Strategy.\+Huffman\+Only} = 2
+ \}\begin{DoxyCompactList}\small\item\em Strategies for deflater \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Deflate\+Strategy@{Deflate\+Strategy}}
+\index{Deflate\+Strategy@{Deflate\+Strategy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}
+\subsubsection{\texorpdfstring{Deflate\+Strategy}{DeflateStrategy}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Deflate\+Strategy}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Strategies for deflater 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Default@{Default}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}} 
+Default&The default strategy \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Filtered@{Filtered}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Filtered@{Filtered}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}} 
+Filtered&This strategy will only allow longer string repetitions. It is useful for random data with a small character set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Huffman\+Only@{Huffman\+Only}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Huffman\+Only@{Huffman\+Only}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}} 
+Huffman\+Only&This strategy will not look for string repetitions at all. It only encodes with Huffman trees (which means, that more common characters get a smaller encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Default@{Default}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}} 
+Default&The default strategy \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Filtered@{Filtered}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Filtered@{Filtered}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}} 
+Filtered&This strategy will only allow longer string repetitions. It is useful for random data with a small character set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Huffman\+Only@{Huffman\+Only}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Huffman\+Only@{Huffman\+Only}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}} 
+Huffman\+Only&This strategy will not look for string repetitions at all. It only encodes with Huffman trees (which means, that more common characters get a smaller encoding. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Deflate\+Strategy@{Deflate\+Strategy}}
+\index{Deflate\+Strategy@{Deflate\+Strategy}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}
+\subsubsection{\texorpdfstring{Deflate\+Strategy}{DeflateStrategy}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40}{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Deflate\+Strategy}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Strategies for deflater 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Default@{Default}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}} 
+Default&The default strategy \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Filtered@{Filtered}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Filtered@{Filtered}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}} 
+Filtered&This strategy will only allow longer string repetitions. It is useful for random data with a small character set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Huffman\+Only@{Huffman\+Only}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Huffman\+Only@{Huffman\+Only}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}} 
+Huffman\+Only&This strategy will not look for string repetitions at all. It only encodes with Huffman trees (which means, that more common characters get a smaller encoding. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Default@{Default}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40a7a1920d61156abc05a60135aefe8bc67}} 
+Default&The default strategy \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Filtered@{Filtered}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Filtered@{Filtered}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40afe84ed3d6baffd193df85d308e5e908c}} 
+Filtered&This strategy will only allow longer string repetitions. It is useful for random data with a small character set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Huffman\+Only@{Huffman\+Only}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}}\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression}!Huffman\+Only@{Huffman\+Only}}}\mbox{\Hypertarget{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}\label{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_a922c175879503e6b9e35641deccfbc40ac6bfb9e3d4bc09057155cf42093806bf}} 
+Huffman\+Only&This strategy will not look for string repetitions at all. It only encodes with Huffman trees (which means, that more common characters get a smaller encoding. \\
+\hline
+
+\end{DoxyEnumFields}

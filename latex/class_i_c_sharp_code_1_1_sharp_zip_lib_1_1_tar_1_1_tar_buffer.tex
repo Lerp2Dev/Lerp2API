@@ -1,0 +1,425 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer}}
+
+
+The \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} class implements the tar archive concept of a buffered input stream. This concept goes back to the days of blocked tape drives and special io devices. In the C\# universe, the only real function that this class performs is to ensure that files have the correct \char`\"{}record\char`\"{} size, or other tars will complain.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9c0ea4d0e06ee2b30734790969900ab6}{Get\+Record\+Size} ()
+\begin{DoxyCompactList}\small\item\em Get the T\+AR Buffer\textquotesingle{}s record size. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ad6a7ea52f703433c37da286520e6f3e0}{Get\+Block\+Factor} ()
+\begin{DoxyCompactList}\small\item\em Get the T\+AR Buffer\textquotesingle{}s block factor \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a2f86e0c8b79e23b9e93a4332f59170e1}{Is\+E\+O\+F\+Block} (byte\mbox{[}$\,$\mbox{]} block)
+\begin{DoxyCompactList}\small\item\em Determine if an archive block indicates End of Archive. End of archive is indicated by a block that consists entirely of null bytes. All remaining blocks for the record should also be null\textquotesingle{}s However some older tars only do a couple of null blocks (Old G\+NU tar for one) and also partial records \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ab6bab34e56056d8ee5890246edb56e8c}{Skip\+Block} ()
+\begin{DoxyCompactList}\small\item\em Skip over a block on the input stream. \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a401cc4e6bb1efe7f710101ee1032586e}{Read\+Block} ()
+\begin{DoxyCompactList}\small\item\em Read a block from the input stream. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac45071c45a41ad084cb7331bf4f1b22c}{Get\+Current\+Block\+Num} ()
+\begin{DoxyCompactList}\small\item\em Get the current block number, within the current record, zero based. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8a4a278e065e9fe09cc2e2047b04278e}{Get\+Current\+Record\+Num} ()
+\begin{DoxyCompactList}\small\item\em Get the current record number. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac056c9ebad84ff430b52d9d25c5b7d28}{Write\+Block} (byte\mbox{[}$\,$\mbox{]} block)
+\begin{DoxyCompactList}\small\item\em Write a block of data to the archive. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a984d12bfe71efbc5ae6d9f969c4dd3f0}{Write\+Block} (byte\mbox{[}$\,$\mbox{]} buffer, int offset)
+\begin{DoxyCompactList}\small\item\em Write an archive record to the archive, where the record may be inside of a larger array buffer. The buffer must be \char`\"{}offset plus
+record size\char`\"{} long. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a3afc582eabfc493257c71e2fd317b3cc}{Close} ()
+\begin{DoxyCompactList}\small\item\em Close the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. If this is an output buffer, also flush the current block before closing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac0e1b010972b90d39c6c10df8bdae0ee}{Create\+Input\+Tar\+Buffer} (Stream input\+Stream)
+\begin{DoxyCompactList}\small\item\em Create \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for reading with default Block\+Factor \end{DoxyCompactList}\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9efbbf43f0a6a27db9962379db71ece4}{Create\+Input\+Tar\+Buffer} (Stream input\+Stream, int block\+Factor)
+\begin{DoxyCompactList}\small\item\em Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for reading input\+Stream setting Block\+Factor \end{DoxyCompactList}\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a4c89266b04551c24a3ba0d44be404395}{Create\+Output\+Tar\+Buffer} (Stream output\+Stream)
+\begin{DoxyCompactList}\small\item\em Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for writing with default Block\+Factor \end{DoxyCompactList}\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a014b9836e186c6bc0a4b00b486ddd047}{Create\+Output\+Tar\+Buffer} (Stream output\+Stream, int block\+Factor)
+\begin{DoxyCompactList}\small\item\em Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for writing \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar}{Tar} output to streams. \end{DoxyCompactList}\item 
+static bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8cb2692cc566b69ded079be6881b09fe}{Is\+End\+Of\+Archive\+Block} (byte\mbox{[}$\,$\mbox{]} block)
+\begin{DoxyCompactList}\small\item\em Determine if an archive block indicates the End of an Archive has been reached. End of archive is indicated by a block that consists entirely of null bytes. All remaining blocks for the record should also be null\textquotesingle{}s However some older tars only do a couple of null blocks (Old G\+NU tar for one) and also partial records \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}{Block\+Size} = 512
+\begin{DoxyCompactList}\small\item\em The size of a block in a tar archive in bytes. \end{DoxyCompactList}\item 
+const int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ae3effef164259c06765a1f3db66cb055}{Default\+Block\+Factor} = 20
+\begin{DoxyCompactList}\small\item\em The number of blocks in a default record. \end{DoxyCompactList}\item 
+const int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a0ab26cbd82b2726af0a0b76448c773d6}{Default\+Record\+Size} = \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}{Block\+Size} $\ast$ \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ae3effef164259c06765a1f3db66cb055}{Default\+Block\+Factor}
+\begin{DoxyCompactList}\small\item\em The size in bytes of a default record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_aee98b79315ca4d827da490a287bc93d2}{Tar\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Construct a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_adf7557320463a7ade141d2161cfacf38}{Record\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the record size for this buffer \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}{Block\+Factor}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the Blocking factor for the buffer \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a369ffe3034447c016f1bc485feac3fd6}{Current\+Block}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the current block number, within the current record, zero based. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_abdd112527b91a699166eb2bc46fe7d42}{Is\+Stream\+Owner}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get/set flag indicating ownership of the underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a3afc582eabfc493257c71e2fd317b3cc}{Close} will close the underlying stream also. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a759d01e11ffdcdc372cdcdbde3852000}{Current\+Record}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the current record number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} class implements the tar archive concept of a buffered input stream. This concept goes back to the days of blocked tape drives and special io devices. In the C\# universe, the only real function that this class performs is to ensure that files have the correct \char`\"{}record\char`\"{} size, or other tars will complain. 
+
+You should never have a need to access this class directly. Tar\+Buffers are created by \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar}{Tar} IO Streams. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_aee98b79315ca4d827da490a287bc93d2}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_aee98b79315ca4d827da490a287bc93d2}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Tar\+Buffer@{Tar\+Buffer}}
+\index{Tar\+Buffer@{Tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Tar\+Buffer()}{TarBuffer()}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Tar\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Construct a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a3afc582eabfc493257c71e2fd317b3cc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a3afc582eabfc493257c71e2fd317b3cc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Close@{Close}}
+\index{Close@{Close}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Close the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer}. If this is an output buffer, also flush the current block before closing. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac0e1b010972b90d39c6c10df8bdae0ee}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac0e1b010972b90d39c6c10df8bdae0ee}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Create\+Input\+Tar\+Buffer@{Create\+Input\+Tar\+Buffer}}
+\index{Create\+Input\+Tar\+Buffer@{Create\+Input\+Tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Create\+Input\+Tar\+Buffer()}{CreateInputTarBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Create\+Input\+Tar\+Buffer (\begin{DoxyParamCaption}\item[{Stream}]{input\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Create \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for reading with default Block\+Factor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream} & Stream to buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} suitable for input.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9efbbf43f0a6a27db9962379db71ece4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9efbbf43f0a6a27db9962379db71ece4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Create\+Input\+Tar\+Buffer@{Create\+Input\+Tar\+Buffer}}
+\index{Create\+Input\+Tar\+Buffer@{Create\+Input\+Tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Create\+Input\+Tar\+Buffer()}{CreateInputTarBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Create\+Input\+Tar\+Buffer (\begin{DoxyParamCaption}\item[{Stream}]{input\+Stream,  }\item[{int}]{block\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for reading input\+Stream setting Block\+Factor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream} & Stream to buffer\\
+\hline
+{\em block\+Factor} & Blocking factor to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} suitable for input.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a4c89266b04551c24a3ba0d44be404395}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a4c89266b04551c24a3ba0d44be404395}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Create\+Output\+Tar\+Buffer@{Create\+Output\+Tar\+Buffer}}
+\index{Create\+Output\+Tar\+Buffer@{Create\+Output\+Tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Create\+Output\+Tar\+Buffer()}{CreateOutputTarBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Create\+Output\+Tar\+Buffer (\begin{DoxyParamCaption}\item[{Stream}]{output\+Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for writing with default Block\+Factor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Stream} & output stream for buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} suitable for output.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a014b9836e186c6bc0a4b00b486ddd047}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a014b9836e186c6bc0a4b00b486ddd047}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Create\+Output\+Tar\+Buffer@{Create\+Output\+Tar\+Buffer}}
+\index{Create\+Output\+Tar\+Buffer@{Create\+Output\+Tar\+Buffer}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Create\+Output\+Tar\+Buffer()}{CreateOutputTarBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Create\+Output\+Tar\+Buffer (\begin{DoxyParamCaption}\item[{Stream}]{output\+Stream,  }\item[{int}]{block\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Construct \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} for writing \hyperlink{namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar}{Tar} output to streams. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Stream} & Output stream to write to.\\
+\hline
+{\em block\+Factor} & Blocking factor to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer}{Tar\+Buffer} suitable for output.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ad6a7ea52f703433c37da286520e6f3e0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ad6a7ea52f703433c37da286520e6f3e0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Get\+Block\+Factor@{Get\+Block\+Factor}}
+\index{Get\+Block\+Factor@{Get\+Block\+Factor}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Block\+Factor()}{GetBlockFactor()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Get\+Block\+Factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the T\+AR Buffer\textquotesingle{}s block factor 
+
+\begin{DoxyReturn}{Returns}
+The block factor; the number of blocks per record.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac45071c45a41ad084cb7331bf4f1b22c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac45071c45a41ad084cb7331bf4f1b22c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Get\+Current\+Block\+Num@{Get\+Current\+Block\+Num}}
+\index{Get\+Current\+Block\+Num@{Get\+Current\+Block\+Num}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Current\+Block\+Num()}{GetCurrentBlockNum()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Get\+Current\+Block\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current block number, within the current record, zero based. 
+
+\begin{DoxyReturn}{Returns}
+The current zero based block number. 
+\end{DoxyReturn}
+
+
+The absolute block number = (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8a4a278e065e9fe09cc2e2047b04278e}{record number} $\ast$ \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}{block factor}) + \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac45071c45a41ad084cb7331bf4f1b22c}{block number}. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8a4a278e065e9fe09cc2e2047b04278e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8a4a278e065e9fe09cc2e2047b04278e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Get\+Current\+Record\+Num@{Get\+Current\+Record\+Num}}
+\index{Get\+Current\+Record\+Num@{Get\+Current\+Record\+Num}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Current\+Record\+Num()}{GetCurrentRecordNum()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Get\+Current\+Record\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current record number. 
+
+\begin{DoxyReturn}{Returns}
+The current zero based record number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9c0ea4d0e06ee2b30734790969900ab6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a9c0ea4d0e06ee2b30734790969900ab6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Get\+Record\+Size@{Get\+Record\+Size}}
+\index{Get\+Record\+Size@{Get\+Record\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Get\+Record\+Size()}{GetRecordSize()}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Get\+Record\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the T\+AR Buffer\textquotesingle{}s record size. 
+
+\begin{DoxyReturn}{Returns}
+The record size in bytes. This is equal to the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}{Block\+Factor} multiplied by the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}{Block\+Size}
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8cb2692cc566b69ded079be6881b09fe}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a8cb2692cc566b69ded079be6881b09fe}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Is\+End\+Of\+Archive\+Block@{Is\+End\+Of\+Archive\+Block}}
+\index{Is\+End\+Of\+Archive\+Block@{Is\+End\+Of\+Archive\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Is\+End\+Of\+Archive\+Block()}{IsEndOfArchiveBlock()}}
+{\footnotesize\ttfamily static bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Is\+End\+Of\+Archive\+Block (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Determine if an archive block indicates the End of an Archive has been reached. End of archive is indicated by a block that consists entirely of null bytes. All remaining blocks for the record should also be null\textquotesingle{}s However some older tars only do a couple of null blocks (Old G\+NU tar for one) and also partial records 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The data block to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the block is an E\+OF block; false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a2f86e0c8b79e23b9e93a4332f59170e1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a2f86e0c8b79e23b9e93a4332f59170e1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Is\+E\+O\+F\+Block@{Is\+E\+O\+F\+Block}}
+\index{Is\+E\+O\+F\+Block@{Is\+E\+O\+F\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Is\+E\+O\+F\+Block()}{IsEOFBlock()}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Is\+E\+O\+F\+Block (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if an archive block indicates End of Archive. End of archive is indicated by a block that consists entirely of null bytes. All remaining blocks for the record should also be null\textquotesingle{}s However some older tars only do a couple of null blocks (Old G\+NU tar for one) and also partial records 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The data block to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the block is an E\+OF block; false otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a401cc4e6bb1efe7f710101ee1032586e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a401cc4e6bb1efe7f710101ee1032586e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Read\+Block@{Read\+Block}}
+\index{Read\+Block@{Read\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Read\+Block()}{ReadBlock()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Read\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read a block from the input stream. 
+
+\begin{DoxyReturn}{Returns}
+The block of data read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ab6bab34e56056d8ee5890246edb56e8c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ab6bab34e56056d8ee5890246edb56e8c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Skip\+Block@{Skip\+Block}}
+\index{Skip\+Block@{Skip\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Skip\+Block()}{SkipBlock()}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Skip\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skip over a block on the input stream. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac056c9ebad84ff430b52d9d25c5b7d28}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ac056c9ebad84ff430b52d9d25c5b7d28}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Write\+Block@{Write\+Block}}
+\index{Write\+Block@{Write\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Write\+Block()}{WriteBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Write\+Block (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a block of data to the archive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The data to write to the archive. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a984d12bfe71efbc5ae6d9f969c4dd3f0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a984d12bfe71efbc5ae6d9f969c4dd3f0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Write\+Block@{Write\+Block}}
+\index{Write\+Block@{Write\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Write\+Block()}{WriteBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Write\+Block (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write an archive record to the archive, where the record may be inside of a larger array buffer. The buffer must be \char`\"{}offset plus
+record size\char`\"{} long. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The buffer containing the record data to write. \\
+\hline
+{\em offset} & The offset of the record data within buffer. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Block\+Size@{Block\+Size}}
+\index{Block\+Size@{Block\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Block\+Size}{BlockSize}}
+{\footnotesize\ttfamily const int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Block\+Size = 512}
+
+
+
+The size of a block in a tar archive in bytes. 
+
+This is 512 bytes.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ae3effef164259c06765a1f3db66cb055}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ae3effef164259c06765a1f3db66cb055}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Default\+Block\+Factor@{Default\+Block\+Factor}}
+\index{Default\+Block\+Factor@{Default\+Block\+Factor}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Default\+Block\+Factor}{DefaultBlockFactor}}
+{\footnotesize\ttfamily const int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Default\+Block\+Factor = 20}
+
+
+
+The number of blocks in a default record. 
+
+The default value is 20 blocks per record. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a0ab26cbd82b2726af0a0b76448c773d6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a0ab26cbd82b2726af0a0b76448c773d6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Default\+Record\+Size@{Default\+Record\+Size}}
+\index{Default\+Record\+Size@{Default\+Record\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Default\+Record\+Size}{DefaultRecordSize}}
+{\footnotesize\ttfamily const int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Default\+Record\+Size = \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}{Block\+Size} $\ast$ \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_ae3effef164259c06765a1f3db66cb055}{Default\+Block\+Factor}}
+
+
+
+The size in bytes of a default record. 
+
+The default size is 10\+KB. 
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Block\+Factor@{Block\+Factor}}
+\index{Block\+Factor@{Block\+Factor}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Block\+Factor}{BlockFactor}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Block\+Factor\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the Blocking factor for the buffer 
+
+This is the number of blocks in each record.\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a369ffe3034447c016f1bc485feac3fd6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a369ffe3034447c016f1bc485feac3fd6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Current\+Block@{Current\+Block}}
+\index{Current\+Block@{Current\+Block}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Current\+Block}{CurrentBlock}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Current\+Block\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the current block number, within the current record, zero based. 
+
+Block numbers are zero based values
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_adf7557320463a7ade141d2161cfacf38}{Record\+Size}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a759d01e11ffdcdc372cdcdbde3852000}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a759d01e11ffdcdc372cdcdbde3852000}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Current\+Record@{Current\+Record}}
+\index{Current\+Record@{Current\+Record}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Current\+Record}{CurrentRecord}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Current\+Record\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the current record number. 
+
+\begin{DoxyReturn}{Returns}
+The current zero based record number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_abdd112527b91a699166eb2bc46fe7d42}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_abdd112527b91a699166eb2bc46fe7d42}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Is\+Stream\+Owner@{Is\+Stream\+Owner}}
+\index{Is\+Stream\+Owner@{Is\+Stream\+Owner}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Is\+Stream\+Owner}{IsStreamOwner}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Is\+Stream\+Owner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get/set flag indicating ownership of the underlying stream. When the flag is true \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a3afc582eabfc493257c71e2fd317b3cc}{Close} will close the underlying stream also. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_adf7557320463a7ade141d2161cfacf38}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_adf7557320463a7ade141d2161cfacf38}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}!Record\+Size@{Record\+Size}}
+\index{Record\+Size@{Record\+Size}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Tar\+::\+Tar\+Buffer}}
+\subsubsection{\texorpdfstring{Record\+Size}{RecordSize}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Tar.\+Tar\+Buffer.\+Record\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the record size for this buffer 
+
+The record size in bytes. This is equal to the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_add6a353dfa4c8321ccd5a5e54b7d5958}{Block\+Factor} multiplied by the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer_a99cabe6ecd1046ab392bd6ed33bda07a}{Block\+Size}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Tar/Tar\+Buffer.\+cs\end{DoxyCompactItemize}

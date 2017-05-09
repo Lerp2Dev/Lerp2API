@@ -1,0 +1,55 @@
+\hypertarget{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion}{}\section{System.\+Runtime.\+Compiler\+Services.\+I\+Notify\+Completion Interface Reference}
+\label{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion}\index{System.\+Runtime.\+Compiler\+Services.\+I\+Notify\+Completion@{System.\+Runtime.\+Compiler\+Services.\+I\+Notify\+Completion}}
+
+
+Represents an operation that will schedule continuations when the operation completes.  
+
+
+Inheritance diagram for System.\+Runtime.\+Compiler\+Services.\+I\+Notify\+Completion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.427807cm]{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion_ac999a22b9bc2d384bbef4d58db192efe}{On\+Completed} (Action continuation)
+\begin{DoxyCompactList}\small\item\em Schedules the continuation action to be invoked when the instance completes.\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an operation that will schedule continuations when the operation completes. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion_ac999a22b9bc2d384bbef4d58db192efe}\label{interface_system_1_1_runtime_1_1_compiler_services_1_1_i_notify_completion_ac999a22b9bc2d384bbef4d58db192efe}} 
+\index{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Notify\+Completion@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Notify\+Completion}!On\+Completed@{On\+Completed}}
+\index{On\+Completed@{On\+Completed}!System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Notify\+Completion@{System\+::\+Runtime\+::\+Compiler\+Services\+::\+I\+Notify\+Completion}}
+\subsubsection{\texorpdfstring{On\+Completed()}{OnCompleted()}}
+{\footnotesize\ttfamily void System.\+Runtime.\+Compiler\+Services.\+I\+Notify\+Completion.\+On\+Completed (\begin{DoxyParamCaption}\item[{Action}]{continuation }\end{DoxyParamCaption})}
+
+
+
+Schedules the continuation action to be invoked when the instance completes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em continuation} & The action to invoke when the operation completes.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If {\itshape continuation}  is . \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter_aa2d6d8694d2e2d9a1561e55a70dfd2d7}{System.\+Runtime.\+Compiler\+Services.\+Configured\+Task\+Awaitable$<$ T\+Result $>$.\+Configured\+Task\+Awaiter}, \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter_aa2d6d8694d2e2d9a1561e55a70dfd2d7}{System.\+Runtime.\+Compiler\+Services.\+Configured\+Task\+Awaitable$<$ T\+Result $>$.\+Configured\+Task\+Awaiter}, \hyperlink{struct_iterator_tasks_1_1_async_bridge_1_1_task_awaiter_ab2652fe95760829417ea318260dcde32}{Iterator\+Tasks.\+Async\+Bridge.\+Task\+Awaiter$<$ T\+Result $>$}, \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_task_awaiter_a13a4416fccdd08a51279a26e93df88da}{System.\+Runtime.\+Compiler\+Services.\+Task\+Awaiter$<$ T\+Result $>$}, \hyperlink{struct_system_1_1_runtime_1_1_compiler_services_1_1_task_awaiter_a13a4416fccdd08a51279a26e93df88da}{System.\+Runtime.\+Compiler\+Services.\+Task\+Awaiter$<$ T\+Result $>$}, and \hyperlink{struct_iterator_tasks_1_1_async_bridge_1_1_task_awaiter_ab2652fe95760829417ea318260dcde32}{Iterator\+Tasks.\+Async\+Bridge.\+Task\+Awaiter$<$ T\+Result $>$}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Backports/\+Minimum\+Async\+Bridge/\+Minimum\+Async\+Bridge/\+Runtime/\+Compiler\+Services/I\+Notify\+Completion.\+cs\end{DoxyCompactItemize}

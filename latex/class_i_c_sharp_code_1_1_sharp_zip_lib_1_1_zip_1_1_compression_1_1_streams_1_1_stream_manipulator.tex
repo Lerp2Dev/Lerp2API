@@ -1,0 +1,368 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator}}
+
+
+This class allows us to retrieve a specified number of bits from the input buffer, as well as copy big byte blocks.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}{Stream\+Manipulator} ()
+\begin{DoxyCompactList}\small\item\em Constructs a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} with all buffers empty \end{DoxyCompactList}\item 
+$\ast$$<$/returns $>$ $\ast$int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Get the next sequence of bits but don\textquotesingle{}t increase input pointer. bit\+Count must be less or equal 16 and if this call succeeds, you must drop at least n -\/ 8 bits in the next call. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Drops the next n bits from the input. You should have called Peek\+Bits with a bigger or equal n before, to make sure that enough bits are in the bit buffer. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}{Get\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Gets the next n bits and increases input pointer. This is equivalent to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} followed by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits}, except for correct error handling. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}{Skip\+To\+Byte\+Boundary} ()
+\begin{DoxyCompactList}\small\item\em Skips to the next byte boundary. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}{Copy\+Bytes} (byte\mbox{[}$\,$\mbox{]} output, int offset, int length)
+\begin{DoxyCompactList}\small\item\em Copies bytes from input buffer to output buffer starting at output\mbox{[}offset\mbox{]}. You have to make sure, that the buffer is byte aligned. If not enough bytes are available, copies fewer bytes. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Resets state and empties internal buffers \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Add more input for consumption. Only call when Is\+Needing\+Input returns true \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}{Stream\+Manipulator} ()
+\begin{DoxyCompactList}\small\item\em Constructs a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} with all buffers empty \end{DoxyCompactList}\item 
+$\ast$$<$/returns $>$ $\ast$int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Get the next sequence of bits but don\textquotesingle{}t increase input pointer. bit\+Count must be less or equal 16 and if this call succeeds, you must drop at least n -\/ 8 bits in the next call. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Drops the next n bits from the input. You should have called Peek\+Bits with a bigger or equal n before, to make sure that enough bits are in the bit buffer. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}{Get\+Bits} (int bit\+Count)
+\begin{DoxyCompactList}\small\item\em Gets the next n bits and increases input pointer. This is equivalent to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} followed by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits}, except for correct error handling. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}{Skip\+To\+Byte\+Boundary} ()
+\begin{DoxyCompactList}\small\item\em Skips to the next byte boundary. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}{Copy\+Bytes} (byte\mbox{[}$\,$\mbox{]} output, int offset, int length)
+\begin{DoxyCompactList}\small\item\em Copies bytes from input buffer to output buffer starting at output\mbox{[}offset\mbox{]}. You have to make sure, that the buffer is byte aligned. If not enough bytes are available, copies fewer bytes. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Resets state and empties internal buffers \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Add more input for consumption. Only call when Is\+Needing\+Input returns true \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a1ff254ed1ef5997b313db4b06204c6ba}{Available\+Bits}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the number of bits available in the bit buffer. This must be only called when a previous \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits()} returned -\/1. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a7da2bc19cc20ef6c2de90e7b7bc32287}{Available\+Bytes}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the number of bytes available. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_abdc52ea538c6b83aeca7d0868ed52873}{Is\+Needing\+Input}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true when Set\+Input can be called \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows us to retrieve a specified number of bits from the input buffer, as well as copy big byte blocks. 
+
+It uses an int buffer to store up to 31 bits for direct manipulation. This guarantees that we can get at least 16 bits, but we only need at most 15, so this is all safe.
+
+There are some optimizations in this class, for example, you must never peek more than 8 bits more than needed, and you must first peek bits before you may drop them. This is not a general purpose class but optimized for the behaviour of the \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater}.
+
+authors of the original java version \+: John Leuner, Jochen Hoenicke 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Stream\+Manipulator@{Stream\+Manipulator}}
+\index{Stream\+Manipulator@{Stream\+Manipulator}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Stream\+Manipulator()}{StreamManipulator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Stream\+Manipulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} with all buffers empty 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a0bf52b7e926dbf3f3d7562ff1349106e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Stream\+Manipulator@{Stream\+Manipulator}}
+\index{Stream\+Manipulator@{Stream\+Manipulator}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Stream\+Manipulator()}{StreamManipulator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Stream\+Manipulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a default \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} with all buffers empty 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Copy\+Bytes@{Copy\+Bytes}}
+\index{Copy\+Bytes@{Copy\+Bytes}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Copy\+Bytes()}{CopyBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Copy\+Bytes (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{output,  }\item[{int}]{offset,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies bytes from input buffer to output buffer starting at output\mbox{[}offset\mbox{]}. You have to make sure, that the buffer is byte aligned. If not enough bytes are available, copies fewer bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The buffer to copy bytes to. \\
+\hline
+{\em offset} & The offset in the buffer at which copying starts \\
+\hline
+{\em length} & The length to copy, 0 is allowed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied, 0 if no bytes were available. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & Length is less than zero \\
+\hline
+{\em Invalid\+Operation\+Exception} & Bit buffer isnt byte aligned \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_accdce04e996a38567367c80aa2c9b6f6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Copy\+Bytes@{Copy\+Bytes}}
+\index{Copy\+Bytes@{Copy\+Bytes}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Copy\+Bytes()}{CopyBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Copy\+Bytes (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{output,  }\item[{int}]{offset,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copies bytes from input buffer to output buffer starting at output\mbox{[}offset\mbox{]}. You have to make sure, that the buffer is byte aligned. If not enough bytes are available, copies fewer bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The buffer to copy bytes to. \\
+\hline
+{\em offset} & The offset in the buffer at which copying starts \\
+\hline
+{\em length} & The length to copy, 0 is allowed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied, 0 if no bytes were available. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Out\+Of\+Range\+Exception} & Length is less than zero \\
+\hline
+{\em Invalid\+Operation\+Exception} & Bit buffer isnt byte aligned \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Drop\+Bits@{Drop\+Bits}}
+\index{Drop\+Bits@{Drop\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Drop\+Bits()}{DropBits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Drop\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Drops the next n bits from the input. You should have called Peek\+Bits with a bigger or equal n before, to make sure that enough bits are in the bit buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to drop.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Drop\+Bits@{Drop\+Bits}}
+\index{Drop\+Bits@{Drop\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Drop\+Bits()}{DropBits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Drop\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Drops the next n bits from the input. You should have called Peek\+Bits with a bigger or equal n before, to make sure that enough bits are in the bit buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to drop.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Get\+Bits@{Get\+Bits}}
+\index{Get\+Bits@{Get\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Get\+Bits()}{GetBits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Get\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the next n bits and increases input pointer. This is equivalent to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} followed by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits}, except for correct error handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the bits, or -\/1 if not enough bits available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a2e01ba3e4c4dc842b4f230e04d45f415}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Get\+Bits@{Get\+Bits}}
+\index{Get\+Bits@{Get\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Get\+Bits()}{GetBits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Get\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the next n bits and increases input pointer. This is equivalent to \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits} followed by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a133a3593f65193421981087e5f32b6a3}{Drop\+Bits}, except for correct error handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the bits, or -\/1 if not enough bits available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Peek\+Bits@{Peek\+Bits}}
+\index{Peek\+Bits@{Peek\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Peek\+Bits()}{PeekBits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily $\ast$$<$/returns$>$ $\ast$ int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Peek\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the next sequence of bits but don\textquotesingle{}t increase input pointer. bit\+Count must be less or equal 16 and if this call succeeds, you must drop at least n -\/ 8 bits in the next call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to peek.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the bits, or -\/1 if not enough bits available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Peek\+Bits@{Peek\+Bits}}
+\index{Peek\+Bits@{Peek\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Peek\+Bits()}{PeekBits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily $\ast$$<$/returns$>$ $\ast$ int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Peek\+Bits (\begin{DoxyParamCaption}\item[{int}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the next sequence of bits but don\textquotesingle{}t increase input pointer. bit\+Count must be less or equal 16 and if this call succeeds, you must drop at least n -\/ 8 bits in the next call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The number of bits to peek.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the bits, or -\/1 if not enough bits available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets state and empties internal buffers 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_aabf3e7c177c54bd0ad7fece9398de28b}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets state and empties internal buffers 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add more input for consumption. Only call when Is\+Needing\+Input returns true 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & data to be input\\
+\hline
+{\em offset} & offset of first byte of input\\
+\hline
+{\em count} & number of bytes of input to add.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a48c7062804a7b9b6be6008ba90e7038c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add more input for consumption. Only call when Is\+Needing\+Input returns true 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & data to be input\\
+\hline
+{\em offset} & offset of first byte of input\\
+\hline
+{\em count} & number of bytes of input to add.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Skip\+To\+Byte\+Boundary@{Skip\+To\+Byte\+Boundary}}
+\index{Skip\+To\+Byte\+Boundary@{Skip\+To\+Byte\+Boundary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Skip\+To\+Byte\+Boundary()}{SkipToByteBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Skip\+To\+Byte\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skips to the next byte boundary. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a02e84082a23742801d9afa957e669d17}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Skip\+To\+Byte\+Boundary@{Skip\+To\+Byte\+Boundary}}
+\index{Skip\+To\+Byte\+Boundary@{Skip\+To\+Byte\+Boundary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Skip\+To\+Byte\+Boundary()}{SkipToByteBoundary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Skip\+To\+Byte\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skips to the next byte boundary. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a1ff254ed1ef5997b313db4b06204c6ba}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a1ff254ed1ef5997b313db4b06204c6ba}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Available\+Bits@{Available\+Bits}}
+\index{Available\+Bits@{Available\+Bits}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Available\+Bits}{AvailableBits}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Available\+Bits\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the number of bits available in the bit buffer. This must be only called when a previous \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_acffdc659e2508d7642be37f3c0fa1ec0}{Peek\+Bits()} returned -\/1. 
+
+\begin{DoxyReturn}{Returns}
+the number of bits available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a7da2bc19cc20ef6c2de90e7b7bc32287}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_a7da2bc19cc20ef6c2de90e7b7bc32287}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Available\+Bytes@{Available\+Bytes}}
+\index{Available\+Bytes@{Available\+Bytes}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Available\+Bytes}{AvailableBytes}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Available\+Bytes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the number of bytes available. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_abdc52ea538c6b83aeca7d0868ed52873}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator_abdc52ea538c6b83aeca7d0868ed52873}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}!Is\+Needing\+Input@{Is\+Needing\+Input}}
+\index{Is\+Needing\+Input@{Is\+Needing\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Stream\+Manipulator}}
+\subsubsection{\texorpdfstring{Is\+Needing\+Input}{IsNeedingInput}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Stream\+Manipulator.\+Is\+Needing\+Input\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true when Set\+Input can be called 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/\+Compression/\+Streams/Stream\+Manipulator.\+cs\end{DoxyCompactItemize}

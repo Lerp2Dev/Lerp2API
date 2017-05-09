@@ -1,0 +1,51 @@
+\hypertarget{namespace_system_1_1_threading_1_1_tasks}{}\section{System.\+Threading.\+Tasks Namespace Reference}
+\label{namespace_system_1_1_threading_1_1_tasks}\index{System.\+Threading.\+Tasks@{System.\+Threading.\+Tasks}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}
+\begin{DoxyCompactList}\small\item\em Represents an asynchronous operation. \end{DoxyCompactList}\item 
+class \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_canceled_exception}{Task\+Canceled\+Exception}
+\begin{DoxyCompactList}\small\item\em Represents an exception used to communicate task cancellation. \end{DoxyCompactList}\item 
+class \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task_completion_source}{Task\+Completion\+Source}
+\begin{DoxyCompactList}\small\item\em Represents the producer side of a \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task$<$\+T\+Result$>$} unbound to a delegate, providing access to the consumer side through the \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcf}{Task\+Status} \{ \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa5bda814c4aedb126839228f1a3d92f09}{Task\+Status.\+Running}, 
+\hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}{Task\+Status.\+Ran\+To\+Completion}, 
+\hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}{Task\+Status.\+Canceled}, 
+\hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}{Task\+Status.\+Faulted}
+ \}\begin{DoxyCompactList}\small\item\em Represents the current stage in the lifecycle of a Task. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcf}\label{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcf}} 
+\index{System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}!Task\+Status@{Task\+Status}}
+\index{Task\+Status@{Task\+Status}!System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}}
+\subsubsection{\texorpdfstring{Task\+Status}{TaskStatus}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcf}{System.\+Threading.\+Tasks.\+Task\+Status}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the current stage in the lifecycle of a \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Running@{Running}!System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}}\index{System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}!Running@{Running}}}\mbox{\Hypertarget{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa5bda814c4aedb126839228f1a3d92f09}\label{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa5bda814c4aedb126839228f1a3d92f09}} 
+Running&The task is running but has not yet completed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ran\+To\+Completion@{Ran\+To\+Completion}!System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}}\index{System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}!Ran\+To\+Completion@{Ran\+To\+Completion}}}\mbox{\Hypertarget{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}\label{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfaafe3c20f08a3dd6c4cab23d979c8f1e9}} 
+Ran\+To\+Completion&The task completed execution successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Canceled@{Canceled}!System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}}\index{System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}!Canceled@{Canceled}}}\mbox{\Hypertarget{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}\label{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa0e22fe7d45f8e5632a4abf369b24e29c}} 
+Canceled&The task acknowledged cancellation by throwing an Operation\+Canceled\+Exception with its own \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} while the token was in signaled state, or the task\textquotesingle{}s \hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} was already signaled before the task started executing. For more information, see \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} Cancellation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Faulted@{Faulted}!System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}}\index{System\+::\+Threading\+::\+Tasks@{System\+::\+Threading\+::\+Tasks}!Faulted@{Faulted}}}\mbox{\Hypertarget{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}\label{namespace_system_1_1_threading_1_1_tasks_a60ab70a6c84627853d6b1056f1edebcfa2b310d05c23325e2935ec87b25a60b8f}} 
+Faulted&The task completed due to an unhandled exception. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,130 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree}}
+
+
+Huffman tree used for inflation  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}{Inflater\+Huffman\+Tree} (byte\mbox{[}$\,$\mbox{]} code\+Lengths)
+\begin{DoxyCompactList}\small\item\em Constructs a Huffman tree from the array of code lengths. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}{Get\+Symbol} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} input)
+\begin{DoxyCompactList}\small\item\em Reads the next symbol from input. The symbol is encoded using the huffman tree. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}{Inflater\+Huffman\+Tree} (byte\mbox{[}$\,$\mbox{]} code\+Lengths)
+\begin{DoxyCompactList}\small\item\em Constructs a Huffman tree from the array of code lengths. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}{Get\+Symbol} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} input)
+\begin{DoxyCompactList}\small\item\em Reads the next symbol from input. The symbol is encoded using the huffman tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{Inflater\+Huffman\+Tree} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a24f966058f7ef645e491ecad7d1b03f4}{def\+Lit\+Len\+Tree}
+\begin{DoxyCompactList}\small\item\em Literal length tree \end{DoxyCompactList}\item 
+static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{Inflater\+Huffman\+Tree} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a97745fb6c041faa130145ec082fa5f1d}{def\+Dist\+Tree}
+\begin{DoxyCompactList}\small\item\em Distance tree \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Huffman tree used for inflation 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!Inflater\+Huffman\+Tree@{Inflater\+Huffman\+Tree}}
+\index{Inflater\+Huffman\+Tree@{Inflater\+Huffman\+Tree}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{Inflater\+Huffman\+Tree()}{InflaterHuffmanTree()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+Inflater\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{code\+Lengths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a Huffman tree from the array of code lengths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+Lengths} & the array of code lengths \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a75f3f45273de2a95bb3f3ea01447c382}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!Inflater\+Huffman\+Tree@{Inflater\+Huffman\+Tree}}
+\index{Inflater\+Huffman\+Tree@{Inflater\+Huffman\+Tree}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{Inflater\+Huffman\+Tree()}{InflaterHuffmanTree()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+Inflater\+Huffman\+Tree (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{code\+Lengths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a Huffman tree from the array of code lengths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+Lengths} & the array of code lengths \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!Get\+Symbol@{Get\+Symbol}}
+\index{Get\+Symbol@{Get\+Symbol}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Symbol()}{GetSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+Get\+Symbol (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator}}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads the next symbol from input. The symbol is encoded using the huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input the input source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next symbol, or -\/1 if not enough input is available. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a2502c53f425e721c34ccfee00355ae3a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!Get\+Symbol@{Get\+Symbol}}
+\index{Get\+Symbol@{Get\+Symbol}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{Get\+Symbol()}{GetSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+Get\+Symbol (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator}}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads the next symbol from input. The symbol is encoded using the huffman tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input the input source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next symbol, or -\/1 if not enough input is available. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a97745fb6c041faa130145ec082fa5f1d}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a97745fb6c041faa130145ec082fa5f1d}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!def\+Dist\+Tree@{def\+Dist\+Tree}}
+\index{def\+Dist\+Tree@{def\+Dist\+Tree}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{def\+Dist\+Tree}{defDistTree}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{Inflater\+Huffman\+Tree} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+def\+Dist\+Tree\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Distance tree 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a24f966058f7ef645e491ecad7d1b03f4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree_a24f966058f7ef645e491ecad7d1b03f4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}!def\+Lit\+Len\+Tree@{def\+Lit\+Len\+Tree}}
+\index{def\+Lit\+Len\+Tree@{def\+Lit\+Len\+Tree}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater\+Huffman\+Tree}}
+\subsubsection{\texorpdfstring{def\+Lit\+Len\+Tree}{defLitLenTree}}
+{\footnotesize\ttfamily static \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_huffman_tree}{Inflater\+Huffman\+Tree} I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater\+Huffman\+Tree.\+def\+Lit\+Len\+Tree\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Literal length tree 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/\+Compression/Inflater\+Huffman\+Tree.\+cs\end{DoxyCompactItemize}

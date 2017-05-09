@@ -1,0 +1,523 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater}}
+
+
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} is used to decompress data that has been compressed according to the \char`\"{}deflate\char`\"{} standard described in rfc1951.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}{Inflater} ()
+\begin{DoxyCompactList}\small\item\em Creates a new inflater or R\+F\+C1951 decompressor R\+F\+C1950/\+Zlib headers and footers will be expected in the input data \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}{Inflater} (bool no\+Header)
+\begin{DoxyCompactList}\small\item\em Creates a new inflater. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the inflater so that a new stream can be decompressed. All pending input and output will be discarded. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}{Set\+Dictionary} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}{Set\+Dictionary} (byte\mbox{[}$\,$\mbox{]} buffer, int index, int count)
+\begin{DoxyCompactList}\small\item\em Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Sets the input. This should only be called, if needs\+Input() returns true. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer, int index, int count)
+\begin{DoxyCompactList}\small\item\em Sets the input. This should only be called, if needs\+Input() returns true. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}{Inflate} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary()}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}{Is\+Finished()} returns true, to determine why no further output is produced. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}{Inflate} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether needs\+Dictionary(), needs\+Input() or finished() returns true, to determine why no further output is produced. \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}{Inflater} ()
+\begin{DoxyCompactList}\small\item\em Creates a new inflater or R\+F\+C1951 decompressor R\+F\+C1950/\+Zlib headers and footers will be expected in the input data \end{DoxyCompactList}\item 
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}{Inflater} (bool no\+Header)
+\begin{DoxyCompactList}\small\item\em Creates a new inflater. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the inflater so that a new stream can be decompressed. All pending input and output will be discarded. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}{Set\+Dictionary} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}{Set\+Dictionary} (byte\mbox{[}$\,$\mbox{]} buffer, int index, int count)
+\begin{DoxyCompactList}\small\item\em Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Sets the input. This should only be called, if needs\+Input() returns true. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}{Set\+Input} (byte\mbox{[}$\,$\mbox{]} buffer, int index, int count)
+\begin{DoxyCompactList}\small\item\em Sets the input. This should only be called, if needs\+Input() returns true. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}{Inflate} (byte\mbox{[}$\,$\mbox{]} buffer)
+\begin{DoxyCompactList}\small\item\em Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary()}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}{Is\+Finished()} returns true, to determine why no further output is produced. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}{Inflate} (byte\mbox{[}$\,$\mbox{]} buffer, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether needs\+Dictionary(), needs\+Input() or finished() returns true, to determine why no further output is produced. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true, if the input buffer is empty. You should then call set\+Input(). N\+O\+TE\+: This method also returns true when the stream is finished. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true, if a preset dictionary is needed to inflate the input. \end{DoxyCompactList}\item 
+bool \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}{Is\+Finished}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns true, if the inflater has finished. This means, that no input is needed and no output can be produced. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a156a5cb9b6219a84e4e7db12c7e3150e}{Adler}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the adler checksum. This is either the checksum of all uncompressed bytes returned by inflate(), or if needs\+Dictionary() returns true (and thus no output was yet produced) this is the adler checksum of the expected dictionary. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a521be3f2a7835c37116298fcf732a058}{Total\+Out}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the total number of output bytes returned by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}{Inflate()}. \end{DoxyCompactList}\item 
+long \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_af6d1546322fefbace3c87f4a62998073}{Total\+In}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the total number of processed compressed input bytes. \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9b2f8ccdb35d861acb6c8d995f75d35e}{Remaining\+Input}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the number of unprocessed input bytes. Useful, if the end of the stream is reached and you want to further process the bytes after the deflate stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater}{Inflater} is used to decompress data that has been compressed according to the \char`\"{}deflate\char`\"{} standard described in rfc1951. 
+
+By default Zlib (rfc1950) headers and footers are expected in the input. You can use constructor {\ttfamily  public \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}{Inflater(bool no\+Header)}} passing true if there is no Zlib header information
+
+The usage is as following. First you have to set some input with {\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}{Set\+Input()}}, then \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}{Inflate()} it. If inflate doesn\textquotesingle{}t inflate any bytes there may be three reasons\+: 
+\begin{DoxyItemize}
+\item \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} returns true because the input buffer is empty. You have to provide more input with {\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}{Set\+Input()}}. N\+O\+TE\+: \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} also returns true when, the stream is finished.  
+\item \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary()} returns true, you have to provide a preset dictionary with {\ttfamily \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}{Set\+Dictionary()}}. 
+\item Is\+Finished returns true, the inflater has finished. 
+\end{DoxyItemize}Once the first output byte is produced, a dictionary will not be needed at a later stage.
+
+author of the original java version \+: John Leuner, Jochen Hoenicke 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflater@{Inflater}}
+\index{Inflater@{Inflater}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflater()}{Inflater()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflater (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new inflater or R\+F\+C1951 decompressor R\+F\+C1950/\+Zlib headers and footers will be expected in the input data 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflater@{Inflater}}
+\index{Inflater@{Inflater}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflater()}{Inflater()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflater (\begin{DoxyParamCaption}\item[{bool}]{no\+Header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new inflater. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no\+Header} & True if no R\+F\+C1950/\+Zlib header and footer fields are expected in the input data\\
+\hline
+\end{DoxyParams}
+This is used for G\+Z\+I\+Ped/\+Zipped input.
+
+For compatibility with Sun J\+DK you should provide one byte of input more than needed in this case. \mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa1518202b80f82414879742fd1bc5e44}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflater@{Inflater}}
+\index{Inflater@{Inflater}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflater()}{Inflater()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflater (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new inflater or R\+F\+C1951 decompressor R\+F\+C1950/\+Zlib headers and footers will be expected in the input data 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a89e97fe8e5522be57c2de110655fbefb}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflater@{Inflater}}
+\index{Inflater@{Inflater}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflater()}{Inflater()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflater (\begin{DoxyParamCaption}\item[{bool}]{no\+Header }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new inflater. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no\+Header} & True if no R\+F\+C1950/\+Zlib header and footer fields are expected in the input data\\
+\hline
+\end{DoxyParams}
+This is used for G\+Z\+I\+Ped/\+Zipped input.
+
+For compatibility with Sun J\+DK you should provide one byte of input more than needed in this case. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflate@{Inflate}}
+\index{Inflate@{Inflate}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflate()}{Inflate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflate (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary()}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}{Is\+Finished()} returns true, to determine why no further output is produced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the output buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written to the buffer, 0 if no further output can be produced. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if buffer has length 0. \\
+\hline
+{\em System.\+Format\+Exception} & if deflated stream is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflate@{Inflate}}
+\index{Inflate@{Inflate}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflate()}{Inflate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflate (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether needs\+Dictionary(), needs\+Input() or finished() returns true, to determine why no further output is produced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the output buffer. \\
+\hline
+{\em offset} & the offset in buffer where storing starts. \\
+\hline
+{\em count} & the maximum number of bytes to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written to the buffer, 0 if no further output can be produced. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if count is less than 0. \\
+\hline
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if the index and / or count are wrong. \\
+\hline
+{\em System.\+Format\+Exception} & if deflated stream is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflate@{Inflate}}
+\index{Inflate@{Inflate}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflate()}{Inflate()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflate (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}{Is\+Needing\+Dictionary()}, \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}{Is\+Needing\+Input()} or \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}{Is\+Finished()} returns true, to determine why no further output is produced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the output buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written to the buffer, 0 if no further output can be produced. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if buffer has length 0. \\
+\hline
+{\em System.\+Format\+Exception} & if deflated stream is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_aa77071f9ea123757cf11bae7b0fc4ea9}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Inflate@{Inflate}}
+\index{Inflate@{Inflate}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Inflate()}{Inflate()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Inflate (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inflates the compressed stream to the output buffer. If this returns 0, you should check, whether needs\+Dictionary(), needs\+Input() or finished() returns true, to determine why no further output is produced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the output buffer. \\
+\hline
+{\em offset} & the offset in buffer where storing starts. \\
+\hline
+{\em count} & the maximum number of bytes to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written to the buffer, 0 if no further output can be produced. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if count is less than 0. \\
+\hline
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & if the index and / or count are wrong. \\
+\hline
+{\em System.\+Format\+Exception} & if deflated stream is invalid. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the inflater so that a new stream can be decompressed. All pending input and output will be discarded. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_acbaa9910d61e471a2832390c29734370}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the inflater so that a new stream can be decompressed. All pending input and output will be discarded. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Dictionary@{Set\+Dictionary}}
+\index{Set\+Dictionary@{Set\+Dictionary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Dictionary()}{SetDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Dictionary (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The dictionary. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Dictionary@{Set\+Dictionary}}
+\index{Set\+Dictionary@{Set\+Dictionary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Dictionary()}{SetDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Dictionary (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{index,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The dictionary. \\
+\hline
+{\em index} & The index into buffer where the dictionary starts. \\
+\hline
+{\em count} & The number of bytes in the dictionary. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Invalid\+Operation\+Exception} & No dictionary is needed. \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & The adler checksum for the buffer is invalid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a77ae6cd5e3d6cb82e366b0ffb453f4b1}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Dictionary@{Set\+Dictionary}}
+\index{Set\+Dictionary@{Set\+Dictionary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Dictionary()}{SetDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Dictionary (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The dictionary. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a4fbf4573284725673347f385d0471fa4}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Dictionary@{Set\+Dictionary}}
+\index{Set\+Dictionary@{Set\+Dictionary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Dictionary()}{SetDictionary()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Dictionary (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{index,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the preset dictionary. This should only be called, if needs\+Dictionary() returns true and it should set the same dictionary, that was used for deflating. The get\+Adler() function returns the checksum of the dictionary needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The dictionary. \\
+\hline
+{\em index} & The index into buffer where the dictionary starts. \\
+\hline
+{\em count} & The number of bytes in the dictionary. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Invalid\+Operation\+Exception} & No dictionary is needed. \\
+\hline
+{\em \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_sharp_zip_base_exception}{Sharp\+Zip\+Base\+Exception}} & The adler checksum for the buffer is invalid \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the input. This should only be called, if needs\+Input() returns true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{index,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the input. This should only be called, if needs\+Input() returns true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The source of input data \\
+\hline
+{\em index} & The index into buffer where the input starts. \\
+\hline
+{\em count} & The number of bytes of input to use. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Invalid\+Operation\+Exception} & No input is needed. \\
+\hline
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & The index and/or count are wrong. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_ab70e1ce75cf7f35e53d6ad810a0bcec2}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the input. This should only be called, if needs\+Input() returns true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9c0b4653fd574dc51dfa2975d9f9248a}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Set\+Input@{Set\+Input}}
+\index{Set\+Input@{Set\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Set\+Input()}{SetInput()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Set\+Input (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{index,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the input. This should only be called, if needs\+Input() returns true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The source of input data \\
+\hline
+{\em index} & The index into buffer where the input starts. \\
+\hline
+{\em count} & The number of bytes of input to use. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Invalid\+Operation\+Exception} & No input is needed. \\
+\hline
+{\em System.\+Argument\+Out\+Of\+Range\+Exception} & The index and/or count are wrong. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a156a5cb9b6219a84e4e7db12c7e3150e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a156a5cb9b6219a84e4e7db12c7e3150e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Adler@{Adler}}
+\index{Adler@{Adler}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Adler}{Adler}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Adler\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the adler checksum. This is either the checksum of all uncompressed bytes returned by inflate(), or if needs\+Dictionary() returns true (and thus no output was yet produced) this is the adler checksum of the expected dictionary. 
+
+\begin{DoxyReturn}{Returns}
+the adler checksum. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a0ade6f928ed3c7d1a9c8c9919c98141e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Is\+Finished@{Is\+Finished}}
+\index{Is\+Finished@{Is\+Finished}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Is\+Finished}{IsFinished}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Is\+Finished\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true, if the inflater has finished. This means, that no input is needed and no output can be produced. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9db69836f41167ffd5e0d1dc5832594c}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Is\+Needing\+Dictionary@{Is\+Needing\+Dictionary}}
+\index{Is\+Needing\+Dictionary@{Is\+Needing\+Dictionary}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Is\+Needing\+Dictionary}{IsNeedingDictionary}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Is\+Needing\+Dictionary\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true, if a preset dictionary is needed to inflate the input. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a3033837c6e5987009c6bf51c4952a5fc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Is\+Needing\+Input@{Is\+Needing\+Input}}
+\index{Is\+Needing\+Input@{Is\+Needing\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Is\+Needing\+Input}{IsNeedingInput}}
+{\footnotesize\ttfamily bool I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Is\+Needing\+Input\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns true, if the input buffer is empty. You should then call set\+Input(). N\+O\+TE\+: This method also returns true when the stream is finished. 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9b2f8ccdb35d861acb6c8d995f75d35e}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a9b2f8ccdb35d861acb6c8d995f75d35e}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Remaining\+Input@{Remaining\+Input}}
+\index{Remaining\+Input@{Remaining\+Input}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Remaining\+Input}{RemainingInput}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Remaining\+Input\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the number of unprocessed input bytes. Useful, if the end of the stream is reached and you want to further process the bytes after the deflate stream. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes of the input which have not been processed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_af6d1546322fefbace3c87f4a62998073}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_af6d1546322fefbace3c87f4a62998073}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Total\+In@{Total\+In}}
+\index{Total\+In@{Total\+In}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Total\+In}{TotalIn}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Total\+In\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the total number of processed compressed input bytes. 
+
+\begin{DoxyReturn}{Returns}
+The total number of bytes of processed input bytes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a521be3f2a7835c37116298fcf732a058}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a521be3f2a7835c37116298fcf732a058}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}!Total\+Out@{Total\+Out}}
+\index{Total\+Out@{Total\+Out}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Inflater}}
+\subsubsection{\texorpdfstring{Total\+Out}{TotalOut}}
+{\footnotesize\ttfamily long I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Inflater.\+Total\+Out\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the total number of output bytes returned by \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater_a73bfcbd5d20b4838bd28364fff12324e}{Inflate()}. 
+
+\begin{DoxyReturn}{Returns}
+the total number of output bytes. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/\+Compression/Inflater.\+cs\end{DoxyCompactItemize}

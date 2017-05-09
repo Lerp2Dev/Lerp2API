@@ -1,0 +1,110 @@
+\hypertarget{namespace_full_serializer}{}\section{Full\+Serializer Namespace Reference}
+\label{namespace_full_serializer}\index{Full\+Serializer@{Full\+Serializer}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_aot_compilation_manager}{fs\+Aot\+Compilation\+Manager}
+\begin{DoxyCompactList}\small\item\em The A\+OT compilation manager \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_base_converter}{fs\+Base\+Converter}
+\begin{DoxyCompactList}\small\item\em The serialization converter allows for customization of the serialization process. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_config}{fs\+Config}
+\begin{DoxyCompactList}\small\item\em Enables some top-\/level customization of Full Serializer. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_context}{fs\+Context}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_full_serializer_1_1fs_context}{fs\+Context} stores global metadata that can be used to customize how fs\+Converters operate during serialization. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_converter}{fs\+Converter}
+\begin{DoxyCompactList}\small\item\em The serialization converter allows for customization of the serialization process. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_converter_registrar}{fs\+Converter\+Registrar}
+\begin{DoxyCompactList}\small\item\em This class allows arbitrary code to easily register global converters. To add a converter, simply declare a new field called \char`\"{}\+Register\+\_\+$\ast$\char`\"{} that stores the type of converter you would like to add. Alternatively, you can do the same with a method called \char`\"{}\+Register\+\_\+$\ast$\char`\"{}; just add the converter type to the {\ttfamily Converters} list. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}
+\begin{DoxyCompactList}\small\item\em A union type that stores a serialized value. The stored type can be one of six different types\+: null, boolean, double, Int64, string, Dictionary, or List. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_direct_converter}{fs\+Direct\+Converter}
+\begin{DoxyCompactList}\small\item\em The direct converter is similar to a regular converter, except that it targets specifically only one type. This means that it can be used without performance impact when discovering converters. It is strongly recommended that you derive from \hyperlink{class_full_serializer_1_1fs_direct_converter}{fs\+Direct\+Converter}\{T\+Model\}. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_duplicate_version_name_exception}{fs\+Duplicate\+Version\+Name\+Exception}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_forward_attribute}{fs\+Forward\+Attribute}
+\begin{DoxyCompactList}\small\item\em This allows you to forward serialization of an object to one of its members. For example, \end{DoxyCompactList}\item 
+class {\bfseries fs\+Global\+Config}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_ignore_attribute}{fs\+Ignore\+Attribute}
+\begin{DoxyCompactList}\small\item\em The given property or field annotated with \mbox{[}Json\+Ignore\mbox{]} will not be serialized. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_full_serializer_1_1fs_i_serialization_callbacks}{fs\+I\+Serialization\+Callbacks}
+\begin{DoxyCompactList}\small\item\em Extend this interface on your type to receive notifications about serialization/deserialization events. If you don\textquotesingle{}t have access to the type itself, then you can write an \hyperlink{class_full_serializer_1_1fs_object_processor}{fs\+Object\+Processor} instead. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_json_parser}{fs\+Json\+Parser}
+\begin{DoxyCompactList}\small\item\em A simple recursive descent parser for J\+S\+ON. \end{DoxyCompactList}\item 
+class {\bfseries fs\+Json\+Printer}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_meta_type}{fs\+Meta\+Type}
+\begin{DoxyCompactList}\small\item\em Meta\+Type contains metadata about a type. This is used by the reflection serializer. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_missing_version_constructor_exception}{fs\+Missing\+Version\+Constructor\+Exception}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_object_attribute}{fs\+Object\+Attribute}
+\begin{DoxyCompactList}\small\item\em This attribute controls some serialization behavior for a type. See the comments on each of the fields for more information. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_object_processor}{fs\+Object\+Processor}
+\item 
+class \hyperlink{class_full_serializer_1_1fs_property_attribute}{fs\+Property\+Attribute}
+\begin{DoxyCompactList}\small\item\em Explicitly mark a property to be serialized. This can also be used to give the name that the property should use during serialization. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}
+\begin{DoxyCompactList}\small\item\em The result of some sort of operation. A result is either successful or not, but if it is successful then there may be a set of warnings/messages associated with it. These warnings describe the performed error recovery operations. \end{DoxyCompactList}\item 
+class \hyperlink{class_full_serializer_1_1fs_serializer}{fs\+Serializer}
+\item 
+class {\bfseries fs\+Type\+Extensions}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}{fs\+Data\+Type} \{ \newline
+{\bfseries Array}, 
+{\bfseries Object}, 
+{\bfseries Double}, 
+{\bfseries Int64}, 
+\newline
+{\bfseries Boolean}, 
+{\bfseries String}, 
+{\bfseries Null}
+ \}\begin{DoxyCompactList}\small\item\em The actual type that a Json\+Data instance can store. \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}{fs\+Member\+Serialization} \{ \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8aea85bf11bf435701420717c07f3fbb6d}{fs\+Member\+Serialization.\+Opt\+In}, 
+\hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a416ca54b14eaffaf58722fc0441a0f2a}{fs\+Member\+Serialization.\+Opt\+Out}, 
+\hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}{fs\+Member\+Serialization.\+Default}
+ \}\begin{DoxyCompactList}\small\item\em Controls how the reflected converter handles member serialization. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}\label{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}} 
+\index{Full\+Serializer@{Full\+Serializer}!fs\+Data\+Type@{fs\+Data\+Type}}
+\index{fs\+Data\+Type@{fs\+Data\+Type}!Full\+Serializer@{Full\+Serializer}}
+\subsubsection{\texorpdfstring{fs\+Data\+Type}{fsDataType}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}{Full\+Serializer.\+fs\+Data\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The actual type that a Json\+Data instance can store. 
+
+\mbox{\Hypertarget{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}\label{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}} 
+\index{Full\+Serializer@{Full\+Serializer}!fs\+Member\+Serialization@{fs\+Member\+Serialization}}
+\index{fs\+Member\+Serialization@{fs\+Member\+Serialization}!Full\+Serializer@{Full\+Serializer}}
+\subsubsection{\texorpdfstring{fs\+Member\+Serialization}{fsMemberSerialization}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8}{Full\+Serializer.\+fs\+Member\+Serialization}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Controls how the reflected converter handles member serialization. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Opt\+In@{Opt\+In}!Full\+Serializer@{Full\+Serializer}}\index{Full\+Serializer@{Full\+Serializer}!Opt\+In@{Opt\+In}}}\mbox{\Hypertarget{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8aea85bf11bf435701420717c07f3fbb6d}\label{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8aea85bf11bf435701420717c07f3fbb6d}} 
+Opt\+In&Only members with \mbox{[}Serialize\+Field\mbox{]} or \mbox{[}fs\+Property\mbox{]} attributes are serialized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Opt\+Out@{Opt\+Out}!Full\+Serializer@{Full\+Serializer}}\index{Full\+Serializer@{Full\+Serializer}!Opt\+Out@{Opt\+Out}}}\mbox{\Hypertarget{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a416ca54b14eaffaf58722fc0441a0f2a}\label{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a416ca54b14eaffaf58722fc0441a0f2a}} 
+Opt\+Out&Only members with \mbox{[}Not\+Serialized\mbox{]} or \mbox{[}fs\+Ignore\mbox{]} will not be serialized. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Default@{Default}!Full\+Serializer@{Full\+Serializer}}\index{Full\+Serializer@{Full\+Serializer}!Default@{Default}}}\mbox{\Hypertarget{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}\label{namespace_full_serializer_ad0dc98cd54a3d07f8c579d82585906f8a7a1920d61156abc05a60135aefe8bc67}} 
+Default&The default member serialization behavior is applied. \\
+\hline
+
+\end{DoxyEnumFields}

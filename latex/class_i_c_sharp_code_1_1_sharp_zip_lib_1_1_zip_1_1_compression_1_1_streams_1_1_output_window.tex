@@ -1,0 +1,355 @@
+\hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window}{}\section{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window Class Reference}
+\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window}\index{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window@{I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window}}
+
+
+Contains the output from the Inflation process. We need to have a window so that we can refer backwards into the output stream to repeat stuff.~\newline
+ Author of the original java version \+: John Leuner  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}{Write} (int value)
+\begin{DoxyCompactList}\small\item\em Write a byte to this output window \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}{Repeat} (int length, int distance)
+\begin{DoxyCompactList}\small\item\em Append a byte pattern already in the window itself \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}{Copy\+Stored} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} input, int length)
+\begin{DoxyCompactList}\small\item\em Copy from input manipulator to internal window \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}{Copy\+Dict} (byte\mbox{[}$\,$\mbox{]} dictionary, int offset, int length)
+\begin{DoxyCompactList}\small\item\em Copy dictionary to window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}{Get\+Free\+Space} ()
+\begin{DoxyCompactList}\small\item\em Get remaining unfilled space in window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} ()
+\begin{DoxyCompactList}\small\item\em Get bytes available for output in window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}{Copy\+Output} (byte\mbox{[}$\,$\mbox{]} output, int offset, int len)
+\begin{DoxyCompactList}\small\item\em Copy contents of window to output \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Reset by clearing window so \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} returns 0 \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}{Write} (int value)
+\begin{DoxyCompactList}\small\item\em Write a byte to this output window \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}{Repeat} (int length, int distance)
+\begin{DoxyCompactList}\small\item\em Append a byte pattern already in the window itself \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}{Copy\+Stored} (\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator} input, int length)
+\begin{DoxyCompactList}\small\item\em Copy from input manipulator to internal window \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}{Copy\+Dict} (byte\mbox{[}$\,$\mbox{]} dictionary, int offset, int length)
+\begin{DoxyCompactList}\small\item\em Copy dictionary to window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}{Get\+Free\+Space} ()
+\begin{DoxyCompactList}\small\item\em Get remaining unfilled space in window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} ()
+\begin{DoxyCompactList}\small\item\em Get bytes available for output in window \end{DoxyCompactList}\item 
+int \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}{Copy\+Output} (byte\mbox{[}$\,$\mbox{]} output, int offset, int len)
+\begin{DoxyCompactList}\small\item\em Copy contents of window to output \end{DoxyCompactList}\item 
+void \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Reset by clearing window so \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} returns 0 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the output from the Inflation process. We need to have a window so that we can refer backwards into the output stream to repeat stuff.~\newline
+ Author of the original java version \+: John Leuner 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Dict@{Copy\+Dict}}
+\index{Copy\+Dict@{Copy\+Dict}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Dict()}{CopyDict()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Dict (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{dictionary,  }\item[{int}]{offset,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy dictionary to window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & source dictionary\\
+\hline
+{\em offset} & offset of start in source dictionary\\
+\hline
+{\em length} & length of dictionary\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If window isnt empty \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d169e228a99a67262fa9c6ce549e251}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Dict@{Copy\+Dict}}
+\index{Copy\+Dict@{Copy\+Dict}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Dict()}{CopyDict()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Dict (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{dictionary,  }\item[{int}]{offset,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy dictionary to window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & source dictionary\\
+\hline
+{\em offset} & offset of start in source dictionary\\
+\hline
+{\em length} & length of dictionary\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If window isnt empty \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Output@{Copy\+Output}}
+\index{Copy\+Output@{Copy\+Output}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Output()}{CopyOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Output (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{output,  }\item[{int}]{offset,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contents of window to output 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & buffer to copy to\\
+\hline
+{\em offset} & offset to start at\\
+\hline
+{\em len} & number of bytes to count\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If a window underflow occurs \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2ed1c8e829e63d30e72ddbd18cbc75dc}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Output@{Copy\+Output}}
+\index{Copy\+Output@{Copy\+Output}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Output()}{CopyOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Output (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{output,  }\item[{int}]{offset,  }\item[{int}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy contents of window to output 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & buffer to copy to\\
+\hline
+{\em offset} & offset to start at\\
+\hline
+{\em len} & number of bytes to count\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If a window underflow occurs \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Stored@{Copy\+Stored}}
+\index{Copy\+Stored@{Copy\+Stored}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Stored()}{CopyStored()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Stored (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator}}]{input,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy from input manipulator to internal window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & source of data\\
+\hline
+{\em length} & length of data to copy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes copied
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a2d2ae06a42c52d98946f46db44d565f0}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Copy\+Stored@{Copy\+Stored}}
+\index{Copy\+Stored@{Copy\+Stored}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Copy\+Stored()}{CopyStored()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Copy\+Stored (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_stream_manipulator}{Stream\+Manipulator}}]{input,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy from input manipulator to internal window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & source of data\\
+\hline
+{\em length} & length of data to copy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes copied
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Get\+Available@{Get\+Available}}
+\index{Get\+Available@{Get\+Available}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Get\+Available()}{GetAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Get\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get bytes available for output in window 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes filled
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Get\+Available@{Get\+Available}}
+\index{Get\+Available@{Get\+Available}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Get\+Available()}{GetAvailable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Get\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get bytes available for output in window 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes filled
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Get\+Free\+Space@{Get\+Free\+Space}}
+\index{Get\+Free\+Space@{Get\+Free\+Space}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Get\+Free\+Space()}{GetFreeSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Get\+Free\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get remaining unfilled space in window 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes left in window
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af9e1b4ad75dfa1aa878fc6daa8a3d5e3}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Get\+Free\+Space@{Get\+Free\+Space}}
+\index{Get\+Free\+Space@{Get\+Free\+Space}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Get\+Free\+Space()}{GetFreeSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Get\+Free\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get remaining unfilled space in window 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes left in window
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Repeat@{Repeat}}
+\index{Repeat@{Repeat}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Repeat()}{Repeat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Repeat (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a byte pattern already in the window itself 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & length of pattern to copy\\
+\hline
+{\em distance} & distance from end of window pattern occurs\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If the repeated data overflows the window \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a178618bcf366724847f54fd89d354387}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Repeat@{Repeat}}
+\index{Repeat@{Repeat}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Repeat()}{Repeat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Repeat (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a byte pattern already in the window itself 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & length of pattern to copy\\
+\hline
+{\em distance} & distance from end of window pattern occurs\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If the repeated data overflows the window \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset by clearing window so \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} returns 0 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_af69f36602755df59247e2b16b77b0cd5}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Reset@{Reset}}
+\index{Reset@{Reset}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset by clearing window so \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a1ae7b10eae496ec980847ad1b89fa689}{Get\+Available} returns 0 
+
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Write (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a byte to this output window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to write\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & if window is full \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}\label{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_output_window_a907667959a906512f4e133765f58f5f6}} 
+\index{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}!Write@{Write}}
+\index{Write@{Write}!I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window@{I\+C\+Sharp\+Code\+::\+Sharp\+Zip\+Lib\+::\+Zip\+::\+Compression\+::\+Streams\+::\+Output\+Window}}
+\subsubsection{\texorpdfstring{Write()}{Write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+C\+Sharp\+Code.\+Sharp\+Zip\+Lib.\+Zip.\+Compression.\+Streams.\+Output\+Window.\+Write (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a byte to this output window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to write\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & if window is full \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Utility/\+Sharp\+Z\+I\+P/src/\+Zip/\+Compression/\+Streams/Output\+Window.\+cs\end{DoxyCompactItemize}

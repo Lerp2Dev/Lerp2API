@@ -1,0 +1,68 @@
+\hypertarget{class_serialize_event_system}{}\section{Serialize\+Event\+System Class Reference}
+\label{class_serialize_event_system}\index{Serialize\+Event\+System@{Serialize\+Event\+System}}
+Inheritance diagram for Serialize\+Event\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_serialize_event_system}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_serialize_event_system_1_1_stored_information}{Stored\+Information}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_serialize_event_system_a433cd679d73a8b4c4823e960b224231b}{Serialize} (Component component)
+\begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
+void \hyperlink{class_serialize_event_system_a27ee6101f51abf181d2bdf755708cdeb}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
+\begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serialize_event_system_a27ee6101f51abf181d2bdf755708cdeb}\label{class_serialize_event_system_a27ee6101f51abf181d2bdf755708cdeb}} 
+\index{Serialize\+Event\+System@{Serialize\+Event\+System}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Serialize\+Event\+System@{Serialize\+Event\+System}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void Serialize\+Event\+System.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{Component}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deserialize the specified data into the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data that represents the component, produced by Serialize \\
+\hline
+{\em instance} & The instance to target \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}{I\+Component\+Serializer}.
+
+\mbox{\Hypertarget{class_serialize_event_system_a433cd679d73a8b4c4823e960b224231b}\label{class_serialize_event_system_a433cd679d73a8b4c4823e960b224231b}} 
+\index{Serialize\+Event\+System@{Serialize\+Event\+System}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Serialize\+Event\+System@{Serialize\+Event\+System}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Serialize\+Event\+System.\+Serialize (\begin{DoxyParamCaption}\item[{Component}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize the specified component to a byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component to be serialized \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Unity\+Serialization\+Extensions.\+cs\end{DoxyCompactItemize}

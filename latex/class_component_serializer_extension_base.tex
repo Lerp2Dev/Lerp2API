@@ -1,0 +1,69 @@
+\hypertarget{class_component_serializer_extension_base}{}\section{Component\+Serializer\+Extension\+Base$<$ T $>$ Class Template Reference}
+\label{class_component_serializer_extension_base}\index{Component\+Serializer\+Extension\+Base$<$ T $>$@{Component\+Serializer\+Extension\+Base$<$ T $>$}}
+Inheritance diagram for Component\+Serializer\+Extension\+Base$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_component_serializer_extension_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}\label{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}} 
+abstract I\+Enumerable$<$ object $>$ {\bfseries Save} (T target)
+\item 
+\mbox{\Hypertarget{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}\label{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}} 
+abstract void {\bfseries Load\+Into} (object\mbox{[}$\,$\mbox{]} data, T instance)
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}{Serialize} (Component component)
+\begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
+void \hyperlink{class_component_serializer_extension_base_a003b02386876cd68c588aef276124b0c}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
+\begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_component_serializer_extension_base_a003b02386876cd68c588aef276124b0c}\label{class_component_serializer_extension_base_a003b02386876cd68c588aef276124b0c}} 
+\index{Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}$<$ T $>$.Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{Component}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deserialize the specified data into the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data that represents the component, produced by Serialize \\
+\hline
+{\em instance} & The instance to target \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}{I\+Component\+Serializer}.
+
+\mbox{\Hypertarget{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}\label{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}} 
+\index{Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}$<$ T $>$.Serialize (\begin{DoxyParamCaption}\item[{Component}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize the specified component to a byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component to be serialized \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Unity\+Serialization\+Extensions.\+cs\end{DoxyCompactItemize}

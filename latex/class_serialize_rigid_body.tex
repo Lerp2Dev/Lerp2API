@@ -1,0 +1,68 @@
+\hypertarget{class_serialize_rigid_body}{}\section{Serialize\+Rigid\+Body Class Reference}
+\label{class_serialize_rigid_body}\index{Serialize\+Rigid\+Body@{Serialize\+Rigid\+Body}}
+Inheritance diagram for Serialize\+Rigid\+Body\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_serialize_rigid_body}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_serialize_rigid_body_1_1_rigid_body_info}{Rigid\+Body\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_serialize_rigid_body_a5b70b8af5b0b775bc961eb553a36b438}{Serialize} (Component component)
+\begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
+void \hyperlink{class_serialize_rigid_body_a5d6e7d0282184b45b23d579b872e89a2}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
+\begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serialize_rigid_body_a5d6e7d0282184b45b23d579b872e89a2}\label{class_serialize_rigid_body_a5d6e7d0282184b45b23d579b872e89a2}} 
+\index{Serialize\+Rigid\+Body@{Serialize\+Rigid\+Body}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Serialize\+Rigid\+Body@{Serialize\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily void Serialize\+Rigid\+Body.\+Deserialize (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{Component}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deserialize the specified data into the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data that represents the component, produced by Serialize \\
+\hline
+{\em instance} & The instance to target \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}{I\+Component\+Serializer}.
+
+\mbox{\Hypertarget{class_serialize_rigid_body_a5b70b8af5b0b775bc961eb553a36b438}\label{class_serialize_rigid_body_a5b70b8af5b0b775bc961eb553a36b438}} 
+\index{Serialize\+Rigid\+Body@{Serialize\+Rigid\+Body}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Serialize\+Rigid\+Body@{Serialize\+Rigid\+Body}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Serialize\+Rigid\+Body.\+Serialize (\begin{DoxyParamCaption}\item[{Component}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialize the specified component to a byte array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component to be serialized \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Project/\+Serializers/unityserializer-\/ng/\+Serialization/Unity\+Serialization\+Extensions.\+cs\end{DoxyCompactItemize}
