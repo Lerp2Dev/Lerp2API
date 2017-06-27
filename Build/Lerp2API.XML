@@ -1608,10 +1608,10 @@
             <param name="exc">The exception to prepare.</param>
         </member>
         <member name="T:System.Threading.SemaphoreSlim">
-            <summary>
-            Simplified implementation of SemaphoreSlim.
+             <summary>
+             Simplified implementation of SemaphoreSlim.
             
-            </summary>
+             </summary>
         </member>
         <member name="M:System.Threading.SemaphoreSlim.#ctor(System.Int32)">
             <summary>
@@ -2020,14 +2020,14 @@
             <remarks>
             <para>
             A <see cref="T:System.Threading.CancellationToken"/> may be created directly in an unchangeable canceled or non-canceled state
-            using the CancellationToken's constructors. However, to have a CancellationToken that can change 
-            from a non-canceled to a canceled state, 
+            using the CancellationToken's constructors. However, to have a CancellationToken that can change
+            from a non-canceled to a canceled state,
             <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> must be used.
-            CancellationTokenSource exposes the associated CancellationToken that may be canceled by the source through its 
-            <see cref="P:System.Threading.CancellationTokenSource.Token">Token</see> property. 
+            CancellationTokenSource exposes the associated CancellationToken that may be canceled by the source through its
+            <see cref="P:System.Threading.CancellationTokenSource.Token">Token</see> property.
             </para>
             <para>
-            Once canceled, a token may not transition to a non-canceled state, and a token whose 
+            Once canceled, a token may not transition to a non-canceled state, and a token whose
             <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> is false will never change to one that can be canceled.
             </para>
             <para>
@@ -2050,13 +2050,13 @@
             <value>Whether cancellation has been requested for this token.</value>
             <remarks>
             <para>
-            This property indicates whether cancellation has been requested for this token, 
+            This property indicates whether cancellation has been requested for this token,
             either through the token initially being construted in a canceled state, or through
-            calling <see cref="M:System.Threading.CancellationTokenSource.Cancel">Cancel</see> 
+            calling <see cref="M:System.Threading.CancellationTokenSource.Cancel">Cancel</see>
             on the token's associated <see cref="T:System.Threading.CancellationTokenSource"/>.
             </para>
             <para>
-            If this property is true, it only guarantees that cancellation has been requested.  
+            If this property is true, it only guarantees that cancellation has been requested.
             It does not guarantee that every registered handler
             has finished executing, nor that cancellation requests have finished propagating
             to all registered handlers.  Additional synchronization may be required,
@@ -2103,7 +2103,7 @@
             by the <paramref name="canceled"/> parameter.  If <paramref name="canceled"/> is false,
             both <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> and <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will be false.
             If <paramref name="canceled"/> is true,
-            both <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> and <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will be true. 
+            both <see cref="P:System.Threading.CancellationToken.CanBeCanceled"/> and <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> will be true.
             </remarks>
         </member>
         <member name="M:System.Threading.CancellationToken.Register(System.Action)">
@@ -2122,13 +2122,13 @@
             </para>
             </remarks>
             <param name="callback">The delegate to be executed when the <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.</param>
-            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can 
+            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can
             be used to deregister the callback.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="callback"/> is null.</exception>
         </member>
         <member name="M:System.Threading.CancellationToken.Register(System.Action{System.Object},System.Object)">
             <summary>
-            Registers a delegate that will be called when this 
+            Registers a delegate that will be called when this
             <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.
             </summary>
             <remarks>
@@ -2144,30 +2144,30 @@
             </remarks>
             <param name="callback">The delegate to be executed when the <see cref="T:System.Threading.CancellationToken">CancellationToken</see> is canceled.</param>
             <param name="state">The state to pass to the <paramref name="callback"/> when the delegate is invoked.  This may be null.</param>
-            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can 
+            <returns>The <see cref="T:System.Threading.CancellationTokenRegistration"/> instance that can
             be used to deregister the callback.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="callback"/> is null.</exception>
         </member>
         <member name="M:System.Threading.CancellationToken.Equals(System.Threading.CancellationToken)">
             <summary>
-            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the
             specified token.
             </summary>
             <param name="other">The other <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to which to compare this
             instance.</param>
             <returns>True if the instances are equal; otherwise, false. Two tokens are equal if they are associated
-            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed 
+            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed
             from public CancellationToken constructors and their <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> values are equal.</returns>
         </member>
         <member name="M:System.Threading.CancellationToken.Equals(System.Object)">
             <summary>
-            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the
             specified <see cref="T:System.Object"/>.
             </summary>
             <param name="other">The other object to which to compare this instance.</param>
             <returns>True if <paramref name="other"/> is a <see cref="T:System.Threading.CancellationToken">CancellationToken</see>
             and if the two instances are equal; otherwise, false. Two tokens are equal if they are associated
-            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed 
+            with the same <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> or if they were both constructed
             from public CancellationToken constructors and their <see cref="P:System.Threading.CancellationToken.IsCancellationRequested"/> values are equal.</returns>
             <exception cref="T:System.ObjectDisposedException">An associated <see
             cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
@@ -2206,7 +2206,7 @@
             <remarks>
             This method provides functionality equivalent to:
             <code>
-            if (token.IsCancellationRequested) 
+            if (token.IsCancellationRequested)
                throw new OperationCanceledException(token);
             </code>
             </remarks>
@@ -2231,7 +2231,7 @@
         </member>
         <member name="M:System.Threading.CancellationTokenRegistration.Dispose">
             <summary>
-            Disposes of the registration and unregisters the target callback from the associated 
+            Disposes of the registration and unregisters the target callback from the associated
             <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
             If the target callback is currently executing this method will wait until it completes, except
             in the degenerate cases where a callback method deregisters itself.
@@ -2257,26 +2257,26 @@
         </member>
         <member name="M:System.Threading.CancellationTokenRegistration.Equals(System.Object)">
             <summary>
-            Determines whether the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance is equal to the 
+            Determines whether the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance is equal to the
             specified <see cref="T:System.Object"/>.
-            </summary> 
+            </summary>
             <param name="obj">The other object to which to compare this instance.</param>
             <returns>True, if both this and <paramref name="obj"/> are equal. False, otherwise.
             Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
-            they both refer to the output of a single call to the same Register method of a 
-            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+            they both refer to the output of a single call to the same Register method of a
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
             </returns>
         </member>
         <member name="M:System.Threading.CancellationTokenRegistration.Equals(System.Threading.CancellationTokenRegistration)">
             <summary>
-            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+            Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the
             specified <see cref="T:System.Object"/>.
-            </summary> 
+            </summary>
             <param name="other">The other <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> to which to compare this instance.</param>
             <returns>True, if both this and <paramref name="other"/> are equal. False, otherwise.
             Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
-            they both refer to the output of a single call to the same Register method of a 
-            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+            they both refer to the output of a single call to the same Register method of a
+            <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
             </returns>
         </member>
         <member name="M:System.Threading.CancellationTokenRegistration.GetHashCode">
@@ -2308,7 +2308,7 @@
         <member name="F:System.Threading.CancellationTokenSource.m_threadIDExecutingCallbacks">
             The ID of the thread currently executing the main body of CTS.Cancel()
             this helps us to know if a call to ctr.Dispose() is running 'within' a cancellation callback.
-            This is updated as we move between the main thread calling cts.Cancel() and any syncContexts that are used to 
+            This is updated as we move between the main thread calling cts.Cancel() and any syncContexts that are used to
             actually run the callbacks.
         </member>
         <member name="P:System.Threading.CancellationTokenSource.IsCancellationRequested">
@@ -2395,12 +2395,12 @@
             </exception>
             <remarks>
             <para>
-            The countdown for the delay starts during the call to the constructor.  When the delay expires, 
+            The countdown for the delay starts during the call to the constructor.  When the delay expires,
             the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
             not been canceled already.
             </para>
             <para>
-            Subsequent calls to CancelAfter will reset the delay for the constructed 
+            Subsequent calls to CancelAfter will reset the delay for the constructed
             <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
             canceled already.
             </para>
@@ -2416,12 +2416,12 @@
             </exception>
             <remarks>
             <para>
-            The countdown for the millisecondsDelay starts during the call to the constructor.  When the millisecondsDelay expires, 
+            The countdown for the millisecondsDelay starts during the call to the constructor.  When the millisecondsDelay expires,
             the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled (if it has
             not been canceled already).
             </para>
             <para>
-            Subsequent calls to CancelAfter will reset the millisecondsDelay for the constructed 
+            Subsequent calls to CancelAfter will reset the millisecondsDelay for the constructed
             <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
             canceled already.
             </para>
@@ -2434,8 +2434,8 @@
             <remarks>
             <para>
             The associated <see cref="T:System.Threading.CancellationToken" /> will be
-            notified of the cancellation and will transition to a state where 
-            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+            notified of the cancellation and will transition to a state where
+            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true.
             Any callbacks or cancelable operations
             registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
             </para>
@@ -2452,7 +2452,7 @@
             <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
             by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
             <exception cref="T:System.ObjectDisposedException">This <see
-            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception>
         </member>
         <member name="M:System.Threading.CancellationTokenSource.Cancel(System.Boolean)">
             <summary>
@@ -2461,16 +2461,16 @@
             <remarks>
             <para>
             The associated <see cref="T:System.Threading.CancellationToken" /> will be
-            notified of the cancellation and will transition to a state where 
-            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+            notified of the cancellation and will transition to a state where
+            <see cref="P:System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true.
             Any callbacks or cancelable operations
             registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
             </para>
             <para>
-            Cancelable operations and callbacks registered with the token should not throw exceptions. 
+            Cancelable operations and callbacks registered with the token should not throw exceptions.
             If <paramref name="throwOnFirstException"/> is true, an exception will immediately propagate out of the
             call to Cancel, preventing the remaining callbacks and cancelable operations from being processed.
-            If <paramref name="throwOnFirstException"/> is false, this overload will aggregate any 
+            If <paramref name="throwOnFirstException"/> is false, this overload will aggregate any
             exceptions thrown into a <see cref="T:System.AggregateException"/>,
             such that one callback throwing an exception will not prevent other registered callbacks from being executed.
             </para>
@@ -2483,7 +2483,7 @@
             <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
             by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
             <exception cref="T:System.ObjectDisposedException">This <see
-            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+            cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception>
         </member>
         <member name="M:System.Threading.CancellationTokenSource.CancelAfter(System.TimeSpan)">
             <summary>
@@ -2496,17 +2496,17 @@
             cref="T:System.Threading.CancellationTokenSource"/> has been disposed.
             </exception>
             <exception cref="T:System.ArgumentOutOfRangeException">
-            The exception thrown when <paramref name="delay"/> is less than -1 or 
+            The exception thrown when <paramref name="delay"/> is less than -1 or
             greater than Int32.MaxValue.
             </exception>
             <remarks>
             <para>
-            The countdown for the delay starts during this call.  When the delay expires, 
+            The countdown for the delay starts during this call.  When the delay expires,
             this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
             not been canceled already.
             </para>
             <para>
-            Subsequent calls to CancelAfter will reset the delay for this  
+            Subsequent calls to CancelAfter will reset the delay for this
             <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
             canceled already.
             </para>
@@ -2527,12 +2527,12 @@
             </exception>
             <remarks>
             <para>
-            The countdown for the millisecondsDelay starts during this call.  When the millisecondsDelay expires, 
+            The countdown for the millisecondsDelay starts during this call.  When the millisecondsDelay expires,
             this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
             not been canceled already.
             </para>
             <para>
-            Subsequent calls to CancelAfter will reset the millisecondsDelay for this  
+            Subsequent calls to CancelAfter will reset the millisecondsDelay for this
             <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
             canceled already.
             </para>
@@ -2571,9 +2571,9 @@
             </summary>
         </member>
         <member name="M:System.Threading.CancellationTokenSource.NotifyCancellation(System.Boolean)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(System.Boolean)">
             <summary>
@@ -2590,7 +2590,7 @@
             </summary>
             <param name="token1">The first <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
             <param name="token2">The second <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
-            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked
             to the source tokens.</returns>
         </member>
         <member name="M:System.Threading.CancellationTokenSource.CreateLinkedTokenSource(System.Threading.CancellationToken[])">
@@ -2599,13 +2599,13 @@
             when any of the source tokens are in the canceled state.
             </summary>
             <param name="tokens">The <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instances to observe.</param>
-            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+            <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked
             to the source tokens.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="tokens"/> is null.</exception>
         </member>
         <member name="T:System.Threading.CancellationCallbackInfo">
             <summary>
-            A helper class for collating the various bits of information required to execute 
+            A helper class for collating the various bits of information required to execute
             cancellation callbacks.
             </summary>
         </member>
@@ -2733,7 +2733,7 @@
             </summary>
             <param name="condition">A delegate to be executed over and over until it returns true.</param>
             <param name="timeout">
-            A <see cref="T:System.TimeSpan"/> that represents the number of milliseconds to wait, 
+            A <see cref="T:System.TimeSpan"/> that represents the number of milliseconds to wait,
             or a TimeSpan that represents -1 milliseconds to wait indefinitely.</param>
             <returns>True if the condition is satisfied within the timeout; otherwise, false</returns>
             <exception cref="T:System.ArgumentNullException">The <paramref name="condition"/> argument is null.</exception>
@@ -3138,9 +3138,9 @@
             <returns>The handle to the memory-mapped file.</returns>
         </member>
         <member name="M:System.IO.MemoryMappedFiles.MemoryMappedFile.Finalize">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew(System.String,System.Int64)">
             <summary>
@@ -3178,9 +3178,9 @@
             </summary>
         </member>
         <member name="P:System.IO.MemoryMappedFiles.MemoryMappedView.SafeMemoryMappedViewHandle">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:System.IO.MemoryMappedFiles.MemoryMappedView.Size">
             <summary>
@@ -3194,9 +3194,9 @@
             </summary>
         </member>
         <member name="M:System.IO.MemoryMappedFiles.MemoryMappedView.Finalize">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:System.IO.MemoryMappedFiles.MemoryMappedView.Dispose">
             <summary>
@@ -3204,14 +3204,14 @@
             </summary>
         </member>
         <member name="T:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.SafeMemoryMappedViewHandle">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Dispose">
             <summary>
@@ -3680,6 +3680,27 @@
             The third
             </summary>
         </member>
+        <member name="T:Lerp2API.Controllers.Utils.DontGoThroughThings">
+            <summary>
+            Class DontGoThroughThings.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="F:Lerp2API.Controllers.Utils.DontGoThroughThings.sendTriggerMessage">
+            <summary>
+            The send trigger message
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Controllers.Utils.DontGoThroughThings.layerMask">
+            <summary>
+            The layer mask
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Controllers.Utils.DontGoThroughThings.skinWidth">
+            <summary>
+            The skin width
+            </summary>
+        </member>
         <member name="T:Lerp2API.Controllers.Utils.Teleporter">
             <summary>
             Class Teleporter.
@@ -3718,6 +3739,12 @@
             <param name="z">The z.</param>
             <param name="yaw">The yaw.</param>
             <param name="pitch">The pitch.</param>
+        </member>
+        <member name="T:Lerp2API.Controllers.Utils.WindArea">
+            <summary>
+            Class WindArea.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
         </member>
         <member name="T:Lerp2API.Controllers._Canvas.CanvasController">
             <summary>
@@ -4099,6 +4126,42 @@
             Hides this instance.
             </summary>
             <returns>IEnumerator.</returns>
+        </member>
+        <member name="T:Lerp2API.Effects._Text.TextSize">
+            <summary>
+            Class TextSize.
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Effects._Text.TextSize.width">
+            <summary>
+            Gets the width.
+            </summary>
+            <value>The width.</value>
+        </member>
+        <member name="M:Lerp2API.Effects._Text.TextSize.#ctor(UnityEngine.TextMesh)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Effects._Text.TextSize"/> class.
+            </summary>
+            <param name="tm">The tm.</param>
+        </member>
+        <member name="M:Lerp2API.Effects._Text.TextSize.FitToWidth(System.Single,System.Int32)">
+            <summary>
+            Fits to width.
+            </summary>
+            <param name="wantedWidth">Width of the wanted.</param>
+            <param name="maxLines">The maximum lines.</param>
+        </member>
+        <member name="T:Lerp2API.Effects._Text.TextSizeUtils">
+            <summary>
+            Class TextSizeUtils.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Effects._Text.TextSizeUtils.GetSize(UnityEngine.TextMesh)">
+            <summary>
+            Gets the size.
+            </summary>
+            <param name="mesh">The mesh.</param>
+            <returns>Vector2.</returns>
         </member>
         <member name="T:Lerp2API.Effects._Text.TextGuideBase">
             <summary>
@@ -8118,12 +8181,12 @@
         </member>
         <member name="T:SharedMemory.BufferWithLocks">
             <summary>
-            <para>Extends <see cref="T:SharedMemory.SharedBuffer"/> to support simple thread-synchronisation for read/write 
+            <para>Extends <see cref="T:SharedMemory.SharedBuffer"/> to support simple thread-synchronisation for read/write
             to the buffer by allowing callers to acquire and release read/write locks.</para>
-            <para>All buffer read/write operations have been overloaded to first perform a <see cref="M:System.Threading.WaitHandle.WaitOne"/> 
+            <para>All buffer read/write operations have been overloaded to first perform a <see cref="M:System.Threading.WaitHandle.WaitOne"/>
             using the <see cref="P:SharedMemory.BufferWithLocks.ReadWaitEvent"/> and <see cref="P:SharedMemory.BufferWithLocks.WriteWaitEvent"/> respectively.</para>
-            <para>By default all read/write operations will not block, it is necessary to first acquire locks 
-            through calls to <see cref="M:SharedMemory.BufferWithLocks.AcquireReadLock(System.Int32)"/> and <see cref="M:SharedMemory.BufferWithLocks.AcquireWriteLock(System.Int32)"/> as appropriate, with corresponding 
+            <para>By default all read/write operations will not block, it is necessary to first acquire locks
+            through calls to <see cref="M:SharedMemory.BufferWithLocks.AcquireReadLock(System.Int32)"/> and <see cref="M:SharedMemory.BufferWithLocks.AcquireWriteLock(System.Int32)"/> as appropriate, with corresponding
             calls to <see cref="M:SharedMemory.BufferWithLocks.ReleaseReadLock"/> and <see cref="M:SharedMemory.BufferWithLocks.ReleaseWriteLock"/> to release the locks.</para>
             </summary>
         </member>
@@ -8459,7 +8522,7 @@
             <param name="startIndex">The index within the buffer to start writing from</param>
             <param name="timeout">The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)</param>
             <returns>The number of elements written</returns>
-            <remarks>The maximum number of elements that can be written is the minimum of the length of <paramref name="source"/> subtracted by <paramref name="startIndex"/> and <see cref="P:SharedMemory.CircularBuffer.NodeBufferSize"/> divided by <code>FastStructure.SizeOf&gt;T&lt;()</code>.</remarks>        
+            <remarks>The maximum number of elements that can be written is the minimum of the length of <paramref name="source"/> subtracted by <paramref name="startIndex"/> and <see cref="P:SharedMemory.CircularBuffer.NodeBufferSize"/> divided by <code>FastStructure.SizeOf&gt;T&lt;()</code>.</remarks>
         </member>
         <member name="M:SharedMemory.CircularBuffer.Write``1(``0@,System.Int32)">
             <summary>
@@ -8479,13 +8542,13 @@
             <param name="timeout">The maximum number of milliseconds to wait for a node to become available (default 1000ms)</param>
             <param name="length">The number of bytes to attempt to write</param>
             <returns>The number of bytes written</returns>
-            <remarks>The maximum number of bytes that can be written is the minimum of <paramref name="length"/> and <see cref="P:SharedMemory.CircularBuffer.NodeBufferSize"/>.</remarks>        
+            <remarks>The maximum number of bytes that can be written is the minimum of <paramref name="length"/> and <see cref="P:SharedMemory.CircularBuffer.NodeBufferSize"/>.</remarks>
         </member>
         <member name="M:SharedMemory.CircularBuffer.Write(System.Func{System.IntPtr,System.Int32},System.Int32)">
             <summary>
             Reserves a node for writing and then calls the provided <paramref name="writeFunc"/> to perform the write operation.
             </summary>
-            <param name="writeFunc">A function to used to write to the node's buffer. The first parameter is a pointer to the node's buffer. 
+            <param name="writeFunc">A function to used to write to the node's buffer. The first parameter is a pointer to the node's buffer.
             The provided function should return the number of bytes written.</param>
             <param name="timeout">The maximum number of milliseconds to wait for a node to become available for writing (default 1000ms)</param>
             <returns>The number of bytes written</returns>
@@ -8553,7 +8616,7 @@
             <summary>
             Reserves a node for reading and then calls the provided <paramref name="readFunc"/> to perform the read operation.
             </summary>
-            <param name="readFunc">A function used to read from the node's buffer. The first parameter is a pointer to the node's buffer. 
+            <param name="readFunc">A function used to read from the node's buffer. The first parameter is a pointer to the node's buffer.
             The provided function should return the number of bytes read.</param>
             <param name="timeout">The maximum number of milliseconds to wait for a node to become available for reading (default 1000ms)</param>
             <returns>The number of bytes read</returns>
@@ -8637,7 +8700,7 @@
             <para>For a 32-byte structure with 1 million iterations:</para>
             <para>The <see cref="F:SharedMemory.FastStructure`1.PtrToStructure"/> method performs approx. 20x faster than
             <see cref="M:System.Runtime.InteropServices.Marshal.PtrToStructure(System.IntPtr,System.Type)"/> (8ms vs 160ms), and about 1.6x slower than the non-generic equivalent (8ms vs 5ms)</para>
-            <para>The <see cref="F:SharedMemory.FastStructure`1.StructureToPtr"/> method performs approx. 8x faster than 
+            <para>The <see cref="F:SharedMemory.FastStructure`1.StructureToPtr"/> method performs approx. 8x faster than
             <see cref="M:System.Runtime.InteropServices.Marshal.StructureToPtr(System.Object,System.IntPtr,System.Boolean)"/> (4ms vs 34ms). </para>
             </summary>
             <typeparam name="T"></typeparam>
@@ -8919,7 +8982,7 @@
         </member>
         <member name="M:SharedMemory.SharedBuffer.Open">
             <summary>
-            Creates a new or opens an existing shared memory buffer with the name of <see cref="P:SharedMemory.SharedBuffer.Name"/> depending on the value of <see cref="P:SharedMemory.SharedBuffer.IsOwnerOfSharedMemory"/>. 
+            Creates a new or opens an existing shared memory buffer with the name of <see cref="P:SharedMemory.SharedBuffer.Name"/> depending on the value of <see cref="P:SharedMemory.SharedBuffer.IsOwnerOfSharedMemory"/>.
             </summary>
             <returns>True if the memory was successfully mapped</returns>
             <remarks>If <see cref="P:SharedMemory.SharedBuffer.IsOwnerOfSharedMemory"/> is true then the shared memory buffer will be created, opening will fail in this case if the shared memory already exists. Otherwise if IsOwnerOfSharedMemory is false then the shared memory buffer will be opened, which will fail if it doesn't already exist.</remarks>
@@ -9055,7 +9118,7 @@
         </member>
         <member name="T:SharedMemory.SharedHeader">
             <summary>
-            A structure that is always located at the start of the shared memory in a <see cref="T:SharedMemory.SharedBuffer"/> instance. 
+            A structure that is always located at the start of the shared memory in a <see cref="T:SharedMemory.SharedBuffer"/> instance.
             This allows the shared memory to be opened by other instances without knowing its size before hand.
             </summary>
             <remarks>This structure is the same size on 32-bit and 64-bit architectures.</remarks>
@@ -9381,17 +9444,17 @@
         </member>
         <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.MessageReceivedEvent">
             <summary>
-            This event is fired when a message is received 
+            This event is fired when a message is received
             </summary>
         </member>
         <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.ClientConnectedEvent">
             <summary>
-            This event is fired when a client connects 
+            This event is fired when a client connects
             </summary>
         </member>
         <member name="E:ClientServerUsingNamedPipes.Interfaces.ICommunicationServer.ClientDisconnectedEvent">
             <summary>
-            This event is fired when a client disconnects 
+            This event is fired when a client disconnects
             </summary>
         </member>
         <member name="T:ClientServerUsingNamedPipes.Interfaces.ClientConnectedEventArgs">
@@ -9432,7 +9495,7 @@
         </member>
         <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.#ctor(System.String,System.Int32)">
             <summary>
-            Creates a new NamedPipeServerStream 
+            Creates a new NamedPipeServerStream
             </summary>
         </member>
         <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.Start">
@@ -9469,12 +9532,12 @@
         </member>
         <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.OnConnected">
             <summary>
-            This method fires ConnectedEvent 
+            This method fires ConnectedEvent
             </summary>
         </member>
         <member name="M:ClientServerUsingNamedPipes.Server.InternalPipeServer.OnDisconnected">
             <summary>
-            This method fires DisconnectedEvent 
+            This method fires DisconnectedEvent
             </summary>
         </member>
         <member name="T:ClientServerUsingNamedPipes.Server.PipeServer">
@@ -9576,10 +9639,10 @@
         </member>
         <member name="M:ClientServerUsingNamedPipes.Utilities.EventHandlerExtensions.SafeInvoke``1(System.EventHandler{``0},System.Object,``0)">
             <summary>
-            This method is a safe way to fire an event in a multithreaded process. 
-            Since there is a tiny chance that the event becomes null after the null check but before the invocation, 
+            This method is a safe way to fire an event in a multithreaded process.
+            Since there is a tiny chance that the event becomes null after the null check but before the invocation,
             we use this extension where the event is passed as an argument.
-            Why is this helpful? MulticastDelagates are immutable, so if you first assign a variable, null check against the variable and invoke through it, 
+            Why is this helpful? MulticastDelagates are immutable, so if you first assign a variable, null check against the variable and invoke through it,
             you are safe
             </summary>
             <typeparam name="T"></typeparam>
@@ -23671,7 +23734,7 @@
         </member>
         <member name="F:ICSharpCode.SharpZipLib.Zip.CompressionMethod.Deflated">
             <summary>
-            Common Zip compression method using a sliding dictionary 
+            Common Zip compression method using a sliding dictionary
             of up to 32KB and secondary compression from Huffman/Shannon-Fano trees
             </summary>
         </member>
@@ -23823,7 +23886,7 @@
         </member>
         <member name="F:ICSharpCode.SharpZipLib.Zip.GeneralBitFlags.UnicodeText">
             <summary>
-            Bit 11 if set indicates the filename and 
+            Bit 11 if set indicates the filename and
             comment fields for this file must be encoded using UTF-8.
             </summary>
         </member>
@@ -24010,7 +24073,7 @@
             Use a fixed value.
             </summary>
             <remarks>The actual <see cref="T:System.DateTime"/> value used can be
-            specified via the <see cref="M:ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.#ctor(System.DateTime)"/> constructor or 
+            specified via the <see cref="M:ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.#ctor(System.DateTime)"/> constructor or
             using the <see cref="M:ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.#ctor(ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.TimeSetting)"/> with the setting set
             to <see cref="F:ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.TimeSetting.Fixed"/> which will use the <see cref="T:System.DateTime"/> when this class was constructed.
             The <see cref="P:ICSharpCode.SharpZipLib.Zip.ZipEntryFactory.FixedDateTime"/> property can also be used to set this value.</remarks>
