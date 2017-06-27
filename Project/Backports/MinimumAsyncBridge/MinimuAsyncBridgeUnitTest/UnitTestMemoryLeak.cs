@@ -8,11 +8,14 @@ using static System.Reflection.BindingFlags;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestMemoryLeak.
+    /// </summary>
     public class UnitTestMemoryLeak
     {
-        List<WeakReference> _refs = new List<WeakReference>();
+        private List<WeakReference> _refs = new List<WeakReference>();
 
-        void Add<T>(T item)
+        private void Add<T>(T item)
         {
             lock (_refs)
             {
@@ -20,7 +23,7 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        void AllReferencesShouldBeGarbageCollected()
+        private void AllReferencesShouldBeGarbageCollected()
         {
             GC.Collect(2, GCCollectionMode.Forced);
 
@@ -40,14 +43,16 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.IsNull(v);
         }
 
-        
+        /// <summary>
+        /// Tests the task run.
+        /// </summary>
         public void TestTaskRun()
         {
             TaskRun().Wait();
             AllReferencesShouldBeGarbageCollected();
         }
 
-        async Task TaskRun()
+        private async Task TaskRun()
         {
             for (int i = 0; i < 1000; i++)
             {
@@ -57,14 +62,18 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        
+        /// <summary>
+        /// Tests the task delay.
+        /// </summary>
         public void TestTaskDelay()
         {
             TaskDelay().Wait();
             AllReferencesShouldBeGarbageCollected();
         }
 
-        
+        /// <summary>
+        /// Tests the task delay without cancel.
+        /// </summary>
         public void TestTaskDelayWithoutCancel()
         {
             var cts = new CancellationTokenSource();
@@ -73,7 +82,9 @@ namespace MinimuAsyncBridgeUnitTest
             AllReferencesShouldBeGarbageCollected();
         }
 
-        
+        /// <summary>
+        /// Tests the task delay with cancel.
+        /// </summary>
         public void TestTaskDelayWithCancel()
         {
             var cts = new CancellationTokenSource();
@@ -84,7 +95,7 @@ namespace MinimuAsyncBridgeUnitTest
             AllReferencesShouldBeGarbageCollected();
         }
 
-        async Task TaskDelay()
+        private async Task TaskDelay()
         {
             for (int i = 0; i < 100; i++)
             {
@@ -94,7 +105,7 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        async Task TaskDelay(CancellationToken ct)
+        private async Task TaskDelay(CancellationToken ct)
         {
             for (int i = 0; i < 50; i++)
             {

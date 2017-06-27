@@ -5,47 +5,107 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Debug = Lerp2API.DebugHandler.Debug;
-using Lerp2API;
 using UnityEngine.AI;
+using Lerp2API.Hepers.Serializer_Helpers;
 
 //Do not add this script to your own classes! This is created internally
+/// <summary>
+/// Class LevelLoader.
+/// </summary>
 [AddComponentMenu("Storage/Internal/Level Loader (Internal use only, do not add this to your objects!)")]
 public class LevelLoader : MonoBehaviour
 {
     #region Delegates
 
+    /// <summary>
+    /// Delegate CreateObjectDelegate
+    /// </summary>
+    /// <param name="prefab">The prefab.</param>
+    /// <param name="cancel">if set to <c>true</c> [cancel].</param>
     public delegate void CreateObjectDelegate(GameObject prefab, ref bool cancel);
 
+    /// <summary>
+    /// Delegate SerializedComponentDelegate
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <param name="componentName">Name of the component.</param>
+    /// <param name="cancel">if set to <c>true</c> [cancel].</param>
     public delegate void SerializedComponentDelegate(GameObject gameObject, string componentName, ref bool cancel);
 
+    /// <summary>
+    /// Delegate SerializedObjectDelegate
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <param name="cancel">if set to <c>true</c> [cancel].</param>
     public delegate void SerializedObjectDelegate(GameObject gameObject, ref bool cancel);
 
     #endregion Delegates
 
+    /// <summary>
+    /// The current
+    /// </summary>
     public static LevelLoader Current;
     private static Texture2D _pixel;
+    /// <summary>
+    /// The root object
+    /// </summary>
     public GameObject rootObject;
     private readonly Dictionary<string, int> _indexDictionary = new Dictionary<string, int>();
+    /// <summary>
+    /// The data
+    /// </summary>
     public LevelSerializer.LevelData Data;
+    /// <summary>
+    /// The dont delete
+    /// </summary>
     public bool DontDelete = false;
+    /// <summary>
+    /// The last
+    /// </summary>
     public GameObject Last;
     private float _alpha = 1;
     private bool _loading = true;
+    /// <summary>
+    /// The show GUI
+    /// </summary>
     public bool showGUI = true;
+    /// <summary>
+    /// The time scale after loading
+    /// </summary>
     public float timeScaleAfterLoading = 1;
+    /// <summary>
+    /// The when completed
+    /// </summary>
     public Action<GameObject, List<GameObject>> whenCompleted = delegate { };
 
+    /// <summary>
+    /// Occurs when [create game object].
+    /// </summary>
     public static event CreateObjectDelegate CreateGameObject = delegate { };
 
+    /// <summary>
+    /// Occurs when [on destroy object].
+    /// </summary>
     public static event SerializedObjectDelegate OnDestroyObject = delegate { };
 
+    /// <summary>
+    /// Occurs when [load data].
+    /// </summary>
     public static event SerializedObjectDelegate LoadData = delegate { };
 
+    /// <summary>
+    /// Occurs when [load component].
+    /// </summary>
     public static event SerializedComponentDelegate LoadComponent = delegate { };
 
+    /// <summary>
+    /// Occurs when [loaded component].
+    /// </summary>
     public static event Action<Component> LoadedComponent = delegate { };
 
+    /// <summary>
+    /// The GUI color
+    /// </summary>
     public static Color guiColor = Color.white;
 
     private void Awake()
@@ -107,6 +167,10 @@ public class LevelLoader : MonoBehaviour
         go.SetActive(activate);
     }
 
+    /// <summary>
+    /// Loads this instance.
+    /// </summary>
+    /// <returns>IEnumerator.</returns>
     public IEnumerator Load()
     {
         yield return StartCoroutine(Load(2));
@@ -114,6 +178,12 @@ public class LevelLoader : MonoBehaviour
 
     private static int loadingCount = 0;
 
+    /// <summary>
+    /// Loads the specified number of frames.
+    /// </summary>
+    /// <param name="numberOfFrames">The number of frames.</param>
+    /// <param name="timeScale">The time scale.</param>
+    /// <returns>IEnumerator.</returns>
     public IEnumerator Load(int numberOfFrames, float timeScale = 0)
     {
         if(Data == null)

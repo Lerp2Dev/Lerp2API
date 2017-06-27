@@ -1,29 +1,37 @@
-﻿using System;
+﻿using ClientServerUsingNamedPipes.Interfaces;
+using ClientServerUsingNamedPipes.Utilities;
+using System;
 using System.IO;
 using System.IO.Pipes;
 using System.Text;
 using System.Threading.Tasks;
-using ClientServerUsingNamedPipes.Interfaces;
-using ClientServerUsingNamedPipes.Utilities;
 
 namespace ClientServerUsingNamedPipes.Client
 {
+    /// <summary>
+    /// Class PipeClient.
+    /// </summary>
+    /// <seealso cref="ClientServerUsingNamedPipes.Interfaces.ICommunicationClient" />
     public class PipeClient : ICommunicationClient
     {
         #region private fields
 
         private readonly NamedPipeClientStream _pipeClient;
 
-        #endregion
+        #endregion private fields
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipeClient"/> class.
+        /// </summary>
+        /// <param name="serverId">The server identifier.</param>
         public PipeClient(string serverId)
         {
             _pipeClient = new NamedPipeClientStream(".", serverId, PipeDirection.InOut, PipeOptions.Asynchronous);
         }
 
-        #endregion
+        #endregion c'tor
 
         #region ICommunicationClient implementation
 
@@ -32,7 +40,7 @@ namespace ClientServerUsingNamedPipes.Client
         /// </summary>
         public void Start()
         {
-            const int tryConnectTimeout = 5*60*1000; // 5 minutes
+            const int tryConnectTimeout = 5 * 60 * 1000; // 5 minutes
             _pipeClient.Connect(tryConnectTimeout);
         }
 
@@ -52,6 +60,12 @@ namespace ClientServerUsingNamedPipes.Client
             }
         }
 
+        /// <summary>
+        /// This method sends the given message asynchronously over the communication channel
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <returns>A task of TaskResult</returns>
+        /// <exception cref="IOException">pipe is not connected</exception>
         public Task<TaskResult> SendMessage(string message)
         {
             var taskCompletionSource = new TaskCompletionSource<TaskResult>();
@@ -69,7 +83,6 @@ namespace ClientServerUsingNamedPipes.Client
                     {
                         taskCompletionSource.SetException(ex);
                     }
-
                 }, null);
             }
             else
@@ -81,8 +94,7 @@ namespace ClientServerUsingNamedPipes.Client
             return taskCompletionSource.Task;
         }
 
-        #endregion
-
+        #endregion ICommunicationClient implementation
 
         #region private methods
 
@@ -96,9 +108,9 @@ namespace ClientServerUsingNamedPipes.Client
             _pipeClient.EndWrite(asyncResult);
             _pipeClient.Flush();
 
-            return new TaskResult {IsSuccess = true};
+            return new TaskResult { IsSuccess = true };
         }
 
-        #endregion
+        #endregion private methods
     }
 }

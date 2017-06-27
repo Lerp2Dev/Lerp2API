@@ -1,5 +1,10 @@
 \hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{}\section{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client Class Reference}
 \label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}\index{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client}}
+
+
+Class \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{Pipe\+Client}.  
+
+
 Inheritance diagram for Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,42 @@ Inheritance diagram for Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Cli
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}} 
-{\bfseries Pipe\+Client} (string server\+Id)
-\item 
+\hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}{Pipe\+Client} (string server\+Id)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{Pipe\+Client} class. \end{DoxyCompactList}\item 
 void \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a0bb2855199630657cdf070e3c4275b51}{Start} ()
 \begin{DoxyCompactList}\small\item\em Starts the client. Connects to the server. \end{DoxyCompactList}\item 
 void \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_a9d442b0b2a19c3d460185a8bb27e36e9}{Stop} ()
 \begin{DoxyCompactList}\small\item\em Stops the client. Waits for pipe drain, closes and disposes it. \end{DoxyCompactList}\item 
 \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task}$<$ \hyperlink{class_client_server_using_named_pipes_1_1_utilities_1_1_task_result}{Task\+Result} $>$ \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_af1b876c52ee2cfc920dcf56ea7434839}{Send\+Message} (string message)
 \begin{DoxyCompactList}\small\item\em This method sends the given message asynchronously over the communication channel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{Pipe\+Client}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_client}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication\+Client}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}\label{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client_aa1a9a481e206f60bbc8bf288f33b2622}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}!Pipe\+Client@{Pipe\+Client}}
+\index{Pipe\+Client@{Pipe\+Client}!Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client@{Client\+Server\+Using\+Named\+Pipes\+::\+Client\+::\+Pipe\+Client}}
+\subsubsection{\texorpdfstring{Pipe\+Client()}{PipeClient()}}
+{\footnotesize\ttfamily Client\+Server\+Using\+Named\+Pipes.\+Client.\+Pipe\+Client.\+Pipe\+Client (\begin{DoxyParamCaption}\item[{string}]{server\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_client_server_using_named_pipes_1_1_client_1_1_pipe_client}{Pipe\+Client} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Id} & The server identifier.\\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -33,12 +65,17 @@ This method sends the given message asynchronously over the communication channe
 
 
 \begin{DoxyParams}{Parameters}
-{\em message} & \\
+{\em message} & The message.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A task of Task\+Result
 \end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & pipe is not connected\\
+\hline
+\end{DoxyExceptions}
 
 
 Implements \hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_client_a07c2acf92bd0b99d704156010b47eff1}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication\+Client}.

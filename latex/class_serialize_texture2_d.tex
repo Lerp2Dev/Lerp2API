@@ -1,5 +1,10 @@
 \hypertarget{class_serialize_texture2_d}{}\section{Serialize\+Texture2D Class Reference}
 \label{class_serialize_texture2_d}\index{Serialize\+Texture2D@{Serialize\+Texture2D}}
+
+
+Class \hyperlink{class_serialize_texture2_d}{Serialize\+Texture2D}.  
+
+
 Inheritance diagram for Serialize\+Texture2D\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,86 @@ Inheritance diagram for Serialize\+Texture2D\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_serialize_texture2_d_aa2fd3c70876658476e1411bb13ac5966}\label{class_serialize_texture2_d_aa2fd3c70876658476e1411bb13ac5966}} 
-override I\+Enumerable$<$ object $>$ {\bfseries Save} (Texture2D target)
-\item 
-\mbox{\Hypertarget{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}\label{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}} 
-override object {\bfseries Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
-\item 
+override I\+Enumerable$<$ object $>$ \hyperlink{class_serialize_texture2_d_aa2fd3c70876658476e1411bb13ac5966}{Save} (Texture2D target)
+\begin{DoxyCompactList}\small\item\em Saves the specified target. \end{DoxyCompactList}\item 
+override object \hyperlink{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}{Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
+\begin{DoxyCompactList}\small\item\em Loads the specified data. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_serialize_texture2_d_a4485a35955c52146f174efa44317787e}{Can\+Be\+Serialized} (Type target\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serialize_texture2_d}{Serialize\+Texture2D}. 
+
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_serialize_texture2_d_a4485a35955c52146f174efa44317787e}\label{class_serialize_texture2_d_a4485a35955c52146f174efa44317787e}} 
-override bool {\bfseries Can\+Be\+Serialized} (Type target\+Type, object instance)
-\end{DoxyCompactItemize}
+\index{Serialize\+Texture2D@{Serialize\+Texture2D}!Can\+Be\+Serialized@{Can\+Be\+Serialized}}
+\index{Can\+Be\+Serialized@{Can\+Be\+Serialized}!Serialize\+Texture2D@{Serialize\+Texture2D}}
+\subsubsection{\texorpdfstring{Can\+Be\+Serialized()}{CanBeSerialized()}}
+{\footnotesize\ttfamily override bool Serialize\+Texture2\+D.\+Can\+Be\+Serialized (\begin{DoxyParamCaption}\item[{Type}]{target\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Type} & Type of the target.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance \mbox{[}can be serialized\mbox{]} the specified target type; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_serializer_extension_base_a50e69037fda6bdcc080cdc3c51d25b99}{Serializer\+Extension\+Base$<$ Texture2\+D $>$}.
+
+\mbox{\Hypertarget{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}\label{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}} 
+\index{Serialize\+Texture2D@{Serialize\+Texture2D}!Load@{Load}}
+\index{Load@{Load}!Serialize\+Texture2D@{Serialize\+Texture2D}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily override object Serialize\+Texture2\+D.\+Load (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads the specified data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}{Serializer\+Extension\+Base$<$ Texture2\+D $>$}.
+
+\mbox{\Hypertarget{class_serialize_texture2_d_aa2fd3c70876658476e1411bb13ac5966}\label{class_serialize_texture2_d_aa2fd3c70876658476e1411bb13ac5966}} 
+\index{Serialize\+Texture2D@{Serialize\+Texture2D}!Save@{Save}}
+\index{Save@{Save}!Serialize\+Texture2D@{Serialize\+Texture2D}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily override I\+Enumerable$<$object$>$ Serialize\+Texture2\+D.\+Save (\begin{DoxyParamCaption}\item[{Texture2D}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Saves the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerable$<$System.\+Object$>$.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

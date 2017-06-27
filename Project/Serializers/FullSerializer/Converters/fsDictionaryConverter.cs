@@ -8,18 +8,41 @@ namespace FullSerializer.Internal
     // While the generic IEnumerable converter can handle dictionaries, we process them separately here because
     // we support a few more advanced use-cases with dictionaries, such as inline strings. Further, dictionary
     // processing in general is a bit more advanced because a few of the collection implementations are buggy.
+    /// <summary>
+    /// Class fsDictionaryConverter.
+    /// </summary>
+    /// <seealso cref="FullSerializer.fsConverter" />
     public class fsDictionaryConverter : fsConverter
     {
+        /// <summary>
+        /// Can this converter serialize and deserialize the given object type?
+        /// </summary>
+        /// <param name="type">The given object type.</param>
+        /// <returns>True if the converter can serialize it, false otherwise.</returns>
         public override bool CanProcess(Type type)
         {
             return typeof(IDictionary).IsAssignableFrom(type);
         }
 
+        /// <summary>
+        /// Construct an object instance that will be passed to TryDeserialize. This should **not**
+        /// deserialize the object.
+        /// </summary>
+        /// <param name="data">The data the object was serialized with.</param>
+        /// <param name="storageType">The field/property type that is storing the instance.</param>
+        /// <returns>An object instance</returns>
         public override object CreateInstance(fsData data, Type storageType)
         {
             return fsMetaType.Get(Serializer.Config, storageType).CreateInstance();
         }
 
+        /// <summary>
+        /// Tries the deserialize.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="instance_">The instance.</param>
+        /// <param name="storageType">Type of the storage.</param>
+        /// <returns>fsResult.</returns>
         public override fsResult TryDeserialize(fsData data, ref object instance_, Type storageType)
         {
             var instance = (IDictionary)instance_;
@@ -69,6 +92,13 @@ namespace FullSerializer.Internal
             return result;
         }
 
+        /// <summary>
+        /// Tries the serialize.
+        /// </summary>
+        /// <param name="instance_">The instance.</param>
+        /// <param name="serialized">The serialized.</param>
+        /// <param name="storageType">Type of the storage.</param>
+        /// <returns>fsResult.</returns>
         public override fsResult TrySerialize(object instance_, out fsData serialized, Type storageType)
         {
             serialized = fsData.Null;

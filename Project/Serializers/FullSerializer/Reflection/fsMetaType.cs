@@ -15,6 +15,12 @@ namespace FullSerializer
         private static Dictionary<fsConfig, Dictionary<Type, fsMetaType>> _configMetaTypes =
             new Dictionary<fsConfig, Dictionary<Type, fsMetaType>>();
 
+        /// <summary>
+        /// Gets the specified configuration.
+        /// </summary>
+        /// <param name="config">The configuration.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>fsMetaType.</returns>
         public static fsMetaType Get(fsConfig config, Type type)
         {
             Dictionary<Type, fsMetaType> metaTypes;
@@ -49,6 +55,9 @@ namespace FullSerializer
             Properties = properties.ToArray();
         }
 
+        /// <summary>
+        /// The reflected type
+        /// </summary>
         public Type ReflectedType;
 
         private static void CollectProperties(fsConfig config, List<fsMetaProperty> properties, Type reflectedType)
@@ -267,6 +276,10 @@ namespace FullSerializer
 
         private bool _hasEmittedAotData;
 
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <value>The properties.</value>
         public fsMetaProperty[] Properties
         {
             get;

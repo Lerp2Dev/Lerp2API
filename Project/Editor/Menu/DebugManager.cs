@@ -5,10 +5,13 @@ using EditorMenu = UnityEditor.Menu;
 
 namespace Lerp2APIEditor.Menu
 {
+    /// <summary>
+    /// Class DebugManager.
+    /// </summary>
     public class DebugManager
     {
-        private const string menuName = "Lerp2Dev Team Tools/Enable or Disable Debug...";
-        private const string section = "ENABLE_DEBUG";
+        private const string menuName = "Lerp2Dev Team Tools/Enable or Disable Debug...",
+                             section = "ENABLE_DEBUG";
 
         private static bool active
         {
@@ -30,6 +33,9 @@ namespace Lerp2APIEditor.Menu
             EditorMenu.SetChecked(menuName, active);
         }
 
+        /// <summary>
+        /// Changes the debug.
+        /// </summary>
         [MenuItem(menuName)]
         public static void __changeDebug()
         {

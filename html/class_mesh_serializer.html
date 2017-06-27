@@ -65,16 +65,109 @@ $(function() {
 <div class="title">MeshSerializer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class <a class="el" href="class_mesh_serializer.html" title="Class MeshSerializer. ">MeshSerializer</a>.  
+ <a href="class_mesh_serializer.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c6aef0dba2aaa2dc8724f6e50b0ea6d"><td class="memItemLeft" align="right" valign="top"><a id="a1c6aef0dba2aaa2dc8724f6e50b0ea6d"></a>
-static Mesh&#160;</td><td class="memItemRight" valign="bottom"><b>ReadMesh</b> (byte[] bytes)</td></tr>
+<tr class="memitem:a1c6aef0dba2aaa2dc8724f6e50b0ea6d"><td class="memItemLeft" align="right" valign="top">static Mesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh_serializer.html#a1c6aef0dba2aaa2dc8724f6e50b0ea6d">ReadMesh</a> (byte[] bytes)</td></tr>
+<tr class="memdesc:a1c6aef0dba2aaa2dc8724f6e50b0ea6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mesh.  <a href="#a1c6aef0dba2aaa2dc8724f6e50b0ea6d">More...</a><br /></td></tr>
 <tr class="separator:a1c6aef0dba2aaa2dc8724f6e50b0ea6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e90d8200b8ac6c34a867a0e5eb47363"><td class="memItemLeft" align="right" valign="top"><a id="a7e90d8200b8ac6c34a867a0e5eb47363"></a>
-static byte []&#160;</td><td class="memItemRight" valign="bottom"><b>WriteMesh</b> (Mesh mesh, bool saveTangents)</td></tr>
+<tr class="memitem:a7e90d8200b8ac6c34a867a0e5eb47363"><td class="memItemLeft" align="right" valign="top">static byte []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh_serializer.html#a7e90d8200b8ac6c34a867a0e5eb47363">WriteMesh</a> (Mesh mesh, bool saveTangents)</td></tr>
+<tr class="memdesc:a7e90d8200b8ac6c34a867a0e5eb47363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the mesh.  <a href="#a7e90d8200b8ac6c34a867a0e5eb47363">More...</a><br /></td></tr>
 <tr class="separator:a7e90d8200b8ac6c34a867a0e5eb47363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class <a class="el" href="class_mesh_serializer.html" title="Class MeshSerializer. ">MeshSerializer</a>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1c6aef0dba2aaa2dc8724f6e50b0ea6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6aef0dba2aaa2dc8724f6e50b0ea6d">&#9670;&nbsp;</a></span>ReadMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Mesh MeshSerializer.ReadMesh </td>
+          <td>(</td>
+          <td class="paramtype">byte []&#160;</td>
+          <td class="paramname"><em>bytes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bytes</td><td>The bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Mesh.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>Invalid mesh file! or Invalid vertex count in the mesh data! or Invalid triangle count in the mesh data! or Invalid vertex format in the mesh data! </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e90d8200b8ac6c34a867a0e5eb47363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e90d8200b8ac6c34a867a0e5eb47363">&#9670;&nbsp;</a></span>WriteMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static byte [] MeshSerializer.WriteMesh </td>
+          <td>(</td>
+          <td class="paramtype">Mesh&#160;</td>
+          <td class="paramname"><em>mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>saveTangents</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the mesh. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>The mesh.</td></tr>
+    <tr><td class="paramname">saveTangents</td><td>if set to <code>true</code> [save tangents].</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Byte[].</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Project/Utility/MeshSerializer.cs</li>
 </ul>

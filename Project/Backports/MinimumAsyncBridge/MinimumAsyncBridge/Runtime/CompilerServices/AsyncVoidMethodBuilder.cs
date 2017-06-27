@@ -3,14 +3,12 @@
 using System.Runtime.CompilerServices;
 
 [assembly: TypeForwardedTo(typeof(AsyncVoidMethodBuilder))]
-
 #else
 
 namespace System.Runtime.CompilerServices
 {
     using System.Diagnostics;
     using System.Threading;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Provides a builder for asynchronous methods that return void. This type is intended for compiler use only.

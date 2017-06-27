@@ -45,8 +45,8 @@ This sample shows how to unzip a gzipped file
 \{
     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
     \{
-        \textcolor{keyword}{using} (Stream inStream = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_input_stream_a1b9e192df6366d0e8c5328037634393c}{GZipInputStream}(File.OpenRead(args[0])))
-        \textcolor{keyword}{using} (FileStream outStream = File.Create(Path.GetFileNameWithoutExtension(args[0]))) \{
+        \textcolor{keyword}{using} (Stream inStream = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_input_stream_a1b9e192df6366d0e8c5328037634393c}{GZipInputStream}(\hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.OpenRead(args[0])))
+        \textcolor{keyword}{using} (FileStream outStream = \hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.Create(Path.GetFileNameWithoutExtension(args[0]))) \{
             byte[] buffer = \textcolor{keyword}{new} byte[4096];
             StreamUtils.Copy(inStream, outStream, buffer);
         \}

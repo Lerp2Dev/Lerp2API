@@ -1,5 +1,10 @@
 \hypertarget{class_serializer_extension_base}{}\section{Serializer\+Extension\+Base$<$ T $>$ Class Template Reference}
 \label{class_serializer_extension_base}\index{Serializer\+Extension\+Base$<$ T $>$@{Serializer\+Extension\+Base$<$ T $>$}}
+
+
+Class \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}.  
+
+
 Inheritance diagram for Serializer\+Extension\+Base$<$ T $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +14,167 @@ Inheritance diagram for Serializer\+Extension\+Base$<$ T $>$\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_serializer_extension_base_affe527ff9e902bb2eeaa37ec1a9d2f19}\label{class_serializer_extension_base_affe527ff9e902bb2eeaa37ec1a9d2f19}} 
-object \mbox{[}$\,$\mbox{]} {\bfseries Serialize} (object target)
-\item 
-\mbox{\Hypertarget{class_serializer_extension_base_a04524500adb2abafdb0e606148145e07}\label{class_serializer_extension_base_a04524500adb2abafdb0e606148145e07}} 
-object {\bfseries Deserialize} (object\mbox{[}$\,$\mbox{]} data, object instance)
-\item 
-\mbox{\Hypertarget{class_serializer_extension_base_a258793f178a3f8ef78dfd7ca139d4411}\label{class_serializer_extension_base_a258793f178a3f8ef78dfd7ca139d4411}} 
-virtual I\+Enumerable$<$ object $>$ {\bfseries Save} (T target)
-\item 
-\mbox{\Hypertarget{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}\label{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}} 
-virtual object {\bfseries Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
-\item 
-\mbox{\Hypertarget{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}\label{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}} 
-bool {\bfseries Can\+Serialize} (Type target\+Type, object instance)
-\item 
+object \mbox{[}$\,$\mbox{]} \hyperlink{class_serializer_extension_base_affe527ff9e902bb2eeaa37ec1a9d2f19}{Serialize} (object target)
+\begin{DoxyCompactList}\small\item\em Serializes the specified target. \end{DoxyCompactList}\item 
+object \hyperlink{class_serializer_extension_base_a04524500adb2abafdb0e606148145e07}{Deserialize} (object\mbox{[}$\,$\mbox{]} data, object instance)
+\begin{DoxyCompactList}\small\item\em Deserializes the specified data. \end{DoxyCompactList}\item 
+virtual I\+Enumerable$<$ object $>$ \hyperlink{class_serializer_extension_base_a258793f178a3f8ef78dfd7ca139d4411}{Save} (T target)
+\begin{DoxyCompactList}\small\item\em Saves the specified target. \end{DoxyCompactList}\item 
+virtual object \hyperlink{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}{Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
+\begin{DoxyCompactList}\small\item\em Loads the specified data. \end{DoxyCompactList}\item 
+bool \hyperlink{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}{Can\+Serialize} (Type target\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance can serialize the specified target type. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_serializer_extension_base_a50e69037fda6bdcc080cdc3c51d25b99}{Can\+Be\+Serialized} (Type target\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_serializer_extension_base_a50e69037fda6bdcc080cdc3c51d25b99}\label{class_serializer_extension_base_a50e69037fda6bdcc080cdc3c51d25b99}} 
-virtual bool {\bfseries Can\+Be\+Serialized} (Type target\+Type, object instance)
-\end{DoxyCompactItemize}
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Can\+Be\+Serialized@{Can\+Be\+Serialized}}
+\index{Can\+Be\+Serialized@{Can\+Be\+Serialized}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Can\+Be\+Serialized()}{CanBeSerialized()}}
+{\footnotesize\ttfamily virtual bool \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Can\+Be\+Serialized (\begin{DoxyParamCaption}\item[{Type}]{target\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Type} & Type of the target.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance \mbox{[}can be serialized\mbox{]} the specified target type; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_serialize_scriptable_object_reference_a830bb74938329482397d7975b8853eaf}{Serialize\+Scriptable\+Object\+Reference}, \hyperlink{class_serialize_asset_reference_a5ea84d0ce141e942750d2b4d33e89d08}{Serialize\+Asset\+Reference}, \hyperlink{class_serialize_material_a86d5a8507905179b0d5cc0ca608c552b}{Serialize\+Material}, and \hyperlink{class_serialize_texture2_d_a4485a35955c52146f174efa44317787e}{Serialize\+Texture2D}.
+
+\mbox{\Hypertarget{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}\label{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}} 
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Can\+Serialize@{Can\+Serialize}}
+\index{Can\+Serialize@{Can\+Serialize}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Can\+Serialize()}{CanSerialize()}}
+{\footnotesize\ttfamily bool \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Can\+Serialize (\begin{DoxyParamCaption}\item[{Type}]{target\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines whether this instance can serialize the specified target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Type} & Type of the target.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance can serialize the specified target type; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_serialize_object_ex_a5a13bf50bde25dc6b1f593da8cb5eb06}{Serialization.\+I\+Serialize\+Object\+Ex}.
+
+\mbox{\Hypertarget{class_serializer_extension_base_a04524500adb2abafdb0e606148145e07}\label{class_serializer_extension_base_a04524500adb2abafdb0e606148145e07}} 
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily object \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Deserialize (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deserializes the specified data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_serialize_object_a100975fc581fdc4e4d29759daef4b99e}{Serialization.\+I\+Serialize\+Object}.
+
+\mbox{\Hypertarget{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}\label{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}} 
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Load@{Load}}
+\index{Load@{Load}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily virtual object \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Load (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads the specified data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object.
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_serialize_component_reference_aee8108ae073c2c74d95244f2bd10cc8c}{Serialize\+Component\+Reference}, \hyperlink{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}{Serialize\+Game\+Object\+Reference}, \hyperlink{class_serialize_scriptable_object_reference_a83057b58f36e559106c518db722a8b81}{Serialize\+Scriptable\+Object\+Reference}, \hyperlink{class_serialize_asset_reference_ab37514eab05ceebd554e33646c8e058a}{Serialize\+Asset\+Reference}, \hyperlink{class_serialize_material_ae371882b5aece27aafec190d488fc97f}{Serialize\+Material}, \hyperlink{class_serialize_texture2_d_a769620049aa1f3f3f7ff17f6cacd74a1}{Serialize\+Texture2D}, \hyperlink{class_serialize_bounds_acd4e2b5a17a744395609c58cbfacd9a2}{Serialize\+Bounds}, \hyperlink{class_serialize_wait_for_seconds_a458c026ee7885ad2740dde5205b94eb7}{Serialize\+Wait\+For\+Seconds}, \hyperlink{class_serialize_animation_state_a2e05ae356542c8df18779774e5189cee}{Serialize\+Animation\+State}, \hyperlink{class_serialize_color_ae959d6e7f4466e158d7ee4d23849a7ca}{Serialize\+Color}, \hyperlink{class_serialize_quaternion_a0c239eb6d19dd934bdcc7beca614e316}{Serialize\+Quaternion}, \hyperlink{class_serialize_vector4_a27f598468775a1c9f882b7ab378274cd}{Serialize\+Vector4}, \hyperlink{class_serialize_vector3_afe202cbbd524fb146e0a4ff17d6b0e62}{Serialize\+Vector3}, and \hyperlink{class_serialize_vector2_aa4853c3ec1858d811025f696d6e992c5}{Serialize\+Vector2}.
+
+\mbox{\Hypertarget{class_serializer_extension_base_a258793f178a3f8ef78dfd7ca139d4411}\label{class_serializer_extension_base_a258793f178a3f8ef78dfd7ca139d4411}} 
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Save@{Save}}
+\index{Save@{Save}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily virtual I\+Enumerable$<$object$>$ \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Save (\begin{DoxyParamCaption}\item[{T}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Saves the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerable$<$System.\+Object$>$.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_serializer_extension_base_affe527ff9e902bb2eeaa37ec1a9d2f19}\label{class_serializer_extension_base_affe527ff9e902bb2eeaa37ec1a9d2f19}} 
+\index{Serializer\+Extension\+Base@{Serializer\+Extension\+Base}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!Serializer\+Extension\+Base@{Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily object \mbox{[}$\,$\mbox{]} \hyperlink{class_serializer_extension_base}{Serializer\+Extension\+Base}$<$ T $>$.Serialize (\begin{DoxyParamCaption}\item[{object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serializes the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object\mbox{[}\mbox{]}.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_serialization_1_1_i_serialize_object_a4e84ab8859d2e9921ee7d4d0eda0da97}{Serialization.\+I\+Serialize\+Object}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

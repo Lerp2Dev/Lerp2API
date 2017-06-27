@@ -185,29 +185,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// <summary>
 	/// FastZip provides facilities for creating and extracting zip files.
 	/// </summary>
-	public class FastZip
+	public partial class FastZip
 	{
-		#region Enumerations
-		/// <summary>
-		/// Defines the desired handling when overwriting files during extraction.
-		/// </summary>
-		public enum Overwrite 
-		{
-			/// <summary>
-			/// Prompt the user to confirm overwriting
-			/// </summary>
-			Prompt,
-			/// <summary>
-			/// Never overwrite files.
-			/// </summary>
-			Never,
-			/// <summary>
-			/// Always overwrite files.
-			/// </summary>
-			Always
-		}
-		#endregion
-		
 		#region Constructors
 		/// <summary>
 		/// Initialise a default instance of <see cref="FastZip"/>.

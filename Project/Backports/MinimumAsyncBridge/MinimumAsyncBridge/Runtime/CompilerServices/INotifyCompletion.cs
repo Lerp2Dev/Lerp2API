@@ -3,7 +3,6 @@
 using System.Runtime.CompilerServices;
 
 [assembly: TypeForwardedTo(typeof(INotifyCompletion))]
-
 #else
 
 namespace System.Runtime.CompilerServices

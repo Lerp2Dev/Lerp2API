@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,11 +25,7 @@
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using System.Text;
 
 namespace SharedMemory
 {
@@ -62,7 +58,7 @@ namespace SharedMemory
             Open();
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Writing
 
@@ -115,7 +111,7 @@ namespace SharedMemory
             base.Write(writeFunc, bufferPosition);
         }
 
-        #endregion
+        #endregion Writing
 
         #region Reading
 
@@ -168,6 +164,6 @@ namespace SharedMemory
             base.Read(readFunc, bufferPosition);
         }
 
-        #endregion
+        #endregion Reading
     }
 }

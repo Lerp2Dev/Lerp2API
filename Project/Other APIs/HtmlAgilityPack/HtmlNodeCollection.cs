@@ -4,21 +4,41 @@
     using System.Collections;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Class HtmlNodeCollection.
+    /// </summary>
+    /// <seealso cref="System.Collections.Generic.IList{HtmlAgilityPack.HtmlNode}" />
+    /// <seealso cref="System.Collections.Generic.ICollection{HtmlAgilityPack.HtmlNode}" />
+    /// <seealso cref="System.Collections.Generic.IEnumerable{HtmlAgilityPack.HtmlNode}" />
+    /// <seealso cref="System.Collections.IEnumerable" />
     public class HtmlNodeCollection : IList<HtmlNode>, ICollection<HtmlNode>, IEnumerable<HtmlNode>, IEnumerable
     {
         private readonly List<HtmlNode> _items = new List<HtmlNode>();
         private readonly HtmlNode _parentnode;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeCollection"/> class.
+        /// </summary>
+        /// <param name="parentnode">The parentnode.</param>
         public HtmlNodeCollection(HtmlNode parentnode)
         {
             _parentnode = parentnode;
         }
 
+        /// <summary>
+        /// Adds the specified node.
+        /// </summary>
+        /// <param name="node">The node.</param>
         public void Add(HtmlNode node)
         {
             _items.Add(node);
         }
 
+        /// <summary>
+        /// Appends the specified node.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <exception cref="InvalidProgramException">Unexpected error.</exception>
         public void Append(HtmlNode node)
         {
             HtmlNode node2 = null;
@@ -40,6 +60,9 @@
             }
         }
 
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
         public void Clear()
         {
             foreach (HtmlNode node in _items)
@@ -51,16 +74,30 @@
             _items.Clear();
         }
 
+        /// <summary>
+        /// Determines whether [contains] [the specified item].
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.</returns>
         public bool Contains(HtmlNode item)
         {
             return _items.Contains(item);
         }
 
+        /// <summary>
+        /// Copies to.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="arrayIndex">Index of the array.</param>
         public void CopyTo(HtmlNode[] array, int arrayIndex)
         {
             _items.CopyTo(array, arrayIndex);
         }
 
+        /// <summary>
+        /// Descendantses this instance.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Descendants()
         {
             foreach (HtmlNode iteratorVariable0 in _items)
@@ -72,6 +109,11 @@
             }
         }
 
+        /// <summary>
+        /// Descendantses the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Descendants(string name)
         {
             foreach (HtmlNode iteratorVariable0 in _items)
@@ -83,6 +125,10 @@
             }
         }
 
+        /// <summary>
+        /// Elementses this instance.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Elements()
         {
             foreach (HtmlNode iteratorVariable0 in _items)
@@ -94,6 +140,11 @@
             }
         }
 
+        /// <summary>
+        /// Elementses the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Elements(string name)
         {
             foreach (HtmlNode iteratorVariable0 in _items)
@@ -105,11 +156,22 @@
             }
         }
 
+        /// <summary>
+        /// Finds the first.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode FindFirst(string name)
         {
             return FindFirst(this, name);
         }
 
+        /// <summary>
+        /// Finds the first.
+        /// </summary>
+        /// <param name="items">The items.</param>
+        /// <param name="name">The name.</param>
+        /// <returns>HtmlNode.</returns>
         public static HtmlNode FindFirst(HtmlNodeCollection items, string name)
         {
             foreach (HtmlNode node in (IEnumerable<HtmlNode>)items)
@@ -130,6 +192,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Gets the index of the node.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <returns>System.Int32.</returns>
         public int GetNodeIndex(HtmlNode node)
         {
             for (int i = 0; i < _items.Count; i++)
@@ -142,11 +209,26 @@
             return -1;
         }
 
+        /// <summary>
+        /// Indexes the of.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>System.Int32.</returns>
         public int IndexOf(HtmlNode item)
         {
             return _items.IndexOf(item);
         }
 
+        /// <summary>
+        /// Inserts the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="node">The node.</param>
+        /// <exception cref="InvalidProgramException">
+        /// Unexpected error.
+        /// or
+        /// Unexpected error.
+        /// </exception>
         public void Insert(int index, HtmlNode node)
         {
             HtmlNode node2 = null;
@@ -181,6 +263,10 @@
             node._parentnode = _parentnode;
         }
 
+        /// <summary>
+        /// Nodeses this instance.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Nodes()
         {
             foreach (HtmlNode iteratorVariable0 in _items)
@@ -192,6 +278,11 @@
             }
         }
 
+        /// <summary>
+        /// Prepends the specified node.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <exception cref="InvalidProgramException">Unexpected error.</exception>
         public void Prepend(HtmlNode node)
         {
             HtmlNode node2 = null;
@@ -213,6 +304,11 @@
             }
         }
 
+        /// <summary>
+        /// Removes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Remove(HtmlNode item)
         {
             int index = _items.IndexOf(item);
@@ -220,12 +316,22 @@
             return true;
         }
 
+        /// <summary>
+        /// Removes the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Remove(int index)
         {
             RemoveAt(index);
             return true;
         }
 
+        /// <summary>
+        /// Removes at.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <exception cref="InvalidProgramException">Unexpected error.</exception>
         public void RemoveAt(int index)
         {
             HtmlNode node = null;
@@ -257,6 +363,16 @@
             node3._parentnode = null;
         }
 
+        /// <summary>
+        /// Replaces the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="node">The node.</param>
+        /// <exception cref="InvalidProgramException">
+        /// Unexpected error.
+        /// or
+        /// Unexpected error.
+        /// </exception>
         public void Replace(int index, HtmlNode node)
         {
             HtmlNode node2 = null;
@@ -305,6 +421,10 @@
             return _items.GetEnumerator();
         }
 
+        /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>The count.</value>
         public int Count
         {
             get
@@ -313,6 +433,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is read only.
+        /// </summary>
+        /// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
         public bool IsReadOnly
         {
             get
@@ -321,6 +445,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets the <see cref="HtmlNode"/> with the specified node name.
+        /// </summary>
+        /// <param name="nodeName">Name of the node.</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode this[string nodeName]
         {
             get
@@ -337,6 +466,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the <see cref="HtmlNode"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode this[int index]
         {
             get
@@ -349,6 +483,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets the <see cref="System.Int32"/> with the specified node.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <returns>System.Int32.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">node;Node \"" + node.CloneNode(false).OuterHtml + "\" was not found in the collection</exception>
         public int this[HtmlNode node]
         {
             get

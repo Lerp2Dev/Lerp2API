@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,7 +24,6 @@
 //   "Fast IPC Communication Using Shared Memory and InterlockedCompareExchange"
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
 using System;
-using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
@@ -159,7 +158,7 @@ namespace SharedMemory
     /// <para>For a 32-byte structure with 1 million iterations:</para>
     /// <para>The <see cref="FastStructure{T}.PtrToStructure"/> method performs approx. 20x faster than
     /// <see cref="System.Runtime.InteropServices.Marshal.PtrToStructure(IntPtr, Type)"/> (8ms vs 160ms), and about 1.6x slower than the non-generic equivalent (8ms vs 5ms)</para>
-    /// <para>The <see cref="FastStructure{T}.StructureToPtr"/> method performs approx. 8x faster than 
+    /// <para>The <see cref="FastStructure{T}.StructureToPtr"/> method performs approx. 8x faster than
     /// <see cref="System.Runtime.InteropServices.Marshal.StructureToPtr(object, IntPtr, bool)"/> (4ms vs 34ms). </para>
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -172,21 +171,21 @@ namespace SharedMemory
         /// <param name="value"></param>
         /// <returns></returns>
         public unsafe delegate void* GetPtrDelegate(ref T value);
-        
+
         /// <summary>
         /// Delegate for loading a structure from the specified memory address
         /// </summary>
         /// <param name="pointer"></param>
         /// <returns></returns>
         public delegate T PtrToStructureDelegate(IntPtr pointer);
-        
+
         /// <summary>
         /// Delegate for writing a structure to the specified memory address
         /// </summary>
         /// <param name="value"></param>
         /// <param name="pointer"></param>
         public delegate void StructureToPtrDelegate(ref T value, IntPtr pointer);
-        
+
         /// <summary>
         /// The <see cref="GetPtrDelegate"/> delegate for the generated IL to retrieve a pointer to the structure
         /// </summary>
@@ -206,7 +205,7 @@ namespace SharedMemory
         /// Cached size of T as determined by <see cref="System.Runtime.InteropServices.Marshal.SizeOf(Type)"/>.
         /// </summary>
         public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(T));
-        
+
         private static DynamicMethod method;
         private static DynamicMethod methodLoad;
         private static DynamicMethod methodWrite;

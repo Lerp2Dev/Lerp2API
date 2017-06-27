@@ -1,13 +1,4 @@
 var searchData=
 [
-  ['rawdata',['RawData',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer.html#ad0322f1bb4cbb6e847a593e2a4210107',1,'ICSharpCode::SharpZipLib::Zip::Compression::Streams::InflaterInputBuffer']]],
-  ['rawlength',['RawLength',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_streams_1_1_inflater_input_buffer.html#a8cd0feb60c6e6e66cf2f3c9ff130e9a7',1,'ICSharpCode::SharpZipLib::Zip::Compression::Streams::InflaterInputBuffer']]],
-  ['readwaitevent',['ReadWaitEvent',['../class_shared_memory_1_1_buffer_with_locks.html#a93181710ceef6b88e2d7647f976f1e79',1,'SharedMemory::BufferWithLocks']]],
-  ['readwritetimeout',['ReadWriteTimeout',['../class_shared_memory_1_1_buffer_with_locks.html#a5c1d09ad6c8629a8a8b7f2e5eca12e69',1,'SharedMemory::BufferWithLocks']]],
-  ['recordsize',['RecordSize',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_archive.html#a18fbe5ee8f336048f583c2b192a69571',1,'ICSharpCode.SharpZipLib.Tar.TarArchive.RecordSize()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_buffer.html#adf7557320463a7ade141d2161cfacf38',1,'ICSharpCode.SharpZipLib.Tar.TarBuffer.RecordSize()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_input_stream.html#a74f987c8bb8c56f157ee60345a644051',1,'ICSharpCode.SharpZipLib.Tar.TarInputStream.RecordSize()'],['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_output_stream.html#af34a2b2ebc3683585a981e8224e06ec8',1,'ICSharpCode.SharpZipLib.Tar.TarOutputStream.RecordSize()']]],
-  ['remaininginput',['RemainingInput',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_compression_1_1_inflater.html#a9b2f8ccdb35d861acb6c8d995f75d35e',1,'ICSharpCode::SharpZipLib::Zip::Compression::Inflater']]],
-  ['replacement',['Replacement',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_windows_name_transform.html#abc8b8360d0688bf0e9c586110ce4ed49',1,'ICSharpCode::SharpZipLib::Zip::WindowsNameTransform']]],
-  ['restoreattributesonextract',['RestoreAttributesOnExtract',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip.html#a2650aa68c6f4ee5e292274d99a2826fd',1,'ICSharpCode::SharpZipLib::Zip::FastZip']]],
-  ['restoredatetimeonextract',['RestoreDateTimeOnExtract',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip.html#a3c868c58e0d05aeb9a96cdad2719d3f5',1,'ICSharpCode::SharpZipLib::Zip::FastZip']]],
-  ['rootpath',['RootPath',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_tar_1_1_tar_archive.html#a1539407d1004b454d4505c84609e8142',1,'ICSharpCode::SharpZipLib::Tar::TarArchive']]]
+  ['quotetype',['QuoteType',['../class_html_agility_pack_1_1_html_attribute.html#a3aa9d330f0215348b4d4773f8333a64b',1,'HtmlAgilityPack::HtmlAttribute']]]
 ];

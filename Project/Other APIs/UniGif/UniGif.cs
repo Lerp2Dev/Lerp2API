@@ -9,7 +9,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 public static partial class UniGif
 {

@@ -1,5 +1,9 @@
 ﻿namespace HtmlAgilityPack
 {
+    /// <summary>
+    /// Class MixedCodeDocumentCodeFragment.
+    /// </summary>
+    /// <seealso cref="HtmlAgilityPack.MixedCodeDocumentFragment" />
     public class MixedCodeDocumentCodeFragment : MixedCodeDocumentFragment
     {
         private string _code;
@@ -8,6 +12,10 @@
         {
         }
 
+        /// <summary>
+        /// Gets or sets the code.
+        /// </summary>
+        /// <value>The code.</value>
         public string Code
         {
             get

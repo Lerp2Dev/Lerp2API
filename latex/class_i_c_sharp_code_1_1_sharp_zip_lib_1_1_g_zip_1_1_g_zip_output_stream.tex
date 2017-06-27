@@ -53,8 +53,8 @@ This sample shows how to gzip a file
 \{
     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
     \{
-            \textcolor{keyword}{using} (Stream s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}{GZipOutputStream}(File.Create(args[0] + \textcolor{stringliteral}{".gz"})))
-            \textcolor{keyword}{using} (FileStream fs = File.OpenRead(args[0])) \{
+            \textcolor{keyword}{using} (Stream s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_g_zip_1_1_g_zip_output_stream_a8de4b46c4dd775a076c373ab46faabd8}{GZipOutputStream}(\hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.Create(args[0] + \textcolor{stringliteral}{".gz"})))
+            \textcolor{keyword}{using} (FileStream fs = \hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.OpenRead(args[0])) \{
                 byte[] writeData = \textcolor{keyword}{new} byte[4096];
                 Streamutils.Copy(s, fs, writeData);
             \}

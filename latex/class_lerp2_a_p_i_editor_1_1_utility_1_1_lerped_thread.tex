@@ -1,42 +1,167 @@
 \hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{}\section{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread$<$ T $>$ Class Template Reference}
 \label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}\index{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread$<$ T $>$@{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread$<$ T $>$}}
+
+
+Class \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerped\+Thread}.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}} 
-{\bfseries Lerped\+Thread} (string name, \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_f_s_w_params}{F\+S\+W\+Params} pars)
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a97f557394f9bfe74fc1be4d937ed7a71}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a97f557394f9bfe74fc1be4d937ed7a71}} 
-void {\bfseries Start\+F\+SW} ()
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aabbc33217652af1e85bdfd31a47fb0b7}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aabbc33217652af1e85bdfd31a47fb0b7}} 
-void {\bfseries Cancel\+F\+SW} ()
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a629e3792903979b729ea20c55a2fbae1}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a629e3792903979b729ea20c55a2fbae1}} 
-void {\bfseries Apply\+Changes$<$ T1 $>$} (T1 obj)
-\end{DoxyCompactItemize}
+\hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}{Lerped\+Thread} (string name, \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_f_s_w_params}{F\+S\+W\+Params} pars)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}{Lerped\+Thread$<$\+T$>$} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a97f557394f9bfe74fc1be4d937ed7a71}{Start\+F\+SW} ()
+\begin{DoxyCompactList}\small\item\em Starts the F\+SW. \end{DoxyCompactList}\item 
+void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aabbc33217652af1e85bdfd31a47fb0b7}{Cancel\+F\+SW} ()
+\begin{DoxyCompactList}\small\item\em Cancels the F\+SW. \end{DoxyCompactList}\item 
+void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a629e3792903979b729ea20c55a2fbae1}{Apply\+Changes$<$ T1 $>$} (T1 obj)
+\begin{DoxyCompactList}\small\item\em Applies the changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65717e0bcfeb29e6ef7e8329e658d61a}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65717e0bcfeb29e6ef7e8329e658d61a}} 
-T {\bfseries value} = default(T)
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a50fa4a6ab93d0e833943f446d5e22bb2}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a50fa4a6ab93d0e833943f446d5e22bb2}} 
-bool {\bfseries is\+Called} = false
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a9d52b6fa07d8175811ba4df8eb9858ad}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a9d52b6fa07d8175811ba4df8eb9858ad}} 
-string {\bfseries method\+Called} = \char`\"{}\char`\"{}
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a98622930c790858b78f8a7b3f6e47da1}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a98622930c790858b78f8a7b3f6e47da1}} 
-Dictionary$<$ string, Action $>$ {\bfseries matched\+Methods} = new Dictionary$<$string, Action$>$()
-\end{DoxyCompactItemize}
+T \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65717e0bcfeb29e6ef7e8329e658d61a}{value} = default(T)
+\begin{DoxyCompactList}\small\item\em The value \end{DoxyCompactList}\item 
+bool \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a50fa4a6ab93d0e833943f446d5e22bb2}{is\+Called} = false
+\begin{DoxyCompactList}\small\item\em The is called \end{DoxyCompactList}\item 
+string \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a9d52b6fa07d8175811ba4df8eb9858ad}{method\+Called} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em The method called \end{DoxyCompactList}\item 
+Dictionary$<$ string, Action $>$ \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a98622930c790858b78f8a7b3f6e47da1}{matched\+Methods} = new Dictionary$<$string, Action$>$()
+\begin{DoxyCompactList}\small\item\em The matched methods \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65c8afd672d7f9fcc79b6c212d1fc590}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65c8afd672d7f9fcc79b6c212d1fc590}} 
-File\+System\+Watcher {\bfseries F\+SW}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+File\+System\+Watcher \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65c8afd672d7f9fcc79b6c212d1fc590}{F\+SW}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the F\+SW. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Class \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerped\+Thread}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!Lerped\+Thread@{Lerped\+Thread}}
+\index{Lerped\+Thread@{Lerped\+Thread}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{Lerped\+Thread()}{LerpedThread()}}
+{\footnotesize\ttfamily \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.\hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerped\+Thread} (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{\hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_f_s_w_params}{F\+S\+W\+Params}}]{pars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aacf5f152ac26f2d26e36f4473e7cda98}{Lerped\+Thread$<$\+T$>$} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name.\\
+\hline
+{\em pars} & The pars.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a629e3792903979b729ea20c55a2fbae1}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a629e3792903979b729ea20c55a2fbae1}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!Apply\+Changes$<$ T1 $>$@{Apply\+Changes$<$ T1 $>$}}
+\index{Apply\+Changes$<$ T1 $>$@{Apply\+Changes$<$ T1 $>$}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{Apply\+Changes$<$ T1 $>$()}{ApplyChanges< T1 >()}}
+{\footnotesize\ttfamily void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.Apply\+Changes$<$ T1 $>$ (\begin{DoxyParamCaption}\item[{T1}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies the changes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T1} & The type of the t1.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The object.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aabbc33217652af1e85bdfd31a47fb0b7}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_aabbc33217652af1e85bdfd31a47fb0b7}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!Cancel\+F\+SW@{Cancel\+F\+SW}}
+\index{Cancel\+F\+SW@{Cancel\+F\+SW}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{Cancel\+F\+S\+W()}{CancelFSW()}}
+{\footnotesize\ttfamily void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.Cancel\+F\+SW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cancels the F\+SW. 
+
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a97f557394f9bfe74fc1be4d937ed7a71}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a97f557394f9bfe74fc1be4d937ed7a71}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!Start\+F\+SW@{Start\+F\+SW}}
+\index{Start\+F\+SW@{Start\+F\+SW}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{Start\+F\+S\+W()}{StartFSW()}}
+{\footnotesize\ttfamily void \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.Start\+F\+SW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the F\+SW. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a50fa4a6ab93d0e833943f446d5e22bb2}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a50fa4a6ab93d0e833943f446d5e22bb2}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!is\+Called@{is\+Called}}
+\index{is\+Called@{is\+Called}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{is\+Called}{isCalled}}
+{\footnotesize\ttfamily bool \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.is\+Called = false}
+
+
+
+The is called 
+
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a98622930c790858b78f8a7b3f6e47da1}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a98622930c790858b78f8a7b3f6e47da1}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!matched\+Methods@{matched\+Methods}}
+\index{matched\+Methods@{matched\+Methods}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{matched\+Methods}{matchedMethods}}
+{\footnotesize\ttfamily Dictionary$<$string, Action$>$ \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.matched\+Methods = new Dictionary$<$string, Action$>$()}
+
+
+
+The matched methods 
+
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a9d52b6fa07d8175811ba4df8eb9858ad}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a9d52b6fa07d8175811ba4df8eb9858ad}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!method\+Called@{method\+Called}}
+\index{method\+Called@{method\+Called}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{method\+Called}{methodCalled}}
+{\footnotesize\ttfamily string \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.method\+Called = \char`\"{}\char`\"{}}
+
+
+
+The method called 
+
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65717e0bcfeb29e6ef7e8329e658d61a}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65717e0bcfeb29e6ef7e8329e658d61a}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!value@{value}}
+\index{value@{value}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily T \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.value = default(T)}
+
+
+
+The value 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65c8afd672d7f9fcc79b6c212d1fc590}\label{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread_a65c8afd672d7f9fcc79b6c212d1fc590}} 
+\index{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}!F\+SW@{F\+SW}}
+\index{F\+SW@{F\+SW}!Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread@{Lerp2\+A\+P\+I\+Editor\+::\+Utility\+::\+Lerped\+Thread}}
+\subsubsection{\texorpdfstring{F\+SW}{FSW}}
+{\footnotesize\ttfamily File\+System\+Watcher \hyperlink{class_lerp2_a_p_i_editor_1_1_utility_1_1_lerped_thread}{Lerp2\+A\+P\+I\+Editor.\+Utility.\+Lerped\+Thread}$<$ T $>$.F\+SW\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the F\+SW. 
+
+The F\+SW.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

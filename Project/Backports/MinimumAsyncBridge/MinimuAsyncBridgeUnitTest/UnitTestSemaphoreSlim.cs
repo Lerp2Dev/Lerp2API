@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Linq;
+using System.Threading;
+
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Linq;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestSemaphoreSlim.
+    /// </summary>
     public class UnitTestSemaphoreSlim
     {
-        
+        /// <summary>
+        /// Tests the cancel wait asynchronous.
+        /// </summary>
         public void TestCancelWaitAsync()
         {
             TestCancelWaitAsyncInternal().Wait();
@@ -89,7 +95,9 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        
+        /// <summary>
+        /// Tests the wait asynchronous.
+        /// </summary>
         public void TestWaitAsync()
         {
             TestWaitAsyncInternal().Wait();
@@ -118,8 +126,12 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        class Integer
+        private class Integer
         {
+            /// <summary>
+            /// Gets or sets the value.
+            /// </summary>
+            /// <value>The value.</value>
             public int Value { get; set; }
         }
 
@@ -154,7 +166,8 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        class TestException : Exception { }
+        private class TestException : Exception
+        { }
 
         private async Task Delay(Random random, CancellationToken ct = default(CancellationToken))
         {

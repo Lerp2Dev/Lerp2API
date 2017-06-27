@@ -4,6 +4,9 @@
     using System.Collections.Generic;
     using System.Text;
 
+    /// <summary>
+    /// Class HtmlEntity.
+    /// </summary>
     public class HtmlEntity
     {
         private static Dictionary<int, string> _entityName = new Dictionary<int, string>();
@@ -523,6 +526,11 @@
         {
         }
 
+        /// <summary>
+        /// Des the entitize.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.String.</returns>
         public static string DeEntitize(string text)
         {
             if (text == null)
@@ -645,6 +653,12 @@
             }
         }
 
+        /// <summary>
+        /// Entitizes the specified node.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">node</exception>
         public static HtmlNode Entitize(HtmlNode node)
         {
             if (node == null)
@@ -687,16 +701,34 @@
             }
         }
 
+        /// <summary>
+        /// Entitizes the specified text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.String.</returns>
         public static string Entitize(string text)
         {
             return Entitize(text, true);
         }
 
+        /// <summary>
+        /// Entitizes the specified text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="useNames">if set to <c>true</c> [use names].</param>
+        /// <returns>System.String.</returns>
         public static string Entitize(string text, bool useNames)
         {
             return Entitize(text, useNames, false);
         }
 
+        /// <summary>
+        /// Entitizes the specified text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="useNames">if set to <c>true</c> [use names].</param>
+        /// <param name="entitizeQuotAmpAndLtGt">if set to <c>true</c> [entitize quot amp and lt gt].</param>
+        /// <returns>System.String.</returns>
         public static string Entitize(string text, bool useNames, bool entitizeQuotAmpAndLtGt)
         {
             if (text == null)
@@ -731,6 +763,10 @@
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Gets the name of the entity.
+        /// </summary>
+        /// <value>The name of the entity.</value>
         public static Dictionary<int, string> EntityName
         {
             get
@@ -739,6 +775,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the entity value.
+        /// </summary>
+        /// <value>The entity value.</value>
         public static Dictionary<string, int> EntityValue
         {
             get
@@ -749,7 +789,14 @@
 
         private enum ParseState
         {
+            /// <summary>
+            /// The text
+            /// </summary>
             Text,
+
+            /// <summary>
+            /// The entity start
+            /// </summary>
             EntityStart
         }
     }

@@ -14,33 +14,115 @@ Inheritance diagram for System.\+Threading.\+Semaphore\+Slim\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a159791eab1acdede5135bfd5befdd6b7}\label{class_system_1_1_threading_1_1_semaphore_slim_a159791eab1acdede5135bfd5befdd6b7}} 
-{\bfseries Semaphore\+Slim} (int initial\+Count)
-\item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a65e8b6755086cbcb88fcdc5758a33a55}\label{class_system_1_1_threading_1_1_semaphore_slim_a65e8b6755086cbcb88fcdc5758a33a55}} 
-\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} {\bfseries Wait\+Async} ()
-\item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_ad029e67589b38d997fea0b301c26ac11}\label{class_system_1_1_threading_1_1_semaphore_slim_ad029e67589b38d997fea0b301c26ac11}} 
-\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} {\bfseries Wait\+Async} (\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} cancellation\+Token)
-\item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a0d5381112bb1ee977c693f4730d38f03}\label{class_system_1_1_threading_1_1_semaphore_slim_a0d5381112bb1ee977c693f4730d38f03}} 
-int {\bfseries Release} ()
-\item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a4ae552cd56b642eeb53c4cfa864663a3}\label{class_system_1_1_threading_1_1_semaphore_slim_a4ae552cd56b642eeb53c4cfa864663a3}} 
-void {\bfseries Dispose} ()
-\end{DoxyCompactItemize}
+\hyperlink{class_system_1_1_threading_1_1_semaphore_slim_a159791eab1acdede5135bfd5befdd6b7}{Semaphore\+Slim} (int initial\+Count)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_system_1_1_threading_1_1_semaphore_slim}{Semaphore\+Slim} class. \end{DoxyCompactList}\item 
+\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} \hyperlink{class_system_1_1_threading_1_1_semaphore_slim_a65e8b6755086cbcb88fcdc5758a33a55}{Wait\+Async} ()
+\begin{DoxyCompactList}\small\item\em Waits the asynchronous. \end{DoxyCompactList}\item 
+\hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} \hyperlink{class_system_1_1_threading_1_1_semaphore_slim_ad029e67589b38d997fea0b301c26ac11}{Wait\+Async} (\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token} cancellation\+Token)
+\begin{DoxyCompactList}\small\item\em Waits the asynchronous. \end{DoxyCompactList}\item 
+int \hyperlink{class_system_1_1_threading_1_1_semaphore_slim_a0d5381112bb1ee977c693f4730d38f03}{Release} ()
+\begin{DoxyCompactList}\small\item\em Releases this instance. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_1_1_threading_1_1_semaphore_slim_a4ae552cd56b642eeb53c4cfa864663a3}{Dispose} ()
+\begin{DoxyCompactList}\small\item\em Disposes this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a508beacf8ec7d0e5fc983a0aca4dacdb}\label{class_system_1_1_threading_1_1_semaphore_slim_a508beacf8ec7d0e5fc983a0aca4dacdb}} 
-int {\bfseries Current\+Count} =$>$ \+\_\+current\+Count
-\end{DoxyCompactItemize}
+int \hyperlink{class_system_1_1_threading_1_1_semaphore_slim_a508beacf8ec7d0e5fc983a0aca4dacdb}{Current\+Count} =$>$ \+\_\+current\+Count
+\begin{DoxyCompactList}\small\item\em Gets the current count. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Simplified implementation of \hyperlink{class_system_1_1_threading_1_1_semaphore_slim}{Semaphore\+Slim}. 
 
 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a159791eab1acdede5135bfd5befdd6b7}\label{class_system_1_1_threading_1_1_semaphore_slim_a159791eab1acdede5135bfd5befdd6b7}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Semaphore\+Slim@{Semaphore\+Slim}}
+\index{Semaphore\+Slim@{Semaphore\+Slim}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Semaphore\+Slim()}{SemaphoreSlim()}}
+{\footnotesize\ttfamily System.\+Threading.\+Semaphore\+Slim.\+Semaphore\+Slim (\begin{DoxyParamCaption}\item[{int}]{initial\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_system_1_1_threading_1_1_semaphore_slim}{Semaphore\+Slim} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Count} & The initial count.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a4ae552cd56b642eeb53c4cfa864663a3}\label{class_system_1_1_threading_1_1_semaphore_slim_a4ae552cd56b642eeb53c4cfa864663a3}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void System.\+Threading.\+Semaphore\+Slim.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Disposes this instance. 
+
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a0d5381112bb1ee977c693f4730d38f03}\label{class_system_1_1_threading_1_1_semaphore_slim_a0d5381112bb1ee977c693f4730d38f03}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Release@{Release}}
+\index{Release@{Release}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily int System.\+Threading.\+Semaphore\+Slim.\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Releases this instance. 
+
+\begin{DoxyReturn}{Returns}
+System.\+Int32.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a65e8b6755086cbcb88fcdc5758a33a55}\label{class_system_1_1_threading_1_1_semaphore_slim_a65e8b6755086cbcb88fcdc5758a33a55}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Wait\+Async@{Wait\+Async}}
+\index{Wait\+Async@{Wait\+Async}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Wait\+Async()}{WaitAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} System.\+Threading.\+Semaphore\+Slim.\+Wait\+Async (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Waits the asynchronous. 
+
+\begin{DoxyReturn}{Returns}
+Task.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_ad029e67589b38d997fea0b301c26ac11}\label{class_system_1_1_threading_1_1_semaphore_slim_ad029e67589b38d997fea0b301c26ac11}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Wait\+Async@{Wait\+Async}}
+\index{Wait\+Async@{Wait\+Async}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Wait\+Async()}{WaitAsync()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_system_1_1_threading_1_1_tasks_1_1_task}{Task} System.\+Threading.\+Semaphore\+Slim.\+Wait\+Async (\begin{DoxyParamCaption}\item[{\hyperlink{struct_system_1_1_threading_1_1_cancellation_token}{Cancellation\+Token}}]{cancellation\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Waits the asynchronous. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cancellation\+Token} & The cancellation token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Task.
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_threading_1_1_semaphore_slim_a508beacf8ec7d0e5fc983a0aca4dacdb}\label{class_system_1_1_threading_1_1_semaphore_slim_a508beacf8ec7d0e5fc983a0aca4dacdb}} 
+\index{System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}!Current\+Count@{Current\+Count}}
+\index{Current\+Count@{Current\+Count}!System\+::\+Threading\+::\+Semaphore\+Slim@{System\+::\+Threading\+::\+Semaphore\+Slim}}
+\subsubsection{\texorpdfstring{Current\+Count}{CurrentCount}}
+{\footnotesize\ttfamily int System.\+Threading.\+Semaphore\+Slim.\+Current\+Count =$>$ \+\_\+current\+Count}
+
+
+
+Gets the current count. 
+
+The current count.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

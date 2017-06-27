@@ -1,5 +1,10 @@
 \hypertarget{class_noise_module}{}\section{Noise\+Module Class Reference}
 \label{class_noise_module}\index{Noise\+Module@{Noise\+Module}}
+
+
+Class \hyperlink{class_noise_module}{Noise\+Module}.  
+
+
 Inheritance diagram for Noise\+Module\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,33 +14,165 @@ Inheritance diagram for Noise\+Module\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_noise_module_a018e785221494e50a0c4c0b72e71cf33}\label{class_noise_module_a018e785221494e50a0c4c0b72e71cf33}} 
-{\bfseries Noise\+Module} (int seed)
-\item 
-\mbox{\Hypertarget{class_noise_module_afafa2edc32e9762dd4b379bede65ad16}\label{class_noise_module_afafa2edc32e9762dd4b379bede65ad16}} 
-virtual float {\bfseries Fractal\+Noise2D} (float x, float y, int oct\+Num, float frq, float amp)
-\end{DoxyCompactItemize}
+\hyperlink{class_noise_module_a018e785221494e50a0c4c0b72e71cf33}{Noise\+Module} (int seed)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_noise_module}{Noise\+Module} class. \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_noise_module_afafa2edc32e9762dd4b379bede65ad16}{Fractal\+Noise2D} (float x, float y, int oct\+Num, float frq, float amp)
+\begin{DoxyCompactList}\small\item\em Fractals the noise2 d. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_noise_module_a2bc5a6d90d2eb98c784049b2ed22d8f9}\label{class_noise_module_a2bc5a6d90d2eb98c784049b2ed22d8f9}} 
-float {\bfseries Noise1D} (float x)
-\item 
-\mbox{\Hypertarget{class_noise_module_ae937ab94facd72d00bd6c226804010d1}\label{class_noise_module_ae937ab94facd72d00bd6c226804010d1}} 
-float {\bfseries Noise2D} (float x, float y)
-\item 
-\mbox{\Hypertarget{class_noise_module_aaf19713b7b0fb83b7561a0a6f9a23cf9}\label{class_noise_module_aaf19713b7b0fb83b7561a0a6f9a23cf9}} 
-float {\bfseries Noise3D} (float x, float y, float z)
-\end{DoxyCompactItemize}
+float \hyperlink{class_noise_module_a2bc5a6d90d2eb98c784049b2ed22d8f9}{Noise1D} (float x)
+\begin{DoxyCompactList}\small\item\em Noise1s the d. \end{DoxyCompactList}\item 
+float \hyperlink{class_noise_module_ae937ab94facd72d00bd6c226804010d1}{Noise2D} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Noise2s the d. \end{DoxyCompactList}\item 
+float \hyperlink{class_noise_module_aaf19713b7b0fb83b7561a0a6f9a23cf9}{Noise3D} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Noise3s the d. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+const int \hyperlink{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}{B} = 256
+\begin{DoxyCompactList}\small\item\em The b \end{DoxyCompactList}\item 
+int \mbox{[}$\,$\mbox{]} \hyperlink{class_noise_module_a3022dc862ba96b45e5ddcb7bcd2ddc09}{m\+\_\+perm} = new int\mbox{[}\hyperlink{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}{B} + \hyperlink{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}{B}\mbox{]}
+\begin{DoxyCompactList}\small\item\em The m perm \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_noise_module}{Noise\+Module}. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_noise_module_a018e785221494e50a0c4c0b72e71cf33}\label{class_noise_module_a018e785221494e50a0c4c0b72e71cf33}} 
+\index{Noise\+Module@{Noise\+Module}!Noise\+Module@{Noise\+Module}}
+\index{Noise\+Module@{Noise\+Module}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{Noise\+Module()}{NoiseModule()}}
+{\footnotesize\ttfamily Noise\+Module.\+Noise\+Module (\begin{DoxyParamCaption}\item[{int}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_noise_module}{Noise\+Module} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & The seed.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_noise_module_afafa2edc32e9762dd4b379bede65ad16}\label{class_noise_module_afafa2edc32e9762dd4b379bede65ad16}} 
+\index{Noise\+Module@{Noise\+Module}!Fractal\+Noise2D@{Fractal\+Noise2D}}
+\index{Fractal\+Noise2D@{Fractal\+Noise2D}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{Fractal\+Noise2\+D()}{FractalNoise2D()}}
+{\footnotesize\ttfamily virtual float Noise\+Module.\+Fractal\+Noise2D (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{int}]{oct\+Num,  }\item[{float}]{frq,  }\item[{float}]{amp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fractals the noise2 d. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+{\em oct\+Num} & The oct number.\\
+\hline
+{\em frq} & The F\+RQ.\\
+\hline
+{\em amp} & The amp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_perlin_noise_a5006a6d875ca81f46c597a8846fa7fd8}{Perlin\+Noise}, and \hyperlink{class_ridged_noise_ae7d0d5d2eecc5305930c8d2f166d39f7}{Ridged\+Noise}.
+
+\mbox{\Hypertarget{class_noise_module_a2bc5a6d90d2eb98c784049b2ed22d8f9}\label{class_noise_module_a2bc5a6d90d2eb98c784049b2ed22d8f9}} 
+\index{Noise\+Module@{Noise\+Module}!Noise1D@{Noise1D}}
+\index{Noise1D@{Noise1D}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{Noise1\+D()}{Noise1D()}}
+{\footnotesize\ttfamily float Noise\+Module.\+Noise1D (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Noise1s the d. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_module_ae937ab94facd72d00bd6c226804010d1}\label{class_noise_module_ae937ab94facd72d00bd6c226804010d1}} 
+\index{Noise\+Module@{Noise\+Module}!Noise2D@{Noise2D}}
+\index{Noise2D@{Noise2D}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{Noise2\+D()}{Noise2D()}}
+{\footnotesize\ttfamily float Noise\+Module.\+Noise2D (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Noise2s the d. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_module_aaf19713b7b0fb83b7561a0a6f9a23cf9}\label{class_noise_module_aaf19713b7b0fb83b7561a0a6f9a23cf9}} 
+\index{Noise\+Module@{Noise\+Module}!Noise3D@{Noise3D}}
+\index{Noise3D@{Noise3D}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{Noise3\+D()}{Noise3D()}}
+{\footnotesize\ttfamily float Noise\+Module.\+Noise3D (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Noise3s the d. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+{\em z} & The z.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}\label{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}} 
-const int {\bfseries B} = 256
-\item 
+\index{Noise\+Module@{Noise\+Module}!B@{B}}
+\index{B@{B}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily const int Noise\+Module.\+B = 256\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The b 
+
 \mbox{\Hypertarget{class_noise_module_a3022dc862ba96b45e5ddcb7bcd2ddc09}\label{class_noise_module_a3022dc862ba96b45e5ddcb7bcd2ddc09}} 
-int \mbox{[}$\,$\mbox{]} {\bfseries m\+\_\+perm} = new int\mbox{[}B + B\mbox{]}
-\end{DoxyCompactItemize}
+\index{Noise\+Module@{Noise\+Module}!m\+\_\+perm@{m\+\_\+perm}}
+\index{m\+\_\+perm@{m\+\_\+perm}!Noise\+Module@{Noise\+Module}}
+\subsubsection{\texorpdfstring{m\+\_\+perm}{m\_perm}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Noise\+Module.\+m\+\_\+perm = new int\mbox{[}\hyperlink{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}{B} + \hyperlink{class_noise_module_a2dba0071f6e03f54d2cf67d71d978955}{B}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The m perm 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

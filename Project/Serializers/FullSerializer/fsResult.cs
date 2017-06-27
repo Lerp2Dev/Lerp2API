@@ -194,6 +194,10 @@ namespace FullSerializer
             }
         }
 
+        /// <summary>
+        /// Gets the raw messages.
+        /// </summary>
+        /// <value>The raw messages.</value>
         public IEnumerable<string> RawMessages
         {
             get
@@ -206,6 +210,10 @@ namespace FullSerializer
             }
         }
 
+        /// <summary>
+        /// Gets the formatted messages.
+        /// </summary>
+        /// <value>The formatted messages.</value>
         public string FormattedMessages
         {
             get

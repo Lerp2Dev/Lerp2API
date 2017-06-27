@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,12 +25,9 @@
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
 
 using System;
-using System.Collections.Generic;
 using System.IO.MemoryMappedFiles;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using System.Text;
 using System.Threading;
 
 namespace SharedMemory
@@ -49,12 +46,12 @@ namespace SharedMemory
         /// The name of the Shared Memory instance
         /// </summary>
         public string Name { get; private set; }
-        
+
         /// <summary>
         /// The buffer size
         /// </summary>
         public long BufferSize { get; private set; }
-        
+
         /// <summary>
         /// The total shared memory size, including header and buffer.
         /// </summary>
@@ -70,7 +67,7 @@ namespace SharedMemory
         /// Indicates whether this instance owns the shared memory (i.e. creator of the shared memory)
         /// </summary>
         public bool IsOwnerOfSharedMemory { get; private set; }
-        
+
         /// <summary>
         /// Returns true if the SharedMemory owner has/is shutting down
         /// </summary>
@@ -111,7 +108,7 @@ namespace SharedMemory
             }
         }
 
-        #endregion
+        #endregion Public/Protected properties
 
         #region Protected field members
 
@@ -119,24 +116,28 @@ namespace SharedMemory
         /// Memory mapped file
         /// </summary>
         protected MemoryMappedFile Mmf;
+
         /// <summary>
         /// Memory mapped view
         /// </summary>
         protected MemoryMappedViewAccessor View;
+
         /// <summary>
         /// Pointer to the memory mapped view
         /// </summary>
         protected byte* ViewPtr = null;
+
         /// <summary>
         /// Pointer to the start of the buffer region of the memory mapped view
         /// </summary>
         protected byte* BufferStartPtr = null;
+
         /// <summary>
         /// Pointer to the header within shared memory
         /// </summary>
         protected SharedHeader* Header = null;
 
-        #endregion
+        #endregion Protected field members
 
         #region Constructor / destructor
 
@@ -158,6 +159,7 @@ namespace SharedMemory
         protected SharedBuffer(string name, long bufferSize, bool ownsSharedMemory)
         {
             #region Argument validation
+
             if (name == String.Empty || name == null)
                 throw new ArgumentException("Cannot be String.Empty or null", "name");
             if (ownsSharedMemory && bufferSize <= 0)
@@ -166,7 +168,8 @@ namespace SharedMemory
             else if (!ownsSharedMemory && bufferSize > 0)
                 System.Diagnostics.Debug.Write("Buffer size is ignored when opening an existing shared memory buffer.", "Warning");
 #endif
-            #endregion
+
+            #endregion Argument validation
 
             IsOwnerOfSharedMemory = ownsSharedMemory;
             Name = name;
@@ -185,12 +188,12 @@ namespace SharedMemory
             Dispose(false);
         }
 
-        #endregion
+        #endregion Constructor / destructor
 
         #region Open / Close
 
         /// <summary>
-        /// Creates a new or opens an existing shared memory buffer with the name of <see cref="Name"/> depending on the value of <see cref="IsOwnerOfSharedMemory"/>. 
+        /// Creates a new or opens an existing shared memory buffer with the name of <see cref="Name"/> depending on the value of <see cref="IsOwnerOfSharedMemory"/>.
         /// </summary>
         /// <returns>True if the memory was successfully mapped</returns>
         /// <remarks>If <see cref="IsOwnerOfSharedMemory"/> is true then the shared memory buffer will be created, opening will fail in this case if the shared memory already exists. Otherwise if IsOwnerOfSharedMemory is false then the shared memory buffer will be opened, which will fail if it doesn't already exist.</remarks>
@@ -332,7 +335,7 @@ namespace SharedMemory
         {
         }
 
-        #endregion
+        #endregion Open / Close
 
         #region Writing
 
@@ -408,7 +411,7 @@ namespace SharedMemory
             writeFunc(new IntPtr(BufferStartPtr + bufferPosition));
         }
 
-        #endregion
+        #endregion Writing
 
         #region Reading
 
@@ -471,7 +474,7 @@ namespace SharedMemory
             readFunc(new IntPtr(BufferStartPtr + bufferPosition));
         }
 
-        #endregion
+        #endregion Reading
 
         #region IDisposable
 
@@ -495,6 +498,6 @@ namespace SharedMemory
             }
         }
 
-        #endregion
+        #endregion IDisposable
     }
 }

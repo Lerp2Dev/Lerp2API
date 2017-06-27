@@ -7,6 +7,10 @@
     using System.Xml;
     using System.Xml.XPath;
 
+    /// <summary>
+    /// Class HtmlNodeNavigator.
+    /// </summary>
+    /// <seealso cref="System.Xml.XPath.XPathNavigator" />
     public class HtmlNodeNavigator : XPathNavigator
     {
         private int _attindex;
@@ -36,6 +40,10 @@
             _nametable = nav._nametable;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
         public HtmlNodeNavigator(Stream stream)
         {
             _doc = new HtmlDocument();
@@ -44,6 +52,10 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
         public HtmlNodeNavigator(TextReader reader)
         {
             _doc = new HtmlDocument();
@@ -52,6 +64,10 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="path">The path.</param>
         public HtmlNodeNavigator(string path)
         {
             _doc = new HtmlDocument();
@@ -77,6 +93,11 @@
             _currentnode = currentNode;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public HtmlNodeNavigator(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
             _doc = new HtmlDocument();
@@ -85,6 +106,11 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
         public HtmlNodeNavigator(Stream stream, Encoding encoding)
         {
             _doc = new HtmlDocument();
@@ -93,6 +119,11 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public HtmlNodeNavigator(string path, bool detectEncodingFromByteOrderMarks)
         {
             _doc = new HtmlDocument();
@@ -101,6 +132,11 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
         public HtmlNodeNavigator(string path, Encoding encoding)
         {
             _doc = new HtmlDocument();
@@ -109,6 +145,12 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public HtmlNodeNavigator(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             _doc = new HtmlDocument();
@@ -117,6 +159,12 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public HtmlNodeNavigator(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             _doc = new HtmlDocument();
@@ -125,6 +173,13 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
         public HtmlNodeNavigator(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             _doc = new HtmlDocument();
@@ -133,6 +188,13 @@
             Reset();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNodeNavigator"/> class.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
         public HtmlNodeNavigator(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             _doc = new HtmlDocument();
@@ -141,11 +203,21 @@
             Reset();
         }
 
+        /// <summary>
+        /// Clones this instance.
+        /// </summary>
+        /// <returns>XPathNavigator.</returns>
         public override XPathNavigator Clone()
         {
             return new HtmlNodeNavigator(this);
         }
 
+        /// <summary>
+        /// Gets the attribute.
+        /// </summary>
+        /// <param name="localName">Name of the local.</param>
+        /// <param name="namespaceURI">The namespace URI.</param>
+        /// <returns>System.String.</returns>
         public override string GetAttribute(string localName, string namespaceURI)
         {
             HtmlAttribute attribute = _currentnode.Attributes[localName];
@@ -156,6 +228,11 @@
             return attribute.Value;
         }
 
+        /// <summary>
+        /// Gets the namespace.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>System.String.</returns>
         public override string GetNamespace(string name)
         {
             return string.Empty;
@@ -198,6 +275,11 @@
             HtmlAgilityPack.Trace.WriteLine(string.Format("oid={0},n={1},a={2},v={3},{4}", new object[] { GetHashCode(), str2, _attindex, outerHtml, traceValue }), "N!" + name);
         }
 
+        /// <summary>
+        /// Determines whether [is same position] [the specified other].
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns><c>true</c> if [is same position] [the specified other]; otherwise, <c>false</c>.</returns>
         public override bool IsSamePosition(XPathNavigator other)
         {
             HtmlNodeNavigator navigator = other as HtmlNodeNavigator;
@@ -208,6 +290,11 @@
             return (navigator._currentnode == _currentnode);
         }
 
+        /// <summary>
+        /// Moves to.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveTo(XPathNavigator other)
         {
             HtmlNodeNavigator navigator = other as HtmlNodeNavigator;
@@ -220,6 +307,12 @@
             return false;
         }
 
+        /// <summary>
+        /// Moves to attribute.
+        /// </summary>
+        /// <param name="localName">Name of the local.</param>
+        /// <param name="namespaceURI">The namespace URI.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToAttribute(string localName, string namespaceURI)
         {
             int attributeIndex = _currentnode.Attributes.GetAttributeIndex(localName);
@@ -231,6 +324,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to first.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToFirst()
         {
             if (_currentnode.ParentNode == null)
@@ -245,6 +342,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to first attribute.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToFirstAttribute()
         {
             if (!HasAttributes)
@@ -255,6 +356,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to first child.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToFirstChild()
         {
             if (!_currentnode.HasChildNodes)
@@ -265,11 +370,21 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to first namespace.
+        /// </summary>
+        /// <param name="scope">The scope.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToFirstNamespace(XPathNamespaceScope scope)
         {
             return false;
         }
 
+        /// <summary>
+        /// Moves to identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToId(string id)
         {
             HtmlNode elementbyId = _doc.GetElementbyId(id);
@@ -281,11 +396,20 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to namespace.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToNamespace(string name)
         {
             return false;
         }
 
+        /// <summary>
+        /// Moves to next.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToNext()
         {
             if (_currentnode.NextSibling == null)
@@ -296,6 +420,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to next attribute.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToNextAttribute()
         {
             if (_attindex >= (_currentnode.Attributes.Count - 1))
@@ -306,11 +434,20 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to next namespace.
+        /// </summary>
+        /// <param name="scope">The scope.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToNextNamespace(XPathNamespaceScope scope)
         {
             return false;
         }
 
+        /// <summary>
+        /// Moves to parent.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToParent()
         {
             if (_currentnode.ParentNode == null)
@@ -321,6 +458,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to previous.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool MoveToPrevious()
         {
             if (_currentnode.PreviousSibling == null)
@@ -331,6 +472,9 @@
             return true;
         }
 
+        /// <summary>
+        /// Moves to root.
+        /// </summary>
         public override void MoveToRoot()
         {
             _currentnode = _doc.DocumentNode;
@@ -342,6 +486,10 @@
             _attindex = -1;
         }
 
+        /// <summary>
+        /// Gets the base URI.
+        /// </summary>
+        /// <value>The base URI.</value>
         public override string BaseURI
         {
             get
@@ -350,6 +498,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the current document.
+        /// </summary>
+        /// <value>The current document.</value>
         public HtmlDocument CurrentDocument
         {
             get
@@ -358,6 +510,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the current node.
+        /// </summary>
+        /// <value>The current node.</value>
         public HtmlNode CurrentNode
         {
             get
@@ -366,6 +522,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance has attributes.
+        /// </summary>
+        /// <value><c>true</c> if this instance has attributes; otherwise, <c>false</c>.</value>
         public override bool HasAttributes
         {
             get
@@ -374,6 +534,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance has children.
+        /// </summary>
+        /// <value><c>true</c> if this instance has children; otherwise, <c>false</c>.</value>
         public override bool HasChildren
         {
             get
@@ -382,6 +546,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is empty element.
+        /// </summary>
+        /// <value><c>true</c> if this instance is empty element; otherwise, <c>false</c>.</value>
         public override bool IsEmptyElement
         {
             get
@@ -390,6 +558,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the name of the local.
+        /// </summary>
+        /// <value>The name of the local.</value>
         public override string LocalName
         {
             get
@@ -402,6 +574,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public override string Name
         {
             get
@@ -410,6 +586,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the namespace URI.
+        /// </summary>
+        /// <value>The namespace URI.</value>
         public override string NamespaceURI
         {
             get
@@ -418,6 +598,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the name table.
+        /// </summary>
+        /// <value>The name table.</value>
         public override XmlNameTable NameTable
         {
             get
@@ -426,6 +610,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets the type of the node.
+        /// </summary>
+        /// <value>The type of the node.</value>
+        /// <exception cref="NotImplementedException">Internal error: Unhandled HtmlNodeType: " + _currentnode.NodeType</exception>
         public override XPathNodeType NodeType
         {
             get
@@ -452,6 +641,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the prefix.
+        /// </summary>
+        /// <value>The prefix.</value>
         public override string Prefix
         {
             get
@@ -460,6 +653,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <value>The value.</value>
+        /// <exception cref="NotImplementedException">Internal error: Unhandled HtmlNodeType: " + _currentnode.NodeType</exception>
         public override string Value
         {
             get
@@ -486,6 +684,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the XML language.
+        /// </summary>
+        /// <value>The XML language.</value>
         public override string XmlLang
         {
             get

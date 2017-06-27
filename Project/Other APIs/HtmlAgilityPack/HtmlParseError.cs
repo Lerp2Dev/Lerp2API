@@ -1,5 +1,8 @@
 ﻿namespace HtmlAgilityPack
 {
+    /// <summary>
+    /// Class HtmlParseError.
+    /// </summary>
     public class HtmlParseError
     {
         private HtmlParseErrorCode _code;
@@ -19,6 +22,10 @@
             _reason = reason;
         }
 
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        /// <value>The code.</value>
         public HtmlParseErrorCode Code
         {
             get
@@ -27,6 +34,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the line.
+        /// </summary>
+        /// <value>The line.</value>
         public int Line
         {
             get
@@ -35,6 +46,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the line position.
+        /// </summary>
+        /// <value>The line position.</value>
         public int LinePosition
         {
             get
@@ -43,6 +58,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the reason.
+        /// </summary>
+        /// <value>The reason.</value>
         public string Reason
         {
             get
@@ -51,6 +70,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the source text.
+        /// </summary>
+        /// <value>The source text.</value>
         public string SourceText
         {
             get
@@ -59,6 +82,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the stream position.
+        /// </summary>
+        /// <value>The stream position.</value>
         public int StreamPosition
         {
             get

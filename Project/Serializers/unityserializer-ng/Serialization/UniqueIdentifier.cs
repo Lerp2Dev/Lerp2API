@@ -9,19 +9,35 @@ using UnityEngine;
 [AttributeUsage(AttributeTargets.Class)]
 public class StoreComponent : Attribute { }
 
+/// <summary>
+/// Class DontStoreAttribute.
+/// </summary>
 [AttributeUsage(AttributeTargets.Class)]
 public class DontStoreAttribute : Attribute { }
 
+/// <summary>
+/// Class UniqueIdentifier.
+/// </summary>
 [ExecuteInEditMode]
 [DontStore]
 [AddComponentMenu("Storage/Unique Identifier")]
 public class UniqueIdentifier : MonoBehaviour
 {
+    /// <summary>
+    /// The is deserializing
+    /// </summary>
     [HideInInspector]
     public bool IsDeserializing;
 
+    /// <summary>
+    /// The identifier
+    /// </summary>
     public string _id = string.Empty;
 
+    /// <summary>
+    /// Gets or sets the identifier.
+    /// </summary>
+    /// <value>The identifier.</value>
     public string Id
     {
         get
@@ -45,6 +61,10 @@ public class UniqueIdentifier : MonoBehaviour
 
     private static List<UniqueIdentifier> allIdentifiers = new List<UniqueIdentifier>();
 
+    /// <summary>
+    /// Gets or sets all identifiers.
+    /// </summary>
+    /// <value>All identifiers.</value>
     public static List<UniqueIdentifier> AllIdentifiers
     {
         get
@@ -58,9 +78,16 @@ public class UniqueIdentifier : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The class identifier
+    /// </summary>
     [HideInInspector]
     public string classId = Guid.NewGuid().ToString();
 
+    /// <summary>
+    /// Gets or sets the class identifier.
+    /// </summary>
+    /// <value>The class identifier.</value>
     public string ClassId
     {
         get
@@ -77,6 +104,9 @@ public class UniqueIdentifier : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Awakes this instance.
+    /// </summary>
     protected virtual void Awake()
     {
         foreach (var c in GetComponents<UniqueIdentifier>().Where(t => t.GetType() == typeof(UniqueIdentifier) && t != this))
@@ -98,6 +128,9 @@ public class UniqueIdentifier : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fulls the configure.
+    /// </summary>
     public void FullConfigure()
     {
         ConfigureId();
@@ -113,6 +146,11 @@ public class UniqueIdentifier : MonoBehaviour
         AllIdentifiers.Add(this);
     }
 
+    /// <summary>
+    /// Gets the name of the by.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject GetByName(string id)
     {
         var result = SaveGameManager.Instance.GetById(id);
@@ -120,8 +158,16 @@ public class UniqueIdentifier : MonoBehaviour
     }
 }
 
+/// <summary>
+/// Class SerializationHelper.
+/// </summary>
 public static class SerializationHelper
 {
+    /// <summary>
+    /// Determines whether the specified go is deserializing.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <returns><c>true</c> if the specified go is deserializing; otherwise, <c>false</c>.</returns>
     public static bool IsDeserializing(this GameObject go)
     {
         var ui = go.GetComponent<UniqueIdentifier>();

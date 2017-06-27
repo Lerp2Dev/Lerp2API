@@ -3,28 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+/// <summary>
+/// Class Broadcaster.
+/// </summary>
 public static class Broadcaster
 {
+    /// <summary>
+    /// Class Pair.
+    /// </summary>
     public class Pair
     {
+        /// <summary>
+        /// The target
+        /// </summary>
         public WeakReference target;
+        /// <summary>
+        /// The interest
+        /// </summary>
         public WeakReference interest;
     }
 
     private static List<Pair> InterestList = new List<Pair>();
 
+    /// <summary>
+    /// Registers the interest.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <param name="interestedParty">The interested party.</param>
     public static void RegisterInterest(this object target, object interestedParty)
     {
         Cleanup();
         InterestList.Add(new Pair() { target = new WeakReference(target), interest = new WeakReference(interestedParty) });
     }
 
+    /// <summary>
+    /// Unregisters the interest.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <param name="interestedParty">The interested party.</param>
     public static void UnregisterInterest(this object target, object interestedParty)
     {
         Cleanup();
         InterestList.Remove(InterestList.FirstOrDefault(p => p.target.Target == target && p.interest.Target == interestedParty));
     }
 
+    /// <summary>
+    /// Broadcasts the specified message.
+    /// </summary>
+    /// <param name="obj">The object.</param>
+    /// <param name="message">The message.</param>
     public static void Broadcast(this object obj, string message)
     {
         Cleanup();

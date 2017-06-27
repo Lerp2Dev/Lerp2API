@@ -1,8 +1,8 @@
 ﻿#pragma warning disable 0420
 // ==++==
-// 
+//
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
-// 
+//
 // ==--==
 //
 // <OWNER>Microsoft</OWNER>
@@ -36,11 +36,11 @@ namespace System.Threading
     /// </remarks>
     [ComVisible(false)]
     [HostProtection(Synchronization = true, ExternalThreading = true)]
-
     public class CancellationTokenSource : IDisposable
     {
         //static sources that can be used as the backing source for 'fixed' CancellationTokens that never change state.
         private static readonly CancellationTokenSource _staticSource_Set = new CancellationTokenSource(true);
+
         private static readonly CancellationTokenSource _staticSource_NotCancelable = new CancellationTokenSource(false);
 
         //Note: the callback lists array is only created on first registration.
@@ -55,6 +55,7 @@ namespace System.Threading
 
         // legal values for m_state
         private const int CANNOT_BE_CANCELED = 0;
+
         private const int NOT_CANCELED = 1;
         private const int NOTIFYING = 2;
         private const int NOTIFYINGCOMPLETE = 3;
@@ -62,10 +63,9 @@ namespace System.Threading
         //m_state uses the pattern "volatile int32 reads, with cmpxch writes" which is safe for updates and cannot suffer torn reads.
         private volatile int m_state;
 
-
         /// The ID of the thread currently executing the main body of CTS.Cancel()
         /// this helps us to know if a call to ctr.Dispose() is running 'within' a cancellation callback.
-        /// This is updated as we move between the main thread calling cts.Cancel() and any syncContexts that are used to 
+        /// This is updated as we move between the main thread calling cts.Cancel() and any syncContexts that are used to
         /// actually run the callbacks.
         private volatile int m_threadIDExecutingCallbacks = -1;
 
@@ -87,7 +87,7 @@ namespace System.Threading
             cts.Cancel();
         }
 
-        // ---------------------- 
+        // ----------------------
         // ** public properties
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace System.Threading
             }
         }
 
-        // ---------------------- 
+        // ----------------------
         // ** internal and private properties.
 
         /// <summary>
@@ -199,7 +199,6 @@ namespace System.Threading
             }
         }
 
-
         /// <summary>
         /// The currently executing callback
         /// </summary>
@@ -209,6 +208,7 @@ namespace System.Threading
         }
 
 #if DEBUG
+
         /// <summary>
         /// Used by the dev unit tests to check the number of outstanding registrations.
         /// They use private reflection to gain access.  Because this would be dead retail
@@ -241,6 +241,7 @@ namespace System.Threading
                 return count;
             }
         }
+
 #endif
 
         // ** Public Constructors
@@ -255,7 +256,7 @@ namespace System.Threading
 
         // ** Private constructors for static sources.
         // set=false ==> cannot be canceled.
-        // set=true  ==> is canceled. 
+        // set=true  ==> is canceled.
         private CancellationTokenSource(bool set)
         {
             m_state = set ? NOTIFYINGCOMPLETE : CANNOT_BE_CANCELED;
@@ -270,12 +271,12 @@ namespace System.Threading
         /// </exception>
         /// <remarks>
         /// <para>
-        /// The countdown for the delay starts during the call to the constructor.  When the delay expires, 
+        /// The countdown for the delay starts during the call to the constructor.  When the delay expires,
         /// the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
         /// not been canceled already.
         /// </para>
         /// <para>
-        /// Subsequent calls to CancelAfter will reset the delay for the constructed 
+        /// Subsequent calls to CancelAfter will reset the delay for the constructed
         /// <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
         /// canceled already.
         /// </para>
@@ -300,12 +301,12 @@ namespace System.Threading
         /// </exception>
         /// <remarks>
         /// <para>
-        /// The countdown for the millisecondsDelay starts during the call to the constructor.  When the millisecondsDelay expires, 
+        /// The countdown for the millisecondsDelay starts during the call to the constructor.  When the millisecondsDelay expires,
         /// the constructed <see cref="T:System.Threading.CancellationTokenSource"/> is canceled (if it has
         /// not been canceled already).
         /// </para>
         /// <para>
-        /// Subsequent calls to CancelAfter will reset the millisecondsDelay for the constructed 
+        /// Subsequent calls to CancelAfter will reset the millisecondsDelay for the constructed
         /// <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
         /// canceled already.
         /// </para>
@@ -335,8 +336,8 @@ namespace System.Threading
         /// <remarks>
         /// <para>
         /// The associated <see cref="T:System.Threading.CancellationToken" /> will be
-        /// notified of the cancellation and will transition to a state where 
-        /// <see cref="System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+        /// notified of the cancellation and will transition to a state where
+        /// <see cref="System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true.
         /// Any callbacks or cancelable operations
         /// registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
         /// </para>
@@ -353,7 +354,7 @@ namespace System.Threading
         /// <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
         /// by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
         /// <exception cref="T:System.ObjectDisposedException">This <see
-        /// cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+        /// cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception>
         public void Cancel()
         {
             Cancel(false);
@@ -365,16 +366,16 @@ namespace System.Threading
         /// <remarks>
         /// <para>
         /// The associated <see cref="T:System.Threading.CancellationToken" /> will be
-        /// notified of the cancellation and will transition to a state where 
-        /// <see cref="System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true. 
+        /// notified of the cancellation and will transition to a state where
+        /// <see cref="System.Threading.CancellationToken.IsCancellationRequested">IsCancellationRequested</see> returns true.
         /// Any callbacks or cancelable operations
         /// registered with the <see cref="T:System.Threading.CancellationToken"/>  will be executed.
         /// </para>
         /// <para>
-        /// Cancelable operations and callbacks registered with the token should not throw exceptions. 
+        /// Cancelable operations and callbacks registered with the token should not throw exceptions.
         /// If <paramref name="throwOnFirstException"/> is true, an exception will immediately propagate out of the
         /// call to Cancel, preventing the remaining callbacks and cancelable operations from being processed.
-        /// If <paramref name="throwOnFirstException"/> is false, this overload will aggregate any 
+        /// If <paramref name="throwOnFirstException"/> is false, this overload will aggregate any
         /// exceptions thrown into a <see cref="System.AggregateException"/>,
         /// such that one callback throwing an exception will not prevent other registered callbacks from being executed.
         /// </para>
@@ -387,7 +388,7 @@ namespace System.Threading
         /// <exception cref="T:System.AggregateException">An aggregate exception containing all the exceptions thrown
         /// by the registered callbacks on the associated <see cref="T:System.Threading.CancellationToken"/>.</exception>
         /// <exception cref="T:System.ObjectDisposedException">This <see
-        /// cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception> 
+        /// cref="T:System.Threading.CancellationTokenSource"/> has been disposed.</exception>
         public void Cancel(bool throwOnFirstException)
         {
             ThrowIfDisposed();
@@ -404,17 +405,17 @@ namespace System.Threading
         /// cref="T:System.Threading.CancellationTokenSource"/> has been disposed.
         /// </exception>
         /// <exception cref="T:System.ArgumentOutOfRangeException">
-        /// The exception thrown when <paramref name="delay"/> is less than -1 or 
+        /// The exception thrown when <paramref name="delay"/> is less than -1 or
         /// greater than Int32.MaxValue.
         /// </exception>
         /// <remarks>
         /// <para>
-        /// The countdown for the delay starts during this call.  When the delay expires, 
+        /// The countdown for the delay starts during this call.  When the delay expires,
         /// this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
         /// not been canceled already.
         /// </para>
         /// <para>
-        /// Subsequent calls to CancelAfter will reset the delay for this  
+        /// Subsequent calls to CancelAfter will reset the delay for this
         /// <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
         /// canceled already.
         /// </para>
@@ -444,12 +445,12 @@ namespace System.Threading
         /// </exception>
         /// <remarks>
         /// <para>
-        /// The countdown for the millisecondsDelay starts during this call.  When the millisecondsDelay expires, 
+        /// The countdown for the millisecondsDelay starts during this call.  When the millisecondsDelay expires,
         /// this <see cref="T:System.Threading.CancellationTokenSource"/> is canceled, if it has
         /// not been canceled already.
         /// </para>
         /// <para>
-        /// Subsequent calls to CancelAfter will reset the millisecondsDelay for this  
+        /// Subsequent calls to CancelAfter will reset the millisecondsDelay for this
         /// <see cref="T:System.Threading.CancellationTokenSource"/>, if it has not been
         /// canceled already.
         /// </para>
@@ -466,7 +467,7 @@ namespace System.Threading
             if (IsCancellationRequested) return;
 
             // There is a race condition here as a Cancel could occur between the check of
-            // IsCancellationRequested and the creation of the timer.  This is benign; in the 
+            // IsCancellationRequested and the creation of the timer.  This is benign; in the
             // worst case, a timer will be created that has no effect when it expires.
 
             // Also, if Dispose() is called right here (after ThrowIfDisposed(), before timer
@@ -488,7 +489,6 @@ namespace System.Threading
                 }
             }
 
-
             // It is possible that m_timer has already been disposed, so we must do
             // the following in a try/catch block.
             try
@@ -502,7 +502,6 @@ namespace System.Threading
                 // would not be a good way to deal with the observe/dispose
                 // race condition.
             }
-
         }
 
         private static readonly TimerCallback s_timerCallback = new TimerCallback(TimerCallbackLogic);
@@ -557,7 +556,7 @@ namespace System.Threading
                 //      This is safe without locks because the reg.Dispose() only
                 //      mutates a sparseArrayFragment and then reads from properties of the CTS that are not
                 //      invalidated by cts.Dispose().
-                //     
+                //
                 //      We also tolerate that a callback can be registered after the CTS has been
                 //      disposed.  This is safe without locks because InternalRegister is tolerant
                 //      of m_registeredCallbacksLists becoming null during its execution.  However,
@@ -690,7 +689,7 @@ namespace System.Threading
                 if (!deregisterOccurred)
                 {
                     // The thread that is running Cancel() snagged our callback for execution.
-                    // So we don't need to run it, but we do return the registration so that 
+                    // So we don't need to run it, but we do return the registration so that
                     // ctr.Dispose() will wait for callback completion.
                     return registration;
                 }
@@ -702,7 +701,7 @@ namespace System.Threading
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private void NotifyCancellation(bool throwOnFirstException)
         {
@@ -726,7 +725,7 @@ namespace System.Threading
 
                 // - late enlisters to the Canceled event will have their callbacks called immediately in the Register() methods.
                 // - Callbacks are not called inside a lock.
-                // - After transition, no more delegates will be added to the 
+                // - After transition, no more delegates will be added to the
                 // - list of handlers, and hence it can be consumed and cleared at leisure by ExecuteCallbackHandlers.
                 ExecuteCallbackHandlers(throwOnFirstException);
             }
@@ -785,9 +784,8 @@ namespace System.Threading
                                     {
                                         if (m_executingCallback.TargetSyncContext != null)
                                         {
-
                                             m_executingCallback.TargetSyncContext.Send(CancellationCallbackCoreWork_OnSyncContext, args);
-                                            // CancellationCallbackCoreWork_OnSyncContext may have altered ThreadIDExecutingCallbacks, so reset it. 
+                                            // CancellationCallbackCoreWork_OnSyncContext may have altered ThreadIDExecutingCallbacks, so reset it.
                                             ThreadIDExecutingCallbacks = Thread.CurrentThread.ManagedThreadId;
                                         }
                                         else
@@ -848,14 +846,13 @@ namespace System.Threading
             }
         }
 
-
         /// <summary>
         /// Creates a <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that will be in the canceled state
         /// when any of the source tokens are in the canceled state.
         /// </summary>
         /// <param name="token1">The first <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
         /// <param name="token2">The second <see cref="T:System.Threading.CancellationToken">CancellationToken</see> to observe.</param>
-        /// <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+        /// <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked
         /// to the source tokens.</returns>
         public static CancellationTokenSource CreateLinkedTokenSource(CancellationToken token1, CancellationToken token2)
         {
@@ -888,7 +885,7 @@ namespace System.Threading
         /// when any of the source tokens are in the canceled state.
         /// </summary>
         /// <param name="tokens">The <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instances to observe.</param>
-        /// <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked 
+        /// <returns>A <see cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> that is linked
         /// to the source tokens.</returns>
         /// <exception cref="T:System.ArgumentNullException"><paramref name="tokens"/> is null.</exception>
         public static CancellationTokenSource CreateLinkedTokenSource(params CancellationToken[] tokens)
@@ -915,7 +912,6 @@ namespace System.Threading
 
             return linkedTokenSource;
         }
-
 
         // Wait for a single callback to complete (or, more specifically, to not be running).
         // It is ok to call this method if the callback has already finished.
@@ -951,7 +947,7 @@ namespace System.Threading
     // ----------------------------------------------------------
 
     /// <summary>
-    /// A helper class for collating the various bits of information required to execute 
+    /// A helper class for collating the various bits of information required to execute
     /// cancellation callbacks.
     /// </summary>
     internal class CancellationCallbackInfo
@@ -1012,7 +1008,6 @@ namespace System.Threading
         }
     }
 
-
     // ----------------------------------------------------------
     // -- SparselyPopulatedArray --
     // ----------------------------------------------------------
@@ -1037,6 +1032,7 @@ namespace System.Threading
         }
 
 #if DEBUG
+
         // Used in DEBUG mode by CancellationTokenSource.CallbackCount
         /// <summary>
         /// The head of the doubly linked list.
@@ -1045,6 +1041,7 @@ namespace System.Threading
         {
             get { return m_head; }
         }
+
 #endif
 
         /// <summary>
@@ -1188,12 +1185,15 @@ namespace System.Threading
         }
 
 #if DEBUG
+
         // Used in DEBUG mode by CancellationTokenSource.CallbackCount
         internal SparselyPopulatedArrayFragment<T> Next
         {
             get { return m_next; }
         }
+
 #endif
+
         internal SparselyPopulatedArrayFragment<T> Prev
         {
             get { return m_prev; }

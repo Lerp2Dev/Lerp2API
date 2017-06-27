@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace Serialization
 {
+    /// <summary>
+    /// Class Entry.
+    /// </summary>
     public class Entry
     {
         /// <summary>
@@ -21,6 +24,9 @@ namespace Serialization
         private PropertyInfo _propertyInfo;
 
         private FieldInfo _fieldInfo;
+        /// <summary>
+        /// The stored type
+        /// </summary>
         public Type StoredType;
 
         /// <summary>
@@ -86,6 +92,9 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// The setter
+        /// </summary>
         public GetSet Setter;
     }
 }

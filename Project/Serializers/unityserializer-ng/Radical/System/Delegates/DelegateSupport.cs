@@ -12,6 +12,11 @@ public static class DelegateSupport
     private static Dictionary<MethodInfo, Type> delegateTypes = new Dictionary<MethodInfo, Type>();
     private static Dictionary<MethodInfo, Delegate> openDelegates = new Dictionary<MethodInfo, Delegate>();
 
+    /// <summary>
+    /// To the open delegate.
+    /// </summary>
+    /// <param name="mi">The mi.</param>
+    /// <returns>Delegate.</returns>
     public static Delegate ToOpenDelegate(MethodInfo mi)
     {
         Delegate result;
@@ -42,6 +47,12 @@ public static class DelegateSupport
         return result;
     }
 
+    /// <summary>
+    /// To the delegate.
+    /// </summary>
+    /// <param name="mi">The mi.</param>
+    /// <param name="target">The target.</param>
+    /// <returns>Delegate.</returns>
     public static Delegate ToDelegate(MethodInfo mi, object target)
     {
         Delegate result;
@@ -71,13 +82,26 @@ public static class DelegateSupport
         return result;
     }
 
+    /// <summary>
+    /// Class Index. This class cannot be inherited.
+    /// </summary>
+    /// <typeparam name="TK">The type of the tk.</typeparam>
+    /// <typeparam name="TR">The type of the tr.</typeparam>
     [Serializable]
     public sealed class Index<TK, TR> : Dictionary<TK, TR> where TR : class, new()
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Index{TK, TR}"/> class.
+        /// </summary>
         public Index()
             : base()
         { }
 
+        /// <summary>
+        /// Gets or sets the <see cref="TR"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>TR.</returns>
         public new TR this[TK index]
         {
             get

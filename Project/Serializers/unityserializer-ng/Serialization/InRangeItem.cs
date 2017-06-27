@@ -6,6 +6,9 @@
 //
 using UnityEngine;
 
+/// <summary>
+/// Class InRangeItem.
+/// </summary>
 [AddComponentMenu("Storage/Advanced/In Range Item")]
 public class InRangeItem : MonoBehaviour
 {

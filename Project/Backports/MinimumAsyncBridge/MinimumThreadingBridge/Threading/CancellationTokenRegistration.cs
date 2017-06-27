@@ -1,7 +1,7 @@
 ﻿// ==++==
-// 
+//
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
-// 
+//
 // ==--==
 //
 // <OWNER>Microsoft</OWNER>
@@ -43,7 +43,7 @@ namespace System.Threading
 
             // Try to remove the callback info from the array.
             // It is possible the callback info is missing (removed for run, or removed by someone else)
-            // It is also possible there is info in the array but it doesn't match our current registration's callback info.  
+            // It is also possible there is info in the array but it doesn't match our current registration's callback info.
             CancellationCallbackInfo prevailingCallbackInfoInSlot = m_registrationInfo.Source.SafeAtomicRemove(m_registrationInfo.Index, m_callbackInfo);
 
             if (prevailingCallbackInfoInSlot != m_callbackInfo)
@@ -53,7 +53,7 @@ namespace System.Threading
         }
 
         /// <summary>
-        /// Disposes of the registration and unregisters the target callback from the associated 
+        /// Disposes of the registration and unregisters the target callback from the associated
         /// <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
         /// If the target callback is currently executing this method will wait until it completes, except
         /// in the degenerate cases where a callback method deregisters itself.
@@ -114,14 +114,14 @@ namespace System.Threading
         }
 
         /// <summary>
-        /// Determines whether the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance is equal to the 
+        /// Determines whether the current <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instance is equal to the
         /// specified <see cref="T:System.Object"/>.
-        /// </summary> 
+        /// </summary>
         /// <param name="obj">The other object to which to compare this instance.</param>
         /// <returns>True, if both this and <paramref name="obj"/> are equal. False, otherwise.
         /// Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
-        /// they both refer to the output of a single call to the same Register method of a 
-        /// <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+        /// they both refer to the output of a single call to the same Register method of a
+        /// <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
         /// </returns>
         public override bool Equals(object obj)
         {
@@ -129,14 +129,14 @@ namespace System.Threading
         }
 
         /// <summary>
-        /// Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the 
+        /// Determines whether the current <see cref="T:System.Threading.CancellationToken">CancellationToken</see> instance is equal to the
         /// specified <see cref="T:System.Object"/>.
-        /// </summary> 
+        /// </summary>
         /// <param name="other">The other <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> to which to compare this instance.</param>
         /// <returns>True, if both this and <paramref name="other"/> are equal. False, otherwise.
         /// Two <see cref="T:System.Threading.CancellationTokenRegistration">CancellationTokenRegistration</see> instances are equal if
-        /// they both refer to the output of a single call to the same Register method of a 
-        /// <see cref="T:System.Threading.CancellationToken">CancellationToken</see>. 
+        /// they both refer to the output of a single call to the same Register method of a
+        /// <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.
         /// </returns>
         public bool Equals(CancellationTokenRegistration other)
         {

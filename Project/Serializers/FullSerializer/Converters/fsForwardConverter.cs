@@ -34,15 +34,29 @@ namespace FullSerializer
 
 namespace FullSerializer.Internal
 {
+    /// <summary>
+    /// Class fsForwardConverter.
+    /// </summary>
+    /// <seealso cref="FullSerializer.fsConverter" />
     public class fsForwardConverter : fsConverter
     {
         private string _memberName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsForwardConverter"/> class.
+        /// </summary>
+        /// <param name="attribute">The attribute.</param>
         public fsForwardConverter(fsForwardAttribute attribute)
         {
             _memberName = attribute.MemberName;
         }
 
+        /// <summary>
+        /// Can this converter serialize and deserialize the given object type?
+        /// </summary>
+        /// <param name="type">The given object type.</param>
+        /// <returns>True if the converter can serialize it, false otherwise.</returns>
+        /// <exception cref="NotSupportedException">Please use the [fsForward(...)] attribute.</exception>
         public override bool CanProcess(Type type)
         {
             throw new NotSupportedException("Please use the [fsForward(...)] attribute.");
@@ -64,6 +78,13 @@ namespace FullSerializer.Internal
             return fsResult.Fail("No property named \"" + _memberName + "\" on " + instance.GetType().CSharpName());
         }
 
+        /// <summary>
+        /// Serialize the actual object into the given data storage.
+        /// </summary>
+        /// <param name="instance">The object instance to serialize. This will never be null.</param>
+        /// <param name="serialized">The serialized state.</param>
+        /// <param name="storageType">The field/property type that is storing this instance.</param>
+        /// <returns>If serialization was successful.</returns>
         public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
         {
             serialized = fsData.Null;
@@ -76,6 +97,13 @@ namespace FullSerializer.Internal
             return Serializer.TrySerialize(property.StorageType, actualInstance, out serialized);
         }
 
+        /// <summary>
+        /// Deserialize data into the object instance.
+        /// </summary>
+        /// <param name="data">Serialization data to deserialize from.</param>
+        /// <param name="instance">The object instance to deserialize into.</param>
+        /// <param name="storageType">The field/property type that is storing the instance.</param>
+        /// <returns>True if serialization was successful, false otherwise.</returns>
         public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
         {
             var result = fsResult.Success;
@@ -91,6 +119,13 @@ namespace FullSerializer.Internal
             return result;
         }
 
+        /// <summary>
+        /// Construct an object instance that will be passed to TryDeserialize. This should **not**
+        /// deserialize the object.
+        /// </summary>
+        /// <param name="data">The data the object was serialized with.</param>
+        /// <param name="storageType">The field/property type that is storing the instance.</param>
+        /// <returns>An object instance</returns>
         public override object CreateInstance(fsData data, Type storageType)
         {
             return fsMetaType.Get(Serializer.Config, storageType).CreateInstance();

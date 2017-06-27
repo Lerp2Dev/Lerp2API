@@ -1,5 +1,10 @@
 \hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}{}\section{Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server Class Reference}
 \label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}\index{Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server}}
+
+
+Class \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}{Pipe\+Server}.  
+
+
 Inheritance diagram for Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,6 +14,8 @@ Inheritance diagram for Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Ser
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_aade95dd64f11dd0e777557cedf31ca2e}{Pipe\+Server} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}{Pipe\+Server} class. \end{DoxyCompactList}\item 
 void \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a91d854612c235fa7da870e6a861f91c5}{Start} ()
 \begin{DoxyCompactList}\small\item\em Starts the communication channel \end{DoxyCompactList}\item 
 void \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a37eb41a1b69ab108b9eb5745950b3ab9}{Stop} ()
@@ -16,21 +23,40 @@ void \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a3a8a8b1c5a1434d181390d875fab1945}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a3a8a8b1c5a1434d181390d875fab1945}} 
-string {\bfseries Server\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+string \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a3a8a8b1c5a1434d181390d875fab1945}{Server\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The server id \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a7fcb193714e540b9a5c6d13b9b918c74}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a7fcb193714e540b9a5c6d13b9b918c74}} 
-Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_message_received_event_args}{Message\+Received\+Event\+Args} $>$ {\bfseries Message\+Received\+Event}
-\item 
-\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a464991f389e0687209b3e2e1e1274cb6}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a464991f389e0687209b3e2e1e1274cb6}} 
-Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_connected_event_args}{Client\+Connected\+Event\+Args} $>$ {\bfseries Client\+Connected\+Event}
-\item 
-\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a6f3d1cbcb8140447abc987d141113e7d}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a6f3d1cbcb8140447abc987d141113e7d}} 
-Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_disconnected_event_args}{Client\+Disconnected\+Event\+Args} $>$ {\bfseries Client\+Disconnected\+Event}
-\end{DoxyCompactItemize}
+Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_message_received_event_args}{Message\+Received\+Event\+Args} $>$ \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a7fcb193714e540b9a5c6d13b9b918c74}{Message\+Received\+Event}
+\begin{DoxyCompactList}\small\item\em This event is fired when a message is received \end{DoxyCompactList}\item 
+Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_connected_event_args}{Client\+Connected\+Event\+Args} $>$ \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a464991f389e0687209b3e2e1e1274cb6}{Client\+Connected\+Event}
+\begin{DoxyCompactList}\small\item\em This event is fired when a client connects \end{DoxyCompactList}\item 
+Event\+Handler$<$ \hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_disconnected_event_args}{Client\+Disconnected\+Event\+Args} $>$ \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a6f3d1cbcb8140447abc987d141113e7d}{Client\+Disconnected\+Event}
+\begin{DoxyCompactList}\small\item\em This event is fired when a client disconnects \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}{Pipe\+Server}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_server}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication\+Server}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_aade95dd64f11dd0e777557cedf31ca2e}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_aade95dd64f11dd0e777557cedf31ca2e}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}!Pipe\+Server@{Pipe\+Server}}
+\index{Pipe\+Server@{Pipe\+Server}!Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}}
+\subsubsection{\texorpdfstring{Pipe\+Server()}{PipeServer()}}
+{\footnotesize\ttfamily Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server.\+Pipe\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server}{Pipe\+Server} class. 
+
 
 
 \subsection{Member Function Documentation}
@@ -61,6 +87,52 @@ Stops the communication channel
 
 
 Implements \hyperlink{interface_client_server_using_named_pipes_1_1_interfaces_1_1_i_communication_a85ce939996cde20d398e799ca6a900f3}{Client\+Server\+Using\+Named\+Pipes.\+Interfaces.\+I\+Communication}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a3a8a8b1c5a1434d181390d875fab1945}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a3a8a8b1c5a1434d181390d875fab1945}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}!Server\+Id@{Server\+Id}}
+\index{Server\+Id@{Server\+Id}!Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}}
+\subsubsection{\texorpdfstring{Server\+Id}{ServerId}}
+{\footnotesize\ttfamily string Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server.\+Server\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The server id 
+
+The server identifier.
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a464991f389e0687209b3e2e1e1274cb6}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a464991f389e0687209b3e2e1e1274cb6}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}!Client\+Connected\+Event@{Client\+Connected\+Event}}
+\index{Client\+Connected\+Event@{Client\+Connected\+Event}!Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}}
+\subsubsection{\texorpdfstring{Client\+Connected\+Event}{ClientConnectedEvent}}
+{\footnotesize\ttfamily Event\+Handler$<$\hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_connected_event_args}{Client\+Connected\+Event\+Args}$>$ Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server.\+Client\+Connected\+Event}
+
+
+
+This event is fired when a client connects 
+
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a6f3d1cbcb8140447abc987d141113e7d}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a6f3d1cbcb8140447abc987d141113e7d}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}!Client\+Disconnected\+Event@{Client\+Disconnected\+Event}}
+\index{Client\+Disconnected\+Event@{Client\+Disconnected\+Event}!Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}}
+\subsubsection{\texorpdfstring{Client\+Disconnected\+Event}{ClientDisconnectedEvent}}
+{\footnotesize\ttfamily Event\+Handler$<$\hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_client_disconnected_event_args}{Client\+Disconnected\+Event\+Args}$>$ Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server.\+Client\+Disconnected\+Event}
+
+
+
+This event is fired when a client disconnects 
+
+\mbox{\Hypertarget{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a7fcb193714e540b9a5c6d13b9b918c74}\label{class_client_server_using_named_pipes_1_1_server_1_1_pipe_server_a7fcb193714e540b9a5c6d13b9b918c74}} 
+\index{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}!Message\+Received\+Event@{Message\+Received\+Event}}
+\index{Message\+Received\+Event@{Message\+Received\+Event}!Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server@{Client\+Server\+Using\+Named\+Pipes\+::\+Server\+::\+Pipe\+Server}}
+\subsubsection{\texorpdfstring{Message\+Received\+Event}{MessageReceivedEvent}}
+{\footnotesize\ttfamily Event\+Handler$<$\hyperlink{class_client_server_using_named_pipes_1_1_interfaces_1_1_message_received_event_args}{Message\+Received\+Event\+Args}$>$ Client\+Server\+Using\+Named\+Pipes.\+Server.\+Pipe\+Server.\+Message\+Received\+Event}
+
+
+
+This event is fired when a message is received 
 
 
 

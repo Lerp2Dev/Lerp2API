@@ -30,6 +30,9 @@ public class Loom : MonoBehaviour
     private static bool _initialized;
     private static int _threadId = -1;
 
+    /// <summary>
+    /// Initializes this instance.
+    /// </summary>
     public static void Initialize()
     {
         var go = !_initialized;
@@ -67,9 +70,18 @@ public class Loom : MonoBehaviour
 
     private List<Action> _actions = new List<Action>();
 
+    /// <summary>
+    /// Class DelayedQueueItem.
+    /// </summary>
     public class DelayedQueueItem
     {
+        /// <summary>
+        /// The time
+        /// </summary>
         public float time;
+        /// <summary>
+        /// The action
+        /// </summary>
         public Action action;
     }
 

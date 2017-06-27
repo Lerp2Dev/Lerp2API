@@ -19,9 +19,9 @@ override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_i_enumerable_c
 override object \hyperlink{class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter_a787950b2cb51b536dc9fc01f5870f0d9}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
 \begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter_a7aaf3b51583371f787df64c3eefc8c87}{Try\+Serialize} (object instance\+\_\+, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
-\begin{DoxyCompactList}\small\item\em Serialize the actual object into the given data storage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tries the serialize. \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter_a1585e62338f2abf99911f4fde9599daa}{Try\+Deserialize} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, ref object instance\+\_\+, Type storage\+Type)
-\begin{DoxyCompactList}\small\item\em Deserialize data into the object instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tries the deserialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -81,23 +81,23 @@ Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a415ea2
 \index{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter}!Try\+Deserialize@{Try\+Deserialize}}
 \index{Try\+Deserialize@{Try\+Deserialize}!Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter}}
 \subsubsection{\texorpdfstring{Try\+Deserialize()}{TryDeserialize()}}
-{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+I\+Enumerable\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{ref object}]{instance,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+I\+Enumerable\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{ref object}]{instance\+\_\+,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Deserialize data into the object instance. 
+Tries the deserialize. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & \hyperlink{namespace_serialization}{Serialization} data to deserialize from.\\
+{\em data} & The data.\\
 \hline
-{\em instance} & The object instance to deserialize into.\\
+{\em instance\+\_\+} & The instance.\\
 \hline
-{\em storage\+Type} & The field/property type that is storing the instance.\\
+{\em storage\+Type} & Type of the storage.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if serialization was successful, false otherwise.
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}.
 \end{DoxyReturn}
 
 
@@ -107,23 +107,23 @@ Implements \hyperlink{class_full_serializer_1_1fs_base_converter_a38d3d1b042eb78
 \index{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter}!Try\+Serialize@{Try\+Serialize}}
 \index{Try\+Serialize@{Try\+Serialize}!Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+I\+Enumerable\+Converter}}
 \subsubsection{\texorpdfstring{Try\+Serialize()}{TrySerialize()}}
-{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+I\+Enumerable\+Converter.\+Try\+Serialize (\begin{DoxyParamCaption}\item[{object}]{instance,  }\item[{out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{serialized,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+I\+Enumerable\+Converter.\+Try\+Serialize (\begin{DoxyParamCaption}\item[{object}]{instance\+\_\+,  }\item[{out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{serialized,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Serialize the actual object into the given data storage. 
+Tries the serialize. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em instance} & The object instance to serialize. This will never be null.\\
+{\em instance\+\_\+} & The instance.\\
 \hline
-{\em serialized} & The serialized state.\\
+{\em serialized} & The serialized.\\
 \hline
-{\em storage\+Type} & The field/property type that is storing this instance.\\
+{\em storage\+Type} & Type of the storage.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-If serialization was successful.
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}.
 \end{DoxyReturn}
 
 

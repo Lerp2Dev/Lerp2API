@@ -1,20 +1,47 @@
+using Lerp2API.Hepers.Rect_Utils;
 using System.Collections;
 using UnityEngine;
 
 namespace Lerp2API.Game
 {
+    /// <summary>
+    /// Class FPSCounter.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class FPSCounter : MonoBehaviour
     {
+        /// <summary>
+        /// The m update interval
+        /// </summary>
         public float m_updateInterval = 0.5f;
+
+        /// <summary>
+        /// The width
+        /// </summary>
         public int width = 200,
+                   /// <summary>
+                   /// The height
+                   /// </summary>
                    height = 40;
+
+        /// <summary>
+        /// The m counter position
+        /// </summary>
         public Position m_counterPosition;
+
+        /// <summary>
+        /// The m font size
+        /// </summary>
         public int m_fontSize = 14;
 
         private const string display = "{0:F2} FPS";
         private string m_Text = "";
         private bool m_Active = true;
 
+        /// <summary>
+        /// Gets or sets the frames per sec.
+        /// </summary>
+        /// <value>The frames per sec.</value>
         public float FramesPerSec { get; protected set; }
 
         private void Start()

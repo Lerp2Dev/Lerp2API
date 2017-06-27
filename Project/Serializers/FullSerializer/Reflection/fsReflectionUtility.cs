@@ -7,6 +7,9 @@ using System.Reflection;
 
 namespace FullSerializer.Internal
 {
+    /// <summary>
+    /// Class fsReflectionUtility.
+    /// </summary>
     public static class fsReflectionUtility
     {
         /// <summary>

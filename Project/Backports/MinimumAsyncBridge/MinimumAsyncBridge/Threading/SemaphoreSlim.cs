@@ -4,7 +4,7 @@
 
     /// <summary>
     /// Simplified implementation of SemaphoreSlim.
-    /// 
+    ///
     /// </summary>
     public class SemaphoreSlim : IDisposable
     {
@@ -13,24 +13,48 @@
         private TaskNode _head;
         private TaskNode _tail;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SemaphoreSlim"/> class.
+        /// </summary>
+        /// <param name="initialCount">The initial count.</param>
         public SemaphoreSlim(int initialCount)
         {
             _currentCount = initialCount;
         }
 
+        /// <summary>
+        /// Gets the current count.
+        /// </summary>
+        /// <value>The current count.</value>
         public int CurrentCount => _currentCount;
 
         /// <summary>
         /// <see cref="TaskCompletionSource{TResult}"/>-derived linked list node so as to have links intrusively。
         /// </summary>
-        class TaskNode : TaskCompletionSource<bool>
+        private class TaskNode : TaskCompletionSource<bool>
         {
+            /// <summary>
+            /// The next
+            /// </summary>
             public TaskNode Next;
+
+            /// <summary>
+            /// The cancellation
+            /// </summary>
             public CancellationTokenRegistration Cancellation;
         }
 
+        /// <summary>
+        /// Waits the asynchronous.
+        /// </summary>
+        /// <returns>Task.</returns>
         public Task WaitAsync() => WaitAsync(CancellationToken.None);
 
+        /// <summary>
+        /// Waits the asynchronous.
+        /// </summary>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Task.</returns>
         public Task WaitAsync(CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -70,6 +94,10 @@
             }
         }
 
+        /// <summary>
+        /// Releases this instance.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
         public int Release()
         {
             TaskNode head = null;
@@ -112,6 +140,9 @@
             return count;
         }
 
+        /// <summary>
+        /// Disposes this instance.
+        /// </summary>
         public void Dispose()
         {
             // nop, because this simplified implementation does not use WaitHandle

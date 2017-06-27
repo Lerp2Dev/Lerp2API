@@ -1,26 +1,48 @@
 //using System;
 using UnityEngine;
 
+/// <summary>
+/// Class cNoise.
+/// </summary>
 public class cNoise
 {
     private int m_Seed;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="cNoise"/> class.
+    /// </summary>
+    /// <param name="a_Seed">a seed.</param>
     public cNoise(int a_Seed)
     {
         m_Seed = a_Seed;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="cNoise"/> class.
+    /// </summary>
+    /// <param name="a_Noise">a noise.</param>
     public cNoise(cNoise a_Noise)
     {
         m_Seed = a_Noise.m_Seed;
     }
 
+    /// <summary>
+    /// Ints the noise1 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Single.</returns>
     public float IntNoise1D(int a_X)
     {
         int x = ((a_X * m_Seed) << 13) ^ a_X;
         return (1f - (float)((x * (x * x * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0f);
     }
 
+    /// <summary>
+    /// Ints the noise2 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <returns>System.Single.</returns>
     public float IntNoise2D(int a_X, int a_Y)
     {
         int n = a_X + a_Y * 57 + m_Seed * 57 * 57;
@@ -28,6 +50,13 @@ public class cNoise
         return (1f - (float)((n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0f);
     }
 
+    /// <summary>
+    /// Ints the noise3 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_Z">a z.</param>
+    /// <returns>System.Single.</returns>
     public float IntNoise3D(int a_X, int a_Y, int a_Z)
     {
         int n = a_X + a_Y * 57 + a_Z * 57 * 57 + m_Seed * 57 * 57 * 57;
@@ -35,17 +64,36 @@ public class cNoise
         return (1f - (float)((n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff) / 1073741824.0f);
     }
 
+    /// <summary>
+    /// Ints the noise2 d in range.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_Min">a minimum.</param>
+    /// <param name="a_Max">a maximum.</param>
+    /// <returns>System.Single.</returns>
     public float IntNoise2DInRange(int a_X, int a_Y, float a_Min, float a_Max)
     {
         return a_Min + Mathf.Abs(IntNoise2D(a_X, a_Y)) * (a_Max - a_Min);
     }
 
+    /// <summary>
+    /// Ints the noise1 d int.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Int32.</returns>
     public int IntNoise1DInt(int a_X)
     {
         int x = ((a_X * m_Seed) << 13) ^ a_X;
         return ((x * (x * x * 15731 + 789221) + 1376312589) & 0x7fffffff);
     }
 
+    /// <summary>
+    /// Ints the noise2 d int.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <returns>System.Int32.</returns>
     public int IntNoise2DInt(int a_X, int a_Y)
     {
         int n = a_X + a_Y * 57 + m_Seed * 57 * 57;
@@ -53,6 +101,13 @@ public class cNoise
         return ((n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff);
     }
 
+    /// <summary>
+    /// Ints the noise3 d int.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_Z">a z.</param>
+    /// <returns>System.Int32.</returns>
     public int IntNoise3DInt(int a_X, int a_Y, int a_Z)
     {
         int n = a_X + a_Y * 57 + a_Z * 57 * 57 + m_Seed * 57 * 57 * 57;
@@ -60,6 +115,11 @@ public class cNoise
         return ((n * (n * n * 15731 + 789221) + 1376312589) & 0x7fffffff);
     }
 
+    /// <summary>
+    /// Linears the noise1 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Single.</returns>
     public float LinearNoise1D(float a_X)
     {
         int BaseX = a_X < 0 ? (int)a_X - 1 : (int)a_X;
@@ -67,6 +127,11 @@ public class cNoise
         return LinearInterpolate(IntNoise1D(BaseX), IntNoise1D(BaseX + 1), FracX);
     }
 
+    /// <summary>
+    /// Cosines the noise1 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Single.</returns>
     public float CosineNoise1D(float a_X)
     {
         int BaseX = a_X < 0 ? (int)a_X - 1 : (int)a_X;
@@ -74,6 +139,11 @@ public class cNoise
         return CosineInterpolate(IntNoise1D(BaseX), IntNoise1D(BaseX + 1), FracX);
     }
 
+    /// <summary>
+    /// Cubics the noise1 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Single.</returns>
     public float CubicNoise1D(float a_X)
     {
         int BaseX = a_X < 0 ? (int)a_X - 1 : (int)a_X;
@@ -81,11 +151,22 @@ public class cNoise
         return CubicInterpolate(IntNoise1D(BaseX - 1), IntNoise1D(BaseX), IntNoise1D(BaseX + 1), IntNoise1D(BaseX + 2), FracX);
     }
 
+    /// <summary>
+    /// Smoothes the noise1 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <returns>System.Single.</returns>
     public float SmoothNoise1D(int a_X)
     {
         return IntNoise1D(a_X) / 2 + IntNoise1D(a_X - 1) / 4 + IntNoise1D(a_X + 1) / 4;
     }
 
+    /// <summary>
+    /// Cubics the noise2 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <returns>System.Single.</returns>
     public float CubicNoise2D(float a_X, float a_Y)
     {
         int BaseX = a_X < 0 ? (int)a_X - 1 : (int)a_X,
@@ -103,6 +184,13 @@ public class cNoise
         return CubicInterpolate(interp1, interp2, interp3, interp4, FracY);
     }
 
+    /// <summary>
+    /// Cubics the noise3 d.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_Z">a z.</param>
+    /// <returns>System.Single.</returns>
     public float CubicNoise3D(float a_X, float a_Y, float a_Z)
     {
         int BaseX = a_X < 0 ? (int)a_X - 1 : (int)a_X,
@@ -148,11 +236,24 @@ public class cNoise
         return CubicInterpolate(yinterp1, yinterp2, yinterp3, yinterp4, FracZ);
     }
 
+    /// <summary>
+    /// Sets the seed.
+    /// </summary>
+    /// <param name="a_Seed">a seed.</param>
     public void SetSeed(int a_Seed)
     {
         m_Seed = a_Seed;
     }
 
+    /// <summary>
+    /// Cubics the interpolate.
+    /// </summary>
+    /// <param name="a_A">a a.</param>
+    /// <param name="a_B">a b.</param>
+    /// <param name="a_C">a c.</param>
+    /// <param name="a_D">a d.</param>
+    /// <param name="a_Pct">a PCT.</param>
+    /// <returns>System.Single.</returns>
     public static float CubicInterpolate(float a_A, float a_B, float a_C, float a_D, float a_Pct)
     {
         float P = (a_D - a_C) - (a_A - a_B),
@@ -162,6 +263,13 @@ public class cNoise
         return ((P * a_Pct + Q) * a_Pct + R) * a_Pct + S;
     }
 
+    /// <summary>
+    /// Cosines the interpolate.
+    /// </summary>
+    /// <param name="a_A">a a.</param>
+    /// <param name="a_B">a b.</param>
+    /// <param name="a_Pct">a PCT.</param>
+    /// <returns>System.Single.</returns>
     public static float CosineInterpolate(float a_A, float a_B, float a_Pct)
     {
         float ft = a_Pct * (float)3.1415927,
@@ -169,6 +277,13 @@ public class cNoise
         return a_A * (1 - f) + a_B * f;
     }
 
+    /// <summary>
+    /// Linears the interpolate.
+    /// </summary>
+    /// <param name="a_A">a a.</param>
+    /// <param name="a_B">a b.</param>
+    /// <param name="a_Pct">a PCT.</param>
+    /// <returns>System.Single.</returns>
     public static float LinearInterpolate(float a_A, float a_B, float a_Pct)
     {
         return a_A * (1 - a_Pct) + a_B * a_Pct;

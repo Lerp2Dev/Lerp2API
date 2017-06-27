@@ -2,6 +2,9 @@
 {
     using System;
 
+    /// <summary>
+    /// Class Crc32.
+    /// </summary>
     public class Crc32
     {
         private uint _crc32;
@@ -39,6 +42,11 @@
             return ~_crc32;
         }
 
+        /// <summary>
+        /// Crs the C32 bytes.
+        /// </summary>
+        /// <param name="bytes">The bytes.</param>
+        /// <returns>System.UInt32.</returns>
         public static uint CRC32Bytes(byte[] bytes)
         {
             uint maxValue = uint.MaxValue;
@@ -51,6 +59,11 @@
             return ~maxValue;
         }
 
+        /// <summary>
+        /// Crs the C32 string.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.UInt32.</returns>
         public static uint CRC32String(string text)
         {
             uint maxValue = uint.MaxValue;

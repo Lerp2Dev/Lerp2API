@@ -1,18 +1,39 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Class FallingAvoider.
+/// </summary>
 public class FallingAvoider : MonoBehaviour
 {
+    /// <summary>
+    /// The m current
+    /// </summary>
     public static FallingAvoider m_current;
 
+    /// <summary>
+    /// The m message
+    /// </summary>
     public bool m_message;
+
+    /// <summary>
+    /// The m under zero
+    /// </summary>
     public bool m_underZero = true;
+
+    /// <summary>
+    /// The m find ground at start
+    /// </summary>
     public bool m_findGroundAtStart = true;
 
+    /// <summary>
+    /// The teleported
+    /// </summary>
     [HideInInspector]
     public bool teleported = true;
 
     private RaycastHit hit;
+
     private bool hitted
     {
         get
@@ -29,7 +50,7 @@ public class FallingAvoider : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        if(m_findGroundAtStart && !hitted)
+        if (m_findGroundAtStart && !hitted)
             StartCoroutine("FindGround", m_message);
     }
 
@@ -49,6 +70,11 @@ public class FallingAvoider : MonoBehaviour
         //lastPos = transform.position;
     }
 
+    /// <summary>
+    /// Finds the ground.
+    /// </summary>
+    /// <param name="debug">if set to <c>true</c> [debug].</param>
+    /// <returns>IEnumerator.</returns>
     public IEnumerator FindGround(bool debug = false)
     { //I don't know why I have to press a key to make it work...
         if (debug)
@@ -60,6 +86,4 @@ public class FallingAvoider : MonoBehaviour
         if (debug)
             Debug.Log("Ground founded and teleported to it!");
     }
-
-
 }

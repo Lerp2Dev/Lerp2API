@@ -2,23 +2,78 @@
 using System.Diagnostics;
 using System.Threading;
 using UnityEditor;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace Lerp2APIEditor
 {
+    /// <summary>
+    /// Class EditorHelpers.
+    /// </summary>
     public static class EditorHelpers
     {
         #region "Editor Extensions"
 
+        private static SerializedObject _tagMan;
+        private static SerializedObject tagManager
+        {
+            get
+            {
+                // Open tag manager
+                if (_tagMan == null)
+                    _tagMan = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
+                return _tagMan;
+            }
+        }
+
+        private static SerializedProperty _tagsProp;
+        private static SerializedProperty tagsProp
+        {
+            get
+            {
+                if (_tagsProp == null)
+                    _tagsProp = tagManager.FindProperty("tags");
+                return _tagsProp;
+            }
+        }
+
+        private static SerializedProperty _layersProp;
+        private static SerializedProperty layersProp
+        {
+            get
+            {
+                if (_layersProp == null)
+                    _layersProp = tagManager.FindProperty("layers");
+                return _layersProp;
+            }
+        }
+
+        /// <summary>
+        /// Defines the tag.
+        /// </summary>
+        /// <param name="tagName">Name of the tag.</param>
         public static void DefineTag(this string tagName)
         { //Credits: http://answers.unity3d.com/questions/33597/is-it-possible-to-create-a-tag-programmatically.html
-          // Open tag manager
-            SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
-            SerializedProperty tagsProp = tagManager.FindProperty("tags");
+            bool found = tagName.CheckTag();
 
-            // For Unity 5 we need this too
-            //SerializedProperty layersProp = tagManager.FindProperty("layers");
+            // if not found, add it
+            if (!found)
+            {
+                tagsProp.InsertArrayElementAtIndex(0);
+                SerializedProperty n = tagsProp.GetArrayElementAtIndex(0);
+                n.stringValue = tagName;
+            }
 
+            // and to save the changes
+            tagManager.ApplyModifiedProperties();
+        }
+
+        /// <summary>
+        /// Checks the tag.
+        /// </summary>
+        /// <param name="tagName">Name of the tag.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public static bool CheckTag(this string tagName)
+        {
             // Adding a Tag
             // First check if it is not already present
             bool found = false;
@@ -28,26 +83,56 @@ namespace Lerp2APIEditor
                 if (t.stringValue.Equals(tagName)) { found = true; break; }
             }
 
-            // if not found, add it
-            if (!found)
-            {
-                tagsProp.InsertArrayElementAtIndex(0);
-                SerializedProperty n = tagsProp.GetArrayElementAtIndex(0);
-                n.stringValue = tagName;
-            }
+            return found;
         }
 
-        #endregion "Editor Extensions"
+
+        //I have to hacer un checklayer...
+        /// <summary>
+        /// Defines the layer.
+        /// </summary>
+        /// <param name="layerName">Name of the layer.</param>
+        /// <param name="layer">The layer.</param>
+        public static void DefineLayer(this string layerName, int layer)
+        {
+#if UNITY_4
+            // --- Unity 4 ---
+            SerializedProperty sp = tagManager.FindProperty("User Layer "+layer);
+            if (sp != null) sp.stringValue = layerName;
+#else //Deberia ser un #elif UNITY_5, pero como estamos en la api y las directivas de preprocesador estan un poco cascadas...
+            // --- Unity 5 ---
+            SerializedProperty sp = layersProp.GetArrayElementAtIndex(layer);
+            if (sp != null) sp.stringValue = layerName;
+#endif
+            // and to save the changes
+            tagManager.ApplyModifiedProperties();
+        }
+
+#endregion "Editor Extensions"
     }
 
     #region "Editor Reflection Extensions"
+    /// <summary>
+    /// Class EditorReflectionHelpers.
+    /// </summary>
     public class EditorReflectionHelpers
     {
+        /// <summary>
+        /// The fin
+        /// </summary>
         public Action fin;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditorReflectionHelpers"/> class.
+        /// </summary>
+        /// <param name="f">The f.</param>
         public EditorReflectionHelpers(Action f)
         {
             fin = f;
         }
+        /// <summary>
+        /// Waits the until class is available.
+        /// </summary>
+        /// <param name="type">The type.</param>
         public void WaitUntilClassIsAvailable(string type)
         {
             Debug.LogFormat("Waiting for '{0}' class.", type);
@@ -72,14 +157,24 @@ namespace Lerp2APIEditor
     #endregion
 
     #region "Thread Safe Editor Extensions"
+    /// <summary>
+    /// Class ThreadSafeEditor.
+    /// </summary>
     public class ThreadSafeEditor
     {
         private Process cmd;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ThreadSafeEditor"/> class.
+        /// </summary>
         public ThreadSafeEditor()
         {
             cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
         }
+        /// <summary>
+        /// Messages the specified commands.
+        /// </summary>
+        /// <param name="commands">The commands.</param>
         public void Message(params string[] commands)
         {
             cmd.StartInfo.Arguments = string.Format("/c {0} & pause", string.Join(" & ", commands));
@@ -87,5 +182,5 @@ namespace Lerp2APIEditor
             cmd.Close();
         }
     }
-    #endregion
+#endregion
 }

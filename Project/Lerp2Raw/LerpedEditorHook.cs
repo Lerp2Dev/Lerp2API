@@ -11,12 +11,22 @@ namespace Lerp2Raw
 {
 
 #if UNITY_EDITOR
+    /// <summary>
+    /// Class LerpedEditorHook.
+    /// </summary>
+    /// <seealso cref="Lerp2API.Mono.LerpedMono" />
     [ExecuteInEditMode]
 #endif
     public class LerpedEditorHook : LerpedMono
     {
 #if UNITY_EDITOR
-        public static LerpedEditorHook me;
+        /// <summary>
+        /// Me
+        /// </summary>
+        public new static LerpedEditorHook me;
+        /// <summary>
+        /// The type pool
+        /// </summary>
         public static Queue<Type> typePool = new Queue<Type>();
 
         [InitializeOnLoadMethod]
@@ -33,11 +43,17 @@ namespace Lerp2Raw
                 PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
         }
 
+        /// <summary>
+        /// Awakes this instance.
+        /// </summary>
         public void Awake()
         {
             me = this;
         }
 
+        /// <summary>
+        /// Updates this instance.
+        /// </summary>
         public void Update()
         {
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
@@ -50,6 +66,10 @@ namespace Lerp2Raw
             }
         }
 
+        /// <summary>
+        /// Adds the element.
+        /// </summary>
+        /// <param name="name">The name.</param>
         public void AddElement(string name)
         {
             Type type = Type.GetType(name);

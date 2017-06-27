@@ -62,6 +62,9 @@ public class WaitForAnimation : CoroutineReturn
         }
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WaitForAnimation"/> class.
+    /// </summary>
     public WaitForAnimation()
     {
     }
@@ -161,43 +164,89 @@ public class WaitForAnimation : CoroutineReturn
     }
 }
 
+/// <summary>
+/// Class TaskHelpers.
+/// </summary>
 public static class TaskHelpers
 {
+    /// <summary>
+    /// Waits for animation.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <param name="name">The name.</param>
+    /// <returns>WaitForAnimation.</returns>
     public static WaitForAnimation WaitForAnimation(this GameObject go, string name)
     {
         return WaitForAnimation(go, name, 1f);
     }
 
+    /// <summary>
+    /// Waits for animation.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="time">The time.</param>
+    /// <returns>WaitForAnimation.</returns>
     public static WaitForAnimation WaitForAnimation(this GameObject go, string name, float time)
     {
         return new WaitForAnimation(go, name, time, -1);
     }
 
+    /// <summary>
+    /// Waits for animation weight.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <param name="name">The name.</param>
+    /// <returns>WaitForAnimation.</returns>
     public static WaitForAnimation WaitForAnimationWeight(this GameObject go, string name)
     {
         return WaitForAnimationWeight(go, name, 0f);
     }
 
+    /// <summary>
+    /// Waits for animation weight.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="weight">The weight.</param>
+    /// <returns>WaitForAnimation.</returns>
     public static WaitForAnimation WaitForAnimationWeight(this GameObject go, string name, float weight)
     {
         return new WaitForAnimation(go, name, 0, weight);
     }
 }
 
+/// <summary>
+/// Interface IYieldInstruction
+/// </summary>
 public interface IYieldInstruction
 {
+    /// <summary>
+    /// Gets the instruction.
+    /// </summary>
+    /// <value>The instruction.</value>
     YieldInstruction Instruction { get; }
 }
 
+/// <summary>
+/// Class RadicalWaitForSeconds.
+/// </summary>
 public class RadicalWaitForSeconds : IYieldInstruction
 {
     private float _time;
     private float _seconds;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RadicalWaitForSeconds"/> class.
+    /// </summary>
     public RadicalWaitForSeconds()
     {
     }
 
+    /// <summary>
+    /// Gets or sets the time remaining.
+    /// </summary>
+    /// <value>The time remaining.</value>
     public float TimeRemaining
     {
         get
@@ -211,6 +260,10 @@ public class RadicalWaitForSeconds : IYieldInstruction
         }
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RadicalWaitForSeconds"/> class.
+    /// </summary>
+    /// <param name="seconds">The seconds.</param>
     public RadicalWaitForSeconds(float seconds)
     {
         _time = Time.time;
@@ -219,6 +272,10 @@ public class RadicalWaitForSeconds : IYieldInstruction
 
     #region IYieldInstruction implementation
 
+    /// <summary>
+    /// Gets the instruction.
+    /// </summary>
+    /// <value>The instruction.</value>
     public YieldInstruction Instruction
     {
         get
@@ -281,6 +338,9 @@ public class RadicalRoutine : IDeserialized
     /// </summary>
     public bool finished;
 
+    /// <summary>
+    /// The target
+    /// </summary>
     public object Target;
     private bool isTracking;
     private MonoBehaviour _trackedObject;
@@ -350,6 +410,13 @@ public class RadicalRoutine : IDeserialized
         return Run(extendedCoRoutine, methodName, null);
     }
 
+    /// <summary>
+    /// Runs the specified extended co routine.
+    /// </summary>
+    /// <param name="extendedCoRoutine">The extended co routine.</param>
+    /// <param name="methodName">Name of the method.</param>
+    /// <param name="target">The target.</param>
+    /// <returns>RadicalRoutine.</returns>
     public static RadicalRoutine Run(IEnumerator extendedCoRoutine, string methodName, object target)
     {
         var rr = new RadicalRoutine();
@@ -488,6 +555,9 @@ public class RadicalRoutine : IDeserialized
 
     #region IDeserialized implementation
 
+    /// <summary>
+    /// Deserializeds this instance.
+    /// </summary>
     public void Deserialized()
     {
     }
@@ -500,6 +570,9 @@ public class RadicalRoutine : IDeserialized
 /// </summary>
 public static class RadicalRoutineExtensions
 {
+    /// <summary>
+    /// Class RadicalRoutineBehaviour.
+    /// </summary>
     public class RadicalRoutineBehaviour : MonoBehaviour { }
 
     /// <summary>

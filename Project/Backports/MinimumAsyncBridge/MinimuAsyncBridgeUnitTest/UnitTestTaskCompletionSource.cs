@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Linq;
+
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Linq;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestTaskCompletionSource.
+    /// </summary>
     public class UnitTestTaskCompletionSource
     {
-        
+        /// <summary>
+        /// Tests the task completion source result.
+        /// </summary>
         public void TestTaskCompletionSource_Result()
         {
             GetResultShouldHaveExceptionIfTheTasksGetError();
@@ -64,7 +69,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(res, 321);
         }
 
-        
+        /// <summary>
+        /// Tests the task completion source set XXX.
+        /// </summary>
         public void TestTaskCompletionSource_SetXxx()
         {
             SetResultShouldHaveExceptionIfSecondTimeCalls().Wait();
@@ -81,7 +88,7 @@ namespace MinimuAsyncBridgeUnitTest
             {
                 tcs.SetResult(2);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.GetType(), typeof(InvalidOperationException));
                 exceptionCount++;
@@ -201,7 +208,7 @@ namespace MinimuAsyncBridgeUnitTest
             {
                 var r = await tcs.Task;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.GetType(), typeof(Exception));
                 Assert.AreEqual(e.Message, "first");
@@ -212,7 +219,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(exceptionCount, 4);
         }
 
-        
+        /// <summary>
+        /// Tests the task completion source try set XXX.
+        /// </summary>
         public void TestTaskCompletionSource_TrySetXxx()
         {
             TrySetResultShouldWorkIfFirstTime().Wait();

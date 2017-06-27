@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-namespace UnityStandardAssets.Utility
+namespace Lerp2Assets.Utility
 {
+    /// <summary>
+    /// Class SmoothFollow.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class SmoothFollow : MonoBehaviour
     {
         // The target we are following

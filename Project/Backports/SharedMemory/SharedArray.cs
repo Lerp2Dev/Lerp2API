@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -44,7 +44,7 @@ namespace SharedMemory
         /// Gets a 32-bit integer that represents the total number of elements in the <see cref="SharedArray{T}"/>
         /// </summary>
         public int Length { get; private set; }
-        
+
         /// <summary>
         /// Gets or sets the element at the specified index
         /// </summary>
@@ -96,7 +96,7 @@ namespace SharedMemory
             Open();
         }
 
-        #endregion
+        #endregion Constructors
 
         /// <summary>
         /// Perform any initialisation required when opening the shared memory array
@@ -146,7 +146,7 @@ namespace SharedMemory
             base.Write(buffer, startIndex * _elementSize);
         }
 
-        #endregion
+        #endregion Writing
 
         #region Reading
 
@@ -182,7 +182,7 @@ namespace SharedMemory
             base.Read(buffer, startIndex * _elementSize);
         }
 
-        #endregion
+        #endregion Reading
 
         #region IEnumerable<T>
 
@@ -207,9 +207,10 @@ namespace SharedMemory
             return this.GetEnumerator();
         }
 
-        #endregion
+        #endregion IEnumerable<T>
 
         #region IList<T>
+
         /// <summary>
         /// Operation not supported. Throws <see cref="System.NotImplementedException"/>
         /// </summary>
@@ -255,7 +256,6 @@ namespace SharedMemory
             get { return Length; }
         }
 
-
         /// <summary>
         /// The elements are not read-only
         /// </summary>
@@ -297,7 +297,6 @@ namespace SharedMemory
             throw new NotImplementedException();
         }
 
-        #endregion
-
+        #endregion IList<T>
     }
 }

@@ -2,10 +2,21 @@ using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using System;
 using System.IO;
 
+/// <summary>
+/// Class CompressionHelper.
+/// </summary>
 public static class CompressionHelper
 {
+    /// <summary>
+    /// The technique
+    /// </summary>
     public static string technique = "ZipStream";
 
+    /// <summary>
+    /// Compresses the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <returns>System.String.</returns>
     public static string Compress(byte[] data)
     {
         using (var m = new MemoryStream())
@@ -26,6 +37,11 @@ public static class CompressionHelper
         }
     }
 
+    /// <summary>
+    /// Decompresses the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <returns>System.Byte[].</returns>
     public static byte[] Decompress(string data)
     {
         byte[] output = null;

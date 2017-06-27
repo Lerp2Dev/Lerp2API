@@ -10,6 +10,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
+/// <summary>
+/// Class RadicalRoutineHelper. This class cannot be inherited.
+/// </summary>
 [Deferred]
 [AddComponentMenu("Storage/Resumable Coroutine Support")]
 public sealed class RadicalRoutineHelper : MonoBehaviour, IDeserialized
@@ -23,6 +26,10 @@ public sealed class RadicalRoutineHelper : MonoBehaviour, IDeserialized
 
     private static RadicalRoutineHelper _current;
 
+    /// <summary>
+    /// Gets the current.
+    /// </summary>
+    /// <value>The current.</value>
     public static RadicalRoutineHelper Current
     {
         get
@@ -60,8 +67,15 @@ public sealed class RadicalRoutineHelper : MonoBehaviour, IDeserialized
             _current = null;
     }
 
+    /// <summary>
+    /// The running
+    /// </summary>
     public List<RadicalRoutine> Running = new List<RadicalRoutine>();
 
+    /// <summary>
+    /// Runs the specified routine.
+    /// </summary>
+    /// <param name="routine">The routine.</param>
     public void Run(RadicalRoutine routine)
     {
         Running.Add(routine);
@@ -71,6 +85,10 @@ public sealed class RadicalRoutineHelper : MonoBehaviour, IDeserialized
             StartCoroutine(routine.enumerator);
     }
 
+    /// <summary>
+    /// Finisheds the specified routine.
+    /// </summary>
+    /// <param name="routine">The routine.</param>
     public void Finished(RadicalRoutine routine)
     {
         Running.Remove(routine);

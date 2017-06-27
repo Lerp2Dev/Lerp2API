@@ -1,5 +1,10 @@
 \hypertarget{class_full_serializer_1_1_internal_1_1fs_primitive_converter}{}\section{Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter Class Reference}
 \label{class_full_serializer_1_1_internal_1_1fs_primitive_converter}\index{Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter@{Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter}}
+
+
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_primitive_converter}{fs\+Primitive\+Converter}.  
+
+
 Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,8 +23,18 @@ override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_primitive_conv
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_primitive_converter_a6415a8256e0ab38b10e938c7aab8fcea}{Try\+Serialize} (object instance, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
 \begin{DoxyCompactList}\small\item\em Serialize the actual object into the given data storage. \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_primitive_converter_a5143547d92eb9578d027c0a676ad0613}{Try\+Deserialize} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} storage, ref object instance, Type storage\+Type)
-\begin{DoxyCompactList}\small\item\em Deserialize data into the object instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tries the deserialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_primitive_converter}{fs\+Primitive\+Converter}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_full_serializer_1_1fs_converter}{Full\+Serializer.\+fs\+Converter}
+
+
+\end{DoxySeeAlso}
 
 
 \subsection{Member Function Documentation}
@@ -60,6 +75,9 @@ If true, then the serializer will support cyclic references with the given conve
 {\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if X\+X\+XX, {\ttfamily false} otherwise.
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a4e850ab88cea1b89771c00e0b65febcd}{Full\+Serializer.\+fs\+Base\+Converter}.
@@ -79,6 +97,9 @@ If true, then the serializer will include inheritance data for the given convert
 {\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if X\+X\+XX, {\ttfamily false} otherwise.
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a84447285540ab6b51efc2399d144c60c}{Full\+Serializer.\+fs\+Base\+Converter}.
@@ -87,23 +108,23 @@ Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a844472
 \index{Full\+Serializer\+::\+Internal\+::fs\+Primitive\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Primitive\+Converter}!Try\+Deserialize@{Try\+Deserialize}}
 \index{Try\+Deserialize@{Try\+Deserialize}!Full\+Serializer\+::\+Internal\+::fs\+Primitive\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Primitive\+Converter}}
 \subsubsection{\texorpdfstring{Try\+Deserialize()}{TryDeserialize()}}
-{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{ref object}]{instance,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+fs\+Primitive\+Converter.\+Try\+Deserialize (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{storage,  }\item[{ref object}]{instance,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Deserialize data into the object instance. 
+Tries the deserialize. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & \hyperlink{namespace_serialization}{Serialization} data to deserialize from.\\
+{\em storage} & The storage.\\
 \hline
-{\em instance} & The object instance to deserialize into.\\
+{\em instance} & The instance.\\
 \hline
-{\em storage\+Type} & The field/property type that is storing the instance.\\
+{\em storage\+Type} & Type of the storage.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if serialization was successful, false otherwise.
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}.
 \end{DoxyReturn}
 
 

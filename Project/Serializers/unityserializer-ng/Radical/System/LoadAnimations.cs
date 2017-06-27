@@ -1,9 +1,15 @@
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Class LoadAnimations.
+/// </summary>
 [AddComponentMenu("System/Load Animations")]
 public class LoadAnimations : MonoBehaviour
 {
+    /// <summary>
+    /// The name
+    /// </summary>
     public new string name;
 
     private void Awake()

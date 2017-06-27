@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
+/// <summary>
+/// Class MeshSerializer.
+/// </summary>
 public class MeshSerializer
 {
     // A simple mesh saving/loading functionality.
@@ -30,6 +33,20 @@ public class MeshSerializer
     //
     //    Finally the triangle indices array: 6 bytes per triangle (3 unsigned short indices)
     // Reads mesh from an array of bytes. [old: Can return null if the bytes seem invalid.]
+    /// <summary>
+    /// Reads the mesh.
+    /// </summary>
+    /// <param name="bytes">The bytes.</param>
+    /// <returns>Mesh.</returns>
+    /// <exception cref="Exception">
+    /// Invalid mesh file!
+    /// or
+    /// Invalid vertex count in the mesh data!
+    /// or
+    /// Invalid triangle count in the mesh data!
+    /// or
+    /// Invalid vertex format in the mesh data!
+    /// </exception>
     public static Mesh ReadMesh(byte[] bytes)
     {
         if (bytes == null || bytes.Length < 5)
@@ -282,6 +299,12 @@ public class MeshSerializer
     }
 
     // Writes mesh to an array of bytes.
+    /// <summary>
+    /// Writes the mesh.
+    /// </summary>
+    /// <param name="mesh">The mesh.</param>
+    /// <param name="saveTangents">if set to <c>true</c> [save tangents].</param>
+    /// <returns>System.Byte[].</returns>
     public static byte[] WriteMesh(Mesh mesh, bool saveTangents)
     {
         if (mesh == null)

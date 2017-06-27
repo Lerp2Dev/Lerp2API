@@ -7,6 +7,10 @@
     using System.Xml;
     using System.Xml.XPath;
 
+    /// <summary>
+    /// Class HtmlNode.
+    /// </summary>
+    /// <seealso cref="System.Xml.XPath.IXPathNavigable" />
     [DebuggerDisplay("Name: {OriginalName}}")]
     public class HtmlNode : IXPathNavigable
     {
@@ -35,9 +39,25 @@
         internal HtmlNode _prevwithsamename;
         internal bool _starttag;
         internal int _streamposition;
+
+        /// <summary>
+        /// The elements flags
+        /// </summary>
         public static Dictionary<string, HtmlElementFlag> ElementsFlags = new Dictionary<string, HtmlElementFlag>();
+
+        /// <summary>
+        /// The HTML node type name comment
+        /// </summary>
         public static readonly string HtmlNodeTypeNameComment = "#comment";
+
+        /// <summary>
+        /// The HTML node type name document
+        /// </summary>
         public static readonly string HtmlNodeTypeNameDocument = "#document";
+
+        /// <summary>
+        /// The HTML node type name text
+        /// </summary>
         public static readonly string HtmlNodeTypeNameText = "#text";
 
         static HtmlNode()
@@ -68,6 +88,12 @@
             ElementsFlags.Add("p", HtmlElementFlag.Closed | HtmlElementFlag.Empty);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlNode"/> class.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="ownerdocument">The ownerdocument.</param>
+        /// <param name="index">The index.</param>
         public HtmlNode(HtmlNodeType type, HtmlDocument ownerdocument, int index)
         {
             _nodetype = type;
@@ -101,6 +127,10 @@
             }
         }
 
+        /// <summary>
+        /// Ancestorses this instance.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Ancestors()
         {
             HtmlNode parentNode = ParentNode;
@@ -115,6 +145,11 @@
             }
         }
 
+        /// <summary>
+        /// Ancestorses the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Ancestors(string name)
         {
             for (HtmlNode iteratorVariable0 = ParentNode; iteratorVariable0 != null; iteratorVariable0 = iteratorVariable0.ParentNode)
@@ -126,6 +161,10 @@
             }
         }
 
+        /// <summary>
+        /// Ancestorses the and self.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> AncestorsAndSelf()
         {
             HtmlNode parentNode = this;
@@ -140,6 +179,11 @@
             }
         }
 
+        /// <summary>
+        /// Ancestorses the and self.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> AncestorsAndSelf(string name)
         {
             for (HtmlNode iteratorVariable0 = this; iteratorVariable0 != null; iteratorVariable0 = iteratorVariable0.ParentNode)
@@ -151,6 +195,12 @@
             }
         }
 
+        /// <summary>
+        /// Appends the child.
+        /// </summary>
+        /// <param name="newChild">The new child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">newChild</exception>
         public HtmlNode AppendChild(HtmlNode newChild)
         {
             if (newChild == null)
@@ -164,6 +214,11 @@
             return newChild;
         }
 
+        /// <summary>
+        /// Appends the children.
+        /// </summary>
+        /// <param name="newChildren">The new children.</param>
+        /// <exception cref="ArgumentNullException">newChildren</exception>
         public void AppendChildren(HtmlNodeCollection newChildren)
         {
             if (newChildren == null)
@@ -176,6 +231,12 @@
             }
         }
 
+        /// <summary>
+        /// Determines whether this instance [can overlap element] the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if this instance [can overlap element] the specified name; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public static bool CanOverlapElement(string name)
         {
             if (name == null)
@@ -190,11 +251,20 @@
             return ((flag & HtmlElementFlag.CanOverlap) != 0);
         }
 
+        /// <summary>
+        /// Clones this instance.
+        /// </summary>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode Clone()
         {
             return CloneNode(true);
         }
 
+        /// <summary>
+        /// Clones the node.
+        /// </summary>
+        /// <param name="deep">if set to <c>true</c> [deep].</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode CloneNode(bool deep)
         {
             HtmlNode node = _ownerdocument.CreateNode(_nodetype);
@@ -241,11 +311,23 @@
             return node;
         }
 
+        /// <summary>
+        /// Clones the node.
+        /// </summary>
+        /// <param name="newName">The new name.</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode CloneNode(string newName)
         {
             return CloneNode(newName, true);
         }
 
+        /// <summary>
+        /// Clones the node.
+        /// </summary>
+        /// <param name="newName">The new name.</param>
+        /// <param name="deep">if set to <c>true</c> [deep].</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">newName</exception>
         public HtmlNode CloneNode(string newName, bool deep)
         {
             if (newName == null)
@@ -295,11 +377,21 @@
             }
         }
 
+        /// <summary>
+        /// Copies from.
+        /// </summary>
+        /// <param name="node">The node.</param>
         public void CopyFrom(HtmlNode node)
         {
             CopyFrom(node, true);
         }
 
+        /// <summary>
+        /// Copies from.
+        /// </summary>
+        /// <param name="node">The node.</param>
+        /// <param name="deep">if set to <c>true</c> [deep].</param>
+        /// <exception cref="ArgumentNullException">node</exception>
         public void CopyFrom(HtmlNode node, bool deep)
         {
             if (node == null)
@@ -327,11 +419,20 @@
             }
         }
 
+        /// <summary>
+        /// Creates the navigator.
+        /// </summary>
+        /// <returns>XPathNavigator.</returns>
         public XPathNavigator CreateNavigator()
         {
             return new HtmlNodeNavigator(OwnerDocument, this);
         }
 
+        /// <summary>
+        /// Creates the node.
+        /// </summary>
+        /// <param name="html">The HTML.</param>
+        /// <returns>HtmlNode.</returns>
         public static HtmlNode CreateNode(string html)
         {
             HtmlDocument document = new HtmlDocument();
@@ -339,16 +440,29 @@
             return document.DocumentNode.FirstChild;
         }
 
+        /// <summary>
+        /// Creates the root navigator.
+        /// </summary>
+        /// <returns>XPathNavigator.</returns>
         public XPathNavigator CreateRootNavigator()
         {
             return new HtmlNodeNavigator(OwnerDocument, OwnerDocument.DocumentNode);
         }
 
+        /// <summary>
+        /// Childs the attributes.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlAttribute&gt;.</returns>
         public IEnumerable<HtmlAttribute> ChildAttributes(string name)
         {
             return Attributes.AttributesWithName(name);
         }
 
+        /// <summary>
+        /// Descendants the nodes.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         [Obsolete("Use Descendants() instead, the results of this function will change in a future version")]
         public IEnumerable<HtmlNode> DescendantNodes()
         {
@@ -362,12 +476,20 @@
             }
         }
 
+        /// <summary>
+        /// Descendants the nodes and self.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         [Obsolete("Use DescendantsAndSelf() instead, the results of this function will change in a future version")]
         public IEnumerable<HtmlNode> DescendantNodesAndSelf()
         {
             return DescendantsAndSelf();
         }
 
+        /// <summary>
+        /// Descendantses this instance.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Descendants()
         {
             foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)ChildNodes)
@@ -380,6 +502,11 @@
             }
         }
 
+        /// <summary>
+        /// Descendantses the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Descendants(string name)
         {
             name = name.ToLowerInvariant();
@@ -392,6 +519,10 @@
             }
         }
 
+        /// <summary>
+        /// Descendantses the and self.
+        /// </summary>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> DescendantsAndSelf()
         {
             yield return this;
@@ -405,6 +536,11 @@
             }
         }
 
+        /// <summary>
+        /// Descendantses the and self.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> DescendantsAndSelf(string name)
         {
             yield return this;
@@ -417,6 +553,11 @@
             }
         }
 
+        /// <summary>
+        /// Elements the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>HtmlNode.</returns>
         public HtmlNode Element(string name)
         {
             foreach (HtmlNode node in (IEnumerable<HtmlNode>)ChildNodes)
@@ -429,6 +570,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Elementses the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>IEnumerable&lt;HtmlNode&gt;.</returns>
         public IEnumerable<HtmlNode> Elements(string name)
         {
             foreach (HtmlNode iteratorVariable0 in (IEnumerable<HtmlNode>)ChildNodes)
@@ -440,6 +586,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets the attribute value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="def">if set to <c>true</c> [definition].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public bool GetAttributeValue(string name, bool def)
         {
             if (name == null)
@@ -465,6 +618,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets the attribute value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="def">The definition.</param>
+        /// <returns>System.Int32.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public int GetAttributeValue(string name, int def)
         {
             if (name == null)
@@ -490,6 +650,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets the attribute value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="def">The definition.</param>
+        /// <returns>System.String.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public string GetAttributeValue(string name, string def)
         {
             if (name == null)
@@ -549,6 +716,14 @@
             return str.Substring(4, str.Length - 7).Replace("--", " - -");
         }
 
+        /// <summary>
+        /// Inserts the after.
+        /// </summary>
+        /// <param name="newChild">The new child.</param>
+        /// <param name="refChild">The reference child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">newChild</exception>
+        /// <exception cref="ArgumentException"></exception>
         public HtmlNode InsertAfter(HtmlNode newChild, HtmlNode refChild)
         {
             if (newChild == null)
@@ -581,6 +756,14 @@
             return newChild;
         }
 
+        /// <summary>
+        /// Inserts the before.
+        /// </summary>
+        /// <param name="newChild">The new child.</param>
+        /// <param name="refChild">The reference child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">newChild</exception>
+        /// <exception cref="ArgumentException"></exception>
         public HtmlNode InsertBefore(HtmlNode newChild, HtmlNode refChild)
         {
             if (newChild == null)
@@ -613,6 +796,12 @@
             return newChild;
         }
 
+        /// <summary>
+        /// Determines whether [is c data element] [the specified name].
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if [is c data element] [the specified name]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public static bool IsCDataElement(string name)
         {
             if (name == null)
@@ -627,6 +816,12 @@
             return ((flag & HtmlElementFlag.CData) != 0);
         }
 
+        /// <summary>
+        /// Determines whether [is closed element] [the specified name].
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if [is closed element] [the specified name]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public static bool IsClosedElement(string name)
         {
             if (name == null)
@@ -641,6 +836,12 @@
             return ((flag & HtmlElementFlag.Closed) != 0);
         }
 
+        /// <summary>
+        /// Determines whether [is empty element] [the specified name].
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if [is empty element] [the specified name]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public static bool IsEmptyElement(string name)
         {
             if (name == null)
@@ -667,6 +868,12 @@
             return ((flag & HtmlElementFlag.Empty) != 0);
         }
 
+        /// <summary>
+        /// Determines whether [is overlapped closing element] [the specified text].
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if [is overlapped closing element] [the specified text]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException">text</exception>
         public static bool IsOverlappedClosingElement(string text)
         {
             if (text == null)
@@ -680,6 +887,12 @@
             return ((((text[0] == '<') && (text[text.Length - 1] == '>')) && (text[1] == '/')) && CanOverlapElement(text.Substring(2, text.Length - 3)));
         }
 
+        /// <summary>
+        /// Prepends the child.
+        /// </summary>
+        /// <param name="newChild">The new child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">newChild</exception>
         public HtmlNode PrependChild(HtmlNode newChild)
         {
             if (newChild == null)
@@ -693,6 +906,11 @@
             return newChild;
         }
 
+        /// <summary>
+        /// Prepends the children.
+        /// </summary>
+        /// <param name="newChildren">The new children.</param>
+        /// <exception cref="ArgumentNullException">newChildren</exception>
         public void PrependChildren(HtmlNodeCollection newChildren)
         {
             if (newChildren == null)
@@ -705,6 +923,9 @@
             }
         }
 
+        /// <summary>
+        /// Removes this instance.
+        /// </summary>
         public void Remove()
         {
             if (ParentNode != null)
@@ -713,6 +934,9 @@
             }
         }
 
+        /// <summary>
+        /// Removes all.
+        /// </summary>
         public void RemoveAll()
         {
             RemoveAllChildren();
@@ -728,6 +952,9 @@
             _innerchanged = true;
         }
 
+        /// <summary>
+        /// Removes all children.
+        /// </summary>
         public void RemoveAllChildren()
         {
             if (HasChildNodes)
@@ -745,6 +972,13 @@
             }
         }
 
+        /// <summary>
+        /// Removes the child.
+        /// </summary>
+        /// <param name="oldChild">The old child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">oldChild</exception>
+        /// <exception cref="ArgumentException"></exception>
         public HtmlNode RemoveChild(HtmlNode oldChild)
         {
             if (oldChild == null)
@@ -770,6 +1004,13 @@
             return oldChild;
         }
 
+        /// <summary>
+        /// Removes the child.
+        /// </summary>
+        /// <param name="oldChild">The old child.</param>
+        /// <param name="keepGrandChildren">if set to <c>true</c> [keep grand children].</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">oldChild</exception>
         public HtmlNode RemoveChild(HtmlNode oldChild, bool keepGrandChildren)
         {
             if (oldChild == null)
@@ -790,6 +1031,13 @@
             return oldChild;
         }
 
+        /// <summary>
+        /// Replaces the child.
+        /// </summary>
+        /// <param name="newChild">The new child.</param>
+        /// <param name="oldChild">The old child.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentException"></exception>
         public HtmlNode ReplaceChild(HtmlNode newChild, HtmlNode oldChild)
         {
             if (newChild == null)
@@ -820,6 +1068,11 @@
             return newChild;
         }
 
+        /// <summary>
+        /// Selects the nodes.
+        /// </summary>
+        /// <param name="xpath">The xpath.</param>
+        /// <returns>HtmlNodeCollection.</returns>
         public HtmlNodeCollection SelectNodes(string xpath)
         {
             HtmlNodeCollection nodes = new HtmlNodeCollection(null);
@@ -836,6 +1089,12 @@
             return nodes;
         }
 
+        /// <summary>
+        /// Selects the single node.
+        /// </summary>
+        /// <param name="xpath">The xpath.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">xpath</exception>
         public HtmlNode SelectSingleNode(string xpath)
         {
             if (xpath == null)
@@ -851,6 +1110,13 @@
             return current.CurrentNode;
         }
 
+        /// <summary>
+        /// Sets the attribute value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>HtmlAttribute.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public HtmlAttribute SetAttributeValue(string name, string value)
         {
             if (name == null)
@@ -970,6 +1236,10 @@
             }
         }
 
+        /// <summary>
+        /// Writes the content to.
+        /// </summary>
+        /// <returns>System.String.</returns>
         public string WriteContentTo()
         {
             StringWriter outText = new StringWriter();
@@ -978,6 +1248,10 @@
             return outText.ToString();
         }
 
+        /// <summary>
+        /// Writes the content to.
+        /// </summary>
+        /// <param name="outText">The out text.</param>
         public void WriteContentTo(TextWriter outText)
         {
             if (_childnodes != null)
@@ -989,6 +1263,10 @@
             }
         }
 
+        /// <summary>
+        /// Writes to.
+        /// </summary>
+        /// <returns>System.String.</returns>
         public string WriteTo()
         {
             using (StringWriter writer = new StringWriter())
@@ -999,6 +1277,10 @@
             }
         }
 
+        /// <summary>
+        /// Writes to.
+        /// </summary>
+        /// <param name="outText">The out text.</param>
         public void WriteTo(TextWriter outText)
         {
             string comment;
@@ -1132,6 +1414,10 @@
             WriteContentTo(outText);
         }
 
+        /// <summary>
+        /// Writes to.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
         public void WriteTo(XmlWriter writer)
         {
             switch (_nodetype)
@@ -1181,6 +1467,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the attributes.
+        /// </summary>
+        /// <value>The attributes.</value>
         public HtmlAttributeCollection Attributes
         {
             get
@@ -1197,6 +1487,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="HtmlNode"/> is closed.
+        /// </summary>
+        /// <value><c>true</c> if closed; otherwise, <c>false</c>.</value>
         public bool Closed
         {
             get
@@ -1205,6 +1499,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the closing attributes.
+        /// </summary>
+        /// <value>The closing attributes.</value>
         public HtmlAttributeCollection ClosingAttributes
         {
             get
@@ -1217,6 +1515,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the child nodes.
+        /// </summary>
+        /// <value>The child nodes.</value>
         public HtmlNodeCollection ChildNodes
         {
             get
@@ -1237,6 +1539,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the first child.
+        /// </summary>
+        /// <value>The first child.</value>
         public HtmlNode FirstChild
         {
             get
@@ -1249,6 +1555,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance has attributes.
+        /// </summary>
+        /// <value><c>true</c> if this instance has attributes; otherwise, <c>false</c>.</value>
         public bool HasAttributes
         {
             get
@@ -1265,6 +1575,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance has closing attributes.
+        /// </summary>
+        /// <value><c>true</c> if this instance has closing attributes; otherwise, <c>false</c>.</value>
         public bool HasClosingAttributes
         {
             get
@@ -1285,6 +1599,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance has child nodes.
+        /// </summary>
+        /// <value><c>true</c> if this instance has child nodes; otherwise, <c>false</c>.</value>
         public bool HasChildNodes
         {
             get
@@ -1301,6 +1619,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>The identifier.</value>
+        /// <exception cref="Exception">
+        /// </exception>
+        /// <exception cref="ArgumentNullException">value</exception>
         public string Id
         {
             get
@@ -1325,6 +1650,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the inner HTML.
+        /// </summary>
+        /// <value>The inner HTML.</value>
         public virtual string InnerHtml
         {
             get
@@ -1354,6 +1683,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the inner text.
+        /// </summary>
+        /// <value>The inner text.</value>
         public virtual string InnerText
         {
             get
@@ -1379,6 +1712,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the last child.
+        /// </summary>
+        /// <value>The last child.</value>
         public HtmlNode LastChild
         {
             get
@@ -1391,6 +1728,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the line.
+        /// </summary>
+        /// <value>The line.</value>
         public int Line
         {
             get
@@ -1403,6 +1744,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the line position.
+        /// </summary>
+        /// <value>The line position.</value>
         public int LinePosition
         {
             get
@@ -1415,6 +1760,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public string Name
         {
             get
@@ -1443,6 +1792,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the next sibling.
+        /// </summary>
+        /// <value>The next sibling.</value>
         public HtmlNode NextSibling
         {
             get
@@ -1455,6 +1808,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the type of the node.
+        /// </summary>
+        /// <value>The type of the node.</value>
         public HtmlNodeType NodeType
         {
             get
@@ -1467,6 +1824,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the name of the original.
+        /// </summary>
+        /// <value>The name of the original.</value>
         public string OriginalName
         {
             get
@@ -1475,6 +1836,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the outer HTML.
+        /// </summary>
+        /// <value>The outer HTML.</value>
         public virtual string OuterHtml
         {
             get
@@ -1497,6 +1862,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the owner document.
+        /// </summary>
+        /// <value>The owner document.</value>
         public HtmlDocument OwnerDocument
         {
             get
@@ -1509,6 +1878,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the parent node.
+        /// </summary>
+        /// <value>The parent node.</value>
         public HtmlNode ParentNode
         {
             get
@@ -1521,6 +1894,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the previous sibling.
+        /// </summary>
+        /// <value>The previous sibling.</value>
         public HtmlNode PreviousSibling
         {
             get
@@ -1533,6 +1910,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the stream position.
+        /// </summary>
+        /// <value>The stream position.</value>
         public int StreamPosition
         {
             get
@@ -1541,6 +1922,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the x path.
+        /// </summary>
+        /// <value>The x path.</value>
         public string XPath
         {
             get

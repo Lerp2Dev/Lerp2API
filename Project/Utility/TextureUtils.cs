@@ -98,8 +98,18 @@ namespace Lerp2API.Utility
 
     }*/
 
+    /// <summary>
+    /// Class TextureUtils.
+    /// </summary>
     public class TextureUtils
     {
+        /// <summary>
+        /// Fills the specified c.
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <param name="w">The w.</param>
+        /// <param name="h">The h.</param>
+        /// <returns>Texture2D.</returns>
         public static Texture2D Fill(Color c, int w, int h)
         {
             Texture2D t = new Texture2D(w, h);
@@ -109,6 +119,13 @@ namespace Lerp2API.Utility
             t.Apply();
             return t;
         }
+        /// <summary>
+        /// Fills the color.
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <param name="w">The w.</param>
+        /// <param name="h">The h.</param>
+        /// <returns>Color[].</returns>
         public static Color[,] FillColor(Color c, int w, int h)
         {
             Color[,] cc = new Color[w, h];
@@ -119,10 +136,18 @@ namespace Lerp2API.Utility
         }
     }
 
+    /// <summary>
+    /// Class TextureCrop.
+    /// </summary>
     public class TextureCrop
     {
 
         private Texture2D processedTexture;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextureCrop"/> class.
+        /// </summary>
+        /// <param name="initialTexture">The initial texture.</param>
+        /// <param name="rect">The rect.</param>
         public TextureCrop(Texture2D initialTexture, Rect rect)
         {
             if (initialTexture == null)
@@ -151,6 +176,10 @@ namespace Lerp2API.Utility
             processedTexture.Apply();
         }
 
+        /// <summary>
+        /// Gets the texture.
+        /// </summary>
+        /// <returns>Texture2D.</returns>
         public Texture2D GetTexture()
         {
             return processedTexture;
@@ -158,9 +187,16 @@ namespace Lerp2API.Utility
 
     }
 
+    /// <summary>
+    /// Class TextureAutocrop.
+    /// </summary>
     public class TextureAutocrop
     {
         private Texture2D processedTexture;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextureAutocrop"/> class.
+        /// </summary>
+        /// <param name="initialTexture">The initial texture.</param>
         public TextureAutocrop(Texture2D initialTexture)
         {
             if (initialTexture == null)
@@ -226,16 +262,28 @@ namespace Lerp2API.Utility
 
         }
 
+        /// <summary>
+        /// Gets the texture.
+        /// </summary>
+        /// <returns>Texture2D.</returns>
         public Texture2D GetTexture()
         {
             return processedTexture;
         }
     }
 
+    /// <summary>
+    /// Class TextureRotate.
+    /// </summary>
     public class TextureRotate
     {
 
         private Texture2D processedTexture;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextureRotate"/> class.
+        /// </summary>
+        /// <param name="initialTexture">The initial texture.</param>
+        /// <param name="degrees">The degrees.</param>
         public TextureRotate(Texture2D initialTexture, float degrees)
         {
             if (initialTexture == null)
@@ -297,6 +345,10 @@ namespace Lerp2API.Utility
                     (int)(sinTheta * (pointToRotate.x - centerPoint.x) + cosTheta * (pointToRotate.y - centerPoint.y) + centerPoint.y));
         }
 
+        /// <summary>
+        /// Gets the texture.
+        /// </summary>
+        /// <returns>Texture2D.</returns>
         public Texture2D GetTexture()
         {
             return processedTexture;
@@ -371,26 +423,80 @@ namespace Lerp2API.Utility
 
     }
 
-    public enum BorderType { Solid, Dashed, Dotted, Double, Groove, Ridge, Inset, Outset }
+    /// <summary>
+    /// Class TextureBorder.
+    /// </summary>
     public class TextureBorder //Its bugged
     { //Next feature: gradients and find real border, detect active border to blend
+        /// <summary>
+        /// The processed texture
+        /// </summary>
         public Texture2D processedTexture, initTex;
+        /// <summary>
+        /// The general border
+        /// </summary>
         public int generalBorder = 1;
+        /// <summary>
+        /// The general border type
+        /// </summary>
         public BorderType generalBorderType;
+        /// <summary>
+        /// The general border color
+        /// </summary>
         public Color generalBorderColor = Color.black;
+        /// <summary>
+        /// The left border
+        /// </summary>
         public int leftBorder = 1;
+        /// <summary>
+        /// The left border type
+        /// </summary>
         public BorderType leftBorderType;
+        /// <summary>
+        /// The left border color
+        /// </summary>
         public Color leftBorderColor = Color.black;
+        /// <summary>
+        /// The top border
+        /// </summary>
         public int topBorder = 1;
+        /// <summary>
+        /// The top border type
+        /// </summary>
         public BorderType topBorderType;
+        /// <summary>
+        /// The top border color
+        /// </summary>
         public Color topBorderColor = Color.black;
+        /// <summary>
+        /// The right border
+        /// </summary>
         public int rightBorder = 1;
+        /// <summary>
+        /// The right border type
+        /// </summary>
         public BorderType rightBorderType;
+        /// <summary>
+        /// The right border color
+        /// </summary>
         public Color rightBorderColor = Color.black;
+        /// <summary>
+        /// The bottom border
+        /// </summary>
         public int bottomBorder = 1;
+        /// <summary>
+        /// The bottom border type
+        /// </summary>
         public BorderType bottomBorderType;
+        /// <summary>
+        /// The bottom border color
+        /// </summary>
         public Color bottomBorderColor = Color.black;
         private List<BorderPoint> points = new List<BorderPoint>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextureBorder"/> class.
+        /// </summary>
+        /// <param name="initialTexture">The initial texture.</param>
         public TextureBorder(Texture2D initialTexture)
         {
             if (initialTexture == null)
@@ -404,6 +510,11 @@ namespace Lerp2API.Utility
             points.Add(new BorderPoint(initTex.width / 2, 0, topBorderColor));
             points.Add(new BorderPoint(initTex.width / 2, initTex.height, topBorderColor));
         }
+        /// <summary>
+        /// Gets the texture.
+        /// </summary>
+        /// <param name="trans">if set to <c>true</c> [trans].</param>
+        /// <returns>Texture2D.</returns>
         public Texture2D GetTexture(bool trans = false)
         {
             if (trans)
@@ -465,6 +576,12 @@ namespace Lerp2API.Utility
             return c;
         }
 
+        /// <summary>
+        /// Simples the border.
+        /// </summary>
+        /// <param name="t">The t.</param>
+        /// <param name="c">The c.</param>
+        /// <returns>Texture2D.</returns>
         public static Texture2D SimpleBorder(Texture2D t, Color c) //By the moment I will leave it as a 1 pixel texture
         {
             for (int i = 0; i < t.width; ++i)
@@ -477,21 +594,40 @@ namespace Lerp2API.Utility
 
         struct BorderPoint
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="BorderPoint"/> struct.
+            /// </summary>
+            /// <param name="x">The x.</param>
+            /// <param name="y">The y.</param>
+            /// <param name="cl">The cl.</param>
             public BorderPoint(float x, float y, Color cl)
             {
                 this.x = x;
                 this.y = y;
                 c = cl;
             }
+            /// <summary>
+            /// The x
+            /// </summary>
             public float x, y;
+            /// <summary>
+            /// The c
+            /// </summary>
             public Color c;
         }
 
     }
 
+    /// <summary>
+    /// Class TextureFixer.
+    /// </summary>
     public class TextureFixer
     {
         private Texture2D processedTexture, initTex;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextureFixer"/> class.
+        /// </summary>
+        /// <param name="initialTexture">The initial texture.</param>
         public TextureFixer(Texture2D initialTexture)
         {
             if (initialTexture == null)
@@ -502,6 +638,10 @@ namespace Lerp2API.Utility
             initTex = initialTexture;
         }
 
+        /// <summary>
+        /// Fixes this instance.
+        /// </summary>
+        /// <returns>Texture2D.</returns>
         public Texture2D Fix()
         {
             Texture2D firstFix = IntFix(initTex);
@@ -529,12 +669,29 @@ namespace Lerp2API.Utility
         }
     }
 
+    /// <summary>
+    /// Class TextureScale.
+    /// </summary>
     public class TextureScale
     {
+        /// <summary>
+        /// Class ThreadData.
+        /// </summary>
         public class ThreadData
         {
+            /// <summary>
+            /// The start
+            /// </summary>
             public int start;
+            /// <summary>
+            /// The end
+            /// </summary>
             public int end;
+            /// <summary>
+            /// Initializes a new instance of the <see cref="ThreadData"/> class.
+            /// </summary>
+            /// <param name="s">The s.</param>
+            /// <param name="e">The e.</param>
             public ThreadData(int s, int e)
             {
                 start = s;
@@ -551,11 +708,23 @@ namespace Lerp2API.Utility
         private static int finishCount;
         private static Mutex mutex;
 
+        /// <summary>
+        /// Points the specified tex.
+        /// </summary>
+        /// <param name="tex">The tex.</param>
+        /// <param name="newWidth">The new width.</param>
+        /// <param name="newHeight">The new height.</param>
         public static void Point(Texture2D tex, int newWidth, int newHeight)
         {
             ThreadedScale(tex, newWidth, newHeight, false);
         }
 
+        /// <summary>
+        /// Bilinears the specified tex.
+        /// </summary>
+        /// <param name="tex">The tex.</param>
+        /// <param name="newWidth">The new width.</param>
+        /// <param name="newHeight">The new height.</param>
         public static void Bilinear(Texture2D tex, int newWidth, int newHeight)
         {
             ThreadedScale(tex, newWidth, newHeight, true);
@@ -628,6 +797,10 @@ namespace Lerp2API.Utility
             tex.Apply();
         }
 
+        /// <summary>
+        /// Bilinears the scale.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         public static void BilinearScale(System.Object obj)
         {
             ThreadData threadData = (ThreadData)obj;
@@ -653,6 +826,10 @@ namespace Lerp2API.Utility
             mutex.ReleaseMutex();
         }
 
+        /// <summary>
+        /// Points the scale.
+        /// </summary>
+        /// <param name="obj">The object.</param>
         public static void PointScale(System.Object obj)
         {
             ThreadData threadData = (ThreadData)obj;

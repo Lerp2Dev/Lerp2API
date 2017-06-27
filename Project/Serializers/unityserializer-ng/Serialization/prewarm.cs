@@ -5,6 +5,9 @@
 /// </summary>
 public static partial class PreWarm
 {
+    /// <summary>
+    /// The prewarm names
+    /// </summary>
     public static string[] PrewarmNames = new string[] {
       "value__",
       "TypeId",
@@ -5682,6 +5685,9 @@ public static partial class PreWarm
       "END OF LIST"
      };
 
+    /// <summary>
+    /// The prewarm types
+    /// </summary>
     public static string[] PrewarmTypes = new string[]  {
       "UnityEngine.AndroidJavaObject, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
       "UnityEngine.AndroidJavaClass, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",

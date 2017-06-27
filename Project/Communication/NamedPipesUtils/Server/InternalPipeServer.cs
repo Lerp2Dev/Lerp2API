@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ClientServerUsingNamedPipes.Interfaces;
+using ClientServerUsingNamedPipes.Utilities;
+using System;
 using System.IO.Pipes;
 using System.Text;
-using ClientServerUsingNamedPipes.Interfaces;
-using ClientServerUsingNamedPipes.Utilities;
 
 namespace ClientServerUsingNamedPipes.Server
 {
@@ -28,12 +28,12 @@ namespace ClientServerUsingNamedPipes.Server
             }
         }
 
-        #endregion
+        #endregion private fields
 
         #region c'tor
 
         /// <summary>
-        /// Creates a new NamedPipeServerStream 
+        /// Creates a new NamedPipeServerStream
         /// </summary>
         public InternalPipeServer(string pipeName, int maxNumberOfServerInstances)
         {
@@ -43,15 +43,17 @@ namespace ClientServerUsingNamedPipes.Server
             Id = Guid.NewGuid().ToString();
         }
 
-        #endregion
+        #endregion c'tor
 
         #region events
 
         public event EventHandler<ClientConnectedEventArgs> ClientConnectedEvent;
+
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnectedEvent;
+
         public event EventHandler<MessageReceivedEventArgs> MessageReceivedEvent;
 
-        #endregion
+        #endregion events
 
         #region public methods
 
@@ -102,7 +104,7 @@ namespace ClientServerUsingNamedPipes.Server
             }
         }
 
-        #endregion
+        #endregion public methods
 
         #region private methods
 
@@ -154,7 +156,7 @@ namespace ClientServerUsingNamedPipes.Server
             var readBytes = _pipeServer.EndRead(result);
             if (readBytes > 0)
             {
-                var info = (Info) result.AsyncState;
+                var info = (Info)result.AsyncState;
 
                 // Get the read bytes and append them
                 info.StringBuilder.Append(Encoding.UTF8.GetString(info.Buffer, 0, readBytes));
@@ -206,27 +208,27 @@ namespace ClientServerUsingNamedPipes.Server
         }
 
         /// <summary>
-        /// This method fires ConnectedEvent 
+        /// This method fires ConnectedEvent
         /// </summary>
         private void OnConnected()
         {
             if (ClientConnectedEvent != null)
             {
-                ClientConnectedEvent(this, new ClientConnectedEventArgs {ClientId = Id});
+                ClientConnectedEvent(this, new ClientConnectedEventArgs { ClientId = Id });
             }
         }
 
         /// <summary>
-        /// This method fires DisconnectedEvent 
+        /// This method fires DisconnectedEvent
         /// </summary>
         private void OnDisconnected()
         {
             if (ClientDisconnectedEvent != null)
             {
-                ClientDisconnectedEvent(this, new ClientDisconnectedEventArgs {ClientId = Id});
+                ClientDisconnectedEvent(this, new ClientDisconnectedEventArgs { ClientId = Id });
             }
         }
 
-        #endregion
+        #endregion private methods
     }
 }

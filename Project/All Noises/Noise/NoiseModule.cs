@@ -1,10 +1,24 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class NoiseModule.
+/// </summary>
 public class NoiseModule
 {
+    /// <summary>
+    /// The b
+    /// </summary>
     protected const int B = 256;
+
+    /// <summary>
+    /// The m perm
+    /// </summary>
     protected int[] m_perm = new int[B + B];
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NoiseModule"/> class.
+    /// </summary>
+    /// <param name="seed">The seed.</param>
     public NoiseModule(int seed)
     {
         Random.InitState(seed);
@@ -29,6 +43,11 @@ public class NoiseModule
         }
     }
 
+    /// <summary>
+    /// Noise1s the d.
+    /// </summary>
+    /// <param name="x">The x.</param>
+    /// <returns>System.Single.</returns>
     protected float Noise1D(float x)
     {
         //returns a noise value between -0.5 and 0.5
@@ -49,6 +68,12 @@ public class NoiseModule
         return 0.188f * NoiseUtil.LERP(s, n0, n1);
     }
 
+    /// <summary>
+    /// Noise2s the d.
+    /// </summary>
+    /// <param name="x">The x.</param>
+    /// <param name="y">The y.</param>
+    /// <returns>System.Single.</returns>
     protected float Noise2D(float x, float y)
     {
         //returns a noise value between -0.75 and 0.75
@@ -82,6 +107,13 @@ public class NoiseModule
         return 0.507f * NoiseUtil.LERP(s, n0, n1);
     }
 
+    /// <summary>
+    /// Noise3s the d.
+    /// </summary>
+    /// <param name="x">The x.</param>
+    /// <param name="y">The y.</param>
+    /// <param name="z">The z.</param>
+    /// <returns>System.Single.</returns>
     protected float Noise3D(float x, float y, float z)
     {
         //returns a noise value between -1.5 and 1.5
@@ -133,6 +165,15 @@ public class NoiseModule
         return 0.936f * NoiseUtil.LERP(s, n0, n1);
     }
 
+    /// <summary>
+    /// Fractals the noise2 d.
+    /// </summary>
+    /// <param name="x">The x.</param>
+    /// <param name="y">The y.</param>
+    /// <param name="octNum">The oct number.</param>
+    /// <param name="frq">The FRQ.</param>
+    /// <param name="amp">The amp.</param>
+    /// <returns>System.Single.</returns>
     public virtual float FractalNoise2D(float x, float y, int octNum, float frq, float amp)
     {
         return 1;

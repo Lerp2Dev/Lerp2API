@@ -1,13 +1,21 @@
 using System;
 using System.Reflection;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace Serialization
 {
     //Using reflection to get and set properties so there is no
     //JIT compiliation
+    /// <summary>
+    /// Class GetSetGeneric.
+    /// </summary>
+    /// <seealso cref="Serialization.GetSet" />
     public class GetSetGeneric : GetSet
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetSetGeneric"/> class.
+        /// </summary>
+        /// <param name="info">The information.</param>
         public GetSetGeneric(PropertyInfo info)
         {
             Name = info.Name;
@@ -56,6 +64,10 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetSetGeneric"/> class.
+        /// </summary>
+        /// <param name="info">The information.</param>
         public GetSetGeneric(FieldInfo info)
         {
             Name = info.Name;
@@ -77,6 +89,11 @@ namespace Serialization
             return;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetSetGeneric"/> class.
+        /// </summary>
+        /// <param name="t">The t.</param>
+        /// <param name="name">The name.</param>
         public GetSetGeneric(Type t, string name)
         {
             Name = name;

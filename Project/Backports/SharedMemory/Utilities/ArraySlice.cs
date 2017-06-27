@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -220,9 +220,11 @@ namespace SharedMemory.Utilities
         {
             throw new NotSupportedException();
         }
-        #endregion
+
+        #endregion IList<T>
 
         #region ICollection<T>
+
         bool ICollection<T>.IsReadOnly
         {
             get
@@ -260,9 +262,11 @@ namespace SharedMemory.Utilities
         {
             throw new NotSupportedException();
         }
-        #endregion
+
+        #endregion ICollection<T>
 
         #region IEnumerable<T>
+
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
             if (_list == null)
@@ -270,9 +274,11 @@ namespace SharedMemory.Utilities
 
             return new ArraySliceEnumerator(this);
         }
-        #endregion
+
+        #endregion IEnumerable<T>
 
         #region IEnumerable
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             if (_list == null)
@@ -280,7 +286,8 @@ namespace SharedMemory.Utilities
 
             return new ArraySliceEnumerator(this);
         }
-        #endregion
+
+        #endregion IEnumerable
 
         [Serializable]
         private sealed class ArraySliceEnumerator : IEnumerator<T>

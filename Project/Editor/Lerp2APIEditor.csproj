@@ -55,6 +55,7 @@
     <Compile Include="EditorWindows\LerpedPaths.cs" />
     <Compile Include="LerpedEditorCore.cs" />
     <Compile Include="RawReferences\LerpedEditorHook.cs" />
+    <Compile Include="Utility\AutoSetup.cs" />
     <Compile Include="Utility\LerpedThread.cs" />
     <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />

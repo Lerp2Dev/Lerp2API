@@ -10,16 +10,30 @@ using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
+/// <summary>
+/// Class SerializeVector2.
+/// </summary>
 [Serializer(typeof(Vector2))]
 public class SerializeVector2 : SerializerExtensionBase<Vector2>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Vector2 target)
     {
         return new object[] { target.x, target.y };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         Debug.LogFormat("Vector3: {0}, {1}, {2}", data[0], data[1], data[2]);
@@ -27,14 +41,28 @@ public class SerializeVector2 : SerializerExtensionBase<Vector2>
     }
 }
 
+/// <summary>
+/// Class SerializeVector3.
+/// </summary>
 [Serializer(typeof(Vector3))]
 public class SerializeVector3 : SerializerExtensionBase<Vector3>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Vector3 target)
     {
         return new object[] { target.x, target.y, target.z };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         Debug.LogFormat("Vector3: {0}, {1}, {2}", data[0], data[1], data[2]);
@@ -44,7 +72,8 @@ public class SerializeVector3 : SerializerExtensionBase<Vector3>
             {
                 return new Vector3((float)data[0], (float)data[1], (float)data[2]);
             }
-            else {
+            else
+            {
                 return Vector3.zero;
             }
         }
@@ -52,14 +81,28 @@ public class SerializeVector3 : SerializerExtensionBase<Vector3>
     }
 }
 
+/// <summary>
+/// Class SerializeVector4.
+/// </summary>
 [Serializer(typeof(Vector4))]
 public class SerializeVector4 : SerializerExtensionBase<Vector4>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Vector4 target)
     {
         return new object[] { target.x, target.y, target.z, target.w };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         Debug.LogFormat("Vector3: {0}, {1}, {2}", data[0], data[1], data[2]);
@@ -67,34 +110,63 @@ public class SerializeVector4 : SerializerExtensionBase<Vector4>
         {
             return new Vector4((float)data[0], (float)data[1], (float)data[2], (float)data[3]);
         }
-        else {
+        else
+        {
             return Vector4.zero;
         }
     }
 }
 
+/// <summary>
+/// Class SerializeQuaternion.
+/// </summary>
 [Serializer(typeof(Quaternion))]
 public class SerializeQuaternion : SerializerExtensionBase<Quaternion>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Quaternion target)
     {
         return new object[] { target.x, target.y, target.z, target.w };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         return new UnitySerializer.DeferredSetter(d => new Quaternion((float)data[0], (float)data[1], (float)data[2], (float)data[3]));
     }
 }
 
+/// <summary>
+/// Class SerializeColor.
+/// </summary>
 [Serializer(typeof(Color))]
 public class SerializeColor : SerializerExtensionBase<Color>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Color target)
     {
         return new object[] { target.r, target.g, target.b, target.a };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         Debug.LogFormat("Vector3: {0}, {1}, {2}", data[0], data[1], data[2]);
@@ -102,14 +174,28 @@ public class SerializeColor : SerializerExtensionBase<Color>
     }
 }
 
+/// <summary>
+/// Class SerializeAnimationState.
+/// </summary>
 [Serializer(typeof(AnimationState))]
 public class SerializeAnimationState : SerializerExtensionBase<AnimationState>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(AnimationState target)
     {
         return new object[] { target.name };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         var uo = UnitySerializer.DeserializingObject;
@@ -129,9 +215,17 @@ public class SerializeAnimationState : SerializerExtensionBase<AnimationState>
     }
 }
 
+/// <summary>
+/// Class SerializeWaitForSeconds.
+/// </summary>
 [Serializer(typeof(WaitForSeconds))]
 public class SerializeWaitForSeconds : SerializerExtensionBase<WaitForSeconds>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(WaitForSeconds target)
     {
         var tp = target.GetType();
@@ -139,20 +233,40 @@ public class SerializeWaitForSeconds : SerializerExtensionBase<WaitForSeconds>
         return new object[] { f.GetValue(target) };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         return new WaitForSeconds((float)data[0]);
     }
 }
 
+/// <summary>
+/// Class SerializeBounds.
+/// </summary>
 [Serializer(typeof(Bounds))]
 public class SerializeBounds : SerializerExtensionBase<Bounds>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Bounds target)
     {
         return new object[] { target.center.x, target.center.y, target.center.z, target.size.x, target.size.y, target.size.z };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         return new Bounds(
@@ -161,19 +275,43 @@ public class SerializeBounds : SerializerExtensionBase<Bounds>
     }
 }
 
+/// <summary>
+/// Class ComponentSerializerExtensionBase.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public abstract class ComponentSerializerExtensionBase<T> : IComponentSerializer where T : Component
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public abstract IEnumerable<object> Save(T target);
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public abstract void LoadInto(object[] data, T instance);
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         return UnitySerializer.Serialize(Save((T)component).ToArray());
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         object[] dataArray;
@@ -184,15 +322,30 @@ public abstract class ComponentSerializerExtensionBase<T> : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializerExtensionBase.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class SerializerExtensionBase<T> : ISerializeObjectEx
 {
     #region ISerializeObject implementation
 
+    /// <summary>
+    /// Serializes the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>System.Object[].</returns>
     public object[] Serialize(object target)
     {
         return Save((T)target).ToArray();
     }
 
+    /// <summary>
+    /// Deserializes the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public object Deserialize(object[] data, object instance)
     {
         return Load(data, instance);
@@ -200,11 +353,22 @@ public class SerializerExtensionBase<T> : ISerializeObjectEx
 
     #endregion ISerializeObject implementation
 
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public virtual IEnumerable<object> Save(T target)
     {
         return new object[0];
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public virtual object Load(object[] data, object instance)
     {
         return null;
@@ -212,6 +376,12 @@ public class SerializerExtensionBase<T> : ISerializeObjectEx
 
     #region ISerializeObjectEx implementation
 
+    /// <summary>
+    /// Determines whether this instance can serialize the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance can serialize the specified target type; otherwise, <c>false</c>.</returns>
     public bool CanSerialize(Type targetType, object instance)
     {
         if (instance == null)
@@ -223,20 +393,39 @@ public class SerializerExtensionBase<T> : ISerializeObjectEx
 
     #endregion ISerializeObjectEx implementation
 
+    /// <summary>
+    /// Determines whether this instance [can be serialized] the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance [can be serialized] the specified target type; otherwise, <c>false</c>.</returns>
     public virtual bool CanBeSerialized(Type targetType, object instance)
     {
         return true;
     }
 }
 
+/// <summary>
+/// Class SerializeBoxCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(BoxCollider))]
 public class SerializeBoxCollider : ComponentSerializerExtensionBase<BoxCollider>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(BoxCollider target)
     {
         return new object[] { target.isTrigger, target.size.x, target.size.y, target.size.z, target.center.x, target.center.y, target.center.z, target.enabled, target.sharedMaterial };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, BoxCollider instance)
     {
         instance.isTrigger = (bool)data[0];
@@ -247,28 +436,54 @@ public class SerializeBoxCollider : ComponentSerializerExtensionBase<BoxCollider
     }
 }
 
+/// <summary>
+/// Class SerializeTerrain.
+/// </summary>
 [ComponentSerializerFor(typeof(Terrain))]
 public class SerializeTerrain : ComponentSerializerExtensionBase<Terrain>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Terrain target)
     {
         return new object[] { target.enabled };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, Terrain instance)
     {
         instance.enabled = (bool)data[0];
     }
 }
 
+/// <summary>
+/// Class SerializeCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(TerrainCollider))]
 public class SerializeCollider : ComponentSerializerExtensionBase<TerrainCollider>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(TerrainCollider target)
     {
         return new object[] { target.sharedMaterial, target.terrainData, target.enabled };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, TerrainCollider instance)
     {
         instance.sharedMaterial = (PhysicMaterial)data[0];
@@ -277,14 +492,27 @@ public class SerializeCollider : ComponentSerializerExtensionBase<TerrainCollide
     }
 }
 
+/// <summary>
+/// Class SerializeMeshCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(MeshCollider))]
 public class SerializeMeshCollider : ComponentSerializerExtensionBase<MeshCollider>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(MeshCollider target)
     {
         return new object[] { target.convex, target.isTrigger, target.sharedMaterial, target.sharedMesh, target.enabled };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, MeshCollider instance)
     {
         instance.convex = (bool)data[0];
@@ -295,27 +523,74 @@ public class SerializeMeshCollider : ComponentSerializerExtensionBase<MeshCollid
     }
 }
 
+/// <summary>
+/// Class SerializeWheelCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(WheelCollider))]
 public class SerializeWheelCollider : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool Enabled;
+        /// <summary>
+        /// The brake torque
+        /// </summary>
         public float brakeTorque;
+        /// <summary>
+        /// The center
+        /// </summary>
         public Vector3 center;
+        /// <summary>
+        /// The force application point distance
+        /// </summary>
         public float forceAppPointDistance;
+        /// <summary>
+        /// The forward friction
+        /// </summary>
         public WheelFrictionCurve forwardFriction;
+        /// <summary>
+        /// The mass
+        /// </summary>
         public float mass;
+        /// <summary>
+        /// The motor torque
+        /// </summary>
         public float motorTorque;
+        /// <summary>
+        /// The radius
+        /// </summary>
         public float radius;
+        /// <summary>
+        /// The sideways friction
+        /// </summary>
         public WheelFrictionCurve sidewaysFriction;
+        /// <summary>
+        /// The steer angle
+        /// </summary>
         public float steerAngle;
+        /// <summary>
+        /// The suspension distance
+        /// </summary>
         public float suspensionDistance;
+        /// <summary>
+        /// The suspension spring
+        /// </summary>
         public JointSpring suspensionSpring;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -339,6 +614,11 @@ public class SerializeWheelCollider : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var collider = (WheelCollider)instance;
@@ -373,14 +653,27 @@ public class SerializeWheelCollider : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeCapsuleCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(CapsuleCollider))]
 public class SerializeCapsuleCollider : ComponentSerializerExtensionBase<CapsuleCollider>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(CapsuleCollider target)
     {
         return new object[] { target.isTrigger, target.radius, target.center.x, target.center.y, target.center.z, target.height, target.enabled, target.sharedMaterial, target.direction };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, CapsuleCollider instance)
     {
         instance.isTrigger = (bool)data[0];
@@ -393,14 +686,27 @@ public class SerializeCapsuleCollider : ComponentSerializerExtensionBase<Capsule
     }
 }
 
+/// <summary>
+/// Class SerializeSphereCollider.
+/// </summary>
 [ComponentSerializerFor(typeof(SphereCollider))]
 public class SerializeSphereCollider : ComponentSerializerExtensionBase<SphereCollider>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(SphereCollider target)
     {
         return new object[] { target.isTrigger, target.radius, target.center.x, target.center.y, target.center.z, target.enabled, target.sharedMaterial };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, SphereCollider instance)
     {
         instance.isTrigger = (bool)data[0];
@@ -413,23 +719,101 @@ public class SerializeSphereCollider : ComponentSerializerExtensionBase<SphereCo
 
 #region 2D
 
+/// <summary>
+/// Class SerializeRigidBody2D.
+/// </summary>
 [ComponentSerializerFor(typeof(Rigidbody2D))]
 public class SerializeRigidBody2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class RigidBodyInfo.
+    /// </summary>
     public class RigidBodyInfo
     {
-        public float angularDrag, angularVelocity, drag, gravityScale, inertia, mass, rotation;
-        public Vector2 centerOfMass, position, velocity;
+        /// <summary>
+        /// The angular drag
+        /// </summary>
+        public float angularDrag,
+            /// <summary>
+            /// The angular velocity
+            /// </summary>
+            angularVelocity,
+            /// <summary>
+            /// The drag
+            /// </summary>
+            drag,
+            /// <summary>
+            /// The gravity scale
+            /// </summary>
+            gravityScale,
+            /// <summary>
+            /// The inertia
+            /// </summary>
+            inertia,
+            /// <summary>
+            /// The mass
+            /// </summary>
+            mass,
+            /// <summary>
+            /// The rotation
+            /// </summary>
+            rotation;
+        /// <summary>
+        /// The center of mass
+        /// </summary>
+        public Vector2 centerOfMass,
+            /// <summary>
+            /// The position
+            /// </summary>
+            position,
+            /// <summary>
+            /// The velocity
+            /// </summary>
+            velocity;
+        /// <summary>
+        /// The collision detection mode
+        /// </summary>
         public CollisionDetectionMode2D collisionDetectionMode;
+        /// <summary>
+        /// The constraints
+        /// </summary>
         public RigidbodyConstraints2D constraints;
-        public bool freezeRotation, isKinematic, simulated, useAutoMass;
+        /// <summary>
+        /// The freeze rotation
+        /// </summary>
+        public bool freezeRotation,
+            /// <summary>
+            /// The is kinematic
+            /// </summary>
+            isKinematic,
+            /// <summary>
+            /// The simulated
+            /// </summary>
+            simulated,
+            /// <summary>
+            /// The use automatic mass
+            /// </summary>
+            useAutoMass;
+        /// <summary>
+        /// The interpolation
+        /// </summary>
         public RigidbodyInterpolation2D interpolation;
+        /// <summary>
+        /// The sleep mode
+        /// </summary>
         public RigidbodySleepMode2D sleepMode;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RigidBodyInfo"/> class.
+        /// </summary>
         public RigidBodyInfo()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RigidBodyInfo"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
         public RigidBodyInfo(Rigidbody2D source)
         {
             angularDrag = source.angularDrag;
@@ -456,6 +840,10 @@ public class SerializeRigidBody2D : IComponentSerializer
             sleepMode = source.sleepMode;
         }
 
+        /// <summary>
+        /// Configures the specified body.
+        /// </summary>
+        /// <param name="body">The body.</param>
         public void Configure(Rigidbody2D body)
         {
             body.isKinematic = true;
@@ -494,11 +882,21 @@ public class SerializeRigidBody2D : IComponentSerializer
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         return UnitySerializer.Serialize(new RigidBodyInfo((Rigidbody2D)component));
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var info = UnitySerializer.Deserialize<RigidBodyInfo>(data);
@@ -510,24 +908,62 @@ public class SerializeRigidBody2D : IComponentSerializer
 
 #region Colliders
 
+/// <summary>
+/// Class SerializeBoxCollider2D.
+/// </summary>
 [ComponentSerializerFor(typeof(BoxCollider2D))]
 public class SerializeBoxCollider2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
         // Meta-information
+        /// <summary>
+        /// The has rigidbody
+        /// </summary>
         public bool hasRigidbody;
 
         // Properties
-        public bool enabled, isTrigger, usedByEffector;
+        /// <summary>
+        /// The enabled
+        /// </summary>
+        public bool enabled,
+                    /// <summary>
+                    /// The is trigger
+                    /// </summary>
+                    isTrigger,
+                    /// <summary>
+                    /// The used by effector
+                    /// </summary>
+                    usedByEffector;
 
-        public Vector2 size, offset;
+        /// <summary>
+        /// The size
+        /// </summary>
+        public Vector2 size,
+                       /// <summary>
+                       /// The offset
+                       /// </summary>
+                       offset;
+        /// <summary>
+        /// The shared material
+        /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+        /// <summary>
+        /// The density
+        /// </summary>
         public float density;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -550,6 +986,11 @@ public class SerializeBoxCollider2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var col = (BoxCollider2D)instance;
@@ -587,24 +1028,62 @@ public class SerializeBoxCollider2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeCircleCollider2D.
+/// </summary>
 [ComponentSerializerFor(typeof(CircleCollider2D))]
 public class SerializeCircleCollider2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
         // Meta-information
+        /// <summary>
+        /// The has rigidbody
+        /// </summary>
         public bool hasRigidbody;
 
         // Properties
-        public bool enabled, isTrigger, usedByEffector;
+        /// <summary>
+        /// The enabled
+        /// </summary>
+        public bool enabled,
+                    /// <summary>
+                    /// The is trigger
+                    /// </summary>
+                    isTrigger,
+                    /// <summary>
+                    /// The used by effector
+                    /// </summary>
+                    usedByEffector;
 
+        /// <summary>
+        /// The offset
+        /// </summary>
         public Vector2 offset;
+        /// <summary>
+        /// The shared material
+        /// </summary>
         public PhysicsMaterial2D sharedMaterial;
-        public float radius, density;
+        /// <summary>
+        /// The radius
+        /// </summary>
+        public float radius,
+                     /// <summary>
+                     /// The density
+                     /// </summary>
+                     density;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -627,6 +1106,11 @@ public class SerializeCircleCollider2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var col = (CircleCollider2D)instance;
@@ -664,25 +1148,62 @@ public class SerializeCircleCollider2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeEdgeCollider2D.
+/// </summary>
 [ComponentSerializerFor(typeof(EdgeCollider2D))]
 public class SerializeEdgeCollider2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
         // Meta-information
+        /// <summary>
+        /// The has rigidbody
+        /// </summary>
         public bool hasRigidbody;
 
         // Properties
-        public bool enabled, isTrigger, usedByEffector;
+        /// <summary>
+        /// The enabled
+        /// </summary>
+        public bool enabled,
+                    /// <summary>
+                    /// The is trigger
+                    /// </summary>
+                    isTrigger,
+                    /// <summary>
+                    /// The used by effector
+                    /// </summary>
+                    usedByEffector;
 
+        /// <summary>
+        /// The offset
+        /// </summary>
         public Vector2 offset;
+        /// <summary>
+        /// The points
+        /// </summary>
         public Vector2[] points;
+        /// <summary>
+        /// The shared material
+        /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+        /// <summary>
+        /// The density
+        /// </summary>
         public float density;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -705,6 +1226,11 @@ public class SerializeEdgeCollider2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var col = (EdgeCollider2D)instance;
@@ -742,26 +1268,66 @@ public class SerializeEdgeCollider2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializePolygonCollider2D.
+/// </summary>
 [ComponentSerializerFor(typeof(PolygonCollider2D))]
 public class SerializePolygonCollider2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
         // Meta-information
+        /// <summary>
+        /// The has rigidbody
+        /// </summary>
         public bool hasRigidbody;
 
         // Properties
-        public bool enabled, isTrigger, usedByEffector;
+        /// <summary>
+        /// The enabled
+        /// </summary>
+        public bool enabled,
+                    /// <summary>
+                    /// The is trigger
+                    /// </summary>
+                    isTrigger,
+                    /// <summary>
+                    /// The used by effector
+                    /// </summary>
+                    usedByEffector;
 
+        /// <summary>
+        /// The offset
+        /// </summary>
         public Vector2 offset;
+        /// <summary>
+        /// The paths
+        /// </summary>
         public Vector2[][] paths;
+        /// <summary>
+        /// The shared material
+        /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+        /// <summary>
+        /// The density
+        /// </summary>
         public float density;
+        /// <summary>
+        /// The path count
+        /// </summary>
         public int pathCount;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -790,6 +1356,11 @@ public class SerializePolygonCollider2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var col = (PolygonCollider2D)instance;
@@ -837,19 +1408,70 @@ public class SerializePolygonCollider2D : IComponentSerializer
 
 #region Joints
 
+/// <summary>
+/// Class SerializeDistanceJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(DistanceJoint2D))]
 public class SerializeDistanceJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque, distance;
-        public bool enableCollision, enabled, autoConfigureDistance, maxDistanceOnly, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+                     /// <summary>
+                     /// The break torque
+                     /// </summary>
+                     breakTorque,
+                     /// <summary>
+                     /// The distance
+                     /// </summary>
+                     distance;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+                    /// <summary>
+                    /// The enabled
+                    /// </summary>
+                    enabled,
+                    /// <summary>
+                    /// The automatic configure distance
+                    /// </summary>
+                    autoConfigureDistance,
+                    /// <summary>
+                    /// The maximum distance only
+                    /// </summary>
+                    maxDistanceOnly,
+                    /// <summary>
+                    /// The automatic configure connected anchor
+                    /// </summary>
+                    autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+                       /// <summary>
+                       /// The connected anchor
+                       /// </summary>
+                       connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -874,6 +1496,11 @@ public class SerializeDistanceJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (DistanceJoint2D)instance;
@@ -915,21 +1542,67 @@ public class SerializeDistanceJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeFixedJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(FixedJoint2D))]
 public class SerializeFixedJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+                     /// <summary>
+                     /// The break torque
+                     /// </summary>
+                     breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+                    /// <summary>
+                    /// The enabled
+                    /// </summary>
+                    enabled,
+                    /// <summary>
+                    /// The automatic configure connected anchor
+                    /// </summary>
+                    autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+                       /// <summary>
+                       /// The connected anchor
+                       /// </summary>
+                       connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
-        public float dampingRatio, frequency;
+        /// <summary>
+        /// The damping ratio
+        /// </summary>
+        public float dampingRatio,
+                     /// <summary>
+                     /// The frequency
+                     /// </summary>
+                     frequency;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -954,6 +1627,11 @@ public class SerializeFixedJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (FixedJoint2D)instance;
@@ -996,21 +1674,67 @@ public class SerializeFixedJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeFrictionJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(FrictionJoint2D))]
 public class SerializeFrictionJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+                     /// <summary>
+                     /// The break torque
+                     /// </summary>
+                     breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+                    /// <summary>
+                    /// The enabled
+                    /// </summary>
+                    enabled,
+                    /// <summary>
+                    /// The automatic configure connected anchor
+                    /// </summary>
+                    autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+                       /// <summary>
+                       /// The connected anchor
+                       /// </summary>
+                       connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
-        public float maxForce, maxTorque;
+        /// <summary>
+        /// The maximum force
+        /// </summary>
+        public float maxForce,
+                     /// <summary>
+                     /// The maximum torque
+                     /// </summary>
+                     maxTorque;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1035,6 +1759,11 @@ public class SerializeFrictionJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (FrictionJoint2D)instance;
@@ -1077,23 +1806,75 @@ public class SerializeFrictionJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeHingeJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(HingeJoint2D))]
 public class SerializeHingeJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+                     /// <summary>
+                     /// The break torque
+                     /// </summary>
+                     breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+                    /// <summary>
+                    /// The enabled
+                    /// </summary>
+                    enabled,
+                    /// <summary>
+                    /// The automatic configure connected anchor
+                    /// </summary>
+                    autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+                       /// <summary>
+                       /// The connected anchor
+                       /// </summary>
+                       connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
+        /// <summary>
+        /// The limits
+        /// </summary>
         public JointAngleLimits2D limits;
+        /// <summary>
+        /// The motor
+        /// </summary>
         public JointMotor2D motor;
-        public bool useLimits, useMotor;
+        /// <summary>
+        /// The use limits
+        /// </summary>
+        public bool useLimits,
+                    /// <summary>
+                    /// The use motor
+                    /// </summary>
+                    useMotor;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1120,6 +1901,11 @@ public class SerializeHingeJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (HingeJoint2D)instance;
@@ -1164,21 +1950,63 @@ public class SerializeHingeJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeRelativeJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(RelativeJoint2D))]
 public class SerializeRelativeJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public bool enabled, enableCollision;
+        /// <summary>
+        /// The enabled
+        /// </summary>
+        public bool enabled,
+            /// <summary>
+            /// The enable collision
+            /// </summary>
+            enableCollision;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
-        public float angularOffset, correctionScale, maxForce, maxTorque;
+        /// <summary>
+        /// The angular offset
+        /// </summary>
+        public float angularOffset,
+            /// <summary>
+            /// The correction scale
+            /// </summary>
+            correctionScale,
+            /// <summary>
+            /// The maximum force
+            /// </summary>
+            maxForce,
+            /// <summary>
+            /// The maximum torque
+            /// </summary>
+            maxTorque;
+        /// <summary>
+        /// The automatic configure offset
+        /// </summary>
         public bool autoConfigureOffset;
+        /// <summary>
+        /// The linear offset
+        /// </summary>
         public Vector2 linearOffset;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1202,6 +2030,11 @@ public class SerializeRelativeJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (RelativeJoint2D)instance;
@@ -1236,24 +2069,83 @@ public class SerializeRelativeJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeSliderJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(SliderJoint2D))]
 public class SerializeSliderJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+            /// <summary>
+            /// The break torque
+            /// </summary>
+            breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+            /// <summary>
+            /// The enabled
+            /// </summary>
+            enabled,
+            /// <summary>
+            /// The automatic configure connected anchor
+            /// </summary>
+            autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+            /// <summary>
+            /// The connected anchor
+            /// </summary>
+            connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
+        /// <summary>
+        /// The angle
+        /// </summary>
         public float angle;
-        public bool autoConfigureAngle, useLimits, useMotor;
+        /// <summary>
+        /// The automatic configure angle
+        /// </summary>
+        public bool autoConfigureAngle,
+            /// <summary>
+            /// The use limits
+            /// </summary>
+            useLimits,
+            /// <summary>
+            /// The use motor
+            /// </summary>
+            useMotor;
+        /// <summary>
+        /// The limits
+        /// </summary>
         public JointTranslationLimits2D limits;
+        /// <summary>
+        /// The motor
+        /// </summary>
         public JointMotor2D motor;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1282,6 +2174,11 @@ public class SerializeSliderJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (SliderJoint2D)instance;
@@ -1328,22 +2225,75 @@ public class SerializeSliderJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeSpringJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(SpringJoint2D))]
 public class SerializeSpringJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+            /// <summary>
+            /// The break torque
+            /// </summary>
+            breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+            /// <summary>
+            /// The enabled
+            /// </summary>
+            enabled,
+            /// <summary>
+            /// The automatic configure connected anchor
+            /// </summary>
+            autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+            /// <summary>
+            /// The connected anchor
+            /// </summary>
+            connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
-        public float dampingRatio, distance, frequency;
+        /// <summary>
+        /// The damping ratio
+        /// </summary>
+        public float dampingRatio,
+            /// <summary>
+            /// The distance
+            /// </summary>
+            distance,
+            /// <summary>
+            /// The frequency
+            /// </summary>
+            frequency;
+        /// <summary>
+        /// The automatic configure distance
+        /// </summary>
         public bool autoConfigureDistance;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1370,6 +2320,11 @@ public class SerializeSpringJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (SpringJoint2D)instance;
@@ -1414,23 +2369,71 @@ public class SerializeSpringJoint2D : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeWheelJoint2D.
+/// </summary>
 [ComponentSerializerFor(typeof(WheelJoint2D))]
 public class SerializeWheelJoint2D : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
-        public float breakForce, breakTorque;
-        public bool enableCollision, enabled, autoConfigureConnectedAnchor;
-        public Vector2 anchor, connectedAnchor;
+        /// <summary>
+        /// The break force
+        /// </summary>
+        public float breakForce,
+            /// <summary>
+            /// The break torque
+            /// </summary>
+            breakTorque;
+        /// <summary>
+        /// The enable collision
+        /// </summary>
+        public bool enableCollision,
+            /// <summary>
+            /// The enabled
+            /// </summary>
+            enabled,
+            /// <summary>
+            /// The automatic configure connected anchor
+            /// </summary>
+            autoConfigureConnectedAnchor;
+        /// <summary>
+        /// The anchor
+        /// </summary>
+        public Vector2 anchor,
+            /// <summary>
+            /// The connected anchor
+            /// </summary>
+            connectedAnchor;
+        /// <summary>
+        /// The connected body
+        /// </summary>
         public Rigidbody2D connectedBody;
 
+        /// <summary>
+        /// The motor
+        /// </summary>
         public JointMotor2D motor;
+        /// <summary>
+        /// The suspension
+        /// </summary>
         public JointSuspension2D suspension;
+        /// <summary>
+        /// The use motor
+        /// </summary>
         public bool useMotor;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -1456,6 +2459,11 @@ public class SerializeWheelJoint2D : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var joint = (WheelJoint2D)instance;
@@ -1503,9 +2511,17 @@ public class SerializeWheelJoint2D : IComponentSerializer
 
 #region Effectors
 
+/// <summary>
+/// Class SerializeAreaEffector2D.
+/// </summary>
 [ComponentSerializerFor(typeof(AreaEffector2D))]
 public class SerializeAreaEffector2D : ComponentSerializerExtensionBase<AreaEffector2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(AreaEffector2D target)
     {
         return new object[] {
@@ -1515,6 +2531,11 @@ public class SerializeAreaEffector2D : ComponentSerializerExtensionBase<AreaEffe
         };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, AreaEffector2D instance)
     {
         instance.colliderMask = (int)data[0];
@@ -1530,9 +2551,17 @@ public class SerializeAreaEffector2D : ComponentSerializerExtensionBase<AreaEffe
     }
 }
 
+/// <summary>
+/// Class SerializeBuoyancyEffector2D.
+/// </summary>
 [ComponentSerializerFor(typeof(BuoyancyEffector2D))]
 public class SerializeBuoyancyEffector2D : ComponentSerializerExtensionBase<BuoyancyEffector2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(BuoyancyEffector2D target)
     {
         return new object[] {
@@ -1542,6 +2571,11 @@ public class SerializeBuoyancyEffector2D : ComponentSerializerExtensionBase<Buoy
         };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, BuoyancyEffector2D instance)
     {
         instance.colliderMask = (int)data[0];
@@ -1558,9 +2592,17 @@ public class SerializeBuoyancyEffector2D : ComponentSerializerExtensionBase<Buoy
     }
 }
 
+/// <summary>
+/// Class SerializePointEffector2D.
+/// </summary>
 [ComponentSerializerFor(typeof(PointEffector2D))]
 public class SerializePointEffector2D : ComponentSerializerExtensionBase<PointEffector2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(PointEffector2D target)
     {
         return new object[] {
@@ -1570,6 +2612,11 @@ public class SerializePointEffector2D : ComponentSerializerExtensionBase<PointEf
         };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, PointEffector2D instance)
     {
         instance.colliderMask = (int)data[0];
@@ -1587,9 +2634,17 @@ public class SerializePointEffector2D : ComponentSerializerExtensionBase<PointEf
     }
 }
 
+/// <summary>
+/// Class SerializePlatformEffector2D.
+/// </summary>
 [ComponentSerializerFor(typeof(PlatformEffector2D))]
 public class SerializePlatformEffector2D : ComponentSerializerExtensionBase<PlatformEffector2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(PlatformEffector2D target)
     {
         return new object[] {
@@ -1599,6 +2654,11 @@ public class SerializePlatformEffector2D : ComponentSerializerExtensionBase<Plat
         };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, PlatformEffector2D instance)
     {
         instance.colliderMask = (int)data[0];
@@ -1614,9 +2674,17 @@ public class SerializePlatformEffector2D : ComponentSerializerExtensionBase<Plat
     }
 }
 
+/// <summary>
+/// Class SerializeSurfaceEffector2D.
+/// </summary>
 [ComponentSerializerFor(typeof(SurfaceEffector2D))]
 public class SerializeSurfaceEffector2D : ComponentSerializerExtensionBase<SurfaceEffector2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(SurfaceEffector2D target)
     {
         return new object[] {
@@ -1626,6 +2694,11 @@ public class SerializeSurfaceEffector2D : ComponentSerializerExtensionBase<Surfa
         };
     }
 
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, SurfaceEffector2D instance)
     {
         instance.colliderMask = (int)data[0];
@@ -1645,16 +2718,25 @@ public class SerializeSurfaceEffector2D : ComponentSerializerExtensionBase<Surfa
 
 #endregion 2D
 
+/// <summary>
+/// Class SerializeTexture2D.
+/// </summary>
 [Serializer(typeof(Texture2D))]
 public class SerializeTexture2D : SerializerExtensionBase<Texture2D>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Texture2D target)
     {
         if (target.GetInstanceID() >= 0)
         {
             return new object[] { true, SaveGameManager.Instance.GetAssetId(target) };
         }
-        else {
+        else
+        {
             return new object[] {
                 false,
                 target.anisoLevel,
@@ -1670,6 +2752,12 @@ public class SerializeTexture2D : SerializerExtensionBase<Texture2D>
         }
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         if ((bool)data[0])
@@ -1703,6 +2791,12 @@ public class SerializeTexture2D : SerializerExtensionBase<Texture2D>
         return t;
     }
 
+    /// <summary>
+    /// Determines whether this instance [can be serialized] the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance [can be serialized] the specified target type; otherwise, <c>false</c>.</returns>
     public override bool CanBeSerialized(Type targetType, object instance)
     {
         var obj = instance as Texture2D;
@@ -1718,9 +2812,17 @@ public class SerializeTexture2D : SerializerExtensionBase<Texture2D>
     }
 }
 
+/// <summary>
+/// Class SerializeMaterial.
+/// </summary>
 [Serializer(typeof(Material))]
 public class SerializeMaterial : SerializerExtensionBase<Material>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Material target)
     {
         var store = GetStore();
@@ -1728,7 +2830,8 @@ public class SerializeMaterial : SerializerExtensionBase<Material>
         {
             return new object[] { true, SaveGameManager.Instance.GetAssetId(target) };
         }
-        else {
+        else
+        {
             return new object[] { false, target.shader.name, target.name, target.renderQueue, store != null ? store.GetValues(target) : null };
         }
     }
@@ -1747,6 +2850,12 @@ public class SerializeMaterial : SerializerExtensionBase<Material>
         return null;
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         if ((bool)data[0])
@@ -1766,6 +2875,12 @@ public class SerializeMaterial : SerializerExtensionBase<Material>
         return m;
     }
 
+    /// <summary>
+    /// Determines whether this instance [can be serialized] the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance [can be serialized] the specified target type; otherwise, <c>false</c>.</returns>
     public override bool CanBeSerialized(Type targetType, object instance)
     {
         var obj = instance as Material;
@@ -1781,14 +2896,27 @@ public class SerializeMaterial : SerializerExtensionBase<Material>
     }
 }
 
+/// <summary>
+/// Class SerializeAnimator.
+/// </summary>
 [ComponentSerializerFor(typeof(Animator))]
 public class SerializeAnimator : ComponentSerializerExtensionBase<Animator>
 {
+    /// <summary>
+    /// Loads the into.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
     public override void LoadInto(object[] data, Animator instance)
     {
         Debug.LogWarningFormat(instance, "usng: Warning! The \"gameobject\" {0} is trying to load an Animator component without using a StoreAnimator component!", instance.gameObject);
     }
 
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Animator target)
     {
         Debug.LogWarningFormat(target, "usng: Warning! The \"gameobject\" {0} is trying to store an Animator component without using a StoreAnimator component!", target.gameObject);
@@ -1797,6 +2925,9 @@ public class SerializeAnimator : ComponentSerializerExtensionBase<Animator>
     }
 }
 
+/// <summary>
+/// Class SerializeAssetReference.
+/// </summary>
 [SubTypeSerializer(typeof(Texture))]
 [Serializer(typeof(Font))]
 [Serializer(typeof(AudioClip))]
@@ -1812,27 +2943,55 @@ public class SerializeAnimator : ComponentSerializerExtensionBase<Animator>
 [Serializer(typeof(InputField.SubmitEvent))]
 public class SerializeAssetReference : SerializerExtensionBase<object>
 {
+    /// <summary>
+    /// The instance
+    /// </summary>
     public static SerializeAssetReference instance = new SerializeAssetReference();
 
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(object target)
     {
         return new object[] { SaveGameManager.Instance.GetAssetId(target as UnityEngine.Object) };
     }
 
+    /// <summary>
+    /// Determines whether this instance [can be serialized] the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance [can be serialized] the specified target type; otherwise, <c>false</c>.</returns>
     public override bool CanBeSerialized(Type targetType, object instance)
     {
         return instance == null || typeof(UnityEngine.Object).IsAssignableFrom(targetType);
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         return SaveGameManager.Instance.GetAsset((SaveGameManager.AssetReference)data[0]);
     }
 }
 
+/// <summary>
+/// Class SerializeScriptableObjectReference.
+/// </summary>
 [SubTypeSerializer(typeof(ScriptableObject))]
 public class SerializeScriptableObjectReference : SerializerExtensionBase<object>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(object target)
     {
         var id = SaveGameManager.Instance.GetAssetId(target as UnityEngine.Object);
@@ -1843,16 +3002,29 @@ public class SerializeScriptableObjectReference : SerializerExtensionBase<object
             var result = new object[] { true, target.GetType().FullName, data };
             return result;
         }
-        else {
+        else
+        {
             return new object[] { false, id };
         }
     }
 
+    /// <summary>
+    /// Determines whether this instance [can be serialized] the specified target type.
+    /// </summary>
+    /// <param name="targetType">Type of the target.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns><c>true</c> if this instance [can be serialized] the specified target type; otherwise, <c>false</c>.</returns>
     public override bool CanBeSerialized(Type targetType, object instance)
     {
         return instance != null;
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         if ((bool)data[0])
@@ -1861,7 +3033,8 @@ public class SerializeScriptableObjectReference : SerializerExtensionBase<object
             UnitySerializer.DeserializeInto((byte[])data[2], newInstance);
             return newInstance;
         }
-        else {
+        else
+        {
             return SaveGameManager.Instance.GetAsset((SaveGameManager.AssetReference)data[1]);
         }
     }
@@ -1882,6 +3055,11 @@ public class SerializeGameObjectReference : SerializerExtensionBase<GameObject>
         };
     }
 
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(GameObject target)
     {
         //Is this a reference to a prefab
@@ -1893,6 +3071,12 @@ public class SerializeGameObjectReference : SerializerExtensionBase<GameObject>
         return new object[] { target.GetId(), UniqueIdentifier.GetByName(target.gameObject.GetId()) != null /* Identify a prefab */ };
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         if (instance != null)
@@ -1917,19 +3101,98 @@ public class SerializeGameObjectReference : SerializerExtensionBase<GameObject>
     }
 }
 
+/// <summary>
+/// Class SerializeNavMeshAgent.
+/// </summary>
 [ComponentSerializerFor(typeof(NavMeshAgent))]
 public class SerializeNavMeshAgent : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInfo.
+    /// </summary>
     public class StoredInfo
     {
-        public bool hasPath, offMesh, autoBraking, autoTraverseOffMeshLink, autoRepath;
-        public float x, y, z, speed, angularSpeed, height, offset, acceleration, radius, stoppingDistance;
-        public int passable = -1, avoidancePriority;
+        /// <summary>
+        /// The has path
+        /// </summary>
+        public bool hasPath,
+            /// <summary>
+            /// The off mesh
+            /// </summary>
+            offMesh,
+            /// <summary>
+            /// The automatic braking
+            /// </summary>
+            autoBraking,
+            /// <summary>
+            /// The automatic traverse off mesh link
+            /// </summary>
+            autoTraverseOffMeshLink,
+            /// <summary>
+            /// The automatic repath
+            /// </summary>
+            autoRepath;
+        /// <summary>
+        /// The x
+        /// </summary>
+        public float x,
+            /// <summary>
+            /// The y
+            /// </summary>
+            y,
+            /// <summary>
+            /// The z
+            /// </summary>
+            z,
+            /// <summary>
+            /// The speed
+            /// </summary>
+            speed,
+            /// <summary>
+            /// The angular speed
+            /// </summary>
+            angularSpeed,
+            /// <summary>
+            /// The height
+            /// </summary>
+            height,
+            /// <summary>
+            /// The offset
+            /// </summary>
+            offset,
+            /// <summary>
+            /// The acceleration
+            /// </summary>
+            acceleration,
+            /// <summary>
+            /// The radius
+            /// </summary>
+            radius,
+            /// <summary>
+            /// The stopping distance
+            /// </summary>
+            stoppingDistance;
+        /// <summary>
+        /// The passable
+        /// </summary>
+        public int passable = -1,
+            /// <summary>
+            /// The avoidance priority
+            /// </summary>
+            avoidancePriority;
+        /// <summary>
+        /// The obstacle avoidance type
+        /// </summary>
         public ObstacleAvoidanceType obstacleAvoidanceType;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         var agent = (NavMeshAgent)component;
@@ -1956,6 +3219,11 @@ public class SerializeNavMeshAgent : IComponentSerializer
         });
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var path = new NavMeshPath();
@@ -1998,27 +3266,74 @@ public class SerializeNavMeshAgent : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeCamera.
+/// </summary>
 [ComponentSerializerFor(typeof(Camera))]
 public class SerializeCamera : IComponentSerializer
 {
+    /// <summary>
+    /// Class CameraData.
+    /// </summary>
     public class CameraData
     {
+        /// <summary>
+        /// The rendering path
+        /// </summary>
         public RenderingPath renderingPath;
+        /// <summary>
+        /// The field of view
+        /// </summary>
         public float fieldOfView;
+        /// <summary>
+        /// The near clip plane
+        /// </summary>
         public float nearClipPlane;
+        /// <summary>
+        /// The far clip plane
+        /// </summary>
         public float farClipPlane;
+        /// <summary>
+        /// The depth
+        /// </summary>
         public float depth;
+        /// <summary>
+        /// The rect
+        /// </summary>
         public Rect rect;
+        /// <summary>
+        /// The use occlusion culling
+        /// </summary>
         public bool useOcclusionCulling;
+        /// <summary>
+        /// The HDR
+        /// </summary>
         public bool hdr;
+        /// <summary>
+        /// The target texture
+        /// </summary>
         public RenderTexture targetTexture;
+        /// <summary>
+        /// The orthographic
+        /// </summary>
         public bool orthographic;
+        /// <summary>
+        /// The orthographic size
+        /// </summary>
         public float orthographicSize;
+        /// <summary>
+        /// The background color
+        /// </summary>
         public Color backgroundColor;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         var camera = (Camera)component;
@@ -2040,6 +3355,11 @@ public class SerializeCamera : IComponentSerializer
         return UnitySerializer.Serialize(cd);
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var cd = UnitySerializer.Deserialize<CameraData>(data);
@@ -2061,25 +3381,109 @@ public class SerializeCamera : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeRigidBody.
+/// </summary>
 [ComponentSerializerFor(typeof(Rigidbody))]
 public class SerializeRigidBody : IComponentSerializer
 {
+    /// <summary>
+    /// Class RigidBodyInfo.
+    /// </summary>
     public class RigidBodyInfo
     {
+        /// <summary>
+        /// The is kinematic
+        /// </summary>
         public bool isKinematic;
-        public bool useGravity, freezeRotation, detectCollisions;
-        public Vector3 velocity, position, angularVelocity, centerOfMass, inertiaTensor;
-        public Quaternion rotation, inertiaTensorRotation;
-        public float drag, angularDrag, mass, sleepThreshold, maxAngularVelocity;
+        /// <summary>
+        /// The use gravity
+        /// </summary>
+        public bool useGravity,
+            /// <summary>
+            /// The freeze rotation
+            /// </summary>
+            freezeRotation,
+            /// <summary>
+            /// The detect collisions
+            /// </summary>
+            detectCollisions;
+        /// <summary>
+        /// The velocity
+        /// </summary>
+        public Vector3 velocity,
+            /// <summary>
+            /// The position
+            /// </summary>
+            position,
+            /// <summary>
+            /// The angular velocity
+            /// </summary>
+            angularVelocity,
+            /// <summary>
+            /// The center of mass
+            /// </summary>
+            centerOfMass,
+            /// <summary>
+            /// The inertia tensor
+            /// </summary>
+            inertiaTensor;
+        /// <summary>
+        /// The rotation
+        /// </summary>
+        public Quaternion rotation,
+            /// <summary>
+            /// The inertia tensor rotation
+            /// </summary>
+            inertiaTensorRotation;
+        /// <summary>
+        /// The drag
+        /// </summary>
+        public float drag,
+            /// <summary>
+            /// The angular drag
+            /// </summary>
+            angularDrag,
+            /// <summary>
+            /// The mass
+            /// </summary>
+            mass,
+            /// <summary>
+            /// The sleep threshold
+            /// </summary>
+            sleepThreshold,
+            /// <summary>
+            /// The maximum angular velocity
+            /// </summary>
+            maxAngularVelocity;
+        /// <summary>
+        /// The constraints
+        /// </summary>
         public RigidbodyConstraints constraints;
+        /// <summary>
+        /// The collision detection mode
+        /// </summary>
         public CollisionDetectionMode collisionDetectionMode;
+        /// <summary>
+        /// The interpolation
+        /// </summary>
         public RigidbodyInterpolation interpolation;
+        /// <summary>
+        /// The solver iteration count
+        /// </summary>
         public int solverIterationCount;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RigidBodyInfo"/> class.
+        /// </summary>
         public RigidBodyInfo()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RigidBodyInfo"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
         public RigidBodyInfo(Rigidbody source)
         {
             isKinematic = source.isKinematic;
@@ -2104,6 +3508,10 @@ public class SerializeRigidBody : IComponentSerializer
             solverIterationCount = source.solverIterations;
         }
 
+        /// <summary>
+        /// Configures the specified body.
+        /// </summary>
+        /// <param name="body">The body.</param>
         public void Configure(Rigidbody body)
         {
             body.isKinematic = true;
@@ -2152,11 +3560,21 @@ public class SerializeRigidBody : IComponentSerializer
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         return UnitySerializer.Serialize(new RigidBodyInfo((Rigidbody)component));
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var info = UnitySerializer.Deserialize<RigidBodyInfo>(data);
@@ -2170,6 +3588,9 @@ public class SerializeRigidBody : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class RagePixelSupport.
+/// </summary>
 [SerializerPlugIn]
 public class RagePixelSupport
 {
@@ -2181,29 +3602,79 @@ public class RagePixelSupport
 }
 
 //[ComponentSerializerFor(typeof(Renderer))]
+/// <summary>
+/// Class SerializeRenderer.
+/// </summary>
 [ComponentSerializerFor(typeof(MeshRenderer))]
 public class SerializeRenderer : IComponentSerializer
 {
+    /// <summary>
+    /// The store
+    /// </summary>
     public static StoreMaterials Store;
 
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool Enabled;
+        /// <summary>
+        /// The materials
+        /// </summary>
         public List<Material> materials = new List<Material>();
+        /// <summary>
+        /// The shadow casting mode
+        /// </summary>
         public ShadowCastingMode shadowCastingMode;
+        /// <summary>
+        /// The receive shadows
+        /// </summary>
         public bool receiveShadows;
+        /// <summary>
+        /// The light probe usage
+        /// </summary>
         public LightProbeUsage lightProbeUsage;
+        /// <summary>
+        /// The reflection probe usage
+        /// </summary>
         public ReflectionProbeUsage reflectionProbeUsage;
+        /// <summary>
+        /// The light probe proxy volume override
+        /// </summary>
         public GameObject lightProbeProxyVolumeOverride;
+        /// <summary>
+        /// The probe anchor
+        /// </summary>
         public Transform probeAnchor;
+        /// <summary>
+        /// The lightmap index
+        /// </summary>
         public int lightmapIndex;
+        /// <summary>
+        /// The realtime lightmap index
+        /// </summary>
         public int realtimeLightmapIndex;
+        /// <summary>
+        /// The lightmap scale offset
+        /// </summary>
         public Vector4 lightmapScaleOffset;
+        /// <summary>
+        /// The realtime lightmap scale offset
+        /// </summary>
         public Vector4 realtimeLightmapScaleOffset;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2232,6 +3703,11 @@ public class SerializeRenderer : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var renderer = (Renderer)instance;
@@ -2282,18 +3758,35 @@ public class SerializeRenderer : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeLineRenderer.
+/// </summary>
 [ComponentSerializerFor(typeof(LineRenderer))]
 public class SerializeLineRenderer : IComponentSerializer
 {
+    /// <summary>
+    /// The store
+    /// </summary>
     public static StoreMaterials Store;
 
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation : SerializeRenderer.StoredInformation
     {
+        /// <summary>
+        /// The use world space
+        /// </summary>
         public bool useWorldSpace;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2322,6 +3815,11 @@ public class SerializeLineRenderer : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var renderer = (LineRenderer)instance;
@@ -2369,21 +3867,47 @@ public class SerializeLineRenderer : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeTrailRenderer.
+/// </summary>
 [ComponentSerializerFor(typeof(TrailRenderer))]
 public class SerializeTrailRenderer : IComponentSerializer
 {
+    /// <summary>
+    /// The store
+    /// </summary>
     public static StoreMaterials Store;
 
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation : SerializeRenderer.StoredInformation
     {
+        /// <summary>
+        /// The autodestruct
+        /// </summary>
         public bool autodestruct;
+        /// <summary>
+        /// The start width
+        /// </summary>
         public float startWidth;
+        /// <summary>
+        /// The end width
+        /// </summary>
         public float endWidth;
+        /// <summary>
+        /// The time
+        /// </summary>
         public float time;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2415,6 +3939,11 @@ public class SerializeTrailRenderer : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var renderer = (TrailRenderer)instance;
@@ -2466,20 +3995,43 @@ public class SerializeTrailRenderer : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeSkinnedMeshRenderer.
+/// </summary>
 [ComponentSerializerFor(typeof(SkinnedMeshRenderer))]
 public class SerializeSkinnedMeshRenderer : IComponentSerializer
 {
+    /// <summary>
+    /// The store
+    /// </summary>
     public static StoreMaterials Store;
 
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation : SerializeRenderer.StoredInformation
     {
+        /// <summary>
+        /// The local bounds
+        /// </summary>
         public Bounds localBounds;
+        /// <summary>
+        /// The quality
+        /// </summary>
         public SkinQuality quality;
+        /// <summary>
+        /// The update when offscreen
+        /// </summary>
         public bool updateWhenOffscreen;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2510,6 +4062,11 @@ public class SerializeSkinnedMeshRenderer : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var renderer = (SkinnedMeshRenderer)instance;
@@ -2560,23 +4117,58 @@ public class SerializeSkinnedMeshRenderer : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeAudioChorusFilter.
+/// </summary>
 [ComponentSerializerFor(typeof(AudioChorusFilter))]
 public class SerializeAudioChorusFilter : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The delay
+        /// </summary>
         public float delay;
+        /// <summary>
+        /// The depth
+        /// </summary>
         public float depth;
+        /// <summary>
+        /// The dry mix
+        /// </summary>
         public float dryMix;
+        /// <summary>
+        /// The rate
+        /// </summary>
         public float rate;
+        /// <summary>
+        /// The wet mix1
+        /// </summary>
         public float wetMix1;
+        /// <summary>
+        /// The wet mix2
+        /// </summary>
         public float wetMix2;
+        /// <summary>
+        /// The wet mix3
+        /// </summary>
         public float wetMix3;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2596,6 +4188,11 @@ public class SerializeAudioChorusFilter : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var filter = (AudioChorusFilter)instance;
@@ -2627,17 +4224,34 @@ public class SerializeAudioChorusFilter : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeAudioDistortionFilter.
+/// </summary>
 [ComponentSerializerFor(typeof(AudioDistortionFilter))]
 public class SerializeAudioDistortionFilter : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The distortion level
+        /// </summary>
         public float distortionLevel;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2651,6 +4265,11 @@ public class SerializeAudioDistortionFilter : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var filter = (AudioDistortionFilter)instance;
@@ -2676,20 +4295,46 @@ public class SerializeAudioDistortionFilter : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeAudioEchoFilter.
+/// </summary>
 [ComponentSerializerFor(typeof(AudioEchoFilter))]
 public class SerializeAudioEchoFilter : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The decay ratio
+        /// </summary>
         public float decayRatio;
+        /// <summary>
+        /// The delay
+        /// </summary>
         public float delay;
+        /// <summary>
+        /// The dry mix
+        /// </summary>
         public float dryMix;
+        /// <summary>
+        /// The wet mix
+        /// </summary>
         public float wetMix;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2705,6 +4350,11 @@ public class SerializeAudioEchoFilter : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var filter = (AudioEchoFilter)instance;
@@ -2732,18 +4382,38 @@ public class SerializeAudioEchoFilter : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeAudioLowPassFilter.
+/// </summary>
 [ComponentSerializerFor(typeof(AudioLowPassFilter))]
 public class SerializeAudioLowPassFilter : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The cutoff frequency
+        /// </summary>
         public float cutoffFrequency;
+        /// <summary>
+        /// The lowpass resonance q
+        /// </summary>
         public float lowpassResonanceQ;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2758,6 +4428,11 @@ public class SerializeAudioLowPassFilter : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var filter = (AudioLowPassFilter)instance;
@@ -2784,18 +4459,38 @@ public class SerializeAudioLowPassFilter : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeAudioHighPassFilter.
+/// </summary>
 [ComponentSerializerFor(typeof(AudioHighPassFilter))]
 public class SerializeAudioHighPassFilter : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The cutoff frequency
+        /// </summary>
         public float cutoffFrequency;
+        /// <summary>
+        /// The highpass resonance q
+        /// </summary>
         public float highpassResonanceQ;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2810,6 +4505,11 @@ public class SerializeAudioHighPassFilter : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var filter = (AudioHighPassFilter)instance;
@@ -2836,19 +4536,42 @@ public class SerializeAudioHighPassFilter : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class SerializeEventSystem.
+/// </summary>
 [ComponentSerializerFor(typeof(EventSystem))]
 public class SerializeEventSystem : IComponentSerializer
 {
+    /// <summary>
+    /// Class StoredInformation.
+    /// </summary>
     public class StoredInformation
     {
+        /// <summary>
+        /// The enabled
+        /// </summary>
         public bool enabled;
+        /// <summary>
+        /// The first selected game object
+        /// </summary>
         public GameObject firstSelectedGameObject;
+        /// <summary>
+        /// The pixel drag threshold
+        /// </summary>
         public int pixelDragThreshold;
+        /// <summary>
+        /// The send navigation events
+        /// </summary>
         public bool sendNavigationEvents;
     }
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         using (new UnitySerializer.SerializationSplitScope())
@@ -2864,6 +4587,11 @@ public class SerializeEventSystem : IComponentSerializer
         }
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         var system = (EventSystem)instance;
@@ -2948,9 +4676,17 @@ public class SerializeSplineNode : IComponentSerializer
     #endregion IComponentSerializer implementation
 }*/
 
+/// <summary>
+/// Class SerializeComponentReference.
+/// </summary>
 [SubTypeSerializer(typeof(Component))]
 public class SerializeComponentReference : SerializerExtensionBase<Component>
 {
+    /// <summary>
+    /// Saves the specified target.
+    /// </summary>
+    /// <param name="target">The target.</param>
+    /// <returns>IEnumerable&lt;System.Object&gt;.</returns>
     public override IEnumerable<object> Save(Component target)
     {
         //Is this a reference to a prefab
@@ -2966,11 +4702,18 @@ public class SerializeComponentReference : SerializerExtensionBase<Component>
         {
             return new object[] { target.gameObject.GetId(), true, target.GetType().FullName, "", index /* Identify a prefab */ };
         }
-        else {
+        else
+        {
             return new object[] { target.gameObject.GetId(), false, target.GetType().FullName, "", index /* Identify a prefab */ };
         }
     }
 
+    /// <summary>
+    /// Loads the specified data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="instance">The instance.</param>
+    /// <returns>System.Object.</returns>
     public override object Load(object[] data, object instance)
     {
         if (!(bool)data[1])
@@ -3019,16 +4762,31 @@ public class SerializeComponentReference : SerializerExtensionBase<Component>
     }
 }
 
+/// <summary>
+/// Class ProvideAttributes.
+/// </summary>
 public class ProvideAttributes : IProvideAttributeList
 {
     private string[] _attributes;
+    /// <summary>
+    /// All simple
+    /// </summary>
     protected bool AllSimple = true;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProvideAttributes"/> class.
+    /// </summary>
+    /// <param name="attributes">The attributes.</param>
     public ProvideAttributes(string[] attributes)
         : this(attributes, true)
     {
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProvideAttributes"/> class.
+    /// </summary>
+    /// <param name="attributes">The attributes.</param>
+    /// <param name="allSimple">if set to <c>true</c> [all simple].</param>
     public ProvideAttributes(string[] attributes, bool allSimple)
     {
         _attributes = attributes;
@@ -3037,6 +4795,11 @@ public class ProvideAttributes : IProvideAttributeList
 
     #region IProvideAttributeList implementation
 
+    /// <summary>
+    /// Gets the attribute list.
+    /// </summary>
+    /// <param name="tp">The tp.</param>
+    /// <returns>IEnumerable&lt;System.String&gt;.</returns>
     public IEnumerable<string> GetAttributeList(Type tp)
     {
         return _attributes;
@@ -3046,6 +4809,11 @@ public class ProvideAttributes : IProvideAttributeList
 
     #region IProvideAttributeList implementation
 
+    /// <summary>
+    /// Allows all simple.
+    /// </summary>
+    /// <param name="tp">The tp.</param>
+    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
     public virtual bool AllowAllSimple(Type tp)
     {
         return AllSimple;
@@ -3054,18 +4822,30 @@ public class ProvideAttributes : IProvideAttributeList
     #endregion IProvideAttributeList implementation
 }
 
+/// <summary>
+/// Class ProvideCameraAttributes.
+/// </summary>
 [AttributeListProvider(typeof(Camera))]
 public class ProvideCameraAttributes : ProvideAttributes
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProvideCameraAttributes"/> class.
+    /// </summary>
     public ProvideCameraAttributes()
         : base(new string[0])
     {
     }
 }
 
+/// <summary>
+/// Class ProviderTransformAttributes.
+/// </summary>
 [AttributeListProvider(typeof(Transform))]
 public class ProviderTransformAttributes : ProvideAttributes
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProviderTransformAttributes"/> class.
+    /// </summary>
     public ProviderTransformAttributes()
         : base(new string[] {
         "localPosition",
@@ -3076,9 +4856,15 @@ public class ProviderTransformAttributes : ProvideAttributes
     }
 }
 
+/// <summary>
+/// Class ProviderRectTransformAttributes.
+/// </summary>
 [AttributeListProvider(typeof(RectTransform))]
 public class ProviderRectTransformAttributes : ProvideAttributes
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProviderRectTransformAttributes"/> class.
+    /// </summary>
     public ProviderRectTransformAttributes()
         : base(new string[] {
         "anchoredPosition",
@@ -3095,9 +4881,15 @@ public class ProviderRectTransformAttributes : ProvideAttributes
     }
 }
 
+/// <summary>
+/// Class ProvideColliderAttributes.
+/// </summary>
 [AttributeListProvider(typeof(Collider))]
 public class ProvideColliderAttributes : ProvideAttributes
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProvideColliderAttributes"/> class.
+    /// </summary>
     public ProvideColliderAttributes()
         : base(new string[] {
         "material",
@@ -3224,6 +5016,9 @@ public class ProvideColliderAttributes : ProvideAttributes
     }
 }
 
+/// <summary>
+/// Class ProviderRendererAttributes.
+/// </summary>
 [AttributeListProvider(typeof(Renderer))]
 [AttributeListProvider(typeof(AudioListener))]
 #pragma warning disable
@@ -3236,6 +5031,9 @@ public class ProvideColliderAttributes : ProvideAttributes
 [AttributeListProvider(typeof(TextMesh))]
 public class ProviderRendererAttributes : ProvideAttributes
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProviderRendererAttributes"/> class.
+    /// </summary>
     public ProviderRendererAttributes()
         : base(new string[] {
         "active",

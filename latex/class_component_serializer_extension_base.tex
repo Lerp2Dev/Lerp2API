@@ -1,5 +1,10 @@
 \hypertarget{class_component_serializer_extension_base}{}\section{Component\+Serializer\+Extension\+Base$<$ T $>$ Class Template Reference}
 \label{class_component_serializer_extension_base}\index{Component\+Serializer\+Extension\+Base$<$ T $>$@{Component\+Serializer\+Extension\+Base$<$ T $>$}}
+
+
+Class \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}.  
+
+
 Inheritance diagram for Component\+Serializer\+Extension\+Base$<$ T $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,16 +14,28 @@ Inheritance diagram for Component\+Serializer\+Extension\+Base$<$ T $>$\+:\begin
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}\label{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}} 
-abstract I\+Enumerable$<$ object $>$ {\bfseries Save} (T target)
-\item 
-\mbox{\Hypertarget{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}\label{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}} 
-abstract void {\bfseries Load\+Into} (object\mbox{[}$\,$\mbox{]} data, T instance)
-\item 
+abstract I\+Enumerable$<$ object $>$ \hyperlink{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}{Save} (T target)
+\begin{DoxyCompactList}\small\item\em Saves the specified target. \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}{Load\+Into} (object\mbox{[}$\,$\mbox{]} data, T instance)
+\begin{DoxyCompactList}\small\item\em Loads the into. \end{DoxyCompactList}\item 
 byte \mbox{[}$\,$\mbox{]} \hyperlink{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}{Serialize} (Component component)
 \begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
 void \hyperlink{class_component_serializer_extension_base_a003b02386876cd68c588aef276124b0c}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
 \begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em Component}]\end{description}
+\end{Desc}
 
 
 \subsection{Member Function Documentation}
@@ -34,15 +51,50 @@ Deserialize the specified data into the instance.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & The data that represents the component, produced by Serialize \\
+{\em data} & The data that represents the component, produced by Serialize\\
 \hline
-{\em instance} & The instance to target \\
+{\em instance} & The instance to target\\
 \hline
 \end{DoxyParams}
 
 
 Implements \hyperlink{interface_i_component_serializer_a4cc366a5c78b33d47a90c209d8fed883}{I\+Component\+Serializer}.
 
+\mbox{\Hypertarget{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}\label{class_component_serializer_extension_base_aabcaabbb4ca501f5b3ddb1d7301699cf}} 
+\index{Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}!Load\+Into@{Load\+Into}}
+\index{Load\+Into@{Load\+Into}!Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Load\+Into()}{LoadInto()}}
+{\footnotesize\ttfamily abstract void \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}$<$ T $>$.Load\+Into (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{T}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Loads the into. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}\label{class_component_serializer_extension_base_a4814a51da69bbdba5219843f04885551}} 
+\index{Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}!Save@{Save}}
+\index{Save@{Save}!Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily abstract I\+Enumerable$<$object$>$ \hyperlink{class_component_serializer_extension_base}{Component\+Serializer\+Extension\+Base}$<$ T $>$.Save (\begin{DoxyParamCaption}\item[{T}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Saves the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerable$<$System.\+Object$>$.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}\label{class_component_serializer_extension_base_a068c9a1c5f90967de5d22bf9357cfca0}} 
 \index{Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}!Serialize@{Serialize}}
 \index{Serialize@{Serialize}!Component\+Serializer\+Extension\+Base@{Component\+Serializer\+Extension\+Base}}
@@ -55,9 +107,12 @@ Serialize the specified component to a byte array
 
 
 \begin{DoxyParams}{Parameters}
-{\em component} & Component to be serialized \\
+{\em component} & Component to be serialized\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Byte\mbox{[}\mbox{]}.
+\end{DoxyReturn}
 
 
 Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.

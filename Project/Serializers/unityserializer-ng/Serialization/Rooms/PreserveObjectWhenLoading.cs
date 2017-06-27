@@ -6,6 +6,9 @@
 //
 using UnityEngine;
 
+/// <summary>
+/// Class PreserveObjectWhenLoading.
+/// </summary>
 [AddComponentMenu("Components/Storage/Preserve Object When Loading")]
 public class PreserveObjectWhenLoading : MonoBehaviour
 {

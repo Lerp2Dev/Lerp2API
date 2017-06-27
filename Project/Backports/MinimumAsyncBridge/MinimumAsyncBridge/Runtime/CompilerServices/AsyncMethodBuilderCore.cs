@@ -5,7 +5,6 @@ namespace System.Runtime.CompilerServices
     using System.Diagnostics;
     using System.Threading;
 
-
     /// <summary>Holds state related to the builder's <see cref="IAsyncStateMachine"/>.</summary>
     /// <remarks>This is a mutable struct. Be very delicate with it.</remarks>
     internal struct AsyncMethodBuilderCore

@@ -1,13 +1,18 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestTaskDelay.
+    /// </summary>
     public class UnitTestTaskDelay
     {
-        
+        /// <summary>
+        /// Tasks the delay should ignore cancel after is completed.
+        /// </summary>
         public void TaskDelayShouldIgnoreCancelAfterIsCompleted()
         {
             TaskDelayShouldCancelIfCanceledAsync().Wait();
@@ -25,7 +30,9 @@ namespace MinimuAsyncBridgeUnitTest
             cts.Cancel();
         }
 
-        
+        /// <summary>
+        /// Tasks the delay can cancel.
+        /// </summary>
         public void TaskDelayCanCancel()
         {
             TaskDelayCanCancelAsync().Wait();
@@ -71,8 +78,9 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-
-        
+        /// <summary>
+        /// Tasks the delay with initially canceled token.
+        /// </summary>
         public void TaskDelayWithInitiallyCanceledToken()
         {
             TaskDelayWithInitiallyCanceledTokenAsync().Wait();
@@ -90,7 +98,7 @@ namespace MinimuAsyncBridgeUnitTest
             {
                 await d1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Assert.AreEqual(ex.GetType(), typeof(TaskCanceledException));
                 exceptionCount++;
@@ -98,7 +106,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(exceptionCount, 1);
         }
 
-        
+        /// <summary>
+        /// Tasks the delay with negative delay.
+        /// </summary>
         public void TaskDelayWithNegativeDelay()
         {
             TaskDelayWithNegativeDelayAsync().Wait();
@@ -133,7 +143,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(exceptionCount, 1);
         }
 
-        
+        /// <summary>
+        /// Tests the delay with overflown delay time.
+        /// </summary>
         public void TestDelayWithOverflownDelayTime()
         {
             TestDelayWithOverflownDelayTimeAsync().Wait();

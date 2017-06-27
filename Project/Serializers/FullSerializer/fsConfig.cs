@@ -4,6 +4,9 @@ using System.Reflection;
 namespace FullSerializer
 {
     // Global configuration options.
+    /// <summary>
+    /// Class fsGlobalConfig.
+    /// </summary>
     public static class fsGlobalConfig
     {
         /// <summary>

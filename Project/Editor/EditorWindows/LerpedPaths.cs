@@ -7,9 +7,15 @@ using System;
 
 namespace Lerp2APIEditor.EditorWindows
 {
-    public enum LerpedAPIChange { Auto, InEnter, Default }
+    /// <summary>
+    /// Class LerpedPaths.
+    /// </summary>
+    /// <seealso cref="UnityEditor.EditorWindow" />
     public class LerpedPaths : EditorWindow
     {
+        /// <summary>
+        /// Me
+        /// </summary>
         public static LerpedPaths me;
 
         internal BrowserWindow bBrowser,
@@ -34,7 +40,7 @@ namespace Lerp2APIEditor.EditorWindows
                 if (!LerpedCore.GetBool(LerpedCore.UnityBoot))
                 {
                     LerpedCore.SetBool(LerpedCore.UnityBoot, true);
-                    string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath));
+                    string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath)); //I have to... Arreglar esto
                     if (string.IsNullOrEmpty(bPath))
                     {
                         bPath = "";
@@ -47,7 +53,7 @@ namespace Lerp2APIEditor.EditorWindows
                     }
 
                     long estimatedModTime = LerpedCore.GetLong(LerpedEditorCore.lastBuildTime),
-                         lastModTime = Helpers.LatestModification(bPath);
+                         lastModTime = NativeHelpers.LatestModification(bPath);
 
                     if (estimatedModTime != lastModTime)
                     {
@@ -58,6 +64,11 @@ namespace Lerp2APIEditor.EditorWindows
             }
         }
 
+        /// <summary>
+        /// is the initialize.
+        /// </summary>
+        /// <param name="rf">The rf.</param>
+        /// <param name="change">The change.</param>
         public void iInit(LerpedPaths rf, LerpedAPIChange change = LerpedAPIChange.Default)
         {
             if (rf != null)

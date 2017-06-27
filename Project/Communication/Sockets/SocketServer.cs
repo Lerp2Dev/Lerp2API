@@ -1,4 +1,4 @@
-﻿using Lerp2API.SafeECalls;
+﻿using Lerp2API.Hepers.JSON_Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,36 +8,72 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using UnityEngine;
-using Logger = Lerp2API.SafeECalls.Logger;
-using Debug = Lerp2API.DebugHandler.Debug;
 using JsonUtility = Lerp2API.SafeECalls.JsonUtility;
+using Logger = Lerp2API.SafeECalls.Logger;
 
 namespace Lerp2API.Communication.Sockets
 {
+    /// <summary>
+    /// Class SocketServer.
+    /// </summary>
     public class SocketServer
     {
         //The ClientInfo structure holds the required information about every
         //client connected to the server
-        struct ClientInfo
+        private struct ClientInfo
         {
+            /// <summary>
+            /// The socket
+            /// </summary>
             public Socket socket;   //Socket of the client
+
+            /// <summary>
+            /// The string name
+            /// </summary>
             public string strName;  //Name by which the user logged into the chat room
         }
 
         //The collection of all clients logged into the room (an array of type ClientInfo)
-        ArrayList clientList;
+        private ArrayList clientList;
 
+        /// <summary>
+        /// The lerped port
+        /// </summary>
         public const int lerpedPort = 22222;
 
+        /// <summary>
+        /// The server socket
+        /// </summary>
         public Socket ServerSocket;
+
+        /// <summary>
+        /// The permision
+        /// </summary>
         public SocketPermission Permision;
+
+        /// <summary>
+        /// The ip
+        /// </summary>
         public IPAddress IP;
+
+        /// <summary>
+        /// The port
+        /// </summary>
         public int Port;
+
         private IPEndPoint _endpoint;
         private byte[] byteData = new byte[1024];
+
+        /// <summary>
+        /// All done
+        /// </summary>
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
+        /// <summary>
+        /// The routing table
+        /// </summary>
         public static Dictionary<int, Socket> routingTable = new Dictionary<int, Socket>();
+
         private static List<int> closedClients = new List<int>();
 
         private static bool debug;
@@ -60,14 +96,39 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketServer"/> class.
+        /// </summary>
+        /// <param name="debug">if set to <c>true</c> [debug].</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketServer(bool debug, string fileLog, bool doConnection = false) :
             this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), Dns.GetHostEntry("").AddressList[0], lerpedPort, SocketType.Stream, ProtocolType.Tcp, debug, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketServer"/> class.
+        /// </summary>
+        /// <param name="ip">The ip.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="debug">if set to <c>true</c> [debug].</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketServer(string ip, int port, bool debug, string fileLog, bool doConnection = false) :
             this(new SocketPermission(NetworkAccess.Accept, TransportType.Tcp, "", SocketPermission.AllPorts), IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, debug, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketServer"/> class.
+        /// </summary>
+        /// <param name="permission">The permission.</param>
+        /// <param name="ipAddr">The ip addr.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="sType">Type of the s.</param>
+        /// <param name="pType">Type of the p.</param>
+        /// <param name="curDebug">if set to <c>true</c> [current debug].</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketServer(SocketPermission permission, IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, bool curDebug, string fileLog, bool doConnection = false)
         {
             permission.Demand();
@@ -83,6 +144,9 @@ namespace Lerp2API.Communication.Sockets
             if (doConnection) ServerSocket.Bind(IPEnd);
         }
 
+        /// <summary>
+        /// Comes the alive.
+        /// </summary>
         public void ComeAlive()
         {
             if (IPEnd != null)
@@ -95,7 +159,7 @@ namespace Lerp2API.Communication.Sockets
                     logger.Log("Waiting for a connection...");
                     ServerSocket.BeginAccept(new AsyncCallback(OnAccept), ServerSocket);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Debug.LogError(ex.Message);
                 }
@@ -147,7 +211,7 @@ namespace Lerp2API.Communication.Sockets
                                 if (soc.Key != sm.id) //Then, close the others one
                                     soc.Value.Send(Encoding.Unicode.GetBytes("<close>"));
                         }
-                        else if(sm.msg == "<client_closed>")
+                        else if (sm.msg == "<client_closed>")
                         {
                             closedClients.Add(sm.id);
                             if (closedClients.Count == routingTable.Count)
@@ -189,6 +253,10 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
+        /// <summary>
+        /// Called when [send].
+        /// </summary>
+        /// <param name="ar">The ar.</param>
         public void OnSend(IAsyncResult ar)
         {
             try
@@ -202,6 +270,9 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
+        /// <summary>
+        /// Closes the server.
+        /// </summary>
         public void CloseServer()
         {
             if (ServerSocket.Connected)

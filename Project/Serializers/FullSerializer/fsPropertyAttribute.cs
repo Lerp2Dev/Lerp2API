@@ -19,11 +19,18 @@ namespace FullSerializer
         /// </summary>
         public Type Converter;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsPropertyAttribute"/> class.
+        /// </summary>
         public fsPropertyAttribute()
             : this(string.Empty)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsPropertyAttribute"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
         public fsPropertyAttribute(string name)
         {
             Name = name;

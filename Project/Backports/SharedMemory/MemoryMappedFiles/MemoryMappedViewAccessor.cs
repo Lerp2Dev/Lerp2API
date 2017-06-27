@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,32 +25,29 @@
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
 using Microsoft.Win32.SafeHandles;
 using SharedMemory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
-using System.Text;
 
 namespace System.IO.MemoryMappedFiles
 {
 #if !NET40Plus
+
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [PermissionSet(SecurityAction.LinkDemand)]
     public sealed class MemoryMappedViewAccessor : IDisposable
     {
-        MemoryMappedView _view;
+        private MemoryMappedView _view;
 
         internal MemoryMappedViewAccessor(MemoryMappedView memoryMappedView)
         {
             this._view = memoryMappedView;
         }
-        
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SafeMemoryMappedViewHandle SafeMemoryMappedViewHandle
         {
@@ -94,7 +91,7 @@ namespace System.IO.MemoryMappedFiles
         }
 
         internal unsafe void Write<T>(long position, ref T structure)
-            where T: struct
+            where T : struct
         {
             uint elementSize = (uint)Marshal.SizeOf(typeof(T));
             if (position > this._view.Size - elementSize)
@@ -120,7 +117,7 @@ namespace System.IO.MemoryMappedFiles
 
             if (position > this._view.Size - (elementSize * count))
                 throw new ArgumentOutOfRangeException("position");
-            
+
             try
             {
                 byte* ptr = null;
@@ -141,7 +138,7 @@ namespace System.IO.MemoryMappedFiles
         }
 
         internal unsafe void Read<T>(long position, out T structure)
-            where T: struct
+            where T : struct
         {
             uint size = (uint)Marshal.SizeOf(typeof(T));
             if (position > this._view.Size - size)
@@ -175,7 +172,7 @@ namespace System.IO.MemoryMappedFiles
                 ptr += _view.ViewStartOffset + position;
 
                 FastStructure.ReadArray<T>(buffer, (IntPtr)ptr, index, count);
-                
+
                 //for (var i = 0; i < count; i++)
                 //{
                 //    PtrToStructure(ptr + (i * elementSize), out buffer[index + i]);
@@ -187,5 +184,6 @@ namespace System.IO.MemoryMappedFiles
             }
         }
     }
+
 #endif
 }

@@ -1,5 +1,9 @@
 ﻿namespace HtmlAgilityPack
 {
+    /// <summary>
+    /// Class HtmlCommentNode.
+    /// </summary>
+    /// <seealso cref="HtmlAgilityPack.HtmlNode" />
     public class HtmlCommentNode : HtmlNode
     {
         private string _comment;
@@ -8,6 +12,10 @@
         {
         }
 
+        /// <summary>
+        /// Gets or sets the comment.
+        /// </summary>
+        /// <value>The comment.</value>
         public string Comment
         {
             get
@@ -24,6 +32,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the inner HTML.
+        /// </summary>
+        /// <value>The inner HTML.</value>
         public override string InnerHtml
         {
             get
@@ -40,6 +52,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the outer HTML.
+        /// </summary>
+        /// <value>The outer HTML.</value>
         public override string OuterHtml
         {
             get

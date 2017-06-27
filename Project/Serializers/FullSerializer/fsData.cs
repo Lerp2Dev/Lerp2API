@@ -5,20 +5,6 @@ using System.Diagnostics;
 namespace FullSerializer
 {
     /// <summary>
-    /// The actual type that a JsonData instance can store.
-    /// </summary>
-    public enum fsDataType
-    {
-        Array,
-        Object,
-        Double,
-        Int64,
-        Boolean,
-        String,
-        Null
-    }
-
-    /// <summary>
     /// A union type that stores a serialized value. The stored type can be one of six different
     /// types: null, boolean, double, Int64, string, Dictionary, or List.
     /// </summary>
@@ -113,8 +99,17 @@ namespace FullSerializer
             return new fsData(new List<fsData>(capacity));
         }
 
+        /// <summary>
+        /// The true
+        /// </summary>
         public readonly static fsData True = new fsData(true);
+        /// <summary>
+        /// The false
+        /// </summary>
         public readonly static fsData False = new fsData(false);
+        /// <summary>
+        /// The null
+        /// </summary>
         public readonly static fsData Null = new fsData();
 
         #endregion Constructors
@@ -143,6 +138,11 @@ namespace FullSerializer
 
         #region Casting Predicates
 
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
+        /// <value>The type.</value>
+        /// <exception cref="InvalidOperationException">unknown JSON data type</exception>
         public fsDataType Type
         {
             get
@@ -332,6 +332,10 @@ namespace FullSerializer
 
         #region ToString Implementation
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return fsJsonPrinter.CompressedJson(this);

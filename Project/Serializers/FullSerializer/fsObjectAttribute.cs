@@ -45,10 +45,18 @@ namespace FullSerializer
         /// </summary>
         public Type Processor;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsObjectAttribute"/> class.
+        /// </summary>
         public fsObjectAttribute()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsObjectAttribute"/> class.
+        /// </summary>
+        /// <param name="versionString">The version string.</param>
+        /// <param name="previousModels">The previous models.</param>
         public fsObjectAttribute(string versionString, params Type[] previousModels)
         {
             VersionString = versionString;

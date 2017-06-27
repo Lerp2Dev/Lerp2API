@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+/// <summary>
+/// Class Types.
+/// </summary>
 public class Types
 {
     private static Dictionary<Type, List<Type>> _types = new Dictionary<Type, List<Type>>();
     private static Dictionary<Assembly, bool> _requiredAssemblies = new Dictionary<Assembly, bool>();
 
+    /// <summary>
+    /// Gets the types.
+    /// </summary>
+    /// <param name="attribute">The attribute.</param>
+    /// <returns>List&lt;Type&gt;.</returns>
     public static List<Type> GetTypes(Type attribute)
     {
         if (!_types.ContainsKey(attribute))
@@ -21,25 +29,47 @@ public class Types
         return _types[attribute];
     }
 
+    /// <summary>
+    /// Requires the assembly.
+    /// </summary>
+    /// <param name="asm">The asm.</param>
     public static void RequireAssembly(Assembly asm)
     {
         _requiredAssemblies[asm] = true;
         Refresh();
     }
 
+    /// <summary>
+    /// Refreshes this instance.
+    /// </summary>
     public static void Refresh()
     {
         _types = new Dictionary<Type, List<Type>>();
     }
 }
 
+/// <summary>
+/// Class TypeHelper.
+/// </summary>
 public static class TypeHelper
 {
+    /// <summary>
+    /// Attributes the specified tp.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="tp">The tp.</param>
+    /// <returns>T.</returns>
     public static T Attribute<T>(this Type tp) where T : Attribute
     {
         return System.Attribute.GetCustomAttribute(tp, typeof(T)) as T;
     }
 
+    /// <summary>
+    /// Attributes the specified o.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="o">The o.</param>
+    /// <returns>T.</returns>
     public static T Attribute<T>(this object o) where T : Attribute, new()
     {
         if (o is MemberInfo)

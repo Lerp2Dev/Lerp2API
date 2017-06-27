@@ -5,6 +5,9 @@ using System.Text;
 
 namespace FullSerializer
 {
+    /// <summary>
+    /// Class fsJsonPrinter.
+    /// </summary>
     public static class fsJsonPrinter
     {
         /// <summary>

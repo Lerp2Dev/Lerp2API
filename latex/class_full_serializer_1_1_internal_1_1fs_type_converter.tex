@@ -1,5 +1,10 @@
 \hypertarget{class_full_serializer_1_1_internal_1_1fs_type_converter}{}\section{Full\+Serializer.\+Internal.\+fs\+Type\+Converter Class Reference}
 \label{class_full_serializer_1_1_internal_1_1fs_type_converter}\index{Full\+Serializer.\+Internal.\+fs\+Type\+Converter@{Full\+Serializer.\+Internal.\+fs\+Type\+Converter}}
+
+
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter}{fs\+Type\+Converter}.  
+
+
 Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Type\+Converter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,9 +17,9 @@ Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Type\+Converter\+:\beg
 override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_afbf95621a91efff18569544dee5134fe}{Can\+Process} (Type type)
 \begin{DoxyCompactList}\small\item\em Can this converter serialize and deserialize the given object type? \end{DoxyCompactList}\item 
 override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_a60f6421c5356bcf6954d3c888bbaf860}{Request\+Cycle\+Support} (Type type)
-\begin{DoxyCompactList}\small\item\em If true, then the serializer will support cyclic references with the given converted type. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Requests the cycle support. \end{DoxyCompactList}\item 
 override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_a3f4750a4e8a6a6ae582c73cf5d8142e5}{Request\+Inheritance\+Support} (Type type)
-\begin{DoxyCompactList}\small\item\em If true, then the serializer will include inheritance data for the given converter. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Requests the inheritance support. \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_aced300086882c6f0ce70ff8ff7ae46c2}{Try\+Serialize} (object instance, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
 \begin{DoxyCompactList}\small\item\em Serialize the actual object into the given data storage. \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_aa94af57c0f67c755cb406529813a13aa}{Try\+Deserialize} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, ref object instance, Type storage\+Type)
@@ -22,6 +27,16 @@ override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{
 override object \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter_af2049f4529f9138347b63bee54aa7397}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
 \begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_type_converter}{fs\+Type\+Converter}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_full_serializer_1_1fs_converter}{Full\+Serializer.\+fs\+Converter}
+
+
+\end{DoxySeeAlso}
 
 
 \subsection{Member Function Documentation}
@@ -75,17 +90,20 @@ Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a415ea2
 \index{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter}!Request\+Cycle\+Support@{Request\+Cycle\+Support}}
 \index{Request\+Cycle\+Support@{Request\+Cycle\+Support}!Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter}}
 \subsubsection{\texorpdfstring{Request\+Cycle\+Support()}{RequestCycleSupport()}}
-{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Type\+Converter.\+Request\+Cycle\+Support (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Type\+Converter.\+Request\+Cycle\+Support (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-If true, then the serializer will support cyclic references with the given converted type. 
+Requests the cycle support. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
+{\em type} & The type.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if X\+X\+XX, {\ttfamily false} otherwise.
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a4e850ab88cea1b89771c00e0b65febcd}{Full\+Serializer.\+fs\+Base\+Converter}.
@@ -94,17 +112,20 @@ Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a4e850a
 \index{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter}!Request\+Inheritance\+Support@{Request\+Inheritance\+Support}}
 \index{Request\+Inheritance\+Support@{Request\+Inheritance\+Support}!Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Type\+Converter}}
 \subsubsection{\texorpdfstring{Request\+Inheritance\+Support()}{RequestInheritanceSupport()}}
-{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Type\+Converter.\+Request\+Inheritance\+Support (\begin{DoxyParamCaption}\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily override bool Full\+Serializer.\+Internal.\+fs\+Type\+Converter.\+Request\+Inheritance\+Support (\begin{DoxyParamCaption}\item[{Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-If true, then the serializer will include inheritance data for the given converter. 
+Requests the inheritance support. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em storage\+Type} & The field/property type that is currently storing the object that is being serialized.\\
+{\em type} & The type.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if X\+X\+XX, {\ttfamily false} otherwise.
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_full_serializer_1_1fs_base_converter_a84447285540ab6b51efc2399d144c60c}{Full\+Serializer.\+fs\+Base\+Converter}.

@@ -1,13 +1,17 @@
-﻿using System;
+﻿using ClientServerUsingNamedPipes.Interfaces;
+using ClientServerUsingNamedPipes.Utilities;
+using Lerp2API.Backports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
-using ClientServerUsingNamedPipes.Interfaces;
-using ClientServerUsingNamedPipes.Utilities;
-using Lerp2API.Backports;
 
 namespace ClientServerUsingNamedPipes.Server
 {
+    /// <summary>
+    /// Class PipeServer.
+    /// </summary>
+    /// <seealso cref="ClientServerUsingNamedPipes.Interfaces.ICommunicationServer" />
     public class PipeServer : ICommunicationServer
     {
         #region private fields
@@ -17,10 +21,13 @@ namespace ClientServerUsingNamedPipes.Server
         private readonly IDictionary<string, ICommunicationServer> _servers; // ConcurrentDictionary is thread safe
         private const int MaxNumberOfServerInstances = 10;
 
-        #endregion
+        #endregion private fields
 
         #region c'tor
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipeServer"/> class.
+        /// </summary>
         public PipeServer()
         { //Casi veo mejor que se pueda poner el nombre del server, pero seguramente que por motivos de seguridad y de instancias sea esto así
             _pipeName = Guid.NewGuid().ToString();
@@ -28,28 +35,49 @@ namespace ClientServerUsingNamedPipes.Server
             _servers = new ConcurrentMap<string, ICommunicationServer>();
         }
 
-        #endregion
+        #endregion c'tor
 
         #region events
 
+        /// <summary>
+        /// This event is fired when a message is received
+        /// </summary>
         public event EventHandler<MessageReceivedEventArgs> MessageReceivedEvent;
+
+        /// <summary>
+        /// This event is fired when a client connects
+        /// </summary>
         public event EventHandler<ClientConnectedEventArgs> ClientConnectedEvent;
+
+        /// <summary>
+        /// This event is fired when a client disconnects
+        /// </summary>
         public event EventHandler<ClientDisconnectedEventArgs> ClientDisconnectedEvent;
 
-        #endregion
+        #endregion events
 
         #region ICommunicationServer implementation
 
+        /// <summary>
+        /// The server id
+        /// </summary>
+        /// <value>The server identifier.</value>
         public string ServerId
         {
             get { return _pipeName; }
         }
 
+        /// <summary>
+        /// Starts the communication channel
+        /// </summary>
         public void Start()
         {
             StartNamedPipeServer();
         }
 
+        /// <summary>
+        /// Stops the communication channel
+        /// </summary>
         public void Stop()
         {
             foreach (var server in _servers.Values)
@@ -68,7 +96,7 @@ namespace ClientServerUsingNamedPipes.Server
             _servers.Clear();
         }
 
-        #endregion
+        #endregion ICommunicationServer implementation
 
         #region private methods
 
@@ -115,7 +143,7 @@ namespace ClientServerUsingNamedPipes.Server
         /// <param name="eventArgs"></param>
         private void OnMessageReceived(MessageReceivedEventArgs eventArgs)
         {
-            _synchronizationContext.Post(e => MessageReceivedEvent.SafeInvoke(this, (MessageReceivedEventArgs) e),
+            _synchronizationContext.Post(e => MessageReceivedEvent.SafeInvoke(this, (MessageReceivedEventArgs)e),
                 eventArgs);
         }
 
@@ -125,7 +153,7 @@ namespace ClientServerUsingNamedPipes.Server
         /// <param name="eventArgs"></param>
         private void OnClientConnected(ClientConnectedEventArgs eventArgs)
         {
-            _synchronizationContext.Post(e => ClientConnectedEvent.SafeInvoke(this, (ClientConnectedEventArgs) e),
+            _synchronizationContext.Post(e => ClientConnectedEvent.SafeInvoke(this, (ClientConnectedEventArgs)e),
                 eventArgs);
         }
 
@@ -136,7 +164,7 @@ namespace ClientServerUsingNamedPipes.Server
         private void OnClientDisconnected(ClientDisconnectedEventArgs eventArgs)
         {
             _synchronizationContext.Post(
-                e => ClientDisconnectedEvent.SafeInvoke(this, (ClientDisconnectedEventArgs) e), eventArgs);
+                e => ClientDisconnectedEvent.SafeInvoke(this, (ClientDisconnectedEventArgs)e), eventArgs);
         }
 
         /// <summary>
@@ -167,6 +195,6 @@ namespace ClientServerUsingNamedPipes.Server
             OnMessageReceived(eventArgs);
         }
 
-        #endregion
+        #endregion private methods
     }
 }

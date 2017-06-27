@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['compressionmethod',['CompressionMethod',['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a90a0e174eca72bf6b490bae40d83a09e',1,'ICSharpCode.SharpZipLib.Zip.CompressionMethod()'],['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a90a0e174eca72bf6b490bae40d83a09e',1,'ICSharpCode.SharpZipLib.Zip.CompressionMethod()']]]
+  ['attributevaluequote',['AttributeValueQuote',['../namespace_html_agility_pack.html#a64d9f2b9c91f0f73e761936646ebcc57',1,'HtmlAgilityPack']]]
 ];

@@ -7,10 +7,18 @@ using System.Text;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
+/// <summary>
+/// Class WeakReference.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class WeakReference<T> where T : class
 {
     private WeakReference r;
 
+    /// <summary>
+    /// Gets or sets the target.
+    /// </summary>
+    /// <value>The target.</value>
     public T Target
     {
         get
@@ -23,6 +31,10 @@ public class WeakReference<T> where T : class
         }
     }
 
+    /// <summary>
+    /// Gets a value indicating whether this instance is alive.
+    /// </summary>
+    /// <value><c>true</c> if this instance is alive; otherwise, <c>false</c>.</value>
     public bool IsAlive
     {
         get
@@ -31,22 +43,44 @@ public class WeakReference<T> where T : class
         }
     }
 
+    /// <summary>
+    /// Performs an implicit conversion from <see cref="WeakReference{T}"/> to <see cref="T"/>.
+    /// </summary>
+    /// <param name="re">The re.</param>
+    /// <returns>The result of the conversion.</returns>
     public static implicit operator T(WeakReference<T> re)
     {
         return re.Target;
     }
 
+    /// <summary>
+    /// Performs an implicit conversion from <see cref="T"/> to <see cref="WeakReference{T}"/>.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    /// <returns>The result of the conversion.</returns>
     public static implicit operator WeakReference<T>(T value)
     {
         return new WeakReference<T>() { Target = value };
     }
 }
 
+/// <summary>
+/// Class ObservedList.
+/// </summary>
+/// <typeparam name="T"></typeparam>
 [Serializable]
 public class ObservedList<T> : List<T>
 {
+    /// <summary>
+    /// Occurs when [changed].
+    /// </summary>
     public event Action<int> Changed = delegate { };
 
+    /// <summary>
+    /// Gets or sets the <see cref="T"/> at the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
+    /// <returns>T.</returns>
     public new T this[int index]
     {
         get
@@ -61,13 +95,26 @@ public class ObservedList<T> : List<T>
     }
 }
 
+/// <summary>
+/// Class Lookup.
+/// </summary>
+/// <typeparam name="TK">The type of the tk.</typeparam>
+/// <typeparam name="TR">The type of the tr.</typeparam>
 [Serializable]
 public class Lookup<TK, TR> : Dictionary<TK, TR> where TR : class
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Lookup{TK, TR}"/> class.
+    /// </summary>
     public Lookup()
         : base()
     { }
 
+    /// <summary>
+    /// Gets or sets the <see cref="TR"/> at the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
+    /// <returns>TR.</returns>
     public new virtual TR this[TK index]
     {
         get
@@ -82,29 +129,65 @@ public class Lookup<TK, TR> : Dictionary<TK, TR> where TR : class
         }
     }
 
+    /// <summary>
+    /// Gets the specified index.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="index">The index.</param>
+    /// <returns>T.</returns>
     public T Get<T>(TK index) where T : class
     {
         return this[index] as T;
     }
 }
 
+/// <summary>
+/// Interface IChanged
+/// </summary>
 public interface IChanged
 {
+    /// <summary>
+    /// Changeds the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
     void Changed(object index);
 }
 
+/// <summary>
+/// Interface INeedParent
+/// </summary>
 public interface INeedParent
 {
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="parent">The parent.</param>
+    /// <param name="index">The index.</param>
     void SetParent(IChanged parent, object index);
 }
 
+/// <summary>
+/// Class Index.
+/// </summary>
+/// <typeparam name="TK">The type of the tk.</typeparam>
+/// <typeparam name="TR">The type of the tr.</typeparam>
 [Serializable]
 public class Index<TK, TR> : Lookup<TK, TR>, IChanged where TR : class, new()
 {
+    /// <summary>
+    /// Occurs when [setting].
+    /// </summary>
     public event Action<TK, TR, TR> Setting = delegate { };
 
+    /// <summary>
+    /// Occurs when [getting].
+    /// </summary>
     public event Action<TK, TR> Getting = delegate { };
 
+    /// <summary>
+    /// Changeds the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
     public void Changed(object index)
     {
         if (Setting != null)
@@ -116,6 +199,11 @@ public class Index<TK, TR> : Lookup<TK, TR>, IChanged where TR : class, new()
         }
     }
 
+    /// <summary>
+    /// Gets or sets the <see cref="TR"/> at the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
+    /// <returns>TR.</returns>
     public override TR this[TK index]
     {
         get
@@ -147,49 +235,82 @@ public class Index<TK, TR> : Lookup<TK, TR>, IChanged where TR : class, new()
     }
 }
 
+/// <summary>
+/// Class GUIBackgroundColor. This class cannot be inherited.
+/// </summary>
 public sealed class GUIBackgroundColor : IDisposable
 {
     private Color old;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GUIBackgroundColor"/> class.
+    /// </summary>
+    /// <param name="color">The color.</param>
     public GUIBackgroundColor(Color color)
     {
         old = GUI.backgroundColor;
         GUI.backgroundColor = color;
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUI.backgroundColor = old;
     }
 }
 
+/// <summary>
+/// Class GUIArea. This class cannot be inherited.
+/// </summary>
 public sealed class GUIArea : IDisposable
 {
     private static int rotated;
 
+    /// <summary>
+    /// Class Rotated. This class cannot be inherited.
+    /// </summary>
     public sealed class Rotated : IDisposable
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Rotated"/> class.
+        /// </summary>
         public Rotated()
         {
             rotated++;
         }
 
+        /// <summary>
+        /// Disposes this instance.
+        /// </summary>
         public void Dispose()
         {
             rotated--;
         }
     }
 
+    /// <summary>
+    /// Gets the standard area.
+    /// </summary>
+    /// <returns>Rect.</returns>
     public static Rect GetStandardArea()
     {
         return new Rect(10, 10, 940, 620);
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GUIArea"/> class.
+    /// </summary>
     public GUIArea()
         : this(null)
     {
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GUIArea"/> class.
+    /// </summary>
+    /// <param name="area">The area.</param>
     public GUIArea(Rect? area)
     {
         var a = area ?? GUIArea.GetStandardArea();
@@ -208,17 +329,26 @@ public sealed class GUIArea : IDisposable
         }
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndArea();
     }
 }
 
+/// <summary>
+/// Class GUIScale. This class cannot be inherited.
+/// </summary>
 public sealed class GUIScale : IDisposable
 {
     private static int count = 0;
     private static Matrix4x4 cached;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="GUIScale"/> class.
+    /// </summary>
     public GUIScale()
     {
         if (count++ == 0)
@@ -231,6 +361,9 @@ public sealed class GUIScale : IDisposable
         }
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         if (--count == 0)
@@ -238,92 +371,159 @@ public sealed class GUIScale : IDisposable
     }
 }
 
+/// <summary>
+/// Class Horizontal. This class cannot be inherited.
+/// </summary>
 public sealed class Horizontal : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Horizontal"/> class.
+    /// </summary>
     public Horizontal()
     {
         GUILayout.BeginHorizontal();
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Horizontal"/> class.
+    /// </summary>
+    /// <param name="style">The style.</param>
     public Horizontal(GUIStyle style)
     {
         GUILayout.BeginHorizontal(style);
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Horizontal"/> class.
+    /// </summary>
+    /// <param name="options">The options.</param>
     public Horizontal(params GUILayoutOption[] options)
     {
         GUILayout.BeginHorizontal(options);
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndHorizontal();
     }
 }
 
+/// <summary>
+/// Class Vertical. This class cannot be inherited.
+/// </summary>
 public sealed class Vertical : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Vertical"/> class.
+    /// </summary>
+    /// <param name="options">The options.</param>
     public Vertical(params GUILayoutOption[] options)
     {
         GUILayout.BeginVertical(options);
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndVertical();
     }
 }
 
+/// <summary>
+/// Class ScrollView. This class cannot be inherited.
+/// </summary>
 public sealed class ScrollView : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ScrollView"/> class.
+    /// </summary>
+    /// <param name="scroll">The scroll.</param>
     public ScrollView(ref Vector2 scroll)
     {
         scroll = GUILayout.BeginScrollView(scroll);
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndScrollView();
     }
 }
 
+/// <summary>
+/// Class Box. This class cannot be inherited.
+/// </summary>
 public sealed class Box : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Box"/> class.
+    /// </summary>
+    /// <param name="style">The style.</param>
     public Box(GUIStyle style)
     {
         GUILayout.BeginVertical(style);
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Box"/> class.
+    /// </summary>
+    /// <param name="options">The options.</param>
     public Box(params GUILayoutOption[] options)
     {
         GUILayout.BeginVertical("box", options);
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Box"/> class.
+    /// </summary>
     public Box()
     {
         GUILayout.BeginVertical("box");
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndVertical();
     }
 }
 
+/// <summary>
+/// Class HorizontalCentered. This class cannot be inherited.
+/// </summary>
 public sealed class HorizontalCentered : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="HorizontalCentered"/> class.
+    /// </summary>
     public HorizontalCentered()
     {
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="HorizontalCentered"/> class.
+    /// </summary>
+    /// <param name="style">The style.</param>
     public HorizontalCentered(GUIStyle style)
     {
         GUILayout.BeginHorizontal(style);
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.FlexibleSpace();
@@ -331,20 +531,33 @@ public sealed class HorizontalCentered : IDisposable
     }
 }
 
+/// <summary>
+/// Class VerticalCentered. This class cannot be inherited.
+/// </summary>
 public sealed class VerticalCentered : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="VerticalCentered"/> class.
+    /// </summary>
     public VerticalCentered()
     {
         GUILayout.BeginVertical();
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="VerticalCentered"/> class.
+    /// </summary>
+    /// <param name="options">The options.</param>
     public VerticalCentered(params GUILayoutOption[] options)
     {
         GUILayout.BeginVertical(options);
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.FlexibleSpace();
@@ -352,27 +565,45 @@ public sealed class VerticalCentered : IDisposable
     }
 }
 
+/// <summary>
+/// Class RightAligned. This class cannot be inherited.
+/// </summary>
 public sealed class RightAligned : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RightAligned"/> class.
+    /// </summary>
     public RightAligned()
     {
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndHorizontal();
     }
 }
 
+/// <summary>
+/// Class LeftAligned. This class cannot be inherited.
+/// </summary>
 public sealed class LeftAligned : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="LeftAligned"/> class.
+    /// </summary>
     public LeftAligned()
     {
         GUILayout.BeginHorizontal();
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.FlexibleSpace();
@@ -380,37 +611,73 @@ public sealed class LeftAligned : IDisposable
     }
 }
 
+/// <summary>
+/// Class BottomAligned. This class cannot be inherited.
+/// </summary>
 public sealed class BottomAligned : IDisposable
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BottomAligned"/> class.
+    /// </summary>
     public BottomAligned()
     {
         GUILayout.BeginVertical();
         GUILayout.FlexibleSpace();
     }
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         GUILayout.EndVertical();
     }
 }
 
+/// <summary>
+/// Class SceneIndex.
+/// </summary>
 public class SceneIndex : MonoBehaviour
 {
 }
 
+/// <summary>
+/// Class Radical.
+/// </summary>
 public static class Radical
 {
+    /// <summary>
+    /// Activates the children.
+    /// </summary>
+    /// <param name="co">The co.</param>
     public static void ActivateChildren(this Component co)
     {
         co.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Maximums the by.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="TKey">The type of the t key.</typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="selector">The selector.</param>
+    /// <returns>TSource.</returns>
     public static TSource MaxBy<TSource, TKey>(this IEnumerable<TSource> source,
 Func<TSource, TKey> selector) where TSource : class
     {
         return source.MaxBy(selector, Comparer<TKey>.Default);
     }
 
+    /// <summary>
+    /// Maximums the by.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="TKey">The type of the t key.</typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="selector">The selector.</param>
+    /// <param name="comparer">The comparer.</param>
+    /// <returns>TSource.</returns>
     public static TSource MaxBy<TSource, TKey>(this IEnumerable<TSource> source,
     Func<TSource, TKey> selector, IComparer<TKey> comparer) where TSource : class
     {
@@ -436,6 +703,16 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Zips the specified seq2.
+    /// </summary>
+    /// <typeparam name="T1">The type of the t1.</typeparam>
+    /// <typeparam name="T2">The type of the t2.</typeparam>
+    /// <typeparam name="TResult">The type of the t result.</typeparam>
+    /// <param name="seq1">The seq1.</param>
+    /// <param name="seq2">The seq2.</param>
+    /// <param name="resultSelector">The result selector.</param>
+    /// <returns>IEnumerable&lt;TResult&gt;.</returns>
     public static IEnumerable<TResult> Zip<T1, T2, TResult>(this IEnumerable<T1> seq1, IEnumerable<T2> seq2, Func<T1, T2, TResult> resultSelector)
     {
         var results = new List<TResult>();
@@ -448,6 +725,11 @@ Func<TSource, TKey> selector) where TSource : class
         return results;
     }
 
+    /// <summary>
+    /// Calleds from.
+    /// </summary>
+    /// <param name="name">The name.</param>
+    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
     public static bool CalledFrom(string name)
     {
         var st = new StackTrace();
@@ -459,6 +741,11 @@ Func<TSource, TKey> selector) where TSource : class
         return false;
     }
 
+    /// <summary>
+    /// Masks the layers.
+    /// </summary>
+    /// <param name="layers">The layers.</param>
+    /// <returns>System.Int32.</returns>
     public static int MaskLayers(params int[] layers)
     {
         var result = 0;
@@ -469,6 +756,11 @@ Func<TSource, TKey> selector) where TSource : class
         return result;
     }
 
+    /// <summary>
+    /// Masks the layers.
+    /// </summary>
+    /// <param name="layers">The layers.</param>
+    /// <returns>System.Int32.</returns>
     public static int MaskLayers(params string[] layers)
     {
         var result = 0;
@@ -479,6 +771,11 @@ Func<TSource, TKey> selector) where TSource : class
         return result;
     }
 
+    /// <summary>
+    /// Plays the one shot.
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <param name="clip">The clip.</param>
     public static void PlayOneShot(this GameObject gameObject, AudioClip clip)
     {
         if (clip == null)
@@ -491,6 +788,11 @@ Func<TSource, TKey> selector) where TSource : class
         gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
     }
 
+    /// <summary>
+    /// Plays the audio.
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <param name="clip">The clip.</param>
     public static void PlayAudio(this GameObject gameObject, AudioClip clip)
     {
         if (clip == null)
@@ -505,6 +807,13 @@ Func<TSource, TKey> selector) where TSource : class
         gameObject.GetComponent<AudioSource>().Play();
     }
 
+    /// <summary>
+    /// Fades the volume.
+    /// </summary>
+    /// <param name="component">The component.</param>
+    /// <param name="toLevel">To level.</param>
+    /// <param name="time">The time.</param>
+    /// <param name="fromLevel">From level.</param>
     public static void FadeVolume(this GameObject component, float toLevel = 1, float time = 1f, float? fromLevel = null)
     {
         component.gameObject.StartExtendedCoroutine(VolumeFader(component.GetComponent<AudioSource>(), toLevel, time, fromLevel));
@@ -522,12 +831,20 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Deactivates the children.
+    /// </summary>
+    /// <param name="co">The co.</param>
     public static void DeactivateChildren(this Component co)
     {
         foreach (var c in co.transform.GetComponentsInChildren<Transform>().Except(new[] { co.transform }))
             c.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Destroys the children.
+    /// </summary>
+    /// <param name="t">The t.</param>
     public static void DestroyChildren(this Transform t)
     {
         foreach (var c in t.Cast<Transform>())
@@ -536,8 +853,16 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Class PreferenceAccess.
+    /// </summary>
     public class PreferenceAccess
     {
+        /// <summary>
+        /// Gets or sets the <see cref="System.Boolean"/> with the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool this[string name]
         {
             get
@@ -553,31 +878,58 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// The preferences
+    /// </summary>
     public static PreferenceAccess Preferences = new PreferenceAccess();
 
     private static Lookup<string, GameObject> _gameObjects;
     private static Lookup<string, GameObject> _fullPaths;
 
+    /// <summary>
+    /// The allow deferred logging
+    /// </summary>
     public static bool AllowDeferredLogging = false;
 
+    /// <summary>
+    /// Finds the child including deactivated.
+    /// </summary>
+    /// <param name="t">The t.</param>
+    /// <param name="name">The name.</param>
+    /// <returns>Transform.</returns>
     public static Transform FindChildIncludingDeactivated(this Transform t, string name)
     {
         var all = t.GetComponentsInChildren<Transform>(true);
         return all.FirstOrDefault(c => c.name == name);
     }
 
+    /// <summary>
+    /// Gets the identifier.
+    /// </summary>
+    /// <param name="go">The go.</param>
+    /// <returns>System.String.</returns>
     public static string GetId(this GameObject go)
     {
         var ui = go.GetComponent<UniqueIdentifier>();
         return ui == null ? go.GetFullName() : ui.Id;
     }
 
+    /// <summary>
+    /// Finds the game object.
+    /// </summary>
+    /// <param name="name">The name.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject FindGameObject(string name)
     {
         IndexScene();
         return name.Contains("/") ? _fullPaths[name] : _gameObjects[name];
     }
 
+    /// <summary>
+    /// Gets the full name.
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <returns>System.String.</returns>
     public static string GetFullName(this GameObject gameObject)
     {
         var list = new Stack<string>();
@@ -617,6 +969,9 @@ Func<TSource, TKey> selector) where TSource : class
         new GameObject("_SceneIndex");
     }
 
+    /// <summary>
+    /// Res the index scene.
+    /// </summary>
     public static void ReIndexScene()
     {
         var go = GameObject.Find("_SceneIndex");
@@ -626,6 +981,12 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Finds the specified name.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="name">The name.</param>
+    /// <returns>T.</returns>
     public static T Find<T>(string name) where T : Component
     {
         IndexScene();
@@ -635,12 +996,29 @@ Func<TSource, TKey> selector) where TSource : class
         return go.GetComponent<T>();
     }
 
+    /// <summary>
+    /// Finds the specified name.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <param name="name">The name.</param>
+    /// <returns>T.</returns>
     public static T Find<T>(this GameObject go, string name) where T : Component
     {
         go = go.transform.FindChild(name).gameObject;
         return go.GetComponentInChildren<T>();
     }
 
+    /// <summary>
+    /// To the index.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="TR">The type of the tr.</typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="keySelector">The key selector.</param>
+    /// <param name="elementSelector">The element selector.</param>
+    /// <returns>Index&lt;T, List&lt;TR&gt;&gt;.</returns>
     public static Index<T, List<TR>> ToIndex<TSource, T, TR>(this IEnumerable<TSource> source, Func<TSource, T> keySelector, Func<TSource, TR> elementSelector) where T : class where TR : class
     {
         var x = new Index<T, List<TR>>();
@@ -651,12 +1029,30 @@ Func<TSource, TKey> selector) where TSource : class
         return x;
     }
 
+    /// <summary>
+    /// Minimums the by.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="TKey">The type of the t key.</typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="selector">The selector.</param>
+    /// <returns>TSource.</returns>
     public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source,
     Func<TSource, TKey> selector)
     {
         return source.MinBy(selector, Comparer<TKey>.Default);
     }
 
+    /// <summary>
+    /// Minimums the by.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="TKey">The type of the t key.</typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="selector">The selector.</param>
+    /// <param name="comparer">The comparer.</param>
+    /// <returns>TSource.</returns>
+    /// <exception cref="InvalidOperationException">Sequence was empty</exception>
     public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source,
     Func<TSource, TKey> selector, IComparer<TKey> comparer)
     {
@@ -682,11 +1078,27 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Discretes the specified function.
+    /// </summary>
+    /// <typeparam name="TResult">The type of the t result.</typeparam>
+    /// <typeparam name="T1">The type of the t1.</typeparam>
+    /// <param name="seq">The seq.</param>
+    /// <param name="func">The function.</param>
+    /// <returns>IEnumerable&lt;TResult&gt;.</returns>
     public static IEnumerable<TResult> Discrete<TResult, T1>(this IEnumerable<TResult> seq, Func<TResult, T1> func)
     {
         return seq.GroupBy(func).Select(g => g.First());
     }
 
+    /// <summary>
+    /// To the index.
+    /// </summary>
+    /// <typeparam name="TSource">The type of the t source.</typeparam>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="source">The source.</param>
+    /// <param name="keySelector">The key selector.</param>
+    /// <returns>Index&lt;T, List&lt;TSource&gt;&gt;.</returns>
     public static Index<T, List<TSource>> ToIndex<TSource, T>(this IEnumerable<TSource> source, Func<TSource, T> keySelector) where T : class
     {
         var x = new Index<T, List<TSource>>();
@@ -726,16 +1138,34 @@ Func<TSource, TKey> selector) where TSource : class
 		}
 	}*/
 
+    /// <summary>
+    /// Finds the interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <returns>T.</returns>
     public static T FindInterface<T>(this GameObject go) where T : class
     {
         return go.GetComponents<Component>().OfType<T>().FirstOrDefault();
     }
 
+    /// <summary>
+    /// Finds the implementor.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <returns>T.</returns>
     public static T FindImplementor<T>(this GameObject go) where T : class
     {
         return RecurseFind<T>(go);
     }
 
+    /// <summary>
+    /// Finds the implementors.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <returns>T[].</returns>
     public static T[] FindImplementors<T>(this GameObject go) where T : class
     {
         return go.GetComponentsInChildren<Component>().OfType<T>().ToArray();
@@ -782,18 +1212,41 @@ Func<TSource, TKey> selector) where TSource : class
         return -1;
     }
 
+    /// <summary>
+    /// Rgbas the specified r.
+    /// </summary>
+    /// <param name="r">The r.</param>
+    /// <param name="g">The g.</param>
+    /// <param name="b">The b.</param>
+    /// <param name="a">a.</param>
+    /// <returns>Color.</returns>
     public static Color RGBA(int r, int g, int b, int a)
     {
         return new Color((float)(r / 255f), (float)(g / 255f), (float)(b / 255f), (float)(a / 255f));
     }
 
+    /// <summary>
+    /// The merge mix
+    /// </summary>
     public static Vector3 mergeMix = new Vector3(0, 1, 0);
 
+    /// <summary>
+    /// Merges the specified second.
+    /// </summary>
+    /// <param name="first">The first.</param>
+    /// <param name="second">The second.</param>
+    /// <returns>Quaternion.</returns>
     public static Quaternion Merge(this Quaternion first, Vector3 second)
     {
         return Quaternion.Euler(Merge(first.eulerAngles, second));
     }
 
+    /// <summary>
+    /// Merges the specified second.
+    /// </summary>
+    /// <param name="first">The first.</param>
+    /// <param name="second">The second.</param>
+    /// <returns>Vector3.</returns>
     public static Vector3 Merge(this Vector3 first, Vector3 second)
     {
         return new Vector3((first.x * (1 - mergeMix.x)) + (second.x * mergeMix.x), (first.y * (1 - mergeMix.y)) + (second.y * mergeMix.y), (first.z * (1 - mergeMix.z)) + (second.z * mergeMix.z));
@@ -804,11 +1257,23 @@ Func<TSource, TKey> selector) where TSource : class
         //DebugBuild = UnityEngine.Debug.isDebugBuild;
     }
 
+    /// <summary>
+    /// Gets the interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="tra">The tra.</param>
+    /// <returns>T.</returns>
     public static T GetInterface<T>(this Transform tra) where T : class
     {
         return tra.gameObject.GetInterface<T>();
     }
 
+    /// <summary>
+    /// Gets the interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <returns>T.</returns>
     public static T GetInterface<T>(this GameObject go) where T : class
     {
         foreach (var c in go.GetComponents<MonoBehaviour>())
@@ -822,6 +1287,12 @@ Func<TSource, TKey> selector) where TSource : class
         return null;
     }
 
+    /// <summary>
+    /// Gets the interfaces.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="go">The go.</param>
+    /// <returns>IList&lt;T&gt;.</returns>
     public static IList<T> GetInterfaces<T>(this GameObject go) where T : class
     {
         var l = new List<T>();
@@ -931,11 +1402,22 @@ Func<TSource, TKey> selector) where TSource : class
 		logEntries.Clear();
 	}*/
 
+    /// <summary>
+    /// Instantiates the specified template.
+    /// </summary>
+    /// <param name="template">The template.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject Instantiate(Transform template)
     {
         return Instantiate(template, null);
     }
 
+    /// <summary>
+    /// Instantiates the specified template.
+    /// </summary>
+    /// <param name="template">The template.</param>
+    /// <param name="parent">The parent.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject Instantiate(Transform template, GameObject parent)
     {
         var go = (GameObject.Instantiate(template) as Transform).gameObject;
@@ -946,33 +1428,72 @@ Func<TSource, TKey> selector) where TSource : class
         return go;
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject SetParent(this GameObject child, GameObject parent)
     {
         return SetParent(child, parent, false);
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <param name="setScale">if set to <c>true</c> [set scale].</param>
+    /// <returns>GameObject.</returns>
     public static GameObject SetParent(this GameObject child, GameObject parent, bool setScale)
     {
         child.transform.SetParent(parent.transform, setScale);
         return child;
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <returns>Transform.</returns>
     public static Transform SetParent(this Transform child, GameObject parent)
     {
         return SetParent(child, parent, false);
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <param name="setScale">if set to <c>true</c> [set scale].</param>
+    /// <returns>Transform.</returns>
     public static Transform SetParent(this Transform child, GameObject parent, bool setScale)
     {
         child.SetParent(parent.transform, setScale);
         return child;
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <returns>Transform.</returns>
     public static Transform SetParent(this Transform child, Transform parent)
     {
         return SetParent(child, parent, false);
     }
 
+    /// <summary>
+    /// Sets the parent.
+    /// </summary>
+    /// <param name="child">The child.</param>
+    /// <param name="parent">The parent.</param>
+    /// <param name="setScale">if set to <c>true</c> [set scale].</param>
+    /// <returns>Transform.</returns>
     public static Transform SetParent(this Transform child, Transform parent, bool setScale)
     {
         try
@@ -995,6 +1516,14 @@ Func<TSource, TKey> selector) where TSource : class
         return child;
     }
 
+    /// <summary>
+    /// Smoothes the damp.
+    /// </summary>
+    /// <param name="current">The current.</param>
+    /// <param name="target">The target.</param>
+    /// <param name="velocity">The velocity.</param>
+    /// <param name="time">The time.</param>
+    /// <returns>Quaternion.</returns>
     public static Quaternion SmoothDamp(this Vector3 current, Vector3 target, ref Vector3 velocity, float time)
     {
         Vector3 result = Vector3.zero;
@@ -1004,11 +1533,22 @@ Func<TSource, TKey> selector) where TSource : class
         return Quaternion.Euler(result);
     }
 
+    /// <summary>
+    /// Adds the child.
+    /// </summary>
+    /// <param name="parent">The parent.</param>
+    /// <param name="template">The template.</param>
+    /// <returns>GameObject.</returns>
     public static GameObject AddChild(this GameObject parent, Transform template)
     {
         return Instantiate(template, parent);
     }
 
+    /// <summary>
+    /// Ensures the component.
+    /// </summary>
+    /// <param name="obj">The object.</param>
+    /// <param name="t">The t.</param>
     public static void EnsureComponent(this GameObject obj, Type t)
     {
         if (obj.GetComponent(t) == null)
@@ -1017,6 +1557,11 @@ Func<TSource, TKey> selector) where TSource : class
         }
     }
 
+    /// <summary>
+    /// Removes the component.
+    /// </summary>
+    /// <param name="obj">The object.</param>
+    /// <param name="t">The t.</param>
     public static void RemoveComponent(this GameObject obj, Type t)
     {
         foreach (var c in obj.GetComponents(t))
@@ -1024,13 +1569,29 @@ Func<TSource, TKey> selector) where TSource : class
     }
 }
 
+/// <summary>
+/// Class TextHelper.
+/// </summary>
 public static class TextHelper
 {
+    /// <summary>
+    /// Fixes to.
+    /// </summary>
+    /// <param name="str">The string.</param>
+    /// <param name="width">The width.</param>
+    /// <returns>System.String.</returns>
     public static string FixTo(this string str, float width)
     {
         return FixTo(str, width, "label");
     }
 
+    /// <summary>
+    /// Fixes to.
+    /// </summary>
+    /// <param name="str">The string.</param>
+    /// <param name="width">The width.</param>
+    /// <param name="type">The type.</param>
+    /// <returns>System.String.</returns>
     public static string FixTo(this string str, float width, string type)
     {
         var widthOfTab = GUI.skin.GetStyle(type).CalcSize(new GUIContent("\t")).x;
@@ -1041,9 +1602,19 @@ public static class TextHelper
     }
 }
 
+/// <summary>
+/// Class ValueLookup.
+/// </summary>
+/// <typeparam name="TK">The type of the tk.</typeparam>
+/// <typeparam name="TR">The type of the tr.</typeparam>
 [Serializable]
 public class ValueLookup<TK, TR> : Dictionary<TK, TR> where TR : struct
 {
+    /// <summary>
+    /// Gets or sets the <see cref="TR"/> at the specified index.
+    /// </summary>
+    /// <param name="index">The index.</param>
+    /// <returns>TR.</returns>
     public new virtual TR this[TK index]
     {
         get
@@ -1058,6 +1629,12 @@ public class ValueLookup<TK, TR> : Dictionary<TK, TR> where TR : struct
         }
     }
 
+    /// <summary>
+    /// Gets the specified index.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="index">The index.</param>
+    /// <returns>T.</returns>
     public T Get<T>(TK index) where T : class
     {
         return this[index] as T;

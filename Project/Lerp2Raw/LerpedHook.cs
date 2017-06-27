@@ -1,18 +1,43 @@
 ﻿using Lerp2API;
 using System.IO;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace Lerp2Raw
 {
+    /// <summary>
+    /// Class LerpedHook.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class LerpedHook : MonoBehaviour
     {
+        /// <summary>
+        /// Me
+        /// </summary>
         public static LerpedHook me;
+        /// <summary>
+        /// The m run console at play event
+        /// </summary>
         public bool m_runConsoleAtPlayEvent = false, //There is a bug...
+                                                     /// <summary>
+                                                     /// The m socket debug
+                                                     /// </summary>
                     m_socketDebug = true,
+                    /// <summary>
+                    /// The m cron tasks debug
+                    /// </summary>
                     m_cronTasksDebug = true,
+                    /// <summary>
+                    /// The m disable client socket
+                    /// </summary>
                     m_disableClientSocket,
+                    /// <summary>
+                    /// The m disable server socket
+                    /// </summary>
                     m_disableServerSocket;
+        /// <summary>
+        /// The m definition log path
+        /// </summary>
         public string m_defLogPath = "";
         private void Awake() //This must be onenable, only for hook log
         {
@@ -33,7 +58,8 @@ namespace Lerp2Raw
             Debug.UnhookLog();
 
             //Aquí tengo que guardar todo y mandarle la solicitud a la consola
-            ConsoleServer.CloseConsole();
+            if(m_runConsoleAtPlayEvent)
+                ConsoleServer.CloseConsole();
         }
     }
 }

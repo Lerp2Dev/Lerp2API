@@ -7,6 +7,9 @@ var searchData=
   ['cancellationtoken',['CancellationToken',['../struct_system_1_1_threading_1_1_cancellation_token.html',1,'System::Threading']]],
   ['cancellationtokenregistration',['CancellationTokenRegistration',['../struct_system_1_1_threading_1_1_cancellation_token_registration.html',1,'System::Threading']]],
   ['cancellationtokensource',['CancellationTokenSource',['../class_system_1_1_threading_1_1_cancellation_token_source.html',1,'System::Threading']]],
+  ['canvascontroller',['CanvasController',['../class_lerp2_a_p_i_1_1_controllers_1_1___canvas_1_1_canvas_controller.html',1,'Lerp2API::Controllers::_Canvas']]],
+  ['characterutils',['CharacterUtils',['../class_lerp2_a_p_i_1_1_hepers_1_1_unity___extensions_1_1_utils_1_1_character_utils.html',1,'Lerp2API::Hepers::Unity_Extensions::Utils']]],
+  ['circleoutline',['CircleOutline',['../class_circle_outline.html',1,'']]],
   ['circularbuffer',['CircularBuffer',['../class_shared_memory_1_1_circular_buffer.html',1,'SharedMemory']]],
   ['clientconnectedeventargs',['ClientConnectedEventArgs',['../class_client_server_using_named_pipes_1_1_interfaces_1_1_client_connected_event_args.html',1,'ClientServerUsingNamedPipes::Interfaces']]],
   ['clientdisconnectedeventargs',['ClientDisconnectedEventArgs',['../class_client_server_using_named_pipes_1_1_interfaces_1_1_client_disconnected_event_args.html',1,'ClientServerUsingNamedPipes::Interfaces']]],
@@ -30,7 +33,6 @@ var searchData=
   ['componentserializerextensionbase_3c_20terrain_20_3e',['ComponentSerializerExtensionBase&lt; Terrain &gt;',['../class_component_serializer_extension_base.html',1,'']]],
   ['componentserializerextensionbase_3c_20terraincollider_20_3e',['ComponentSerializerExtensionBase&lt; TerrainCollider &gt;',['../class_component_serializer_extension_base.html',1,'']]],
   ['componentserializerfor',['ComponentSerializerFor',['../class_component_serializer_for.html',1,'']]],
-  ['concurrentmap',['ConcurrentMap',['../class_lerp2_a_p_i_1_1_backports_1_1_concurrent_map.html',1,'Lerp2API::Backports']]],
   ['configuredtaskawaitable',['ConfiguredTaskAwaitable',['../struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable.html',1,'System.Runtime.CompilerServices.ConfiguredTaskAwaitable'],['../struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable.html',1,'System.Runtime.CompilerServices.ConfiguredTaskAwaitable&lt; TResult &gt;']]],
   ['configuredtaskawaiter',['ConfiguredTaskAwaiter',['../struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter.html',1,'System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter'],['../struct_system_1_1_runtime_1_1_compiler_services_1_1_configured_task_awaitable_1_1_configured_task_awaiter.html',1,'System.Runtime.CompilerServices.ConfiguredTaskAwaitable&lt; TResult &gt;.ConfiguredTaskAwaiter']]],
   ['consolemessage',['ConsoleMessage',['../class_lerp2_a_p_i_1_1_console_message.html',1,'Lerp2API']]],
@@ -45,6 +47,6 @@ var searchData=
   ['createusingevent',['CreateUsingEvent',['../class_serialization_1_1_create_using_event.html',1,'Serialization']]],
   ['creatorfor',['CreatorFor',['../class_serialization_1_1_creator_for.html',1,'Serialization']]],
   ['crontask',['CronTask',['../class_lerp2_a_p_i_1_1_cron_task.html',1,'Lerp2API']]],
-  ['curvecontrolledbob',['CurveControlledBob',['../class_unity_standard_assets_1_1_utility_1_1_curve_controlled_bob.html',1,'UnityStandardAssets::Utility']]],
+  ['curvecontrolledbob',['CurveControlledBob',['../class_lerp2_assets_1_1_utility_1_1_curve_controlled_bob.html',1,'Lerp2Assets::Utility']]],
   ['cvoronoimap',['cVoronoiMap',['../classc_voronoi_map.html',1,'']]]
 ];

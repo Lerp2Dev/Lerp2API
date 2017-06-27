@@ -4,8 +4,16 @@ using System.IO;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class DummyEditor.
+    /// </summary>
+    /// <seealso cref="UnityEditor.EditorWindow" />
     public class DummyEditor : EditorWindow
     {
+        /// <summary>
+        /// Saves the editor skin.
+        /// </summary>
+        /// <param name="es">The es.</param>
         [MenuItem("Lerp2Dev Team Tools/Save Scene Skin...")]
         static public void SaveEditorSkin(EditorSkin es)
         {

@@ -1,28 +1,38 @@
 ﻿using System;
+using System.Linq;
+
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using System.Linq;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestWhenAny.
+    /// </summary>
     public class UnitTestWhenAny
     {
-        
+        /// <summary>
+        /// Tests the when any.
+        /// </summary>
         public void TestWhenAny()
         {
             WhenAnyDelaysShouldAwaitForMinDelay().Wait();
             WhenAnyDelaysShouldAwaitForMinDelayWithTResult().Wait();
         }
 
-        
+        /// <summary>
+        /// Whens any should be canceled if first item of the tasks is canceled.
+        /// </summary>
         public void WhenAnyShouldBeCanceledIfFirstItemOfTheTasksIsCanceled()
         {
             WhenAnyShouldBeCanceledIfFirstItemOfTheTasksIsCancledAsync().Wait();
             WhenAnyShouldBeCanceledIfFirstItemOfTheTasksOfTResultIsCancledAsync().Wait();
         }
 
-        
+        /// <summary>
+        /// Whens any should have exception if first item of the tasks get error.
+        /// </summary>
         public void WhenAnyShouldHaveExceptionIfFirstItemOfTheTasksGetError()
         {
             WhenAnyShouldHaveExceptionIfFirstItemOfTheTasksGetErrorAsync().Wait();
@@ -44,7 +54,7 @@ namespace MinimuAsyncBridgeUnitTest
             {
                 var result = r.Result;
             }
-            catch(AggregateException e)
+            catch (AggregateException e)
             {
                 Assert.AreEqual(1, e.InnerExceptions.Count);
                 Assert.AreEqual(typeof(TaskCanceledException), e.InnerExceptions.First().GetType());

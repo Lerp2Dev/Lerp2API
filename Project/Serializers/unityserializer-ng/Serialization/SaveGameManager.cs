@@ -9,16 +9,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
+/// <summary>
+/// Class SaveGameManager.
+/// </summary>
 [ExecuteInEditMode]
 [AddComponentMenu("Storage/Save Game Manager")]
 public class SaveGameManager : MonoBehaviour
 {
+    /// <summary>
+    /// The required objects
+    /// </summary>
     public UnityEngine.Object[] requiredObjects;
 
     private static SaveGameManager instance;
 
+    /// <summary>
+    /// Gets or sets the instance.
+    /// </summary>
+    /// <value>The instance.</value>
     public static SaveGameManager Instance
     {
         get
@@ -47,22 +57,40 @@ public class SaveGameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The has run
+    /// </summary>
     public static bool hasRun;
 
+    /// <summary>
+    /// Loadeds this instance.
+    /// </summary>
     public static void Loaded()
     {
         _cached = null;
     }
 
+    /// <summary>
+    /// Class StoredEntry.
+    /// </summary>
     [Serializable]
     public class StoredEntry
     {
+        /// <summary>
+        /// The game object
+        /// </summary>
         [NonSerialized]
         public GameObject gameObject;
 
+        /// <summary>
+        /// The identifier
+        /// </summary>
         public string Id = Guid.NewGuid().ToString();
     }
 
+    /// <summary>
+    /// The reference
+    /// </summary>
     [HideInInspector]
     public StoredReferences Reference;
 
@@ -71,12 +99,22 @@ public class SaveGameManager : MonoBehaviour
     //private static Dictionary<string, StoredEntry> _cached = new Dictionary<string, StoredEntry>();
     private static List<Action> _initActions = new List<Action>();
 
+    /// <summary>
+    /// Gets the by identifier.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>GameObject.</returns>
     public GameObject GetById(string id)
     {
         var se = Instance.Reference[id];
         return se != null ? se.gameObject : null;
     }
 
+    /// <summary>
+    /// Sets the identifier.
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <param name="id">The identifier.</param>
     public void SetId(GameObject gameObject, string id)
     {
         var rr = Instance.Reference[gameObject] ?? Instance.Reference[id];
@@ -92,6 +130,11 @@ public class SaveGameManager : MonoBehaviour
         Instance.Reference[rr.Id] = rr;
     }
 
+    /// <summary>
+    /// Gets the identifier.
+    /// </summary>
+    /// <param name="gameObject">The game object.</param>
+    /// <returns>System.String.</returns>
     public static string GetId(GameObject gameObject)
     {
         if (Instance == null || gameObject == null)
@@ -111,6 +154,10 @@ public class SaveGameManager : MonoBehaviour
 
     private bool hasWoken;
 
+    /// <summary>
+    /// Initializes the specified a.
+    /// </summary>
+    /// <param name="a">a.</param>
     public static void Initialize(Action a)
     {
         if (Instance != null && Instance.hasWoken)
@@ -124,6 +171,11 @@ public class SaveGameManager : MonoBehaviour
 
     private Dictionary<Type, Index<string, List<UnityEngine.Object>>> assetReferences = new Dictionary<Type, Index<string, List<UnityEngine.Object>>>();
 
+    /// <summary>
+    /// Gets the asset identifier.
+    /// </summary>
+    /// <param name="referencedObject">The referenced object.</param>
+    /// <returns>AssetReference.</returns>
     public AssetReference GetAssetId(UnityEngine.Object referencedObject)
     {
         if (referencedObject == null) return new AssetReference { index = -1 };
@@ -146,13 +198,30 @@ public class SaveGameManager : MonoBehaviour
         return new AssetReference { index = references.IndexOf(referencedObject), name = referencedObject.name, type = type.FullName };
     }
 
+    /// <summary>
+    /// Class AssetReference.
+    /// </summary>
     public class AssetReference
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         public string name;
+        /// <summary>
+        /// The type
+        /// </summary>
         public string type;
+        /// <summary>
+        /// The index
+        /// </summary>
         public int index;
     }
 
+    /// <summary>
+    /// Gets the asset.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>System.Object.</returns>
     public object GetAsset(AssetReference id)
     {
         if (id.index == -1)

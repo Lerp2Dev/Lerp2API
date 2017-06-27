@@ -1,13 +1,10 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace System.Collections.ObjectModel
 {
@@ -27,6 +24,7 @@ namespace System.Collections.ObjectModel
         //------------------------------------------------------
 
         #region Constructors
+
         /// <summary>
         /// Initializes a new instance of ObservableCollection that is empty and has default initial capacity.
         /// </summary>
@@ -68,7 +66,6 @@ namespace System.Collections.ObjectModel
 
         #endregion Constructors
 
-
         //------------------------------------------------------
         //
         //  Public Methods
@@ -87,7 +84,6 @@ namespace System.Collections.ObjectModel
 
         #endregion Public Methods
 
-
         //------------------------------------------------------
         //
         //  Public Events
@@ -97,6 +93,7 @@ namespace System.Collections.ObjectModel
         #region Public Events
 
         //------------------------------------------------------
+
         #region INotifyPropertyChanged implementation
 
         /// <summary>
@@ -113,8 +110,8 @@ namespace System.Collections.ObjectModel
                 PropertyChanged -= value;
             }
         }
-        #endregion INotifyPropertyChanged implementation
 
+        #endregion INotifyPropertyChanged implementation
 
         //------------------------------------------------------
         /// <summary>
@@ -126,7 +123,6 @@ namespace System.Collections.ObjectModel
         public virtual event NotifyCollectionChangedEventHandler CollectionChanged;
 
         #endregion Public Events
-
 
         //------------------------------------------------------
         //
@@ -210,7 +206,6 @@ namespace System.Collections.ObjectModel
             OnCollectionChanged(NotifyCollectionChangedAction.Move, removedItem, newIndex, oldIndex);
         }
 
-
         /// <summary>
         /// Raises a PropertyChanged event (per <see cref="INotifyPropertyChanged" />).
         /// </summary>
@@ -284,7 +279,6 @@ namespace System.Collections.ObjectModel
 
         #endregion Protected Methods
 
-
         //------------------------------------------------------
         //
         //  Private Methods
@@ -292,6 +286,7 @@ namespace System.Collections.ObjectModel
         //------------------------------------------------------
 
         #region Private Methods
+
         /// <summary>
         /// Helper to raise a PropertyChanged event  />).
         /// </summary>
@@ -331,6 +326,7 @@ namespace System.Collections.ObjectModel
         {
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
+
         #endregion Private Methods
 
         //------------------------------------------------------
@@ -376,6 +372,7 @@ namespace System.Collections.ObjectModel
         private const string IndexerName = "Item[]";
 
         private SimpleMonitor _monitor = new SimpleMonitor();
+
         #endregion Private Fields
     }
 

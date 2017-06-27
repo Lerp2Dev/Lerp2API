@@ -8,6 +8,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class RoomLoader.
+/// </summary>
 [AddComponentMenu("Storage/Internal/Room Loader (Internal use only, do not add this to your scene)")]
 public class RoomLoader : MonoBehaviour
 {

@@ -1,5 +1,10 @@
 \hypertarget{class_serialize_nav_mesh_agent}{}\section{Serialize\+Nav\+Mesh\+Agent Class Reference}
 \label{class_serialize_nav_mesh_agent}\index{Serialize\+Nav\+Mesh\+Agent@{Serialize\+Nav\+Mesh\+Agent}}
+
+
+Class \hyperlink{class_serialize_nav_mesh_agent}{Serialize\+Nav\+Mesh\+Agent}.  
+
+
 Inheritance diagram for Serialize\+Nav\+Mesh\+Agent\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,7 @@ Inheritance diagram for Serialize\+Nav\+Mesh\+Agent\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_serialize_nav_mesh_agent_1_1_stored_info}{Stored\+Info}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class \hyperlink{class_serialize_nav_mesh_agent_1_1_stored_info}{Stored\+Info}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +23,11 @@ byte \mbox{[}$\,$\mbox{]} \hyperlink{class_serialize_nav_mesh_agent_a74cea446ba0
 \begin{DoxyCompactList}\small\item\em Serialize the specified component to a byte array \end{DoxyCompactList}\item 
 void \hyperlink{class_serialize_nav_mesh_agent_ad5a28c80e751f4727a1a4b83c06b5428}{Deserialize} (byte\mbox{[}$\,$\mbox{]} data, Component instance)
 \begin{DoxyCompactList}\small\item\em Deserialize the specified data into the instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serialize_nav_mesh_agent}{Serialize\+Nav\+Mesh\+Agent}. 
+
 
 
 \subsection{Member Function Documentation}
@@ -33,9 +43,9 @@ Deserialize the specified data into the instance.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & The data that represents the component, produced by Serialize \\
+{\em data} & The data that represents the component, produced by Serialize\\
 \hline
-{\em instance} & The instance to target \\
+{\em instance} & The instance to target\\
 \hline
 \end{DoxyParams}
 
@@ -54,9 +64,12 @@ Serialize the specified component to a byte array
 
 
 \begin{DoxyParams}{Parameters}
-{\em component} & Component to be serialized \\
+{\em component} & Component to be serialized\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Byte\mbox{[}\mbox{]}.
+\end{DoxyReturn}
 
 
 Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.

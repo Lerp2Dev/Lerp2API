@@ -1,13 +1,17 @@
 \hypertarget{class_serialization_1_1_entry}{}\section{Serialization.\+Entry Class Reference}
 \label{class_serialization_1_1_entry}\index{Serialization.\+Entry@{Serialization.\+Entry}}
+
+
+Class \hyperlink{class_serialization_1_1_entry}{Entry}.  
+
+
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{class_serialization_1_1_entry_a27386eb83718b39bfc36c67585639247}{Name}
 \begin{DoxyCompactList}\small\item\em The name of the item being read or written This should be filled out by the storage when Must\+Have\+Name = true and deserializing \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}\label{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}} 
-Type {\bfseries Stored\+Type}
-\item 
+Type \hyperlink{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}{Stored\+Type}
+\begin{DoxyCompactList}\small\item\em The stored type \end{DoxyCompactList}\item 
 object \hyperlink{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}{Value}
 \begin{DoxyCompactList}\small\item\em On writing, the value of the object for reference, not needed on deserialization \end{DoxyCompactList}\item 
 bool \hyperlink{class_serialization_1_1_entry_aa2f98ee039ca25cefe57774a76903556}{Is\+Static}
@@ -16,9 +20,8 @@ bool \hyperlink{class_serialization_1_1_entry_a09a13ff1f6b299c4728a734b307de2b5}
 \begin{DoxyCompactList}\small\item\em Set to indicate that the name provided is that of a field or property and is needed to reset the value later \end{DoxyCompactList}\item 
 Type \hyperlink{class_serialization_1_1_entry_a1fd7fb4ac04afda6919998688f741e33}{Owning\+Type}
 \begin{DoxyCompactList}\small\item\em The type of the object which owns the item being serialized or null if not directly owned. This will always be set on serialization and deserialization when Must\+Have\+Name = true and can be used to look up field and property information. Or you can ignore it if you don\textquotesingle{}t need it \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}\label{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}} 
-\hyperlink{class_serialization_1_1_get_set}{Get\+Set} {\bfseries Setter}
-\end{DoxyCompactItemize}
+\hyperlink{class_serialization_1_1_get_set}{Get\+Set} \hyperlink{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}{Setter}
+\begin{DoxyCompactList}\small\item\em The setter \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,6 +29,11 @@ Property\+Info \hyperlink{class_serialization_1_1_entry_a079414059819b92c8739212
 \begin{DoxyCompactList}\small\item\em The property info or null, if the value did not come from a property. You might want to use the to look up attributes attached to the property definition \end{DoxyCompactList}\item 
 Field\+Info \hyperlink{class_serialization_1_1_entry_ac9c4d67292047b6a3f9a3d3fcdccb09e}{Field\+Info}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em The field info or null, if the value did not come from a field. You might want to use it to look up attributes attached to the field definition \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serialization_1_1_entry}{Entry}. 
+
 
 
 \subsection{Member Data Documentation}
@@ -68,6 +76,26 @@ The name of the item being read or written This should be filled out by the stor
 
 
 The type of the object which owns the item being serialized or null if not directly owned. This will always be set on serialization and deserialization when Must\+Have\+Name = true and can be used to look up field and property information. Or you can ignore it if you don\textquotesingle{}t need it 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}\label{class_serialization_1_1_entry_a7f497ef992f38fceb6c4aea8643a7caf}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Setter@{Setter}}
+\index{Setter@{Setter}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Setter}{Setter}}
+{\footnotesize\ttfamily \hyperlink{class_serialization_1_1_get_set}{Get\+Set} Serialization.\+Entry.\+Setter}
+
+
+
+The setter 
+
+\mbox{\Hypertarget{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}\label{class_serialization_1_1_entry_a4654173d7df1c387d25517dcf2393a4f}} 
+\index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Stored\+Type@{Stored\+Type}}
+\index{Stored\+Type@{Stored\+Type}!Serialization\+::\+Entry@{Serialization\+::\+Entry}}
+\subsubsection{\texorpdfstring{Stored\+Type}{StoredType}}
+{\footnotesize\ttfamily Type Serialization.\+Entry.\+Stored\+Type}
+
+
+
+The stored type 
 
 \mbox{\Hypertarget{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}\label{class_serialization_1_1_entry_a17a664469636a801c96b7224972cf928}} 
 \index{Serialization\+::\+Entry@{Serialization\+::\+Entry}!Value@{Value}}

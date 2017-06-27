@@ -2,24 +2,57 @@
 
 namespace Lerp2API.Controllers.Utils
 {
+    /// <summary>
+    /// Class Teleporter.
+    /// </summary>
     public class Teleporter
     {
+        /// <summary>
+        /// Teleports the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="z">The z.</param>
         public static void Teleport(float x, float z)
         {
             _Teleport(x, null, z, null, null);
         }
+
+        /// <summary>
+        /// Teleports the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="z">The z.</param>
         public static void Teleport(float x, float y, float z)
         {
             _Teleport(x, y, z, null, null);
         }
+
+        /// <summary>
+        /// Teleports the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="z">The z.</param>
+        /// <param name="yaw">The yaw.</param>
+        /// <param name="pitch">The pitch.</param>
         public static void Teleport(float x, float z, float yaw, float pitch)
         {
             _Teleport(x, null, z, yaw, pitch);
         }
+
+        /// <summary>
+        /// Teleports the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="z">The z.</param>
+        /// <param name="yaw">The yaw.</param>
+        /// <param name="pitch">The pitch.</param>
         public static void Teleport(float x, float y, float z, float yaw, float pitch)
         {
             _Teleport(x, y, z, yaw, pitch);
         }
+
         private static void _Teleport(object _x, object _y, object _z, object _yaw, object _pitch)
         {
             float x = (float)_x,
@@ -32,8 +65,8 @@ namespace Lerp2API.Controllers.Utils
 
             GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            float posX = x, 
-                  posY = 0, 
+            float posX = x,
+                  posY = 0,
                   posZ = z;
 
             //Establecer x & z

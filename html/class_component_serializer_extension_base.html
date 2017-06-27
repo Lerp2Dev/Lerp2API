@@ -65,23 +65,26 @@ $(function() {
 <div class="title">ComponentSerializerExtensionBase&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class <a class="el" href="class_component_serializer_extension_base.html" title="Class ComponentSerializerExtensionBase. ">ComponentSerializerExtensionBase</a>.  
+ <a href="class_component_serializer_extension_base.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for ComponentSerializerExtensionBase&lt; T &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_component_serializer_extension_base.png" usemap="#ComponentSerializerExtensionBase_3C_20T_20_3E_map" alt=""/>
   <map id="ComponentSerializerExtensionBase_3C_20T_20_3E_map" name="ComponentSerializerExtensionBase_3C_20T_20_3E_map">
-<area href="interface_i_component_serializer.html" alt="IComponentSerializer" shape="rect" coords="0,0,242,24"/>
+<area href="interface_i_component_serializer.html" title="Interface IComponentSerializer " alt="IComponentSerializer" shape="rect" coords="0,0,242,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4814a51da69bbdba5219843f04885551"><td class="memItemLeft" align="right" valign="top"><a id="a4814a51da69bbdba5219843f04885551"></a>
-abstract IEnumerable&lt; object &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (T target)</td></tr>
+<tr class="memitem:a4814a51da69bbdba5219843f04885551"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_serializer_extension_base.html#a4814a51da69bbdba5219843f04885551">Save</a> (T target)</td></tr>
+<tr class="memdesc:a4814a51da69bbdba5219843f04885551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the specified target.  <a href="#a4814a51da69bbdba5219843f04885551">More...</a><br /></td></tr>
 <tr class="separator:a4814a51da69bbdba5219843f04885551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabcaabbb4ca501f5b3ddb1d7301699cf"><td class="memItemLeft" align="right" valign="top"><a id="aabcaabbb4ca501f5b3ddb1d7301699cf"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInto</b> (object[] data, T instance)</td></tr>
+<tr class="memitem:aabcaabbb4ca501f5b3ddb1d7301699cf"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_serializer_extension_base.html#aabcaabbb4ca501f5b3ddb1d7301699cf">LoadInto</a> (object[] data, T instance)</td></tr>
+<tr class="memdesc:aabcaabbb4ca501f5b3ddb1d7301699cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the into.  <a href="#aabcaabbb4ca501f5b3ddb1d7301699cf">More...</a><br /></td></tr>
 <tr class="separator:aabcaabbb4ca501f5b3ddb1d7301699cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a068c9a1c5f90967de5d22bf9357cfca0"><td class="memItemLeft" align="right" valign="top">byte []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_serializer_extension_base.html#a068c9a1c5f90967de5d22bf9357cfca0">Serialize</a> (Component component)</td></tr>
 <tr class="memdesc:a068c9a1c5f90967de5d22bf9357cfca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the specified component to a byte array  <a href="#a068c9a1c5f90967de5d22bf9357cfca0">More...</a><br /></td></tr>
@@ -90,7 +93,23 @@ abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInto</b>
 <tr class="memdesc:a003b02386876cd68c588aef276124b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize the specified data into the instance.  <a href="#a003b02386876cd68c588aef276124b0c">More...</a><br /></td></tr>
 <tr class="separator:a003b02386876cd68c588aef276124b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class <a class="el" href="class_component_serializer_extension_base.html" title="Class ComponentSerializerExtensionBase. ">ComponentSerializerExtensionBase</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Component</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a003b02386876cd68c588aef276124b0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a003b02386876cd68c588aef276124b0c">&#9670;&nbsp;</a></span>Deserialize()</h2>
 
@@ -128,13 +147,93 @@ abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInto</b>
 <p>Deserialize the specified data into the instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>The data that represents the component, produced by Serialize </td></tr>
-    <tr><td class="paramname">instance</td><td>The instance to target </td></tr>
+    <tr><td class="paramname">data</td><td>The data that represents the component, produced by Serialize</td></tr>
+    <tr><td class="paramname">instance</td><td>The instance to target</td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="interface_i_component_serializer.html#a4cc366a5c78b33d47a90c209d8fed883">IComponentSerializer</a>.</p>
+
+</div>
+</div>
+<a id="aabcaabbb4ca501f5b3ddb1d7301699cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabcaabbb4ca501f5b3ddb1d7301699cf">&#9670;&nbsp;</a></span>LoadInto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void <a class="el" href="class_component_serializer_extension_base.html">ComponentSerializerExtensionBase</a>&lt; T &gt;.LoadInto </td>
+          <td>(</td>
+          <td class="paramtype">object []&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>instance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the into. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">instance</td><td>The instance.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4814a51da69bbdba5219843f04885551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4814a51da69bbdba5219843f04885551">&#9670;&nbsp;</a></span>Save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract IEnumerable&lt;object&gt; <a class="el" href="class_component_serializer_extension_base.html">ComponentSerializerExtensionBase</a>&lt; T &gt;.Save </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Saves the specified target. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>The target.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>IEnumerable&lt;System.Object&gt;.</dd></dl>
 
 </div>
 </div>
@@ -165,10 +264,11 @@ abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInto</b>
 <p>Serialize the specified component to a byte array </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">component</td><td>Component to be serialized </td></tr>
+    <tr><td class="paramname">component</td><td>Component to be serialized</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Byte[].</dd></dl>
 
 <p>Implements <a class="el" href="interface_i_component_serializer.html#ab2aa38005665496b62d6c54b5f0dbd31">IComponentSerializer</a>.</p>
 

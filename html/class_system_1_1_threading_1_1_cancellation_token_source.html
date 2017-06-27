@@ -277,7 +277,7 @@ Properties</h2></td></tr>
 
 <p>Communicates a request for cancellation. </p>
 <p>The associated T:System.Threading.CancellationToken will be notified of the cancellation and will transition to a state where <a class="el" href="struct_system_1_1_threading_1_1_cancellation_token.html#a1b0338d63f9b268339e7348629301748">IsCancellationRequested</a> returns true. Any callbacks or cancelable operations registered with the T:System.Threading.CancellationToken will be executed. </p>
-<p>Cancelable operations and callbacks registered with the token should not throw exceptions. However, this overload of Cancel will aggregate any exceptions thrown into a <a class="el" href="class_system_1_1_aggregate_exception.html">System.AggregateException</a>, such that one callback throwing an exception will not prevent other registered callbacks from being executed. </p>
+<p>Cancelable operations and callbacks registered with the token should not throw exceptions. However, this overload of Cancel will aggregate any exceptions thrown into a <a class="el" href="class_system_1_1_aggregate_exception.html" title="Class AggregateException. ">System.AggregateException</a>, such that one callback throwing an exception will not prevent other registered callbacks from being executed. </p>
 <p>The T:System.Threading.ExecutionContext that was captured when each callback was registered will be reestablished when the callback is invoked. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -315,7 +315,7 @@ Properties</h2></td></tr>
 
 <p>Communicates a request for cancellation. </p>
 <p>The associated T:System.Threading.CancellationToken will be notified of the cancellation and will transition to a state where <a class="el" href="struct_system_1_1_threading_1_1_cancellation_token.html#a1b0338d63f9b268339e7348629301748">IsCancellationRequested</a> returns true. Any callbacks or cancelable operations registered with the T:System.Threading.CancellationToken will be executed. </p>
-<p>Cancelable operations and callbacks registered with the token should not throw exceptions. If <em>throwOnFirstException</em>  is true, an exception will immediately propagate out of the call to Cancel, preventing the remaining callbacks and cancelable operations from being processed. If <em>throwOnFirstException</em>  is false, this overload will aggregate any exceptions thrown into a <a class="el" href="class_system_1_1_aggregate_exception.html">System.AggregateException</a>, such that one callback throwing an exception will not prevent other registered callbacks from being executed. </p>
+<p>Cancelable operations and callbacks registered with the token should not throw exceptions. If <em>throwOnFirstException</em>  is true, an exception will immediately propagate out of the call to Cancel, preventing the remaining callbacks and cancelable operations from being processed. If <em>throwOnFirstException</em>  is false, this overload will aggregate any exceptions thrown into a <a class="el" href="class_system_1_1_aggregate_exception.html" title="Class AggregateException. ">System.AggregateException</a>, such that one callback throwing an exception will not prevent other registered callbacks from being executed. </p>
 <p>The T:System.Threading.ExecutionContext that was captured when each callback was registered will be reestablished when the callback is invoked. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

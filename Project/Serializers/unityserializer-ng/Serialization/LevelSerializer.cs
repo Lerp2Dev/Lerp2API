@@ -17,7 +17,8 @@ using System.Net;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Debug = Lerp2API.DebugHandler.Debug;
+using static Serialization.LevelSerializer;
+using Debug = Lerp2API._Debug.Debug;
 using Object = UnityEngine.Object;
 
 /// <summary>
@@ -26,20 +27,36 @@ using Object = UnityEngine.Object;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
 public class ComponentSerializerFor : Attribute
 {
+    /// <summary>
+    /// The serializes type
+    /// </summary>
     public Type SerializesType;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ComponentSerializerFor"/> class.
+    /// </summary>
+    /// <param name="serializesType">Type of the serializes.</param>
     public ComponentSerializerFor(Type serializesType)
     {
         SerializesType = serializesType;
     }
 }
 
+/// <summary>
+/// Class SerializerPlugIn.
+/// </summary>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
 public class SerializerPlugIn : Attribute { }
 
+/// <summary>
+/// Class SuspendLevelSerialization.
+/// </summary>
 [AttributeUsage(AttributeTargets.Class)]
 public class SuspendLevelSerialization : Attribute { }
 
+/// <summary>
+/// Interface IComponentSerializer
+/// </summary>
 public interface IComponentSerializer
 {
     /// <summary>
@@ -56,13 +73,27 @@ public interface IComponentSerializer
     void Deserialize(byte[] data, Component instance);
 }
 
+/// <summary>
+/// Interface IControlSerialization
+/// </summary>
 public interface IControlSerialization
 {
+    /// <summary>
+    /// Shoulds the save.
+    /// </summary>
+    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
     bool ShouldSave();
 }
 
+/// <summary>
+/// Interface IControlSerializationEx
+/// </summary>
 public interface IControlSerializationEx : IControlSerialization
 {
+    /// <summary>
+    /// Shoulds the save whole object.
+    /// </summary>
+    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
     bool ShouldSaveWholeObject();
 }
 
@@ -70,7 +101,7 @@ public interface IControlSerializationEx : IControlSerialization
 ///   Level serializer - this class is the main interaction point for
 /// saving and loading Unity objects and whole scenes.
 /// </summary>
-public static class LevelSerializer
+public static partial class LevelSerializer
 {
     #region Delegates
 
@@ -79,30 +110,14 @@ public static class LevelSerializer
     /// </summary>
     public delegate void StoreQuery(GameObject go, ref bool store);
 
+    /// <summary>
+    /// Delegate StoreComponentQuery
+    /// </summary>
+    /// <param name="component">The component.</param>
+    /// <param name="store">if set to <c>true</c> [store].</param>
     public delegate void StoreComponentQuery(Component component, ref bool store);
 
     #endregion Delegates
-
-    #region SerializationModes enum
-
-    /// <summary>
-    /// Serialization modes.
-    /// </summary>
-    public enum SerializationModes
-    {
-        /// <summary>
-        /// Serialize when suspended
-        /// </summary>
-        SerializeWhenFree,
-
-        /// <summary>
-        /// Ensure that there is serialization data
-        /// when suspending
-        /// </summary>
-        CacheSerialization
-    }
-
-    #endregion SerializationModes enum
 
     private static Dictionary<string, GameObject> allPrefabs = new Dictionary<string, GameObject>();
 
@@ -553,6 +568,9 @@ public static class LevelSerializer
     /// </summary>
     public static event StoreQuery Store;
 
+    /// <summary>
+    /// Occurs when [store component].
+    /// </summary>
     public static event StoreComponentQuery StoreComponent = delegate { };
 
     /// <summary>
@@ -583,11 +601,18 @@ public static class LevelSerializer
         FilePrefs.Save();
     }
 
+    /// <summary>
+    /// Clears the checkpoint.
+    /// </summary>
     public static void ClearCheckpoint()
     {
         ClearCheckpoint(true);
     }
 
+    /// <summary>
+    /// Clears the checkpoint.
+    /// </summary>
+    /// <param name="store">if set to <c>true</c> [store].</param>
     public static void ClearCheckpoint(bool store)
     {
         FilePrefs.DeleteKey(PlayerName + "__RESUME__");
@@ -689,6 +714,12 @@ public static class LevelSerializer
         SaveGame(name, false, null);
     }
 
+    /// <summary>
+    /// Saves the game.
+    /// </summary>
+    /// <param name="name">The name.</param>
+    /// <param name="urgent">if set to <c>true</c> [urgent].</param>
+    /// <param name="perform">The perform.</param>
     public static void SaveGame(string name, bool urgent, Action<string, bool> perform)
     {
         perform = perform ?? PerformSave;
@@ -1132,21 +1163,44 @@ public static class LevelSerializer
         LoadNow(data, true, false, onComplete);
     }
 
+    /// <summary>
+    /// Loads the now.
+    /// </summary>
+    /// <param name="data">The data.</param>
     public static void LoadNow(object data)
     {
         LoadNow(data, false, true, null);
     }
 
+    /// <summary>
+    /// Loads the now.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="dontDeleteExistingItems">if set to <c>true</c> [dont delete existing items].</param>
     public static void LoadNow(object data, bool dontDeleteExistingItems)
     {
         LoadNow(data, dontDeleteExistingItems, true, null);
     }
 
+    /// <summary>
+    /// Loads the now.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="dontDeleteExistingItems">if set to <c>true</c> [dont delete existing items].</param>
+    /// <param name="showLoadingGUI">if set to <c>true</c> [show loading GUI].</param>
     public static void LoadNow(object data, bool dontDeleteExistingItems, bool showLoadingGUI)
     {
         LoadNow(data, dontDeleteExistingItems, showLoadingGUI, null);
     }
 
+    /// <summary>
+    /// Loads the now.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    /// <param name="dontDeleteExistingItems">if set to <c>true</c> [dont delete existing items].</param>
+    /// <param name="showLoadingGUI">if set to <c>true</c> [show loading GUI].</param>
+    /// <param name="complete">The complete.</param>
+    /// <exception cref="ArgumentException">data parameter must be either a byte[] or a base64 encoded string</exception>
     public static void LoadNow(object data, bool dontDeleteExistingItems, bool showLoadingGUI, Action<LevelLoader> complete)
     {
         if (BeginLoad != null)
@@ -1234,11 +1288,22 @@ public static class LevelSerializer
     {
         #region IEqualityComparer[GameObject] implementation
 
+        /// <summary>
+        /// Equalses the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Equals(GameObject x, GameObject y)
         {
             return System.String.Compare(x.GetComponent<PrefabIdentifier>().ClassId, y.GetComponent<PrefabIdentifier>().ClassId, System.StringComparison.Ordinal) == 0;
         }
 
+        /// <summary>
+        /// Returns a hash code for this instance.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public int GetHashCode(GameObject obj)
         {
             return obj.GetComponent<PrefabIdentifier>().ClassId.GetHashCode();
@@ -1246,6 +1311,9 @@ public static class LevelSerializer
 
         #endregion IEqualityComparer[GameObject] implementation
 
+        /// <summary>
+        /// The instance
+        /// </summary>
         public static readonly CompareGameObjects Instance = new CompareGameObjects();
     }
 
@@ -1273,6 +1341,9 @@ public static class LevelSerializer
         /// </summary>
         public List<StoredItem> StoredObjectNames;
 
+        /// <summary>
+        /// The root object
+        /// </summary>
         public string rootObject;
     }
 
@@ -1284,6 +1355,11 @@ public static class LevelSerializer
     {
         #region ICodeProgress implementation
 
+        /// <summary>
+        /// Sets the progress.
+        /// </summary>
+        /// <param name="inSize">Size of the in.</param>
+        /// <param name="outSize">Size of the out.</param>
         public void SetProgress(long inSize, long outSize)
         {
             RaiseProgress("Compression", 05f);
@@ -1330,6 +1406,9 @@ public static class LevelSerializer
             UnitySerializer.DeserializeInto(Convert.FromBase64String(contents), this);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SaveEntry"/> class.
+        /// </summary>
         public SaveEntry()
         {
         }
@@ -1383,7 +1462,13 @@ public static class LevelSerializer
     /// </summary>
     public class SerializationHelper : MonoBehaviour
     {
+        /// <summary>
+        /// The game name
+        /// </summary>
         public string gameName;
+        /// <summary>
+        /// The perform
+        /// </summary>
         public Action<string, bool> perform;
 
         private void Update()
@@ -1404,9 +1489,15 @@ public static class LevelSerializer
 
     #region Nested type: SerializationSuspendedException
 
+    /// <summary>
+    /// Class SerializationSuspendedException.
+    /// </summary>
     [Serializable]
     public class SerializationSuspendedException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SerializationSuspendedException"/> class.
+        /// </summary>
         public SerializationSuspendedException() :
             base("Serialization was suspended: " + _suspensionCount + " times")
         { }
@@ -1416,11 +1507,26 @@ public static class LevelSerializer
 
     #region Nested type: StoredData
 
+    /// <summary>
+    /// Class StoredData.
+    /// </summary>
     public class StoredData
     {
+        /// <summary>
+        /// The class identifier
+        /// </summary>
         public string ClassId;
+        /// <summary>
+        /// The data
+        /// </summary>
         public byte[] Data;
+        /// <summary>
+        /// The name
+        /// </summary>
         public string Name;
+        /// <summary>
+        /// The type
+        /// </summary>
         public string Type;
     }
 
@@ -1428,25 +1534,71 @@ public static class LevelSerializer
 
     #region Nested type: StoredItem
 
+    /// <summary>
+    /// Class StoredItem.
+    /// </summary>
     public class StoredItem
     {
+        /// <summary>
+        /// The active
+        /// </summary>
         public bool Active;
+        /// <summary>
+        /// The layer
+        /// </summary>
         public int layer;
+        /// <summary>
+        /// The tag
+        /// </summary>
         public string tag;
+        /// <summary>
+        /// The set extra data
+        /// </summary>
         public bool setExtraData;
+        /// <summary>
+        /// The child ids
+        /// </summary>
         public readonly List<string> ChildIds = new List<string>();
+        /// <summary>
+        /// The children
+        /// </summary>
         public Dictionary<string, List<string>> Children = new Dictionary<string, List<string>>();
+        /// <summary>
+        /// The class identifier
+        /// </summary>
         public string ClassId;
+        /// <summary>
+        /// The components
+        /// </summary>
         public Dictionary<string, bool> Components;
 
+        /// <summary>
+        /// The game object
+        /// </summary>
         [DoNotSerialize]
         public GameObject GameObject;
 
+        /// <summary>
+        /// The game object name
+        /// </summary>
         public string GameObjectName;
+        /// <summary>
+        /// The name
+        /// </summary>
         public string Name;
+        /// <summary>
+        /// The parent name
+        /// </summary>
         public string ParentName;
+        /// <summary>
+        /// The create empty object
+        /// </summary>
         public bool createEmptyObject;
 
+        /// <summary>
+        /// Returns a <see cref="System.String" /> that represents this instance.
+        /// </summary>
+        /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return string.Format("{0}  child of {2} - ({1})", Name, ClassId, ParentName);
@@ -1456,15 +1608,30 @@ public static class LevelSerializer
     #endregion Nested type: StoredItem
 }
 
+/// <summary>
+/// Class SerializeAnimations.
+/// </summary>
 [ComponentSerializerFor(typeof(Animation))]
 public class SerializeAnimations : IComponentSerializer
 {
     #region Nested type: StoredState
 
+    /// <summary>
+    /// Class StoredState.
+    /// </summary>
     public class StoredState
     {
+        /// <summary>
+        /// The data
+        /// </summary>
         public byte[] data;
+        /// <summary>
+        /// The name
+        /// </summary>
         public string name;
+        /// <summary>
+        /// The asset
+        /// </summary>
         public SaveGameManager.AssetReference asset;
     }
 
@@ -1472,6 +1639,11 @@ public class SerializeAnimations : IComponentSerializer
 
     #region IComponentSerializer implementation
 
+    /// <summary>
+    /// Serialize the specified component to a byte array
+    /// </summary>
+    /// <param name="component">Component to be serialized</param>
+    /// <returns>System.Byte[].</returns>
     public byte[] Serialize(Component component)
     {
         return
@@ -1481,6 +1653,11 @@ public class SerializeAnimations : IComponentSerializer
                     ToList());
     }
 
+    /// <summary>
+    /// Deserialize the specified data into the instance.
+    /// </summary>
+    /// <param name="data">The data that represents the component, produced by Serialize</param>
+    /// <param name="instance">The instance to target</param>
     public void Deserialize(byte[] data, Component instance)
     {
         UnitySerializer.AddFinalAction(() =>
@@ -1510,8 +1687,17 @@ public class SerializeAnimations : IComponentSerializer
     #endregion IComponentSerializer implementation
 }
 
+/// <summary>
+/// Class FieldSerializer.
+/// </summary>
 public static class FieldSerializer
 {
+    /// <summary>
+    /// Serializes the fields.
+    /// </summary>
+    /// <param name="storage">The storage.</param>
+    /// <param name="obj">The object.</param>
+    /// <param name="names">The names.</param>
     public static void SerializeFields(Dictionary<string, object> storage, object obj, params string[] names)
     {
         var tp = obj.GetType();
@@ -1527,6 +1713,11 @@ public static class FieldSerializer
         }
     }
 
+    /// <summary>
+    /// Deserializes the fields.
+    /// </summary>
+    /// <param name="storage">The storage.</param>
+    /// <param name="obj">The object.</param>
     public static void DeserializeFields(Dictionary<string, object> storage, object obj)
     {
         var tp = obj.GetType();

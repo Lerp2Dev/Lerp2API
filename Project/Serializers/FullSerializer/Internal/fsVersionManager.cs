@@ -4,10 +4,20 @@ using System.Reflection;
 
 namespace FullSerializer.Internal
 {
+    /// <summary>
+    /// Class fsVersionManager.
+    /// </summary>
     public static class fsVersionManager
     {
         private static readonly Dictionary<Type, fsOption<fsVersionedType>> _cache = new Dictionary<Type, fsOption<fsVersionedType>>();
 
+        /// <summary>
+        /// Gets the version import path.
+        /// </summary>
+        /// <param name="currentVersion">The current version.</param>
+        /// <param name="targetVersion">The target version.</param>
+        /// <param name="path">The path.</param>
+        /// <returns>fsResult.</returns>
         public static fsResult GetVersionImportPath(string currentVersion, fsVersionedType targetVersion, out List<fsVersionedType> path)
         {
             path = new List<fsVersionedType>();
@@ -38,6 +48,16 @@ namespace FullSerializer.Internal
             return false;
         }
 
+        /// <summary>
+        /// Gets the type of the versioned.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>fsOption&lt;fsVersionedType&gt;.</returns>
+        /// <exception cref="Exception">
+        /// fsObject attribute on " + type + " contains a PreviousModels specifier - it must also include a VersionString modifier
+        /// or
+        /// Unable to create versioned type for ancestor " + ancestorType + "; please add an [fsObject(VersionString=\"...\")] attribute
+        /// </exception>
         public static fsOption<fsVersionedType> GetVersionedType(Type type)
         {
             fsOption<fsVersionedType> optionalVersionedType;

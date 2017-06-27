@@ -1,8 +1,8 @@
 var searchData=
 [
   ['datacontainer',['DataContainer',['../class_unity_serializer_n_g_1_1_file_preferences_1_1_data_container.html',1,'UnitySerializerNG::FilePreferences']]],
-  ['debug',['Debug',['../class_lerp2_a_p_i_1_1_debug_handler_1_1_debug.html',1,'Lerp2API::DebugHandler']]],
-  ['debugcolor',['DebugColor',['../class_debug_color.html',1,'']]],
+  ['debug',['Debug',['../class_lerp2_a_p_i_1_1___debug_1_1_debug.html',1,'Lerp2API::_Debug']]],
+  ['debugcolor',['DebugColor',['../class_lerp2_a_p_i_1_1___debug_1_1_debug_color.html',1,'Lerp2API::_Debug']]],
   ['debugline',['DebugLine',['../class_debug_line.html',1,'']]],
   ['debugmanager',['DebugManager',['../class_lerp2_a_p_i_editor_1_1_menu_1_1_debug_manager.html',1,'Lerp2APIEditor::Menu']]],
   ['deferredattribute',['DeferredAttribute',['../class_serialization_1_1_deferred_attribute.html',1,'Serialization']]],
@@ -21,6 +21,7 @@ var searchData=
   ['donotchecksum',['DoNotChecksum',['../class_do_not_checksum.html',1,'']]],
   ['donotserialize',['DoNotSerialize',['../class_do_not_serialize.html',1,'']]],
   ['donotserializepublic',['DoNotSerializePublic',['../class_do_not_serialize_public.html',1,'']]],
+  ['dontgothroughthings',['DontGoThroughThings',['../class_lerp2_a_p_i_1_1_controllers_1_1_utils_1_1_dont_go_through_things.html',1,'Lerp2API::Controllers::Utils']]],
   ['dontstoreattribute',['DontStoreAttribute',['../class_dont_store_attribute.html',1,'']]],
   ['dontstoreobjectinroom',['DontStoreObjectInRoom',['../class_dont_store_object_in_room.html',1,'']]],
   ['downloadapi',['DownloadAPI',['../class_download_a_p_i.html',1,'']]],

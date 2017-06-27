@@ -4,10 +4,14 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace UnitySerializerNG.FilePreferences
 {
+    /// <summary>
+    /// Class DataContainer.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     [Serializable]
     public class DataContainer<T>
     {
@@ -21,6 +25,11 @@ namespace UnitySerializerNG.FilePreferences
 
         private Dictionary<string, T> dict = new Dictionary<string, T>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataContainer{T}"/> class.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="profile">The profile.</param>
         public DataContainer(string filename, string profile = "default")
         {
             profileName = profile;
@@ -75,6 +84,9 @@ namespace UnitySerializerNG.FilePreferences
             }
         }
 
+        /// <summary>
+        /// Saves this instance.
+        /// </summary>
         public void Save()
         {
             IFormatter formatter = new BinaryFormatter();
@@ -106,6 +118,11 @@ namespace UnitySerializerNG.FilePreferences
             }
         }
 
+        /// <summary>
+        /// Gets the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>T.</returns>
         public T Get(string key)
         {
             try
@@ -118,21 +135,39 @@ namespace UnitySerializerNG.FilePreferences
             }
         }
 
+        /// <summary>
+        /// Sets the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
         public void Set(string key, T value)
         {
             dict[key] = value;
         }
 
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
         public void Clear()
         {
             dict.Clear();
         }
 
+        /// <summary>
+        /// Removes the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Remove(string key)
         {
             return dict.Remove(key);
         }
 
+        /// <summary>
+        /// Finds the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Find(string key)
         {
             return dict.ContainsKey(key);

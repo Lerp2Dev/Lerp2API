@@ -1,5 +1,10 @@
 \hypertarget{class_index}{}\section{Index$<$ TK, TR $>$ Class Template Reference}
 \label{class_index}\index{Index$<$ T\+K, T\+R $>$@{Index$<$ T\+K, T\+R $>$}}
+
+
+Class \hyperlink{class_index}{Index}.  
+
+
 Inheritance diagram for Index$<$ TK, TR $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +14,102 @@ Inheritance diagram for Index$<$ TK, TR $>$\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_index_a3e67374081c64d8097112ab9286bbf1b}\label{class_index_a3e67374081c64d8097112ab9286bbf1b}} 
-void {\bfseries Changed} (object index)
-\end{DoxyCompactItemize}
+void \hyperlink{class_index_a3e67374081c64d8097112ab9286bbf1b}{Changed} (object index)
+\begin{DoxyCompactList}\small\item\em Changeds the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_index_a55f528c0402412e4a0223895b89d559f}\label{class_index_a55f528c0402412e4a0223895b89d559f}} 
-override TR {\bfseries this\mbox{[}\+T\+K index\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+override TR \hyperlink{class_index_a55f528c0402412e4a0223895b89d559f}{this\mbox{[}\+T\+K index\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the TR at the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_index_aa53b2a997b85088499bc11af6ca6ddfc}\label{class_index_aa53b2a997b85088499bc11af6ca6ddfc}} 
-Action$<$ TK, TR, TR $>$ {\bfseries Setting} = delegate \{ \}
-\item 
+Action$<$ TK, TR, TR $>$ \hyperlink{class_index_aa53b2a997b85088499bc11af6ca6ddfc}{Setting} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}setting\mbox{]}. \end{DoxyCompactList}\item 
+Action$<$ TK, TR $>$ \hyperlink{class_index_a7b5c195702db7df525a4ae4dd9f17d36}{Getting} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}getting\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_index}{Index}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TK} & The type of the tk.\\
+\hline
+{\em TR} & The type of the tr.\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em TR} : {\em class}]\item[{\em TR} : {\em new()}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_index_a3e67374081c64d8097112ab9286bbf1b}\label{class_index_a3e67374081c64d8097112ab9286bbf1b}} 
+\index{Index@{Index}!Changed@{Changed}}
+\index{Changed@{Changed}!Index@{Index}}
+\subsubsection{\texorpdfstring{Changed()}{Changed()}}
+{\footnotesize\ttfamily void \hyperlink{class_index}{Index}$<$ TK, TR $>$.Changed (\begin{DoxyParamCaption}\item[{object}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changeds the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_i_changed_a7d4904db56316c1cc3aa98b112dd4ca8}{I\+Changed}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_index_a55f528c0402412e4a0223895b89d559f}\label{class_index_a55f528c0402412e4a0223895b89d559f}} 
+\index{Index@{Index}!this\mbox{[}\+T\+K index\mbox{]}@{this[T\+K index]}}
+\index{this\mbox{[}\+T\+K index\mbox{]}@{this[T\+K index]}!Index@{Index}}
+\subsubsection{\texorpdfstring{this[T\+K index]}{this[TK index]}}
+{\footnotesize\ttfamily override TR \hyperlink{class_index}{Index}$<$ TK, TR $>$.this\mbox{[}TK index\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the TR at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TR.
+\end{DoxyReturn}
+
+
+\subsection{Event Documentation}
 \mbox{\Hypertarget{class_index_a7b5c195702db7df525a4ae4dd9f17d36}\label{class_index_a7b5c195702db7df525a4ae4dd9f17d36}} 
-Action$<$ TK, TR $>$ {\bfseries Getting} = delegate \{ \}
-\end{DoxyCompactItemize}
+\index{Index@{Index}!Getting@{Getting}}
+\index{Getting@{Getting}!Index@{Index}}
+\subsubsection{\texorpdfstring{Getting}{Getting}}
+{\footnotesize\ttfamily Action$<$TK, TR$>$ \hyperlink{class_index}{Index}$<$ TK, TR $>$.Getting = delegate \{ \}}
+
+
+
+Occurs when \mbox{[}getting\mbox{]}. 
+
+\mbox{\Hypertarget{class_index_aa53b2a997b85088499bc11af6ca6ddfc}\label{class_index_aa53b2a997b85088499bc11af6ca6ddfc}} 
+\index{Index@{Index}!Setting@{Setting}}
+\index{Setting@{Setting}!Index@{Index}}
+\subsubsection{\texorpdfstring{Setting}{Setting}}
+{\footnotesize\ttfamily Action$<$TK, TR, TR$>$ \hyperlink{class_index}{Index}$<$ TK, TR $>$.Setting = delegate \{ \}}
+
+
+
+Occurs when \mbox{[}setting\mbox{]}. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

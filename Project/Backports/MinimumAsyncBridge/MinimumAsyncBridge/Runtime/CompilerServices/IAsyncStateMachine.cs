@@ -3,7 +3,6 @@
 using System.Runtime.CompilerServices;
 
 [assembly: TypeForwardedTo(typeof(IAsyncStateMachine))]
-
 #else
 
 namespace System.Runtime.CompilerServices

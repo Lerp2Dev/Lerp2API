@@ -1,31 +1,63 @@
 using UnityEngine;
 using Lerp2API;
+using Lerp2API.Hepers.Serializer_Helpers;
+
+/// <summary>
+/// Class StoreMesh.
+/// </summary>
 public class StoreMesh : MonoBehaviour
 {
+    /// <summary>
+    /// The vertices
+    /// </summary>
     [HideInInspector]
     public Vector3[] vertices;
 
+    /// <summary>
+    /// The normals
+    /// </summary>
     [HideInInspector]
     public Vector3[] normals;
 
+    /// <summary>
+    /// The uv
+    /// </summary>
     [HideInInspector]
     public Vector2[] uv;
 
+    /// <summary>
+    /// The uv1
+    /// </summary>
     [HideInInspector]
     public Vector2[] uv1;
 
+    /// <summary>
+    /// The uv2
+    /// </summary>
     [HideInInspector]
     public Vector2[] uv2;
 
+    /// <summary>
+    /// The colors
+    /// </summary>
     [HideInInspector]
     public Color[] colors;
 
+    /// <summary>
+    /// The triangles
+    /// </summary>
     [HideInInspector]
     public int[][] triangles;
 
+    /// <summary>
+    /// The tangents
+    /// </summary>
     [HideInInspector]
     public Vector4[] tangents;
 
+    /// <summary>
+    /// The sub mesh count
+    /// </summary>
     [HideInInspector]
     public int subMeshCount;
 

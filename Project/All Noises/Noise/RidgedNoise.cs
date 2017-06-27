@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class RidgedNoise.
+/// </summary>
 public class RidgedNoise : NoiseModule
 {
+    /// <summary>
+    /// Fractals the noise2 d.
+    /// </summary>
+    /// <param name="x">The x.</param>
+    /// <param name="y">The y.</param>
+    /// <param name="octNum">The oct number.</param>
+    /// <param name="frq">The FRQ.</param>
+    /// <param name="amp">The amp.</param>
+    /// <returns>System.Single.</returns>
     public override float FractalNoise2D(float x, float y, int octNum, float frq, float amp)
     {
         float gain = 1.0f;
@@ -28,6 +40,10 @@ public class RidgedNoise : NoiseModule
         return ((value * 1.25f) - 1.0f) * amp;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RidgedNoise"/> class.
+    /// </summary>
+    /// <param name="seed">The seed.</param>
     public RidgedNoise(int seed) : base(seed)
     {
         UpdateWeights();

@@ -9,6 +9,9 @@ using System.Reflection;
 
 namespace FullSerializer
 {
+    /// <summary>
+    /// Class fsSerializer.
+    /// </summary>
     public class fsSerializer
     {
         #region Keys
@@ -235,6 +238,11 @@ namespace FullSerializer
             private Dictionary<int, fsData> _pendingDefinitions = new Dictionary<int, fsData>();
             private HashSet<int> _references = new HashSet<int>();
 
+            /// <summary>
+            /// Writes the definition.
+            /// </summary>
+            /// <param name="id">The identifier.</param>
+            /// <param name="data">The data.</param>
             public void WriteDefinition(int id, fsData data)
             {
                 if (_references.Contains(id))
@@ -247,6 +255,11 @@ namespace FullSerializer
                 }
             }
 
+            /// <summary>
+            /// Writes the reference.
+            /// </summary>
+            /// <param name="id">The identifier.</param>
+            /// <param name="dict">The dictionary.</param>
             public void WriteReference(int id, Dictionary<string, fsData> dict)
             {
                 // Write the actual definition if necessary
@@ -265,6 +278,9 @@ namespace FullSerializer
                 dict[Key_ObjectReference] = new fsData(id.ToString());
             }
 
+            /// <summary>
+            /// Clears this instance.
+            /// </summary>
             public void Clear()
             {
                 _pendingDefinitions.Clear();
@@ -314,6 +330,9 @@ namespace FullSerializer
 
         private readonly fsLazyCycleDefinitionWriter _lazyReferenceWriter;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="fsSerializer"/> class.
+        /// </summary>
         public fsSerializer()
         {
             _cachedConverterTypeInstances = new Dictionary<Type, fsBaseConverter>();

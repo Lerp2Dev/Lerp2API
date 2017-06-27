@@ -5,13 +5,9 @@ using System.Linq;
 using Lerp2API;
 using ICSharpCode.SharpZipLib.Zip;
 using Lerp2API.Communication.Sockets;
-using System.Net.Sockets;
-using System.Net;
-using System.Text;
 using Lerp2API.SafeECalls;
 using System.Runtime.InteropServices;
-//using ClientServerUsingNamedPipes.Server;
-//using ClientServerUsingNamedPipes.Interfaces;
+using Lerp2API.Hepers.Debug_Utils;
 
 namespace Lerp2Console
 {

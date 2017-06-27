@@ -116,58 +116,6 @@ namespace ICSharpCode.SharpZipLib.Zip
 	
 	#region Test Definitions
 	/// <summary>
-	/// The strategy to apply to testing.
-	/// </summary>
-	public enum TestStrategy
-	{
-		/// <summary>
-		/// Find the first error only.
-		/// </summary>
-		FindFirstError,
-		/// <summary>
-		/// Find all possible errors.
-		/// </summary>
-		FindAllErrors,
-	}
-
-	/// <summary>
-	/// The operation in progress reported by a <see cref="ZipTestResultHandler"/> during testing.
-	/// </summary>
-	/// <seealso cref="ZipFile.TestArchive(bool)">TestArchive</seealso>
-	public enum TestOperation
-	{
-		/// <summary>
-		/// Setting up testing.
-		/// </summary>
-		Initialising,
-		
-		/// <summary>
-		/// Testing an individual entries header
-		/// </summary>
-		EntryHeader,
-		
-		/// <summary>
-		/// Testing an individual entries data
-		/// </summary>
-		EntryData,
-		
-		/// <summary>
-		/// Testing an individual entry has completed.
-		/// </summary>
-		EntryComplete,
-		
-		/// <summary>
-		/// Running miscellaneous tests
-		/// </summary>
-		MiscellaneousTests,
-		
-		/// <summary>
-		/// Testing is complete
-		/// </summary>
-		Complete,
-	}
-
-	/// <summary>
 	/// Status returned returned by <see cref="ZipTestResultHandler"/> during testing.
 	/// </summary>
 	/// <seealso cref="ZipFile.TestArchive(bool)">TestArchive</seealso>
@@ -276,23 +224,6 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// <remarks>If the message is non-null an error has occured.  If the message is null
 	/// the operation as found in <see cref="TestStatus">status</see> has started.</remarks>
 	public delegate void ZipTestResultHandler(TestStatus status, string message);
-	#endregion
-	
-	#region Update Definitions
-	/// <summary>
-	/// The possible ways of <see cref="ZipFile.CommitUpdate()">applying updates</see> to an archive.
-	/// </summary>
-	public enum FileUpdateMode
-	{
-		/// <summary>
-		/// Perform all updates on temporary files ensuring that the original file is saved.
-		/// </summary>
-		Safe,
-		/// <summary>
-		/// Update the archive directly, which is faster but less safe.
-		/// </summary>
-		Direct,
-	}
 	#endregion
 	
 	#region ZipFile Class

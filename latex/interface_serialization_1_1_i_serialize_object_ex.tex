@@ -1,5 +1,10 @@
 \hypertarget{interface_serialization_1_1_i_serialize_object_ex}{}\section{Serialization.\+I\+Serialize\+Object\+Ex Interface Reference}
 \label{interface_serialization_1_1_i_serialize_object_ex}\index{Serialization.\+I\+Serialize\+Object\+Ex@{Serialization.\+I\+Serialize\+Object\+Ex}}
+
+
+Interface \hyperlink{interface_serialization_1_1_i_serialize_object_ex}{I\+Serialize\+Object\+Ex}  
+
+
 Inheritance diagram for Serialization.\+I\+Serialize\+Object\+Ex\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,9 +14,45 @@ Inheritance diagram for Serialization.\+I\+Serialize\+Object\+Ex\+:\begin{figure
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \hyperlink{interface_serialization_1_1_i_serialize_object_ex_a5a13bf50bde25dc6b1f593da8cb5eb06}{Can\+Serialize} (Type target\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance can serialize the specified target type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface \hyperlink{interface_serialization_1_1_i_serialize_object_ex}{I\+Serialize\+Object\+Ex} 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{interface_serialization_1_1_i_serialize_object}{Serialization.\+I\+Serialize\+Object}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{interface_serialization_1_1_i_serialize_object_ex_a5a13bf50bde25dc6b1f593da8cb5eb06}\label{interface_serialization_1_1_i_serialize_object_ex_a5a13bf50bde25dc6b1f593da8cb5eb06}} 
-bool {\bfseries Can\+Serialize} (Type target\+Type, object instance)
-\end{DoxyCompactItemize}
+\index{Serialization\+::\+I\+Serialize\+Object\+Ex@{Serialization\+::\+I\+Serialize\+Object\+Ex}!Can\+Serialize@{Can\+Serialize}}
+\index{Can\+Serialize@{Can\+Serialize}!Serialization\+::\+I\+Serialize\+Object\+Ex@{Serialization\+::\+I\+Serialize\+Object\+Ex}}
+\subsubsection{\texorpdfstring{Can\+Serialize()}{CanSerialize()}}
+{\footnotesize\ttfamily bool Serialization.\+I\+Serialize\+Object\+Ex.\+Can\+Serialize (\begin{DoxyParamCaption}\item[{Type}]{target\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})}
+
+
+
+Determines whether this instance can serialize the specified target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Type} & Type of the target.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance can serialize the specified target type; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_serializer_extension_base_af730b106e15a036d8099ebf63d6df543}{Serializer\+Extension\+Base$<$ T $>$}.
+
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

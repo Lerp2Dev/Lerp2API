@@ -6,9 +6,14 @@ using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestCore.
+    /// </summary>
     public class UnitTestCore
     {
-        
+        /// <summary>
+        /// Tests the completed task.
+        /// </summary>
         public void TestCompletedTask()
         {
             AwaitCompletedTaskShouldBeExecutedSynchronously().Wait();
@@ -44,7 +49,9 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
-        
+        /// <summary>
+        /// Tests from exception.
+        /// </summary>
         public void TestFromException()
         {
             AwaitOnTaskFromExceptionShouldThrow().Wait();
@@ -65,7 +72,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.raiseExceptions = true;
         }
 
-        
+        /// <summary>
+        /// Tests the cancellation token source.
+        /// </summary>
         public void TestCancellationTokenSource()
         {
             CancellationTokenSource_CancelShouldWorkIfFirstTime();
@@ -81,8 +90,15 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.IsTrue(cancelCount == 1);
         }
 
-        
+        /// <summary>
+        /// Tests the cancellation token source with timeout.
+        /// </summary>
         public void TestCancellationTokenSourceWithTimeout() => TestCancellationTokenSourceWithTimeoutAsync().Wait();
+
+        /// <summary>
+        /// test cancellation token source with timeout as an asynchronous operation.
+        /// </summary>
+        /// <returns>Task.</returns>
         public async Task TestCancellationTokenSourceWithTimeoutAsync()
         {
             var cts = new CancellationTokenSource(1000);
@@ -97,7 +113,9 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.IsTrue(ct.IsCancellationRequested);
         }
 
-        
+        /// <summary>
+        /// Tests the continue with.
+        /// </summary>
         public void TestContinueWith()
         {
             ContinueWithShouldHasExceptionIfContinuationActionGetException().Wait();

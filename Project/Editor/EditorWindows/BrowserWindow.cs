@@ -6,6 +6,10 @@ using Lerp2API.Utility;
 
 namespace Lerp2APIEditor.EditorWindows
 {
+    /// <summary>
+    /// Class BrowserWindow.
+    /// </summary>
+    /// <seealso cref="UnityEditor.EditorWindow" />
     public class BrowserWindow : EditorWindow
     {
         internal GUISkin skin;
@@ -19,10 +23,25 @@ namespace Lerp2APIEditor.EditorWindows
                         m_fileName = "",
                         m_ext;
 
-        public string name;
-        public int width = 600, 
+        /// <summary>
+        /// The name
+        /// </summary>
+        public new string name;
+        /// <summary>
+        /// The width
+        /// </summary>
+        public int width = 600,
+                   /// <summary>
+                   /// The height
+                   /// </summary>
                    height = 200;
+        /// <summary>
+        /// The FBT
+        /// </summary>
         public FileBrowserType fbt;
+        /// <summary>
+        /// The cb
+        /// </summary>
         public Action<string> cb;
 
         //public BrowserWindow(FileBrowserType fbt, string name, Action<string> cb) : this(fbt, name, 600, 40, cb) { }
@@ -34,6 +53,9 @@ namespace Lerp2APIEditor.EditorWindows
             m_fileImage = Resources.Load<Texture2D>("Textures/file");*/
         //} //Working on the textures... Maybe resources could save my ass?
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         public void Init()
         {
             m_fileBrowser = new FileBrowserEditor(this, fbt, name, cb);
@@ -58,6 +80,9 @@ namespace Lerp2APIEditor.EditorWindows
                 OnGUIMain();
         }
 
+        /// <summary>
+        /// Called when [GUI main].
+        /// </summary>
         protected virtual void OnGUIMain()
         {
             GUILayout.BeginHorizontal();

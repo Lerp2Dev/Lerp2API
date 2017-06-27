@@ -10,17 +10,36 @@ namespace FullSerializer.Internal
     /// </summary>
     public class fsIEnumerableConverter : fsConverter
     {
+        /// <summary>
+        /// Can this converter serialize and deserialize the given object type?
+        /// </summary>
+        /// <param name="type">The given object type.</param>
+        /// <returns>True if the converter can serialize it, false otherwise.</returns>
         public override bool CanProcess(Type type)
         {
             if (typeof(IEnumerable).IsAssignableFrom(type) == false) return false;
             return GetAddMethod(type) != null;
         }
 
+        /// <summary>
+        /// Construct an object instance that will be passed to TryDeserialize. This should **not**
+        /// deserialize the object.
+        /// </summary>
+        /// <param name="data">The data the object was serialized with.</param>
+        /// <param name="storageType">The field/property type that is storing the instance.</param>
+        /// <returns>An object instance</returns>
         public override object CreateInstance(fsData data, Type storageType)
         {
             return fsMetaType.Get(Serializer.Config, storageType).CreateInstance();
         }
 
+        /// <summary>
+        /// Tries the serialize.
+        /// </summary>
+        /// <param name="instance_">The instance.</param>
+        /// <param name="serialized">The serialized.</param>
+        /// <param name="storageType">Type of the storage.</param>
+        /// <returns>fsResult.</returns>
         public override fsResult TrySerialize(object instance_, out fsData serialized, Type storageType)
         {
             var instance = (IEnumerable)instance_;
@@ -59,6 +78,13 @@ namespace FullSerializer.Internal
                    type.Resolve().GetGenericTypeDefinition() == typeof(Stack<>);
         }
 
+        /// <summary>
+        /// Tries the deserialize.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="instance_">The instance.</param>
+        /// <param name="storageType">Type of the storage.</param>
+        /// <returns>fsResult.</returns>
         public override fsResult TryDeserialize(fsData data, ref object instance_, Type storageType)
         {
             var instance = (IEnumerable)instance_;

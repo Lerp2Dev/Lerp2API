@@ -1,5 +1,10 @@
 \hypertarget{class_full_serializer_1_1_internal_1_1fs_forward_converter}{}\section{Full\+Serializer.\+Internal.\+fs\+Forward\+Converter Class Reference}
 \label{class_full_serializer_1_1_internal_1_1fs_forward_converter}\index{Full\+Serializer.\+Internal.\+fs\+Forward\+Converter@{Full\+Serializer.\+Internal.\+fs\+Forward\+Converter}}
+
+
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter}{fs\+Forward\+Converter}.  
+
+
 Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Forward\+Converter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,9 +14,8 @@ Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Forward\+Converter\+:\
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_forward_converter_a485561a31edc65a3f1c6972af8b677e3}\label{class_full_serializer_1_1_internal_1_1fs_forward_converter_a485561a31edc65a3f1c6972af8b677e3}} 
-{\bfseries fs\+Forward\+Converter} (\hyperlink{class_full_serializer_1_1fs_forward_attribute}{fs\+Forward\+Attribute} attribute)
-\item 
+\hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter_a485561a31edc65a3f1c6972af8b677e3}{fs\+Forward\+Converter} (\hyperlink{class_full_serializer_1_1fs_forward_attribute}{fs\+Forward\+Attribute} attribute)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter}{fs\+Forward\+Converter} class. \end{DoxyCompactList}\item 
 override bool \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter_a252f2f0a0391e2099be798b1749a2582}{Can\+Process} (Type type)
 \begin{DoxyCompactList}\small\item\em Can this converter serialize and deserialize the given object type? \end{DoxyCompactList}\item 
 override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter_a71b51a115cf749f1a3232fb1498f2d6f}{Try\+Serialize} (object instance, out \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} serialized, Type storage\+Type)
@@ -21,6 +25,34 @@ override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{
 override object \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter_ac060a50ae6f3241ea0f9465e1d261d12}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
 \begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter}{fs\+Forward\+Converter}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_full_serializer_1_1fs_converter}{Full\+Serializer.\+fs\+Converter}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1fs_forward_converter_a485561a31edc65a3f1c6972af8b677e3}\label{class_full_serializer_1_1_internal_1_1fs_forward_converter_a485561a31edc65a3f1c6972af8b677e3}} 
+\index{Full\+Serializer\+::\+Internal\+::fs\+Forward\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Forward\+Converter}!fs\+Forward\+Converter@{fs\+Forward\+Converter}}
+\index{fs\+Forward\+Converter@{fs\+Forward\+Converter}!Full\+Serializer\+::\+Internal\+::fs\+Forward\+Converter@{Full\+Serializer\+::\+Internal\+::fs\+Forward\+Converter}}
+\subsubsection{\texorpdfstring{fs\+Forward\+Converter()}{fsForwardConverter()}}
+{\footnotesize\ttfamily Full\+Serializer.\+Internal.\+fs\+Forward\+Converter.\+fs\+Forward\+Converter (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_forward_attribute}{fs\+Forward\+Attribute}}]{attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \hyperlink{class_full_serializer_1_1_internal_1_1fs_forward_converter}{fs\+Forward\+Converter} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute} & The attribute.\\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -42,6 +74,11 @@ Can this converter serialize and deserialize the given object type?
 \begin{DoxyReturn}{Returns}
 True if the converter can serialize it, false otherwise.
 \end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Supported\+Exception} & Please use the \mbox{[}fs\+Forward(...)\mbox{]} attribute.\\
+\hline
+\end{DoxyExceptions}
 
 
 Implements \hyperlink{class_full_serializer_1_1fs_converter_a6d9e084c5e7f646a8d220705efaecb35}{Full\+Serializer.\+fs\+Converter}.

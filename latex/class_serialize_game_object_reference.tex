@@ -14,17 +14,60 @@ Inheritance diagram for Serialize\+Game\+Object\+Reference\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_serialize_game_object_reference_a787a0671d47d542cd3df6f40c486d321}\label{class_serialize_game_object_reference_a787a0671d47d542cd3df6f40c486d321}} 
-override I\+Enumerable$<$ object $>$ {\bfseries Save} (Game\+Object target)
-\item 
-\mbox{\Hypertarget{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}\label{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}} 
-override object {\bfseries Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
-\end{DoxyCompactItemize}
+override I\+Enumerable$<$ object $>$ \hyperlink{class_serialize_game_object_reference_a787a0671d47d542cd3df6f40c486d321}{Save} (Game\+Object target)
+\begin{DoxyCompactList}\small\item\em Saves the specified target. \end{DoxyCompactList}\item 
+override object \hyperlink{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}{Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
+\begin{DoxyCompactList}\small\item\em Loads the specified data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Store a reference to a game object, first checking whether it is really another game object and not a prefab 
 
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}\label{class_serialize_game_object_reference_a10255a41c68c84a3cc2495fb58fbc235}} 
+\index{Serialize\+Game\+Object\+Reference@{Serialize\+Game\+Object\+Reference}!Load@{Load}}
+\index{Load@{Load}!Serialize\+Game\+Object\+Reference@{Serialize\+Game\+Object\+Reference}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily override object Serialize\+Game\+Object\+Reference.\+Load (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads the specified data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}{Serializer\+Extension\+Base$<$ Game\+Object $>$}.
+
+\mbox{\Hypertarget{class_serialize_game_object_reference_a787a0671d47d542cd3df6f40c486d321}\label{class_serialize_game_object_reference_a787a0671d47d542cd3df6f40c486d321}} 
+\index{Serialize\+Game\+Object\+Reference@{Serialize\+Game\+Object\+Reference}!Save@{Save}}
+\index{Save@{Save}!Serialize\+Game\+Object\+Reference@{Serialize\+Game\+Object\+Reference}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily override I\+Enumerable$<$object$>$ Serialize\+Game\+Object\+Reference.\+Save (\begin{DoxyParamCaption}\item[{Game\+Object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Saves the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerable$<$System.\+Object$>$.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

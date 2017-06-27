@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,17 +23,11 @@
 // The SharedMemory library is inspired by the following Code Project article:
 //   "Fast IPC Communication Using Shared Memory and InterlockedCompareExchange"
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
 using Microsoft.Win32.SafeHandles;
-using System.Security.Permissions;
-using System.Runtime;
 using SharedMemory;
 using System.Runtime.InteropServices;
-using System.Threading;
+using System.Security;
+using System.Security.Permissions;
 
 namespace System.IO.MemoryMappedFiles
 {
@@ -44,9 +38,9 @@ namespace System.IO.MemoryMappedFiles
     /// <para>Only those methods and features necessary for the SharedMemory library have been implemented.</para>
     /// </summary>
     [PermissionSet(SecurityAction.LinkDemand)]
-    public sealed class MemoryMappedFile: IDisposable
+    public sealed class MemoryMappedFile : IDisposable
     {
-        SafeMemoryMappedFileHandle _handle;
+        private SafeMemoryMappedFileHandle _handle;
 
         /// <summary>
         /// Gets the file handle of a memory-mapped file.
@@ -55,7 +49,7 @@ namespace System.IO.MemoryMappedFiles
         public SafeMemoryMappedFileHandle SafeMemoryMappedFileHandle
         {
             [SecurityCritical]
-            [SecurityPermission(SecurityAction.Demand, Flags=SecurityPermissionFlag.UnmanagedCode)]
+            [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
             get
             {
                 return this._handle;
@@ -68,7 +62,7 @@ namespace System.IO.MemoryMappedFiles
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~MemoryMappedFile()
         {
@@ -87,7 +81,7 @@ namespace System.IO.MemoryMappedFiles
                 throw new ArgumentException("mapName cannot be null or empty.");
             if (capacity <= 0)
                 throw new ArgumentOutOfRangeException("capacity", "Value must be larger than 0.");
-            if (IntPtr.Size == 4 && capacity > ((1024*1024*1024) * (long)4))
+            if (IntPtr.Size == 4 && capacity > ((1024 * 1024 * 1024) * (long)4))
                 throw new ArgumentOutOfRangeException("capacity", "The capacity cannot be greater than the size of the system's logical address space.");
             return new MemoryMappedFile(DoCreate(mapName, capacity));
         }
@@ -146,7 +140,7 @@ namespace System.IO.MemoryMappedFiles
             GC.SuppressFinalize(this);
         }
 
-        void Dispose(bool disposeManagedResources)
+        private void Dispose(bool disposeManagedResources)
         {
             if (this._handle != null && !this._handle.IsClosed)
             {

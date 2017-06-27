@@ -143,30 +143,8 @@ namespace ICSharpCode.SharpZipLib.Zip
 	/// <summary>
 	/// Class representing extended unix date time values.
 	/// </summary>
-	public class ExtendedUnixData : ITaggedData
-	{
-		/// <summary>
-		/// Flags indicate which values are included in this instance.
-		/// </summary>
-		[Flags]
-		public enum Flags : byte
-		{
-			/// <summary>
-			/// The modification time is included
-			/// </summary>
-			ModificationTime = 0x01,
-			
-			/// <summary>
-			/// The access time is included
-			/// </summary>
-			AccessTime = 0x02,
-			
-			/// <summary>
-			/// The create time is included.
-			/// </summary>
-			CreateTime = 0x04,
-		}
-		
+	public partial class ExtendedUnixData : ITaggedData
+	{		
 		#region ITaggedData Members
 
 		/// <summary>

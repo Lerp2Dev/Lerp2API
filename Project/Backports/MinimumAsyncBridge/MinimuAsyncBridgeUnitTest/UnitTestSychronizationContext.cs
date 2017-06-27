@@ -1,21 +1,31 @@
 ﻿using System;
+using System.Linq;
+using System.Threading;
+
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Linq;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestSychronizationContext.
+    /// </summary>
     public class UnitTestSychronizationContext
     {
-        SingleThreadSynchronizationContext _context;
+        private SingleThreadSynchronizationContext _context;
 
+        /// <summary>
+        /// Tests the initialize.
+        /// </summary>
         public void TestInitialize()
         {
             _context = new SingleThreadSynchronizationContext();
         }
 
+        /// <summary>
+        /// Tests the celean.
+        /// </summary>
         public void TestCelean()
         {
             _context.Stop();
@@ -28,7 +38,7 @@ namespace MinimuAsyncBridgeUnitTest
             {
                 if (result.IsFaulted) tcs.SetException(result.Exception);
                 else if (result.IsCanceled) tcs.SetCanceled();
-                else  tcs.TrySetResult(null);
+                else tcs.TrySetResult(null);
             }), test);
 
             tcs.Task.Wait();
@@ -51,9 +61,12 @@ namespace MinimuAsyncBridgeUnitTest
         private static Task RandomDelay(Random r) => Task.Delay(r.Next(1, 5));
 
         private static readonly Random _defaultRandom = new Random();
+
         private static Task RandomDelay() => RandomDelay(_defaultRandom);
 
-        
+        /// <summary>
+        /// Awaits the operator should preserve synchronization context.
+        /// </summary>
         public void AwaitOperatorShouldPreserveSynchronizationContext()
         {
             StartOnSingleThreadContext(RunRandomTasksAsync);
@@ -80,7 +93,10 @@ namespace MinimuAsyncBridgeUnitTest
             await RandomDelay(r).ConfigureAwait(false);
             ContextShouldBeLost();
         }
-        
+
+        /// <summary>
+        /// Contexts the should be preserved over lost method.
+        /// </summary>
         public void ContextShouldBePreservedOverLostMethod()
         {
             StartOnSingleThreadContext(ContextShouldBePreservedOverLostMethodAsync);
@@ -115,7 +131,9 @@ namespace MinimuAsyncBridgeUnitTest
             ContextShouldBeLost();
         }
 
-        
+        /// <summary>
+        /// Contexts the should not be changed after completed task.
+        /// </summary>
         public void ContextShouldNotBeChangedAfterCompletedTask()
         {
             StartOnSingleThreadContext(ContextShouldNotBeChangedAfterCompletedTaskAsync);
@@ -131,8 +149,10 @@ namespace MinimuAsyncBridgeUnitTest
             await Task.CompletedTask.ConfigureAwait(true);
             ContextShouldBeSingleThread();
         }
-        
-        
+
+        /// <summary>
+        /// Awaits the operator should work on exception.
+        /// </summary>
         public void AwaitOperatorShouldWorkOnException()
         {
             StartOnSingleThreadContext(AwaitOperatorShouldWorkOnExceptionAsync);

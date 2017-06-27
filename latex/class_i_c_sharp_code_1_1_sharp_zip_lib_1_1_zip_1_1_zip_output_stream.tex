@@ -61,11 +61,11 @@ This sample shows how to create a zip file
 \{
     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)
     \{
-        \textcolor{keywordtype}{string}[] filenames = Directory.GetFiles(args[0]);
+        \textcolor{keywordtype}{string}[] filenames = \hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1ae73cda510e8bb947f7e61089e5581494}{Directory}.GetFiles(args[0]);
         byte[] buffer = \textcolor{keyword}{new} byte[4096];
 
-        \textcolor{keyword}{using} ( \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream} s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream}(File.Create(args[1]))
-       ) \{
+        \textcolor{keyword}{using} ( \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream} s = \textcolor{keyword}{new} \hyperlink{class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_zip_output_stream_a19fba03baf9f8523b17358da692fe8a6}{ZipOutputStream}(
+      \hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.Create(args[1])) ) \{
 @verbatim
 s.SetLevel(9); \textcolor{comment}{// 0 - store only to 9 - means best compression}
 
@@ -73,7 +73,7 @@ s.SetLevel(9); \textcolor{comment}{// 0 - store only to 9 - means best compressi
     ZipEntry entry = \textcolor{keyword}{new} ZipEntry(file);
     s.PutNextEntry(entry);
 
-    \textcolor{keyword}{using} (FileStream fs = File.OpenRead(file)) \{
+    \textcolor{keyword}{using} (FileStream fs = \hyperlink{namespace_lerp2_a_p_i_1_1_utility_af5d628470963cc0f18c37055b4170bf1a0b27918290ff5323bea1e3b78a9cf04e}{File}.OpenRead(file)) \{
         StreamUtils.Copy(fs, s, buffer);
     \}
 \}

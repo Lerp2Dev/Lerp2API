@@ -69,6 +69,9 @@ $(function() {
 <div class="title">FullSerializer.Internal.fsSerializationCallbackProcessor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class <a class="el" href="class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor.html" title="Class fsSerializationCallbackProcessor. ">fsSerializationCallbackProcessor</a>.  
+ <a href="class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for FullSerializer.Internal.fsSerializationCallbackProcessor:</div>
 <div class="dyncontent">
@@ -101,7 +104,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af1d75938389278b6ceffdc17dd7e6424 inherit pub_methods_class_full_serializer_1_1fs_object_processor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before deserialization.  <a href="class_full_serializer_1_1fs_object_processor.html#af1d75938389278b6ceffdc17dd7e6424">More...</a><br /></td></tr>
 <tr class="separator:af1d75938389278b6ceffdc17dd7e6424 inherit pub_methods_class_full_serializer_1_1fs_object_processor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class <a class="el" href="class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor.html" title="Class fsSerializationCallbackProcessor. ">fsSerializationCallbackProcessor</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_full_serializer_1_1fs_object_processor.html">FullSerializer.fsObjectProcessor</a></dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a78a0e22235867c360c341f0772d506a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78a0e22235867c360c341f0772d506a1">&#9670;&nbsp;</a></span>CanProcess()</h2>
 
@@ -281,7 +287,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called before deserialization has begun but <em>after</em> the object instance has been created. This will get invoked even if the user passed in an existing instance. </p>
-<p><b>IMPORTANT</b>: The actual instance that gets passed here is <em>not</em> guaranteed to be an a subtype of storageType, since the value for instance is whatever the active converter returned for CreateInstance() - ie, some converters will return dummy types in CreateInstance() if instance creation cannot be separated from deserialization (ie, KeyValuePair). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">storageType</td><td>The field/property type that is storing the instance.</td></tr>
@@ -290,6 +295,13 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidCastException</td><td>Please ensure the converter for " + storageType + " actually returns an instance of it, not an instance of " + instance.GetType()</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>**IMPORTANT**: The actual instance that gets passed here is <em>not</em> guaranteed to be an a subtype of storageType, since the value for instance is whatever the active converter returned for CreateInstance() - ie, some converters will return dummy types in CreateInstance() if instance creation cannot be separated from deserialization (ie, KeyValuePair).</p>
 
 <p>Reimplemented from <a class="el" href="class_full_serializer_1_1fs_object_processor.html#a99e0c1a7d896539470bbe7f43565a5a3">FullSerializer.fsObjectProcessor</a>.</p>
 

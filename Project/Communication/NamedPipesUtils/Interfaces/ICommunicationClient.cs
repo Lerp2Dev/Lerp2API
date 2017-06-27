@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
-using ClientServerUsingNamedPipes.Utilities;
+﻿using ClientServerUsingNamedPipes.Utilities;
+using System.Threading.Tasks;
 
 namespace ClientServerUsingNamedPipes.Interfaces
 {
+    /// <summary>
+    /// Interface ICommunicationClient
+    /// </summary>
+    /// <seealso cref="ClientServerUsingNamedPipes.Interfaces.ICommunication" />
     public interface ICommunicationClient : ICommunication
     {
         /// <summary>

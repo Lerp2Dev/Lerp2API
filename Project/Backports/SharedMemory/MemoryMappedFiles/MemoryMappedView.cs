@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,16 +25,13 @@
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
 using Microsoft.Win32.SafeHandles;
 using SharedMemory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using System.Text;
 
 namespace System.IO.MemoryMappedFiles
 {
 #if !NET40Plus
+
     /// <summary>
     /// <para>Very limited .NET 3.5 implementation of a managed wrapper around memory-mapped files to reflect the .NET 4 API.</para>
     /// <para>Only those methods and features necessary for the SharedMemory library have been implemented.</para>
@@ -42,24 +39,24 @@ namespace System.IO.MemoryMappedFiles
     [PermissionSet(SecurityAction.LinkDemand)]
     public sealed class MemoryMappedView : IDisposable
     {
-        SafeMemoryMappedViewHandle _handle;
-        
+        private SafeMemoryMappedViewHandle _handle;
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SafeMemoryMappedViewHandle SafeMemoryMappedViewHandle
         {
             get { return this._handle; }
         }
 
-        long _size;
-        long _offset;
+        private long _size;
+        private long _offset;
 
         /// <summary>
         /// The size of the view (from offset to end)
         /// </summary>
         public long Size { get { return _size; } }
-        
+
         /// <summary>
         /// The start of the view (the handle itself will be aligned based on the allocation granularity)
         /// http://msdn.microsoft.com/en-us/library/windows/desktop/aa366548(v=vs.85).aspx
@@ -74,7 +71,7 @@ namespace System.IO.MemoryMappedFiles
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ~MemoryMappedView()
         {
@@ -90,7 +87,7 @@ namespace System.IO.MemoryMappedFiles
             GC.SuppressFinalize(this);
         }
 
-        void Dispose(bool disposeManagedResources)
+        private void Dispose(bool disposeManagedResources)
         {
             if (this._handle != null && !this._handle.IsClosed)
                 this._handle.Dispose();
@@ -126,5 +123,6 @@ namespace System.IO.MemoryMappedFiles
             return new MemoryMappedView(safeHandle, viewDelta, size);
         }
     }
+
 #endif
 }

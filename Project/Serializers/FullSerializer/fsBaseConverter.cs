@@ -78,6 +78,12 @@ namespace FullSerializer
         /// <returns>True if serialization was successful, false otherwise.</returns>
         public abstract fsResult TryDeserialize(fsData data, ref object instance, Type storageType);
 
+        /// <summary>
+        /// Fails the expected type.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="types">The types.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult FailExpectedType(fsData data, params fsDataType[] types)
         {
             return fsResult.Fail(GetType().Name + " expected one of " +
@@ -85,6 +91,12 @@ namespace FullSerializer
                 " but got " + data.Type + " in " + data);
         }
 
+        /// <summary>
+        /// Checks the type.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult CheckType(fsData data, fsDataType type)
         {
             if (data.Type != type)
@@ -94,11 +106,25 @@ namespace FullSerializer
             return fsResult.Success;
         }
 
+        /// <summary>
+        /// Checks the key.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="subitem">The subitem.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult CheckKey(fsData data, string key, out fsData subitem)
         {
             return CheckKey(data.AsDictionary, key, out subitem);
         }
 
+        /// <summary>
+        /// Checks the key.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="key">The key.</param>
+        /// <param name="subitem">The subitem.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult CheckKey(Dictionary<string, fsData> data, string key, out fsData subitem)
         {
             if (data.TryGetValue(key, out subitem) == false)
@@ -108,6 +134,15 @@ namespace FullSerializer
             return fsResult.Success;
         }
 
+        /// <summary>
+        /// Serializes the member.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data">The data.</param>
+        /// <param name="overrideConverterType">Type of the override converter.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult SerializeMember<T>(Dictionary<string, fsData> data, Type overrideConverterType, string name, T value)
         {
             fsData memberData;
@@ -116,6 +151,15 @@ namespace FullSerializer
             return result;
         }
 
+        /// <summary>
+        /// Deserializes the member.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data">The data.</param>
+        /// <param name="overrideConverterType">Type of the override converter.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>fsResult.</returns>
         protected fsResult DeserializeMember<T>(Dictionary<string, fsData> data, Type overrideConverterType, string name, out T value)
         {
             fsData memberData;

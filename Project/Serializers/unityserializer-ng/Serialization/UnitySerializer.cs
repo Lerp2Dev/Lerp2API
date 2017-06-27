@@ -12,16 +12,23 @@ using System.Runtime.Serialization;
 using System.Text;
 using UnityEngine;
 using UnitySerializerNG;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 using Object = UnityEngine.Object;
 
 #endregion
 
+/// <summary>
+/// Class Timing.
+/// </summary>
 public class Timing : IDisposable
 {
     private readonly string _caption;
     private readonly DateTime _start;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Timing"/> class.
+    /// </summary>
+    /// <param name="caption">The caption.</param>
     public Timing(string caption)
     {
         _caption = caption;
@@ -30,6 +37,9 @@ public class Timing : IDisposable
 
     #region IDisposable Members
 
+    /// <summary>
+    /// Disposes this instance.
+    /// </summary>
     public void Dispose()
     {
         Debug.LogFormat("{0} - {1:0.000}", _caption, (DateTime.Now - _start).TotalSeconds.ToString());
@@ -38,6 +48,9 @@ public class Timing : IDisposable
     #endregion
 }
 
+/// <summary>
+/// Class SerializeAll.
+/// </summary>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
 public class SerializeAll : Attribute { }
 
@@ -69,13 +82,22 @@ public class DoNotSerialize : Attribute { }
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
 public class DoNotChecksum : Attribute { }
 
+/// <summary>
+/// Interface IDeserialized
+/// </summary>
 public interface IDeserialized
 {
+    /// <summary>
+    /// Deserializeds this instance.
+    /// </summary>
     void Deserialized();
 }
 
 namespace Serialization
 {
+    /// <summary>
+    /// Class SerializePrivateFieldOfType.
+    /// </summary>
     public class SerializePrivateFieldOfType
     {
         private static readonly Index<string, List<SerializePrivateFieldOfType>> privateFields =
@@ -83,12 +105,22 @@ namespace Serialization
 
         private readonly string _fieldName;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SerializePrivateFieldOfType"/> class.
+        /// </summary>
+        /// <param name="typeName">Name of the type.</param>
+        /// <param name="fieldName">Name of the field.</param>
         public SerializePrivateFieldOfType(string typeName, string fieldName)
         {
             _fieldName = fieldName;
             privateFields[typeName].Add(this);
         }
 
+        /// <summary>
+        /// Gets the fields.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
         public static IEnumerable<FieldInfo> GetFields(Type type)
         {
             var name = "";
@@ -131,8 +163,15 @@ namespace Serialization
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class CreatorFor : Attribute
     {
+        /// <summary>
+        /// The creates type
+        /// </summary>
         public readonly Type CreatesType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatorFor"/> class.
+        /// </summary>
+        /// <param name="createsType">Type of the creates.</param>
         public CreatorFor(Type createsType)
         {
             CreatesType = createsType;
@@ -145,92 +184,207 @@ namespace Serialization
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
     public class SerializationPriorityAttribute : Attribute
     {
+        /// <summary>
+        /// The priority
+        /// </summary>
         public readonly int Priority;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SerializationPriorityAttribute"/> class.
+        /// </summary>
+        /// <param name="priority">The priority.</param>
         public SerializationPriorityAttribute(int priority)
         {
             Priority = priority;
         }
     }
 
+    /// <summary>
+    /// Interface IProvideAttributeList
+    /// </summary>
     public interface IProvideAttributeList
     {
+        /// <summary>
+        /// Allows all simple.
+        /// </summary>
+        /// <param name="tp">The tp.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         bool AllowAllSimple(Type tp);
 
+        /// <summary>
+        /// Gets the attribute list.
+        /// </summary>
+        /// <param name="tp">The tp.</param>
+        /// <returns>IEnumerable&lt;System.String&gt;.</returns>
         IEnumerable<string> GetAttributeList(Type tp);
     }
 
+    /// <summary>
+    /// Class AttributeListProvider.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class AttributeListProvider : Attribute
     {
+        /// <summary>
+        /// The attribute list type
+        /// </summary>
         public readonly Type AttributeListType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttributeListProvider"/> class.
+        /// </summary>
+        /// <param name="attributeListType">Type of the attribute list.</param>
         public AttributeListProvider(Type attributeListType)
         {
             AttributeListType = attributeListType;
         }
     }
 
+    /// <summary>
+    /// Class DeferredAttribute.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class)]
     public class DeferredAttribute : Attribute { }
 
+    /// <summary>
+    /// Class Specialist.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class Specialist : Attribute
     {
+        /// <summary>
+        /// The type
+        /// </summary>
         public readonly Type Type;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Specialist"/> class.
+        /// </summary>
+        /// <param name="type">The type.</param>
         public Specialist(Type type)
         {
             Type = type;
         }
     }
 
+    /// <summary>
+    /// Class SpecialistProvider.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class)]
     public class SpecialistProvider : Attribute { }
 
+    /// <summary>
+    /// Interface ISerializeObjectEx
+    /// </summary>
+    /// <seealso cref="Serialization.ISerializeObject" />
     public interface ISerializeObjectEx : ISerializeObject
     {
+        /// <summary>
+        /// Determines whether this instance can serialize the specified target type.
+        /// </summary>
+        /// <param name="targetType">Type of the target.</param>
+        /// <param name="instance">The instance.</param>
+        /// <returns><c>true</c> if this instance can serialize the specified target type; otherwise, <c>false</c>.</returns>
         bool CanSerialize(Type targetType, object instance);
     }
 
+    /// <summary>
+    /// Interface ISpecialist
+    /// </summary>
     public interface ISpecialist
     {
+        /// <summary>
+        /// Serializes the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.Object.</returns>
         object Serialize(object value);
 
+        /// <summary>
+        /// Deserializes the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.Object.</returns>
         object Deserialize(object value);
     }
 
+    /// <summary>
+    /// Interface ISerializeObject
+    /// </summary>
     public interface ISerializeObject
     {
+        /// <summary>
+        /// Serializes the specified target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>System.Object[].</returns>
         object[] Serialize(object target);
 
+        /// <summary>
+        /// Deserializes the specified data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="instance">The instance.</param>
+        /// <returns>System.Object.</returns>
         object Deserialize(object[] data, object instance);
     }
 
+    /// <summary>
+    /// Interface ICreateObject
+    /// </summary>
     public interface ICreateObject
     {
+        /// <summary>
+        /// Creates the specified item type.
+        /// </summary>
+        /// <param name="itemType">Type of the item.</param>
+        /// <returns>System.Object.</returns>
         object Create(Type itemType);
     }
 
+    /// <summary>
+    /// Class SerializerAttribute.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class SerializerAttribute : Attribute
     {
         internal readonly Type SerializesType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SerializerAttribute"/> class.
+        /// </summary>
+        /// <param name="serializesType">Type of the serializes.</param>
         public SerializerAttribute(Type serializesType)
         {
             SerializesType = serializesType;
         }
     }
 
+    /// <summary>
+    /// Class OnlyInterfaces.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class OnlyInterfaces : Attribute { }
 
+    /// <summary>
+    /// Class SubTypeSerializerAttribute.
+    /// </summary>
+    /// <seealso cref="System.Attribute" />
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class SubTypeSerializerAttribute : Attribute
     {
         internal readonly Type SerializesType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SubTypeSerializerAttribute"/> class.
+        /// </summary>
+        /// <param name="serializesType">Type of the serializes.</param>
         public SubTypeSerializerAttribute(Type serializesType)
         {
             SerializesType = serializesType;
@@ -244,6 +398,9 @@ namespace Serialization
     //
     public static class UnitySerializer
     {
+        /// <summary>
+        /// The text encoding
+        /// </summary>
         public static Encoding TextEncoding = Encoding.Default;
 
         private static readonly string DataPath;
@@ -275,6 +432,9 @@ namespace Serialization
         private static Stack<KnownTypesStackEntry> _knownTypesStack;
         private static Stack<PropertyNameStackEntry> _propertyNamesStack;
         private static Stack<int> _idStack;
+        /// <summary>
+        /// The ignore ids
+        /// </summary>
         public static bool IgnoreIds;
         private static int _nextId;
 
@@ -297,6 +457,9 @@ namespace Serialization
             new Dictionary<Type, IProvideAttributeList>();
 
         //Holds a list of the deferred types
+        /// <summary>
+        /// The deferred
+        /// </summary>
         public static readonly Dictionary<Type, bool> DEFERRED = new Dictionary<Type, bool>();
 
         //Dictionary to ensure we only scan an assembly once
@@ -310,11 +473,17 @@ namespace Serialization
         private static readonly Dictionary<Type, ushort> PrewarmedTypes =
             new Dictionary<Type, ushort>();
 
+        /// <summary>
+        /// The prewarm lookup
+        /// </summary>
         public static readonly List<Type> PrewarmLookup = new List<Type>();
 
         private static readonly Dictionary<string, ushort> PrewarmedNames = new Dictionary<string, ushort>();
         private static readonly HashSet<Type> privateTypes = new HashSet<Type>();
         private static readonly Stack<Type> currentTypes = new Stack<Type>();
+        /// <summary>
+        /// The current version
+        /// </summary>
         public static int currentVersion;
 
         /// <summary>
@@ -328,11 +497,22 @@ namespace Serialization
         /// </summary>
         public static bool IsChecksum { get; private set; }
 
+        /// <summary>
+        /// Copies the specified original.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="original">The original.</param>
+        /// <returns>T.</returns>
         public static T Copy<T>(T original) where T : class
         {
             return Deserialize<T>(Serialize(original));
         }
 
+        /// <summary>
+        /// Gets the type ex.
+        /// </summary>
+        /// <param name="fullTypeName">Full name of the type.</param>
+        /// <returns>Type.</returns>
         public static Type GetTypeEx(object fullTypeName)
         {
             var typeName = fullTypeName as string;
@@ -363,6 +543,11 @@ namespace Serialization
             return null;
         }
 
+        /// <summary>
+        /// Serializes to file.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="fileName">Name of the file.</param>
         public static void SerializeToFile(object obj, string fileName)
         {
             using (var file = File.Create(DataPath + "/" + fileName))
@@ -371,6 +556,12 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Deserializes from file.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="fileName">Name of the file.</param>
+        /// <returns>T.</returns>
         public static T DeserializeFromFile<T>(string fileName) where T : class
         {
             if (!File.Exists(DataPath + "/" + fileName))
@@ -383,6 +574,10 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Informs the deserialized objects.
+        /// </summary>
+        /// <param name="process">The process.</param>
         public static void InformDeserializedObjects(FinalProcess process)
         {
             foreach (var o in process.deserializedObjects)
@@ -391,6 +586,9 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Informs the deserialized objects.
+        /// </summary>
         public static void InformDeserializedObjects()
         {
             foreach (var d in DeserializedObject)
@@ -406,18 +604,38 @@ namespace Serialization
             DeserializedObject.Clear();
         }
 
+        /// <summary>
+        /// Adds the final action.
+        /// </summary>
+        /// <param name="a">a.</param>
         public static void AddFinalAction(Action a)
         {
             FinalDeserialization.Add(a);
         }
 
+        /// <summary>
+        /// Struct FinalProcess
+        /// </summary>
         public struct FinalProcess
         {
+            /// <summary>
+            /// The deferred actions
+            /// </summary>
             public List<Action> deferredActions;
+            /// <summary>
+            /// The deferred setters
+            /// </summary>
             public List<DeferredSetter> deferredSetters;
+            /// <summary>
+            /// The deserialized objects
+            /// </summary>
             public List<IDeserialized> deserializedObjects;
         }
 
+        /// <summary>
+        /// Takes the ownership of finalization.
+        /// </summary>
+        /// <returns>FinalProcess.</returns>
         public static FinalProcess TakeOwnershipOfFinalization()
         {
             var result = new FinalProcess();
@@ -433,6 +651,11 @@ namespace Serialization
             return result;
         }
 
+        /// <summary>
+        /// Runs the deferred actions.
+        /// </summary>
+        /// <param name="count">The count.</param>
+        /// <param name="clear">if set to <c>true</c> [clear].</param>
         public static void RunDeferredActions(int count = 1, bool clear = true)
         {
             lock (FixupFunctions)
@@ -466,6 +689,12 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Runs the deferred actions.
+        /// </summary>
+        /// <param name="process">The process.</param>
+        /// <param name="count">The count.</param>
+        /// <param name="clear">if set to <c>true</c> [clear].</param>
         public static void RunDeferredActions(FinalProcess process, int count = 1, bool clear = true)
         {
             lock (FixupFunctions)
@@ -506,6 +735,10 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Adds the fixup.
+        /// </summary>
+        /// <param name="setter">The setter.</param>
         public static void AddFixup(DeferredSetter setter)
         {
             lock (FixupFunctions)
@@ -514,6 +747,9 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Occurs when [can serialize].
+        /// </summary>
         public static event Func<Type, bool> CanSerialize;
 
         internal static bool CanSerializeType(Type tp)
@@ -688,6 +924,10 @@ namespace Serialization
             RegisterSerializationAssembly(null);
         }
 
+        /// <summary>
+        /// Registers the serialization assembly.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
         public static void RegisterSerializationAssembly(Assembly assembly)
         {
             if (assembly == null)
@@ -861,6 +1101,11 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
         public static IEnumerable<PropertyInfo> GetProperties(Type item)
         {
             var tempChecksum = IsChecksum;
@@ -876,6 +1121,11 @@ namespace Serialization
             return result;
         }
 
+        /// <summary>
+        /// Gets the fields.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
         public static IEnumerable<FieldInfo> GetFields(Type item)
         {
             var tempChecksum = IsChecksum;
@@ -891,6 +1141,10 @@ namespace Serialization
             return result;
         }
 
+        /// <summary>
+        /// Adds the type of the private.
+        /// </summary>
+        /// <param name="tp">The tp.</param>
         public static void AddPrivateType(Type tp)
         {
             privateTypes.Add(tp);
@@ -1011,6 +1265,11 @@ namespace Serialization
             return id;
         }
 
+        /// <summary>
+        /// Deserializes the specified storage.
+        /// </summary>
+        /// <param name="storage">The storage.</param>
+        /// <returns>System.Object.</returns>
         public static object Deserialize(IStorage storage)
         {
             using (new SerializationScope())
@@ -1052,6 +1311,12 @@ namespace Serialization
             return Deserialize(inputStream, null);
         }
 
+        /// <summary>
+        /// Deserializes the specified input stream.
+        /// </summary>
+        /// <param name="inputStream">The input stream.</param>
+        /// <param name="instance">The instance.</param>
+        /// <returns>System.Object.</returns>
         public static object Deserialize(Stream inputStream, object instance)
         {
             // this version always uses the BinarySerializer
@@ -1204,11 +1469,22 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Serializes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="storage">The storage.</param>
         public static void Serialize(object item, IStorage storage)
         {
             Serialize(item, storage, false);
         }
 
+        /// <summary>
+        /// Serializes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="storage">The storage.</param>
+        /// <param name="forDeserializeInto">if set to <c>true</c> [for deserialize into].</param>
         public static void Serialize(object item, IStorage storage, bool forDeserializeInto)
         {
             var verbose = Verbose;
@@ -1235,11 +1511,22 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Serializes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="outputStream">The output stream.</param>
         public static void Serialize(object item, Stream outputStream)
         {
             Serialize(item, outputStream, false);
         }
 
+        /// <summary>
+        /// Serializes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <param name="outputStream">The output stream.</param>
+        /// <param name="forDeserializeInto">if set to <c>true</c> [for deserialize into].</param>
         public static void Serialize(object item, Stream outputStream, bool forDeserializeInto)
         {
             CreateStacks();
@@ -1281,6 +1568,11 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Serializes for deserialize into.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>System.Byte[].</returns>
         public static byte[] SerializeForDeserializeInto(object item)
         {
             using (new SerializationScope())
@@ -1326,6 +1618,9 @@ namespace Serialization
                    tp == typeof(TimeSpan) || tp == typeof(Guid) || tp == typeof(decimal);
         }
 
+        /// <summary>
+        /// The currently serializing object
+        /// </summary>
         public static object currentlySerializingObject;
 
         private static void SerializeObjectAndProperties(object item, Type itemType, IStorage storage)
@@ -1428,6 +1723,9 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Dummies the action.
+        /// </summary>
         public static void DummyAction()
         {
         }
@@ -1883,6 +2181,9 @@ namespace Serialization
 
         #region Nested type: Nuller
 
+        /// <summary>
+        /// Class Nuller.
+        /// </summary>
         public class Nuller { }
 
         #endregion
@@ -1891,6 +2192,10 @@ namespace Serialization
 
         private class TypePusher : IDisposable
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="TypePusher"/> class.
+            /// </summary>
+            /// <param name="t">The t.</param>
             public TypePusher(Type t)
             {
                 currentTypes.Push(t);
@@ -1898,6 +2203,9 @@ namespace Serialization
 
             #region IDisposable Members
 
+            /// <summary>
+            /// Disposes this instance.
+            /// </summary>
             public void Dispose()
             {
                 currentTypes.Pop();
@@ -1914,10 +2222,18 @@ namespace Serialization
 
         #region Delegates
 
+        /// <summary>
+        /// Delegate GetData
+        /// </summary>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>System.Object.</returns>
         public delegate object GetData(Dictionary<string, object> parameters);
 
         #endregion
 
+        /// <summary>
+        /// The deserializing object
+        /// </summary>
         public static object DeserializingObject;
         private static readonly Stack<object> DeserializingStack = new Stack<object>();
         internal static List<DeferredSetter> FixupFunctions = new List<DeferredSetter>();
@@ -2633,14 +2949,30 @@ namespace Serialization
             storage.EndReadFields();
         }
 
+        /// <summary>
+        /// Class DeferredSetter.
+        /// </summary>
         public class DeferredSetter
         {
+            /// <summary>
+            /// The priority
+            /// </summary>
             public int priority = 0;
+            /// <summary>
+            /// The deferred retrieval function
+            /// </summary>
             public readonly GetData deferredRetrievalFunction;
+            /// <summary>
+            /// The enabled
+            /// </summary>
             public bool enabled = true;
             internal readonly Dictionary<string, object> parameters = new Dictionary<string, object>();
             internal Action _setAction;
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="DeferredSetter"/> class.
+            /// </summary>
+            /// <param name="retrievalFunction">The retrieval function.</param>
             public DeferredSetter(GetData retrievalFunction)
             {
                 deferredRetrievalFunction = retrievalFunction;
@@ -2656,7 +2988,13 @@ namespace Serialization
         /// </summary>
         private class EntryConfiguration
         {
+            /// <summary>
+            /// The setter
+            /// </summary>
             public GetSet Setter;
+            /// <summary>
+            /// The type
+            /// </summary>
             public Type Type;
         }
 
@@ -2666,7 +3004,13 @@ namespace Serialization
 
         private class KnownTypesStackEntry
         {
+            /// <summary>
+            /// The known types list
+            /// </summary>
             public List<Type> knownTypesList;
+            /// <summary>
+            /// The known types lookup
+            /// </summary>
             public Dictionary<Type, ushort> knownTypesLookup;
         }
 
@@ -2674,9 +3018,17 @@ namespace Serialization
 
         #region Nested type: MissingConstructorException
 
+        /// <summary>
+        /// Class MissingConstructorException.
+        /// </summary>
+        /// <seealso cref="System.Exception" />
         [Serializable]
         public class MissingConstructorException : Exception
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="MissingConstructorException"/> class.
+            /// </summary>
+            /// <param name="message">The message.</param>
             public MissingConstructorException(string message)
                 : base(message)
             { }
@@ -2688,11 +3040,19 @@ namespace Serialization
 
         #region Delegates
 
+        /// <summary>
+        /// Delegate ReadAValue
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>System.Object.</returns>
         public delegate object ReadAValue(BinaryReader reader);
 
         #endregion
 
         private static readonly Dictionary<Type, WriteAValue> Writers = new Dictionary<Type, WriteAValue>();
+        /// <summary>
+        /// The readers
+        /// </summary>
         public static readonly Dictionary<Type, ReadAValue> Readers = new Dictionary<Type, ReadAValue>();
         private static readonly Dictionary<string, bool> componentNames = new Dictionary<string, bool>();
 
@@ -3031,7 +3391,13 @@ namespace Serialization
 
         internal class PropertyNameStackEntry
         {
+            /// <summary>
+            /// The property list
+            /// </summary>
             public List<string> propertyList;
+            /// <summary>
+            /// The property lookup
+            /// </summary>
             public Dictionary<string, ushort> propertyLookup;
         }
 
@@ -3045,6 +3411,10 @@ namespace Serialization
 
         #region Nested type: SerializationScope
 
+        /// <summary>
+        /// Class SerializationScope.
+        /// </summary>
+        /// <seealso cref="System.IDisposable" />
         public class SerializationScope : IDisposable
         {
             private static Stack<bool> _primaryScopeStack = new Stack<bool>();
@@ -3054,6 +3424,10 @@ namespace Serialization
             //[ThreadStatic]
             internal static int _counter = 0;
 
+            /// <summary>
+            /// Gets a value indicating whether this instance is in scope.
+            /// </summary>
+            /// <value><c>true</c> if this instance is in scope; otherwise, <c>false</c>.</value>
             public static bool IsInScope
             {
                 get
@@ -3062,6 +3436,10 @@ namespace Serialization
                 }
             }
 
+            /// <summary>
+            /// Gets a value indicating whether this instance is primary scope.
+            /// </summary>
+            /// <value><c>true</c> if this instance is primary scope; otherwise, <c>false</c>.</value>
             public static bool IsPrimaryScope
             {
                 get
@@ -3070,6 +3448,9 @@ namespace Serialization
                 }
             }
 
+            /// <summary>
+            /// Sets the primary scope.
+            /// </summary>
             public static void SetPrimaryScope()
             {
                 if (_hasSetPrimaryScope)
@@ -3083,6 +3464,9 @@ namespace Serialization
             private readonly List<DeferredSetter> _fixupFunctions;
             private readonly List<Action> _finalDeserialization;
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="SerializationScope"/> class.
+            /// </summary>
             public SerializationScope()
             {
                 _primaryScopeStack.Push(_primaryScope);
@@ -3117,6 +3501,9 @@ namespace Serialization
                 ++_counter;
             }
 
+            /// <summary>
+            /// Disposes this instance.
+            /// </summary>
             public void Dispose()
             {
                 _primaryScope = _primaryScopeStack.Pop();
@@ -3142,12 +3529,19 @@ namespace Serialization
 
         #region Nested type: SerializationSplitScope
 
+        /// <summary>
+        /// Class SerializationSplitScope.
+        /// </summary>
+        /// <seealso cref="System.IDisposable" />
         public class SerializationSplitScope : IDisposable
         {
             private readonly List<DeferredSetter> _fixupFunctions;
             private readonly List<Action> _finalDeserialization;
             private int _previousCounter = 0;
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="SerializationSplitScope"/> class.
+            /// </summary>
             public SerializationSplitScope()
             {
                 _previousCounter = SerializationScope._counter;
@@ -3181,6 +3575,9 @@ namespace Serialization
 
             #region IDisposable Members
 
+            /// <summary>
+            /// Disposes this instance.
+            /// </summary>
             public void Dispose()
             {
                 _seenObjects = _storedObjectsStack.Pop();

@@ -81,20 +81,20 @@ Inheritance diagram for FullSerializer.fsBaseConverter:</div>
   <img src="class_full_serializer_1_1fs_base_converter.png" usemap="#FullSerializer.fsBaseConverter_map" alt=""/>
   <map id="FullSerializer.fsBaseConverter_map" name="FullSerializer.fsBaseConverter_map">
 <area href="class_full_serializer_1_1fs_converter.html" title="The serialization converter allows for customization of the serialization process. " alt="FullSerializer.fsConverter" shape="rect" coords="0,56,328,80"/>
-<area href="class_full_serializer_1_1fs_direct_converter.html" alt="FullSerializer.fsDirectConverter&lt; TModel &gt;" shape="rect" coords="338,56,666,80"/>
-<area href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html" alt="FullSerializer.Internal.Converters.UnityEvent_Converter" shape="rect" coords="338,112,666,136"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_array_converter.html" alt="FullSerializer.Internal.fsArrayConverter" shape="rect" coords="338,168,666,192"/>
+<area href="class_full_serializer_1_1fs_direct_converter.html" title="Class fsDirectConverter. " alt="FullSerializer.fsDirectConverter&lt; TModel &gt;" shape="rect" coords="338,56,666,80"/>
+<area href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html" title="Class UnityEvent_Converter. " alt="FullSerializer.Internal.Converters.UnityEvent_Converter" shape="rect" coords="338,112,666,136"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_array_converter.html" title="Class fsArrayConverter. " alt="FullSerializer.Internal.fsArrayConverter" shape="rect" coords="338,168,666,192"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_date_converter.html" title="Supports serialization for DateTime, DateTimeOffset, and TimeSpan. " alt="FullSerializer.Internal.fsDateConverter" shape="rect" coords="338,224,666,248"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html" alt="FullSerializer.Internal.fsDictionaryConverter" shape="rect" coords="338,280,666,304"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html" title="Class fsDictionaryConverter. " alt="FullSerializer.Internal.fsDictionaryConverter" shape="rect" coords="338,280,666,304"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html" title="Serializes and deserializes enums by their current name. " alt="FullSerializer.Internal.fsEnumConverter" shape="rect" coords="338,336,666,360"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html" alt="FullSerializer.Internal.fsForwardConverter" shape="rect" coords="338,392,666,416"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html" title="Class fsForwardConverter. " alt="FullSerializer.Internal.fsForwardConverter" shape="rect" coords="338,392,666,416"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html" title="Serializes and deserializes guids. " alt="FullSerializer.Internal.fsGuidConverter" shape="rect" coords="338,448,666,472"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html" title="Provides serialization support for anything which extends from IEnumerable and has an Add method..." alt="FullSerializer.Internal.fsIEnumerableConverter" shape="rect" coords="338,504,666,528"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html" alt="FullSerializer.Internal.fsKeyValuePairConverter" shape="rect" coords="338,560,666,584"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html" title="Class fsKeyValuePairConverter. " alt="FullSerializer.Internal.fsKeyValuePairConverter" shape="rect" coords="338,560,666,584"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html" title="The reflected converter will properly serialize nullable types. However, we do it here instead as we ..." alt="FullSerializer.Internal.fsNullableConverter" shape="rect" coords="338,616,666,640"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html" alt="FullSerializer.Internal.fsPrimitiveConverter" shape="rect" coords="338,672,666,696"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html" alt="FullSerializer.Internal.fsReflectedConverter" shape="rect" coords="338,728,666,752"/>
-<area href="class_full_serializer_1_1_internal_1_1fs_type_converter.html" alt="FullSerializer.Internal.fsTypeConverter" shape="rect" coords="338,784,666,808"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html" title="Class fsPrimitiveConverter. " alt="FullSerializer.Internal.fsPrimitiveConverter" shape="rect" coords="338,672,666,696"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html" title="Class fsReflectedConverter. " alt="FullSerializer.Internal.fsReflectedConverter" shape="rect" coords="338,728,666,752"/>
+<area href="class_full_serializer_1_1_internal_1_1fs_type_converter.html" title="Class fsTypeConverter. " alt="FullSerializer.Internal.fsTypeConverter" shape="rect" coords="338,784,666,808"/>
 <area href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html" title="Serializes and deserializes WeakReferences. " alt="FullSerializer.Internal.fsWeakReferenceConverter" shape="rect" coords="338,840,666,864"/>
 </map>
  </div></div>
@@ -125,29 +125,181 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a764855bf8818b5ff93077ea0a9e944b0"><td class="memItemLeft" align="right" valign="top"><a id="a764855bf8818b5ff93077ea0a9e944b0"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FailExpectedType</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, params <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a>[] types)</td></tr>
+<tr class="memitem:a764855bf8818b5ff93077ea0a9e944b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a764855bf8818b5ff93077ea0a9e944b0">FailExpectedType</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, params <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a>[] types)</td></tr>
+<tr class="memdesc:a764855bf8818b5ff93077ea0a9e944b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fails the expected type.  <a href="#a764855bf8818b5ff93077ea0a9e944b0">More...</a><br /></td></tr>
 <tr class="separator:a764855bf8818b5ff93077ea0a9e944b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbb1442ec90c3100b09308b9c53aab9"><td class="memItemLeft" align="right" valign="top"><a id="a2dbb1442ec90c3100b09308b9c53aab9"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckType</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a> type)</td></tr>
+<tr class="memitem:a2dbb1442ec90c3100b09308b9c53aab9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a2dbb1442ec90c3100b09308b9c53aab9">CheckType</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a> type)</td></tr>
+<tr class="memdesc:a2dbb1442ec90c3100b09308b9c53aab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the type.  <a href="#a2dbb1442ec90c3100b09308b9c53aab9">More...</a><br /></td></tr>
 <tr class="separator:a2dbb1442ec90c3100b09308b9c53aab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab42a513c517a3ed26ea228bb33aedd47"><td class="memItemLeft" align="right" valign="top"><a id="ab42a513c517a3ed26ea228bb33aedd47"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckKey</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memitem:ab42a513c517a3ed26ea228bb33aedd47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#ab42a513c517a3ed26ea228bb33aedd47">CheckKey</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memdesc:ab42a513c517a3ed26ea228bb33aedd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the key.  <a href="#ab42a513c517a3ed26ea228bb33aedd47">More...</a><br /></td></tr>
 <tr class="separator:ab42a513c517a3ed26ea228bb33aedd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ebde736d45f36473691936e6cd0147"><td class="memItemLeft" align="right" valign="top"><a id="a92ebde736d45f36473691936e6cd0147"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckKey</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memitem:a92ebde736d45f36473691936e6cd0147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a92ebde736d45f36473691936e6cd0147">CheckKey</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memdesc:a92ebde736d45f36473691936e6cd0147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the key.  <a href="#a92ebde736d45f36473691936e6cd0147">More...</a><br /></td></tr>
 <tr class="separator:a92ebde736d45f36473691936e6cd0147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a024019330f070b9fb3d49a5213c9aae8"><td class="memItemLeft" align="right" valign="top"><a id="a024019330f070b9fb3d49a5213c9aae8"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SerializeMember&lt; T &gt;</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, T value)</td></tr>
+<tr class="memitem:a024019330f070b9fb3d49a5213c9aae8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a024019330f070b9fb3d49a5213c9aae8">SerializeMember&lt; T &gt;</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, T value)</td></tr>
+<tr class="memdesc:a024019330f070b9fb3d49a5213c9aae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the member.  <a href="#a024019330f070b9fb3d49a5213c9aae8">More...</a><br /></td></tr>
 <tr class="separator:a024019330f070b9fb3d49a5213c9aae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6df76d1eac0b4a6577845b4c9ddaa79d"><td class="memItemLeft" align="right" valign="top"><a id="a6df76d1eac0b4a6577845b4c9ddaa79d"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DeserializeMember&lt; T &gt;</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, out T value)</td></tr>
+<tr class="memitem:a6df76d1eac0b4a6577845b4c9ddaa79d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a6df76d1eac0b4a6577845b4c9ddaa79d">DeserializeMember&lt; T &gt;</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, out T value)</td></tr>
+<tr class="memdesc:a6df76d1eac0b4a6577845b4c9ddaa79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes the member.  <a href="#a6df76d1eac0b4a6577845b4c9ddaa79d">More...</a><br /></td></tr>
 <tr class="separator:a6df76d1eac0b4a6577845b4c9ddaa79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The serialization converter allows for customization of the serialization process. </p>
-<p>You do not want to derive from this class - there is no way to actually use it within the serializer.. Instead, derive from either <a class="el" href="class_full_serializer_1_1fs_converter.html" title="The serialization converter allows for customization of the serialization process. ">fsConverter</a> or <a class="el" href="class_full_serializer_1_1fs_direct_converter.html">fsDirectConverter</a></p>
+<p>You do not want to derive from this class - there is no way to actually use it within the serializer.. Instead, derive from either <a class="el" href="class_full_serializer_1_1fs_converter.html" title="The serialization converter allows for customization of the serialization process. ">fsConverter</a> or <a class="el" href="class_full_serializer_1_1fs_direct_converter.html" title="Class fsDirectConverter. ">fsDirectConverter</a></p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab42a513c517a3ed26ea228bb33aedd47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42a513c517a3ed26ea228bb33aedd47">&#9670;&nbsp;</a></span>CheckKey() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.CheckKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a>&#160;</td>
+          <td class="paramname"><em>subitem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks the key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">key</td><td>The key.</td></tr>
+    <tr><td class="paramname">subitem</td><td>The subitem.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
+
+</div>
+</div>
+<a id="a92ebde736d45f36473691936e6cd0147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ebde736d45f36473691936e6cd0147">&#9670;&nbsp;</a></span>CheckKey() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.CheckKey </td>
+          <td>(</td>
+          <td class="paramtype">Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a>&#160;</td>
+          <td class="paramname"><em>subitem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks the key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">key</td><td>The key.</td></tr>
+    <tr><td class="paramname">subitem</td><td>The subitem.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
+
+</div>
+</div>
+<a id="a2dbb1442ec90c3100b09308b9c53aab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbb1442ec90c3100b09308b9c53aab9">&#9670;&nbsp;</a></span>CheckType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.CheckType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks the type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
+
+</div>
+</div>
 <a id="a415ea2ac9429bbb9927346af7cb7c2e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a415ea2ac9429bbb9927346af7cb7c2e1">&#9670;&nbsp;</a></span>CreateInstance()</h2>
 
@@ -192,7 +344,119 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object instance</dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#ad5d48348410d9fc61794476ee9b282d6">FullSerializer.Internal.fsReflectedConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#ac060a50ae6f3241ea0f9465e1d261d12">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a03e9dd52440176acd87f3047ababe392">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a8732fca2359367dbf78c687898625406">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#af2049f4529f9138347b63bee54aa7397">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a86f7beefe9d841a8f3235a805ec43691">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#ab47b05197a1f68036cecb45318b49233">FullSerializer.Internal.fsNullableConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a1d20e736fc995f6d127a312ae19f55b2">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a787950b2cb51b536dc9fc01f5870f0d9">FullSerializer.Internal.fsIEnumerableConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#aa35564498ee62b6d5e072e845ef0d8f6">FullSerializer.Internal.fsDictionaryConverter</a>.</p>
+<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a03e9dd52440176acd87f3047ababe392">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#ac060a50ae6f3241ea0f9465e1d261d12">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#ad5d48348410d9fc61794476ee9b282d6">FullSerializer.Internal.fsReflectedConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a8732fca2359367dbf78c687898625406">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#af2049f4529f9138347b63bee54aa7397">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a86f7beefe9d841a8f3235a805ec43691">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#ab47b05197a1f68036cecb45318b49233">FullSerializer.Internal.fsNullableConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a1d20e736fc995f6d127a312ae19f55b2">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#aa35564498ee62b6d5e072e845ef0d8f6">FullSerializer.Internal.fsDictionaryConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a787950b2cb51b536dc9fc01f5870f0d9">FullSerializer.Internal.fsIEnumerableConverter</a>.</p>
+
+</div>
+</div>
+<a id="a6df76d1eac0b4a6577845b4c9ddaa79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df76d1eac0b4a6577845b4c9ddaa79d">&#9670;&nbsp;</a></span>DeserializeMember< T >()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.DeserializeMember&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>overrideConverterType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out T&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserializes the member. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">overrideConverterType</td><td>Type of the override converter.</td></tr>
+    <tr><td class="paramname">name</td><td>The name.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
+
+</div>
+</div>
+<a id="a764855bf8818b5ff93077ea0a9e944b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764855bf8818b5ff93077ea0a9e944b0">&#9670;&nbsp;</a></span>FailExpectedType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.FailExpectedType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a> []&#160;</td>
+          <td class="paramname"><em>types</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fails the expected type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">types</td><td>The types.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
 
 </div>
 </div>
@@ -228,7 +492,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#af4489bd5a993a32021e1ab24fcd6a42f">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a9f297d3fbac4eecd05de362227a1161e">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a60f6421c5356bcf6954d3c888bbaf860">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#a0a18762f776b7e00ab59d7827d3e50cc">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#aaeaf4b6d5206b2b70f0d9d2d79a5efe7">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a69a650703493e76171dff70be6ebec7c">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a917bdcf70205871ef02577d31b3216f3">FullSerializer.Internal.fsWeakReferenceConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a491c874399362934670610d5f232d6e6">FullSerializer.Internal.fsArrayConverter</a>.</p>
+<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#af4489bd5a993a32021e1ab24fcd6a42f">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#a0a18762f776b7e00ab59d7827d3e50cc">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a69a650703493e76171dff70be6ebec7c">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a60f6421c5356bcf6954d3c888bbaf860">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a491c874399362934670610d5f232d6e6">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a9f297d3fbac4eecd05de362227a1161e">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#aaeaf4b6d5206b2b70f0d9d2d79a5efe7">FullSerializer.Internal.fsGuidConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a917bdcf70205871ef02577d31b3216f3">FullSerializer.Internal.fsWeakReferenceConverter</a>.</p>
 
 </div>
 </div>
@@ -264,7 +528,73 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a4af727f1cb13c61c7e5f57bb6c3e682b">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a3f4750a4e8a6a6ae582c73cf5d8142e5">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#af20b5573e313464e13c17735746a2267">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a4556062bfaec5d51b7c1120bf1388a4c">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a96bfa5776105d8d9fffb1fd01c53af2e">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a4f8dd86c002f7a3e6b25a1b16d791c60">FullSerializer.Internal.fsWeakReferenceConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a0c8625b10aee6ed789981e1f14c09ca1">FullSerializer.Internal.fsArrayConverter</a>.</p>
+<p>Reimplemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#af20b5573e313464e13c17735746a2267">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a96bfa5776105d8d9fffb1fd01c53af2e">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a3f4750a4e8a6a6ae582c73cf5d8142e5">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#a0c8625b10aee6ed789981e1f14c09ca1">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a4af727f1cb13c61c7e5f57bb6c3e682b">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a4556062bfaec5d51b7c1120bf1388a4c">FullSerializer.Internal.fsGuidConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a4f8dd86c002f7a3e6b25a1b16d791c60">FullSerializer.Internal.fsWeakReferenceConverter</a>.</p>
+
+</div>
+</div>
+<a id="a024019330f070b9fb3d49a5213c9aae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024019330f070b9fb3d49a5213c9aae8">&#9670;&nbsp;</a></span>SerializeMember< T >()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a> FullSerializer.fsBaseConverter.SerializeMember&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>overrideConverterType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serializes the member. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data.</td></tr>
+    <tr><td class="paramname">overrideConverterType</td><td>Type of the override converter.</td></tr>
+    <tr><td class="paramname">name</td><td>The name.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_full_serializer_1_1fs_result.html" title="The result of some sort of operation. A result is either successful or not, but if it is successful t...">fsResult</a>.</dd></dl>
 
 </div>
 </div>
@@ -319,7 +649,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if serialization was successful, false otherwise.</dd></dl>
 
-<p>Implemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a5143547d92eb9578d027c0a676ad0613">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#a81d2d460112d57d67e8156cd5a52e1e1">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a083b9f0f694869aa476f0e6a333051da">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a1585e62338f2abf99911f4fde9599daa">FullSerializer.Internal.fsIEnumerableConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_date_converter.html#ad439c675a33e91ca71370886f113e459">FullSerializer.Internal.fsDateConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#a1963e8f217bbe10f747bdbb3ceebf739">FullSerializer.Internal.fsReflectedConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#af88d4b3c78572356be0a07e841aa4a95">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a0b1b66f55b2e380a0b17f2944dc0ff84">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#aa94af57c0f67c755cb406529813a13aa">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#acad9c1e7e271c7ab3d0821c86fb12580">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#aea7e0849acaab5508aa34246f2702832">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1fs_direct_converter.html#a099c31a32168fa233bbe2a3ab9e33c5a">FullSerializer.fsDirectConverter&lt; TModel &gt;</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#ab4698a9f8ed356f17a68c3936808d5d3">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#a6b72c06300a1efb2daf2a35753aa0ed9">FullSerializer.Internal.fsNullableConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#a8dc0adbffb181451bb37c6e6a0ed13b8">FullSerializer.Internal.fsDictionaryConverter</a>.</p>
+<p>Implemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a5143547d92eb9578d027c0a676ad0613">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#a81d2d460112d57d67e8156cd5a52e1e1">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a083b9f0f694869aa476f0e6a333051da">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#af88d4b3c78572356be0a07e841aa4a95">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a1585e62338f2abf99911f4fde9599daa">FullSerializer.Internal.fsIEnumerableConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_date_converter.html#ad439c675a33e91ca71370886f113e459">FullSerializer.Internal.fsDateConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a0b1b66f55b2e380a0b17f2944dc0ff84">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#a1963e8f217bbe10f747bdbb3ceebf739">FullSerializer.Internal.fsReflectedConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#aa94af57c0f67c755cb406529813a13aa">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#aea7e0849acaab5508aa34246f2702832">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#acad9c1e7e271c7ab3d0821c86fb12580">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1fs_direct_converter.html#a099c31a32168fa233bbe2a3ab9e33c5a">FullSerializer.fsDirectConverter&lt; TModel &gt;</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#ab4698a9f8ed356f17a68c3936808d5d3">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#a8dc0adbffb181451bb37c6e6a0ed13b8">FullSerializer.Internal.fsDictionaryConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#a6b72c06300a1efb2daf2a35753aa0ed9">FullSerializer.Internal.fsNullableConverter</a>.</p>
 
 </div>
 </div>
@@ -374,7 +704,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If serialization was successful.</dd></dl>
 
-<p>Implemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#aaeb12dc698fa08caad016cc737f23fff">FullSerializer.Internal.fsDictionaryConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#a71b51a115cf749f1a3232fb1498f2d6f">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a6415a8256e0ab38b10e938c7aab8fcea">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#a14c04b4be8e3bb4533966a4b3eabb554">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#a9b91744cef0f028bfc7a0dbab226f3f8">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a6072af5ab89cf19592d346e37b09b140">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_date_converter.html#a4e7733527b03e6a6f8381d3f79b6ac79">FullSerializer.Internal.fsDateConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#aced300086882c6f0ce70ff8ff7ae46c2">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a82f96f76d4b66fdb39edab0721416df7">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a2faaa58d3ec0a68a9f8aed9e94d92b27">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a7aaf3b51583371f787df64c3eefc8c87">FullSerializer.Internal.fsIEnumerableConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#ac8ed8672fc0d4ff7aad52606ce4bcced">FullSerializer.Internal.fsReflectedConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#abb09e7cf9f1a6b9a359e780c0c53b454">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1fs_direct_converter.html#af741809aa0db9a1fa192f0e1dcfc245a">FullSerializer.fsDirectConverter&lt; TModel &gt;</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#ab4bb180f4c413c45ef22bbf4d2a34d60">FullSerializer.Internal.fsNullableConverter</a>.</p>
+<p>Implemented in <a class="el" href="class_full_serializer_1_1_internal_1_1fs_dictionary_converter.html#aaeb12dc698fa08caad016cc737f23fff">FullSerializer.Internal.fsDictionaryConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_forward_converter.html#a71b51a115cf749f1a3232fb1498f2d6f">FullSerializer.Internal.fsForwardConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_key_value_pair_converter.html#a14c04b4be8e3bb4533966a4b3eabb554">FullSerializer.Internal.fsKeyValuePairConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_primitive_converter.html#a6415a8256e0ab38b10e938c7aab8fcea">FullSerializer.Internal.fsPrimitiveConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1_converters_1_1_unity_event___converter.html#a9b91744cef0f028bfc7a0dbab226f3f8">FullSerializer.Internal.Converters.UnityEvent_Converter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_enum_converter.html#a6072af5ab89cf19592d346e37b09b140">FullSerializer.Internal.fsEnumConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#aced300086882c6f0ce70ff8ff7ae46c2">FullSerializer.Internal.fsTypeConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_array_converter.html#abb09e7cf9f1a6b9a359e780c0c53b454">FullSerializer.Internal.fsArrayConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_guid_converter.html#a82f96f76d4b66fdb39edab0721416df7">FullSerializer.Internal.fsGuidConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_weak_reference_converter.html#a2faaa58d3ec0a68a9f8aed9e94d92b27">FullSerializer.Internal.fsWeakReferenceConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_date_converter.html#a4e7733527b03e6a6f8381d3f79b6ac79">FullSerializer.Internal.fsDateConverter</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_i_enumerable_converter.html#a7aaf3b51583371f787df64c3eefc8c87">FullSerializer.Internal.fsIEnumerableConverter</a>, <a class="el" href="class_full_serializer_1_1fs_direct_converter.html#af741809aa0db9a1fa192f0e1dcfc245a">FullSerializer.fsDirectConverter&lt; TModel &gt;</a>, <a class="el" href="class_full_serializer_1_1_internal_1_1fs_reflected_converter.html#ac8ed8672fc0d4ff7aad52606ce4bcced">FullSerializer.Internal.fsReflectedConverter</a>, and <a class="el" href="class_full_serializer_1_1_internal_1_1fs_nullable_converter.html#ab4bb180f4c413c45ef22bbf4d2a34d60">FullSerializer.Internal.fsNullableConverter</a>.</p>
 
 </div>
 </div>

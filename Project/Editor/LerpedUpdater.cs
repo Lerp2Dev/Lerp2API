@@ -7,10 +7,14 @@ using System.Net;
 using System.Linq;
 using Lerp2API;
 using Lerp2API.Utility;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
+using Lerp2API.Hepers.JSON_Extensions;
 
 namespace Lerp2APIEditor
 {
+    /// <summary>
+    /// Class LerpedUpdater.
+    /// </summary>
     [InitializeOnLoad]
     public class LerpedUpdater
     {
@@ -18,6 +22,9 @@ namespace Lerp2APIEditor
                               versionUrl = "http://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Lerp2API.version";
 
         internal static string localVersionFilepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Lerp2API.version");
+        /// <summary>
+        /// The no connection
+        /// </summary>
         public static bool noConnection;
         internal static string[] updateUrls = new string[] {
             "https://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Build/Lerp2API.dll",
@@ -29,8 +36,17 @@ namespace Lerp2APIEditor
             versionUrl
         };
 
+        /// <summary>
+        /// The version name
+        /// </summary>
         public string versionName = "1.1.1 Alpha Release",
+                      /// <summary>
+                      /// The version string
+                      /// </summary>
                       versionStr = "1.1.1a",
+                      /// <summary>
+                      /// The version changelog
+                      /// </summary>
                       versionChangelog = "Fixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.\nSome utilities to Array Extensions Helpers.";
 
         internal static WWWHandler wh;
@@ -42,10 +58,19 @@ namespace Lerp2APIEditor
             GetMissingAssets();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LerpedUpdater"/> class.
+        /// </summary>
         public LerpedUpdater()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LerpedUpdater"/> class.
+        /// </summary>
+        /// <param name="vn">The vn.</param>
+        /// <param name="vs">The vs.</param>
+        /// <param name="vc">The vc.</param>
         public LerpedUpdater(string vn, string vs, string vc)
         {
             versionName = vn;
@@ -119,6 +144,9 @@ namespace Lerp2APIEditor
                 DoUpdate(newerVersion);
         }
 
+        /// <summary>
+        /// Checks for updates.
+        /// </summary>
         [MenuItem("Lerp2Dev Team Tools/Check for API Updates...", false, 1000)]
         public static void CheckForUpdates()
         {
@@ -161,6 +189,9 @@ namespace Lerp2APIEditor
         }
         internal static void GetMissingAssets()
         {
+            if (LerpedCore.isMssingAssetsDisabled)
+                return;
+
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MissingAssets.cs");
             if (File.Exists(path))
                 return;

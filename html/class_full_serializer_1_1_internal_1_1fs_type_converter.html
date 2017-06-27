@@ -69,6 +69,9 @@ $(function() {
 <div class="title">FullSerializer.Internal.fsTypeConverter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html" title="Class fsTypeConverter. ">fsTypeConverter</a>.  
+ <a href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for FullSerializer.Internal.fsTypeConverter:</div>
 <div class="dyncontent">
@@ -86,10 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afbf95621a91efff18569544dee5134fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can this converter serialize and deserialize the given object type?  <a href="#afbf95621a91efff18569544dee5134fe">More...</a><br /></td></tr>
 <tr class="separator:afbf95621a91efff18569544dee5134fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60f6421c5356bcf6954d3c888bbaf860"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a60f6421c5356bcf6954d3c888bbaf860">RequestCycleSupport</a> (Type type)</td></tr>
-<tr class="memdesc:a60f6421c5356bcf6954d3c888bbaf860"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, then the serializer will support cyclic references with the given converted type.  <a href="#a60f6421c5356bcf6954d3c888bbaf860">More...</a><br /></td></tr>
+<tr class="memdesc:a60f6421c5356bcf6954d3c888bbaf860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the cycle support.  <a href="#a60f6421c5356bcf6954d3c888bbaf860">More...</a><br /></td></tr>
 <tr class="separator:a60f6421c5356bcf6954d3c888bbaf860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f4750a4e8a6a6ae582c73cf5d8142e5"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#a3f4750a4e8a6a6ae582c73cf5d8142e5">RequestInheritanceSupport</a> (Type type)</td></tr>
-<tr class="memdesc:a3f4750a4e8a6a6ae582c73cf5d8142e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, then the serializer will include inheritance data for the given converter.  <a href="#a3f4750a4e8a6a6ae582c73cf5d8142e5">More...</a><br /></td></tr>
+<tr class="memdesc:a3f4750a4e8a6a6ae582c73cf5d8142e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the inheritance support.  <a href="#a3f4750a4e8a6a6ae582c73cf5d8142e5">More...</a><br /></td></tr>
 <tr class="separator:a3f4750a4e8a6a6ae582c73cf5d8142e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aced300086882c6f0ce70ff8ff7ae46c2"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html#aced300086882c6f0ce70ff8ff7ae46c2">TrySerialize</a> (object instance, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> serialized, Type storageType)</td></tr>
 <tr class="memdesc:aced300086882c6f0ce70ff8ff7ae46c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the actual object into the given data storage.  <a href="#aced300086882c6f0ce70ff8ff7ae46c2">More...</a><br /></td></tr>
@@ -108,26 +111,29 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a6d55e268772d23da10ce9ca3dc0e415f inherit pub_attribs_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">The serializer that was owns this converter.  <a href="class_full_serializer_1_1fs_base_converter.html#a6d55e268772d23da10ce9ca3dc0e415f">More...</a><br /></td></tr>
 <tr class="separator:a6d55e268772d23da10ce9ca3dc0e415f inherit pub_attribs_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_full_serializer_1_1fs_base_converter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_full_serializer_1_1fs_base_converter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_full_serializer_1_1fs_base_converter.html">FullSerializer.fsBaseConverter</a></td></tr>
-<tr class="memitem:a764855bf8818b5ff93077ea0a9e944b0 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="a764855bf8818b5ff93077ea0a9e944b0"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FailExpectedType</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, params <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a>[] types)</td></tr>
+<tr class="memitem:a764855bf8818b5ff93077ea0a9e944b0 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a764855bf8818b5ff93077ea0a9e944b0">FailExpectedType</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, params <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a>[] types)</td></tr>
+<tr class="memdesc:a764855bf8818b5ff93077ea0a9e944b0 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fails the expected type.  <a href="class_full_serializer_1_1fs_base_converter.html#a764855bf8818b5ff93077ea0a9e944b0">More...</a><br /></td></tr>
 <tr class="separator:a764855bf8818b5ff93077ea0a9e944b0 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbb1442ec90c3100b09308b9c53aab9 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="a2dbb1442ec90c3100b09308b9c53aab9"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckType</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a> type)</td></tr>
+<tr class="memitem:a2dbb1442ec90c3100b09308b9c53aab9 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a2dbb1442ec90c3100b09308b9c53aab9">CheckType</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, <a class="el" href="namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82">fsDataType</a> type)</td></tr>
+<tr class="memdesc:a2dbb1442ec90c3100b09308b9c53aab9 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the type.  <a href="class_full_serializer_1_1fs_base_converter.html#a2dbb1442ec90c3100b09308b9c53aab9">More...</a><br /></td></tr>
 <tr class="separator:a2dbb1442ec90c3100b09308b9c53aab9 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab42a513c517a3ed26ea228bb33aedd47 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="ab42a513c517a3ed26ea228bb33aedd47"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckKey</b> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memitem:ab42a513c517a3ed26ea228bb33aedd47 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#ab42a513c517a3ed26ea228bb33aedd47">CheckKey</a> (<a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memdesc:ab42a513c517a3ed26ea228bb33aedd47 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the key.  <a href="class_full_serializer_1_1fs_base_converter.html#ab42a513c517a3ed26ea228bb33aedd47">More...</a><br /></td></tr>
 <tr class="separator:ab42a513c517a3ed26ea228bb33aedd47 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ebde736d45f36473691936e6cd0147 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="a92ebde736d45f36473691936e6cd0147"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CheckKey</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memitem:a92ebde736d45f36473691936e6cd0147 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a92ebde736d45f36473691936e6cd0147">CheckKey</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, string key, out <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> subitem)</td></tr>
+<tr class="memdesc:a92ebde736d45f36473691936e6cd0147 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the key.  <a href="class_full_serializer_1_1fs_base_converter.html#a92ebde736d45f36473691936e6cd0147">More...</a><br /></td></tr>
 <tr class="separator:a92ebde736d45f36473691936e6cd0147 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a024019330f070b9fb3d49a5213c9aae8 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="a024019330f070b9fb3d49a5213c9aae8"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SerializeMember&lt; T &gt;</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, T value)</td></tr>
+<tr class="memitem:a024019330f070b9fb3d49a5213c9aae8 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a024019330f070b9fb3d49a5213c9aae8">SerializeMember&lt; T &gt;</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, T value)</td></tr>
+<tr class="memdesc:a024019330f070b9fb3d49a5213c9aae8 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the member.  <a href="class_full_serializer_1_1fs_base_converter.html#a024019330f070b9fb3d49a5213c9aae8">More...</a><br /></td></tr>
 <tr class="separator:a024019330f070b9fb3d49a5213c9aae8 inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6df76d1eac0b4a6577845b4c9ddaa79d inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a id="a6df76d1eac0b4a6577845b4c9ddaa79d"></a>
-<a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>DeserializeMember&lt; T &gt;</b> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, out T value)</td></tr>
+<tr class="memitem:a6df76d1eac0b4a6577845b4c9ddaa79d inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_full_serializer_1_1fs_result.html">fsResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_full_serializer_1_1fs_base_converter.html#a6df76d1eac0b4a6577845b4c9ddaa79d">DeserializeMember&lt; T &gt;</a> (Dictionary&lt; string, <a class="el" href="class_full_serializer_1_1fs_data.html">fsData</a> &gt; data, Type overrideConverterType, string name, out T value)</td></tr>
+<tr class="memdesc:a6df76d1eac0b4a6577845b4c9ddaa79d inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializes the member.  <a href="class_full_serializer_1_1fs_base_converter.html#a6df76d1eac0b4a6577845b4c9ddaa79d">More...</a><br /></td></tr>
 <tr class="separator:a6df76d1eac0b4a6577845b4c9ddaa79d inherit pro_methods_class_full_serializer_1_1fs_base_converter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class <a class="el" href="class_full_serializer_1_1_internal_1_1fs_type_converter.html" title="Class fsTypeConverter. ">fsTypeConverter</a>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_full_serializer_1_1fs_converter.html" title="The serialization converter allows for customization of the serialization process. ">FullSerializer.fsConverter</a></dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afbf95621a91efff18569544dee5134fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afbf95621a91efff18569544dee5134fe">&#9670;&nbsp;</a></span>CanProcess()</h2>
 
@@ -226,7 +232,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">override bool FullSerializer.Internal.fsTypeConverter.RequestCycleSupport </td>
           <td>(</td>
           <td class="paramtype">Type&#160;</td>
-          <td class="paramname"><em>storageType</em></td><td>)</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -237,13 +243,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If true, then the serializer will support cyclic references with the given converted type. </p>
+<p>Requests the cycle support. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">storageType</td><td>The field/property type that is currently storing the object that is being serialized.</td></tr>
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_full_serializer_1_1fs_base_converter.html#a4e850ab88cea1b89771c00e0b65febcd">FullSerializer.fsBaseConverter</a>.</p>
 
@@ -262,7 +269,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">override bool FullSerializer.Internal.fsTypeConverter.RequestInheritanceSupport </td>
           <td>(</td>
           <td class="paramtype">Type&#160;</td>
-          <td class="paramname"><em>storageType</em></td><td>)</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -273,13 +280,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>If true, then the serializer will include inheritance data for the given converter. </p>
+<p>Requests the inheritance support. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">storageType</td><td>The field/property type that is currently storing the object that is being serialized.</td></tr>
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_full_serializer_1_1fs_base_converter.html#a84447285540ab6b51efc2399d144c60c">FullSerializer.fsBaseConverter</a>.</p>
 

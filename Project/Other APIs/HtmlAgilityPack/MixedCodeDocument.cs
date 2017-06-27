@@ -4,6 +4,9 @@
     using System.IO;
     using System.Text;
 
+    /// <summary>
+    /// Class MixedCodeDocument.
+    /// </summary>
     public class MixedCodeDocument
     {
         private int _c;
@@ -17,12 +20,27 @@
         private Encoding _streamencoding;
         internal string _text;
         internal MixedCodeDocumentFragmentList _textfragments;
+        /// <summary>
+        /// The token code end
+        /// </summary>
         public string TokenCodeEnd = "%>";
+        /// <summary>
+        /// The token code start
+        /// </summary>
         public string TokenCodeStart = "<%";
+        /// <summary>
+        /// The token directive
+        /// </summary>
         public string TokenDirective = "@";
+        /// <summary>
+        /// The token response write
+        /// </summary>
         public string TokenResponseWrite = "Response.Write ";
         private string TokenTextBlock = "TextBlock({0})";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MixedCodeDocument"/> class.
+        /// </summary>
         public MixedCodeDocument()
         {
             _codefragments = new MixedCodeDocumentFragmentList(this);
@@ -30,6 +48,10 @@
             _fragments = new MixedCodeDocumentFragmentList(this);
         }
 
+        /// <summary>
+        /// Creates the code fragment.
+        /// </summary>
+        /// <returns>MixedCodeDocumentCodeFragment.</returns>
         public MixedCodeDocumentCodeFragment CreateCodeFragment()
         {
             return (MixedCodeDocumentCodeFragment)CreateFragment(MixedCodeDocumentFragmentType.Code);
@@ -48,6 +70,10 @@
             throw new NotSupportedException();
         }
 
+        /// <summary>
+        /// Creates the text fragment.
+        /// </summary>
+        /// <returns>MixedCodeDocumentTextFragment.</returns>
         public MixedCodeDocumentTextFragment CreateTextFragment()
         {
             return (MixedCodeDocumentTextFragment)CreateFragment(MixedCodeDocumentFragmentType.Text);
@@ -76,11 +102,19 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
         public void Load(Stream stream)
         {
             Load(new StreamReader(stream));
         }
 
+        /// <summary>
+        /// Loads the specified reader.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
         public void Load(TextReader reader)
         {
             _codefragments.Clear();
@@ -95,51 +129,105 @@
             Parse();
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
         public void Load(string path)
         {
             Load(new StreamReader(path));
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
         public void Load(Stream stream, Encoding encoding)
         {
             Load(new StreamReader(stream, encoding));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(string path, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(path, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
         public void Load(string path, Encoding encoding)
         {
             Load(new StreamReader(path, encoding));
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             Load(new StreamReader(path, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
+        /// <summary>
+        /// Loads the HTML.
+        /// </summary>
+        /// <param name="html">The HTML.</param>
         public void LoadHtml(string html)
         {
             Load(new StringReader(html));
@@ -182,34 +270,60 @@
             _currentfragment.Length = _index - _currentfragment.Index;
         }
 
+        /// <summary>
+        /// Saves the specified out stream.
+        /// </summary>
+        /// <param name="outStream">The out stream.</param>
         public void Save(Stream outStream)
         {
             StreamWriter writer = new StreamWriter(outStream, GetOutEncoding());
             Save(writer);
         }
 
+        /// <summary>
+        /// Saves the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
         public void Save(StreamWriter writer)
         {
             Save((TextWriter)writer);
         }
 
+        /// <summary>
+        /// Saves the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
         public void Save(TextWriter writer)
         {
             writer.Flush();
         }
 
+        /// <summary>
+        /// Saves the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
         public void Save(string filename)
         {
             StreamWriter writer = new StreamWriter(filename, false, GetOutEncoding());
             Save(writer);
         }
 
+        /// <summary>
+        /// Saves the specified out stream.
+        /// </summary>
+        /// <param name="outStream">The out stream.</param>
+        /// <param name="encoding">The encoding.</param>
         public void Save(Stream outStream, Encoding encoding)
         {
             StreamWriter writer = new StreamWriter(outStream, encoding);
             Save(writer);
         }
 
+        /// <summary>
+        /// Saves the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="encoding">The encoding.</param>
         public void Save(string filename, Encoding encoding)
         {
             StreamWriter writer = new StreamWriter(filename, false, encoding);
@@ -224,6 +338,10 @@
             _currentfragment.Length = 0;
         }
 
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        /// <value>The code.</value>
         public string Code
         {
             get
@@ -248,6 +366,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the code fragments.
+        /// </summary>
+        /// <value>The code fragments.</value>
         public MixedCodeDocumentFragmentList CodeFragments
         {
             get
@@ -256,6 +378,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the fragments.
+        /// </summary>
+        /// <value>The fragments.</value>
         public MixedCodeDocumentFragmentList Fragments
         {
             get
@@ -264,6 +390,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the stream encoding.
+        /// </summary>
+        /// <value>The stream encoding.</value>
         public Encoding StreamEncoding
         {
             get
@@ -272,6 +402,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the text fragments.
+        /// </summary>
+        /// <value>The text fragments.</value>
         public MixedCodeDocumentFragmentList TextFragments
         {
             get
@@ -282,7 +416,13 @@
 
         private enum ParseState
         {
+            /// <summary>
+            /// The text
+            /// </summary>
             Text,
+            /// <summary>
+            /// The code
+            /// </summary>
             Code
         }
     }

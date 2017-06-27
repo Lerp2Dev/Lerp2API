@@ -9,6 +9,12 @@ namespace System.Threading.Tasks
     /// <typeparam name="TResult"></typeparam>
     public class Task<TResult> : Task
     {
+        /// <summary>
+        /// Gets the result.
+        /// </summary>
+        /// <value>The result.</value>
+        /// <exception cref="AggregateException"></exception>
+        /// <exception cref="TaskCanceledException"></exception>
         public TResult Result
         {
             get
@@ -26,6 +32,7 @@ namespace System.Threading.Tasks
             }
             private set { _result = value; }
         }
+
         private TResult _result;
 
         internal bool SetResult(TResult result)
@@ -33,8 +40,17 @@ namespace System.Threading.Tasks
             return Complete(() => Result = result);
         }
 
+        /// <summary>
+        /// Gets the awaiter.
+        /// </summary>
+        /// <returns>TaskAwaiter&lt;TResult&gt;.</returns>
         public new TaskAwaiter<TResult> GetAwaiter() => new TaskAwaiter<TResult>(this);
 
+        /// <summary>
+        /// Configures the await.
+        /// </summary>
+        /// <param name="continueOnCapturedContext">if set to <c>true</c> [continue on captured context].</param>
+        /// <returns>ConfiguredTaskAwaitable&lt;TResult&gt;.</returns>
         public new ConfiguredTaskAwaitable<TResult> ConfigureAwait(bool continueOnCapturedContext) => new ConfiguredTaskAwaitable<TResult>(this, continueOnCapturedContext);
 
         internal new TResult GetResult()
@@ -48,6 +64,11 @@ namespace System.Threading.Tasks
             return _result;
         }
 
+        /// <summary>
+        /// Continues the with.
+        /// </summary>
+        /// <param name="continuationAction">The continuation action.</param>
+        /// <returns>Task.</returns>
         public Task ContinueWith(Action<Task<TResult>> continuationAction)
         {
             var tcs = new TaskCompletionSource<object>();
@@ -66,6 +87,12 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Continues the with.
+        /// </summary>
+        /// <typeparam name="TNewResult">The type of the t new result.</typeparam>
+        /// <param name="continuationFunction">The continuation function.</param>
+        /// <returns>Task&lt;TNewResult&gt;.</returns>
         public Task<TNewResult> ContinueWith<TNewResult>(Func<Task<TResult>, TNewResult> continuationFunction)
         {
             var tcs = new TaskCompletionSource<TNewResult>();

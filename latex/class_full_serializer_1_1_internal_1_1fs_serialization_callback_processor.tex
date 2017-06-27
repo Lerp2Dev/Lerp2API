@@ -1,5 +1,10 @@
 \hypertarget{class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor}{}\section{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Processor Class Reference}
 \label{class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor}\index{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Processor@{Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Processor}}
+
+
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor}{fs\+Serialization\+Callback\+Processor}.  
+
+
 Inheritance diagram for Full\+Serializer.\+Internal.\+fs\+Serialization\+Callback\+Processor\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,6 +24,16 @@ override void \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_
 \begin{DoxyCompactList}\small\item\em Called before deserialization has begun but {\itshape after} the object instance has been created. This will get invoked even if the user passed in an existing instance. \end{DoxyCompactList}\item 
 override void \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor_a18c88f0c5eb32dc01457fbbeaffe9f4a}{On\+After\+Deserialize} (Type storage\+Type, object instance)
 \begin{DoxyCompactList}\small\item\em Called after deserialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_full_serializer_1_1_internal_1_1fs_serialization_callback_processor}{fs\+Serialization\+Callback\+Processor}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_full_serializer_1_1fs_object_processor}{Full\+Serializer.\+fs\+Object\+Processor}
+
+
+\end{DoxySeeAlso}
 
 
 \subsection{Member Function Documentation}
@@ -98,8 +113,6 @@ Reimplemented from \hyperlink{class_full_serializer_1_1fs_object_processor_a1260
 
 Called before deserialization has begun but {\itshape after} the object instance has been created. This will get invoked even if the user passed in an existing instance. 
 
-{\bfseries I\+M\+P\+O\+R\+T\+A\+NT}\+: The actual instance that gets passed here is {\itshape not} guaranteed to be an a subtype of storage\+Type, since the value for instance is whatever the active converter returned for Create\+Instance() -\/ ie, some converters will return dummy types in Create\+Instance() if instance creation cannot be separated from deserialization (ie, Key\+Value\+Pair). 
-
 
 \begin{DoxyParams}{Parameters}
 {\em storage\+Type} & The field/property type that is storing the instance.\\
@@ -110,6 +123,13 @@ Called before deserialization has begun but {\itshape after} the object instance
 \hline
 \end{DoxyParams}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Cast\+Exception} & Please ensure the converter for \char`\"{} + storage\+Type + \char`\"{} actually returns an instance of it, not an instance of " + instance.\+Get\+Type()\\
+\hline
+\end{DoxyExceptions}
+
+
+$\ast$$\ast$\+I\+M\+P\+O\+R\+T\+A\+N\+T$\ast$$\ast$\+: The actual instance that gets passed here is {\itshape not} guaranteed to be an a subtype of storage\+Type, since the value for instance is whatever the active converter returned for Create\+Instance() -\/ ie, some converters will return dummy types in Create\+Instance() if instance creation cannot be separated from deserialization (ie, Key\+Value\+Pair).
 
 Reimplemented from \hyperlink{class_full_serializer_1_1fs_object_processor_a99e0c1a7d896539470bbe7f43565a5a3}{Full\+Serializer.\+fs\+Object\+Processor}.
 

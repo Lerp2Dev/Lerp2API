@@ -4,26 +4,49 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 using UnityEngine;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class WWWHandler.
+    /// </summary>
     public class WWWHandler
     {
         internal List<WWW> wwws = new List<WWW>();
         internal ContinuationManager<WWW> worker = new ContinuationManager<WWW>();
+        /// <summary>
+        /// Adds the specified WWW.
+        /// </summary>
+        /// <param name="www">The WWW.</param>
         public void Add(WWW www)
         {
             SharedAdd<WWW>(new WWW[] { www }, false, null);
         }
+        /// <summary>
+        /// Adds the specified WWS.
+        /// </summary>
+        /// <param name="wws">The WWS.</param>
         public void Add(WWW[] wws)
         {
             SharedAdd<WWW[]>(wws, false, null);
         }
+        /// <summary>
+        /// Adds the and start.
+        /// </summary>
+        /// <param name="www">The WWW.</param>
+        /// <param name="play">if set to <c>true</c> [play].</param>
+        /// <param name="action">The action.</param>
         public void AddAndStart(WWW www, bool play, Action<WWW> action)
         {
             SharedAdd(new WWW[] { www }, play, action);
         }
+        /// <summary>
+        /// Adds the and start.
+        /// </summary>
+        /// <param name="wws">The WWS.</param>
+        /// <param name="play">if set to <c>true</c> [play].</param>
+        /// <param name="action">The action.</param>
         public void AddAndStart(WWW[] wws, bool play, Action<WWW[]> action)
         {
             SharedAdd(wws, play, action);
@@ -35,6 +58,12 @@ namespace Lerp2API.Utility
             if (action != null)
                 Start(play, action);
         }
+        /// <summary>
+        /// Starts the specified play.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="play">if set to <c>true</c> [play].</param>
+        /// <param name="finishedAction">The finished action.</param>
         public void Start<T>(bool play, Action<T> finishedAction)
         {
             Action<WWW[]> finalAction = (x) =>
@@ -56,30 +85,62 @@ namespace Lerp2API.Utility
             //EditorApplication.update += worker.JobWorker; //This is better to have inside of the worker class, but I profer to do this as that because, I like to see it clearly
         }
     }
+    /// <summary>
+    /// Class ContinuationManager.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class ContinuationManager<T>
     {
         private class Job
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Job"/> class.
+            /// </summary>
+            /// <param name="objs">The objs.</param>
+            /// <param name="completed">The completed.</param>
+            /// <param name="finish">The finish.</param>
             public Job(T[] objs, Func<bool> completed, Action<T[]> finish)
             {
                 Completed = completed;
                 Finish = finish;
                 Objects = objs;
             }
+            /// <summary>
+            /// The completed
+            /// </summary>
             public Func<bool> Completed;
+            /// <summary>
+            /// The finish
+            /// </summary>
             public Action<T[]> Finish;
+            /// <summary>
+            /// The objects
+            /// </summary>
             public T[] Objects;
         }
 
         private static int lastStartJobId = -1;
 
         private Job job;
+        /// <summary>
+        /// The assigned job identifier
+        /// </summary>
         public int assignedJobId = -1;
 
+        /// <summary>
+        /// Sets the job.
+        /// </summary>
+        /// <param name="objs">The objs.</param>
+        /// <param name="completed">The completed.</param>
+        /// <param name="continueWith">The continue with.</param>
         public void SetJob(T[] objs, Func<bool> completed, Action<T[]> continueWith)
         {
             job = new Job(objs, completed, continueWith);
         }
+        /// <summary>
+        /// Starts the specified force play.
+        /// </summary>
+        /// <param name="forcePlay">if set to <c>true</c> [force play].</param>
         public void Start(bool forcePlay = false)
         {
             ++lastStartJobId;

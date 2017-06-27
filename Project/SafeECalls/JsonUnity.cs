@@ -1,10 +1,20 @@
-﻿using Lerp2API.DebugHandler;
+﻿using Lerp2API._Debug;
+using Lerp2API.Hepers.JSON_Extensions;
 using System;
 
 namespace Lerp2API.SafeECalls
 { //Use this in case, you can't reference UnityEngine
+  /// <summary>
+  /// Class JsonUtility.
+  /// </summary>
+  /// <seealso cref="Lerp2API.SafeECalls.SafeECall" />
     public class JsonUtility : SafeECall
     {
+        /// <summary>
+        /// To the json.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>System.String.</returns>
         public static string ToJson(object obj)
         {
             try
@@ -14,7 +24,7 @@ namespace Lerp2API.SafeECalls
                 else
                     return JSONHelpers.Serialize(obj);
             }
-            catch (Exception ex)
+            catch
             {
                 LerpedCore.logger.LogError(error);
                 Debug.WriteSafeStacktrace();
@@ -22,6 +32,12 @@ namespace Lerp2API.SafeECalls
             }
         }
 
+        /// <summary>
+        /// To the json.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="prettyPrint">if set to <c>true</c> [pretty print].</param>
+        /// <returns>System.String.</returns>
         public static string ToJson(object obj, bool prettyPrint)
         {
             try
@@ -31,7 +47,7 @@ namespace Lerp2API.SafeECalls
                 else
                     return JSONHelpers.Serialize(obj, prettyPrint);
             }
-            catch (Exception ex)
+            catch
             {
                 LerpedCore.logger.LogError(error);
                 Debug.WriteSafeStacktrace();
@@ -39,6 +55,12 @@ namespace Lerp2API.SafeECalls
             }
         }
 
+        /// <summary>
+        /// Froms the json.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="json">The json.</param>
+        /// <returns>T.</returns>
         public static T FromJson<T>(string json)
         {
             try
@@ -48,7 +70,7 @@ namespace Lerp2API.SafeECalls
                 else
                     return JSONHelpers.Deserialize<T>(json);
             }
-            catch (Exception ex)
+            catch
             {
                 LerpedCore.logger.LogError(error);
                 Debug.WriteSafeStacktrace();
@@ -56,6 +78,11 @@ namespace Lerp2API.SafeECalls
             }
         }
 
+        /// <summary>
+        /// Froms the json.
+        /// </summary>
+        /// <param name="json">The json.</param>
+        /// <returns>System.Object.</returns>
         public static object FromJson(string json)
         {
             try
@@ -65,7 +92,7 @@ namespace Lerp2API.SafeECalls
                 else
                     return JSONHelpers.Deserialize<object>(json);
             }
-            catch (Exception ex)
+            catch
             {
                 LerpedCore.logger.LogError(error);
                 Debug.WriteSafeStacktrace();

@@ -8,6 +8,10 @@
     using System.Xml;
     using System.Xml.XPath;
 
+    /// <summary>
+    /// Class HtmlDocument.
+    /// </summary>
+    /// <seealso cref="System.Xml.XPath.IXPathNavigable" />
     public class HtmlDocument : IXPathNavigable
     {
         private int _c;
@@ -34,24 +38,92 @@
         internal Dictionary<string, HtmlNode> Lastnodes = new Dictionary<string, HtmlNode>();
         internal Dictionary<string, HtmlNode> Nodesid;
         internal Dictionary<int, HtmlNode> Openednodes;
+
+        /// <summary>
+        /// The option add debugging attributes
+        /// </summary>
         public bool OptionAddDebuggingAttributes;
+
+        /// <summary>
+        /// The option automatic close on end
+        /// </summary>
         public bool OptionAutoCloseOnEnd;
+
+        /// <summary>
+        /// The option compute checksum
+        /// </summary>
         public bool OptionComputeChecksum;
+
+        /// <summary>
+        /// The option check syntax
+        /// </summary>
         public bool OptionCheckSyntax = true;
+
+        /// <summary>
+        /// The option default stream encoding
+        /// </summary>
         public Encoding OptionDefaultStreamEncoding;
+
+        /// <summary>
+        /// The option extract error source text
+        /// </summary>
         public bool OptionExtractErrorSourceText;
+
+        /// <summary>
+        /// The option extract error source text maximum length
+        /// </summary>
         public int OptionExtractErrorSourceTextMaxLength = 100;
+
+        /// <summary>
+        /// The option fix nested tags
+        /// </summary>
         public bool OptionFixNestedTags;
+
+        /// <summary>
+        /// The option output as XML
+        /// </summary>
         public bool OptionOutputAsXml;
+
+        /// <summary>
+        /// The option output optimize attribute values
+        /// </summary>
         public bool OptionOutputOptimizeAttributeValues;
+
+        /// <summary>
+        /// The option output original case
+        /// </summary>
         public bool OptionOutputOriginalCase;
+
+        /// <summary>
+        /// The option output upper case
+        /// </summary>
         public bool OptionOutputUpperCase;
+
+        /// <summary>
+        /// The option read encoding
+        /// </summary>
         public bool OptionReadEncoding = true;
+
+        /// <summary>
+        /// The option stopper node name
+        /// </summary>
         public string OptionStopperNodeName;
+
+        /// <summary>
+        /// The option use identifier attribute
+        /// </summary>
         public bool OptionUseIdAttribute = true;
+
+        /// <summary>
+        /// The option write empty nodes
+        /// </summary>
         public bool OptionWriteEmptyNodes;
+
         internal string Text;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HtmlDocument"/> class.
+        /// </summary>
         public HtmlDocument()
         {
             _documentnode = CreateNode(HtmlNodeType.Document, 0);
@@ -148,6 +220,12 @@
             return new HtmlAttribute(this);
         }
 
+        /// <summary>
+        /// Creates the attribute.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>HtmlAttribute.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public HtmlAttribute CreateAttribute(string name)
         {
             if (name == null)
@@ -159,6 +237,13 @@
             return attribute;
         }
 
+        /// <summary>
+        /// Creates the attribute.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns>HtmlAttribute.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public HtmlAttribute CreateAttribute(string name, string value)
         {
             if (name == null)
@@ -170,11 +255,21 @@
             return attribute;
         }
 
+        /// <summary>
+        /// Creates the comment.
+        /// </summary>
+        /// <returns>HtmlCommentNode.</returns>
         public HtmlCommentNode CreateComment()
         {
             return (HtmlCommentNode)CreateNode(HtmlNodeType.Comment);
         }
 
+        /// <summary>
+        /// Creates the comment.
+        /// </summary>
+        /// <param name="comment">The comment.</param>
+        /// <returns>HtmlCommentNode.</returns>
+        /// <exception cref="ArgumentNullException">comment</exception>
         public HtmlCommentNode CreateComment(string comment)
         {
             if (comment == null)
@@ -186,6 +281,12 @@
             return node;
         }
 
+        /// <summary>
+        /// Creates the element.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">name</exception>
         public HtmlNode CreateElement(string name)
         {
             if (name == null)
@@ -197,6 +298,10 @@
             return node;
         }
 
+        /// <summary>
+        /// Creates the navigator.
+        /// </summary>
+        /// <returns>XPathNavigator.</returns>
         public XPathNavigator CreateNavigator()
         {
             return new HtmlNodeNavigator(this, _documentnode);
@@ -220,11 +325,21 @@
             return new HtmlNode(type, this, index);
         }
 
+        /// <summary>
+        /// Creates the text node.
+        /// </summary>
+        /// <returns>HtmlTextNode.</returns>
         public HtmlTextNode CreateTextNode()
         {
             return (HtmlTextNode)CreateNode(HtmlNodeType.Text);
         }
 
+        /// <summary>
+        /// Creates the text node.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>HtmlTextNode.</returns>
+        /// <exception cref="ArgumentNullException">text</exception>
         public HtmlTextNode CreateTextNode(string text)
         {
             if (text == null)
@@ -255,6 +370,12 @@
             }
         }
 
+        /// <summary>
+        /// Detects the encoding.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <returns>Encoding.</returns>
+        /// <exception cref="ArgumentNullException">stream</exception>
         public Encoding DetectEncoding(Stream stream)
         {
             if (stream == null)
@@ -264,6 +385,12 @@
             return DetectEncoding(new StreamReader(stream));
         }
 
+        /// <summary>
+        /// Detects the encoding.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <returns>Encoding.</returns>
+        /// <exception cref="ArgumentNullException">reader</exception>
         public Encoding DetectEncoding(TextReader reader)
         {
             if (reader == null)
@@ -310,6 +437,12 @@
             return null;
         }
 
+        /// <summary>
+        /// Detects the encoding.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <returns>Encoding.</returns>
+        /// <exception cref="ArgumentNullException">path</exception>
         public Encoding DetectEncoding(string path)
         {
             if (path == null)
@@ -322,11 +455,21 @@
             }
         }
 
+        /// <summary>
+        /// Detects the encoding and load.
+        /// </summary>
+        /// <param name="path">The path.</param>
         public void DetectEncodingAndLoad(string path)
         {
             DetectEncodingAndLoad(path, true);
         }
 
+        /// <summary>
+        /// Detects the encoding and load.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="detectEncoding">if set to <c>true</c> [detect encoding].</param>
+        /// <exception cref="ArgumentNullException">path</exception>
         public void DetectEncodingAndLoad(string path, bool detectEncoding)
         {
             Encoding encoding;
@@ -352,6 +495,12 @@
             }
         }
 
+        /// <summary>
+        /// Detects the encoding HTML.
+        /// </summary>
+        /// <param name="html">The HTML.</param>
+        /// <returns>Encoding.</returns>
+        /// <exception cref="ArgumentNullException">html</exception>
         public Encoding DetectEncodingHtml(string html)
         {
             if (html == null)
@@ -423,6 +572,13 @@
             }
         }
 
+        /// <summary>
+        /// Gets the elementby identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>HtmlNode.</returns>
+        /// <exception cref="ArgumentNullException">id</exception>
+        /// <exception cref="Exception"></exception>
         public HtmlNode GetElementbyId(string id)
         {
             if (id == null)
@@ -477,6 +633,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Gets the name of the XML.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>System.String.</returns>
         public static string GetXmlName(string name)
         {
             string str = string.Empty;
@@ -505,6 +666,12 @@
             return ("_" + str);
         }
 
+        /// <summary>
+        /// HTMLs the encode.
+        /// </summary>
+        /// <param name="html">The HTML.</param>
+        /// <returns>System.String.</returns>
+        /// <exception cref="ArgumentNullException">html</exception>
         public static string HtmlEncode(string html)
         {
             if (html == null)
@@ -534,6 +701,11 @@
             }
         }
 
+        /// <summary>
+        /// Determines whether [is white space] [the specified c].
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <returns><c>true</c> if [is white space] [the specified c]; otherwise, <c>false</c>.</returns>
         public static bool IsWhiteSpace(int c)
         {
             if (((c != 10) && (c != 13)) && ((c != 0x20) && (c != 9)))
@@ -543,11 +715,20 @@
             return true;
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
         public void Load(Stream stream)
         {
             Load(new StreamReader(stream, OptionDefaultStreamEncoding));
         }
 
+        /// <summary>
+        /// Loads the specified reader.
+        /// </summary>
+        /// <param name="reader">The reader.</param>
+        /// <exception cref="ArgumentNullException">reader</exception>
         public void Load(TextReader reader)
         {
             if (reader == null)
@@ -617,6 +798,11 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <exception cref="ArgumentNullException">path</exception>
         public void Load(string path)
         {
             if (path == null)
@@ -629,16 +815,32 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(stream, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
         public void Load(Stream stream, Encoding encoding)
         {
             Load(new StreamReader(stream, encoding));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <exception cref="ArgumentNullException">path</exception>
         public void Load(string path, bool detectEncodingFromByteOrderMarks)
         {
             if (path == null)
@@ -651,6 +853,16 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <exception cref="ArgumentNullException">
+        /// path
+        /// or
+        /// encoding
+        /// </exception>
         public void Load(string path, Encoding encoding)
         {
             if (path == null)
@@ -667,11 +879,28 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <exception cref="ArgumentNullException">
+        /// path
+        /// or
+        /// encoding
+        /// </exception>
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)
         {
             if (path == null)
@@ -688,11 +917,30 @@
             }
         }
 
+        /// <summary>
+        /// Loads the specified stream.
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
         public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             Load(new StreamReader(stream, encoding, detectEncodingFromByteOrderMarks, buffersize));
         }
 
+        /// <summary>
+        /// Loads the specified path.
+        /// </summary>
+        /// <param name="path">The path.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <param name="detectEncodingFromByteOrderMarks">if set to <c>true</c> [detect encoding from byte order marks].</param>
+        /// <param name="buffersize">The buffersize.</param>
+        /// <exception cref="ArgumentNullException">
+        /// path
+        /// or
+        /// encoding
+        /// </exception>
         public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)
         {
             if (path == null)
@@ -709,6 +957,11 @@
             }
         }
 
+        /// <summary>
+        /// Loads the HTML.
+        /// </summary>
+        /// <param name="html">The HTML.</param>
+        /// <exception cref="ArgumentNullException">html</exception>
         public void LoadHtml(string html)
         {
             if (html == null)
@@ -1309,17 +1562,30 @@
             }
         }
 
+        /// <summary>
+        /// Saves the specified out stream.
+        /// </summary>
+        /// <param name="outStream">The out stream.</param>
         public void Save(Stream outStream)
         {
             StreamWriter writer = new StreamWriter(outStream, GetOutEncoding());
             Save(writer);
         }
 
+        /// <summary>
+        /// Saves the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
         public void Save(StreamWriter writer)
         {
             Save((TextWriter)writer);
         }
 
+        /// <summary>
+        /// Saves the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
+        /// <exception cref="ArgumentNullException">writer</exception>
         public void Save(TextWriter writer)
         {
             if (writer == null)
@@ -1330,6 +1596,10 @@
             writer.Flush();
         }
 
+        /// <summary>
+        /// Saves the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
         public void Save(string filename)
         {
             using (StreamWriter writer = new StreamWriter(filename, false, GetOutEncoding()))
@@ -1338,12 +1608,26 @@
             }
         }
 
+        /// <summary>
+        /// Saves the specified writer.
+        /// </summary>
+        /// <param name="writer">The writer.</param>
         public void Save(XmlWriter writer)
         {
             DocumentNode.WriteTo(writer);
             writer.Flush();
         }
 
+        /// <summary>
+        /// Saves the specified out stream.
+        /// </summary>
+        /// <param name="outStream">The out stream.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <exception cref="ArgumentNullException">
+        /// outStream
+        /// or
+        /// encoding
+        /// </exception>
         public void Save(Stream outStream, Encoding encoding)
         {
             if (outStream == null)
@@ -1358,6 +1642,16 @@
             Save(writer);
         }
 
+        /// <summary>
+        /// Saves the specified filename.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <param name="encoding">The encoding.</param>
+        /// <exception cref="ArgumentNullException">
+        /// filename
+        /// or
+        /// encoding
+        /// </exception>
         public void Save(string filename, Encoding encoding)
         {
             if (filename == null)
@@ -1405,6 +1699,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the check sum.
+        /// </summary>
+        /// <value>The check sum.</value>
         public int CheckSum
         {
             get
@@ -1417,6 +1715,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the declared encoding.
+        /// </summary>
+        /// <value>The declared encoding.</value>
         public Encoding DeclaredEncoding
         {
             get
@@ -1425,6 +1727,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the document node.
+        /// </summary>
+        /// <value>The document node.</value>
         public HtmlNode DocumentNode
         {
             get
@@ -1433,6 +1739,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the encoding.
+        /// </summary>
+        /// <value>The encoding.</value>
         public Encoding Encoding
         {
             get
@@ -1441,6 +1751,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the parse errors.
+        /// </summary>
+        /// <value>The parse errors.</value>
         public IEnumerable<HtmlParseError> ParseErrors
         {
             get
@@ -1449,6 +1763,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the remainder.
+        /// </summary>
+        /// <value>The remainder.</value>
         public string Remainder
         {
             get
@@ -1457,6 +1775,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the remainder offset.
+        /// </summary>
+        /// <value>The remainder offset.</value>
         public int RemainderOffset
         {
             get
@@ -1465,6 +1787,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the stream encoding.
+        /// </summary>
+        /// <value>The stream encoding.</value>
         public Encoding StreamEncoding
         {
             get
@@ -1475,18 +1801,69 @@
 
         private enum ParseState
         {
+            /// <summary>
+            /// The text
+            /// </summary>
             Text,
+
+            /// <summary>
+            /// The which tag
+            /// </summary>
             WhichTag,
+
+            /// <summary>
+            /// The tag
+            /// </summary>
             Tag,
+
+            /// <summary>
+            /// The between attributes
+            /// </summary>
             BetweenAttributes,
+
+            /// <summary>
+            /// The empty tag
+            /// </summary>
             EmptyTag,
+
+            /// <summary>
+            /// The attribute name
+            /// </summary>
             AttributeName,
+
+            /// <summary>
+            /// The attribute before equals
+            /// </summary>
             AttributeBeforeEquals,
+
+            /// <summary>
+            /// The attribute after equals
+            /// </summary>
             AttributeAfterEquals,
+
+            /// <summary>
+            /// The attribute value
+            /// </summary>
             AttributeValue,
+
+            /// <summary>
+            /// The comment
+            /// </summary>
             Comment,
+
+            /// <summary>
+            /// The quoted attribute value
+            /// </summary>
             QuotedAttributeValue,
+
+            /// <summary>
+            /// The server side code
+            /// </summary>
             ServerSideCode,
+
+            /// <summary>
+            /// The pc data
+            /// </summary>
             PcData
         }
     }

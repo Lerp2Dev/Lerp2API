@@ -108,21 +108,24 @@ namespace SimplexNoise
             // Calculate the contribution from the three corners
             float t0 = 0.5f - x0 * x0 - y0 * y0;
             if (t0 < 0.0f) n0 = 0.0f;
-            else {
+            else
+            {
                 t0 *= t0;
                 n0 = t0 * t0 * grad(perm[ii + perm[jj]], x0, y0);
             }
 
             float t1 = 0.5f - x1 * x1 - y1 * y1;
             if (t1 < 0.0f) n1 = 0.0f;
-            else {
+            else
+            {
                 t1 *= t1;
                 n1 = t1 * t1 * grad(perm[ii + i1 + perm[jj + j1]], x1, y1);
             }
 
             float t2 = 0.5f - x2 * x2 - y2 * y2;
             if (t2 < 0.0f) n2 = 0.0f;
-            else {
+            else
+            {
                 t2 *= t2;
                 n2 = t2 * t2 * grad(perm[ii + 1 + perm[jj + 1]], x2, y2);
             }
@@ -132,6 +135,13 @@ namespace SimplexNoise
             return 40.0f * (n0 + n1 + n2); // TODO: The scale factor is preliminary!
         }
 
+        /// <summary>
+        /// Generates the specified x.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="z">The z.</param>
+        /// <returns>System.Single.</returns>
         public static float Generate(float x, float y, float z)
         {
             // Simple skewing factors for the 3D case
@@ -170,7 +180,8 @@ namespace SimplexNoise
                 else if (x0 >= z0) { i1 = 1; j1 = 0; k1 = 0; i2 = 1; j2 = 0; k2 = 1; } // X Z Y order
                 else { i1 = 0; j1 = 0; k1 = 1; i2 = 1; j2 = 0; k2 = 1; } // Z X Y order
             }
-            else { // x0<y0
+            else
+            { // x0<y0
                 if (y0 < z0) { i1 = 0; j1 = 0; k1 = 1; i2 = 0; j2 = 1; k2 = 1; } // Z Y X order
                 else if (x0 < z0) { i1 = 0; j1 = 1; k1 = 0; i2 = 0; j2 = 1; k2 = 1; } // Y Z X order
                 else { i1 = 0; j1 = 1; k1 = 0; i2 = 1; j2 = 1; k2 = 0; } // Y X Z order
@@ -199,28 +210,32 @@ namespace SimplexNoise
             // Calculate the contribution from the four corners
             float t0 = 0.6f - x0 * x0 - y0 * y0 - z0 * z0;
             if (t0 < 0.0f) n0 = 0.0f;
-            else {
+            else
+            {
                 t0 *= t0;
                 n0 = t0 * t0 * grad(perm[ii + perm[jj + perm[kk]]], x0, y0, z0);
             }
 
             float t1 = 0.6f - x1 * x1 - y1 * y1 - z1 * z1;
             if (t1 < 0.0f) n1 = 0.0f;
-            else {
+            else
+            {
                 t1 *= t1;
                 n1 = t1 * t1 * grad(perm[ii + i1 + perm[jj + j1 + perm[kk + k1]]], x1, y1, z1);
             }
 
             float t2 = 0.6f - x2 * x2 - y2 * y2 - z2 * z2;
             if (t2 < 0.0f) n2 = 0.0f;
-            else {
+            else
+            {
                 t2 *= t2;
                 n2 = t2 * t2 * grad(perm[ii + i2 + perm[jj + j2 + perm[kk + k2]]], x2, y2, z2);
             }
 
             float t3 = 0.6f - x3 * x3 - y3 * y3 - z3 * z3;
             if (t3 < 0.0f) n3 = 0.0f;
-            else {
+            else
+            {
                 t3 *= t3;
                 n3 = t3 * t3 * grad(perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]], x3, y3, z3);
             }
@@ -230,6 +245,9 @@ namespace SimplexNoise
             return 32.0f * (n0 + n1 + n2 + n3); // TODO: The scale factor is preliminary!
         }
 
+        /// <summary>
+        /// The perm
+        /// </summary>
         public static byte[] perm = new byte[512] { 151,160,137,91,90,15,
               131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,21,10,23,
               190, 6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,

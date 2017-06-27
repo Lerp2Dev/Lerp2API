@@ -19,30 +19,65 @@
 
 using UnityEngine;
 
+/// <summary>
+/// Class DebugLine.
+/// </summary>
 public class DebugLine : MonoBehaviour
 {
     //used to make calls from both Update and FixedUpdate function properly
+    /// <summary>
+    /// The destroy time
+    /// </summary>
     public float destroy_time = float.MaxValue;
 
+    /// <summary>
+    /// The fixed destroy time
+    /// </summary>
     public float fixed_destroy_time = float.MaxValue;
 
     //draw ray functions - http://docs.unity3d.com/Documentation/ScriptReference/Debug.DrawRay.html
+    /// <summary>
+    /// Draws the ray.
+    /// </summary>
+    /// <param name="start">The start.</param>
+    /// <param name="dir">The dir.</param>
     public static void DrawRay(Vector3 start, Vector3 dir)
     {
         DrawLine(start, start + dir, Color.white);
     }
 
+    /// <summary>
+    /// Draws the ray.
+    /// </summary>
+    /// <param name="start">The start.</param>
+    /// <param name="dir">The dir.</param>
+    /// <param name="color">The color.</param>
+    /// <param name="duration">The duration.</param>
+    /// <param name="width">The width.</param>
     public static void DrawRay(Vector3 start, Vector3 dir, Color color, float duration = 0, float width = 1)
     {
         DrawLine(start, start + dir, color, duration, width);
     }
 
     //draw line functions - http://docs.unity3d.com/Documentation/ScriptReference/Debug.DrawLine.html
+    /// <summary>
+    /// Draws the line.
+    /// </summary>
+    /// <param name="start">The start.</param>
+    /// <param name="end">The end.</param>
     public static void DrawLine(Vector3 start, Vector3 end)
     {
         DrawLine(start, end, Color.white);
     }
 
+    /// <summary>
+    /// Draws the line.
+    /// </summary>
+    /// <param name="start">The start.</param>
+    /// <param name="end">The end.</param>
+    /// <param name="color">The color.</param>
+    /// <param name="duration">The duration.</param>
+    /// <param name="width">The width.</param>
     public static void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0, float width = 1)
     {
         //early out if there is no Camera.main to calculate the width
@@ -53,13 +88,17 @@ public class DebugLine : MonoBehaviour
 
         //set the params of the line renderer - http://docs.unity3d.com/Documentation/ScriptReference/LineRenderer.html
         LineRenderer lineRenderer = line.AddComponent<LineRenderer>();
-        lineRenderer.material = Resources.Load<Material>("Materials/LR Test"); //Outlined/Silhouetted Diffuse //new Material(Shader.Find("Mobile/Particles/Additive"));
+        lineRenderer.material = new Material(Shader.Find("Particles/Additive")); //Outlined/Silhouetted Diffuse //new Material(Shader.Find("Mobile/Particles/Additive"));
         lineRenderer.material.SetColor("_OutlineColor", new Color(color.r, color.g, color.b, 0.5f));
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, end);
-        lineRenderer.SetColors(color, color);
+        lineRenderer.startColor = color;
+        lineRenderer.endColor = color;
+        lineRenderer.startWidth = CalcPixelHeightAtDist((start - Camera.main.transform.position).magnitude) * width;
+        lineRenderer.endWidth = CalcPixelHeightAtDist((end - Camera.main.transform.position).magnitude) * width;
+        /*lineRenderer.SetColors(color, color); //I have to arreglar esto
         lineRenderer.SetWidth(CalcPixelHeightAtDist((start - Camera.main.transform.position).magnitude) * width,
-                               CalcPixelHeightAtDist((end - Camera.main.transform.position).magnitude) * width);
+                               CalcPixelHeightAtDist((end - Camera.main.transform.position).magnitude) * width);*/
 
         //add the MonoBehaviour instance
         DebugLine debugLine = line.AddComponent<DebugLine>();
@@ -75,6 +114,11 @@ public class DebugLine : MonoBehaviour
     // - Camera.main.fov
     // - Camera.main.pixelHeight
     // - distance to the camera
+    /// <summary>
+    /// Calculates the pixel height at dist.
+    /// </summary>
+    /// <param name="dist">The dist.</param>
+    /// <returns>System.Single.</returns>
     public static float CalcPixelHeightAtDist(float dist)
     {
         //early out if there is no Camera.main to calculate the width
@@ -88,12 +132,18 @@ public class DebugLine : MonoBehaviour
     }
 
     //check to see if should be destroyed yet
+    /// <summary>
+    /// Updates this instance.
+    /// </summary>
     public void Update()
     {
         if (Time.time > destroy_time)
             Destroy(transform.gameObject);
     }
 
+    /// <summary>
+    /// Fixeds the update.
+    /// </summary>
     public void FixedUpdate()
     {
         if (Time.fixedTime > fixed_destroy_time)

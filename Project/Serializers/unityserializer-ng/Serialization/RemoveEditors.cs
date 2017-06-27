@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class RemoveEditors.
+/// </summary>
 [ExecuteInEditMode]
 [AddComponentMenu("Storage/Internal/Cleanup Maintenance (Immediately removes itself)")]
 public class RemoveEditors : MonoBehaviour

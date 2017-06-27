@@ -2,9 +2,9 @@
 
 namespace Lerp2API.Backports
 {
-    class ConcurrentMap<K, V> : Dictionary<K, V>
+    internal class ConcurrentMap<K, V> : Dictionary<K, V>
     {
-        readonly Dictionary<K, V> _map = new Dictionary<K, V>();
+        private readonly Dictionary<K, V> _map = new Dictionary<K, V>();
 
         public bool TryGetValue(K key, out V value)
         {

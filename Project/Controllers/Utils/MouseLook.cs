@@ -1,19 +1,53 @@
+using Lerp2Assets.CrossPlatformInput;
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+namespace Lerp2Assets.Characters.FirstPerson
 {
+    /// <summary>
+    /// Class MouseLook.
+    /// </summary>
     [Serializable]
     public class MouseLook
     {
+        /// <summary>
+        /// The x sensitivity
+        /// </summary>
         public float XSensitivity = 2f;
+
+        /// <summary>
+        /// The y sensitivity
+        /// </summary>
         public float YSensitivity = 2f;
+
+        /// <summary>
+        /// The clamp vertical rotation
+        /// </summary>
         public bool clampVerticalRotation = true;
+
+        /// <summary>
+        /// The minimum x
+        /// </summary>
         public float MinimumX = -90F;
+
+        /// <summary>
+        /// The maximum x
+        /// </summary>
         public float MaximumX = 90F;
+
+        /// <summary>
+        /// The smooth
+        /// </summary>
         public bool smooth;
+
+        /// <summary>
+        /// The smooth time
+        /// </summary>
         public float smoothTime = 5f;
+
+        /// <summary>
+        /// The lock cursor
+        /// </summary>
         public bool lockCursor = true;
 
         [NonSerialized]
@@ -24,12 +58,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private bool m_cursorIsLocked = true;
 
+        /// <summary>
+        /// Initializes the specified character.
+        /// </summary>
+        /// <param name="character">The character.</param>
+        /// <param name="camera">The camera.</param>
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
         }
 
+        /// <summary>
+        /// Looks the rotation.
+        /// </summary>
+        /// <param name="character">The character.</param>
+        /// <param name="camera">The camera.</param>
         public void LookRotation(Transform character, Transform camera)
         {
             float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
@@ -57,6 +101,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCursorLock();
         }
 
+        /// <summary>
+        /// Sets the cursor lock.
+        /// </summary>
+        /// <param name="value">if set to <c>true</c> [value].</param>
         public void SetCursorLock(bool value)
         {
             lockCursor = value;
@@ -67,6 +115,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        /// <summary>
+        /// Updates the cursor lock.
+        /// </summary>
         public void UpdateCursorLock()
         {
             //if the user set "lockCursor" we check & properly lock the cursos

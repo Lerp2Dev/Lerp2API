@@ -13,6 +13,9 @@ namespace MinimuAsyncBridgeUnitTest
     /// </summary>
     public class SingleThreadSynchronizationContext : SynchronizationContext
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleThreadSynchronizationContext"/> class.
+        /// </summary>
         public SingleThreadSynchronizationContext()
         {
             _cts = new CancellationTokenSource();
@@ -20,8 +23,8 @@ namespace MinimuAsyncBridgeUnitTest
             _thread.Start();
         }
 
-        Thread _thread;
-        CancellationTokenSource _cts;
+        private Thread _thread;
+        private CancellationTokenSource _cts;
 
         private void UpdateLoop(CancellationToken ct)
         {
@@ -37,6 +40,9 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
+        /// <summary>
+        /// Stops this instance.
+        /// </summary>
         public void Stop()
         {
             _cts.Cancel();
@@ -58,8 +64,16 @@ namespace MinimuAsyncBridgeUnitTest
             }
         }
 
+        /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>The count.</value>
         public int Count => _actions.Count;
 
+        /// <summary>
+        /// Gets the main thread identifier.
+        /// </summary>
+        /// <value>The main thread identifier.</value>
         public int MainThreadId { get; private set; }
 
         /// <summary>

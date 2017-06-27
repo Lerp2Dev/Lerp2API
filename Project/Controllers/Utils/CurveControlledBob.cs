@@ -1,19 +1,35 @@
 using System;
 using UnityEngine;
 
-namespace UnityStandardAssets.Utility
+namespace Lerp2Assets.Utility
 {
+    /// <summary>
+    /// Class CurveControlledBob.
+    /// </summary>
     [Serializable]
     public class CurveControlledBob
     {
+        /// <summary>
+        /// The horizontal bob range
+        /// </summary>
         public float HorizontalBobRange = 0.33f;
+
+        /// <summary>
+        /// The vertical bob range
+        /// </summary>
         public float VerticalBobRange = 0.33f;
 
         //[NonSerialized]
+        /// <summary>
+        /// The bobcurve
+        /// </summary>
         public AnimationCurve Bobcurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f),
                                                             new Keyframe(1f, 0f), new Keyframe(1.5f, -1f),
                                                             new Keyframe(2f, 0f)); // sin curve for head bob
 
+        /// <summary>
+        /// The verticalto horizontal ratio
+        /// </summary>
         public float VerticaltoHorizontalRatio = 1f;
 
         private float m_CyclePositionX;
@@ -25,6 +41,11 @@ namespace UnityStandardAssets.Utility
 
         private float m_Time;
 
+        /// <summary>
+        /// Setups the specified camera.
+        /// </summary>
+        /// <param name="camera">The camera.</param>
+        /// <param name="bobBaseInterval">The bob base interval.</param>
         public void Setup(Camera camera, float bobBaseInterval)
         {
             m_BobBaseInterval = bobBaseInterval;
@@ -34,6 +55,11 @@ namespace UnityStandardAssets.Utility
             m_Time = Bobcurve[Bobcurve.length - 1].time;
         }
 
+        /// <summary>
+        /// Does the head bob.
+        /// </summary>
+        /// <param name="speed">The speed.</param>
+        /// <returns>Vector3.</returns>
         public Vector3 DoHeadBob(float speed)
         {
             float xPos = m_OriginalCameraPosition.x + (Bobcurve.Evaluate(m_CyclePositionX) * HorizontalBobRange);

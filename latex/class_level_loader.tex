@@ -1,5 +1,10 @@
 \hypertarget{class_level_loader}{}\section{Level\+Loader Class Reference}
 \label{class_level_loader}\index{Level\+Loader@{Level\+Loader}}
+
+
+Class \hyperlink{class_level_loader}{Level\+Loader}.  
+
+
 Inheritance diagram for Level\+Loader\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,72 +14,293 @@ Inheritance diagram for Level\+Loader\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_level_loader_a251c136aac0e65fff5fef1c339fad356}\label{class_level_loader_a251c136aac0e65fff5fef1c339fad356}} 
-delegate void {\bfseries Create\+Object\+Delegate} (Game\+Object prefab, ref bool cancel)
-\item 
-\mbox{\Hypertarget{class_level_loader_a233f68062303e5e0876c93646a9215ba}\label{class_level_loader_a233f68062303e5e0876c93646a9215ba}} 
-delegate void {\bfseries Serialized\+Component\+Delegate} (Game\+Object game\+Object, string component\+Name, ref bool cancel)
-\item 
-\mbox{\Hypertarget{class_level_loader_a4483f031503dac772decbd9beedd784a}\label{class_level_loader_a4483f031503dac772decbd9beedd784a}} 
-delegate void {\bfseries Serialized\+Object\+Delegate} (Game\+Object game\+Object, ref bool cancel)
-\item 
-\mbox{\Hypertarget{class_level_loader_a9db9397a70b0263acaa645576258777b}\label{class_level_loader_a9db9397a70b0263acaa645576258777b}} 
-I\+Enumerator {\bfseries Load} ()
-\item 
-\mbox{\Hypertarget{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}\label{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}} 
-I\+Enumerator {\bfseries Load} (int number\+Of\+Frames, float time\+Scale=0)
-\end{DoxyCompactItemize}
+delegate void \hyperlink{class_level_loader_a251c136aac0e65fff5fef1c339fad356}{Create\+Object\+Delegate} (Game\+Object prefab, ref bool cancel)
+\begin{DoxyCompactList}\small\item\em Delegate Create\+Object\+Delegate \end{DoxyCompactList}\item 
+delegate void \hyperlink{class_level_loader_a233f68062303e5e0876c93646a9215ba}{Serialized\+Component\+Delegate} (Game\+Object game\+Object, string component\+Name, ref bool cancel)
+\begin{DoxyCompactList}\small\item\em Delegate Serialized\+Component\+Delegate \end{DoxyCompactList}\item 
+delegate void \hyperlink{class_level_loader_a4483f031503dac772decbd9beedd784a}{Serialized\+Object\+Delegate} (Game\+Object game\+Object, ref bool cancel)
+\begin{DoxyCompactList}\small\item\em Delegate Serialized\+Object\+Delegate \end{DoxyCompactList}\item 
+I\+Enumerator \hyperlink{class_level_loader_a9db9397a70b0263acaa645576258777b}{Load} ()
+\begin{DoxyCompactList}\small\item\em Loads this instance. \end{DoxyCompactList}\item 
+I\+Enumerator \hyperlink{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}{Load} (int number\+Of\+Frames, float time\+Scale=0)
+\begin{DoxyCompactList}\small\item\em Loads the specified number of frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}\label{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}} 
-Game\+Object {\bfseries root\+Object}
-\item 
-\mbox{\Hypertarget{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}\label{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}} 
-\hyperlink{class_level_serializer_1_1_level_data}{Level\+Serializer.\+Level\+Data} {\bfseries Data}
-\item 
-\mbox{\Hypertarget{class_level_loader_a714e188fb9511faaf73917bb4ec05404}\label{class_level_loader_a714e188fb9511faaf73917bb4ec05404}} 
-bool {\bfseries Dont\+Delete} = false
-\item 
-\mbox{\Hypertarget{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}\label{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}} 
-Game\+Object {\bfseries Last}
-\item 
-\mbox{\Hypertarget{class_level_loader_a925df477df93274b0d6565a0978f8c76}\label{class_level_loader_a925df477df93274b0d6565a0978f8c76}} 
-bool {\bfseries show\+G\+UI} = true
-\item 
-\mbox{\Hypertarget{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}\label{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}} 
-float {\bfseries time\+Scale\+After\+Loading} = 1
-\item 
-\mbox{\Hypertarget{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}\label{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}} 
-Action$<$ Game\+Object, List$<$ Game\+Object $>$ $>$ {\bfseries when\+Completed} = delegate \{ \}
-\end{DoxyCompactItemize}
+Game\+Object \hyperlink{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}{root\+Object}
+\begin{DoxyCompactList}\small\item\em The root object \end{DoxyCompactList}\item 
+\hyperlink{class_level_serializer_1_1_level_data}{Level\+Serializer.\+Level\+Data} \hyperlink{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}{Data}
+\begin{DoxyCompactList}\small\item\em The data \end{DoxyCompactList}\item 
+bool \hyperlink{class_level_loader_a714e188fb9511faaf73917bb4ec05404}{Dont\+Delete} = false
+\begin{DoxyCompactList}\small\item\em The dont delete \end{DoxyCompactList}\item 
+Game\+Object \hyperlink{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}{Last}
+\begin{DoxyCompactList}\small\item\em The last \end{DoxyCompactList}\item 
+bool \hyperlink{class_level_loader_a925df477df93274b0d6565a0978f8c76}{show\+G\+UI} = true
+\begin{DoxyCompactList}\small\item\em The show G\+UI \end{DoxyCompactList}\item 
+float \hyperlink{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}{time\+Scale\+After\+Loading} = 1
+\begin{DoxyCompactList}\small\item\em The time scale after loading \end{DoxyCompactList}\item 
+Action$<$ Game\+Object, List$<$ Game\+Object $>$ $>$ \hyperlink{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}{when\+Completed} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em The when completed \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}\label{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}} 
-static \hyperlink{class_level_loader}{Level\+Loader} {\bfseries Current}
-\item 
-\mbox{\Hypertarget{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}\label{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}} 
-static Color {\bfseries gui\+Color} = Color.\+white
-\end{DoxyCompactItemize}
+static \hyperlink{class_level_loader}{Level\+Loader} \hyperlink{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}{Current}
+\begin{DoxyCompactList}\small\item\em The current \end{DoxyCompactList}\item 
+static Color \hyperlink{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}{gui\+Color} = Color.\+white
+\begin{DoxyCompactList}\small\item\em The G\+UI color \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
+static \hyperlink{class_level_loader_a251c136aac0e65fff5fef1c339fad356}{Create\+Object\+Delegate} \hyperlink{class_level_loader_a6467f227c2897f195d6c9f611d816cca}{Create\+Game\+Object} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}create game object\mbox{]}. \end{DoxyCompactList}\item 
+static \hyperlink{class_level_loader_a4483f031503dac772decbd9beedd784a}{Serialized\+Object\+Delegate} \hyperlink{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}{On\+Destroy\+Object} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}on destroy object\mbox{]}. \end{DoxyCompactList}\item 
+static \hyperlink{class_level_loader_a4483f031503dac772decbd9beedd784a}{Serialized\+Object\+Delegate} \hyperlink{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}{Load\+Data} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}load data\mbox{]}. \end{DoxyCompactList}\item 
+static \hyperlink{class_level_loader_a233f68062303e5e0876c93646a9215ba}{Serialized\+Component\+Delegate} \hyperlink{class_level_loader_aeef57ebb788135e95410d8530a025403}{Load\+Component} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}load component\mbox{]}. \end{DoxyCompactList}\item 
+static Action$<$ Component $>$ \hyperlink{class_level_loader_a7db5619e1031ce444bcd94441ee4d1ac}{Loaded\+Component} = delegate \{ \}
+\begin{DoxyCompactList}\small\item\em Occurs when \mbox{[}loaded component\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_level_loader}{Level\+Loader}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_level_loader_a251c136aac0e65fff5fef1c339fad356}\label{class_level_loader_a251c136aac0e65fff5fef1c339fad356}} 
+\index{Level\+Loader@{Level\+Loader}!Create\+Object\+Delegate@{Create\+Object\+Delegate}}
+\index{Create\+Object\+Delegate@{Create\+Object\+Delegate}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Create\+Object\+Delegate()}{CreateObjectDelegate()}}
+{\footnotesize\ttfamily delegate void Level\+Loader.\+Create\+Object\+Delegate (\begin{DoxyParamCaption}\item[{Game\+Object}]{prefab,  }\item[{ref bool}]{cancel }\end{DoxyParamCaption})}
+
+
+
+Delegate Create\+Object\+Delegate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefab} & The prefab.\\
+\hline
+{\em cancel} & if set to {\ttfamily true} \mbox{[}cancel\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_level_loader_a9db9397a70b0263acaa645576258777b}\label{class_level_loader_a9db9397a70b0263acaa645576258777b}} 
+\index{Level\+Loader@{Level\+Loader}!Load@{Load}}
+\index{Load@{Load}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+Enumerator Level\+Loader.\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads this instance. 
+
+\begin{DoxyReturn}{Returns}
+I\+Enumerator.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}\label{class_level_loader_a4803ecbc9f8daab6e5a5e09bf7bf8911}} 
+\index{Level\+Loader@{Level\+Loader}!Load@{Load}}
+\index{Load@{Load}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+Enumerator Level\+Loader.\+Load (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Frames,  }\item[{float}]{time\+Scale = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the specified number of frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+Of\+Frames} & The number of frames.\\
+\hline
+{\em time\+Scale} & The time scale.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerator.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_level_loader_a233f68062303e5e0876c93646a9215ba}\label{class_level_loader_a233f68062303e5e0876c93646a9215ba}} 
+\index{Level\+Loader@{Level\+Loader}!Serialized\+Component\+Delegate@{Serialized\+Component\+Delegate}}
+\index{Serialized\+Component\+Delegate@{Serialized\+Component\+Delegate}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Serialized\+Component\+Delegate()}{SerializedComponentDelegate()}}
+{\footnotesize\ttfamily delegate void Level\+Loader.\+Serialized\+Component\+Delegate (\begin{DoxyParamCaption}\item[{Game\+Object}]{game\+Object,  }\item[{string}]{component\+Name,  }\item[{ref bool}]{cancel }\end{DoxyParamCaption})}
+
+
+
+Delegate Serialized\+Component\+Delegate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The game object.\\
+\hline
+{\em component\+Name} & Name of the component.\\
+\hline
+{\em cancel} & if set to {\ttfamily true} \mbox{[}cancel\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_level_loader_a4483f031503dac772decbd9beedd784a}\label{class_level_loader_a4483f031503dac772decbd9beedd784a}} 
+\index{Level\+Loader@{Level\+Loader}!Serialized\+Object\+Delegate@{Serialized\+Object\+Delegate}}
+\index{Serialized\+Object\+Delegate@{Serialized\+Object\+Delegate}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Serialized\+Object\+Delegate()}{SerializedObjectDelegate()}}
+{\footnotesize\ttfamily delegate void Level\+Loader.\+Serialized\+Object\+Delegate (\begin{DoxyParamCaption}\item[{Game\+Object}]{game\+Object,  }\item[{ref bool}]{cancel }\end{DoxyParamCaption})}
+
+
+
+Delegate Serialized\+Object\+Delegate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The game object.\\
+\hline
+{\em cancel} & if set to {\ttfamily true} \mbox{[}cancel\mbox{]}.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}\label{class_level_loader_a3f8fbb282f97d8aeaf499d94b0ed6a4b}} 
+\index{Level\+Loader@{Level\+Loader}!Current@{Current}}
+\index{Current@{Current}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Current}{Current}}
+{\footnotesize\ttfamily \hyperlink{class_level_loader}{Level\+Loader} Level\+Loader.\+Current\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The current 
+
+\mbox{\Hypertarget{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}\label{class_level_loader_a8282d4018064b62c2468d0cb3646f8d3}} 
+\index{Level\+Loader@{Level\+Loader}!Data@{Data}}
+\index{Data@{Data}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \hyperlink{class_level_serializer_1_1_level_data}{Level\+Serializer.\+Level\+Data} Level\+Loader.\+Data}
+
+
+
+The data 
+
+\mbox{\Hypertarget{class_level_loader_a714e188fb9511faaf73917bb4ec05404}\label{class_level_loader_a714e188fb9511faaf73917bb4ec05404}} 
+\index{Level\+Loader@{Level\+Loader}!Dont\+Delete@{Dont\+Delete}}
+\index{Dont\+Delete@{Dont\+Delete}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Dont\+Delete}{DontDelete}}
+{\footnotesize\ttfamily bool Level\+Loader.\+Dont\+Delete = false}
+
+
+
+The dont delete 
+
+\mbox{\Hypertarget{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}\label{class_level_loader_a35d760bc734b8b2c76fb49147ffd7109}} 
+\index{Level\+Loader@{Level\+Loader}!gui\+Color@{gui\+Color}}
+\index{gui\+Color@{gui\+Color}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{gui\+Color}{guiColor}}
+{\footnotesize\ttfamily Color Level\+Loader.\+gui\+Color = Color.\+white\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The G\+UI color 
+
+\mbox{\Hypertarget{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}\label{class_level_loader_a5adcee44265a6f1e54d2d7f914b26315}} 
+\index{Level\+Loader@{Level\+Loader}!Last@{Last}}
+\index{Last@{Last}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Last}{Last}}
+{\footnotesize\ttfamily Game\+Object Level\+Loader.\+Last}
+
+
+
+The last 
+
+\mbox{\Hypertarget{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}\label{class_level_loader_a8ed3459de6f3a6ba1be8970a0f6ddfc8}} 
+\index{Level\+Loader@{Level\+Loader}!root\+Object@{root\+Object}}
+\index{root\+Object@{root\+Object}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{root\+Object}{rootObject}}
+{\footnotesize\ttfamily Game\+Object Level\+Loader.\+root\+Object}
+
+
+
+The root object 
+
+\mbox{\Hypertarget{class_level_loader_a925df477df93274b0d6565a0978f8c76}\label{class_level_loader_a925df477df93274b0d6565a0978f8c76}} 
+\index{Level\+Loader@{Level\+Loader}!show\+G\+UI@{show\+G\+UI}}
+\index{show\+G\+UI@{show\+G\+UI}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{show\+G\+UI}{showGUI}}
+{\footnotesize\ttfamily bool Level\+Loader.\+show\+G\+UI = true}
+
+
+
+The show G\+UI 
+
+\mbox{\Hypertarget{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}\label{class_level_loader_a3f36bc55abdef7cf8d6e42023c8f9397}} 
+\index{Level\+Loader@{Level\+Loader}!time\+Scale\+After\+Loading@{time\+Scale\+After\+Loading}}
+\index{time\+Scale\+After\+Loading@{time\+Scale\+After\+Loading}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{time\+Scale\+After\+Loading}{timeScaleAfterLoading}}
+{\footnotesize\ttfamily float Level\+Loader.\+time\+Scale\+After\+Loading = 1}
+
+
+
+The time scale after loading 
+
+\mbox{\Hypertarget{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}\label{class_level_loader_aa0e135d1e8f6942d593dc7c2ac3769d7}} 
+\index{Level\+Loader@{Level\+Loader}!when\+Completed@{when\+Completed}}
+\index{when\+Completed@{when\+Completed}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{when\+Completed}{whenCompleted}}
+{\footnotesize\ttfamily Action$<$Game\+Object, List$<$Game\+Object$>$ $>$ Level\+Loader.\+when\+Completed = delegate \{ \}}
+
+
+
+The when completed 
+
+
+
+\subsection{Event Documentation}
 \mbox{\Hypertarget{class_level_loader_a6467f227c2897f195d6c9f611d816cca}\label{class_level_loader_a6467f227c2897f195d6c9f611d816cca}} 
-static Create\+Object\+Delegate {\bfseries Create\+Game\+Object} = delegate \{ \}
-\item 
-\mbox{\Hypertarget{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}\label{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}} 
-static Serialized\+Object\+Delegate {\bfseries On\+Destroy\+Object} = delegate \{ \}
-\item 
-\mbox{\Hypertarget{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}\label{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}} 
-static Serialized\+Object\+Delegate {\bfseries Load\+Data} = delegate \{ \}
-\item 
+\index{Level\+Loader@{Level\+Loader}!Create\+Game\+Object@{Create\+Game\+Object}}
+\index{Create\+Game\+Object@{Create\+Game\+Object}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Create\+Game\+Object}{CreateGameObject}}
+{\footnotesize\ttfamily \hyperlink{class_level_loader_a251c136aac0e65fff5fef1c339fad356}{Create\+Object\+Delegate} Level\+Loader.\+Create\+Game\+Object = delegate \{ \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Occurs when \mbox{[}create game object\mbox{]}. 
+
 \mbox{\Hypertarget{class_level_loader_aeef57ebb788135e95410d8530a025403}\label{class_level_loader_aeef57ebb788135e95410d8530a025403}} 
-static Serialized\+Component\+Delegate {\bfseries Load\+Component} = delegate \{ \}
-\item 
+\index{Level\+Loader@{Level\+Loader}!Load\+Component@{Load\+Component}}
+\index{Load\+Component@{Load\+Component}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Load\+Component}{LoadComponent}}
+{\footnotesize\ttfamily \hyperlink{class_level_loader_a233f68062303e5e0876c93646a9215ba}{Serialized\+Component\+Delegate} Level\+Loader.\+Load\+Component = delegate \{ \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Occurs when \mbox{[}load component\mbox{]}. 
+
+\mbox{\Hypertarget{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}\label{class_level_loader_ae3f1e9846c9d625dfd2c522d35e5fa29}} 
+\index{Level\+Loader@{Level\+Loader}!Load\+Data@{Load\+Data}}
+\index{Load\+Data@{Load\+Data}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Load\+Data}{LoadData}}
+{\footnotesize\ttfamily \hyperlink{class_level_loader_a4483f031503dac772decbd9beedd784a}{Serialized\+Object\+Delegate} Level\+Loader.\+Load\+Data = delegate \{ \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Occurs when \mbox{[}load data\mbox{]}. 
+
 \mbox{\Hypertarget{class_level_loader_a7db5619e1031ce444bcd94441ee4d1ac}\label{class_level_loader_a7db5619e1031ce444bcd94441ee4d1ac}} 
-static Action$<$ Component $>$ {\bfseries Loaded\+Component} = delegate \{ \}
-\end{DoxyCompactItemize}
+\index{Level\+Loader@{Level\+Loader}!Loaded\+Component@{Loaded\+Component}}
+\index{Loaded\+Component@{Loaded\+Component}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{Loaded\+Component}{LoadedComponent}}
+{\footnotesize\ttfamily Action$<$Component$>$ Level\+Loader.\+Loaded\+Component = delegate \{ \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Occurs when \mbox{[}loaded component\mbox{]}. 
+
+\mbox{\Hypertarget{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}\label{class_level_loader_a5cdf0c07cc677bd052a4e4b11799eccc}} 
+\index{Level\+Loader@{Level\+Loader}!On\+Destroy\+Object@{On\+Destroy\+Object}}
+\index{On\+Destroy\+Object@{On\+Destroy\+Object}!Level\+Loader@{Level\+Loader}}
+\subsubsection{\texorpdfstring{On\+Destroy\+Object}{OnDestroyObject}}
+{\footnotesize\ttfamily \hyperlink{class_level_loader_a4483f031503dac772decbd9beedd784a}{Serialized\+Object\+Delegate} Level\+Loader.\+On\+Destroy\+Object = delegate \{ \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Occurs when \mbox{[}on destroy object\mbox{]}. 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -3,8 +3,16 @@ using System.IO;
 
 namespace Serialization
 {
+    /// <summary>
+    /// Class BinarySerializer. This class cannot be inherited.
+    /// </summary>
+    /// <seealso cref="Serialization.IStorage" />
     public sealed class BinarySerializer : IStorage //, IDisposable //WIP
     {
+        /// <summary>
+        /// Gets the data.
+        /// </summary>
+        /// <value>The data.</value>
         public byte[] Data { get; private set; }
         private MemoryStream _myStream;
 
@@ -50,6 +58,16 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Called when serializing a new object, the Entry parameter may have MustHaveName set
+        /// when this is true the name must be persisted as is so that the property or field can
+        /// be set when retrieving the data.
+        /// If this routine returns TRUE then no further processing is executed and the object
+        /// is presumed persisted in its entirety
+        /// </summary>
+        /// <param name="entry">The item being serialized</param>
+        /// <param name="id">The identifier.</param>
+        /// <returns>Normally FALSE.  True if the object is already fully persisted</returns>
         public bool StartSerializing(Entry entry, int id)
         {
             if (entry.MustHaveName)
@@ -62,6 +80,9 @@ namespace Serialization
             return false;
         }
 
+        /// <summary>
+        /// Starts the serialization process, the serializer should initialize and wait for data
+        /// </summary>
         public void StartSerializing()
         {
             _myStream = new MemoryStream();
@@ -70,6 +91,11 @@ namespace Serialization
             UnitySerializer.PushPropertyNames();
         }
 
+        /// <summary>
+        /// Called when serialization is complete, should return the data or a key
+        /// encoded as a byte array that will be used to reinitialize the serializer
+        /// later
+        /// </summary>
         public void FinishedSerializing() 
         {
             _writer.Flush();
@@ -164,19 +190,36 @@ namespace Serialization
             UnitySerializer.PopPropertyNames();
         }*/
 
+        /// <summary>
+        /// Gets a value indicating whether [supports on demand].
+        /// </summary>
+        /// <value><c>true</c> if [supports on demand]; otherwise, <c>false</c>.</value>
         public bool SupportsOnDemand
         {
             get { return false; }
         }
 
+        /// <summary>
+        /// Begins the on demand.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
         public void BeginOnDemand(int id)
         {
         }
 
+        /// <summary>
+        /// Ends the on demand.
+        /// </summary>
         public void EndOnDemand()
         {
         }
 
+        /// <summary>
+        /// Begins the write object.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="objectType">Type of the object.</param>
+        /// <param name="wasSeen">if set to <c>true</c> [was seen].</param>
         public void BeginWriteObject(int id, Type objectType, bool wasSeen)
         {
             if (objectType == null)
@@ -193,6 +236,10 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Begins the write properties.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void BeginWriteProperties(int count)
         {
             if (count > 250)
@@ -205,6 +252,10 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Begins the write fields.
+        /// </summary>
+        /// <param name="count">The count.</param>
         public void BeginWriteFields(int count)
         {
             if (count > 250)
@@ -217,21 +268,40 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Writes the simple value.
+        /// </summary>
+        /// <param name="value">The value.</param>
         public void WriteSimpleValue(object value)
         {
             UnitySerializer.WriteValue(_writer, value);
         }
 
+        /// <summary>
+        /// Begins the write list.
+        /// </summary>
+        /// <param name="count">The count.</param>
+        /// <param name="listType">Type of the list.</param>
         public void BeginWriteList(int count, Type listType)
         {
             WriteSimpleValue(count);
         }
 
+        /// <summary>
+        /// Begins the write dictionary.
+        /// </summary>
+        /// <param name="count">The count.</param>
+        /// <param name="dictionaryType">Type of the dictionary.</param>
         public void BeginWriteDictionary(int count, Type dictionaryType)
         {
             WriteSimpleValue(count);
         }
 
+        /// <summary>
+        /// Writes the simple array.
+        /// </summary>
+        /// <param name="count">The count.</param>
+        /// <param name="array">The array.</param>
         public void WriteSimpleArray(int count, Array array)
         {
             WriteSimpleValue(count);
@@ -263,6 +333,12 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Begins the multi dimension array.
+        /// </summary>
+        /// <param name="arrayType">Type of the array.</param>
+        /// <param name="dimensions">The dimensions.</param>
+        /// <param name="count">The count.</param>
         public void BeginMultiDimensionArray(Type arrayType, int dimensions, int count)
         {
             WriteSimpleValue(-1);
@@ -270,21 +346,41 @@ namespace Serialization
             WriteSimpleValue(count);
         }
 
+        /// <summary>
+        /// Writes the array dimension.
+        /// </summary>
+        /// <param name="dimension">The dimension.</param>
+        /// <param name="count">The count.</param>
         public void WriteArrayDimension(int dimension, int count)
         {
             WriteSimpleValue(count);
         }
 
+        /// <summary>
+        /// Begins the write object array.
+        /// </summary>
+        /// <param name="count">The count.</param>
+        /// <param name="arrayType">Type of the array.</param>
         public void BeginWriteObjectArray(int count, Type arrayType)
         {
             WriteSimpleValue(count);
         }
 
+        /// <summary>
+        /// Reads a simple type (or array of bytes) from storage
+        /// </summary>
+        /// <param name="fields">The fields.</param>
+        /// <returns>Entry[].</returns>
         public Entry[] ShouldWriteFields(Entry[] fields)
         {
             return fields;
         }
 
+        /// <summary>
+        /// Shoulds the write properties.
+        /// </summary>
+        /// <param name="properties">The properties.</param>
+        /// <returns>Entry[].</returns>
         public Entry[] ShouldWriteProperties(Entry[] properties)
         {
             return properties;
@@ -328,6 +424,9 @@ namespace Serialization
             }
         }
 
+        /// <summary>
+        /// Called when deserialization is complete, so that resources may be released
+        /// </summary>
         public void FinishedDeserializing()
         {
             _reader.Close();
@@ -341,6 +440,14 @@ namespace Serialization
         }
 
         //Gets the name from the stream
+        /// <summary>
+        /// Called to allow the storage to retrieve the name of the item being deserialized
+        /// All entries must be named before a call to StartDeserializing, this enables
+        /// the system to fill out the property setter and capture default stored type
+        /// information before deserialization commences
+        /// </summary>
+        /// <param name="entry">The entry whose name should be filled in</param>
+        /// <exception cref="Exception">Data stream may be corrupt, found an id of " + id + " when looking a property name id</exception>
         public void DeserializeGetName(Entry entry)
         {
             if (!entry.MustHaveName)
@@ -368,24 +475,44 @@ namespace Serialization
             return null;
         }
 
+        /// <summary>
+        /// Begins the read property.
+        /// </summary>
+        /// <param name="entry">The entry.</param>
+        /// <returns>Entry.</returns>
         public Entry BeginReadProperty(Entry entry)
         {
             return entry;
         }
 
+        /// <summary>
+        /// Ends the read property.
+        /// </summary>
         public void EndReadProperty()
         {
         }
 
+        /// <summary>
+        /// Begins the read field.
+        /// </summary>
+        /// <param name="entry">The entry.</param>
+        /// <returns>Entry.</returns>
         public Entry BeginReadField(Entry entry)
         {
             return entry;
         }
 
+        /// <summary>
+        /// Ends the read field.
+        /// </summary>
         public void EndReadField()
         {
         }
 
+        /// <summary>
+        /// Starts the deserializing.
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
         public void StartDeserializing() {
             UnitySerializer.PushKnownTypes();
             UnitySerializer.PushPropertyNames();
@@ -473,10 +600,20 @@ namespace Serialization
             }
         }*/
 
+        /// <summary>
+        /// Called when an object has deserialization complete
+        /// </summary>
+        /// <param name="entry">The entry.</param>
         public void FinishDeserializing(Entry entry)
         {
         }
 
+        /// <summary>
+        /// Reads the simple array.
+        /// </summary>
+        /// <param name="elementType">Type of the element.</param>
+        /// <param name="count">The count.</param>
+        /// <returns>Array.</returns>
         public Array ReadSimpleArray(Type elementType, int count)
         {
             if (count == -1)
@@ -504,23 +641,41 @@ namespace Serialization
             return result;
         }
 
+        /// <summary>
+        /// Begins the read properties.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
         public int BeginReadProperties()
         {
             var count = ReadSimpleValue<byte>();
             return count == 255 ? ReadSimpleValue<int>() : count;
         }
 
+        /// <summary>
+        /// Begins the read fields.
+        /// </summary>
+        /// <returns>System.Int32.</returns>
         public int BeginReadFields()
         {
             var count = ReadSimpleValue<byte>();
             return count == 255 ? ReadSimpleValue<int>() : count;
         }
 
+        /// <summary>
+        /// Reads the simple value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>T.</returns>
         public T ReadSimpleValue<T>()
         {
             return (T)ReadSimpleValue(typeof(T));
         }
 
+        /// <summary>
+        /// Reads the simple value.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>System.Object.</returns>
         public object ReadSimpleValue(Type type)
         {
             UnitySerializer.ReadAValue read;
@@ -531,6 +686,11 @@ namespace Serialization
             return read(_reader);
         }
 
+        /// <summary>
+        /// Determines whether [is multi dimensional array] [the specified length].
+        /// </summary>
+        /// <param name="length">The length.</param>
+        /// <returns><c>true</c> if [is multi dimensional array] [the specified length]; otherwise, <c>false</c>.</returns>
         public bool IsMultiDimensionalArray(out int length)
         {
             var count = ReadSimpleValue<int>();
@@ -543,24 +703,46 @@ namespace Serialization
             return false;
         }
 
+        /// <summary>
+        /// Begins the read dictionary.
+        /// </summary>
+        /// <param name="keyType">Type of the key.</param>
+        /// <param name="valueType">Type of the value.</param>
+        /// <returns>System.Int32.</returns>
         public int BeginReadDictionary(Type keyType, Type valueType)
         {
             return ReadSimpleValue<int>();
         }
 
+        /// <summary>
+        /// Ends the read dictionary.
+        /// </summary>
         public void EndReadDictionary()
         {
         }
 
+        /// <summary>
+        /// Begins the read object array.
+        /// </summary>
+        /// <param name="valueType">Type of the value.</param>
+        /// <returns>System.Int32.</returns>
         public int BeginReadObjectArray(Type valueType)
         {
             return ReadSimpleValue<int>();
         }
 
+        /// <summary>
+        /// Ends the read object array.
+        /// </summary>
         public void EndReadObjectArray()
         {
         }
 
+        /// <summary>
+        /// Begins the read multi dimensional array.
+        /// </summary>
+        /// <param name="dimension">The dimension.</param>
+        /// <param name="count">The count.</param>
         public void BeginReadMultiDimensionalArray(out int dimension, out int count)
         {
             //var dimensions = storage.ReadValue<int>("dimensions");
@@ -569,25 +751,46 @@ namespace Serialization
             count = ReadSimpleValue<int>();
         }
 
+        /// <summary>
+        /// Ends the read multi dimensional array.
+        /// </summary>
         public void EndReadMultiDimensionalArray()
         {
         }
 
+        /// <summary>
+        /// Reads the array dimension.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>System.Int32.</returns>
         public int ReadArrayDimension(int index)
         {
             // //.ReadValue<int>("dim_len" + item);
             return ReadSimpleValue<int>();
         }
 
+        /// <summary>
+        /// Begins the read list.
+        /// </summary>
+        /// <param name="valueType">Type of the value.</param>
+        /// <returns>System.Int32.</returns>
         public int BeginReadList(Type valueType)
         {
             return ReadSimpleValue<int>();
         }
 
+        /// <summary>
+        /// Ends the read list.
+        /// </summary>
         public void EndReadList()
         {
         }
 
+        /// <summary>
+        /// Begins the read object.
+        /// </summary>
+        /// <param name="isReference">if set to <c>true</c> [is reference].</param>
+        /// <returns>System.Int32.</returns>
         public int BeginReadObject(out bool isReference)
         {
             int result;
@@ -615,170 +818,321 @@ namespace Serialization
 
         #region do nothing methods
 
+        /// <summary>
+        /// Ends the write object array.
+        /// </summary>
         public void EndWriteObjectArray()
         {
         }
 
+        /// <summary>
+        /// Ends the write list.
+        /// </summary>
         public void EndWriteList()
         {
         }
 
+        /// <summary>
+        /// Ends the write dictionary.
+        /// </summary>
         public void EndWriteDictionary()
         {
         }
 
+        /// <summary>
+        /// Begins the write dictionary key.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool BeginWriteDictionaryKey(int id, object value)
         {
             return false;
         }
 
+        /// <summary>
+        /// Ends the write dictionary key.
+        /// </summary>
         public void EndWriteDictionaryKey()
         {
         }
 
+        /// <summary>
+        /// Begins the write dictionary value.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool BeginWriteDictionaryValue(int id, object value)
         {
             return false;
         }
 
+        /// <summary>
+        /// Ends the write dictionary value.
+        /// </summary>
         public void EndWriteDictionaryValue()
         {
         }
 
+        /// <summary>
+        /// Ends the multi dimension array.
+        /// </summary>
         public void EndMultiDimensionArray()
         {
         }
 
+        /// <summary>
+        /// Ends the read object.
+        /// </summary>
         public void EndReadObject()
         {
         }
 
+        /// <summary>
+        /// Begins the write list item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool BeginWriteListItem(int index, object value)
         {
             return false;
         }
 
+        /// <summary>
+        /// Ends the write list item.
+        /// </summary>
         public void EndWriteListItem()
         {
         }
 
+        /// <summary>
+        /// Begins the write object array item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool BeginWriteObjectArrayItem(int index, object value)
         {
             return false;
         }
 
+        /// <summary>
+        /// Ends the write object array item.
+        /// </summary>
         public void EndWriteObjectArrayItem()
         {
         }
 
+        /// <summary>
+        /// Ends the read properties.
+        /// </summary>
         public void EndReadProperties()
         {
         }
 
+        /// <summary>
+        /// Ends the read fields.
+        /// </summary>
         public void EndReadFields()
         {
         }
 
+        /// <summary>
+        /// Begins the read list item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="entry">The entry.</param>
+        /// <returns>System.Object.</returns>
         public object BeginReadListItem(int index, Entry entry)
         {
             return null;
         }
 
+        /// <summary>
+        /// Ends the read list item.
+        /// </summary>
         public void EndReadListItem()
         {
         }
 
+        /// <summary>
+        /// Begins the read dictionary key item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="entry">The entry.</param>
+        /// <returns>System.Object.</returns>
         public object BeginReadDictionaryKeyItem(int index, Entry entry)
         {
             return null;
         }
 
+        /// <summary>
+        /// Ends the read dictionary key item.
+        /// </summary>
         public void EndReadDictionaryKeyItem()
         {
         }
 
+        /// <summary>
+        /// Begins the read dictionary value item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="entry">The entry.</param>
+        /// <returns>System.Object.</returns>
         public object BeginReadDictionaryValueItem(int index, Entry entry)
         {
             return null;
         }
 
+        /// <summary>
+        /// Ends the read dictionary value item.
+        /// </summary>
         public void EndReadDictionaryValueItem()
         {
         }
 
+        /// <summary>
+        /// Begins the read object array item.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="entry">The entry.</param>
+        /// <returns>System.Object.</returns>
         public object BeginReadObjectArrayItem(int index, Entry entry)
         {
             return null;
         }
 
+        /// <summary>
+        /// Ends the read object array item.
+        /// </summary>
         public void EndReadObjectArrayItem()
         {
         }
 
+        /// <summary>
+        /// Ends the write object.
+        /// </summary>
         public void EndWriteObject()
         {
         }
 
+        /// <summary>
+        /// Begins the write property.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="type">The type.</param>
         public void BeginWriteProperty(string name, Type type)
         {
         }
 
+        /// <summary>
+        /// Ends the write property.
+        /// </summary>
         public void EndWriteProperty()
         {
         }
 
+        /// <summary>
+        /// Begins the write field.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="type">The type.</param>
         public void BeginWriteField(string name, Type type)
         {
         }
 
+        /// <summary>
+        /// Ends the write field.
+        /// </summary>
         public void EndWriteField()
         {
         }
 
+        /// <summary>
+        /// Ends the write properties.
+        /// </summary>
         public void EndWriteProperties()
         {
         }
 
+        /// <summary>
+        /// Ends the write fields.
+        /// </summary>
         public void EndWriteFields()
         {
         }
 
+        /// <summary>
+        /// Called when the last information about an object has been written
+        /// </summary>
+        /// <param name="entry">The object being written</param>
         public void FinishSerializing(Entry entry)
         {
         }
 
+        /// <summary>
+        /// Begins the read dictionary keys.
+        /// </summary>
         public void BeginReadDictionaryKeys()
         {
         }
 
+        /// <summary>
+        /// Ends the read dictionary keys.
+        /// </summary>
         public void EndReadDictionaryKeys()
         {
         }
 
+        /// <summary>
+        /// Begins the read dictionary values.
+        /// </summary>
         public void BeginReadDictionaryValues()
         {
         }
 
+        /// <summary>
+        /// Ends the read dictionary values.
+        /// </summary>
         public void EndReadDictionaryValues()
         {
         }
 
+        /// <summary>
+        /// Begins the write dictionary keys.
+        /// </summary>
         public void BeginWriteDictionaryKeys()
         {
         }
 
+        /// <summary>
+        /// Ends the write dictionary keys.
+        /// </summary>
         public void EndWriteDictionaryKeys()
         {
         }
 
+        /// <summary>
+        /// Begins the write dictionary values.
+        /// </summary>
         public void BeginWriteDictionaryValues()
         {
         }
 
+        /// <summary>
+        /// Ends the write dictionary values.
+        /// </summary>
         public void EndWriteDictionaryValues()
         {
         }
 
+        /// <summary>
+        /// Determines whether this instance has more.
+        /// </summary>
+        /// <returns><c>true</c> if this instance has more; otherwise, <c>false</c>.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public bool HasMore()
         {
             throw new NotImplementedException();

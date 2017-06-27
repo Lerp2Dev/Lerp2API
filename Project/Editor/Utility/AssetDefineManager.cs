@@ -10,6 +10,10 @@ using UnityEditor;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class AssetDefineManager.
+    /// </summary>
+    /// <seealso cref="UnityEditor.AssetPostprocessor" />
     [InitializeOnLoad]
     public class AssetDefineManager : AssetPostprocessor
     {
@@ -20,10 +24,25 @@ namespace Lerp2API.Utility
 
         private struct AssetDefine
         {
+            /// <summary>
+            /// The asset detection file
+            /// </summary>
             public readonly string assetDetectionFile;              //the file used to detect if the asset exists
+            /// <summary>
+            /// The asset defines
+            /// </summary>
             public readonly string[] assetDefines;                  //series of defines for this asset
+            /// <summary>
+            /// The define platforms
+            /// </summary>
             public readonly BuildTargetGroup[] definePlatforms;     //platform this define will be used for (null is all platforms)
 
+            /// <summary>
+            /// Initializes a new instance of the <see cref="AssetDefine"/> struct.
+            /// </summary>
+            /// <param name="fileToDetectAsset">The file to detect asset.</param>
+            /// <param name="platformsForDefine">The platforms for define.</param>
+            /// <param name="definesForAsset">The defines for asset.</param>
             public AssetDefine(string fileToDetectAsset, BuildTargetGroup[] platformsForDefine, params string[] definesForAsset)
             {
                 assetDetectionFile = fileToDetectAsset;
@@ -31,15 +50,28 @@ namespace Lerp2API.Utility
                 assetDefines = definesForAsset;
             }
 
+            /// <summary>
+            /// Returns true if ... is valid.
+            /// </summary>
+            /// <value><c>true</c> if this instance is valid; otherwise, <c>false</c>.</value>
             public bool IsValid { get { return assetDetectionFile != null && assetDefines != null; } }
+            /// <summary>
+            /// The invalid
+            /// </summary>
             public static AssetDefine Invalid = new AssetDefine(null, null, null);
 
+            /// <summary>
+            /// Removes all defines.
+            /// </summary>
             public void RemoveAllDefines()
             {
                 foreach (string define in assetDefines)
                     RemoveCompileDefine(define, definePlatforms);
             }
 
+            /// <summary>
+            /// Adds all defines.
+            /// </summary>
             public void AddAllDefines()
             {
                 foreach (string define in assetDefines)

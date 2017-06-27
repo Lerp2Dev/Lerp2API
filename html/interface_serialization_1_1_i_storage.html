@@ -70,13 +70,16 @@ $(function() {
 <div class="title">Serialization.IStorage Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface <a class="el" href="interface_serialization_1_1_i_storage.html" title="Interface IStorage ">IStorage</a>  
+ <a href="interface_serialization_1_1_i_storage.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Serialization.IStorage:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_serialization_1_1_i_storage.png" usemap="#Serialization.IStorage_map" alt=""/>
   <map id="Serialization.IStorage_map" name="Serialization.IStorage_map">
-<area href="class_serialization_1_1_binary_serializer.html" alt="Serialization.BinarySerializer" shape="rect" coords="0,56,176,80"/>
+<area href="class_serialization_1_1_binary_serializer.html" title="Class BinarySerializer. This class cannot be inherited. " alt="Serialization.BinarySerializer" shape="rect" coords="0,56,176,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -92,13 +95,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:affc5c4e5bc5efaf0f1840943358b6bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when deserialization is complete, so that resources may be released  <a href="#affc5c4e5bc5efaf0f1840943358b6bc9">More...</a><br /></td></tr>
 <tr class="separator:affc5c4e5bc5efaf0f1840943358b6bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62f447c10caea0bd0c2ec3bad36fe14a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a62f447c10caea0bd0c2ec3bad36fe14a">StartSerializing</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry, int id)</td></tr>
-<tr class="memdesc:a62f447c10caea0bd0c2ec3bad36fe14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when serializing a new object, the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter may have MustHaveName set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns TRUE then no further processing is executed and the object is presumed persisted in its entirety  <a href="#a62f447c10caea0bd0c2ec3bad36fe14a">More...</a><br /></td></tr>
+<tr class="memdesc:a62f447c10caea0bd0c2ec3bad36fe14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when serializing a new object, the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter may have MustHaveName set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns TRUE then no further processing is executed and the object is presumed persisted in its entirety  <a href="#a62f447c10caea0bd0c2ec3bad36fe14a">More...</a><br /></td></tr>
 <tr class="separator:a62f447c10caea0bd0c2ec3bad36fe14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e6828bebedaa8ec17e5f01a7cbd689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a03e6828bebedaa8ec17e5f01a7cbd689">FinishSerializing</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
 <tr class="memdesc:a03e6828bebedaa8ec17e5f01a7cbd689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the last information about an object has been written  <a href="#a03e6828bebedaa8ec17e5f01a7cbd689">More...</a><br /></td></tr>
 <tr class="separator:a03e6828bebedaa8ec17e5f01a7cbd689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90aa19f79a51acf057f20da842ef09b3"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a90aa19f79a51acf057f20da842ef09b3">StartDeserializing</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
-<tr class="memdesc:a90aa19f79a51acf057f20da842ef09b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when deserializing an object. If the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter has MustHaveName set then the routine should return with the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter updated with the name and the type of the object in StoredType If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after DeserializeGetName  <a href="#a90aa19f79a51acf057f20da842ef09b3">More...</a><br /></td></tr>
+<tr class="memdesc:a90aa19f79a51acf057f20da842ef09b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when deserializing an object. If the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter has MustHaveName set then the routine should return with the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter updated with the name and the type of the object in StoredType If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after DeserializeGetName  <a href="#a90aa19f79a51acf057f20da842ef09b3">More...</a><br /></td></tr>
 <tr class="separator:a90aa19f79a51acf057f20da842ef09b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad17a92256ad7a7196084e05bad968567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad17a92256ad7a7196084e05bad968567">DeserializeGetName</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
 <tr class="memdesc:ad17a92256ad7a7196084e05bad968567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to allow the storage to retrieve the name of the item being deserialized All entries must be named before a call to StartDeserializing, this enables the system to fill out the property setter and capture default stored type information before deserialization commences  <a href="#ad17a92256ad7a7196084e05bad968567">More...</a><br /></td></tr>
@@ -109,233 +112,1278 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0795ec3b6aa77280885c34e2822cb410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0795ec3b6aa77280885c34e2822cb410">ShouldWriteFields</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a>[] fields)</td></tr>
 <tr class="memdesc:a0795ec3b6aa77280885c34e2822cb410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a simple type (or array of bytes) from storage  <a href="#a0795ec3b6aa77280885c34e2822cb410">More...</a><br /></td></tr>
 <tr class="separator:a0795ec3b6aa77280885c34e2822cb410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d4c95743d604600b55492194d54717b"><td class="memItemLeft" align="right" valign="top"><a id="a0d4c95743d604600b55492194d54717b"></a>
-<a class="el" href="class_serialization_1_1_entry.html">Entry</a> []&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldWriteProperties</b> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a>[] properties)</td></tr>
+<tr class="memitem:a0d4c95743d604600b55492194d54717b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0d4c95743d604600b55492194d54717b">ShouldWriteProperties</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a>[] properties)</td></tr>
+<tr class="memdesc:a0d4c95743d604600b55492194d54717b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shoulds the write properties.  <a href="#a0d4c95743d604600b55492194d54717b">More...</a><br /></td></tr>
 <tr class="separator:a0d4c95743d604600b55492194d54717b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0432907fec979aa0832b659b4bd8d67"><td class="memItemLeft" align="right" valign="top"><a id="ab0432907fec979aa0832b659b4bd8d67"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StartDeserializing</b> ()</td></tr>
+<tr class="memitem:ab0432907fec979aa0832b659b4bd8d67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ab0432907fec979aa0832b659b4bd8d67">StartDeserializing</a> ()</td></tr>
+<tr class="memdesc:ab0432907fec979aa0832b659b4bd8d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the deserializing.  <a href="#ab0432907fec979aa0832b659b4bd8d67">More...</a><br /></td></tr>
 <tr class="separator:ab0432907fec979aa0832b659b4bd8d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a167bf2c224e928c05446f0fde56e9d8d"><td class="memItemLeft" align="right" valign="top"><a id="a167bf2c224e928c05446f0fde56e9d8d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasMore</b> ()</td></tr>
+<tr class="memitem:a167bf2c224e928c05446f0fde56e9d8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a167bf2c224e928c05446f0fde56e9d8d">HasMore</a> ()</td></tr>
+<tr class="memdesc:a167bf2c224e928c05446f0fde56e9d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this instance has more.  <a href="#a167bf2c224e928c05446f0fde56e9d8d">More...</a><br /></td></tr>
 <tr class="separator:a167bf2c224e928c05446f0fde56e9d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dab514d85acc8b9c97934025438cccf"><td class="memItemLeft" align="right" valign="top"><a id="a4dab514d85acc8b9c97934025438cccf"></a>
-<a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadProperty</b> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:a4dab514d85acc8b9c97934025438cccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a4dab514d85acc8b9c97934025438cccf">BeginReadProperty</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:a4dab514d85acc8b9c97934025438cccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read property.  <a href="#a4dab514d85acc8b9c97934025438cccf">More...</a><br /></td></tr>
 <tr class="separator:a4dab514d85acc8b9c97934025438cccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5193e529b49bfccf51f893ebcabc8e80"><td class="memItemLeft" align="right" valign="top"><a id="a5193e529b49bfccf51f893ebcabc8e80"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadProperty</b> ()</td></tr>
+<tr class="memitem:a5193e529b49bfccf51f893ebcabc8e80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a5193e529b49bfccf51f893ebcabc8e80">EndReadProperty</a> ()</td></tr>
+<tr class="memdesc:a5193e529b49bfccf51f893ebcabc8e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read property.  <a href="#a5193e529b49bfccf51f893ebcabc8e80">More...</a><br /></td></tr>
 <tr class="separator:a5193e529b49bfccf51f893ebcabc8e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a369241f5ffd8446da4a57c72a8646f09"><td class="memItemLeft" align="right" valign="top"><a id="a369241f5ffd8446da4a57c72a8646f09"></a>
-<a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadField</b> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:a369241f5ffd8446da4a57c72a8646f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a369241f5ffd8446da4a57c72a8646f09">BeginReadField</a> (<a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:a369241f5ffd8446da4a57c72a8646f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read field.  <a href="#a369241f5ffd8446da4a57c72a8646f09">More...</a><br /></td></tr>
 <tr class="separator:a369241f5ffd8446da4a57c72a8646f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27a910b48b01fcee850465606cd2a6f"><td class="memItemLeft" align="right" valign="top"><a id="ad27a910b48b01fcee850465606cd2a6f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadField</b> ()</td></tr>
+<tr class="memitem:ad27a910b48b01fcee850465606cd2a6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad27a910b48b01fcee850465606cd2a6f">EndReadField</a> ()</td></tr>
+<tr class="memdesc:ad27a910b48b01fcee850465606cd2a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read field.  <a href="#ad27a910b48b01fcee850465606cd2a6f">More...</a><br /></td></tr>
 <tr class="separator:ad27a910b48b01fcee850465606cd2a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14c84cc7b9483b89881c5caef8e4f1a0"><td class="memItemLeft" align="right" valign="top"><a id="a14c84cc7b9483b89881c5caef8e4f1a0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadProperties</b> ()</td></tr>
+<tr class="memitem:a14c84cc7b9483b89881c5caef8e4f1a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a14c84cc7b9483b89881c5caef8e4f1a0">BeginReadProperties</a> ()</td></tr>
+<tr class="memdesc:a14c84cc7b9483b89881c5caef8e4f1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read properties.  <a href="#a14c84cc7b9483b89881c5caef8e4f1a0">More...</a><br /></td></tr>
 <tr class="separator:a14c84cc7b9483b89881c5caef8e4f1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7e9c21d8e723c2b7482d0ce7db7e3c5"><td class="memItemLeft" align="right" valign="top"><a id="af7e9c21d8e723c2b7482d0ce7db7e3c5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadFields</b> ()</td></tr>
+<tr class="memitem:af7e9c21d8e723c2b7482d0ce7db7e3c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#af7e9c21d8e723c2b7482d0ce7db7e3c5">BeginReadFields</a> ()</td></tr>
+<tr class="memdesc:af7e9c21d8e723c2b7482d0ce7db7e3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read fields.  <a href="#af7e9c21d8e723c2b7482d0ce7db7e3c5">More...</a><br /></td></tr>
 <tr class="separator:af7e9c21d8e723c2b7482d0ce7db7e3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e3376134f3047f247eaa2a6844389f3"><td class="memItemLeft" align="right" valign="top"><a id="a5e3376134f3047f247eaa2a6844389f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadProperties</b> ()</td></tr>
+<tr class="memitem:a5e3376134f3047f247eaa2a6844389f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a5e3376134f3047f247eaa2a6844389f3">EndReadProperties</a> ()</td></tr>
+<tr class="memdesc:a5e3376134f3047f247eaa2a6844389f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read properties.  <a href="#a5e3376134f3047f247eaa2a6844389f3">More...</a><br /></td></tr>
 <tr class="separator:a5e3376134f3047f247eaa2a6844389f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af38f83f1eb0c5190fd0e4ad845ff0649"><td class="memItemLeft" align="right" valign="top"><a id="af38f83f1eb0c5190fd0e4ad845ff0649"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadFields</b> ()</td></tr>
+<tr class="memitem:af38f83f1eb0c5190fd0e4ad845ff0649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#af38f83f1eb0c5190fd0e4ad845ff0649">EndReadFields</a> ()</td></tr>
+<tr class="memdesc:af38f83f1eb0c5190fd0e4ad845ff0649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read fields.  <a href="#af38f83f1eb0c5190fd0e4ad845ff0649">More...</a><br /></td></tr>
 <tr class="separator:af38f83f1eb0c5190fd0e4ad845ff0649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e7a60cc8b12071f1866d2cac454f99"><td class="memItemLeft" align="right" valign="top"><a id="ae1e7a60cc8b12071f1866d2cac454f99"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>ReadSimpleValue&lt; T &gt;</b> ()</td></tr>
+<tr class="memitem:ae1e7a60cc8b12071f1866d2cac454f99"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ae1e7a60cc8b12071f1866d2cac454f99">ReadSimpleValue&lt; T &gt;</a> ()</td></tr>
+<tr class="memdesc:ae1e7a60cc8b12071f1866d2cac454f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the simple value.  <a href="#ae1e7a60cc8b12071f1866d2cac454f99">More...</a><br /></td></tr>
 <tr class="separator:ae1e7a60cc8b12071f1866d2cac454f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32b60329697e7f1d128801cc4ac7e614"><td class="memItemLeft" align="right" valign="top"><a id="a32b60329697e7f1d128801cc4ac7e614"></a>
-object&#160;</td><td class="memItemRight" valign="bottom"><b>ReadSimpleValue</b> (Type type)</td></tr>
+<tr class="memitem:a32b60329697e7f1d128801cc4ac7e614"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a32b60329697e7f1d128801cc4ac7e614">ReadSimpleValue</a> (Type type)</td></tr>
+<tr class="memdesc:a32b60329697e7f1d128801cc4ac7e614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the simple value.  <a href="#a32b60329697e7f1d128801cc4ac7e614">More...</a><br /></td></tr>
 <tr class="separator:a32b60329697e7f1d128801cc4ac7e614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fd65cc423dabd2b49021e0e7f333356"><td class="memItemLeft" align="right" valign="top"><a id="a9fd65cc423dabd2b49021e0e7f333356"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMultiDimensionalArray</b> (out int length)</td></tr>
+<tr class="memitem:a9fd65cc423dabd2b49021e0e7f333356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a9fd65cc423dabd2b49021e0e7f333356">IsMultiDimensionalArray</a> (out int length)</td></tr>
+<tr class="memdesc:a9fd65cc423dabd2b49021e0e7f333356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether [is multi dimensional array] [the specified length].  <a href="#a9fd65cc423dabd2b49021e0e7f333356">More...</a><br /></td></tr>
 <tr class="separator:a9fd65cc423dabd2b49021e0e7f333356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e63deec5c78fd5013d1d3b7607e04c"><td class="memItemLeft" align="right" valign="top"><a id="a27e63deec5c78fd5013d1d3b7607e04c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadMultiDimensionalArray</b> (out int dimension, out int count)</td></tr>
+<tr class="memitem:a27e63deec5c78fd5013d1d3b7607e04c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a27e63deec5c78fd5013d1d3b7607e04c">BeginReadMultiDimensionalArray</a> (out int dimension, out int count)</td></tr>
+<tr class="memdesc:a27e63deec5c78fd5013d1d3b7607e04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read multi dimensional array.  <a href="#a27e63deec5c78fd5013d1d3b7607e04c">More...</a><br /></td></tr>
 <tr class="separator:a27e63deec5c78fd5013d1d3b7607e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a449e4d99ff1a5e1a792e22955fb13018"><td class="memItemLeft" align="right" valign="top"><a id="a449e4d99ff1a5e1a792e22955fb13018"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadMultiDimensionalArray</b> ()</td></tr>
+<tr class="memitem:a449e4d99ff1a5e1a792e22955fb13018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a449e4d99ff1a5e1a792e22955fb13018">EndReadMultiDimensionalArray</a> ()</td></tr>
+<tr class="memdesc:a449e4d99ff1a5e1a792e22955fb13018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read multi dimensional array.  <a href="#a449e4d99ff1a5e1a792e22955fb13018">More...</a><br /></td></tr>
 <tr class="separator:a449e4d99ff1a5e1a792e22955fb13018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a395cc4c40bd55229df264d4187ebb018"><td class="memItemLeft" align="right" valign="top"><a id="a395cc4c40bd55229df264d4187ebb018"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>ReadArrayDimension</b> (int index)</td></tr>
+<tr class="memitem:a395cc4c40bd55229df264d4187ebb018"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a395cc4c40bd55229df264d4187ebb018">ReadArrayDimension</a> (int index)</td></tr>
+<tr class="memdesc:a395cc4c40bd55229df264d4187ebb018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the array dimension.  <a href="#a395cc4c40bd55229df264d4187ebb018">More...</a><br /></td></tr>
 <tr class="separator:a395cc4c40bd55229df264d4187ebb018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abffb20a2280b9334bef338ccd2d7f5f5"><td class="memItemLeft" align="right" valign="top"><a id="abffb20a2280b9334bef338ccd2d7f5f5"></a>
-Array&#160;</td><td class="memItemRight" valign="bottom"><b>ReadSimpleArray</b> (Type elementType, int count)</td></tr>
+<tr class="memitem:abffb20a2280b9334bef338ccd2d7f5f5"><td class="memItemLeft" align="right" valign="top">Array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#abffb20a2280b9334bef338ccd2d7f5f5">ReadSimpleArray</a> (Type elementType, int count)</td></tr>
+<tr class="memdesc:abffb20a2280b9334bef338ccd2d7f5f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the simple array.  <a href="#abffb20a2280b9334bef338ccd2d7f5f5">More...</a><br /></td></tr>
 <tr class="separator:abffb20a2280b9334bef338ccd2d7f5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2178c0c68457e13a45fa7e80fa345037"><td class="memItemLeft" align="right" valign="top"><a id="a2178c0c68457e13a45fa7e80fa345037"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadObject</b> (out bool isReference)</td></tr>
+<tr class="memitem:a2178c0c68457e13a45fa7e80fa345037"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a2178c0c68457e13a45fa7e80fa345037">BeginReadObject</a> (out bool isReference)</td></tr>
+<tr class="memdesc:a2178c0c68457e13a45fa7e80fa345037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read object.  <a href="#a2178c0c68457e13a45fa7e80fa345037">More...</a><br /></td></tr>
 <tr class="separator:a2178c0c68457e13a45fa7e80fa345037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f518486ceab2b980b6b90a16b33a97"><td class="memItemLeft" align="right" valign="top"><a id="af7f518486ceab2b980b6b90a16b33a97"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadObject</b> ()</td></tr>
+<tr class="memitem:af7f518486ceab2b980b6b90a16b33a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#af7f518486ceab2b980b6b90a16b33a97">EndReadObject</a> ()</td></tr>
+<tr class="memdesc:af7f518486ceab2b980b6b90a16b33a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read object.  <a href="#af7f518486ceab2b980b6b90a16b33a97">More...</a><br /></td></tr>
 <tr class="separator:af7f518486ceab2b980b6b90a16b33a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6be681d819bbfd7db4078f29230020"><td class="memItemLeft" align="right" valign="top"><a id="afe6be681d819bbfd7db4078f29230020"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadList</b> (Type valueType)</td></tr>
+<tr class="memitem:afe6be681d819bbfd7db4078f29230020"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#afe6be681d819bbfd7db4078f29230020">BeginReadList</a> (Type valueType)</td></tr>
+<tr class="memdesc:afe6be681d819bbfd7db4078f29230020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read list.  <a href="#afe6be681d819bbfd7db4078f29230020">More...</a><br /></td></tr>
 <tr class="separator:afe6be681d819bbfd7db4078f29230020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe338de53a6322dbd3832d426ae49a4"><td class="memItemLeft" align="right" valign="top"><a id="abfe338de53a6322dbd3832d426ae49a4"></a>
-object&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadListItem</b> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:abfe338de53a6322dbd3832d426ae49a4"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#abfe338de53a6322dbd3832d426ae49a4">BeginReadListItem</a> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:abfe338de53a6322dbd3832d426ae49a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read list item.  <a href="#abfe338de53a6322dbd3832d426ae49a4">More...</a><br /></td></tr>
 <tr class="separator:abfe338de53a6322dbd3832d426ae49a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8308151ce64440db9ac2c385e3b96d45"><td class="memItemLeft" align="right" valign="top"><a id="a8308151ce64440db9ac2c385e3b96d45"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadListItem</b> ()</td></tr>
+<tr class="memitem:a8308151ce64440db9ac2c385e3b96d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a8308151ce64440db9ac2c385e3b96d45">EndReadListItem</a> ()</td></tr>
+<tr class="memdesc:a8308151ce64440db9ac2c385e3b96d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read list item.  <a href="#a8308151ce64440db9ac2c385e3b96d45">More...</a><br /></td></tr>
 <tr class="separator:a8308151ce64440db9ac2c385e3b96d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2349911c359017baa76773f203b33ee5"><td class="memItemLeft" align="right" valign="top"><a id="a2349911c359017baa76773f203b33ee5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadList</b> ()</td></tr>
+<tr class="memitem:a2349911c359017baa76773f203b33ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a2349911c359017baa76773f203b33ee5">EndReadList</a> ()</td></tr>
+<tr class="memdesc:a2349911c359017baa76773f203b33ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read list.  <a href="#a2349911c359017baa76773f203b33ee5">More...</a><br /></td></tr>
 <tr class="separator:a2349911c359017baa76773f203b33ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c3bee701eba61b73c8ea69f29d3ca3"><td class="memItemLeft" align="right" valign="top"><a id="a57c3bee701eba61b73c8ea69f29d3ca3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadDictionary</b> (Type keyType, Type valueType)</td></tr>
+<tr class="memitem:a57c3bee701eba61b73c8ea69f29d3ca3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a57c3bee701eba61b73c8ea69f29d3ca3">BeginReadDictionary</a> (Type keyType, Type valueType)</td></tr>
+<tr class="memdesc:a57c3bee701eba61b73c8ea69f29d3ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read dictionary.  <a href="#a57c3bee701eba61b73c8ea69f29d3ca3">More...</a><br /></td></tr>
 <tr class="separator:a57c3bee701eba61b73c8ea69f29d3ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44889714fb24b498bae004a9e6890ee"><td class="memItemLeft" align="right" valign="top"><a id="ae44889714fb24b498bae004a9e6890ee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadDictionaryKeys</b> ()</td></tr>
+<tr class="memitem:ae44889714fb24b498bae004a9e6890ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ae44889714fb24b498bae004a9e6890ee">BeginReadDictionaryKeys</a> ()</td></tr>
+<tr class="memdesc:ae44889714fb24b498bae004a9e6890ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read dictionary keys.  <a href="#ae44889714fb24b498bae004a9e6890ee">More...</a><br /></td></tr>
 <tr class="separator:ae44889714fb24b498bae004a9e6890ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3739c13259528b0042e3e150357638a2"><td class="memItemLeft" align="right" valign="top"><a id="a3739c13259528b0042e3e150357638a2"></a>
-object&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadDictionaryKeyItem</b> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:a3739c13259528b0042e3e150357638a2"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a3739c13259528b0042e3e150357638a2">BeginReadDictionaryKeyItem</a> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:a3739c13259528b0042e3e150357638a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read dictionary key item.  <a href="#a3739c13259528b0042e3e150357638a2">More...</a><br /></td></tr>
 <tr class="separator:a3739c13259528b0042e3e150357638a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdfcddaf43f8c474af85a0667541f785"><td class="memItemLeft" align="right" valign="top"><a id="afdfcddaf43f8c474af85a0667541f785"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadDictionaryKeyItem</b> ()</td></tr>
+<tr class="memitem:afdfcddaf43f8c474af85a0667541f785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#afdfcddaf43f8c474af85a0667541f785">EndReadDictionaryKeyItem</a> ()</td></tr>
+<tr class="memdesc:afdfcddaf43f8c474af85a0667541f785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read dictionary key item.  <a href="#afdfcddaf43f8c474af85a0667541f785">More...</a><br /></td></tr>
 <tr class="separator:afdfcddaf43f8c474af85a0667541f785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d7be7471ebc9555ec62f3d1e91b53a8"><td class="memItemLeft" align="right" valign="top"><a id="a4d7be7471ebc9555ec62f3d1e91b53a8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadDictionaryKeys</b> ()</td></tr>
+<tr class="memitem:a4d7be7471ebc9555ec62f3d1e91b53a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a4d7be7471ebc9555ec62f3d1e91b53a8">EndReadDictionaryKeys</a> ()</td></tr>
+<tr class="memdesc:a4d7be7471ebc9555ec62f3d1e91b53a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read dictionary keys.  <a href="#a4d7be7471ebc9555ec62f3d1e91b53a8">More...</a><br /></td></tr>
 <tr class="separator:a4d7be7471ebc9555ec62f3d1e91b53a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad25b5e89d4ae0b91dccf8c0ce2187f15"><td class="memItemLeft" align="right" valign="top"><a id="ad25b5e89d4ae0b91dccf8c0ce2187f15"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadDictionaryValues</b> ()</td></tr>
+<tr class="memitem:ad25b5e89d4ae0b91dccf8c0ce2187f15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad25b5e89d4ae0b91dccf8c0ce2187f15">BeginReadDictionaryValues</a> ()</td></tr>
+<tr class="memdesc:ad25b5e89d4ae0b91dccf8c0ce2187f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read dictionary values.  <a href="#ad25b5e89d4ae0b91dccf8c0ce2187f15">More...</a><br /></td></tr>
 <tr class="separator:ad25b5e89d4ae0b91dccf8c0ce2187f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab25360e5a7b453f7cbcf2a8d98ea0eb8"><td class="memItemLeft" align="right" valign="top"><a id="ab25360e5a7b453f7cbcf2a8d98ea0eb8"></a>
-object&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadDictionaryValueItem</b> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:ab25360e5a7b453f7cbcf2a8d98ea0eb8"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ab25360e5a7b453f7cbcf2a8d98ea0eb8">BeginReadDictionaryValueItem</a> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:ab25360e5a7b453f7cbcf2a8d98ea0eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read dictionary value item.  <a href="#ab25360e5a7b453f7cbcf2a8d98ea0eb8">More...</a><br /></td></tr>
 <tr class="separator:ab25360e5a7b453f7cbcf2a8d98ea0eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f240c50bd8a6811cdde7d564fab443"><td class="memItemLeft" align="right" valign="top"><a id="a34f240c50bd8a6811cdde7d564fab443"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadDictionaryValueItem</b> ()</td></tr>
+<tr class="memitem:a34f240c50bd8a6811cdde7d564fab443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a34f240c50bd8a6811cdde7d564fab443">EndReadDictionaryValueItem</a> ()</td></tr>
+<tr class="memdesc:a34f240c50bd8a6811cdde7d564fab443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read dictionary value item.  <a href="#a34f240c50bd8a6811cdde7d564fab443">More...</a><br /></td></tr>
 <tr class="separator:a34f240c50bd8a6811cdde7d564fab443"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af76c715808ff9cca9b89c995a556ec6b"><td class="memItemLeft" align="right" valign="top"><a id="af76c715808ff9cca9b89c995a556ec6b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadDictionaryValues</b> ()</td></tr>
+<tr class="memitem:af76c715808ff9cca9b89c995a556ec6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#af76c715808ff9cca9b89c995a556ec6b">EndReadDictionaryValues</a> ()</td></tr>
+<tr class="memdesc:af76c715808ff9cca9b89c995a556ec6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read dictionary values.  <a href="#af76c715808ff9cca9b89c995a556ec6b">More...</a><br /></td></tr>
 <tr class="separator:af76c715808ff9cca9b89c995a556ec6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a361427cb53d37e663b456b97d087575b"><td class="memItemLeft" align="right" valign="top"><a id="a361427cb53d37e663b456b97d087575b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadDictionary</b> ()</td></tr>
+<tr class="memitem:a361427cb53d37e663b456b97d087575b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a361427cb53d37e663b456b97d087575b">EndReadDictionary</a> ()</td></tr>
+<tr class="memdesc:a361427cb53d37e663b456b97d087575b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read dictionary.  <a href="#a361427cb53d37e663b456b97d087575b">More...</a><br /></td></tr>
 <tr class="separator:a361427cb53d37e663b456b97d087575b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d7741da3862a1398e0566d362eb0827"><td class="memItemLeft" align="right" valign="top"><a id="a4d7741da3862a1398e0566d362eb0827"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadObjectArray</b> (Type valueType)</td></tr>
+<tr class="memitem:a4d7741da3862a1398e0566d362eb0827"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a4d7741da3862a1398e0566d362eb0827">BeginReadObjectArray</a> (Type valueType)</td></tr>
+<tr class="memdesc:a4d7741da3862a1398e0566d362eb0827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read object array.  <a href="#a4d7741da3862a1398e0566d362eb0827">More...</a><br /></td></tr>
 <tr class="separator:a4d7741da3862a1398e0566d362eb0827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d3197fc76431c156d291c5e46240018"><td class="memItemLeft" align="right" valign="top"><a id="a3d3197fc76431c156d291c5e46240018"></a>
-object&#160;</td><td class="memItemRight" valign="bottom"><b>BeginReadObjectArrayItem</b> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memitem:a3d3197fc76431c156d291c5e46240018"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a3d3197fc76431c156d291c5e46240018">BeginReadObjectArrayItem</a> (int index, <a class="el" href="class_serialization_1_1_entry.html">Entry</a> entry)</td></tr>
+<tr class="memdesc:a3d3197fc76431c156d291c5e46240018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the read object array item.  <a href="#a3d3197fc76431c156d291c5e46240018">More...</a><br /></td></tr>
 <tr class="separator:a3d3197fc76431c156d291c5e46240018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b02021d3b80d7a3b66657aca7e50683"><td class="memItemLeft" align="right" valign="top"><a id="a0b02021d3b80d7a3b66657aca7e50683"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadObjectArrayItem</b> ()</td></tr>
+<tr class="memitem:a0b02021d3b80d7a3b66657aca7e50683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0b02021d3b80d7a3b66657aca7e50683">EndReadObjectArrayItem</a> ()</td></tr>
+<tr class="memdesc:a0b02021d3b80d7a3b66657aca7e50683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read object array item.  <a href="#a0b02021d3b80d7a3b66657aca7e50683">More...</a><br /></td></tr>
 <tr class="separator:a0b02021d3b80d7a3b66657aca7e50683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcb0b93e93558a3ae5453c36bb04d8ff"><td class="memItemLeft" align="right" valign="top"><a id="adcb0b93e93558a3ae5453c36bb04d8ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndReadObjectArray</b> ()</td></tr>
+<tr class="memitem:adcb0b93e93558a3ae5453c36bb04d8ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#adcb0b93e93558a3ae5453c36bb04d8ff">EndReadObjectArray</a> ()</td></tr>
+<tr class="memdesc:adcb0b93e93558a3ae5453c36bb04d8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the read object array.  <a href="#adcb0b93e93558a3ae5453c36bb04d8ff">More...</a><br /></td></tr>
 <tr class="separator:adcb0b93e93558a3ae5453c36bb04d8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fb97eb3491469373d49dfa190c66dd4"><td class="memItemLeft" align="right" valign="top"><a id="a3fb97eb3491469373d49dfa190c66dd4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteObject</b> (int id, Type objectType, bool wasSeen)</td></tr>
+<tr class="memitem:a3fb97eb3491469373d49dfa190c66dd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a3fb97eb3491469373d49dfa190c66dd4">BeginWriteObject</a> (int id, Type objectType, bool wasSeen)</td></tr>
+<tr class="memdesc:a3fb97eb3491469373d49dfa190c66dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write object.  <a href="#a3fb97eb3491469373d49dfa190c66dd4">More...</a><br /></td></tr>
 <tr class="separator:a3fb97eb3491469373d49dfa190c66dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e6a7469ad14b39e46cd746d4bf3d2ca"><td class="memItemLeft" align="right" valign="top"><a id="a6e6a7469ad14b39e46cd746d4bf3d2ca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteObject</b> ()</td></tr>
+<tr class="memitem:a6e6a7469ad14b39e46cd746d4bf3d2ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a6e6a7469ad14b39e46cd746d4bf3d2ca">EndWriteObject</a> ()</td></tr>
+<tr class="memdesc:a6e6a7469ad14b39e46cd746d4bf3d2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write object.  <a href="#a6e6a7469ad14b39e46cd746d4bf3d2ca">More...</a><br /></td></tr>
 <tr class="separator:a6e6a7469ad14b39e46cd746d4bf3d2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa8cb1cee211688a43655b1f503ca12"><td class="memItemLeft" align="right" valign="top"><a id="afaa8cb1cee211688a43655b1f503ca12"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteList</b> (int count, Type listType)</td></tr>
+<tr class="memitem:afaa8cb1cee211688a43655b1f503ca12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#afaa8cb1cee211688a43655b1f503ca12">BeginWriteList</a> (int count, Type listType)</td></tr>
+<tr class="memdesc:afaa8cb1cee211688a43655b1f503ca12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write list.  <a href="#afaa8cb1cee211688a43655b1f503ca12">More...</a><br /></td></tr>
 <tr class="separator:afaa8cb1cee211688a43655b1f503ca12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f2891613afdde349dd1bede1187af08"><td class="memItemLeft" align="right" valign="top"><a id="a1f2891613afdde349dd1bede1187af08"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteListItem</b> (int index, object value)</td></tr>
+<tr class="memitem:a1f2891613afdde349dd1bede1187af08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a1f2891613afdde349dd1bede1187af08">BeginWriteListItem</a> (int index, object value)</td></tr>
+<tr class="memdesc:a1f2891613afdde349dd1bede1187af08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write list item.  <a href="#a1f2891613afdde349dd1bede1187af08">More...</a><br /></td></tr>
 <tr class="separator:a1f2891613afdde349dd1bede1187af08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a996ec10cec9f039c84f059ab511dce31"><td class="memItemLeft" align="right" valign="top"><a id="a996ec10cec9f039c84f059ab511dce31"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteListItem</b> ()</td></tr>
+<tr class="memitem:a996ec10cec9f039c84f059ab511dce31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a996ec10cec9f039c84f059ab511dce31">EndWriteListItem</a> ()</td></tr>
+<tr class="memdesc:a996ec10cec9f039c84f059ab511dce31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write list item.  <a href="#a996ec10cec9f039c84f059ab511dce31">More...</a><br /></td></tr>
 <tr class="separator:a996ec10cec9f039c84f059ab511dce31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1698725786d0d7d7360a8ead45ebe3ea"><td class="memItemLeft" align="right" valign="top"><a id="a1698725786d0d7d7360a8ead45ebe3ea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteList</b> ()</td></tr>
+<tr class="memitem:a1698725786d0d7d7360a8ead45ebe3ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a1698725786d0d7d7360a8ead45ebe3ea">EndWriteList</a> ()</td></tr>
+<tr class="memdesc:a1698725786d0d7d7360a8ead45ebe3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write list.  <a href="#a1698725786d0d7d7360a8ead45ebe3ea">More...</a><br /></td></tr>
 <tr class="separator:a1698725786d0d7d7360a8ead45ebe3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc5be795dc2ef9b4fc64abbd764ac7e5"><td class="memItemLeft" align="right" valign="top"><a id="afc5be795dc2ef9b4fc64abbd764ac7e5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteObjectArray</b> (int count, Type arrayType)</td></tr>
+<tr class="memitem:afc5be795dc2ef9b4fc64abbd764ac7e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#afc5be795dc2ef9b4fc64abbd764ac7e5">BeginWriteObjectArray</a> (int count, Type arrayType)</td></tr>
+<tr class="memdesc:afc5be795dc2ef9b4fc64abbd764ac7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write object array.  <a href="#afc5be795dc2ef9b4fc64abbd764ac7e5">More...</a><br /></td></tr>
 <tr class="separator:afc5be795dc2ef9b4fc64abbd764ac7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22a9b9ce868724387a5fe655089c08a7"><td class="memItemLeft" align="right" valign="top"><a id="a22a9b9ce868724387a5fe655089c08a7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteObjectArrayItem</b> (int index, object value)</td></tr>
+<tr class="memitem:a22a9b9ce868724387a5fe655089c08a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a22a9b9ce868724387a5fe655089c08a7">BeginWriteObjectArrayItem</a> (int index, object value)</td></tr>
+<tr class="memdesc:a22a9b9ce868724387a5fe655089c08a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write object array item.  <a href="#a22a9b9ce868724387a5fe655089c08a7">More...</a><br /></td></tr>
 <tr class="separator:a22a9b9ce868724387a5fe655089c08a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cde5cf5cf0ba7a6a229213330619a49"><td class="memItemLeft" align="right" valign="top"><a id="a0cde5cf5cf0ba7a6a229213330619a49"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteObjectArrayItem</b> ()</td></tr>
+<tr class="memitem:a0cde5cf5cf0ba7a6a229213330619a49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0cde5cf5cf0ba7a6a229213330619a49">EndWriteObjectArrayItem</a> ()</td></tr>
+<tr class="memdesc:a0cde5cf5cf0ba7a6a229213330619a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write object array item.  <a href="#a0cde5cf5cf0ba7a6a229213330619a49">More...</a><br /></td></tr>
 <tr class="separator:a0cde5cf5cf0ba7a6a229213330619a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b6c30b5cb2849e6b9a6e46416867c96"><td class="memItemLeft" align="right" valign="top"><a id="a0b6c30b5cb2849e6b9a6e46416867c96"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteObjectArray</b> ()</td></tr>
+<tr class="memitem:a0b6c30b5cb2849e6b9a6e46416867c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0b6c30b5cb2849e6b9a6e46416867c96">EndWriteObjectArray</a> ()</td></tr>
+<tr class="memdesc:a0b6c30b5cb2849e6b9a6e46416867c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write object array.  <a href="#a0b6c30b5cb2849e6b9a6e46416867c96">More...</a><br /></td></tr>
 <tr class="separator:a0b6c30b5cb2849e6b9a6e46416867c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72684673376a726a241741854652b3ba"><td class="memItemLeft" align="right" valign="top"><a id="a72684673376a726a241741854652b3ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginMultiDimensionArray</b> (Type arrayType, int dimensions, int count)</td></tr>
+<tr class="memitem:a72684673376a726a241741854652b3ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a72684673376a726a241741854652b3ba">BeginMultiDimensionArray</a> (Type arrayType, int dimensions, int count)</td></tr>
+<tr class="memdesc:a72684673376a726a241741854652b3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the multi dimension array.  <a href="#a72684673376a726a241741854652b3ba">More...</a><br /></td></tr>
 <tr class="separator:a72684673376a726a241741854652b3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace2c7b698493c52356bff6422d37f74"><td class="memItemLeft" align="right" valign="top"><a id="aace2c7b698493c52356bff6422d37f74"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndMultiDimensionArray</b> ()</td></tr>
+<tr class="memitem:aace2c7b698493c52356bff6422d37f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#aace2c7b698493c52356bff6422d37f74">EndMultiDimensionArray</a> ()</td></tr>
+<tr class="memdesc:aace2c7b698493c52356bff6422d37f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the multi dimension array.  <a href="#aace2c7b698493c52356bff6422d37f74">More...</a><br /></td></tr>
 <tr class="separator:aace2c7b698493c52356bff6422d37f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a844c1dfe7f787cbf76d0521ca4ea11ef"><td class="memItemLeft" align="right" valign="top"><a id="a844c1dfe7f787cbf76d0521ca4ea11ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteArrayDimension</b> (int index, int count)</td></tr>
+<tr class="memitem:a844c1dfe7f787cbf76d0521ca4ea11ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a844c1dfe7f787cbf76d0521ca4ea11ef">WriteArrayDimension</a> (int index, int count)</td></tr>
+<tr class="memdesc:a844c1dfe7f787cbf76d0521ca4ea11ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the array dimension.  <a href="#a844c1dfe7f787cbf76d0521ca4ea11ef">More...</a><br /></td></tr>
 <tr class="separator:a844c1dfe7f787cbf76d0521ca4ea11ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94937afa442d505b3802f9dd19675ee2"><td class="memItemLeft" align="right" valign="top"><a id="a94937afa442d505b3802f9dd19675ee2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteSimpleArray</b> (int count, Array array)</td></tr>
+<tr class="memitem:a94937afa442d505b3802f9dd19675ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a94937afa442d505b3802f9dd19675ee2">WriteSimpleArray</a> (int count, Array array)</td></tr>
+<tr class="memdesc:a94937afa442d505b3802f9dd19675ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the simple array.  <a href="#a94937afa442d505b3802f9dd19675ee2">More...</a><br /></td></tr>
 <tr class="separator:a94937afa442d505b3802f9dd19675ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad71e5330badb887d80a59b576dbd9e1e"><td class="memItemLeft" align="right" valign="top"><a id="ad71e5330badb887d80a59b576dbd9e1e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteSimpleValue</b> (object value)</td></tr>
+<tr class="memitem:ad71e5330badb887d80a59b576dbd9e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad71e5330badb887d80a59b576dbd9e1e">WriteSimpleValue</a> (object value)</td></tr>
+<tr class="memdesc:ad71e5330badb887d80a59b576dbd9e1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the simple value.  <a href="#ad71e5330badb887d80a59b576dbd9e1e">More...</a><br /></td></tr>
 <tr class="separator:ad71e5330badb887d80a59b576dbd9e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8185d715cc5318790a408427e5bc113"><td class="memItemLeft" align="right" valign="top"><a id="ac8185d715cc5318790a408427e5bc113"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteDictionary</b> (int count, Type dictionaryType)</td></tr>
+<tr class="memitem:ac8185d715cc5318790a408427e5bc113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ac8185d715cc5318790a408427e5bc113">BeginWriteDictionary</a> (int count, Type dictionaryType)</td></tr>
+<tr class="memdesc:ac8185d715cc5318790a408427e5bc113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write dictionary.  <a href="#ac8185d715cc5318790a408427e5bc113">More...</a><br /></td></tr>
 <tr class="separator:ac8185d715cc5318790a408427e5bc113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06dcc7ec3a100509abc863136d0cd6f3"><td class="memItemLeft" align="right" valign="top"><a id="a06dcc7ec3a100509abc863136d0cd6f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteDictionaryKeys</b> ()</td></tr>
+<tr class="memitem:a06dcc7ec3a100509abc863136d0cd6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a06dcc7ec3a100509abc863136d0cd6f3">BeginWriteDictionaryKeys</a> ()</td></tr>
+<tr class="memdesc:a06dcc7ec3a100509abc863136d0cd6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write dictionary keys.  <a href="#a06dcc7ec3a100509abc863136d0cd6f3">More...</a><br /></td></tr>
 <tr class="separator:a06dcc7ec3a100509abc863136d0cd6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c60fce612a22b4832223b245688384"><td class="memItemLeft" align="right" valign="top"><a id="a73c60fce612a22b4832223b245688384"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteDictionaryKey</b> (int id, object value)</td></tr>
+<tr class="memitem:a73c60fce612a22b4832223b245688384"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a73c60fce612a22b4832223b245688384">BeginWriteDictionaryKey</a> (int id, object value)</td></tr>
+<tr class="memdesc:a73c60fce612a22b4832223b245688384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write dictionary key.  <a href="#a73c60fce612a22b4832223b245688384">More...</a><br /></td></tr>
 <tr class="separator:a73c60fce612a22b4832223b245688384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67dd08c902044dab8fbc00ee081e4908"><td class="memItemLeft" align="right" valign="top"><a id="a67dd08c902044dab8fbc00ee081e4908"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteDictionaryKey</b> ()</td></tr>
+<tr class="memitem:a67dd08c902044dab8fbc00ee081e4908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a67dd08c902044dab8fbc00ee081e4908">EndWriteDictionaryKey</a> ()</td></tr>
+<tr class="memdesc:a67dd08c902044dab8fbc00ee081e4908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write dictionary key.  <a href="#a67dd08c902044dab8fbc00ee081e4908">More...</a><br /></td></tr>
 <tr class="separator:a67dd08c902044dab8fbc00ee081e4908"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b92e2da24caf59872668c269d102e87"><td class="memItemLeft" align="right" valign="top"><a id="a3b92e2da24caf59872668c269d102e87"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteDictionaryKeys</b> ()</td></tr>
+<tr class="memitem:a3b92e2da24caf59872668c269d102e87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a3b92e2da24caf59872668c269d102e87">EndWriteDictionaryKeys</a> ()</td></tr>
+<tr class="memdesc:a3b92e2da24caf59872668c269d102e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write dictionary keys.  <a href="#a3b92e2da24caf59872668c269d102e87">More...</a><br /></td></tr>
 <tr class="separator:a3b92e2da24caf59872668c269d102e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44f1eb41f0ac51acf315388150bd6bf"><td class="memItemLeft" align="right" valign="top"><a id="af44f1eb41f0ac51acf315388150bd6bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteDictionaryValues</b> ()</td></tr>
+<tr class="memitem:af44f1eb41f0ac51acf315388150bd6bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#af44f1eb41f0ac51acf315388150bd6bf">BeginWriteDictionaryValues</a> ()</td></tr>
+<tr class="memdesc:af44f1eb41f0ac51acf315388150bd6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write dictionary values.  <a href="#af44f1eb41f0ac51acf315388150bd6bf">More...</a><br /></td></tr>
 <tr class="separator:af44f1eb41f0ac51acf315388150bd6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a553edaa5a225986c161626c9ede9e594"><td class="memItemLeft" align="right" valign="top"><a id="a553edaa5a225986c161626c9ede9e594"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteDictionaryValue</b> (int id, object value)</td></tr>
+<tr class="memitem:a553edaa5a225986c161626c9ede9e594"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a553edaa5a225986c161626c9ede9e594">BeginWriteDictionaryValue</a> (int id, object value)</td></tr>
+<tr class="memdesc:a553edaa5a225986c161626c9ede9e594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write dictionary value.  <a href="#a553edaa5a225986c161626c9ede9e594">More...</a><br /></td></tr>
 <tr class="separator:a553edaa5a225986c161626c9ede9e594"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14d2fe3fc5d3ed7171435152b060bf2"><td class="memItemLeft" align="right" valign="top"><a id="ab14d2fe3fc5d3ed7171435152b060bf2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteDictionaryValue</b> ()</td></tr>
+<tr class="memitem:ab14d2fe3fc5d3ed7171435152b060bf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ab14d2fe3fc5d3ed7171435152b060bf2">EndWriteDictionaryValue</a> ()</td></tr>
+<tr class="memdesc:ab14d2fe3fc5d3ed7171435152b060bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write dictionary value.  <a href="#ab14d2fe3fc5d3ed7171435152b060bf2">More...</a><br /></td></tr>
 <tr class="separator:ab14d2fe3fc5d3ed7171435152b060bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d8b55f3ae8fa16cf2dc58103263999"><td class="memItemLeft" align="right" valign="top"><a id="ad1d8b55f3ae8fa16cf2dc58103263999"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteDictionaryValues</b> ()</td></tr>
+<tr class="memitem:ad1d8b55f3ae8fa16cf2dc58103263999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad1d8b55f3ae8fa16cf2dc58103263999">EndWriteDictionaryValues</a> ()</td></tr>
+<tr class="memdesc:ad1d8b55f3ae8fa16cf2dc58103263999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write dictionary values.  <a href="#ad1d8b55f3ae8fa16cf2dc58103263999">More...</a><br /></td></tr>
 <tr class="separator:ad1d8b55f3ae8fa16cf2dc58103263999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad04875ff178a85ce0054eab86a277fd3"><td class="memItemLeft" align="right" valign="top"><a id="ad04875ff178a85ce0054eab86a277fd3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteDictionary</b> ()</td></tr>
+<tr class="memitem:ad04875ff178a85ce0054eab86a277fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad04875ff178a85ce0054eab86a277fd3">EndWriteDictionary</a> ()</td></tr>
+<tr class="memdesc:ad04875ff178a85ce0054eab86a277fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write dictionary.  <a href="#ad04875ff178a85ce0054eab86a277fd3">More...</a><br /></td></tr>
 <tr class="separator:ad04875ff178a85ce0054eab86a277fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aa8e9eeb65572cabfd1163fd424f447"><td class="memItemLeft" align="right" valign="top"><a id="a4aa8e9eeb65572cabfd1163fd424f447"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteProperties</b> (int count)</td></tr>
+<tr class="memitem:a4aa8e9eeb65572cabfd1163fd424f447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a4aa8e9eeb65572cabfd1163fd424f447">BeginWriteProperties</a> (int count)</td></tr>
+<tr class="memdesc:a4aa8e9eeb65572cabfd1163fd424f447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write properties.  <a href="#a4aa8e9eeb65572cabfd1163fd424f447">More...</a><br /></td></tr>
 <tr class="separator:a4aa8e9eeb65572cabfd1163fd424f447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad922a8b40756c84f00aa6afd75b93735"><td class="memItemLeft" align="right" valign="top"><a id="ad922a8b40756c84f00aa6afd75b93735"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteProperties</b> ()</td></tr>
+<tr class="memitem:ad922a8b40756c84f00aa6afd75b93735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#ad922a8b40756c84f00aa6afd75b93735">EndWriteProperties</a> ()</td></tr>
+<tr class="memdesc:ad922a8b40756c84f00aa6afd75b93735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write properties.  <a href="#ad922a8b40756c84f00aa6afd75b93735">More...</a><br /></td></tr>
 <tr class="separator:ad922a8b40756c84f00aa6afd75b93735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b810350295c5e78aca277ce929aaedd"><td class="memItemLeft" align="right" valign="top"><a id="a0b810350295c5e78aca277ce929aaedd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteProperty</b> (string name, Type type)</td></tr>
+<tr class="memitem:a0b810350295c5e78aca277ce929aaedd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0b810350295c5e78aca277ce929aaedd">BeginWriteProperty</a> (string name, Type type)</td></tr>
+<tr class="memdesc:a0b810350295c5e78aca277ce929aaedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write property.  <a href="#a0b810350295c5e78aca277ce929aaedd">More...</a><br /></td></tr>
 <tr class="separator:a0b810350295c5e78aca277ce929aaedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a978b5e23e42f8db83095b9dfd1102528"><td class="memItemLeft" align="right" valign="top"><a id="a978b5e23e42f8db83095b9dfd1102528"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteProperty</b> ()</td></tr>
+<tr class="memitem:a978b5e23e42f8db83095b9dfd1102528"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a978b5e23e42f8db83095b9dfd1102528">EndWriteProperty</a> ()</td></tr>
+<tr class="memdesc:a978b5e23e42f8db83095b9dfd1102528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write property.  <a href="#a978b5e23e42f8db83095b9dfd1102528">More...</a><br /></td></tr>
 <tr class="separator:a978b5e23e42f8db83095b9dfd1102528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a101b3acfd63c956c27cd9d45e2c4d7c1"><td class="memItemLeft" align="right" valign="top"><a id="a101b3acfd63c956c27cd9d45e2c4d7c1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteFields</b> (int count)</td></tr>
+<tr class="memitem:a101b3acfd63c956c27cd9d45e2c4d7c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a101b3acfd63c956c27cd9d45e2c4d7c1">BeginWriteFields</a> (int count)</td></tr>
+<tr class="memdesc:a101b3acfd63c956c27cd9d45e2c4d7c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write fields.  <a href="#a101b3acfd63c956c27cd9d45e2c4d7c1">More...</a><br /></td></tr>
 <tr class="separator:a101b3acfd63c956c27cd9d45e2c4d7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8584d495d876a2b05ba671de46e33006"><td class="memItemLeft" align="right" valign="top"><a id="a8584d495d876a2b05ba671de46e33006"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteFields</b> ()</td></tr>
+<tr class="memitem:a8584d495d876a2b05ba671de46e33006"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a8584d495d876a2b05ba671de46e33006">EndWriteFields</a> ()</td></tr>
+<tr class="memdesc:a8584d495d876a2b05ba671de46e33006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write fields.  <a href="#a8584d495d876a2b05ba671de46e33006">More...</a><br /></td></tr>
 <tr class="separator:a8584d495d876a2b05ba671de46e33006"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70f3334f87463abfe43c5d256c2486fe"><td class="memItemLeft" align="right" valign="top"><a id="a70f3334f87463abfe43c5d256c2486fe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginWriteField</b> (string name, Type type)</td></tr>
+<tr class="memitem:a70f3334f87463abfe43c5d256c2486fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a70f3334f87463abfe43c5d256c2486fe">BeginWriteField</a> (string name, Type type)</td></tr>
+<tr class="memdesc:a70f3334f87463abfe43c5d256c2486fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the write field.  <a href="#a70f3334f87463abfe43c5d256c2486fe">More...</a><br /></td></tr>
 <tr class="separator:a70f3334f87463abfe43c5d256c2486fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0c8f96ea2316bc9efc73cd27176897"><td class="memItemLeft" align="right" valign="top"><a id="a0e0c8f96ea2316bc9efc73cd27176897"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndWriteField</b> ()</td></tr>
+<tr class="memitem:a0e0c8f96ea2316bc9efc73cd27176897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a0e0c8f96ea2316bc9efc73cd27176897">EndWriteField</a> ()</td></tr>
+<tr class="memdesc:a0e0c8f96ea2316bc9efc73cd27176897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the write field.  <a href="#a0e0c8f96ea2316bc9efc73cd27176897">More...</a><br /></td></tr>
 <tr class="separator:a0e0c8f96ea2316bc9efc73cd27176897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa32f1588f15cdce160d47b06b1c8ec15"><td class="memItemLeft" align="right" valign="top"><a id="aa32f1588f15cdce160d47b06b1c8ec15"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginOnDemand</b> (int id)</td></tr>
+<tr class="memitem:aa32f1588f15cdce160d47b06b1c8ec15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#aa32f1588f15cdce160d47b06b1c8ec15">BeginOnDemand</a> (int id)</td></tr>
+<tr class="memdesc:aa32f1588f15cdce160d47b06b1c8ec15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the on demand.  <a href="#aa32f1588f15cdce160d47b06b1c8ec15">More...</a><br /></td></tr>
 <tr class="separator:aa32f1588f15cdce160d47b06b1c8ec15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40adb4b1e7b959e0b3baa509d3ce16f7"><td class="memItemLeft" align="right" valign="top"><a id="a40adb4b1e7b959e0b3baa509d3ce16f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EndOnDemand</b> ()</td></tr>
+<tr class="memitem:a40adb4b1e7b959e0b3baa509d3ce16f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a40adb4b1e7b959e0b3baa509d3ce16f7">EndOnDemand</a> ()</td></tr>
+<tr class="memdesc:a40adb4b1e7b959e0b3baa509d3ce16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends the on demand.  <a href="#a40adb4b1e7b959e0b3baa509d3ce16f7">More...</a><br /></td></tr>
 <tr class="separator:a40adb4b1e7b959e0b3baa509d3ce16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a6096e94c37b632da7f415a4697f80f32"><td class="memItemLeft" align="right" valign="top"><a id="a6096e94c37b632da7f415a4697f80f32"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><code> [get]</code></td></tr>
+<tr class="memitem:a6096e94c37b632da7f415a4697f80f32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_serialization_1_1_i_storage.html#a6096e94c37b632da7f415a4697f80f32">SupportsOnDemand</a><code> [get]</code></td></tr>
+<tr class="memdesc:a6096e94c37b632da7f415a4697f80f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether [supports on demand].  <a href="#a6096e94c37b632da7f415a4697f80f32">More...</a><br /></td></tr>
 <tr class="separator:a6096e94c37b632da7f415a4697f80f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface <a class="el" href="interface_serialization_1_1_i_storage.html" title="Interface IStorage ">IStorage</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a72684673376a726a241741854652b3ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72684673376a726a241741854652b3ba">&#9670;&nbsp;</a></span>BeginMultiDimensionArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginMultiDimensionArray </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>arrayType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dimensions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the multi dimension array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arrayType</td><td>Type of the array.</td></tr>
+    <tr><td class="paramname">dimensions</td><td>The dimensions.</td></tr>
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#acbd47a7b1720dff38a36f4c645fe0df7">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="aa32f1588f15cdce160d47b06b1c8ec15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32f1588f15cdce160d47b06b1c8ec15">&#9670;&nbsp;</a></span>BeginOnDemand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginOnDemand </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the on demand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a6b09a7f66a88dc5488ed1fc5996f5452">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a57c3bee701eba61b73c8ea69f29d3ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c3bee701eba61b73c8ea69f29d3ca3">&#9670;&nbsp;</a></span>BeginReadDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadDictionary </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>keyType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>valueType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyType</td><td>Type of the key.</td></tr>
+    <tr><td class="paramname">valueType</td><td>Type of the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#adbc9aab40ec3aa70f3cd72ddbd6bbcba">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a3739c13259528b0042e3e150357638a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3739c13259528b0042e3e150357638a2">&#9670;&nbsp;</a></span>BeginReadDictionaryKeyItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Serialization.IStorage.BeginReadDictionaryKeyItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read dictionary key item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Object.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ae4b30ced98b913465edd4dafb21da8c4">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ae44889714fb24b498bae004a9e6890ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44889714fb24b498bae004a9e6890ee">&#9670;&nbsp;</a></span>BeginReadDictionaryKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginReadDictionaryKeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read dictionary keys. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa91a1c6b09260e35b8342d1254e15d3c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ab25360e5a7b453f7cbcf2a8d98ea0eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab25360e5a7b453f7cbcf2a8d98ea0eb8">&#9670;&nbsp;</a></span>BeginReadDictionaryValueItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Serialization.IStorage.BeginReadDictionaryValueItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read dictionary value item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Object.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#afd286629a7b6d4be74e344f7b692ce4d">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad25b5e89d4ae0b91dccf8c0ce2187f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25b5e89d4ae0b91dccf8c0ce2187f15">&#9670;&nbsp;</a></span>BeginReadDictionaryValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginReadDictionaryValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read dictionary values. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ade68463fa1bf913dd9f768b4edfed5bc">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a369241f5ffd8446da4a57c72a8646f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369241f5ffd8446da4a57c72a8646f09">&#9670;&nbsp;</a></span>BeginReadField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> Serialization.IStorage.BeginReadField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a>.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ab6dd090acf50ee9f39d461fa7e7c61d6">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="af7e9c21d8e723c2b7482d0ce7db7e3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e9c21d8e723c2b7482d0ce7db7e3c5">&#9670;&nbsp;</a></span>BeginReadFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadFields </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read fields. </p>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa92efbd2f56eeb65e80890ed4bf3bdbe">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="afe6be681d819bbfd7db4078f29230020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6be681d819bbfd7db4078f29230020">&#9670;&nbsp;</a></span>BeginReadList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadList </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>valueType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valueType</td><td>Type of the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ace00f8cacc0ff79bb16197d641964e4c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="abfe338de53a6322dbd3832d426ae49a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfe338de53a6322dbd3832d426ae49a4">&#9670;&nbsp;</a></span>BeginReadListItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Serialization.IStorage.BeginReadListItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read list item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Object.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a8d689325716bdb8c393e16414fefd59f">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a27e63deec5c78fd5013d1d3b7607e04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e63deec5c78fd5013d1d3b7607e04c">&#9670;&nbsp;</a></span>BeginReadMultiDimensionalArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginReadMultiDimensionalArray </td>
+          <td>(</td>
+          <td class="paramtype">out int&#160;</td>
+          <td class="paramname"><em>dimension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read multi dimensional array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dimension</td><td>The dimension.</td></tr>
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ac4d785eb39bba193195761ff9bacd98c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a2178c0c68457e13a45fa7e80fa345037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2178c0c68457e13a45fa7e80fa345037">&#9670;&nbsp;</a></span>BeginReadObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadObject </td>
+          <td>(</td>
+          <td class="paramtype">out bool&#160;</td>
+          <td class="paramname"><em>isReference</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isReference</td><td>if set to <code>true</code> [is reference].</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a44117e9f1e92e01af20f98cbd674f638">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a4d7741da3862a1398e0566d362eb0827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d7741da3862a1398e0566d362eb0827">&#9670;&nbsp;</a></span>BeginReadObjectArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadObjectArray </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>valueType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read object array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valueType</td><td>Type of the value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a0d547b6b511f0e0e547f3e2b231d2b68">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a3d3197fc76431c156d291c5e46240018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3197fc76431c156d291c5e46240018">&#9670;&nbsp;</a></span>BeginReadObjectArrayItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Serialization.IStorage.BeginReadObjectArrayItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read object array item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Object.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ac4a4d8051a5c10d82e23fd004ad344fb">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a14c84cc7b9483b89881c5caef8e4f1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c84cc7b9483b89881c5caef8e4f1a0">&#9670;&nbsp;</a></span>BeginReadProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.BeginReadProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read properties. </p>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ae6b1ddb821a9809f1428640e3bd75e7b">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a4dab514d85acc8b9c97934025438cccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dab514d85acc8b9c97934025438cccf">&#9670;&nbsp;</a></span>BeginReadProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> Serialization.IStorage.BeginReadProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a>&#160;</td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the read property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a>.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a0c77f70b9259bc13d96eafe34b092f3b">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ac8185d715cc5318790a408427e5bc113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8185d715cc5318790a408427e5bc113">&#9670;&nbsp;</a></span>BeginWriteDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteDictionary </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>dictionaryType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write dictionary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+    <tr><td class="paramname">dictionaryType</td><td>Type of the dictionary.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#afd9aec76b7b20ab88a9e3caca7470c8b">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a73c60fce612a22b4832223b245688384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c60fce612a22b4832223b245688384">&#9670;&nbsp;</a></span>BeginWriteDictionaryKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.BeginWriteDictionaryKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write dictionary key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a07ccc4cc72e4c414f60de04ace5a6459">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a06dcc7ec3a100509abc863136d0cd6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06dcc7ec3a100509abc863136d0cd6f3">&#9670;&nbsp;</a></span>BeginWriteDictionaryKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteDictionaryKeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write dictionary keys. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#afb882e22e8a0215c525810ea8c2375d8">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a553edaa5a225986c161626c9ede9e594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553edaa5a225986c161626c9ede9e594">&#9670;&nbsp;</a></span>BeginWriteDictionaryValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.BeginWriteDictionaryValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write dictionary value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a4dc4587767b33a9c6310da4de7314cc8">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="af44f1eb41f0ac51acf315388150bd6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44f1eb41f0ac51acf315388150bd6bf">&#9670;&nbsp;</a></span>BeginWriteDictionaryValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteDictionaryValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write dictionary values. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#af0bf198e95f7bac8d27a41d4dbf9a7ce">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a70f3334f87463abfe43c5d256c2486fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f3334f87463abfe43c5d256c2486fe">&#9670;&nbsp;</a></span>BeginWriteField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteField </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name.</td></tr>
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a33ed72f54b3502aa05c62bf777027fde">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a101b3acfd63c956c27cd9d45e2c4d7c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101b3acfd63c956c27cd9d45e2c4d7c1">&#9670;&nbsp;</a></span>BeginWriteFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteFields </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a40709bdcdae381b2138a48e005e96ab2">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="afaa8cb1cee211688a43655b1f503ca12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa8cb1cee211688a43655b1f503ca12">&#9670;&nbsp;</a></span>BeginWriteList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteList </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>listType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+    <tr><td class="paramname">listType</td><td>Type of the list.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a70c5b0751ea84a7db8cb2b4a89576db3">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a1f2891613afdde349dd1bede1187af08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2891613afdde349dd1bede1187af08">&#9670;&nbsp;</a></span>BeginWriteListItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.BeginWriteListItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write list item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#abc94830de965bf945253bc73cc3b7b5c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a3fb97eb3491469373d49dfa190c66dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb97eb3491469373d49dfa190c66dd4">&#9670;&nbsp;</a></span>BeginWriteObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteObject </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>objectType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>wasSeen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier.</td></tr>
+    <tr><td class="paramname">objectType</td><td>Type of the object.</td></tr>
+    <tr><td class="paramname">wasSeen</td><td>if set to <code>true</code> [was seen].</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ad2a4bb14be8f85f4de4539f8aaddac49">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="afc5be795dc2ef9b4fc64abbd764ac7e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5be795dc2ef9b4fc64abbd764ac7e5">&#9670;&nbsp;</a></span>BeginWriteObjectArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteObjectArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>arrayType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write object array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+    <tr><td class="paramname">arrayType</td><td>Type of the array.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ab5c4d7c504b6766c9a1e7ee217ddfce6">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a22a9b9ce868724387a5fe655089c08a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a9b9ce868724387a5fe655089c08a7">&#9670;&nbsp;</a></span>BeginWriteObjectArrayItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.BeginWriteObjectArrayItem </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write object array item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if XXXX, <code>false</code> otherwise.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a3853730f36226738133280f47ee43550">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a4aa8e9eeb65572cabfd1163fd424f447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa8e9eeb65572cabfd1163fd424f447">&#9670;&nbsp;</a></span>BeginWriteProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteProperties </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a021a50d6702e32e15c197783a0bad05a">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a0b810350295c5e78aca277ce929aaedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b810350295c5e78aca277ce929aaedd">&#9670;&nbsp;</a></span>BeginWriteProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.BeginWriteProperty </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the write property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name.</td></tr>
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#adbfae0ca57e2c848c4efa0ae23b25e62">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
 <a id="ad17a92256ad7a7196084e05bad968567"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad17a92256ad7a7196084e05bad968567">&#9670;&nbsp;</a></span>DeserializeGetName()</h2>
 
@@ -361,6 +1409,657 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
 </dl>
 
 <p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ac02802eda1961199b7e91adce7c33de7">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="aace2c7b698493c52356bff6422d37f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace2c7b698493c52356bff6422d37f74">&#9670;&nbsp;</a></span>EndMultiDimensionArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndMultiDimensionArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the multi dimension array. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a93ce28fd88cc7a06daac35287b46664b">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a40adb4b1e7b959e0b3baa509d3ce16f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40adb4b1e7b959e0b3baa509d3ce16f7">&#9670;&nbsp;</a></span>EndOnDemand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndOnDemand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the on demand. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a6a8d02da39538d740b84832d03a58766">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a361427cb53d37e663b456b97d087575b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a361427cb53d37e663b456b97d087575b">&#9670;&nbsp;</a></span>EndReadDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadDictionary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read dictionary. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aeacb7cb7b4c86a1ad310ac1b0674c18c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="afdfcddaf43f8c474af85a0667541f785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfcddaf43f8c474af85a0667541f785">&#9670;&nbsp;</a></span>EndReadDictionaryKeyItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadDictionaryKeyItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read dictionary key item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a40a35f67bceb9c7c1cac774afe4b5fd0">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a4d7be7471ebc9555ec62f3d1e91b53a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d7be7471ebc9555ec62f3d1e91b53a8">&#9670;&nbsp;</a></span>EndReadDictionaryKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadDictionaryKeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read dictionary keys. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ab8d362901844c2b1aa7420269f72fa50">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a34f240c50bd8a6811cdde7d564fab443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f240c50bd8a6811cdde7d564fab443">&#9670;&nbsp;</a></span>EndReadDictionaryValueItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadDictionaryValueItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read dictionary value item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa8214913ce84b050614e38c5aadc0b71">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="af76c715808ff9cca9b89c995a556ec6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76c715808ff9cca9b89c995a556ec6b">&#9670;&nbsp;</a></span>EndReadDictionaryValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadDictionaryValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read dictionary values. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a37b4e1255ab937e041a3c8d0786b461c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad27a910b48b01fcee850465606cd2a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27a910b48b01fcee850465606cd2a6f">&#9670;&nbsp;</a></span>EndReadField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadField </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read field. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a0c52bbac20e29e59f6c48868d4729928">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="af38f83f1eb0c5190fd0e4ad845ff0649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af38f83f1eb0c5190fd0e4ad845ff0649">&#9670;&nbsp;</a></span>EndReadFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadFields </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read fields. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a5083f578f8a2aff5fd5163edc802a0d1">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a2349911c359017baa76773f203b33ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2349911c359017baa76773f203b33ee5">&#9670;&nbsp;</a></span>EndReadList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read list. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa4cb3eb6253054c5fe8bbebdc9c30c2f">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a8308151ce64440db9ac2c385e3b96d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8308151ce64440db9ac2c385e3b96d45">&#9670;&nbsp;</a></span>EndReadListItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadListItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read list item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#af0b58fefbd4bea88a09cffc7bdcef862">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a449e4d99ff1a5e1a792e22955fb13018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a449e4d99ff1a5e1a792e22955fb13018">&#9670;&nbsp;</a></span>EndReadMultiDimensionalArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadMultiDimensionalArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read multi dimensional array. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a174c1b111506dcf2be86461ab54b00bc">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="af7f518486ceab2b980b6b90a16b33a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f518486ceab2b980b6b90a16b33a97">&#9670;&nbsp;</a></span>EndReadObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read object. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa58ba842b871ad7030d126215a85c8cc">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="adcb0b93e93558a3ae5453c36bb04d8ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb0b93e93558a3ae5453c36bb04d8ff">&#9670;&nbsp;</a></span>EndReadObjectArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadObjectArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read object array. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a3e796b301e9539b9082e0b32e3f61d49">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a0b02021d3b80d7a3b66657aca7e50683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b02021d3b80d7a3b66657aca7e50683">&#9670;&nbsp;</a></span>EndReadObjectArrayItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadObjectArrayItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read object array item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a3a649cab5370bcfe131307bcaf9156d2">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a5e3376134f3047f247eaa2a6844389f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3376134f3047f247eaa2a6844389f3">&#9670;&nbsp;</a></span>EndReadProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read properties. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#af889e7729b3bf07d18a86fe32064d4c0">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a5193e529b49bfccf51f893ebcabc8e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5193e529b49bfccf51f893ebcabc8e80">&#9670;&nbsp;</a></span>EndReadProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndReadProperty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the read property. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a0b50b703f7b33e2b60421611a3757716">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad04875ff178a85ce0054eab86a277fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04875ff178a85ce0054eab86a277fd3">&#9670;&nbsp;</a></span>EndWriteDictionary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteDictionary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write dictionary. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a16b991b1614cfe83fbb7479b0de03368">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a67dd08c902044dab8fbc00ee081e4908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67dd08c902044dab8fbc00ee081e4908">&#9670;&nbsp;</a></span>EndWriteDictionaryKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteDictionaryKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write dictionary key. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a82fe2baa2c969b618c2729a8113edaa1">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a3b92e2da24caf59872668c269d102e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b92e2da24caf59872668c269d102e87">&#9670;&nbsp;</a></span>EndWriteDictionaryKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteDictionaryKeys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write dictionary keys. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a53b70a443f3bddc10ab34444ab58b08e">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ab14d2fe3fc5d3ed7171435152b060bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14d2fe3fc5d3ed7171435152b060bf2">&#9670;&nbsp;</a></span>EndWriteDictionaryValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteDictionaryValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write dictionary value. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ad8d7709505dfa6e3e973223411397fa0">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad1d8b55f3ae8fa16cf2dc58103263999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d8b55f3ae8fa16cf2dc58103263999">&#9670;&nbsp;</a></span>EndWriteDictionaryValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteDictionaryValues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write dictionary values. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a73fd29b68829c4662864e9f922800c1f">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a0e0c8f96ea2316bc9efc73cd27176897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0c8f96ea2316bc9efc73cd27176897">&#9670;&nbsp;</a></span>EndWriteField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteField </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write field. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a3fa0ec1f937e4009887ea69b42461c04">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a8584d495d876a2b05ba671de46e33006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8584d495d876a2b05ba671de46e33006">&#9670;&nbsp;</a></span>EndWriteFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteFields </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write fields. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a09fa1076cad8e42856d57a62d693c4cf">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a1698725786d0d7d7360a8ead45ebe3ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1698725786d0d7d7360a8ead45ebe3ea">&#9670;&nbsp;</a></span>EndWriteList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write list. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a71b4595291913c4cdc62b860da2ffa7c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a996ec10cec9f039c84f059ab511dce31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996ec10cec9f039c84f059ab511dce31">&#9670;&nbsp;</a></span>EndWriteListItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteListItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write list item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aa0099aa23887ecaba8eee43f474fed04">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a6e6a7469ad14b39e46cd746d4bf3d2ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e6a7469ad14b39e46cd746d4bf3d2ca">&#9670;&nbsp;</a></span>EndWriteObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write object. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#afa2c3e312cbe5f67a4b963cb0dadaa75">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a0b6c30b5cb2849e6b9a6e46416867c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b6c30b5cb2849e6b9a6e46416867c96">&#9670;&nbsp;</a></span>EndWriteObjectArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteObjectArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write object array. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#acc36437ec400bb791655857fa98cfd40">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a0cde5cf5cf0ba7a6a229213330619a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cde5cf5cf0ba7a6a229213330619a49">&#9670;&nbsp;</a></span>EndWriteObjectArrayItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteObjectArrayItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write object array item. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a690c73b90c4f755f4ae1b87fa70eda67">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad922a8b40756c84f00aa6afd75b93735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad922a8b40756c84f00aa6afd75b93735">&#9670;&nbsp;</a></span>EndWriteProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write properties. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#af242d8344e351d53f4cb1dca1f0d321c">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a978b5e23e42f8db83095b9dfd1102528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978b5e23e42f8db83095b9dfd1102528">&#9670;&nbsp;</a></span>EndWriteProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.EndWriteProperty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ends the write property. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a481fce2c7372e97a46ab15316c33a395">Serialization.BinarySerializer</a>.</p>
 
 </div>
 </div>
@@ -463,6 +2162,183 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
 
 </div>
 </div>
+<a id="a167bf2c224e928c05446f0fde56e9d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a167bf2c224e928c05446f0fde56e9d8d">&#9670;&nbsp;</a></span>HasMore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.HasMore </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines whether this instance has more. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this instance has more; otherwise, <code>false</code>.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a17489c518844ba789eed665e716db38d">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a9fd65cc423dabd2b49021e0e7f333356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd65cc423dabd2b49021e0e7f333356">&#9670;&nbsp;</a></span>IsMultiDimensionalArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.IsMultiDimensionalArray </td>
+          <td>(</td>
+          <td class="paramtype">out int&#160;</td>
+          <td class="paramname"><em>length</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines whether [is multi dimensional array] [the specified length]. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>The length.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if [is multi dimensional array] [the specified length]; otherwise, <code>false</code>.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a87e06dfca74d1ebc475999bd0c2f9596">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a395cc4c40bd55229df264d4187ebb018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395cc4c40bd55229df264d4187ebb018">&#9670;&nbsp;</a></span>ReadArrayDimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serialization.IStorage.ReadArrayDimension </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the array dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Int32.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a82cdd27cb419e14f93f62e0947d3c109">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="abffb20a2280b9334bef338ccd2d7f5f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abffb20a2280b9334bef338ccd2d7f5f5">&#9670;&nbsp;</a></span>ReadSimpleArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Array Serialization.IStorage.ReadSimpleArray </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>elementType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the simple array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elementType</td><td>Type of the element.</td></tr>
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a611b0f83ba611a0ecf394a9920dbab1b">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a32b60329697e7f1d128801cc4ac7e614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b60329697e7f1d128801cc4ac7e614">&#9670;&nbsp;</a></span>ReadSimpleValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object Serialization.IStorage.ReadSimpleValue </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the simple value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System.Object.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a7b85fa9bbbd8e2b9167abb58e45b2a82">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ae1e7a60cc8b12071f1866d2cac454f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e7a60cc8b12071f1866d2cac454f99">&#9670;&nbsp;</a></span>ReadSimpleValue< T >()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="interface_serialization_1_1_i_storage.html#a32b60329697e7f1d128801cc4ac7e614">Serialization.IStorage.ReadSimpleValue</a>&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the simple value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T.</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ad46b4de7951611009e2e85d00ad8178d">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
 <a id="a0795ec3b6aa77280885c34e2822cb410"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0795ec3b6aa77280885c34e2822cb410">&#9670;&nbsp;</a></span>ShouldWriteFields()</h2>
 
@@ -493,8 +2369,37 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
 
 </div>
 </div>
+<a id="a0d4c95743d604600b55492194d54717b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d4c95743d604600b55492194d54717b">&#9670;&nbsp;</a></span>ShouldWriteProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> [] Serialization.IStorage.ShouldWriteProperties </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_serialization_1_1_entry.html">Entry</a> []&#160;</td>
+          <td class="paramname"><em>properties</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shoulds the write properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>The properties.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a>[].</dd></dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#adb05a4a6e028617fe748ae28dc97d7c7">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
 <a id="a90aa19f79a51acf057f20da842ef09b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90aa19f79a51acf057f20da842ef09b3">&#9670;&nbsp;</a></span>StartDeserializing()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a90aa19f79a51acf057f20da842ef09b3">&#9670;&nbsp;</a></span>StartDeserializing() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +2414,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
       </table>
 </div><div class="memdoc">
 
-<p>Called when deserializing an object. If the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter has MustHaveName set then the routine should return with the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter updated with the name and the type of the object in StoredType If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after DeserializeGetName </p>
+<p>Called when deserializing an object. If the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter has MustHaveName set then the routine should return with the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter updated with the name and the type of the object in StoredType If the storage is capable of fully recreating the object then this routine should return the fully constructed object, and no further processing will occur. Not this does mean that it must handle its own references for previously seen objects This will be called after DeserializeGetName </p>
 <dl class="section return"><dt>Returns</dt><dd>Normally NULL, it may also return a fully depersisted object</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -519,6 +2424,27 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
 </dl>
 
 <p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a9b376977bd19d9bfef1fce28e110220a">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ab0432907fec979aa0832b659b4bd8d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0432907fec979aa0832b659b4bd8d67">&#9670;&nbsp;</a></span>StartDeserializing() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.StartDeserializing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts the deserializing. </p>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a379a76963492f1fb3a8168e794148683">Serialization.BinarySerializer</a>.</p>
 
 </div>
 </div>
@@ -569,7 +2495,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
       </table>
 </div><div class="memdoc">
 
-<p>Called when serializing a new object, the <a class="el" href="class_serialization_1_1_entry.html">Entry</a> parameter may have MustHaveName set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns TRUE then no further processing is executed and the object is presumed persisted in its entirety </p>
+<p>Called when serializing a new object, the <a class="el" href="class_serialization_1_1_entry.html" title="Class Entry. ">Entry</a> parameter may have MustHaveName set when this is true the name must be persisted as is so that the property or field can be set when retrieving the data. If this routine returns TRUE then no further processing is executed and the object is presumed persisted in its entirety </p>
 <dl class="section return"><dt>Returns</dt><dd>Normally FALSE. True if the object is already fully persisted</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -579,6 +2505,138 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>SupportsOnDemand</b><
 </dl>
 
 <p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#aef0fdf4b432dfe09b1bf9c11786dee58">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a844c1dfe7f787cbf76d0521ca4ea11ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844c1dfe7f787cbf76d0521ca4ea11ef">&#9670;&nbsp;</a></span>WriteArrayDimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.WriteArrayDimension </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the array dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index.</td></tr>
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#adf00734419149ffd0f8999876c1120b0">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="a94937afa442d505b3802f9dd19675ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94937afa442d505b3802f9dd19675ee2">&#9670;&nbsp;</a></span>WriteSimpleArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.WriteSimpleArray </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the simple array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The count.</td></tr>
+    <tr><td class="paramname">array</td><td>The array.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#ad694b37d2693fb305f569bebe076b9f8">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<a id="ad71e5330badb887d80a59b576dbd9e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71e5330badb887d80a59b576dbd9e1e">&#9670;&nbsp;</a></span>WriteSimpleValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serialization.IStorage.WriteSimpleValue </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the simple value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_serialization_1_1_binary_serializer.html#a91a35ade763c6b2def327e82a5ea7dad">Serialization.BinarySerializer</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a6096e94c37b632da7f415a4697f80f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6096e94c37b632da7f415a4697f80f32">&#9670;&nbsp;</a></span>SupportsOnDemand</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Serialization.IStorage.SupportsOnDemand</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether [supports on demand]. </p>
+<p><code>true</code> if [supports on demand]; otherwise, <code>false</code>.</p>
 
 </div>
 </div>

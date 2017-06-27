@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 
 namespace FullSerializer.Internal
 {
+    /// <summary>
+    /// Class fsCyclicReferenceManager.
+    /// </summary>
     public class fsCyclicReferenceManager
     {
         // We use the default ReferenceEquals when comparing two objects because
@@ -22,6 +25,9 @@ namespace FullSerializer.Internal
                 return RuntimeHelpers.GetHashCode(obj);
             }
 
+            /// <summary>
+            /// The instance
+            /// </summary>
             public static readonly IEqualityComparer<object> Instance = new ObjectReferenceEqualityComparator();
         }
 
@@ -31,11 +37,19 @@ namespace FullSerializer.Internal
         private Dictionary<int, object> _marked = new Dictionary<int, object>();
         private int _depth;
 
+        /// <summary>
+        /// Enters this instance.
+        /// </summary>
         public void Enter()
         {
             _depth++;
         }
 
+        /// <summary>
+        /// Exits this instance.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        /// <exception cref="InvalidOperationException">Internal Error - Mismatched Enter/Exit</exception>
         public bool Exit()
         {
             _depth--;
@@ -56,6 +70,16 @@ namespace FullSerializer.Internal
             return _depth == 0;
         }
 
+        /// <summary>
+        /// Gets the reference object.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>System.Object.</returns>
+        /// <exception cref="InvalidOperationException">Internal Deserialization Error - Object " +
+        ///                     "definition has not been encountered for object with id=" + id +
+        ///                     "; have you reordered or modified the serialized data? If this is an issue " +
+        ///                     "with an unmodified Full Serializer implementation and unmodified serialization " +
+        ///                     "data, please report an issue with an included test case.</exception>
         public object GetReferenceObject(int id)
         {
             if (_marked.ContainsKey(id) == false)
@@ -70,11 +94,21 @@ namespace FullSerializer.Internal
             return _marked[id];
         }
 
+        /// <summary>
+        /// Adds the reference with identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="reference">The reference.</param>
         public void AddReferenceWithId(int id, object reference)
         {
             _marked[id] = reference;
         }
 
+        /// <summary>
+        /// Gets the reference identifier.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>System.Int32.</returns>
         public int GetReferenceId(object item)
         {
             int id;
@@ -86,11 +120,22 @@ namespace FullSerializer.Internal
             return id;
         }
 
+        /// <summary>
+        /// Determines whether the specified item is reference.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if the specified item is reference; otherwise, <c>false</c>.</returns>
         public bool IsReference(object item)
         {
             return _marked.ContainsKey(GetReferenceId(item));
         }
 
+        /// <summary>
+        /// Marks the serialized.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <exception cref="InvalidOperationException">Internal Error - " + item +
+        ///                     " has already been marked as serialized</exception>
         public void MarkSerialized(object item)
         {
             int referenceId = GetReferenceId(item);

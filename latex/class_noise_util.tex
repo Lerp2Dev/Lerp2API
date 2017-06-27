@@ -1,29 +1,155 @@
 \hypertarget{class_noise_util}{}\section{Noise\+Util Class Reference}
 \label{class_noise_util}\index{Noise\+Util@{Noise\+Util}}
+
+
+Class \hyperlink{class_noise_util}{Noise\+Util}.  
+
+
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_noise_util_a0b86dd13deace2f2e95c562f1d123d61}\label{class_noise_util_a0b86dd13deace2f2e95c562f1d123d61}} 
-static float {\bfseries F\+A\+DE} (float t)
-\item 
-\mbox{\Hypertarget{class_noise_util_ae03f5fa651180f0aa22c9ed54baf6c50}\label{class_noise_util_ae03f5fa651180f0aa22c9ed54baf6c50}} 
-static float {\bfseries L\+E\+RP} (float t, float a, float b)
-\item 
-\mbox{\Hypertarget{class_noise_util_a953eb5cfd98c62cade6658e8daf9c19c}\label{class_noise_util_a953eb5cfd98c62cade6658e8daf9c19c}} 
-static float {\bfseries G\+R\+A\+D1} (int hash, float x)
-\item 
-\mbox{\Hypertarget{class_noise_util_a4464da19a847e00a3da1c4ba67b9e346}\label{class_noise_util_a4464da19a847e00a3da1c4ba67b9e346}} 
-static float {\bfseries G\+R\+A\+D2} (int hash, float x, float y)
-\item 
-\mbox{\Hypertarget{class_noise_util_a1ff08c1b69b5696273722a486751bde0}\label{class_noise_util_a1ff08c1b69b5696273722a486751bde0}} 
-static float {\bfseries G\+R\+A\+D3} (int hash, float x, float y, float z)
-\end{DoxyCompactItemize}
+static float \hyperlink{class_noise_util_a0b86dd13deace2f2e95c562f1d123d61}{F\+A\+DE} (float t)
+\begin{DoxyCompactList}\small\item\em Fades the specified t. \end{DoxyCompactList}\item 
+static float \hyperlink{class_noise_util_ae03f5fa651180f0aa22c9ed54baf6c50}{L\+E\+RP} (float t, float a, float b)
+\begin{DoxyCompactList}\small\item\em Lerps the specified t. \end{DoxyCompactList}\item 
+static float \hyperlink{class_noise_util_a953eb5cfd98c62cade6658e8daf9c19c}{G\+R\+A\+D1} (int hash, float x)
+\begin{DoxyCompactList}\small\item\em Gras the d1. \end{DoxyCompactList}\item 
+static float \hyperlink{class_noise_util_a4464da19a847e00a3da1c4ba67b9e346}{G\+R\+A\+D2} (int hash, float x, float y)
+\begin{DoxyCompactList}\small\item\em Gras the d2. \end{DoxyCompactList}\item 
+static float \hyperlink{class_noise_util_a1ff08c1b69b5696273722a486751bde0}{G\+R\+A\+D3} (int hash, float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Gras the d3. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+static int \hyperlink{class_noise_util_ade7e89a74f0997ca095b1fa017e30a03}{Octaves\+Maximum} = 16
+\begin{DoxyCompactList}\small\item\em The octaves maximum \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_noise_util}{Noise\+Util}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_noise_util_a0b86dd13deace2f2e95c562f1d123d61}\label{class_noise_util_a0b86dd13deace2f2e95c562f1d123d61}} 
+\index{Noise\+Util@{Noise\+Util}!F\+A\+DE@{F\+A\+DE}}
+\index{F\+A\+DE@{F\+A\+DE}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{F\+A\+D\+E()}{FADE()}}
+{\footnotesize\ttfamily static float Noise\+Util.\+F\+A\+DE (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Fades the specified t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The t.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_util_a953eb5cfd98c62cade6658e8daf9c19c}\label{class_noise_util_a953eb5cfd98c62cade6658e8daf9c19c}} 
+\index{Noise\+Util@{Noise\+Util}!G\+R\+A\+D1@{G\+R\+A\+D1}}
+\index{G\+R\+A\+D1@{G\+R\+A\+D1}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{G\+R\+A\+D1()}{GRAD1()}}
+{\footnotesize\ttfamily static float Noise\+Util.\+G\+R\+A\+D1 (\begin{DoxyParamCaption}\item[{int}]{hash,  }\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gras the d1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash.\\
+\hline
+{\em x} & The x.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_util_a4464da19a847e00a3da1c4ba67b9e346}\label{class_noise_util_a4464da19a847e00a3da1c4ba67b9e346}} 
+\index{Noise\+Util@{Noise\+Util}!G\+R\+A\+D2@{G\+R\+A\+D2}}
+\index{G\+R\+A\+D2@{G\+R\+A\+D2}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{G\+R\+A\+D2()}{GRAD2()}}
+{\footnotesize\ttfamily static float Noise\+Util.\+G\+R\+A\+D2 (\begin{DoxyParamCaption}\item[{int}]{hash,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gras the d2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash.\\
+\hline
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_util_a1ff08c1b69b5696273722a486751bde0}\label{class_noise_util_a1ff08c1b69b5696273722a486751bde0}} 
+\index{Noise\+Util@{Noise\+Util}!G\+R\+A\+D3@{G\+R\+A\+D3}}
+\index{G\+R\+A\+D3@{G\+R\+A\+D3}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{G\+R\+A\+D3()}{GRAD3()}}
+{\footnotesize\ttfamily static float Noise\+Util.\+G\+R\+A\+D3 (\begin{DoxyParamCaption}\item[{int}]{hash,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gras the d3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash} & The hash.\\
+\hline
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+{\em z} & The z.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_noise_util_ae03f5fa651180f0aa22c9ed54baf6c50}\label{class_noise_util_ae03f5fa651180f0aa22c9ed54baf6c50}} 
+\index{Noise\+Util@{Noise\+Util}!L\+E\+RP@{L\+E\+RP}}
+\index{L\+E\+RP@{L\+E\+RP}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{L\+E\+R\+P()}{LERP()}}
+{\footnotesize\ttfamily static float Noise\+Util.\+L\+E\+RP (\begin{DoxyParamCaption}\item[{float}]{t,  }\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Lerps the specified t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The t.\\
+\hline
+{\em a} & a.\\
+\hline
+{\em b} & The b.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Single.
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_noise_util_ade7e89a74f0997ca095b1fa017e30a03}\label{class_noise_util_ade7e89a74f0997ca095b1fa017e30a03}} 
-static int {\bfseries Octaves\+Maximum} = 16
-\end{DoxyCompactItemize}
+\index{Noise\+Util@{Noise\+Util}!Octaves\+Maximum@{Octaves\+Maximum}}
+\index{Octaves\+Maximum@{Octaves\+Maximum}!Noise\+Util@{Noise\+Util}}
+\subsubsection{\texorpdfstring{Octaves\+Maximum}{OctavesMaximum}}
+{\footnotesize\ttfamily int Noise\+Util.\+Octaves\+Maximum = 16\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The octaves maximum 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

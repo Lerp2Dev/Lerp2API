@@ -2,6 +2,7 @@ var searchData=
 [
   ['gameconsole',['GameConsole',['../class_lerp2_a_p_i_1_1_game_1_1_game_console.html',1,'Lerp2API::Game']]],
   ['gameobject_5fdirectconverter',['GameObject_DirectConverter',['../class_full_serializer_1_1_internal_1_1_direct_converters_1_1_game_object___direct_converter.html',1,'FullSerializer::Internal::DirectConverters']]],
+  ['genericshelpers',['GenericsHelpers',['../class_lerp2_a_p_i_1_1_hepers_1_1_unity___extensions_1_1_generics_helpers.html',1,'Lerp2API::Hepers::Unity_Extensions']]],
   ['getset',['GetSet',['../class_serialization_1_1_get_set.html',1,'Serialization']]],
   ['getsetgeneric',['GetSetGeneric',['../class_serialization_1_1_get_set_generic.html',1,'Serialization']]],
   ['getwritableattributes',['GetWritableAttributes',['../class_serialization_1_1_get_writable_attributes.html',1,'Serialization']]],

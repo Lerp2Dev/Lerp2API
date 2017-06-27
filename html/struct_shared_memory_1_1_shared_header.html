@@ -81,30 +81,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a322c651d49080ce9021fed3e79aeee5b"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_shared_memory_1_1_shared_header.html#a322c651d49080ce9021fed3e79aeee5b">Shutdown</a></td></tr>
 <tr class="memdesc:a322c651d49080ce9021fed3e79aeee5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether the owner of the buffer has closed its <a class="el" href="class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_file.html">System.IO.MemoryMappedFiles.MemoryMappedFile</a> and <a class="el" href="class_system_1_1_i_o_1_1_memory_mapped_files_1_1_memory_mapped_view_accessor.html">System.IO.MemoryMappedFiles.MemoryMappedViewAccessor</a>.  <a href="#a322c651d49080ce9021fed3e79aeee5b">More...</a><br /></td></tr>
 <tr class="separator:a322c651d49080ce9021fed3e79aeee5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c49168c17cca7506c00915c7b6528ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_shared_memory_1_1_shared_header.html#a8c49168c17cca7506c00915c7b6528ef">_padding0</a></td></tr>
-<tr class="memdesc:a8c49168c17cca7506c00915c7b6528ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pad to 16-bytes.  <a href="#a8c49168c17cca7506c00915c7b6528ef">More...</a><br /></td></tr>
-<tr class="separator:a8c49168c17cca7506c00915c7b6528ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A structure that is always located at the start of the shared memory in a <a class="el" href="class_shared_memory_1_1_shared_buffer.html" title="Abstract base class that provides client/server support for reading/writing structures to a buffer wi...">SharedBuffer</a> instance. This allows the shared memory to be opened by other instances without knowing its size before hand. </p>
 <p>This structure is the same size on 32-bit and 64-bit architectures.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8c49168c17cca7506c00915c7b6528ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c49168c17cca7506c00915c7b6528ef">&#9670;&nbsp;</a></span>_padding0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int SharedMemory.SharedHeader._padding0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pad to 16-bytes. </p>
-
-</div>
-</div>
 <a id="abc3cc4a636cd2a69034692a0efb6f264"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc3cc4a636cd2a69034692a0efb6f264">&#9670;&nbsp;</a></span>SharedMemorySize</h2>
 

@@ -494,7 +494,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Throws a <a class="el" href="">OperationCanceledException</a> if this token has had cancellation requested. </p>
-<p>This method provides functionality equivalent to: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (token.IsCancellationRequested) </div><div class="line">   <span class="keywordflow">throw</span> <span class="keyword">new</span> OperationCanceledException(token);</div></div><!-- fragment --> <dl class="exception"><dt>Exceptions</dt><dd>
+<p>This method provides functionality equivalent to: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (token.IsCancellationRequested)</div><div class="line">   <span class="keywordflow">throw</span> <span class="keyword">new</span> OperationCanceledException(token);</div></div><!-- fragment --> <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">System.OperationCanceledException</td><td>The token has had cancellation requested.</td></tr>
     <tr><td class="paramname">T:System.ObjectDisposedException</td><td>The associated <a class="el" href="">CancellationTokenSource</a> has been disposed.</td></tr>

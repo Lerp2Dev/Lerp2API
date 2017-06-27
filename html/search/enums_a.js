@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['symboliclinkflags',['SymbolicLinkFlags',['../class_lerp2_console_1_1_native_enums.html#a4eb3b3db1c6666b1e520bd67a14d9727',1,'Lerp2Console::NativeEnums']]]
+  ['notifycollectionchangedaction',['NotifyCollectionChangedAction',['../namespace_system_1_1_collections_1_1_specialized.html#a7e21ea761562ed22011c3120bbb31123',1,'System::Collections::Specialized']]]
 ];

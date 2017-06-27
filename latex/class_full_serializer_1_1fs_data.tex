@@ -14,7 +14,7 @@ A union type that stores a serialized value. The stored type can be one of six d
 \begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds a boolean. \end{DoxyCompactList}\item 
 \hyperlink{class_full_serializer_1_1fs_data_a694c04538e4e37df718316eff8e15635}{fs\+Data} (double f)
 \begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds a double. \end{DoxyCompactList}\item 
-\hyperlink{class_full_serializer_1_1fs_data_ab942e5e4fb36b7e815ce0f4195cc84da}{fs\+Data} (Int64 i)
+\hyperlink{class_full_serializer_1_1fs_data_ab942e5e4fb36b7e815ce0f4195cc84da}{fs\+Data} (\hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82afbde23b11d7e59af7828e81144c8b487}{Int64} i)
 \begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds an integer. \end{DoxyCompactList}\item 
 \hyperlink{class_full_serializer_1_1fs_data_a18d00eb27ffcbbd57ab7372856ae30f7}{fs\+Data} (string str)
 \begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds a string. \end{DoxyCompactList}\item 
@@ -22,9 +22,8 @@ A union type that stores a serialized value. The stored type can be one of six d
 \begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds a dictionary of values. \end{DoxyCompactList}\item 
 \hyperlink{class_full_serializer_1_1fs_data_af6e99c4d2e08a96957ccd44491026e92}{fs\+Data} (List$<$ \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$ list)
 \begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that holds a list of values. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_full_serializer_1_1fs_data_ac64cd3d8fa914d376259ff913c208791}\label{class_full_serializer_1_1fs_data_ac64cd3d8fa914d376259ff913c208791}} 
-override string {\bfseries To\+String} ()
-\item 
+override string \hyperlink{class_full_serializer_1_1fs_data_ac64cd3d8fa914d376259ff913c208791}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82a27118326006d3829667a400ad23d5d98}{System.\+String} that represents this instance. \end{DoxyCompactList}\item 
 override bool \hyperlink{class_full_serializer_1_1fs_data_a29d15c3ea23372768eea41226c322415}{Equals} (object obj)
 \begin{DoxyCompactList}\small\item\em Determines whether the specified object is equal to the current object. \end{DoxyCompactList}\item 
 bool \hyperlink{class_full_serializer_1_1fs_data_a31f0be7076e3aeea8051eef9b4bff6c3}{Equals} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} other)
@@ -47,21 +46,17 @@ static bool \hyperlink{class_full_serializer_1_1fs_data_ae595530d43b82d4f7e6190b
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_full_serializer_1_1fs_data_af36a1f41bbcf0f17e56b77cc80e0e0b3}\label{class_full_serializer_1_1fs_data_af36a1f41bbcf0f17e56b77cc80e0e0b3}} 
-static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} {\bfseries True} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(true)
-\item 
-\mbox{\Hypertarget{class_full_serializer_1_1fs_data_a55dbf6381c50c95a042334c119fccdfc}\label{class_full_serializer_1_1fs_data_a55dbf6381c50c95a042334c119fccdfc}} 
-static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} {\bfseries False} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(false)
-\item 
-\mbox{\Hypertarget{class_full_serializer_1_1fs_data_adcb3ce2b86c6f317a74ee3ecfe9c41be}\label{class_full_serializer_1_1fs_data_adcb3ce2b86c6f317a74ee3ecfe9c41be}} 
-static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} {\bfseries Null} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}()
-\end{DoxyCompactItemize}
+static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} \hyperlink{class_full_serializer_1_1fs_data_af36a1f41bbcf0f17e56b77cc80e0e0b3}{True} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(true)
+\begin{DoxyCompactList}\small\item\em The true \end{DoxyCompactList}\item 
+static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} \hyperlink{class_full_serializer_1_1fs_data_a55dbf6381c50c95a042334c119fccdfc}{False} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(false)
+\begin{DoxyCompactList}\small\item\em The false \end{DoxyCompactList}\item 
+static readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} \hyperlink{class_full_serializer_1_1fs_data_adcb3ce2b86c6f317a74ee3ecfe9c41be}{Null} = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}()
+\begin{DoxyCompactList}\small\item\em The null \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_full_serializer_1_1fs_data_a1103886f8029af3fb3e9adef1685072a}\label{class_full_serializer_1_1fs_data_a1103886f8029af3fb3e9adef1685072a}} 
-\hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}{fs\+Data\+Type} {\bfseries Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}{fs\+Data\+Type} \hyperlink{class_full_serializer_1_1fs_data_a1103886f8029af3fb3e9adef1685072a}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the type. \end{DoxyCompactList}\item 
 bool \hyperlink{class_full_serializer_1_1fs_data_af434698e3ebdea70932122c1b326c0a8}{Is\+Null}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Returns true if this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance maps back to null. \end{DoxyCompactList}\item 
 bool \hyperlink{class_full_serializer_1_1fs_data_a346ac35da58a28836daed508ecf32b3f}{Is\+Double}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
@@ -78,7 +73,7 @@ bool \hyperlink{class_full_serializer_1_1fs_data_a1d61e9ed3a74d32dc46f9a4d4c1285
 \begin{DoxyCompactList}\small\item\em Returns true if this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance maps back to a List. \end{DoxyCompactList}\item 
 double \hyperlink{class_full_serializer_1_1fs_data_a3b742582f73e3eb166bcc6df88b2ffd9}{As\+Double}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Casts this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} to a double. Throws an exception if it is not a double. \end{DoxyCompactList}\item 
-Int64 \hyperlink{class_full_serializer_1_1fs_data_a47a5cdaefdb6afc7f2bdaa026befdc00}{As\+Int64}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82afbde23b11d7e59af7828e81144c8b487}{Int64} \hyperlink{class_full_serializer_1_1fs_data_a47a5cdaefdb6afc7f2bdaa026befdc00}{As\+Int64}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Casts this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} to an Int64. Throws an exception if it is not an Int64. \end{DoxyCompactList}\item 
 bool \hyperlink{class_full_serializer_1_1fs_data_a9e4be12fbd0ac616b08823a6b09529f8}{As\+Bool}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Casts this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} to a boolean. Throws an exception if it is not a boolean. \end{DoxyCompactList}\item 
@@ -130,7 +125,7 @@ Creates a \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance that h
 \index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!fs\+Data@{fs\+Data}}
 \index{fs\+Data@{fs\+Data}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
 \subsubsection{\texorpdfstring{fs\+Data()}{fsData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
-{\footnotesize\ttfamily Full\+Serializer.\+fs\+Data.\+fs\+Data (\begin{DoxyParamCaption}\item[{Int64}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Full\+Serializer.\+fs\+Data.\+fs\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82afbde23b11d7e59af7828e81144c8b487}{Int64}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -252,6 +247,52 @@ Returns true iff a != b.
 
 Returns true iff a == b. 
 
+\mbox{\Hypertarget{class_full_serializer_1_1fs_data_ac64cd3d8fa914d376259ff913c208791}\label{class_full_serializer_1_1fs_data_ac64cd3d8fa914d376259ff913c208791}} 
+\index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
+\subsubsection{\texorpdfstring{To\+String()}{ToString()}}
+{\footnotesize\ttfamily override string Full\+Serializer.\+fs\+Data.\+To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82a27118326006d3829667a400ad23d5d98}{System.\+String} that represents this instance. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82a27118326006d3829667a400ad23d5d98}{System.\+String} that represents this instance.
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1fs_data_a55dbf6381c50c95a042334c119fccdfc}\label{class_full_serializer_1_1fs_data_a55dbf6381c50c95a042334c119fccdfc}} 
+\index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!False@{False}}
+\index{False@{False}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
+\subsubsection{\texorpdfstring{False}{False}}
+{\footnotesize\ttfamily readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} Full\+Serializer.\+fs\+Data.\+False = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(false)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The false 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_data_adcb3ce2b86c6f317a74ee3ecfe9c41be}\label{class_full_serializer_1_1fs_data_adcb3ce2b86c6f317a74ee3ecfe9c41be}} 
+\index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!Null@{Null}}
+\index{Null@{Null}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
+\subsubsection{\texorpdfstring{Null}{Null}}
+{\footnotesize\ttfamily readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} Full\+Serializer.\+fs\+Data.\+Null = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The null 
+
+\mbox{\Hypertarget{class_full_serializer_1_1fs_data_af36a1f41bbcf0f17e56b77cc80e0e0b3}\label{class_full_serializer_1_1fs_data_af36a1f41bbcf0f17e56b77cc80e0e0b3}} 
+\index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!True@{True}}
+\index{True@{True}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
+\subsubsection{\texorpdfstring{True}{True}}
+{\footnotesize\ttfamily readonly \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} Full\+Serializer.\+fs\+Data.\+True = new \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}(true)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The true 
+
 
 
 \subsection{Property Documentation}
@@ -289,7 +330,7 @@ Casts this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} to a double. T
 \index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!As\+Int64@{As\+Int64}}
 \index{As\+Int64@{As\+Int64}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
 \subsubsection{\texorpdfstring{As\+Int64}{AsInt64}}
-{\footnotesize\ttfamily Int64 Full\+Serializer.\+fs\+Data.\+As\+Int64\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82afbde23b11d7e59af7828e81144c8b487}{Int64} Full\+Serializer.\+fs\+Data.\+As\+Int64\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -385,6 +426,23 @@ Returns true if this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} inst
 
 Returns true if this \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} instance maps back to a string. 
 
+\mbox{\Hypertarget{class_full_serializer_1_1fs_data_a1103886f8029af3fb3e9adef1685072a}\label{class_full_serializer_1_1fs_data_a1103886f8029af3fb3e9adef1685072a}} 
+\index{Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}!Type@{Type}}
+\index{Type@{Type}!Full\+Serializer\+::fs\+Data@{Full\+Serializer\+::fs\+Data}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \hyperlink{namespace_full_serializer_a6eee33d63b94e40fdfcfc59af9fcfc82}{fs\+Data\+Type} Full\+Serializer.\+fs\+Data.\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the type. 
+
+The type.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & unknown J\+S\+ON data type\\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

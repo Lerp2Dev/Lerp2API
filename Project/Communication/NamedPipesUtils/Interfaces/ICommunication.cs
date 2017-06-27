@@ -1,5 +1,8 @@
 ﻿namespace ClientServerUsingNamedPipes.Interfaces
 {
+    /// <summary>
+    /// Interface ICommunication
+    /// </summary>
     public interface ICommunication
     {
         /// <summary>

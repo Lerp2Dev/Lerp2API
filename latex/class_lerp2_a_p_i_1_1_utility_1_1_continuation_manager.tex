@@ -1,20 +1,82 @@
 \hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{}\section{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager$<$ T $>$ Class Template Reference}
 \label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}\index{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager$<$ T $>$@{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager$<$ T $>$}}
+
+
+Class \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{Continuation\+Manager}.  
+
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a5ea664c9774b48456941b39f38bce7ce}\label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a5ea664c9774b48456941b39f38bce7ce}} 
-void {\bfseries Set\+Job} (T\mbox{[}$\,$\mbox{]} objs, Func$<$ bool $>$ completed, Action$<$ T\mbox{[}$\,$\mbox{]}$>$ continue\+With)
-\item 
-\mbox{\Hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a58af58722b7da1a8a3d7d285f6477149}\label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a58af58722b7da1a8a3d7d285f6477149}} 
-void {\bfseries Start} (bool force\+Play=false)
-\end{DoxyCompactItemize}
+void \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a5ea664c9774b48456941b39f38bce7ce}{Set\+Job} (T\mbox{[}$\,$\mbox{]} objs, Func$<$ bool $>$ completed, Action$<$ T\mbox{[}$\,$\mbox{]}$>$ continue\+With)
+\begin{DoxyCompactList}\small\item\em Sets the job. \end{DoxyCompactList}\item 
+void \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a58af58722b7da1a8a3d7d285f6477149}{Start} (bool force\+Play=false)
+\begin{DoxyCompactList}\small\item\em Starts the specified force play. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+int \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_ad61df6f6506156539d46d550894fba06}{assigned\+Job\+Id} = -\/1
+\begin{DoxyCompactList}\small\item\em The assigned job identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{Continuation\+Manager}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a5ea664c9774b48456941b39f38bce7ce}\label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a5ea664c9774b48456941b39f38bce7ce}} 
+\index{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}!Set\+Job@{Set\+Job}}
+\index{Set\+Job@{Set\+Job}!Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}}
+\subsubsection{\texorpdfstring{Set\+Job()}{SetJob()}}
+{\footnotesize\ttfamily void \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager}$<$ T $>$.Set\+Job (\begin{DoxyParamCaption}\item[{T \mbox{[}$\,$\mbox{]}}]{objs,  }\item[{Func$<$ bool $>$}]{completed,  }\item[{Action$<$ T\mbox{[}$\,$\mbox{]}$>$}]{continue\+With }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objs} & The objs.\\
+\hline
+{\em completed} & The completed.\\
+\hline
+{\em continue\+With} & The continue with.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a58af58722b7da1a8a3d7d285f6477149}\label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_a58af58722b7da1a8a3d7d285f6477149}} 
+\index{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}!Start@{Start}}
+\index{Start@{Start}!Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager}$<$ T $>$.Start (\begin{DoxyParamCaption}\item[{bool}]{force\+Play = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the specified force play. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\+Play} & if set to {\ttfamily true} \mbox{[}force play\mbox{]}.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_ad61df6f6506156539d46d550894fba06}\label{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager_ad61df6f6506156539d46d550894fba06}} 
-int {\bfseries assigned\+Job\+Id} = -\/1
-\end{DoxyCompactItemize}
+\index{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}!assigned\+Job\+Id@{assigned\+Job\+Id}}
+\index{assigned\+Job\+Id@{assigned\+Job\+Id}!Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager@{Lerp2\+A\+P\+I\+::\+Utility\+::\+Continuation\+Manager}}
+\subsubsection{\texorpdfstring{assigned\+Job\+Id}{assignedJobId}}
+{\footnotesize\ttfamily int \hyperlink{class_lerp2_a_p_i_1_1_utility_1_1_continuation_manager}{Lerp2\+A\+P\+I.\+Utility.\+Continuation\+Manager}$<$ T $>$.assigned\+Job\+Id = -\/1}
+
+
+
+The assigned job identifier 
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

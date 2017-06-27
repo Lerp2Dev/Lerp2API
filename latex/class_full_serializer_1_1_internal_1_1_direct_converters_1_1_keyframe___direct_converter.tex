@@ -1,5 +1,10 @@
 \hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter}{}\section{Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter Class Reference}
 \label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter}\index{Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter}}
+
+
+Class \hyperlink{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter}{Keyframe\+\_\+\+Direct\+Converter}.  
+
+
 Inheritance diagram for Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,18 +14,88 @@ Inheritance diagram for Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyfr
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_aea3c4d54715cc2bc0d057c870916238b}\label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_aea3c4d54715cc2bc0d057c870916238b}} 
-override object {\bfseries Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
-\end{DoxyCompactItemize}
+override object \hyperlink{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_aea3c4d54715cc2bc0d057c870916238b}{Create\+Instance} (\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} data, Type storage\+Type)
+\begin{DoxyCompactList}\small\item\em Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_af16890a5241dfeb04a749245f64dd859}\label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_af16890a5241dfeb04a749245f64dd859}} 
-override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} {\bfseries Do\+Serialize} (Keyframe model, Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$ serialized)
-\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_af16890a5241dfeb04a749245f64dd859}{Do\+Serialize} (Keyframe model, Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$ serialized)
+\begin{DoxyCompactList}\small\item\em Does the serialize. \end{DoxyCompactList}\item 
+override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} \hyperlink{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_a42df774ee6b28aa10dd727040969154b}{Do\+Deserialize} (Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$ data, ref Keyframe model)
+\begin{DoxyCompactList}\small\item\em Does the deserialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter}{Keyframe\+\_\+\+Direct\+Converter}. 
+
+\begin{DoxySeeAlso}{See also}
+Full\+Serializer.\+fs\+Direct\+Converter$<$\+Unity\+Engine.\+Keyframe$>$
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_aea3c4d54715cc2bc0d057c870916238b}\label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_aea3c4d54715cc2bc0d057c870916238b}} 
+\index{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}!Create\+Instance@{Create\+Instance}}
+\index{Create\+Instance@{Create\+Instance}!Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}}
+\subsubsection{\texorpdfstring{Create\+Instance()}{CreateInstance()}}
+{\footnotesize\ttfamily override object Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter.\+Create\+Instance (\begin{DoxyParamCaption}\item[{\hyperlink{class_full_serializer_1_1fs_data}{fs\+Data}}]{data,  }\item[{Type}]{storage\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an object instance that will be passed to Try\+Deserialize. This should {\bfseries not} deserialize the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data the object was serialized with.\\
+\hline
+{\em storage\+Type} & The field/property type that is storing the instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object instance
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_a42df774ee6b28aa10dd727040969154b}\label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_a42df774ee6b28aa10dd727040969154b}} 
-override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} {\bfseries Do\+Deserialize} (Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$ data, ref Keyframe model)
-\end{DoxyCompactItemize}
+\index{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}!Do\+Deserialize@{Do\+Deserialize}}
+\index{Do\+Deserialize@{Do\+Deserialize}!Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}}
+\subsubsection{\texorpdfstring{Do\+Deserialize()}{DoDeserialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter.\+Do\+Deserialize (\begin{DoxyParamCaption}\item[{Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$}]{data,  }\item[{ref Keyframe}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Does the deserialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em model} & The model.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_af16890a5241dfeb04a749245f64dd859}\label{class_full_serializer_1_1_internal_1_1_direct_converters_1_1_keyframe___direct_converter_af16890a5241dfeb04a749245f64dd859}} 
+\index{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}!Do\+Serialize@{Do\+Serialize}}
+\index{Do\+Serialize@{Do\+Serialize}!Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter@{Full\+Serializer\+::\+Internal\+::\+Direct\+Converters\+::\+Keyframe\+\_\+\+Direct\+Converter}}
+\subsubsection{\texorpdfstring{Do\+Serialize()}{DoSerialize()}}
+{\footnotesize\ttfamily override \hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result} Full\+Serializer.\+Internal.\+Direct\+Converters.\+Keyframe\+\_\+\+Direct\+Converter.\+Do\+Serialize (\begin{DoxyParamCaption}\item[{Keyframe}]{model,  }\item[{Dictionary$<$ string, \hyperlink{class_full_serializer_1_1fs_data}{fs\+Data} $>$}]{serialized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Does the serialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The model.\\
+\hline
+{\em serialized} & The serialized.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_full_serializer_1_1fs_result}{fs\+Result}.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

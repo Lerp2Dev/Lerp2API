@@ -1,45 +1,98 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class cVoronoiMap.
+/// </summary>
 public class cVoronoiMap
 {
     /// The noise used for generating Voronoi seeds
     protected cNoise m_Noise1;
 
+    /// <summary>
+    /// The m noise2
+    /// </summary>
     protected cNoise m_Noise2;
+
+    /// <summary>
+    /// The m noise3
+    /// </summary>
     protected cNoise m_Noise3;
 
     /** Size of the Voronoi cells (avg X/Y distance between the seeds). Expected to be at least 2. */
+
+    /// <summary>
+    /// The m cell size
+    /// </summary>
     protected int m_CellSize;
 
     /** The amount that the cell seeds may be offset from the grid.
 	Expected to be at least 1 and less than m_CellSize. */
+
+    /// <summary>
+    /// The m jitter size
+    /// </summary>
     protected int m_JitterSize;
 
     /** The constant amount that the cell seeds of every odd row will be offset from the grid.
 	This allows us to have non-rectangular grids.
 	Expected to be between -m_CellSize and +m_CellSize. */
+
+    /// <summary>
+    /// The m odd row offset
+    /// </summary>
     protected int m_OddRowOffset;
 
     /** The X coordinate of the currently cached cell neighborhood */
+
+    /// <summary>
+    /// The m current cell x
+    /// </summary>
     protected int m_CurrentCellX;
 
     /** The Z coordinate of the currently cached cell neighborhood */
+
+    /// <summary>
+    /// The m current cell z
+    /// </summary>
     protected int m_CurrentCellZ;
 
     /** The seeds of cells around m_CurrentCellX, m_CurrentCellZ, X-coords */
+
+    /// <summary>
+    /// The m seed x
+    /// </summary>
     protected int[,] m_SeedX = new int[5, 5];
 
     /** The seeds of cells around m_CurrentCellX, m_CurrentCellZ, X-coords */
+
+    /// <summary>
+    /// The m seed z
+    /// </summary>
     protected int[,] m_SeedZ = new int[5, 5];
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="cVoronoiMap"/> class.
+    /// </summary>
+    /// <param name="a_Seed">a seed.</param>
+    /// <param name="a_CellSize">Size of a cell.</param>
     public cVoronoiMap(int a_Seed, int a_CellSize) : this(a_Seed, a_CellSize, 128)
     {
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="cVoronoiMap"/> class.
+    /// </summary>
+    /// <param name="a_Seed">a seed.</param>
     public cVoronoiMap(int a_Seed) : this(a_Seed, 128, 128)
     {
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="cVoronoiMap"/> class.
+    /// </summary>
+    /// <param name="a_Seed">a seed.</param>
+    /// <param name="a_CellSize">Size of a cell.</param>
+    /// <param name="a_JitterSize">Size of a jitter.</param>
     public cVoronoiMap(int a_Seed, int a_CellSize, int a_JitterSize)
     {
         m_Noise1 = new cNoise(a_Seed + 1);
@@ -54,6 +107,10 @@ public class cVoronoiMap
 
     /** Sets both the cell size and jitter size used for generating the Voronoi seeds. */
 
+    /// <summary>
+    /// Sets the size of the cell.
+    /// </summary>
+    /// <param name="a_CellSize">Size of a cell.</param>
     public void SetCellSize(int a_CellSize)
     {
         a_CellSize = Mathf.Max(a_CellSize, 2); // Cell size must be at least 2
@@ -65,6 +122,10 @@ public class cVoronoiMap
 
     /** Sets the jitter size. Clamps it to current cell size. */
 
+    /// <summary>
+    /// Sets the size of the jitter.
+    /// </summary>
+    /// <param name="a_JitterSize">Size of a jitter.</param>
     public void SetJitterSize(int a_JitterSize)
     {
         m_JitterSize = Mathf.Clamp(a_JitterSize, 1, m_CellSize);
@@ -74,6 +135,10 @@ public class cVoronoiMap
 	This offset makes the voronoi cells align to a non-grid.
 	Clamps the value to [-m_CellSize, +m_CellSize]. */
 
+    /// <summary>
+    /// Sets the odd row offset.
+    /// </summary>
+    /// <param name="a_OddRowOffset">a odd row offset.</param>
     public void SetOddRowOffset(int a_OddRowOffset)
     {
         m_OddRowOffset = Mathf.Clamp(a_OddRowOffset, -m_CellSize, m_CellSize);
@@ -81,6 +146,12 @@ public class cVoronoiMap
 
     /** Returns the value in the cell into which the specified point lies. */
 
+    /// <summary>
+    /// Gets the value at.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <returns>System.Int32.</returns>
     public int GetValueAt(int a_X, int a_Y)
     {
         int SeedX = 0, SeedY = 0, MinDist2 = 0;
@@ -90,6 +161,13 @@ public class cVoronoiMap
     /** Returns the value in the cell into which the specified point lies,
 	and the distance to the nearest Voronoi seed. */
 
+    /// <summary>
+    /// Gets the value at.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_MinDist">a minimum dist.</param>
+    /// <returns>System.Int32.</returns>
     public int GetValueAt(int a_X, int a_Y, ref int a_MinDist)
     {
         int SeedX = 0, SeedY = 0, MinDist2 = 0, res = GetValueAt(a_X, a_Y, ref SeedX, ref SeedY, ref MinDist2);
@@ -100,6 +178,15 @@ public class cVoronoiMap
     /** Returns the value in the cell into which the specified point lies,
 	and the distances to the 2 nearest Voronoi seeds. Uses a cache. */
 
+    /// <summary>
+    /// Gets the value at.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_NearestSeedX">a nearest seed x.</param>
+    /// <param name="a_NearestSeedY">a nearest seed y.</param>
+    /// <param name="a_MinDist2">a minimum dist2.</param>
+    /// <returns>System.Int32.</returns>
     public int GetValueAt(int a_X, int a_Y, ref int a_NearestSeedX, ref int a_NearestSeedY, ref int a_MinDist2)
     {
         int CellX = a_X / m_CellSize,
@@ -139,6 +226,15 @@ public class cVoronoiMap
 
     /** Finds the nearest and second nearest seeds, returns their coords. */
 
+    /// <summary>
+    /// Finds the nearest seeds.
+    /// </summary>
+    /// <param name="a_X">a x.</param>
+    /// <param name="a_Y">a y.</param>
+    /// <param name="a_NearestSeedX">a nearest seed x.</param>
+    /// <param name="a_NearestSeedY">a nearest seed y.</param>
+    /// <param name="a_SecondNearestSeedX">a second nearest seed x.</param>
+    /// <param name="a_SecondNearestSeedY">a second nearest seed y.</param>
     public void FindNearestSeeds(int a_X, int a_Y, ref int a_NearestSeedX, ref int a_NearestSeedY, ref int a_SecondNearestSeedX, ref int a_SecondNearestSeedY)
     {
         int CellX = a_X / m_CellSize,
@@ -185,6 +281,11 @@ public class cVoronoiMap
     /** Updates the cached cell seeds to match the specified cell. Noop if cell pos already matches.
 	Updates m_SeedX and m_SeedZ. */
 
+    /// <summary>
+    /// Updates the cell.
+    /// </summary>
+    /// <param name="a_CellX">a cell x.</param>
+    /// <param name="a_CellZ">a cell z.</param>
     protected void UpdateCell(int a_CellX, int a_CellZ)
     {
         // If the specified cell is currently cached, bail out:

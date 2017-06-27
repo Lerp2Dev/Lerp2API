@@ -5,9 +5,15 @@ using System.Collections.Generic;
 
 namespace Lerp2APIEditor.Utility
 {
+    /// <summary>
+    /// Class LerpedShortcuts.
+    /// </summary>
     public class LerpedShortcuts
     {
         private static bool keyDown;
+        /// <summary>
+        /// The key actions
+        /// </summary>
         public static Dictionary<string, LerpedKeyAction> keyActions = new Dictionary<string, LerpedKeyAction>();
 
         [InitializeOnLoadMethod]
@@ -35,11 +41,25 @@ namespace Lerp2APIEditor.Utility
         }
     }
 
+    /// <summary>
+    /// Class LerpedKeyAction.
+    /// </summary>
     public class LerpedKeyAction
     { //Next feature: Support for multiple key handling: http://answers.unity3d.com/questions/49285/how-can-i-get-a-combination-of-keys-pressed.html
+        /// <summary>
+        /// The key code
+        /// </summary>
         public KeyCode keyCode;
+        /// <summary>
+        /// The action
+        /// </summary>
         public Action action; //Maybe, it will needed to declare a parameter.
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LerpedKeyAction"/> class.
+        /// </summary>
+        /// <param name="kc">The kc.</param>
+        /// <param name="a">a.</param>
         public LerpedKeyAction(KeyCode kc, Action a)
         {
             keyCode = kc;

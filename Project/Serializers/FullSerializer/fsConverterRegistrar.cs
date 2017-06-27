@@ -27,6 +27,9 @@ namespace FullSerializer
             }
         }
 
+        /// <summary>
+        /// The converters
+        /// </summary>
         public static List<Type> Converters;
 
         // Example field registration:

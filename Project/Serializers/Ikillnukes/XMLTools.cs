@@ -7,8 +7,18 @@ using System.Xml.Serialization;
 
 namespace Lerp2API.Serializers.Ikillnukes
 {
+    /// <summary>
+    /// Class XMLTools.
+    /// </summary>
     public class XMLTools
     {
+        /// <summary>
+        /// Serializes the specified value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="indented">if set to <c>true</c> [indented].</param>
+        /// <returns>System.String.</returns>
         public static string Serialize<T>(T value, bool indented = false)
         {
             if (value == null)
@@ -47,6 +57,12 @@ namespace Lerp2API.Serializers.Ikillnukes
             }
         }
 
+        /// <summary>
+        /// Deserializes the specified value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns>T.</returns>
         public static T Deserialize<T>(string value)
         {
 
@@ -69,6 +85,13 @@ namespace Lerp2API.Serializers.Ikillnukes
 
         }
 
+        /// <summary>
+        /// Serializes to file.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="indented">if set to <c>true</c> [indented].</param>
         public static void SerializeToFile<T>(T value, string filePath, bool indented = false)
         {
             if (value == null)
@@ -107,6 +130,12 @@ namespace Lerp2API.Serializers.Ikillnukes
             }
         }
 
+        /// <summary>
+        /// Deserializes from file.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="filePath">The file path.</param>
+        /// <returns>T.</returns>
         public static T DeserializeFromFile<T>(string filePath)
         {
 
@@ -128,6 +157,11 @@ namespace Lerp2API.Serializers.Ikillnukes
 
         }
 
+        /// <summary>
+        /// Beautifies the specified object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>System.String.</returns>
         public static string Beautify(object obj)
         {
             XmlDocument doc = new XmlDocument();
@@ -174,6 +208,11 @@ namespace Lerp2API.Serializers.Ikillnukes
 
 
         // Convert an object to a byte array
+        /// <summary>
+        /// Objects to byte array.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>System.Byte[].</returns>
         public static byte[] ObjectToByteArray(object obj)
         {
             if (obj == null)
@@ -184,6 +223,11 @@ namespace Lerp2API.Serializers.Ikillnukes
             return ms.ToArray();
         }
         // Convert a byte array to an Object
+        /// <summary>
+        /// Bytes the array to object.
+        /// </summary>
+        /// <param name="arrBytes">The arr bytes.</param>
+        /// <returns>System.Object.</returns>
         public static object ByteArrayToObject(byte[] arrBytes)
         {
             MemoryStream memStream = new MemoryStream();

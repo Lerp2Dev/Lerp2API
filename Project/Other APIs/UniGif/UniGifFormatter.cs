@@ -7,7 +7,7 @@ http://opensource.org/licenses/mit-license.php
 
 using System;
 using System.Collections.Generic;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 public static partial class UniGif
 {

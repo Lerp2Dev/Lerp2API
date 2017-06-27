@@ -10,17 +10,33 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Class OnlyInRangeManager.
+/// </summary>
 [AddComponentMenu("Storage/Advanced/Only In Range Manager")]
 public class OnlyInRangeManager : MonoBehaviour
 {
     //Class to hold information about tracked items
+    /// <summary>
+    /// Class InRange.
+    /// </summary>
     public class InRange
     {
+        /// <summary>
+        /// The transform
+        /// </summary>
         public Transform transform;
+        /// <summary>
+        /// The last position
+        /// </summary>
         public Vector3 lastPosition;
         private bool _inprogress;
 
         //Inprogress flag indicates that it is being loaded or saved
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="InRange"/> is inprogress.
+        /// </summary>
+        /// <value><c>true</c> if inprogress; otherwise, <c>false</c>.</value>
         public bool inprogress
         {
             get
@@ -35,12 +51,24 @@ public class OnlyInRangeManager : MonoBehaviour
         }
 
         //Unique identifier
+        /// <summary>
+        /// The identifier
+        /// </summary>
         public string id;
 
         //Number of frames since coming into or going out of range
+        /// <summary>
+        /// The count
+        /// </summary>
         public int count;
 
         //Test function to see if we should save this item
+        /// <summary>
+        /// Tests the specified manager.
+        /// </summary>
+        /// <param name="manager">The manager.</param>
+        /// <param name="position">The position.</param>
+        /// <param name="sqrRange">The SQR range.</param>
         public void Test(OnlyInRangeManager manager, Vector3 position, float sqrRange)
         {
             if (inprogress)
@@ -78,9 +106,16 @@ public class OnlyInRangeManager : MonoBehaviour
     }
 
     //Singleton instance
+    /// <summary>
+    /// The instance
+    /// </summary>
     public static OnlyInRangeManager Instance;
 
     //Add an item to be tracked
+    /// <summary>
+    /// Adds the ranged item.
+    /// </summary>
+    /// <param name="go">The go.</param>
     public void AddRangedItem(GameObject go)
     {
         var ui = go.GetComponent<PrefabIdentifier>();
@@ -95,6 +130,10 @@ public class OnlyInRangeManager : MonoBehaviour
     }
 
     //Remove an item from tracking
+    /// <summary>
+    /// Destroys the ranged item.
+    /// </summary>
+    /// <param name="go">The go.</param>
     public void DestroyRangedItem(GameObject go)
     {
         var ui = go.GetComponent<PrefabIdentifier>();
@@ -127,6 +166,9 @@ public class OnlyInRangeManager : MonoBehaviour
     private HashSet<InRange> viewList = new HashSet<InRange>();
 
     //Range
+    /// <summary>
+    /// The range
+    /// </summary>
     public float range = 5;
 
     private void Awake()

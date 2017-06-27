@@ -10,18 +10,19 @@ namespace Lerp2API.Utility
         File browser for selecting files or folders at runtime.
      */
 
-    public enum FileBrowserType
-    {
-        File,
-        Directory
-    }
-
+    /// <summary>
+    /// Class FileBrowser.
+    /// </summary>
     public class FileBrowser
     {
 
         // Called when the user clicks cancel or select
         //public delegate void FinishedCallback(string path);
         // Defaults to working directory
+        /// <summary>
+        /// Gets or sets the current directory.
+        /// </summary>
+        /// <value>The current directory.</value>
         public string CurrentDirectory
         {
             get
@@ -34,11 +35,18 @@ namespace Lerp2API.Utility
                 SwitchDirectoryNow();
             }
         }
+        /// <summary>
+        /// The m current directory
+        /// </summary>
         protected string m_currentDirectory;
         // Optional pattern for filtering selectable files/folders. See:
         // http://msdn.microsoft.com/en-us/library/wz42302f(v=VS.90).aspx
         // and
         // http://msdn.microsoft.com/en-us/library/6ff71z1w(v=VS.90).aspx
+        /// <summary>
+        /// Gets or sets the selection pattern.
+        /// </summary>
+        /// <value>The selection pattern.</value>
         public string SelectionPattern
         {
             get
@@ -51,9 +59,16 @@ namespace Lerp2API.Utility
                 ReadDirectoryContents();
             }
         }
+        /// <summary>
+        /// The m file pattern
+        /// </summary>
         protected string m_filePattern;
 
         // Optional image for directories
+        /// <summary>
+        /// Gets or sets the directory image.
+        /// </summary>
+        /// <value>The directory image.</value>
         public Texture2D DirectoryImage
         {
             get
@@ -66,9 +81,16 @@ namespace Lerp2API.Utility
                 BuildContent();
             }
         }
+        /// <summary>
+        /// The m directory image
+        /// </summary>
         protected Texture2D m_directoryImage;
 
         // Optional image for files
+        /// <summary>
+        /// Gets or sets the file image.
+        /// </summary>
+        /// <value>The file image.</value>
         public Texture2D FileImage
         {
             get
@@ -81,9 +103,16 @@ namespace Lerp2API.Utility
                 BuildContent();
             }
         }
+        /// <summary>
+        /// The m file image
+        /// </summary>
         protected Texture2D m_fileImage;
 
         // Browser type. Defaults to File, but can be set to Folder
+        /// <summary>
+        /// Gets or sets the type of the browser.
+        /// </summary>
+        /// <value>The type of the browser.</value>
         public FileBrowserType BrowserType
         {
             get
@@ -96,27 +125,76 @@ namespace Lerp2API.Utility
                 ReadDirectoryContents();
             }
         }
+        /// <summary>
+        /// The m browser type
+        /// </summary>
         protected FileBrowserType m_browserType;
+        /// <summary>
+        /// The m new directory
+        /// </summary>
         protected string m_newDirectory;
+        /// <summary>
+        /// The m current directory parts
+        /// </summary>
         protected string[] m_currentDirectoryParts;
 
+        /// <summary>
+        /// The m files
+        /// </summary>
         protected string[] m_files;
+        /// <summary>
+        /// The m files with images
+        /// </summary>
         protected GUIContent[] m_filesWithImages;
+        /// <summary>
+        /// The m selected file
+        /// </summary>
         protected int m_selectedFile;
 
+        /// <summary>
+        /// The m non matching files
+        /// </summary>
         protected string[] m_nonMatchingFiles;
+        /// <summary>
+        /// The m non matching files with images
+        /// </summary>
         protected GUIContent[] m_nonMatchingFilesWithImages;
+        /// <summary>
+        /// The m selected non matching directory
+        /// </summary>
         protected int m_selectedNonMatchingDirectory;
 
+        /// <summary>
+        /// The m directories
+        /// </summary>
         protected string[] m_directories;
+        /// <summary>
+        /// The m directories with images
+        /// </summary>
         protected GUIContent[] m_directoriesWithImages;
+        /// <summary>
+        /// The m selected directory
+        /// </summary>
         protected int m_selectedDirectory;
 
+        /// <summary>
+        /// The m non matching directories
+        /// </summary>
         protected string[] m_nonMatchingDirectories;
+        /// <summary>
+        /// The m non matching directories with images
+        /// </summary>
         protected GUIContent[] m_nonMatchingDirectoriesWithImages;
 
+        /// <summary>
+        /// The m current directory matches
+        /// </summary>
         protected bool m_currentDirectoryMatches;
 
+        /// <summary>
+        /// Gets the centred text.
+        /// </summary>
+        /// <value>The centred text.</value>
         protected GUIStyle CentredText
         {
             get
@@ -130,10 +208,23 @@ namespace Lerp2API.Utility
                 return m_centredText;
             }
         }
+        /// <summary>
+        /// The m centred text
+        /// </summary>
         protected GUIStyle m_centredText;
 
+        /// <summary>
+        /// The m name
+        /// </summary>
         protected string m_name;
+        /// <summary>
+        /// The m screen rect
+        /// </summary>
         protected Rect m_screenRect;
+        /// <summary>
+        /// Gets the screen rect.
+        /// </summary>
+        /// <value>The screen rect.</value>
         protected Rect screenRect //#if UNITY_EDITOR
         {
             get
@@ -142,11 +233,24 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// The m scroll position
+        /// </summary>
         protected Vector2 m_scrollPosition;
 
+        /// <summary>
+        /// The m callback
+        /// </summary>
         protected Action<string> m_callback;
 
         // Browsers need at least a rect, name and callback
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileBrowser"/> class.
+        /// </summary>
+        /// <param name="_screenRect">The screen rect.</param>
+        /// <param name="browserType">Type of the browser.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="callback">The callback.</param>
         public FileBrowser(Rect _screenRect, FileBrowserType browserType, string name, Action<string> callback)
         {
             m_name = name;
@@ -157,11 +261,18 @@ namespace Lerp2API.Utility
             SwitchDirectoryNow();
         }
 
+        /// <summary>
+        /// Sets the new directory.
+        /// </summary>
+        /// <param name="directory">The directory.</param>
         protected void SetNewDirectory(string directory)
         {
             m_newDirectory = directory;
         }
 
+        /// <summary>
+        /// Switches the directory now.
+        /// </summary>
         protected void SwitchDirectoryNow()
         {
             if (m_newDirectory == null || m_currentDirectory == m_newDirectory)
@@ -174,6 +285,9 @@ namespace Lerp2API.Utility
             ReadDirectoryContents();
         }
 
+        /// <summary>
+        /// Reads the directory contents.
+        /// </summary>
         protected void ReadDirectoryContents()
         {
             if (m_currentDirectory == "/")
@@ -261,6 +375,9 @@ namespace Lerp2API.Utility
             m_newDirectory = null;
         }
 
+        /// <summary>
+        /// Builds the content.
+        /// </summary>
         protected void BuildContent()
         {
             m_directoriesWithImages = new GUIContent[m_directories.Length];
@@ -285,6 +402,9 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Called when [GUI].
+        /// </summary>
         public void OnGUI()
         {
             GUILayout.BeginArea(
@@ -391,17 +511,29 @@ namespace Lerp2API.Utility
                 SwitchDirectoryNow();
         }
 
+        /// <summary>
+        /// Files the double click callback.
+        /// </summary>
+        /// <param name="i">The i.</param>
         protected void FileDoubleClickCallback(int i)
         {
             if (BrowserType == FileBrowserType.File)
                 m_callback(Path.Combine(m_currentDirectory, m_files[i]));
         }
 
+        /// <summary>
+        /// Directories the double click callback.
+        /// </summary>
+        /// <param name="i">The i.</param>
         protected void DirectoryDoubleClickCallback(int i)
         {
             SetNewDirectory(Path.Combine(m_currentDirectory, m_directories[i]));
         }
 
+        /// <summary>
+        /// Nons the matching directory double click callback.
+        /// </summary>
+        /// <param name="i">The i.</param>
         protected void NonMatchingDirectoryDoubleClickCallback(int i)
         {
             SetNewDirectory(Path.Combine(m_currentDirectory, m_nonMatchingDirectories[i]));

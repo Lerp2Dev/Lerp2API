@@ -2,22 +2,40 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace UnityStandardAssets.Utility
+namespace Lerp2Assets.Utility
 {
+    /// <summary>
+    /// Class LerpControlledBob.
+    /// </summary>
     [Serializable]
     public class LerpControlledBob
     {
+        /// <summary>
+        /// The bob duration
+        /// </summary>
         public float BobDuration;
+
+        /// <summary>
+        /// The bob amount
+        /// </summary>
         public float BobAmount;
 
         private float m_Offset = 0f;
 
         // provides the offset that can be used
+        /// <summary>
+        /// Offsets this instance.
+        /// </summary>
+        /// <returns>System.Single.</returns>
         public float Offset()
         {
             return m_Offset;
         }
 
+        /// <summary>
+        /// Does the bob cycle.
+        /// </summary>
+        /// <returns>IEnumerator.</returns>
         public IEnumerator DoBobCycle()
         {
             // make the camera move down slightly

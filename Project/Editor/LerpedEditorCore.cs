@@ -9,13 +9,19 @@ using Lerp2API;
 using Lerp2API.Utility;
 using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 using System.Reflection;
 
 namespace Lerp2APIEditor
 {
+    /// <summary>
+    /// Class LerpedEditorCore.
+    /// </summary>
     public class LerpedEditorCore
     {
+        /// <summary>
+        /// The lerped build target
+        /// </summary>
         public static BuildTargetGroup[] LerpedBuildTarget = new BuildTargetGroup[] { BuildTargetGroup.Standalone, BuildTargetGroup.WebGL };
         internal const string buildPath = "BUILD_PATH",
                               editorPath = "EDITOR_PATH",
@@ -23,6 +29,9 @@ namespace Lerp2APIEditor
                               t_CompileWatcher = "COMPILE_WATCHER",
                               timesCompiled = "TIMES_COMPILED",
                               lastBuildTime = "LAST_BUILD_TIME";
+        /// <summary>
+        /// The main folder
+        /// </summary>
         public static string mainFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         internal static string[] resourceFiles = new string[] {
             Path.Combine(mainFolder, "Resources/Images/folder.png"),
@@ -40,6 +49,10 @@ namespace Lerp2APIEditor
 
         internal static WWWHandler wh;
 
+        /// <summary>
+        /// Gets a value indicating whether [available paths].
+        /// </summary>
+        /// <value><c>true</c> if [available paths]; otherwise, <c>false</c>.</value>
         public static bool availablePaths
         {
             get
@@ -129,10 +142,11 @@ namespace Lerp2APIEditor
             string bPath = LerpedCore.GetString(buildPath);
             m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
 
-            m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () => {
-                LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
-                lp.iInit(lp,  LerpedAPIChange.Auto);
-            });
+            if(m_Watcher != null)
+                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () => {
+                    LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
+                    lp.iInit(lp,  LerpedAPIChange.Auto);
+                });
 
             //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
             //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
@@ -141,6 +155,9 @@ namespace Lerp2APIEditor
             m_Watcher.StartFSW();
         }
 
+        /// <summary>
+        /// Updates the dependencies.
+        /// </summary>
         public static void UpdateDependencies()
         {
             string bPath = LerpedCore.GetString(buildPath),
@@ -152,7 +169,7 @@ namespace Lerp2APIEditor
                    ecPath = Path.Combine(ePath, "Console"),
                    batchPath = Path.Combine(Path.GetDirectoryName(bPath), "Compile/compile.bat");
 
-            LerpedCore.SetLong(lastBuildTime, Helpers.LatestModification(Path.GetDirectoryName(bPath)));
+            LerpedCore.SetLong(lastBuildTime, NativeHelpers.LatestModification(Path.GetDirectoryName(bPath)));
 
             if(!Directory.Exists(bePath))
             {
@@ -231,6 +248,11 @@ namespace Lerp2APIEditor
             nextSeek = EditorApplication.timeSinceStartup + threadSeek;
         }
 
+        /// <summary>
+        /// Attaches the resource.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="contents">The contents.</param>
         public static void AttachResource(string name, string contents)
         {
             Debug.LogFormat("Attaching {0} file, with content:\n\n{1}", name, contents);

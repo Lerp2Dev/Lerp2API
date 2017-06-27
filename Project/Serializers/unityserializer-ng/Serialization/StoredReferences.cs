@@ -9,9 +9,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Class StoredReferences.
+/// </summary>
 [Serializable]
 public class StoredReferences : ScriptableObject
 {
+    /// <summary>
+    /// Clears this instance.
+    /// </summary>
     public void Clear()
     {
         ById.Clear();
@@ -19,6 +25,10 @@ public class StoredReferences : ScriptableObject
         entries.Clear();
     }
 
+    /// <summary>
+    /// Gets the count.
+    /// </summary>
+    /// <value>The count.</value>
     public int Count
     {
         get
@@ -28,6 +38,10 @@ public class StoredReferences : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Gets all references.
+    /// </summary>
+    /// <value>All references.</value>
     public GameObject[] AllReferences
     {
         get
@@ -59,10 +73,18 @@ public class StoredReferences : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// The entries
+    /// </summary>
     public List<SaveGameManager.StoredEntry> entries = new List<SaveGameManager.StoredEntry>();
     private Dictionary<string, int> ById = new Dictionary<string, int>();
     private Dictionary<GameObject, int> ByObject = new Dictionary<GameObject, int>();
 
+    /// <summary>
+    /// Gets or sets the <see cref="SaveGameManager.StoredEntry"/> with the specified identifier.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>SaveGameManager.StoredEntry.</returns>
     public SaveGameManager.StoredEntry this[string id]
     {
         get
@@ -108,6 +130,11 @@ public class StoredReferences : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Gets or sets the <see cref="SaveGameManager.StoredEntry"/> with the specified identifier.
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns>SaveGameManager.StoredEntry.</returns>
     public SaveGameManager.StoredEntry this[GameObject id]
     {
         get
@@ -134,6 +161,10 @@ public class StoredReferences : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Removes the specified go.
+    /// </summary>
+    /// <param name="go">The go.</param>
     public void Remove(GameObject go)
     {
         var data = this[go];
@@ -144,6 +175,10 @@ public class StoredReferences : ScriptableObject
         }
     }
 
+    /// <summary>
+    /// Alives this instance.
+    /// </summary>
+    /// <returns>StoredReferences.</returns>
     public StoredReferences Alive()
     {
         var ret = CreateInstance<StoredReferences>();

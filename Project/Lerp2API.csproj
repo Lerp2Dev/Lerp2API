@@ -87,7 +87,6 @@
     <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\Task.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\TaskCanceledException.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\TaskCompletionSource.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\TaskStatus.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\Task`1.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\AggregateException.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\IProgress.cs" />
@@ -106,7 +105,6 @@
     <Compile Include="Backports\SharedMemory\FastStructure.cs" />
     <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFile.cs" />
     <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFileAccess.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFileRights.cs" />
     <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedView.cs" />
     <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedViewAccessor.cs" />
     <Compile Include="Backports\SharedMemory\MemoryMappedFiles\SafeMemoryMappedFileHandle.cs" />
@@ -127,30 +125,72 @@
     <Compile Include="Communication\NamedPipesUtils\Utilities\TaskResult.cs" />
     <Compile Include="Communication\Sockets\SocketClient.cs" />
     <Compile Include="Communication\Sockets\SocketServer.cs" />
+    <Compile Include="Controllers\BallController\Ball.cs" />
+    <Compile Include="Controllers\BallController\BallUserControl.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
     <Compile Include="Controllers\CrossPlatformInput\Scripts\VirtualInput.cs" />
-    <Compile Include="Controllers\FirstPersonController.cs" />
+    <Compile Include="Controllers\FirstPerson\FirstPersonController.cs" />
+    <Compile Include="Controllers\FirstPerson\HeadBob.cs" />
+    <Compile Include="Controllers\FirstPerson\RigidbodyFirstPersonController.cs" />
+    <Compile Include="Controllers\PersonView\LocalPersonViewToggle.cs" />
+    <Compile Include="Controllers\PersonView\PersonViewToggle.cs" />
+    <Compile Include="Controllers\ThirdPerson\AICharacterControl.cs" />
+    <Compile Include="Controllers\ThirdPerson\ThirdPersonCharacter.cs" />
+    <Compile Include="Controllers\ThirdPerson\ThirdPersonUserControl.cs" />
     <Compile Include="Controllers\Utils\CurveControlledBob.cs" />
+    <Compile Include="Controllers\Utils\DontGoThroughThings.cs" />
     <Compile Include="Controllers\Utils\FallingAvoider.cs" />
     <Compile Include="Controllers\Utils\FOVKick.cs" />
     <Compile Include="Controllers\Utils\LerpControlledBob.cs" />
     <Compile Include="Controllers\Utils\MouseLook.cs" />
     <Compile Include="Controllers\Utils\SmoothFollow.cs" />
     <Compile Include="Controllers\Utils\Teleporter.cs" />
+    <Compile Include="Controllers\Utils\WindArea.cs" />
+    <Compile Include="Debug\Debug.cs" />
+    <Compile Include="Debug\DebugColor.cs" />
+    <Compile Include="Effects\Text\Controllers\TextGuideController.cs" />
+    <Compile Include="Effects\Text\Outline\BoxOutline.cs" />
+    <Compile Include="Effects\Text\Outline\CircleOutline.cs" />
+    <Compile Include="Effects\Text\Outline\ListPool.cs" />
+    <Compile Include="Effects\Text\Outline\ModifiedShadow.cs" />
+    <Compile Include="Effects\Text\Outline\ObjectPool.cs" />
+    <Compile Include="Effects\Text\Outline\Outline8.cs" />
+    <Compile Include="Effects\Text\TextSize.cs" />
     <Compile Include="Game\DoubleLogic\Mathd.cs" />
     <Compile Include="Game\DoubleLogic\Vector2d.cs" />
     <Compile Include="Game\DoubleLogic\Vector3d.cs" />
     <Compile Include="Game\FPSCounter.cs" />
     <Compile Include="Game\GameConsole.cs" />
-    <Compile Include="Helpers.cs" />
+    <Compile Include="Hepers\Debug Utils\DebugHelpers.cs" />
+    <Compile Include="Hepers\Helpers.cs" />
+    <Compile Include="Hepers\JSON Extensions\JSONHelpers.cs" />
+    <Compile Include="Hepers\Rect Extensions\RectHelpers.cs" />
+    <Compile Include="Hepers\Serializer Extensions\PluginsHelpers.cs" />
+    <Compile Include="Hepers\Serializer Extensions\SerializeHelpers.cs" />
+    <Compile Include="Hepers\Unity Extensions\AdvancedCoroutine.cs" />
+    <Compile Include="Hepers\Unity Extensions\Attributes.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\AppReflection.cs" />
+    <Compile Include="Controllers\Canvas\CanvasController.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\CharacterUtils.cs" />
+    <Compile Include="Hepers\Unity Extensions\ColorHelpers.cs" />
+    <Compile Include="Hepers\Unity Extensions\ComponentHelpers.cs" />
+    <Compile Include="Hepers\Unity Extensions\FuncHelpers.cs" />
+    <Compile Include="Hepers\Unity Extensions\GenericsHelpers.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\KeyMap.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\LayerUtils.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\LineRendererUtils.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\PlayerUtils.cs" />
+    <Compile Include="Hepers\Unity Extensions\Utils\RequiredHaviour.cs" />
+    <Compile Include="Hepers\Unity Extensions\UnityHelpers.cs" />
+    <Compile Include="Effects\Text\TextGuideBase.cs" />
     <Compile Include="LerpedCore.cs" />
+    <Compile Include="LerpedEnums.cs" />
     <Compile Include="Mono\LerpedMono.cs" />
     <Compile Include="Optimizers\Color.cs" />
     <Compile Include="Optimizers\Point.cs" />
     <Compile Include="Other APIs\BigInteger\BigInteger.cs" />
-    <Compile Include="Other APIs\HtmlAgilityPack\AttributeValueQuote.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\Crc32.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\EncodingFoundException.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlAttribute.cs" />
@@ -159,15 +199,12 @@
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlCommentNode.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlConsoleListener.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlDocument.cs" />
-    <Compile Include="Other APIs\HtmlAgilityPack\HtmlElementFlag.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlEntity.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlNameTable.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlNode.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlNodeCollection.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlNodeNavigator.cs" />
-    <Compile Include="Other APIs\HtmlAgilityPack\HtmlNodeType.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlParseError.cs" />
-    <Compile Include="Other APIs\HtmlAgilityPack\HtmlParseErrorCode.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlTextNode.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlWeb.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlWebException.cs" />
@@ -177,7 +214,6 @@
     <Compile Include="Other APIs\HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
-    <Compile Include="Other APIs\HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\NameValuePairList.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\PermissionHelper.cs" />
@@ -233,7 +269,6 @@
     <Compile Include="Serializers\FullSerializer\fsISerializationCallbacks.cs" />
     <Compile Include="Serializers\FullSerializer\fsJsonParser.cs" />
     <Compile Include="Serializers\FullSerializer\fsJsonPrinter.cs" />
-    <Compile Include="Serializers\FullSerializer\fsMemberSerialization.cs" />
     <Compile Include="Serializers\FullSerializer\fsObjectAttribute.cs" />
     <Compile Include="Serializers\FullSerializer\fsObjectProcessor.cs" />
     <Compile Include="Serializers\FullSerializer\fsPropertyAttribute.cs" />
@@ -307,6 +342,8 @@
     <Compile Include="Tests\GUITest.cs" />
     <Compile Include="Tests\Test.cs" />
     <Compile Include="Utility\ContinuationManager.cs" />
+    <Compile Include="Utility\CSG\BooleanMesh.cs" />
+    <Compile Include="Utility\CSG\Triangulation.cs" />
     <Compile Include="Utility\DebugLine.cs" />
     <Compile Include="Utility\FileBrowser.cs" />
     <Compile Include="Utility\GameLoopEntry.cs" />
@@ -385,11 +422,9 @@
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\.gitignore" />
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\README.ja-jp.md" />
     <None Include="Resources\LerpedEditorAttach.txt" />
-    <Content Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\IteratorTasks.AsyncBridge.csproj" />
     <Content Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\MinimuAsyncBridgeUnitTest.csproj" />
     <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\UniRx.dll" />
     <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\UniRx.pdb" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\MinimumAsyncBridge.csproj" />
     <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\LICENSE.txt" />
     <Content Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\MinimumThreadingBridge.csproj" />
     <Content Include="Backports\MinimumAsyncBridge\MvvmBridge\MvvmBridge.csproj" />
@@ -398,7 +433,16 @@
   <ItemGroup>
     <None Include="Serializers\unityserializer-ng\Serialization\.gitignore" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Hepers\Assertions Extensions\" />
+    <Folder Include="Hepers\Color Extensions\" />
+    <Folder Include="Hepers\Color Utils\" />
+    <Folder Include="Hepers\DateTime Extensions\" />
+    <Folder Include="Hepers\GUI Extensions\" />
+    <Folder Include="Hepers\Math Extensions\" />
+    <Folder Include="Hepers\Reflection Extensions\" />
+    <Folder Include="Hepers\Unity Extensions\Serializer\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

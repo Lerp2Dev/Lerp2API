@@ -1,15 +1,19 @@
 ﻿using System;
+
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Linq;
 using UnityEngine.Assertions;
 
 namespace MinimuAsyncBridgeUnitTest
 {
+    /// <summary>
+    /// Class UnitTestWhenAll.
+    /// </summary>
     public class UnitTestWhenAll
     {
-        
+        /// <summary>
+        /// Tests the when all.
+        /// </summary>
         public void TestWhenAll()
         {
             WhenAllForCompletedTask().Wait();
@@ -62,7 +66,9 @@ namespace MinimuAsyncBridgeUnitTest
                 Task.CompletedTask);
         }
 
-        
+        /// <summary>
+        /// Resultses the of when all should have definit order.
+        /// </summary>
         public void ResultsOfWhenAllShouldHaveDefinitOrder()
         {
             WhenAllShoudBeResultsOrderIsGuaranteed().Wait();
@@ -82,14 +88,17 @@ namespace MinimuAsyncBridgeUnitTest
                 t3,
                 t4);
 
-            for(var i = 0; i < 4; ++i)
+            for (var i = 0; i < 4; ++i)
             {
                 Assert.AreEqual(results[i], planned[i]);
             }
         }
 
         #region cancel
-        
+
+        /// <summary>
+        /// Tests the when all should be canceled if any of the task is canceled.
+        /// </summary>
         public void TestWhenAllShouldBeCanceledIfAnyOfTheTaskIsCanceled()
         {
             WhenAllShouldBeCanceledIfAnyOfTheTaskIsCanceled().Wait();
@@ -215,10 +224,14 @@ namespace MinimuAsyncBridgeUnitTest
 
             Assert.AreEqual(exceptionCount, 2);
         }
-        #endregion
+
+        #endregion cancel
 
         #region exception
-        
+
+        /// <summary>
+        /// Tests the when all should has exceptions if any of the task get exception.
+        /// </summary>
         public void TestWhenAllShouldHasExceptionsIfAnyOfTheTaskGetException()
         {
             WhenAllShouldHasExceptionsIfAnyOfTheTaskGetException().Wait();
@@ -394,10 +407,14 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(t.Exception.InnerExceptions[0], ex1);
             Assert.AreEqual(t.Exception.InnerExceptions[1], ex2);
         }
-        #endregion
+
+        #endregion exception
 
         #region nest
-        
+
+        /// <summary>
+        /// Tests the nested when all.
+        /// </summary>
         public void TestNestedWhenAll()
         {
             TestNestedWhenAllAsync().Wait();
@@ -462,6 +479,7 @@ namespace MinimuAsyncBridgeUnitTest
             Assert.AreEqual(all2.Exception.InnerExceptions[2], ex1);
             Assert.AreEqual(all2.Exception.InnerExceptions[3], ex2);
         }
-        #endregion
+
+        #endregion nest
     }
 }

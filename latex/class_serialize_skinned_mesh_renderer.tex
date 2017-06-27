@@ -1,5 +1,10 @@
 \hypertarget{class_serialize_skinned_mesh_renderer}{}\section{Serialize\+Skinned\+Mesh\+Renderer Class Reference}
 \label{class_serialize_skinned_mesh_renderer}\index{Serialize\+Skinned\+Mesh\+Renderer@{Serialize\+Skinned\+Mesh\+Renderer}}
+
+
+Class \hyperlink{class_serialize_skinned_mesh_renderer}{Serialize\+Skinned\+Mesh\+Renderer}.  
+
+
 Inheritance diagram for Serialize\+Skinned\+Mesh\+Renderer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,7 @@ Inheritance diagram for Serialize\+Skinned\+Mesh\+Renderer\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_serialize_skinned_mesh_renderer_1_1_stored_information}{Stored\+Information}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class \hyperlink{class_serialize_skinned_mesh_renderer_1_1_stored_information}{Stored\+Information}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,9 +26,13 @@ void \hyperlink{class_serialize_skinned_mesh_renderer_ae689a9e0a41aa23ec86f46bff
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_serialize_skinned_mesh_renderer_aea00be7a265b75c63258cfbf9b0b3b79}\label{class_serialize_skinned_mesh_renderer_aea00be7a265b75c63258cfbf9b0b3b79}} 
-static \hyperlink{class_store_materials}{Store\+Materials} {\bfseries Store}
-\end{DoxyCompactItemize}
+static \hyperlink{class_serialization_1_1_store_materials}{Store\+Materials} \hyperlink{class_serialize_skinned_mesh_renderer_aea00be7a265b75c63258cfbf9b0b3b79}{Store}
+\begin{DoxyCompactList}\small\item\em The store \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serialize_skinned_mesh_renderer}{Serialize\+Skinned\+Mesh\+Renderer}. 
+
 
 
 \subsection{Member Function Documentation}
@@ -39,9 +48,9 @@ Deserialize the specified data into the instance.
 
 
 \begin{DoxyParams}{Parameters}
-{\em data} & The data that represents the component, produced by Serialize \\
+{\em data} & The data that represents the component, produced by Serialize\\
 \hline
-{\em instance} & The instance to target \\
+{\em instance} & The instance to target\\
 \hline
 \end{DoxyParams}
 
@@ -60,12 +69,28 @@ Serialize the specified component to a byte array
 
 
 \begin{DoxyParams}{Parameters}
-{\em component} & Component to be serialized \\
+{\em component} & Component to be serialized\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Byte\mbox{[}\mbox{]}.
+\end{DoxyReturn}
 
 
 Implements \hyperlink{interface_i_component_serializer_ab2aa38005665496b62d6c54b5f0dbd31}{I\+Component\+Serializer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_serialize_skinned_mesh_renderer_aea00be7a265b75c63258cfbf9b0b3b79}\label{class_serialize_skinned_mesh_renderer_aea00be7a265b75c63258cfbf9b0b3b79}} 
+\index{Serialize\+Skinned\+Mesh\+Renderer@{Serialize\+Skinned\+Mesh\+Renderer}!Store@{Store}}
+\index{Store@{Store}!Serialize\+Skinned\+Mesh\+Renderer@{Serialize\+Skinned\+Mesh\+Renderer}}
+\subsubsection{\texorpdfstring{Store}{Store}}
+{\footnotesize\ttfamily \hyperlink{class_serialization_1_1_store_materials}{Store\+Materials} Serialize\+Skinned\+Mesh\+Renderer.\+Store\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The store 
 
 
 

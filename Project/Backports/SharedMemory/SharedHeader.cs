@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,16 +23,12 @@
 // The SharedMemory library is inspired by the following Code Project article:
 //   "Fast IPC Communication Using Shared Memory and InterlockedCompareExchange"
 //   http://www.codeproject.com/Articles/14740/Fast-IPC-Communication-Using-Shared-Memory-and-Int
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace SharedMemory
 {
     /// <summary>
-    /// A structure that is always located at the start of the shared memory in a <see cref="SharedBuffer"/> instance. 
+    /// A structure that is always located at the start of the shared memory in a <see cref="SharedBuffer"/> instance.
     /// This allows the shared memory to be opened by other instances without knowing its size before hand.
     /// </summary>
     /// <remarks>This structure is the same size on 32-bit and 64-bit architectures.</remarks>
@@ -52,6 +48,6 @@ namespace SharedMemory
         /// <summary>
         /// Pad to 16-bytes.
         /// </summary>
-        int _padding0;
+        private int _padding0;
     }
 }

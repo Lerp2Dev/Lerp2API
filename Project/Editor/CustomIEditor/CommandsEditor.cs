@@ -3,14 +3,23 @@ using UnityEditor;
 using Lerp2API;
 using Lerp2API.Game;
 using System.IO;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
+using Lerp2API.Hepers.JSON_Extensions;
 
 namespace Lerp2APIEditor.CustomIEditor 
 {
-	[CustomEditor(typeof(GameConsole))]
+    /// <summary>
+    /// Class CommandsEditor.
+    /// </summary>
+    /// <seealso cref="UnityEditor.Editor" />
+    [CustomEditor(typeof(GameConsole))]
 	public class CommandsEditor : Editor 
 	{
-		public static string commandPath 
+        /// <summary>
+        /// Gets the command path.
+        /// </summary>
+        /// <value>The command path.</value>
+        public static string commandPath 
 		{
 			get 
 			{
@@ -18,9 +27,15 @@ namespace Lerp2APIEditor.CustomIEditor
 			}
 		}
 
-		public static GameConsole myTarget;
+        /// <summary>
+        /// My target
+        /// </summary>
+        public static GameConsole myTarget;
 
-	    public override void OnInspectorGUI()
+        /// <summary>
+        /// Called when [inspector GUI].
+        /// </summary>
+        public override void OnInspectorGUI()
 	    {
 	    	DrawDefaultInspector();
 

@@ -1,7 +1,7 @@
 ﻿// ==++==
 //
 //   Copyright (c) Microsoft Corporation.  All rights reserved.
-// 
+//
 // ==--==
 // =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 //
@@ -31,10 +31,10 @@ namespace System.Threading
     //     }
     //
     // Internally it just maintains a counter that is used to decide when to yield, etc.
-    // 
+    //
     // A common usage is to spin before blocking. In those cases, the NextSpinWillYield
     // property allows a user to decide to fall back to waiting once it returns true:
-    // 
+    //
     //     void f() {
     //         SpinWait wait = new SpinWait();
     //         while (!p) {
@@ -71,12 +71,12 @@ namespace System.Threading
     [HostProtection(Synchronization = true, ExternalThreading = true)]
     internal struct SpinWait
     {
-
         // These constants determine the frequency of yields versus spinning. The
         // numbers may seem fairly arbitrary, but were derived with at least some
         // thought in the design document.  I fully expect they will need to change
         // over time as we gain more experience with performance.
         internal const int YIELD_THRESHOLD = 10; // When to switch over to a true yield.
+
         internal const int SLEEP_0_EVERY_HOW_MANY_TIMES = 5; // After how many yields should we Sleep(0)?
         internal const int SLEEP_1_EVERY_HOW_MANY_TIMES = 20; // After how many yields should we Sleep(1)?
 
@@ -177,6 +177,7 @@ namespace System.Threading
         }
 
         #region Static Methods
+
         /// <summary>
         /// Spins until the specified condition is satisfied.
         /// </summary>
@@ -195,7 +196,7 @@ namespace System.Threading
         /// </summary>
         /// <param name="condition">A delegate to be executed over and over until it returns true.</param>
         /// <param name="timeout">
-        /// A <see cref="TimeSpan"/> that represents the number of milliseconds to wait, 
+        /// A <see cref="TimeSpan"/> that represents the number of milliseconds to wait,
         /// or a TimeSpan that represents -1 milliseconds to wait indefinitely.</param>
         /// <returns>True if the condition is satisfied within the timeout; otherwise, false</returns>
         /// <exception cref="ArgumentNullException">The <paramref name="condition"/> argument is null.</exception>
@@ -261,12 +262,10 @@ namespace System.Threading
                 }
             }
             return true;
-
         }
-        #endregion
 
+        #endregion Static Methods
     }
-
 
     /// <summary>
     /// A helper class to get the number of processors, it updates the numbers of processors every sampling interval.
@@ -348,5 +347,4 @@ namespace System.Threading
             return currentWaitTimeout;
         }
     }
-
 }

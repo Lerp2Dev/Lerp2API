@@ -56,11 +56,20 @@ namespace ScottGarland
             }
         }
 
+        /// <summary>
+        /// Allocates the specified size.
+        /// </summary>
+        /// <param name="size">The size.</param>
         public void Allocate(int size)
         {
             Allocate(size, 0);
         }
 
+        /// <summary>
+        /// Allocates the specified size.
+        /// </summary>
+        /// <param name="size">The size.</param>
+        /// <param name="used">The used.</param>
         public void Allocate(int size, int used)
         {
             m_data = new DType[size + 1];
@@ -1057,6 +1066,12 @@ namespace ScottGarland
 
         #region Bitwise Operator Overloads
 
+        /// <summary>
+        /// Implements the &amp;.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static BigInteger operator &(BigInteger leftSide, BigInteger rightSide)
         {
             int len = System.Math.Max(leftSide.m_digits.DataUsed, rightSide.m_digits.DataUsed);
@@ -1068,11 +1083,23 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Bitwises the and.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>BigInteger.</returns>
         public static BigInteger BitwiseAnd(BigInteger leftSide, BigInteger rightSide)
         {
             return leftSide & rightSide;
         }
 
+        /// <summary>
+        /// Implements the |.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static BigInteger operator |(BigInteger leftSide, BigInteger rightSide)
         {
             int len = System.Math.Max(leftSide.m_digits.DataUsed, rightSide.m_digits.DataUsed);
@@ -1084,11 +1111,23 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Bitwises the or.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>BigInteger.</returns>
         public static BigInteger BitwiseOr(BigInteger leftSide, BigInteger rightSide)
         {
             return leftSide | rightSide;
         }
 
+        /// <summary>
+        /// Implements the ^.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static BigInteger operator ^(BigInteger leftSide, BigInteger rightSide)
         {
             int len = System.Math.Max(leftSide.m_digits.DataUsed, rightSide.m_digits.DataUsed);
@@ -1100,11 +1139,22 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Xors the specified left side.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>BigInteger.</returns>
         public static BigInteger Xor(BigInteger leftSide, BigInteger rightSide)
         {
             return leftSide ^ rightSide;
         }
 
+        /// <summary>
+        /// Implements the ~.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <returns>The result of the operator.</returns>
         public static BigInteger operator ~(BigInteger leftSide)
         {
             DigitsArray da = new DigitsArray(leftSide.m_digits.Count);
@@ -1116,6 +1166,11 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Called when [complement].
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <returns>BigInteger.</returns>
         public static BigInteger OnesComplement(BigInteger leftSide)
         {
             return ~leftSide;
@@ -1125,6 +1180,13 @@ namespace ScottGarland
 
         #region Left and Right Shift Operator Overloads
 
+        /// <summary>
+        /// Implements the &lt;&lt;.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="shiftCount">The shift count.</param>
+        /// <returns>The result of the operator.</returns>
+        /// <exception cref="ArgumentNullException">leftSide</exception>
         public static BigInteger operator <<(BigInteger leftSide, int shiftCount)
         {
             if (leftSide == null)
@@ -1138,11 +1200,24 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Lefts the shift.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="shiftCount">The shift count.</param>
+        /// <returns>BigInteger.</returns>
         public static BigInteger LeftShift(BigInteger leftSide, int shiftCount)
         {
             return leftSide << shiftCount;
         }
 
+        /// <summary>
+        /// Implements the &gt;&gt;.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="shiftCount">The shift count.</param>
+        /// <returns>The result of the operator.</returns>
+        /// <exception cref="ArgumentNullException">leftSide</exception>
         public static BigInteger operator >>(BigInteger leftSide, int shiftCount)
         {
             if (leftSide == null)
@@ -1176,6 +1251,13 @@ namespace ScottGarland
             return new BigInteger(da);
         }
 
+        /// <summary>
+        /// Rights the shift.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="shiftCount">The shift count.</param>
+        /// <returns>BigInteger.</returns>
+        /// <exception cref="ArgumentNullException">leftSide</exception>
         public static BigInteger RightShift(BigInteger leftSide, int shiftCount)
         {
             if (leftSide == null)
@@ -1274,6 +1356,12 @@ namespace ScottGarland
             return -1;
         }
 
+        /// <summary>
+        /// Implements the ==.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static bool operator ==(BigInteger leftSide, BigInteger rightSide)
         {
             if (object.ReferenceEquals(leftSide, rightSide))
@@ -1294,11 +1382,28 @@ namespace ScottGarland
             return leftSide.Equals(rightSide);
         }
 
+        /// <summary>
+        /// Implements the !=.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static bool operator !=(BigInteger leftSide, BigInteger rightSide)
         {
             return !(leftSide == rightSide);
         }
 
+        /// <summary>
+        /// Implements the &gt;.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// leftSide
+        /// or
+        /// rightSide
+        /// </exception>
         public static bool operator >(BigInteger leftSide, BigInteger rightSide)
         {
             if (object.ReferenceEquals(leftSide, null))
@@ -1331,6 +1436,17 @@ namespace ScottGarland
             return false;
         }
 
+        /// <summary>
+        /// Implements the &lt;.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// leftSide
+        /// or
+        /// rightSide
+        /// </exception>
         public static bool operator <(BigInteger leftSide, BigInteger rightSide)
         {
             if (object.ReferenceEquals(leftSide, null))
@@ -1363,11 +1479,23 @@ namespace ScottGarland
             return false;
         }
 
+        /// <summary>
+        /// Implements the &gt;=.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static bool operator >=(BigInteger leftSide, BigInteger rightSide)
         {
             return Compare(leftSide, rightSide) >= 0;
         }
 
+        /// <summary>
+        /// Implements the &lt;=.
+        /// </summary>
+        /// <param name="leftSide">The left side.</param>
+        /// <param name="rightSide">The right side.</param>
+        /// <returns>The result of the operator.</returns>
         public static bool operator <=(BigInteger leftSide, BigInteger rightSide)
         {
             return Compare(leftSide, rightSide) <= 0;

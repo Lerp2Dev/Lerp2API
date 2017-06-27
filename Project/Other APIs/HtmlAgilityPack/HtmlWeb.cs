@@ -11,6 +11,9 @@
     using System.Xml.XPath;
     using System.Xml.Xsl;
 
+    /// <summary>
+    /// Class HtmlWeb.
+    /// </summary>
     public class HtmlWeb
     {
         private bool _autoDetectEncoding = true;
@@ -26,20 +29,53 @@
         private bool _useCookies;
         private string _userAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:x.x.x) Gecko/20041107 Firefox/x.x";
         private bool _usingCache;
+        /// <summary>
+        /// The post response
+        /// </summary>
         public PostResponseHandler PostResponse;
+        /// <summary>
+        /// The pre handle document
+        /// </summary>
         public PreHandleDocumentHandler PreHandleDocument;
+        /// <summary>
+        /// The pre request
+        /// </summary>
         public PreRequestHandler PreRequest;
 
+        /// <summary>
+        /// Creates the instance.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>System.Object.</returns>
         public object CreateInstance(string url, Type type)
         {
             return CreateInstance(url, null, null, type);
         }
 
+        /// <summary>
+        /// Creates the instance.
+        /// </summary>
+        /// <param name="htmlUrl">The HTML URL.</param>
+        /// <param name="xsltUrl">The XSLT URL.</param>
+        /// <param name="xsltArgs">The XSLT arguments.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>System.Object.</returns>
         public object CreateInstance(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, Type type)
         {
             return CreateInstance(htmlUrl, xsltUrl, xsltArgs, type, null);
         }
 
+        /// <summary>
+        /// Creates the instance.
+        /// </summary>
+        /// <param name="htmlUrl">The HTML URL.</param>
+        /// <param name="xsltUrl">The XSLT URL.</param>
+        /// <param name="xsltArgs">The XSLT arguments.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="xmlPath">The XML path.</param>
+        /// <returns>System.Object.</returns>
+        /// <exception cref="Exception"></exception>
         public object CreateInstance(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, Type type, string xmlPath)
         {
             object obj2;
@@ -89,11 +125,23 @@
             }
         }
 
+        /// <summary>
+        /// Gets the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="path">The path.</param>
         public void Get(string url, string path)
         {
             Get(url, path, "GET");
         }
 
+        /// <summary>
+        /// Gets the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="path">The path.</param>
+        /// <param name="method">The method.</param>
+        /// <exception cref="HtmlWebException">Unsupported uri scheme: '" + uri.Scheme + "'.</exception>
         public void Get(string url, string path, string method)
         {
             Uri uri = new Uri(url);
@@ -104,11 +152,27 @@
             Get(uri, method, path, null, null, null);
         }
 
+        /// <summary>
+        /// Gets the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="path">The path.</param>
+        /// <param name="proxy">The proxy.</param>
+        /// <param name="credentials">The credentials.</param>
         public void Get(string url, string path, WebProxy proxy, NetworkCredential credentials)
         {
             Get(url, path, proxy, credentials, "GET");
         }
 
+        /// <summary>
+        /// Gets the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="path">The path.</param>
+        /// <param name="proxy">The proxy.</param>
+        /// <param name="credentials">The credentials.</param>
+        /// <param name="method">The method.</param>
+        /// <exception cref="HtmlWebException">Unsupported uri scheme: '" + uri.Scheme + "'.</exception>
         public void Get(string url, string path, WebProxy proxy, NetworkCredential credentials, string method)
         {
             Uri uri = new Uri(url);
@@ -277,6 +341,13 @@
             return (GetCachePath(uri) + ".h.xml");
         }
 
+        /// <summary>
+        /// Gets the cache path.
+        /// </summary>
+        /// <param name="uri">The URI.</param>
+        /// <returns>System.String.</returns>
+        /// <exception cref="ArgumentNullException">uri</exception>
+        /// <exception cref="HtmlWebException">Cache is not enabled. Set UsingCache to true first.</exception>
         public string GetCachePath(Uri uri)
         {
             if (uri == null)
@@ -294,6 +365,12 @@
             return Path.Combine(_cachePath, (uri.Host + uri.AbsolutePath).Replace('/', '\\'));
         }
 
+        /// <summary>
+        /// Gets the content type for extension.
+        /// </summary>
+        /// <param name="extension">The extension.</param>
+        /// <param name="def">The definition.</param>
+        /// <returns>System.String.</returns>
         public static string GetContentTypeForExtension(string extension, string def)
         {
             PermissionHelper helper = new PermissionHelper();
@@ -331,6 +408,12 @@
             return str;
         }
 
+        /// <summary>
+        /// Gets the type of the extension for content.
+        /// </summary>
+        /// <param name="contentType">Type of the content.</param>
+        /// <param name="def">The definition.</param>
+        /// <returns>System.String.</returns>
         public static string GetExtensionForContentType(string contentType, string def)
         {
             PermissionHelper helper = new PermissionHelper();
@@ -387,11 +470,23 @@
             return contentType.ToLower().StartsWith("text/html");
         }
 
+        /// <summary>
+        /// Loads the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <returns>HtmlDocument.</returns>
         public HtmlDocument Load(string url)
         {
             return Load(url, "GET");
         }
 
+        /// <summary>
+        /// Loads the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="method">The method.</param>
+        /// <returns>HtmlDocument.</returns>
+        /// <exception cref="HtmlWebException">Unsupported uri scheme: '" + uri.Scheme + "'.</exception>
         public HtmlDocument Load(string url, string method)
         {
             HtmlDocument document;
@@ -427,6 +522,15 @@
             return document;
         }
 
+        /// <summary>
+        /// Loads the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="method">The method.</param>
+        /// <param name="proxy">The proxy.</param>
+        /// <param name="credentials">The credentials.</param>
+        /// <returns>HtmlDocument.</returns>
+        /// <exception cref="HtmlWebException">Unsupported uri scheme: '" + uri.Scheme + "'.</exception>
         public HtmlDocument Load(string url, string method, WebProxy proxy, NetworkCredential credentials)
         {
             HtmlDocument document;
@@ -455,6 +559,15 @@
             return document;
         }
 
+        /// <summary>
+        /// Loads the specified URL.
+        /// </summary>
+        /// <param name="url">The URL.</param>
+        /// <param name="proxyHost">The proxy host.</param>
+        /// <param name="proxyPort">The proxy port.</param>
+        /// <param name="userId">The user identifier.</param>
+        /// <param name="password">The password.</param>
+        /// <returns>HtmlDocument.</returns>
         public HtmlDocument Load(string url, string proxyHost, int proxyPort, string userId, string password)
         {
             WebProxy proxy = new WebProxy(proxyHost, proxyPort)
@@ -472,16 +585,37 @@
             return Load(url, "GET", proxy, cred);
         }
 
+        /// <summary>
+        /// Loads the HTML as XML.
+        /// </summary>
+        /// <param name="htmlUrl">The HTML URL.</param>
+        /// <param name="writer">The writer.</param>
         public void LoadHtmlAsXml(string htmlUrl, XmlTextWriter writer)
         {
             Load(htmlUrl).Save(writer);
         }
 
+        /// <summary>
+        /// Loads the HTML as XML.
+        /// </summary>
+        /// <param name="htmlUrl">The HTML URL.</param>
+        /// <param name="xsltUrl">The XSLT URL.</param>
+        /// <param name="xsltArgs">The XSLT arguments.</param>
+        /// <param name="writer">The writer.</param>
         public void LoadHtmlAsXml(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, XmlTextWriter writer)
         {
             LoadHtmlAsXml(htmlUrl, xsltUrl, xsltArgs, writer, null);
         }
 
+        /// <summary>
+        /// Loads the HTML as XML.
+        /// </summary>
+        /// <param name="htmlUrl">The HTML URL.</param>
+        /// <param name="xsltUrl">The XSLT URL.</param>
+        /// <param name="xsltArgs">The XSLT arguments.</param>
+        /// <param name="writer">The writer.</param>
+        /// <param name="xmlPath">The XML path.</param>
+        /// <exception cref="ArgumentNullException">htmlUrl</exception>
         public void LoadHtmlAsXml(string htmlUrl, string xsltUrl, XsltArgumentList xsltArgs, XmlTextWriter writer, string xmlPath)
         {
             if (htmlUrl == null)
@@ -590,6 +724,10 @@
             return num;
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [automatic detect encoding].
+        /// </summary>
+        /// <value><c>true</c> if [automatic detect encoding]; otherwise, <c>false</c>.</value>
         public bool AutoDetectEncoding
         {
             get
@@ -602,6 +740,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [cache only].
+        /// </summary>
+        /// <value><c>true</c> if [cache only]; otherwise, <c>false</c>.</value>
+        /// <exception cref="HtmlWebException">Cache is not enabled. Set UsingCache to true first.</exception>
         public bool CacheOnly
         {
             get
@@ -618,6 +761,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the cache path.
+        /// </summary>
+        /// <value>The cache path.</value>
         public string CachePath
         {
             get
@@ -630,6 +777,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether [from cache].
+        /// </summary>
+        /// <value><c>true</c> if [from cache]; otherwise, <c>false</c>.</value>
         public bool FromCache
         {
             get
@@ -1295,6 +1446,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the override encoding.
+        /// </summary>
+        /// <value>The override encoding.</value>
         public Encoding OverrideEncoding
         {
             get
@@ -1307,6 +1462,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the duration of the request.
+        /// </summary>
+        /// <value>The duration of the request.</value>
         public int RequestDuration
         {
             get
@@ -1315,6 +1474,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the response URI.
+        /// </summary>
+        /// <value>The response URI.</value>
         public Uri ResponseUri
         {
             get
@@ -1323,6 +1486,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets the status code.
+        /// </summary>
+        /// <value>The status code.</value>
         public HttpStatusCode StatusCode
         {
             get
@@ -1331,6 +1498,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the size of the stream buffer.
+        /// </summary>
+        /// <value>The size of the stream buffer.</value>
+        /// <exception cref="ArgumentException">Size must be greater than zero.</exception>
         public int StreamBufferSize
         {
             get
@@ -1347,6 +1519,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [use cookies].
+        /// </summary>
+        /// <value><c>true</c> if [use cookies]; otherwise, <c>false</c>.</value>
         public bool UseCookies
         {
             get
@@ -1359,6 +1535,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the user agent.
+        /// </summary>
+        /// <value>The user agent.</value>
         public string UserAgent
         {
             get
@@ -1371,6 +1551,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [using cache].
+        /// </summary>
+        /// <value><c>true</c> if [using cache]; otherwise, <c>false</c>.</value>
+        /// <exception cref="HtmlWebException">You need to define a CachePath first.</exception>
         public bool UsingCache
         {
             get
@@ -1387,10 +1572,24 @@
             }
         }
 
+        /// <summary>
+        /// Delegate PostResponseHandler
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <param name="response">The response.</param>
         public delegate void PostResponseHandler(HttpWebRequest request, HttpWebResponse response);
 
+        /// <summary>
+        /// Delegate PreHandleDocumentHandler
+        /// </summary>
+        /// <param name="document">The document.</param>
         public delegate void PreHandleDocumentHandler(HtmlDocument document);
 
+        /// <summary>
+        /// Delegate PreRequestHandler
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public delegate bool PreRequestHandler(HttpWebRequest request);
     }
 }

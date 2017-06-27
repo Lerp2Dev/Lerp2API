@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Debug = Lerp2API.DebugHandler.Debug;
+using Debug = Lerp2API._Debug.Debug;
 
 namespace Serialization
 {
+    /// <summary>
+    /// Class GetWritableAttributes.
+    /// </summary>
     public class GetWritableAttributes
     {
         private static readonly Dictionary<Type, GetSet[][][]> PropertyAccess = new Dictionary<Type, GetSet[][][]>();
@@ -15,6 +18,12 @@ namespace Serialization
         /// </summary>
         private static readonly Dictionary<Type, object> Vanilla = new Dictionary<Type, object>();
 
+        /// <summary>
+        /// Gets the properties.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="seen">if set to <c>true</c> [seen].</param>
+        /// <returns>Entry[].</returns>
         public static Entry[] GetProperties(object obj, bool seen)
         {
             var type = obj.GetType();
@@ -36,6 +45,12 @@ namespace Serialization
                     }).ToArray();
         }
 
+        /// <summary>
+        /// Gets the fields.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="seen">if set to <c>true</c> [seen].</param>
+        /// <returns>Entry[].</returns>
         public static Entry[] GetFields(object obj, bool seen)
         {
             var type = obj.GetType();

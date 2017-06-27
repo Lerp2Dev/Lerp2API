@@ -1,5 +1,10 @@
 \hypertarget{class_serialize_material}{}\section{Serialize\+Material Class Reference}
 \label{class_serialize_material}\index{Serialize\+Material@{Serialize\+Material}}
+
+
+Class \hyperlink{class_serialize_material}{Serialize\+Material}.  
+
+
 Inheritance diagram for Serialize\+Material\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +14,86 @@ Inheritance diagram for Serialize\+Material\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_serialize_material_a9478a00c7ed2237f8fd8db4f190bd96c}\label{class_serialize_material_a9478a00c7ed2237f8fd8db4f190bd96c}} 
-override I\+Enumerable$<$ object $>$ {\bfseries Save} (Material target)
-\item 
-\mbox{\Hypertarget{class_serialize_material_ae371882b5aece27aafec190d488fc97f}\label{class_serialize_material_ae371882b5aece27aafec190d488fc97f}} 
-override object {\bfseries Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
-\item 
+override I\+Enumerable$<$ object $>$ \hyperlink{class_serialize_material_a9478a00c7ed2237f8fd8db4f190bd96c}{Save} (Material target)
+\begin{DoxyCompactList}\small\item\em Saves the specified target. \end{DoxyCompactList}\item 
+override object \hyperlink{class_serialize_material_ae371882b5aece27aafec190d488fc97f}{Load} (object\mbox{[}$\,$\mbox{]} data, object instance)
+\begin{DoxyCompactList}\small\item\em Loads the specified data. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_serialize_material_a86d5a8507905179b0d5cc0ca608c552b}{Can\+Be\+Serialized} (Type target\+Type, object instance)
+\begin{DoxyCompactList}\small\item\em Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_serialize_material}{Serialize\+Material}. 
+
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_serialize_material_a86d5a8507905179b0d5cc0ca608c552b}\label{class_serialize_material_a86d5a8507905179b0d5cc0ca608c552b}} 
-override bool {\bfseries Can\+Be\+Serialized} (Type target\+Type, object instance)
-\end{DoxyCompactItemize}
+\index{Serialize\+Material@{Serialize\+Material}!Can\+Be\+Serialized@{Can\+Be\+Serialized}}
+\index{Can\+Be\+Serialized@{Can\+Be\+Serialized}!Serialize\+Material@{Serialize\+Material}}
+\subsubsection{\texorpdfstring{Can\+Be\+Serialized()}{CanBeSerialized()}}
+{\footnotesize\ttfamily override bool Serialize\+Material.\+Can\+Be\+Serialized (\begin{DoxyParamCaption}\item[{Type}]{target\+Type,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines whether this instance \mbox{[}can be serialized\mbox{]} the specified target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Type} & Type of the target.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance \mbox{[}can be serialized\mbox{]} the specified target type; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_serializer_extension_base_a50e69037fda6bdcc080cdc3c51d25b99}{Serializer\+Extension\+Base$<$ Material $>$}.
+
+\mbox{\Hypertarget{class_serialize_material_ae371882b5aece27aafec190d488fc97f}\label{class_serialize_material_ae371882b5aece27aafec190d488fc97f}} 
+\index{Serialize\+Material@{Serialize\+Material}!Load@{Load}}
+\index{Load@{Load}!Serialize\+Material@{Serialize\+Material}}
+\subsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily override object Serialize\+Material.\+Load (\begin{DoxyParamCaption}\item[{object \mbox{[}$\,$\mbox{]}}]{data,  }\item[{object}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Loads the specified data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data.\\
+\hline
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+System.\+Object.
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_serializer_extension_base_a3792a9b27056e30ca0ac91531936ae47}{Serializer\+Extension\+Base$<$ Material $>$}.
+
+\mbox{\Hypertarget{class_serialize_material_a9478a00c7ed2237f8fd8db4f190bd96c}\label{class_serialize_material_a9478a00c7ed2237f8fd8db4f190bd96c}} 
+\index{Serialize\+Material@{Serialize\+Material}!Save@{Save}}
+\index{Save@{Save}!Serialize\+Material@{Serialize\+Material}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily override I\+Enumerable$<$object$>$ Serialize\+Material.\+Save (\begin{DoxyParamCaption}\item[{Material}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Saves the specified target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Enumerable$<$System.\+Object$>$.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -11,6 +11,9 @@ using FullSerializer.Internal;
 
 namespace FullSerializer
 {
+    /// <summary>
+    /// Class fsTypeExtensions.
+    /// </summary>
     public static class fsTypeExtensions
     {
         /// <summary>
@@ -21,6 +24,13 @@ namespace FullSerializer
             return CSharpName(type, /*includeNamespace:*/false);
         }
 
+        /// <summary>
+        /// cs the name of the sharp.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="includeNamespace">if set to <c>true</c> [include namespace].</param>
+        /// <param name="ensureSafeDeclarationName">if set to <c>true</c> [ensure safe declaration name].</param>
+        /// <returns>System.String.</returns>
         public static string CSharpName(this Type type, bool includeNamespace, bool ensureSafeDeclarationName)
         {
             var name = CSharpName(type, includeNamespace);

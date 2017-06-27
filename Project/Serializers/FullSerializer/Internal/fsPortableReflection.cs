@@ -11,8 +11,16 @@ using System.Reflection;
 
 #if USE_TYPEINFO
 namespace System {
+/// <summary>
+/// Class AssemblyExtensions.
+/// </summary>
     public static class AssemblyExtensions {
 #if USE_TYPEINFO_EXTENSIONS
+        /// <summary>
+        /// Gets the types.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
+        /// <returns>Type[].</returns>
         public static Type[] GetTypes(this Assembly assembly) {
             TypeInfo[] infos = assembly.DefinedTypes.ToArray();
             Type[] types = new Type[infos.Length];
@@ -23,6 +31,14 @@ namespace System {
         }
 #endif
 
+        /// <summary>
+        /// Gets the type.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="throwOnError">if set to <c>true</c> [throw on error].</param>
+        /// <returns>Type.</returns>
+        /// <exception cref="Exception">Type " + name + " was not found</exception>
         public static Type GetType(this Assembly assembly, string name, bool throwOnError) {
             var types = assembly.GetTypes();
             for (int i = 0; i < types.Length; ++i) {
@@ -45,20 +61,41 @@ namespace FullSerializer.Internal
     /// </summary>
     public static class fsPortableReflection
     {
+        /// <summary>
+        /// The empty types
+        /// </summary>
         public static Type[] EmptyTypes = { };
 
         #region Attribute Queries
 
 #if USE_TYPEINFO
+        /// <summary>
+        /// Gets the attribute.
+        /// </summary>
+        /// <typeparam name="TAttribute">The type of the t attribute.</typeparam>
+        /// <param name="type">The type.</param>
+        /// <returns>TAttribute.</returns>
         public static TAttribute GetAttribute<TAttribute>(Type type)
             where TAttribute : Attribute {
             return GetAttribute<TAttribute>(type.GetTypeInfo());
         }
 
+        /// <summary>
+        /// Gets the attribute.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="attributeType">Type of the attribute.</param>
+        /// <returns>Attribute.</returns>
         public static Attribute GetAttribute(Type type, Type attributeType) {
             return GetAttribute(type.GetTypeInfo(), attributeType, /*shouldCache:*/false);
         }
 
+        /// <summary>
+        /// Determines whether the specified type has attribute.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="attributeType">Type of the attribute.</param>
+        /// <returns><c>true</c> if the specified type has attribute; otherwise, <c>false</c>.</returns>
         public static bool HasAttribute(Type type, Type attributeType) {
             return GetAttribute(type, attributeType) != null;
         }
@@ -137,6 +174,12 @@ namespace FullSerializer.Internal
             return (TAttribute)GetAttribute(element, typeof(TAttribute), shouldCache);
         }
 
+        /// <summary>
+        /// Gets the attribute.
+        /// </summary>
+        /// <typeparam name="TAttribute">The type of the t attribute.</typeparam>
+        /// <param name="element">The element.</param>
+        /// <returns>TAttribute.</returns>
         public static TAttribute GetAttribute<TAttribute>(MemberInfo element)
             where TAttribute : Attribute
         {
@@ -145,7 +188,13 @@ namespace FullSerializer.Internal
 
         private struct AttributeQuery
         {
+            /// <summary>
+            /// The member information
+            /// </summary>
             public MemberInfo MemberInfo;
+            /// <summary>
+            /// The attribute type
+            /// </summary>
             public Type AttributeType;
         }
 
@@ -154,6 +203,12 @@ namespace FullSerializer.Internal
 
         private class AttributeQueryComparator : IEqualityComparer<AttributeQuery>
         {
+            /// <summary>
+            /// Equalses the specified x.
+            /// </summary>
+            /// <param name="x">The x.</param>
+            /// <param name="y">The y.</param>
+            /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
             public bool Equals(AttributeQuery x, AttributeQuery y)
             {
                 return
@@ -161,6 +216,11 @@ namespace FullSerializer.Internal
                     x.AttributeType == y.AttributeType;
             }
 
+            /// <summary>
+            /// Returns a hash code for this instance.
+            /// </summary>
+            /// <param name="obj">The object.</param>
+            /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
             public int GetHashCode(AttributeQuery obj)
             {
                 return
@@ -182,6 +242,12 @@ namespace FullSerializer.Internal
 
 #endif
 
+        /// <summary>
+        /// Gets the declared property.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>PropertyInfo.</returns>
         public static PropertyInfo GetDeclaredProperty(this Type type, string propertyName)
         {
             var props = GetDeclaredProperties(type);
@@ -197,6 +263,12 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the declared method.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>MethodInfo.</returns>
         public static MethodInfo GetDeclaredMethod(this Type type, string methodName)
         {
             var methods = GetDeclaredMethods(type);
@@ -212,6 +284,12 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the declared constructor.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <returns>ConstructorInfo.</returns>
         public static ConstructorInfo GetDeclaredConstructor(this Type type, Type[] parameters)
         {
             var ctors = GetDeclaredConstructors(type);
@@ -235,6 +313,11 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the declared constructors.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>ConstructorInfo[].</returns>
         public static ConstructorInfo[] GetDeclaredConstructors(this Type type)
         {
 #if USE_TYPEINFO
@@ -244,6 +327,12 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Gets the flattened member.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="memberName">Name of the member.</param>
+        /// <returns>MemberInfo[].</returns>
         public static MemberInfo[] GetFlattenedMember(this Type type, string memberName)
         {
             var result = new List<MemberInfo>();
@@ -266,6 +355,12 @@ namespace FullSerializer.Internal
             return result.ToArray();
         }
 
+        /// <summary>
+        /// Gets the flattened method.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>MethodInfo.</returns>
         public static MethodInfo GetFlattenedMethod(this Type type, string methodName)
         {
             while (type != null)
@@ -286,6 +381,12 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the flattened methods.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="methodName">Name of the method.</param>
+        /// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
         public static IEnumerable<MethodInfo> GetFlattenedMethods(this Type type, string methodName)
         {
             while (type != null)
@@ -304,6 +405,12 @@ namespace FullSerializer.Internal
             }
         }
 
+        /// <summary>
+        /// Gets the flattened property.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>PropertyInfo.</returns>
         public static PropertyInfo GetFlattenedProperty(this Type type, string propertyName)
         {
             while (type != null)
@@ -324,6 +431,12 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the declared member.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="memberName">Name of the member.</param>
+        /// <returns>MemberInfo.</returns>
         public static MemberInfo GetDeclaredMember(this Type type, string memberName)
         {
             var members = GetDeclaredMembers(type);
@@ -339,6 +452,11 @@ namespace FullSerializer.Internal
             return null;
         }
 
+        /// <summary>
+        /// Gets the declared methods.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>MethodInfo[].</returns>
         public static MethodInfo[] GetDeclaredMethods(this Type type)
         {
 #if USE_TYPEINFO
@@ -348,6 +466,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Gets the declared properties.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>PropertyInfo[].</returns>
         public static PropertyInfo[] GetDeclaredProperties(this Type type)
         {
 #if USE_TYPEINFO
@@ -357,6 +480,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Gets the declared fields.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>FieldInfo[].</returns>
         public static FieldInfo[] GetDeclaredFields(this Type type)
         {
 #if USE_TYPEINFO
@@ -366,6 +494,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Gets the declared members.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>MemberInfo[].</returns>
         public static MemberInfo[] GetDeclaredMembers(this Type type)
         {
 #if USE_TYPEINFO
@@ -375,6 +508,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Ases the member information.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>MemberInfo.</returns>
         public static MemberInfo AsMemberInfo(Type type)
         {
 #if USE_TYPEINFO
@@ -384,6 +522,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Determines whether the specified member is type.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <returns><c>true</c> if the specified member is type; otherwise, <c>false</c>.</returns>
         public static bool IsType(MemberInfo member)
         {
 #if USE_TYPEINFO
@@ -393,6 +536,11 @@ namespace FullSerializer.Internal
 #endif
         }
 
+        /// <summary>
+        /// Ases the type.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <returns>Type.</returns>
         public static Type AsType(MemberInfo member)
         {
 #if USE_TYPEINFO
@@ -403,6 +551,11 @@ namespace FullSerializer.Internal
         }
 
 #if USE_TYPEINFO
+        /// <summary>
+        /// Resolves the specified type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>TypeInfo.</returns>
         public static TypeInfo Resolve(this Type type) {
             return type.GetTypeInfo();
         }
@@ -418,14 +571,31 @@ namespace FullSerializer.Internal
         #region Extensions
 
 #if USE_TYPEINFO_EXTENSIONS
+        /// <summary>
+        /// Determines whether [is assignable from] [the specified child].
+        /// </summary>
+        /// <param name="parent">The parent.</param>
+        /// <param name="child">The child.</param>
+        /// <returns><c>true</c> if [is assignable from] [the specified child]; otherwise, <c>false</c>.</returns>
         public static bool IsAssignableFrom(this Type parent, Type child) {
             return parent.GetTypeInfo().IsAssignableFrom(child.GetTypeInfo());
         }
 
+        /// <summary>
+        /// Gets the type of the element.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>Type.</returns>
         public static Type GetElementType(this Type type) {
             return type.GetTypeInfo().GetElementType();
         }
 
+        /// <summary>
+        /// Gets the set method.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <param name="nonPublic">if set to <c>true</c> [non public].</param>
+        /// <returns>MethodInfo.</returns>
         public static MethodInfo GetSetMethod(this PropertyInfo member, bool nonPublic = false) {
             // only public requested but the set method is not public
             if (nonPublic == false && member.SetMethod != null && member.SetMethod.IsPublic == false) return null;
@@ -433,6 +603,12 @@ namespace FullSerializer.Internal
             return member.SetMethod;
         }
 
+        /// <summary>
+        /// Gets the get method.
+        /// </summary>
+        /// <param name="member">The member.</param>
+        /// <param name="nonPublic">if set to <c>true</c> [non public].</param>
+        /// <returns>MethodInfo.</returns>
         public static MethodInfo GetGetMethod(this PropertyInfo member, bool nonPublic = false) {
             // only public requested but the set method is not public
             if (nonPublic == false && member.GetMethod != null && member.GetMethod.IsPublic == false) return null;
@@ -440,14 +616,29 @@ namespace FullSerializer.Internal
             return member.GetMethod;
         }
 
+        /// <summary>
+        /// Gets the base definition.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        /// <returns>MethodInfo.</returns>
         public static MethodInfo GetBaseDefinition(this MethodInfo method) {
             return method.GetRuntimeBaseDefinition();
         }
 
+        /// <summary>
+        /// Gets the interfaces.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>Type[].</returns>
         public static Type[] GetInterfaces(this Type type) {
             return type.GetTypeInfo().ImplementedInterfaces.ToArray();
         }
 
+        /// <summary>
+        /// Gets the generic arguments.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>Type[].</returns>
         public static Type[] GetGenericArguments(this Type type) {
             return type.GetTypeInfo().GenericTypeArguments.ToArray();
         }

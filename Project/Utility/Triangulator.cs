@@ -3,15 +3,26 @@ using System.Collections.Generic;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class Triangulator.
+    /// </summary>
     public class Triangulator
     {
         private List<Vector2> m_points = new List<Vector2>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Triangulator"/> class.
+        /// </summary>
+        /// <param name="points">The points.</param>
         public Triangulator(Vector2[] points)
         {
             m_points = new List<Vector2>(points);
         }
 
+        /// <summary>
+        /// Triangulates this instance.
+        /// </summary>
+        /// <returns>System.Int32[].</returns>
         public int[] Triangulate()
         {
             List<int> indices = new List<int>();
@@ -121,6 +132,11 @@ namespace Lerp2API.Utility
             return ((aCROSSbp >= 0.0f) && (bCROSScp >= 0.0f) && (cCROSSap >= 0.0f));
         }
 
+        /// <summary>
+        /// Gets the mesh.
+        /// </summary>
+        /// <param name="vertices2D">The vertices2 d.</param>
+        /// <returns>Mesh.</returns>
         public static Mesh GetMesh(Vector2[] vertices2D)
         {
             Triangulator tr = new Triangulator(vertices2D);

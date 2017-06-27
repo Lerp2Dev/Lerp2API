@@ -9,6 +9,10 @@ namespace System.Threading.Tasks
     /// </summary>
     public class Task
     {
+        /// <summary>
+        /// Gets or sets the status.
+        /// </summary>
+        /// <value>The status.</value>
         public TaskStatus Status { get; protected internal set; }
 
         /// <summary>
@@ -76,8 +80,17 @@ namespace System.Threading.Tasks
             }
         }
 
+        /// <summary>
+        /// Gets the exception.
+        /// </summary>
+        /// <value>The exception.</value>
         public AggregateException Exception { get; private set; }
 
+        /// <summary>
+        /// Completes the specified on complete.
+        /// </summary>
+        /// <param name="onComplete">The on complete.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         protected internal bool Complete(Action onComplete)
         {
             lock (_sync)
@@ -93,6 +106,9 @@ namespace System.Threading.Tasks
             }
         }
 
+        /// <summary>
+        /// Waits this instance.
+        /// </summary>
         public void Wait()
         {
             while (!IsCompleted)
@@ -124,8 +140,17 @@ namespace System.Threading.Tasks
 
         private Action _completed;
 
+        /// <summary>
+        /// Gets the awaiter.
+        /// </summary>
+        /// <returns>TaskAwaiter.</returns>
         public TaskAwaiter GetAwaiter() => new TaskAwaiter(this);
 
+        /// <summary>
+        /// Configures the await.
+        /// </summary>
+        /// <param name="continueOnCapturedContext">if set to <c>true</c> [continue on captured context].</param>
+        /// <returns>ConfiguredTaskAwaitable.</returns>
         public ConfiguredTaskAwaitable ConfigureAwait(bool continueOnCapturedContext) => new ConfiguredTaskAwaitable(this, continueOnCapturedContext);
 
         internal void GetResult()
@@ -137,6 +162,12 @@ namespace System.Threading.Tasks
                 throw new TaskCanceledException();
         }
 
+        /// <summary>
+        /// Froms the result.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns>Task&lt;TResult&gt;.</returns>
         public static Task<TResult> FromResult<TResult>(TResult value)
         {
             var tcs = new TaskCompletionSource<TResult>();
@@ -144,8 +175,17 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Gets the completed task.
+        /// </summary>
+        /// <value>The completed task.</value>
         public static Task CompletedTask { get; } = FromResult<object>(null);
 
+        /// <summary>
+        /// Froms the exception.
+        /// </summary>
+        /// <param name="exception">The exception.</param>
+        /// <returns>Task.</returns>
         public static Task FromException(Exception exception)
         {
             var tcs = new TaskCompletionSource<object>();
@@ -153,6 +193,12 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Froms the exception.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="exception">The exception.</param>
+        /// <returns>Task&lt;TResult&gt;.</returns>
         public static Task<TResult> FromException<TResult>(Exception exception)
         {
             var tcs = new TaskCompletionSource<TResult>();
@@ -160,8 +206,20 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Whens any.
+        /// </summary>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;Task&gt;.</returns>
         public static Task<Task> WhenAny(IEnumerable<Task> tasks) => WhenAny(tasks.ToArray());
 
+        /// <summary>
+        /// Whens any.
+        /// </summary>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;Task&gt;.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
         public static Task<Task> WhenAny(params Task[] tasks)
         {
             if (tasks == null) throw new ArgumentNullException(nameof(tasks));
@@ -183,8 +241,22 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Whens any.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;Task&lt;TResult&gt;&gt;.</returns>
         public static Task<Task<TResult>> WhenAny<TResult>(IEnumerable<Task<TResult>> tasks) => WhenAny(tasks.ToArray());
 
+        /// <summary>
+        /// Whens any.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;Task&lt;TResult&gt;&gt;.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
         public static Task<Task<TResult>> WhenAny<TResult>(params Task<TResult>[] tasks)
         {
             if (tasks == null) throw new ArgumentNullException(nameof(tasks));
@@ -206,8 +278,19 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Whens all.
+        /// </summary>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task.</returns>
         public static Task WhenAll(IEnumerable<Task> tasks) => WhenAll(tasks.ToArray());
 
+        /// <summary>
+        /// Whens all.
+        /// </summary>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static Task WhenAll(params Task[] tasks)
         {
             if (tasks == null) throw new ArgumentNullException(nameof(tasks));
@@ -267,8 +350,21 @@ namespace System.Threading.Tasks
             }
         }
 
+        /// <summary>
+        /// Whens all.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;TResult[]&gt;.</returns>
         public static Task<TResult[]> WhenAll<TResult>(IEnumerable<Task<TResult>> tasks) => WhenAll(tasks.ToArray());
 
+        /// <summary>
+        /// Whens all.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="tasks">The tasks.</param>
+        /// <returns>Task&lt;TResult[]&gt;.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static Task<TResult[]> WhenAll<TResult>(params Task<TResult>[] tasks)
         {
             if (tasks == null) throw new ArgumentNullException(nameof(tasks));
@@ -312,6 +408,11 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Continues the with.
+        /// </summary>
+        /// <param name="continuationAction">The continuation action.</param>
+        /// <returns>Task.</returns>
         public Task ContinueWith(Action<Task> continuationAction)
         {
             var tcs = new TaskCompletionSource<object>();
@@ -330,6 +431,12 @@ namespace System.Threading.Tasks
             return tcs.Task;
         }
 
+        /// <summary>
+        /// Continues the with.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="continuationFunction">The continuation function.</param>
+        /// <returns>Task&lt;TResult&gt;.</returns>
         public Task<TResult> ContinueWith<TResult>(Func<Task, TResult> continuationFunction)
         {
             var tcs = new TaskCompletionSource<TResult>();
@@ -356,10 +463,35 @@ namespace System.Threading.Tasks
             return (int)totalMilliseconds;
         }
 
+        /// <summary>
+        /// Delays the specified delay.
+        /// </summary>
+        /// <param name="delay">The delay.</param>
+        /// <returns>Task.</returns>
         public static Task Delay(TimeSpan delay) => Delay(CheckedTotalMilliseconds(delay), CancellationToken.None);
+
+        /// <summary>
+        /// Delays the specified delay.
+        /// </summary>
+        /// <param name="delay">The delay.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Task.</returns>
         public static Task Delay(TimeSpan delay, CancellationToken cancellationToken) => Delay(CheckedTotalMilliseconds(delay), cancellationToken);
+
+        /// <summary>
+        /// Delays the specified milliseconds delay.
+        /// </summary>
+        /// <param name="millisecondsDelay">The milliseconds delay.</param>
+        /// <returns>Task.</returns>
         public static Task Delay(int millisecondsDelay) => Delay(millisecondsDelay, CancellationToken.None);
 
+        /// <summary>
+        /// Delays the specified milliseconds delay.
+        /// </summary>
+        /// <param name="millisecondsDelay">The milliseconds delay.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Task.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">The millisecondsDelay argument is must be 0 or greater. " + millisecondsDelay</exception>
         public static Task Delay(int millisecondsDelay, CancellationToken cancellationToken)
         {
             var tcs = new TaskCompletionSource<bool>();
@@ -411,6 +543,11 @@ namespace System.Threading.Tasks
             return task;
         }
 
+        /// <summary>
+        /// Runs the specified action.
+        /// </summary>
+        /// <param name="action">The action.</param>
+        /// <returns>Task.</returns>
         public static Task Run(Action action)
         {
             var tcs0 = new TaskCompletionSource<bool>();
@@ -431,6 +568,12 @@ namespace System.Threading.Tasks
             return tcs0.Task;
         }
 
+        /// <summary>
+        /// Runs the specified function.
+        /// </summary>
+        /// <typeparam name="TResult">The type of the t result.</typeparam>
+        /// <param name="function">The function.</param>
+        /// <returns>Task&lt;TResult&gt;.</returns>
         public static Task<TResult> Run<TResult>(Func<TResult> function)
         {
             var tcs0 = new TaskCompletionSource<TResult>();

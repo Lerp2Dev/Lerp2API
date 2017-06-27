@@ -1,22 +1,36 @@
-﻿using Lerp2API.SafeECalls;
-using System;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using UnityEngine;
-using Logger = Lerp2API.SafeECalls.Logger;
 using JsonUtility = Lerp2API.SafeECalls.JsonUtility;
-using System.IO;
+using Logger = Lerp2API.SafeECalls.Logger;
 
 namespace Lerp2API.Communication.Sockets
 {
+    /// <summary>
+    /// Class SocketMessage.
+    /// </summary>
     public class SocketMessage
     {
+        /// <summary>
+        /// The identifier
+        /// </summary>
         public int id;
+
         //Name??
+        /// <summary>
+        /// The MSG
+        /// </summary>
         public string msg;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketMessage"/> class.
+        /// </summary>
+        /// <param name="i">The i.</param>
+        /// <param name="m">The m.</param>
         public SocketMessage(int i, string m)
         {
             id = i;
@@ -24,11 +38,26 @@ namespace Lerp2API.Communication.Sockets
         }
     }
 
+    /// <summary>
+    /// Class SocketClient.
+    /// </summary>
     public class SocketClient
     { //Hacer IDisposable?
+        /// <summary>
+        /// The client socket
+        /// </summary>
         public Socket ClientSocket;
+
+        /// <summary>
+        /// The ip
+        /// </summary>
         public IPAddress IP;
+
+        /// <summary>
+        /// The port
+        /// </summary>
         public int Port, Id;
+
         private IPEndPoint _endpoint;
         private byte[] socketBuffer; //I will keep this static, but I think I will have problems
         private Timer task;
@@ -50,27 +79,72 @@ namespace Lerp2API.Communication.Sockets
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(string fileLog, bool doConnection = false) :
             this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, null, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="everyFunc">The every function.</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(Action everyFunc, string fileLog, bool doConnection = false) :
             this(IPAddress.Loopback, SocketServer.lerpedPort, SocketType.Stream, ProtocolType.Tcp, 1, everyFunc, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="ip">The ip.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(string ip, int port, string fileLog, bool doConnection = false) :
             this(ip, port, -1, null, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="ip">The ip.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="everyFunc">The every function.</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(string ip, int port, Action everyFunc, string fileLog, bool doConnection = false) :
             this(ip, port, 1, everyFunc, fileLog, doConnection)
         { }
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="ip">The ip.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="readEvery">The read every.</param>
+        /// <param name="everyFunc">The every function.</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(string ip, int port, int readEvery, Action everyFunc, string fileLog, bool doConnection = false) :
             this(IPAddress.Parse(ip), port, SocketType.Stream, ProtocolType.Tcp, readEvery, everyFunc, fileLog, doConnection)
         { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocketClient"/> class.
+        /// </summary>
+        /// <param name="ipAddr">The ip addr.</param>
+        /// <param name="port">The port.</param>
+        /// <param name="sType">Type of the s.</param>
+        /// <param name="pType">Type of the p.</param>
+        /// <param name="readEvery">The read every.</param>
+        /// <param name="everyFunc">The every function.</param>
+        /// <param name="fileLog">The file log.</param>
+        /// <param name="doConnection">if set to <c>true</c> [do connection].</param>
         public SocketClient(IPAddress ipAddr, int port, SocketType sType, ProtocolType pType, int readEvery, Action everyFunc, string fileLog, bool doConnection = false)
         {
             socketBuffer = new byte[1024];
@@ -96,23 +170,32 @@ namespace Lerp2API.Communication.Sockets
             if (doConnection)
             {
                 ClientSocket.Connect(IPEnd);
-                //if (cbTimer != null) 
+                //if (cbTimer != null)
                 StartReceiving();
             }
         }
 
+        /// <summary>
+        /// Starts the receiving.
+        /// </summary>
         public void StartReceiving()
         {
             if (task != null)
                 task.Change(5, period);
         }
 
+        /// <summary>
+        /// Stops the receiving.
+        /// </summary>
         public void StopReceiving()
         {
             if (task != null)
                 task.Change(5, 0);
         }
 
+        /// <summary>
+        /// Does the connection.
+        /// </summary>
         public void DoConnection()
         {
             IPEndPoint end = IPEnd;
@@ -126,11 +209,21 @@ namespace Lerp2API.Communication.Sockets
         }
 
         //Esto lo tengo que arreglar
+        /// <summary>
+        /// Writes the specified MSG.
+        /// </summary>
+        /// <param name="msg">The MSG.</param>
+        /// <returns>System.Int32.</returns>
         public int Write(string msg)
         {
             return SendMessage(msg, false);
         }
 
+        /// <summary>
+        /// Writes the line.
+        /// </summary>
+        /// <param name="msg">The MSG.</param>
+        /// <returns>System.Int32.</returns>
         public int WriteLine(string msg)
         {
             return SendMessage(msg, true);
@@ -149,6 +242,11 @@ namespace Lerp2API.Communication.Sockets
             ClientSocket.Send(Encoding.Unicode.GetBytes("<stop>"));
         }
 
+        /// <summary>
+        /// Receives the message.
+        /// </summary>
+        /// <param name="msg">The MSG.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool ReceiveMessage(out string msg) //No entiendo porque este es sincrono, deberia ser asincrono... Copy & paste rulez!
         { //Esto solo devolverá falso cuando se cierre la conexión...
             try
@@ -178,7 +276,7 @@ namespace Lerp2API.Communication.Sockets
 
                 return true;
             }
-            catch (Exception ex)
+            catch
             { //Forced connection close...
                 msg = ""; //Dead silence.
                 WriteLine("<client_closed>");
@@ -203,11 +301,17 @@ namespace Lerp2API.Communication.Sockets
             ClientSocket.Shutdown(soShutdown);
         }
 
+        /// <summary>
+        /// Disposes this instance.
+        /// </summary>
         public void Dispose()
         {
             ClientSocket.Close();
         }
 
+        /// <summary>
+        /// Ends this instance.
+        /// </summary>
         public void End()
         {
             CloseConnection(SocketShutdown.Both);
@@ -218,6 +322,5 @@ namespace Lerp2API.Communication.Sockets
         {
             act();
         }
-
     }
 }
