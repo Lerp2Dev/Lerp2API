@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['never',['Never',['../class_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip_1_1_fast_zip.html#a9befc960dd9a0ca2645a8677f77f6e8ca6e7b34fa59e1bd229b207892956dc41c',1,'ICSharpCode::SharpZipLib::Zip::FastZip']]],
-  ['none',['None',['../namespace_lerp2_a_p_i_1_1_game.html#a44d264926b1618bd77ec2c974e7113b7a6adf97f83acf6453d4a6a4b1070f3754',1,'Lerp2API.Game.None()'],['../namespace_lerp2_a_p_i_1_1_game.html#a40a896b145d802bb883b777ab7413d7ba6adf97f83acf6453d4a6a4b1070f3754',1,'Lerp2API.Game.None()'],['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a668080914f0c87558367318b3229c46aa6adf97f83acf6453d4a6a4b1070f3754',1,'ICSharpCode.SharpZipLib.Zip.None()'],['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a668080914f0c87558367318b3229c46aa6adf97f83acf6453d4a6a4b1070f3754',1,'ICSharpCode.SharpZipLib.Zip.None()'],['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a668080914f0c87558367318b3229c46aa6adf97f83acf6453d4a6a4b1070f3754',1,'ICSharpCode.SharpZipLib.Zip.None()'],['../namespace_i_c_sharp_code_1_1_sharp_zip_lib_1_1_zip.html#a668080914f0c87558367318b3229c46aa6adf97f83acf6453d4a6a4b1070f3754',1,'ICSharpCode.SharpZipLib.Zip.None()']]],
-  ['notstarted',['NotStarted',['../namespace_lerp2_a_p_i.html#a2bd1eb398ec1f41af93fa4ee7408681eafa7be7845bc42b3491d9d0377958be94',1,'Lerp2API']]],
-  ['null',['Null',['../namespace_full_serializer.html#a6eee33d63b94e40fdfcfc59af9fcfc82abbb93ef26e3c101ff11cdd21cab08a94',1,'FullSerializer']]]
-];
