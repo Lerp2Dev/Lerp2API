@@ -18,7 +18,7 @@ namespace Lerp2APIEditor
     [InitializeOnLoad]
     public class LerpedUpdater
     {
-        internal const string curVersion = "1.1.1a",
+        internal const string curVersion = "1.4a-pre1",
                               versionUrl = "http://raw.githubusercontent.com/Lerp2Dev/Lerp2API/master/Lerp2API.version";
 
         internal static string localVersionFilepath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Lerp2API.version");
@@ -39,15 +39,15 @@ namespace Lerp2APIEditor
         /// <summary>
         /// The version name
         /// </summary>
-        public string versionName = "1.1.1 Alpha Release",
+        public string versionName = "1.4 Pre-release 1",
                       /// <summary>
                       /// The version string
                       /// </summary>
-                      versionStr = "1.1.1a",
+                      versionStr = "1.4a-pre1",
                       /// <summary>
                       /// The version changelog
                       /// </summary>
-                      versionChangelog = "Fixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.\nSome utilities to Array Extensions Helpers.";
+                      versionChangelog = "Added code from a new Assets that is on the go.\nDocumented all the code with GhostDoc.\nRemoved some warnings.\nCleaned some code.\nAdded CSG.";
 
         internal static WWWHandler wh;
 

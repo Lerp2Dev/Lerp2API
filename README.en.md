@@ -19,7 +19,7 @@ Please, review [this](https://github.com/Lerp2Dev/Lerp2API/wiki/Coming-features)
 
 ## Do you want to make an API? ##
 
-Tutorial is here: [http://lerp2dev.com/UnityDllReferencesTutorial/](https://web.archive.org/web/20170516065641/http://lerp2dev.com/2017/03/02/tutorial-1-como-crear-una-referencia-dll-api-para-unity-desde-visual-studio/) (is has to be remaked).
+Tutorial is [here](http://lerp2dev.com/2017/03/02/tutorial-1-como-crear-una-referencia-dll-api-para-unity-desde-visual-studio/) (is has to be remaked).
 
 ## Credits and thanks ##
 
@@ -51,7 +51,7 @@ Thanks to somebody from StackOverflow for the [ConcurrentMap](https://github.com
 
 [spazzarama](https://github.com/spazzarama) thanks for [SharedMemory class backport for .NET 3.5](https://github.com/spazzarama/SharedMemory)
 
-Maybe I forget someone, so, thanks to the rest that done all this possible.
+Maybe I forget someone, so, thanks to the rest (that i haven't mentioned) that done all this possible.
 
 #### I hope you found this useful ####
 Lerp2Dev Team

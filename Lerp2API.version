@@ -1,5 +1,5 @@
 {
-    "versionName": "1.1.1 Alpha Release",
-    "versionStr": "1.1.1a",
-    "versionChangelog": "Fixed wrong url to update editor dependencies.\nImproved WWWHandler system, less code lines are needed to make it work.\nSome utilities to Array Extensions Helpers."
+    "versionName": "1.4a-pre1 Alpha Release",
+    "versionStr": "1.4 Pre-release 1",
+    "versionChangelog": "Added code from a new Assets that is on the go.\nDocumented all the code with GhostDoc.\nRemoved some warnings.\nCleaned some code.\nAdded CSG."
 }
