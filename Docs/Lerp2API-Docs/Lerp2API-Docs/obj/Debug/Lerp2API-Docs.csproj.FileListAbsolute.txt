@@ -1,0 +1,10 @@
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\bin\Debug\Lerp2API-Docs.exe.config
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API_Docs.Properties.Resources.resources
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API-Docs.csproj.GenerateResource.Cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\bin\Debug\Lerp2API-Docs.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\bin\Debug\Lerp2API-Docs.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API-Docs.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API-Docs.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API_Docs.Form1.resources
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\obj\Debug\Lerp2API-Docs.csprojResolveAssemblyReference.cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\bin\Debug\SharpCompress.dll
