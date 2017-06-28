@@ -30,7 +30,7 @@ namespace Lerp2API_Docs
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        { //Mañana le meto la barra de progreso.
+        {
             WindowState = FormWindowState.Maximized;
             CenterPanel();
             if (!Directory.Exists(folder))
