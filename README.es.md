@@ -15,9 +15,9 @@ Mira la página de **[lanzamientos](https://github.com/Lerp2Dev/Lerp2API/release
 
 ## Próximas características ##
 
-Por favor, revisa [esto](https://github.com/Lerp2Dev/Lerp2API/wiki/Coming-features).
+Por favor, revisa [esto](https://github.com/Lerp2Dev/Lerp2API/wiki/Incoming-features).
 
-## ¿Quieres hacer unAPI? ##
+## ¿Quieres hacer una API? ##
 
 El tutorial es [este](http://lerp2dev.com/2017/03/02/tutorial-1-como-crear-una-referencia-dll-api-para-unity-desde-visual-studio/) (tiene que ser rehecho para Wordpress).
 
