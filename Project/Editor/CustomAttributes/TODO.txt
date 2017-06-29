@@ -1,0 +1,2 @@
+﻿Aquí vamos a incluir property drawers, como por ejemplo, el minmax para Unity 4, en cualquier caso, este script no está disponible para unity 4.
+Pero por ejemplo, embellecedores para el toggle, para activar y desactivar booelns, en vez de tener una casilla... Y mas opciones.
