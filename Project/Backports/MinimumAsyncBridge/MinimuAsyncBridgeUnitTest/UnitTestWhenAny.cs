@@ -47,7 +47,7 @@ namespace MinimuAsyncBridgeUnitTest
 
             var r = await Task.WhenAny<int>(tcs.Task, t2);
 
-            AssertExt.AreSame(r, tcs.Task);
+            AssertExtensions.AreSame(r, tcs.Task);
 
             var exceptionCount = 0;
             try
@@ -71,7 +71,7 @@ namespace MinimuAsyncBridgeUnitTest
 
             var r = await Task.WhenAny(tcs.Task, t2);
 
-            AssertExt.AreSame(r, tcs.Task);
+            AssertExtensions.AreSame(r, tcs.Task);
         }
 
         private async Task WhenAnyShouldHaveExceptionIfFirstItemOfTheTasksOfTResultGetErrorAsync()
@@ -83,7 +83,7 @@ namespace MinimuAsyncBridgeUnitTest
 
             var r = await Task.WhenAny<int>(tcs.Task, t2);
 
-            AssertExt.AreSame(r, tcs.Task);
+            AssertExtensions.AreSame(r, tcs.Task);
 
             var exceptionCount = 0;
             try
@@ -108,8 +108,8 @@ namespace MinimuAsyncBridgeUnitTest
 
             var r = await Task.WhenAny(tcs.Task, t2);
 
-            AssertExt.AreSame(r, tcs.Task);
-            AssertExt.AreSame(r.Exception.InnerException, plannedException);
+            AssertExtensions.AreSame(r, tcs.Task);
+            AssertExtensions.AreSame(r.Exception.InnerException, plannedException);
             Assert.AreEqual(1, r.Exception.InnerExceptions.Count);
         }
 
@@ -126,7 +126,7 @@ namespace MinimuAsyncBridgeUnitTest
                 t3,
                 t4).ConfigureAwait(false);
 
-            AssertExt.AreSame(r, t1);
+            AssertExtensions.AreSame(r, t1);
             Assert.AreEqual(r.Result, 1);
         }
 
@@ -143,7 +143,7 @@ namespace MinimuAsyncBridgeUnitTest
                 t3,
                 t4).ConfigureAwait(false);
 
-            AssertExt.AreSame(r, t1);
+            AssertExtensions.AreSame(r, t1);
         }
     }
 }

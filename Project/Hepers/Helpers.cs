@@ -1023,9 +1023,9 @@ public class ReflectionHelpers
 #region "Assertions Extensions"
 
 /// <summary>
-/// Class AssertExt.
+/// Class AssertExtensions.
 /// </summary>
-public class AssertExt
+public class AssertExtensions
 {
     /// <summary>
     /// Ares the same.
@@ -1039,3 +1039,19 @@ public class AssertExt
 }
 
 #endregion "Assertions Extensions"
+
+#region "Casting Extensions"
+
+public static class CastingExtensions
+{
+    public static float FParse(this string p, float r)
+    {
+        float n;
+        if (float.TryParse(p, out n))
+            return n;
+        else
+            return r;
+    }
+}
+
+#endregion "Casting Extensions"

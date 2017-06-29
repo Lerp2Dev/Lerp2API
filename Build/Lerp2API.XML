@@ -12387,12 +12387,12 @@
             <typeparam name="T"></typeparam>
             <param name="methodName">Name of the method.</param>
         </member>
-        <member name="T:AssertExt">
+        <member name="T:AssertExtensions">
             <summary>
-            Class AssertExt.
+            Class AssertExtensions.
             </summary>
         </member>
-        <member name="M:AssertExt.AreSame(System.Object,System.Object)">
+        <member name="M:AssertExtensions.AreSame(System.Object,System.Object)">
             <summary>
             Ares the same.
             </summary>

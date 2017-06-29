@@ -132,7 +132,7 @@ namespace MinimuAsyncBridgeUnitTest
             }
             catch (Exception e)
             {
-                AssertExt.AreSame(ex, e);
+                AssertExtensions.AreSame(ex, e);
                 exceptionCount++;
             }
             Assert.AreEqual(1, exceptionCount);
@@ -148,7 +148,7 @@ namespace MinimuAsyncBridgeUnitTest
             }
             catch (Exception e)
             {
-                AssertExt.AreSame(ex, e);
+                AssertExtensions.AreSame(ex, e);
                 exceptionCount++;
             }
             Assert.AreEqual(1, exceptionCount);
