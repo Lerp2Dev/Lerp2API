@@ -49,7 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomAttributes\ReadOnlyEditor.cs" />
+    <Compile Include="CustomDrawers\ReadOnlyDrawer.cs" />
     <Compile Include="CustomIEditor\CommandsEditor.cs" />
     <Compile Include="EditorHelpers.cs" />
     <Compile Include="EditorWindows\BrowserWindow.cs" />
@@ -71,7 +71,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CustomAttributes\TODO.txt" />
+    <Content Include="CustomDrawers\TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

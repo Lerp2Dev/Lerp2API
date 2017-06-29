@@ -54,6 +54,7 @@
     <Compile Include="All Noises\Noise\RidgedNoise.cs" />
     <Compile Include="All Noises\Voronoi\Noise.cs" />
     <Compile Include="All Noises\Voronoi\Voronoi.cs" />
+    <Compile Include="Attributes\ReadOnlyAttribute.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\IteratorTasksAwaitExtensions.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\TaskAwaiter.cs" />
     <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\TaskAwaiter`1.cs" />

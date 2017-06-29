@@ -1,12 +1,9 @@
-﻿using UnityEditor;
+﻿using Lerp2API.Attributes;
+using UnityEditor;
 using UnityEngine;
 
 namespace Lerp2APIEditor.CustomAttributes
 {
-    public class ReadOnlyAttribute : PropertyAttribute
-    {
-    }
-
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyDrawer : PropertyDrawer
     {
