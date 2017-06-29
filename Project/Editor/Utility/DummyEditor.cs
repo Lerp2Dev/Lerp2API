@@ -19,7 +19,10 @@ namespace Lerp2API.Utility
         [MenuItem("Lerp2Dev Team Tools/Save Scene Skin...")]
         static public void SaveEditorSkin(MenuCommand command)
         {
-            int c = Directory.GetFiles(Path.Combine(Application.dataPath, "Saved Skins/"), "*.guiskin", SearchOption.AllDirectories).Length;
+            string dir = Path.Combine(Application.dataPath, "Saved Skins/");
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            int c = Directory.GetFiles(dir, "*.guiskin", SearchOption.AllDirectories).Length;
             List<string> enums = new List<string>();
             Array vals = Enum.GetValues(typeof(EditorSkin));
             foreach (EditorSkin es in vals)

@@ -20,33 +20,36 @@ namespace Lerp2APIEditor.EditorWindows
 
         internal BrowserWindow bBrowser,
                                       eBrowser;
+
         internal string bPath = "",
                         ePath = "";
+
         internal const string buildPath = "BUILD_PATH",
                               editorPath = "EDITOR_PATH";
 
         [MenuItem("Lerp2Dev Team Tools/Refesh Project API Dependencies...")]
-        static void Init()
+        private static void Init()
         {
             me = GetWindow<LerpedPaths>();
             me.iInit(me);
         }
 
         [InitializeOnLoad]
-        class LerpedStartCheck
+        private class LerpedStartCheck
         {
             static LerpedStartCheck()
             {
                 if (!LerpedCore.GetBool(LerpedCore.UnityBoot))
                 {
                     LerpedCore.SetBool(LerpedCore.UnityBoot, true);
-                    string bPath = Path.GetDirectoryName(LerpedCore.GetString(LerpedEditorCore.buildPath)); //I have to... Arreglar esto
+                    string dir = LerpedCore.GetString(LerpedEditorCore.buildPath),
+                           bPath = Directory.Exists(dir) ? Path.GetDirectoryName(dir) : "";
                     if (string.IsNullOrEmpty(bPath))
                     {
                         bPath = "";
                         return;
                     }
-                    else if(!Directory.Exists(bPath))
+                    else if (!Directory.Exists(bPath))
                     {
                         Debug.LogErrorFormat("Your fork from Lerp2API has been moved, re-edit the path under: 'Lerp2Dev Team Tools > Refresh Project API References > Change Path > Build Dependencies Path', click '...' and set the new path, pressing 'Save'.\n'{0}' directory path doesn't exists!", bPath);
                         return;
@@ -87,9 +90,11 @@ namespace Lerp2APIEditor.EditorWindows
                             LerpedEditorCore.UpdateDependencies();
                             rt = true;
                             return;
+
                         case 1:
                             rt = true;
                             return;
+
                         case 2:
                             break;
                     }
@@ -118,20 +123,23 @@ namespace Lerp2APIEditor.EditorWindows
 
         private static string GetCaption(LerpedAPIChange change)
         {
-            switch(change)
+            switch (change)
             {
                 case LerpedAPIChange.Default:
                     return "Do you want to update dependence files?";
+
                 case LerpedAPIChange.Auto:
                     return "Origin files has been changed, do you want to update them?";
+
                 case LerpedAPIChange.InEnter:
                     return "Origin files has been changed since your last visit, do you want to update them?";
+
                 default:
                     return "";
             }
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
             if (me == null) //Now, it isn't needed to check static variables to be null, me englobes everything
                 return;
