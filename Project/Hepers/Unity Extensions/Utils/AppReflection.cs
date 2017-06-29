@@ -54,7 +54,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
                     return inObj.GetType().GetProperty(fieldName).GetValue(inObj, null);
                 else
                 {
-                    Debug.LogError("Trying to search the desired value as a property also didn't worked. You haven't declared any variable with this name.");
+                    Debug.LogErrorFormat("Trying to search '{0}' as a property also didn't worked. You haven't declared any variable with this name.", fieldName);
                     return null;
                 }
             }
@@ -91,7 +91,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
                     return inObj.GetType().GetField(propName).GetValue(inObj);
                 else
                 {
-                    Debug.LogError("Trying to search the desired value as a field also didn't worked. You haven't declared any variable with this name.");
+                    Debug.LogErrorFormat("Trying to search '{0}' as a field also didn't worked. You haven't declared any variable with this name.", propName);
                     return null;
                 }
             }
