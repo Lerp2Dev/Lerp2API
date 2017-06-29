@@ -2,15 +2,19 @@
 using Lerp2API.Mono;
 using System;
 using System.Collections.Generic;
+
 #if UNITY_EDITOR
+
 using UnityEditor;
+
 #endif
+
 using UnityEngine;
 
 namespace Lerp2Raw
 {
-
 #if UNITY_EDITOR
+
     /// <summary>
     /// Class LerpedEditorHook.
     /// </summary>
@@ -20,17 +24,19 @@ namespace Lerp2Raw
     public class LerpedEditorHook : LerpedMono
     {
 #if UNITY_EDITOR
+
         /// <summary>
         /// Me
         /// </summary>
         public new static LerpedEditorHook me;
+
         /// <summary>
         /// The type pool
         /// </summary>
         public static Queue<Type> typePool = new Queue<Type>();
 
         [InitializeOnLoadMethod]
-        static void OnLoadMethods()
+        private static void OnLoadMethods()
         {
             ChangeAPILevelComp();
             LerpedCore.HookThis(typeof(LerpedEditorHook));
@@ -39,8 +45,8 @@ namespace Lerp2Raw
 
         private static void ChangeAPILevelComp()
         {
-            if (PlayerSettings.apiCompatibilityLevel == ApiCompatibilityLevel.NET_2_0_Subset)
-                PlayerSettings.apiCompatibilityLevel = ApiCompatibilityLevel.NET_2_0;
+            if (PlayerSettings.GetApiCompatibilityLevel(BuildTargetGroup.Standalone | BuildTargetGroup.WebGL) == ApiCompatibilityLevel.NET_2_0_Subset)
+                PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.Standalone | BuildTargetGroup.WebGL, ApiCompatibilityLevel.NET_2_0);
         }
 
         /// <summary>
@@ -86,12 +92,12 @@ namespace Lerp2Raw
             }
         }
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
                 LerpedCore.SetBool(LerpedCore.UnityBoot, false);
         }
+
 #endif
     }
-
 }
