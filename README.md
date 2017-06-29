@@ -15,7 +15,7 @@ See **[releases](https://github.com/Lerp2Dev/Lerp2API/releases)** page
 
 ## Next features ##
 
-Please, review [this](https://github.com/Lerp2Dev/Lerp2API/wiki/Coming-features).
+Please, review [this](https://github.com/Lerp2Dev/Lerp2API/wiki/Incoming-features).
 
 ## Do you want to make an API? ##
 
