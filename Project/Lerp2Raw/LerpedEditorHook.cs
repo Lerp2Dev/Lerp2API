@@ -45,8 +45,9 @@ namespace Lerp2Raw
 
         private static void ChangeAPILevelComp()
         {
-            if (PlayerSettings.GetApiCompatibilityLevel(BuildTargetGroup.Standalone | BuildTargetGroup.WebGL) == ApiCompatibilityLevel.NET_2_0_Subset)
-                PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.Standalone | BuildTargetGroup.WebGL, ApiCompatibilityLevel.NET_2_0);
+            foreach (BuildTargetGroup build in Enum.GetValues(typeof(BuildTargetGroup)))
+                if (PlayerSettings.GetApiCompatibilityLevel(build) == ApiCompatibilityLevel.NET_2_0_Subset)
+                    PlayerSettings.SetApiCompatibilityLevel(build, ApiCompatibilityLevel.NET_2_0);
         }
 
         /// <summary>
