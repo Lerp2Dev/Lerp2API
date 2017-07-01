@@ -1,0 +1,7 @@
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\bin\Debug\RARManager.exe.config
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\bin\Debug\RARManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\bin\Debug\RARManager.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\bin\Debug\SharpCompress.dll
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\RARManager.csprojResolveAssemblyReference.cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\RARManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\RARManager.pdb

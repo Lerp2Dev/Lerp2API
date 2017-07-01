@@ -81,8 +81,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\Lerp2API.7z" />
-    <None Include="Resources\Lerp2API.rar" />
+    <None Include="Resources\DocsZIP.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

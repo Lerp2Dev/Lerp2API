@@ -1,6 +1,6 @@
 ﻿using Lerp2API_Docs.Properties;
 using SharpCompress.Archives;
-using SharpCompress.Archives.Rar;
+using SharpCompress.Archives.Zip;
 using SharpCompress.Readers;
 using System;
 using System.Collections.Generic;
@@ -73,12 +73,12 @@ namespace Lerp2API_Docs
         private void ExtractDocs()
         {
             Directory.CreateDirectory(folder);
-            using (var archive = RarArchive.Open(new MemoryStream(Resources.Lerp2API)))
+            using (var archive = ZipArchive.Open(Resources.ResourceManager.GetStream("DocsZIP")))
             {
-                IEnumerable<RarArchiveEntry> entries = archive.Entries.Where(entry => !entry.IsDirectory);
+                IEnumerable<ZipArchiveEntry> entries = archive.Entries.Where(entry => !entry.IsDirectory);
                 int i = 0, v = entries.Count();
                 progressBar1.SafeUpdate("Maximum", v);
-                foreach (RarArchiveEntry entry in entries)
+                foreach (ZipArchiveEntry entry in entries)
                 {
                     entry.WriteToDirectory(folder, new ExtractionOptions()
                     {

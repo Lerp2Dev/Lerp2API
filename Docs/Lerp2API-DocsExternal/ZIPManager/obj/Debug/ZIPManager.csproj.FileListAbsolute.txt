@@ -1,0 +1,10 @@
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\ZIPManager.csprojResolveAssemblyReference.cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Apps\ZIPManager.exe.config
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Apps\ZIPManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Apps\ZIPManager.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\ZIPManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\RARManager\obj\Debug\ZIPManager.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-DocsExternal\RARManager\obj\Debug\ZIPManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-DocsExternal\RARManager\obj\Debug\ZIPManager.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-DocsExternal\ZIPManager\obj\Debug\ZIPManager.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-DocsExternal\ZIPManager\obj\Debug\ZIPManager.pdb

@@ -63,9 +63,9 @@ namespace Lerp2API_Docs.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
-        internal static byte[] Lerp2API {
+        internal static byte[] DocsZIP {
             get {
-                object obj = ResourceManager.GetObject("Lerp2API", resourceCulture);
+                object obj = ResourceManager.GetObject("DocsZIP", resourceCulture);
                 return ((byte[])(obj));
             }
         }
