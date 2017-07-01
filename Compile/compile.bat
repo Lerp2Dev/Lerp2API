@@ -8,6 +8,8 @@
 if "%MAIN_PATH%" == "" ( for %%a in ("%~dp0..") do set "MAIN_PATH=%%~fa" )
 if "%REF_PATH%" == "" ( set "REF_PATH=%MAIN_PATH%\Assemblies" )
 
+set "MSBuild=%MAIN_PATH%\Apps\MSBuild\3.5"
+
 ::set MSBuildEmitSolution=1
 
 set "CompileOrder=%~2"
@@ -40,7 +42,7 @@ echo Compilando la API
 echo -----------------
 echo.
 
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
+"%MSBuild%\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2API /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build /p:Configuration=Debug
 
 echo.
 
@@ -69,7 +71,7 @@ echo Compilando el Editor
 echo --------------------
 echo.
 
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
+"%MSBuild%\MSBuild.exe" "%MAIN_PATH%\Project\Editor\Lerp2APIEditor.csproj" /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../../Build/Editor /p:Configuration=Debug
 
 echo.
 
@@ -98,7 +100,7 @@ echo Compilando la Lerp2Raw
 echo ----------------------
 echo.
 
-"%MAIN_PATH%\Compile\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
+"%MSBuild%\MSBuild.exe" "%MAIN_PATH%\Lerp2API.sln" /t:Lerp2Raw /pp /p:ReferencePath="%REF_PATH%; %MAIN_PATH%\Compile\Assemblies" /p:Platform="Any CPU" /p:OutputPath=../Build/Raw /p:Configuration=Debug
 
 echo.
 

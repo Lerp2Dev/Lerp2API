@@ -84,7 +84,7 @@ namespace Documentation_Updater
         {
             get
             {
-                return Path.Combine(AppPath, "MSBuild", "MSBuild.exe");
+                return Path.Combine(AppPath, "MSBuild", "4.0", "MSBuild.exe");
             }
         }
 
