@@ -46,7 +46,7 @@ namespace Documentation_Updater
         {
             get
             {
-                return Path.Combine(ProgramFiles, "InnoSetup", "Compil32.exe");
+                return Path.Combine(ProgramFiles, "InnoSetup", "ISCC.exe");
             }
         }
 
@@ -196,7 +196,7 @@ namespace Documentation_Updater
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = "cmd";
-                startInfo.Arguments = string.Format(@"/k """"{0}"" /cc ""{1}"""" & exit", InnoSetupPath, TemplatePath);
+                startInfo.Arguments = string.Format(@"/k """"{0}"" ""{1}"""" & exit", InnoSetupPath, TemplatePath);
 
                 return startInfo;
             }
