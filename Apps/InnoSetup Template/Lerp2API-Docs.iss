@@ -6,6 +6,7 @@
 #define MyAppPublisher "Lerp2Dev"
 #define MyAppURL "http://www.lerp2dev.com/"
 #define MyAppExeName "Lerp2API-Docs-Final.exe"
+;#define UpperPath ExtractFilePath('{#SourcePath}')
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -19,7 +20,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName=C:\Users\{username}\AppData\Roaming\Lerp2Dev\{#MyAppName}
+DefaultDirName={%appdata}\Lerp2Dev\{#MyAppName}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 OutputDir=D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Apps\DOCS-FINAL
@@ -37,7 +38,7 @@ Name: spanish; MessagesFile: compiler:Languages\Spanish.isl
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
 
 [Files]
-Source: D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Docs\Lerp2API-Docs\Lerp2API-Docs\bin\Debug\Lerp2API-Docs-Final.exe; DestDir: {app}; Flags: ignoreversion
+Source: ..\Lerp2API-Docs-Final.exe; DestDir: {app}; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

@@ -11,10 +11,12 @@ namespace Documentation_Updater
 {
     public class Program
     {
-        private static bool m_skipDoxygen = true,
-                            m_skipZiping = true,
-                            m_skipMSBuild = false,
-                            m_keepDocs = false;
+        private readonly static bool m_skipDoxygen = false,
+                                     m_skipZiping = false,
+                                     m_skipMSBuild = false,
+                                     m_skipMerge = false,
+                                     m_skipSetup = false,
+                                     m_keepDocs = false;
 
         private static string ProgramFiles86
         {
@@ -40,11 +42,11 @@ namespace Documentation_Updater
             }
         }
 
-        private static string IsToolPath
+        private static string InnoSetupPath
         {
             get
             {
-                return Path.Combine(ProgramFiles, "InnoSetup", "IsTool", "IsTool.exe");
+                return Path.Combine(ProgramFiles, "InnoSetup", "Compil32.exe");
             }
         }
 
@@ -120,6 +122,14 @@ namespace Documentation_Updater
             }
         }
 
+        private static string TemplatePath
+        {
+            get
+            {
+                return Path.Combine(Path.GetDirectoryName(AppPath), "Apps", "InnoSetup Template", "Lerp2API-Docs.iss");
+            }
+        }
+
         private static bool IsAppInGoodLocation
         {
             get
@@ -168,6 +178,30 @@ namespace Documentation_Updater
             }
         }
 
+        private static ProcessStartInfo ILMergeProcess
+        {
+            get
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "cmd";
+                startInfo.Arguments = string.Format(@"/k """"{0}"" /target:winexe /out:Lerp2API-Docs-Final.exe ""{1}"" ""{2}"""" & exit", ILMergePath, Path.Combine(TempBuildDocs, "Lerp2API-Docs.exe"), Path.Combine(TempBuildDocs, "Sharpcompress.dll"));
+
+                return startInfo;
+            }
+        }
+
+        private static ProcessStartInfo InnoSetupProcess
+        {
+            get
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "cmd";
+                startInfo.Arguments = string.Format(@"/k """"{0}"" /cc ""{1}"""" & exit", InnoSetupPath, TemplatePath);
+
+                return startInfo;
+            }
+        }
+
         private static void Main(string[] args)
         {
             //Preparar el chiringuito.
@@ -181,6 +215,11 @@ namespace Documentation_Updater
             //Una vez compilado todo, le pasaremos el ILMerge.
             //Una vez le pasemos el ILMerge, vamos a crear el instalador, llamando por command-line al ISTool, el archivo ISS estará por aquí.
             //Tengo que ver si se puede modificar de forma rápida algun parametro para cambiarle el output.
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            Console.WriteLine("Starting process...");
 
             //First, checks...
             if (!IsAppInGoodLocation)
@@ -196,7 +235,7 @@ namespace Documentation_Updater
                 GoToFinish();
             }
 
-            if (!File.Exists(IsToolPath))
+            if (!File.Exists(InnoSetupPath))
             {
                 Console.WriteLine("InnoSetup is not installed. Please, install it!");
                 GoToFinish();
@@ -273,10 +312,29 @@ namespace Documentation_Updater
                 }
             }
 
-            //ILmerge.exe /target:winexe /out:Lerp2API-Docs-Final.exe Lerp2API-Docs.exe SharpCompress.dll
-            //Movemos el archivo a Apps/DOCS-FINAL y seguimos con el InnoSetup
-            //"..\..\..\Inno Setup 5\istool\istool.exe" -compile Setup.iss
+            if (!m_skipMerge)
+            {
+                using (Process ilm = Process.Start(ILMergeProcess))
+                {
+                    ilm.WaitForExit();
+                    Console.WriteLine("ILMerge finished!");
+                }
+                if (Directory.Exists(TempBuildDocs))
+                    Directory.Delete(TempBuildDocs, true);
+            }
 
+            if (!m_skipSetup)
+                using (Process set = Process.Start(InnoSetupProcess))
+                {
+                    set.WaitForExit();
+                    Console.WriteLine("Setup finished!");
+                }
+
+            //Third, stop and show results
+            sw.Stop();
+
+            Console.WriteLine("Finished in {0:F2} s!", sw.ElapsedMilliseconds / 1000);
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
 
