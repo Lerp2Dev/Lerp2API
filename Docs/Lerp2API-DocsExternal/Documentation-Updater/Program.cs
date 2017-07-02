@@ -18,6 +18,10 @@ namespace Documentation_Updater
                                      m_skipSetup = false,
                                      m_keepDocs = false;
 
+        private const int m_phases = 5;
+        private static long t = 0;
+        private static int curPhase = 0;
+
         private static string ProgramFiles86
         {
             get
@@ -62,7 +66,7 @@ namespace Documentation_Updater
         {
             get
             {
-                return Path.Combine(AppPath, "ILMerge.exe");
+                return Path.Combine(AppPath, "ILMerge", "ILMerge.exe");
             }
         }
 
@@ -70,7 +74,7 @@ namespace Documentation_Updater
         {
             get
             {
-                return Path.Combine(AppPath, "ZIPManager.exe");
+                return Path.Combine(AppPath, "ZIPManager", "ZIPManager.exe");
             }
         }
 
@@ -126,7 +130,7 @@ namespace Documentation_Updater
         {
             get
             {
-                return Path.Combine(Path.GetDirectoryName(AppPath), "Apps", "InnoSetup Template", "Lerp2API-Docs.iss");
+                return Path.Combine(AppPath, "InnoSetup Template", "Lerp2API-Docs.iss");
             }
         }
 
@@ -135,7 +139,7 @@ namespace Documentation_Updater
             get
             {
                 return Directory.Exists(Path.Combine(Path.GetDirectoryName(AppPath), "Docs"))
-                    && Directory.Exists(Path.Combine(Path.GetDirectoryName(AppPath), "Apps"))
+                    && Directory.Exists(AppPath)
                     && File.Exists(Doxyfile);
             }
         }
@@ -184,7 +188,7 @@ namespace Documentation_Updater
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = "cmd";
-                startInfo.Arguments = string.Format(@"/k """"{0}"" /target:winexe /out:Lerp2API-Docs-Final.exe ""{1}"" ""{2}"""" & exit", ILMergePath, Path.Combine(TempBuildDocs, "Lerp2API-Docs.exe"), Path.Combine(TempBuildDocs, "Sharpcompress.dll"));
+                startInfo.Arguments = string.Format(@"/k """"{0}"" /target:winexe /out:""{1}"" ""{2}"" ""{3}"""" & exit", ILMergePath, Path.Combine(Path.GetDirectoryName(AppPath), "Apps", "Lerp2API-Docs-Final.exe"), Path.Combine(TempBuildDocs, "Lerp2API-Docs.exe"), Path.Combine(TempBuildDocs, "Sharpcompress.dll"));
 
                 return startInfo;
             }
@@ -220,6 +224,7 @@ namespace Documentation_Updater
             sw.Start();
 
             Console.WriteLine("Starting process...");
+            ChangeTitlePhase();
 
             //First, checks...
             if (!IsAppInGoodLocation)
@@ -270,8 +275,11 @@ namespace Documentation_Updater
                 using (Process dx = Process.Start(DoxygenProcess))
                 {
                     dx.WaitForExit();
-                    Console.WriteLine("Doxygen created the documentation.");
+                    Console.WriteLine("Doxygen created the documentation in {0} ms!", (sw.ElapsedMilliseconds - t));
                 }
+
+            ChangeTitlePhase();
+            t = sw.ElapsedMilliseconds;
 
             if (!m_skipZiping)
             {
@@ -291,16 +299,20 @@ namespace Documentation_Updater
                     DirectoryCopy(latex, TempDocs, true);
                 }
 
-                Console.WriteLine("Dirs moved!");
+                Console.WriteLine("Dirs moved in {0} ms!", (sw.ElapsedMilliseconds - t));
+                ChangeTitlePhase();
+                t = sw.ElapsedMilliseconds;
 
                 using (Process zip = Process.Start(ZIPMangerProcess))
                 {
                     zip.WaitForExit();
-                    Console.WriteLine("ZIPManager finished!");
+                    Console.WriteLine("ZIPManager finished in {0} ms!", (sw.ElapsedMilliseconds - t));
                 }
 
                 Directory.Delete(TempDocs, true);
             }
+
+            t = sw.ElapsedMilliseconds;
 
             if (!m_skipMSBuild)
             {
@@ -308,32 +320,42 @@ namespace Documentation_Updater
                 using (Process msb = Process.Start(MSBuildProcess))
                 {
                     msb.WaitForExit();
-                    Console.WriteLine("MSBuild finished!");
+                    Console.WriteLine("MSBuild finished in {0} ms!", (sw.ElapsedMilliseconds - t));
                 }
             }
+
+            ChangeTitlePhase();
+            t = sw.ElapsedMilliseconds;
 
             if (!m_skipMerge)
             {
                 using (Process ilm = Process.Start(ILMergeProcess))
                 {
                     ilm.WaitForExit();
-                    Console.WriteLine("ILMerge finished!");
+                    Console.WriteLine("ILMerge finished in {0} ms!", (sw.ElapsedMilliseconds - t));
                 }
                 if (Directory.Exists(TempBuildDocs))
                     Directory.Delete(TempBuildDocs, true);
+                File.Delete(Path.Combine(AppPath, "Lerp2API-Docs-Final.exe"));
+                File.Delete(Path.Combine(AppPath, "Lerp2API-Docs-Final.pdb"));
             }
+
+            ChangeTitlePhase();
+            t = sw.ElapsedMilliseconds;
 
             if (!m_skipSetup)
                 using (Process set = Process.Start(InnoSetupProcess))
                 {
                     set.WaitForExit();
-                    Console.WriteLine("Setup finished!");
+                    Console.WriteLine("Setup finished in {0} ms!", (sw.ElapsedMilliseconds - t));
                 }
+
+            ChangeTitlePhase();
 
             //Third, stop and show results
             sw.Stop();
 
-            Console.WriteLine("Finished in {0:F2} s!", sw.ElapsedMilliseconds / 1000);
+            Console.WriteLine("Finished in {0:F2} s!", sw.ElapsedMilliseconds / 1000d);
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
@@ -388,6 +410,12 @@ namespace Documentation_Updater
                     DirectoryCopy(subdir.FullName, temppath, copySubDirs);
                 }
             }
+        }
+
+        private static void ChangeTitlePhase()
+        {
+            Console.Title = string.Format("Documentation Updater: {0}", curPhase == m_phases ? "Finished!" : string.Format("{0} of {1} phases completed", curPhase, m_phases));
+            ++curPhase;
         }
     }
 }

@@ -6,7 +6,6 @@
 #define MyAppPublisher "Lerp2Dev"
 #define MyAppURL "http://www.lerp2dev.com/"
 #define MyAppExeName "Lerp2API-Docs-Final.exe"
-;#define UpperPath ExtractFilePath('{#SourcePath}')
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
