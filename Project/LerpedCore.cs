@@ -37,6 +37,8 @@ namespace Lerp2API
                             disabledMissingAssets = "DISABLE_MISSING_ASSETS",
                             disableFileSysWatcher = "DISABLE_FSW",
                             disableTagCheck = "DISABLE_TAG_CHECK",
+                            disableLayerCheck = "DISABLE_LAYER_CHECK",
+                            disableAxisCheck = "DISABLE_AXIS_CHECK",
                             defaultLogFilePath = "Logs/Console.log";
 
         /// <summary>
@@ -78,6 +80,11 @@ namespace Lerp2API
         /// The logger
         /// </summary>
         public static Logger logger = new Logger(Path.Combine(Path.GetDirectoryName(Path.Combine(Application.dataPath, defaultLogFilePath)), "api-Logger.log"));
+
+        /// <summary>
+        /// The is editor
+        /// </summary>
+        public static bool isEditor, isPlaying; //Mas rudimentario
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is mssing assets disabled.
@@ -357,6 +364,17 @@ namespace Lerp2API
                 if (File.Exists(originFile))
                     File.Copy(originFile, destFile);
             }
+        }
+
+        /// <summary>
+        /// Safes the close.
+        /// </summary>
+        public static void SafeClose()
+        {
+            if (isEditor)
+                isPlaying = false;
+            else
+                Application.Quit();
         }
     }
 

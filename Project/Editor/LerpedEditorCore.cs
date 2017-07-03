@@ -11,6 +11,7 @@ using Lerp2APIEditor.Utility;
 using Lerp2APIEditor.EditorWindows;
 using Debug = Lerp2API._Debug.Debug;
 using System.Reflection;
+using UnityEditor.Callbacks;
 
 namespace Lerp2APIEditor
 {
@@ -23,16 +24,19 @@ namespace Lerp2APIEditor
         /// The lerped build target
         /// </summary>
         public static BuildTargetGroup[] LerpedBuildTarget = new BuildTargetGroup[] { BuildTargetGroup.Standalone, BuildTargetGroup.WebGL };
+
         internal const string buildPath = "BUILD_PATH",
                               editorPath = "EDITOR_PATH",
                               hookShortcut = "UPT_DEP_HOOK",
                               t_CompileWatcher = "COMPILE_WATCHER",
                               timesCompiled = "TIMES_COMPILED",
                               lastBuildTime = "LAST_BUILD_TIME";
+
         /// <summary>
         /// The main folder
         /// </summary>
         public static string mainFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
         internal static string[] resourceFiles = new string[] {
             Path.Combine(mainFolder, "Resources/Images/folder.png"),
             Path.Combine(mainFolder, "Resources/Images/file.png"),
@@ -43,6 +47,7 @@ namespace Lerp2APIEditor
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Resources/Images/folder.png",
             "https://raw.githubusercontent.com/Ikillnukes/Lerp2API/master/Build/Editor/Resources/Skins/File%20Browser.guiskin"
         };
+
         private static LerpedThread<FileSystemWatcher> m_Watcher;
         internal const double threadSeek = .1f; //Decreasing this will make that the Watcher works more accurately
         internal static double nextSeek = 0;
@@ -63,7 +68,7 @@ namespace Lerp2APIEditor
         }
 
         [InitializeOnLoadMethod]
-        static void OnLoadMethods()
+        private static void OnLoadMethods()
         { //This is called at the recompile to set what we need at its start
             AddHook();
             DownloadEditorFiles();
@@ -95,7 +100,8 @@ namespace Lerp2APIEditor
         private static void AddHook()
         {
             if (!LerpedShortcuts.keyActions.ContainsKey(hookShortcut))
-                LerpedShortcuts.keyActions.Add(hookShortcut, new LerpedKeyAction(KeyCode.F5, () => {
+                LerpedShortcuts.keyActions.Add(hookShortcut, new LerpedKeyAction(KeyCode.F5, () =>
+                {
                     LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>(); //I have to improve both of this implementations
                     lp.iInit(lp);
                 }));
@@ -116,8 +122,8 @@ namespace Lerp2APIEditor
                 Debug.LogError("No conection available to download!");
                 return;
             }
-            for(int i = 0; i < resourceFiles.Length; ++i)
-                if(!File.Exists(resourceFiles[i]))
+            for (int i = 0; i < resourceFiles.Length; ++i)
+                if (!File.Exists(resourceFiles[i]))
                 {
                     string fp = Path.GetDirectoryName(resourceFiles[i]);
                     if (!Directory.Exists(fp))
@@ -125,7 +131,8 @@ namespace Lerp2APIEditor
                     WWW www = new WWW(repFiles[i]);
                     wh = new WWWHandler();
                     wh.Add(www);
-                    wh.Start<WWW>(false, (x) => {
+                    wh.Start<WWW>(false, (x) =>
+                    {
                         File.WriteAllBytes(resourceFiles[i], x.bytes);
                     });
                 }
@@ -142,10 +149,11 @@ namespace Lerp2APIEditor
             string bPath = LerpedCore.GetString(buildPath);
             m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
 
-            if(m_Watcher != null)
-                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () => {
+            if (m_Watcher != null)
+                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () =>
+                {
                     LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
-                    lp.iInit(lp,  LerpedAPIChange.Auto);
+                    lp.iInit(lp, LerpedAPIChange.Auto);
                 });
 
             //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
@@ -171,7 +179,7 @@ namespace Lerp2APIEditor
 
             LerpedCore.SetLong(lastBuildTime, NativeHelpers.LatestModification(Path.GetDirectoryName(bPath)));
 
-            if(!Directory.Exists(bePath))
+            if (!Directory.Exists(bePath))
             {
                 Debug.LogError("Editor path couldn't not be found in Build Path!");
                 return;
@@ -181,7 +189,7 @@ namespace Lerp2APIEditor
                 Debug.LogError("Editor path couldn't not be found in Project Path!");
                 return;
             }
-            if(!File.Exists(batchPath))
+            if (!File.Exists(batchPath))
             {
                 Debug.LogError("Batch compile file couldn't be found, please, download it from Lerp2Dev Repository.");
                 return;
@@ -231,12 +239,14 @@ namespace Lerp2APIEditor
             LerpedCore.SetInt(timesCompiled, ++tc);
         }
 
-        static void OnEditorApplicationUpdate()
+        private static void OnEditorApplicationUpdate()
         {
             if (EditorApplication.timeSinceStartup > nextSeek) //I have to make an separate counter for different processes in a recent future...
             { //This can be useful for other utilities that needs this refresh rate
                 //if (!availablePaths)
                 //    return;
+                if (EditorApplication.isPlayingOrWillChangePlaymode)
+                    return;
                 if (availablePaths && m_Watcher != null && m_Watcher.isCalled)
                 {
                     foreach (KeyValuePair<string, Action> kv in m_Watcher.matchedMethods)
@@ -244,8 +254,14 @@ namespace Lerp2APIEditor
                             kv.Value();
                     m_Watcher.isCalled = false;
                 }
+                nextSeek = EditorApplication.timeSinceStartup + threadSeek; //Esto deberia estar aqui porq si no se va a llamar todo el rato
             }
-            nextSeek = EditorApplication.timeSinceStartup + threadSeek;
+        }
+
+        [DidReloadScripts]
+        private static void OnScriptRecompile()
+        {
+            //Aqui por si quieres hacer algo más cuando termine de recompilarse
         }
 
         /// <summary>

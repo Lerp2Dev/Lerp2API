@@ -525,6 +525,12 @@
             <param name="a_CellX">a cell x.</param>
             <param name="a_CellZ">a cell z.</param>
         </member>
+        <member name="T:Lerp2API.Attributes.ReadOnlyAttribute">
+            <summary>
+            Class ReadOnlyAttribute.
+            </summary>
+            <seealso cref="T:UnityEngine.PropertyAttribute" />
+        </member>
         <member name="T:Lerp2API.Communication.Sockets.SocketMessage">
             <summary>
             Class SocketMessage.
@@ -2658,6 +2664,18 @@
             </summary>
             <value>The player.</value>
         </member>
+        <member name="P:Lerp2API.Hepers.Unity_Extensions.Utils.PlayerUtils.FPSControllerObject">
+            <summary>
+            Gets the FPS controller object.
+            </summary>
+            <value>The FPS controller object.</value>
+        </member>
+        <member name="M:Lerp2API.Hepers.Unity_Extensions.Utils.PlayerUtils.GetCurView">
+            <summary>
+            Gets the current view.
+            </summary>
+            <returns>PersonView.</returns>
+        </member>
         <member name="T:Lerp2API.Hepers.Unity_Extensions.Utils.RequiredHaviour">
             <summary>
             Class RequiredHaviour.
@@ -3189,6 +3207,16 @@
             The unity boot
             </summary>
         </member>
+        <member name="F:Lerp2API.LerpedCore.disableLayerCheck">
+            <summary>
+            The unity boot
+            </summary>
+        </member>
+        <member name="F:Lerp2API.LerpedCore.disableAxisCheck">
+            <summary>
+            The unity boot
+            </summary>
+        </member>
         <member name="F:Lerp2API.LerpedCore.defaultLogFilePath">
             <summary>
             The unity boot
@@ -3232,6 +3260,16 @@
         <member name="F:Lerp2API.LerpedCore.logger">
             <summary>
             The logger
+            </summary>
+        </member>
+        <member name="F:Lerp2API.LerpedCore.isEditor">
+            <summary>
+            The is editor
+            </summary>
+        </member>
+        <member name="F:Lerp2API.LerpedCore.isPlaying">
+            <summary>
+            The is editor
             </summary>
         </member>
         <member name="P:Lerp2API.LerpedCore.isMssingAssetsDisabled">
@@ -3348,6 +3386,11 @@
             </summary>
             <param name="ASMName">Name of the asm.</param>
             <param name="ASMFolder">The asm folder.</param>
+        </member>
+        <member name="M:Lerp2API.LerpedCore.SafeClose">
+            <summary>
+            Safes the close.
+            </summary>
         </member>
         <member name="T:Lerp2API.ConsoleServer">
             <summary>
@@ -4243,6 +4286,26 @@
         <member name="F:Lerp2API.Utility.BorderType.Outset">
             <summary>
             The outset
+            </summary>
+        </member>
+        <member name="T:Lerp2API.Utility.RequiredData">
+            <summary>
+            Enum RequiredData
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.RequiredData.Tags">
+            <summary>
+            The tags
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.RequiredData.Layers">
+            <summary>
+            The layers
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.RequiredData.Axis">
+            <summary>
+            The axis
             </summary>
         </member>
         <member name="T:Lerp2API.Utility.CSG.CSGType">
@@ -12391,6 +12454,19 @@
             </summary>
             <param name="a">a.</param>
             <param name="b">The b.</param>
+        </member>
+        <member name="T:CastingExtensions">
+            <summary>
+            Class CastingExtensions.
+            </summary>
+        </member>
+        <member name="M:CastingExtensions.FParse(System.String,System.Single)">
+            <summary>
+            fs the parse.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="r">The r.</param>
+            <returns>System.Single.</returns>
         </member>
         <member name="T:HtmlAgilityPack.AttributeValueQuote">
             <summary>
@@ -31365,6 +31441,2309 @@
         <member name="F:ICSharpCode.SharpZipLib.Tar.TarOutputStream.outputStream">
             <summary>
             the destination stream for the archive contents
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputDPADButton">
+            <summary>
+            Enum InputDPADButton
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Left">
+            <summary>
+            The left
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Right">
+            <summary>
+            The right
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Up">
+            <summary>
+            Up
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Down">
+            <summary>
+            Down
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Left_Up">
+            <summary>
+            The left up
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Right_Up">
+            <summary>
+            The right up
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Left_Down">
+            <summary>
+            The left down
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Right_Down">
+            <summary>
+            The right down
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADButton.Any">
+            <summary>
+            Any
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputTriggerButton">
+            <summary>
+            Enum InputTriggerButton
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputTriggerButton.Left">
+            <summary>
+            The left
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputTriggerButton.Right">
+            <summary>
+            The right
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputTriggerButton.Any">
+            <summary>
+            Any
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputTriggerAxis">
+            <summary>
+            Enum InputTriggerAxis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputTriggerAxis.Left">
+            <summary>
+            The left
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputTriggerAxis.Right">
+            <summary>
+            The right
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputDPADAxis">
+            <summary>
+            Enum InputDPADAxis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADAxis.Horizontal">
+            <summary>
+            The horizontal
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDPADAxis.Vertical">
+            <summary>
+            The vertical
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputDevice">
+            <summary>
+            Enum InputDevice
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDevice.KeyboardAndMouse">
+            <summary>
+            The keyboard and mouse
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputDevice.Joystick">
+            <summary>
+            The joystick
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputEventType">
+            <summary>
+            Enum InputEventType
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEventType.Axis">
+            <summary>
+            The axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEventType.Button">
+            <summary>
+            The button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEventType.Key">
+            <summary>
+            The key
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputState">
+            <summary>
+            Enum InputState
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputState.Pressed">
+            <summary>
+            The pressed
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputState.Released">
+            <summary>
+            The released
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputState.Held">
+            <summary>
+            The held
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.MappingWizard">
+            <summary>
+            Class MappingWizard.
+            </summary>
+            <summary>
+            Class MappingWizard.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="T:TeamUtility.IO.MappingWizard.ScanType">
+            <summary>
+            Enum ScanType
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.MappingWizard.ScanType.Button">
+            <summary>
+            The button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.MappingWizard.ScanType.Axis">
+            <summary>
+            The axis
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.StandaloneInputModule">
+            <summary>
+            Class StandaloneInputModule.
+            </summary>
+            <summary>
+            Class StandaloneInputModule.
+            </summary>
+            <seealso cref="T:UnityEngine.EventSystems.PointerInputModule" />
+        </member>
+        <member name="T:TeamUtility.IO.StandaloneInputModule.InputMode">
+            <summary>
+            Enum InputMode
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.InputMode.Mouse">
+            <summary>
+            The mouse
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.InputMode.Buttons">
+            <summary>
+            The buttons
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.VERSION">
+            <summary>
+            The version
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.StandaloneInputModule"/> class.
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.inputMode">
+            <summary>
+            Gets the input mode.
+            </summary>
+            <value>The input mode.</value>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.m_VerticalAxis">
+            <summary>
+            Name of the vertical axis for movement (if axis events are used).
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.m_SubmitButton">
+            <summary>
+            Name of the submit button.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.StandaloneInputModule.m_CancelButton">
+            <summary>
+            Name of the submit button.
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.allowActivationOnMobileDevice">
+            <summary>
+            Gets or sets a value indicating whether [allow activation on mobile device].
+            </summary>
+            <value><c>true</c> if [allow activation on mobile device]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.forceModuleActive">
+            <summary>
+            Gets or sets a value indicating whether [force module active].
+            </summary>
+            <value><c>true</c> if [force module active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.inputActionsPerSecond">
+            <summary>
+            Gets or sets the input actions per second.
+            </summary>
+            <value>The input actions per second.</value>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.repeatDelay">
+            <summary>
+            Gets or sets the repeat delay.
+            </summary>
+            <value>The repeat delay.</value>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.horizontalAxis">
+            <summary>
+            Name of the horizontal axis for movement (if axis events are used).
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.verticalAxis">
+            <summary>
+            Name of the vertical axis for movement (if axis events are used).
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.submitButton">
+            <summary>
+            Gets or sets the submit button.
+            </summary>
+            <value>The submit button.</value>
+        </member>
+        <member name="P:TeamUtility.IO.StandaloneInputModule.cancelButton">
+            <summary>
+            Gets or sets the cancel button.
+            </summary>
+            <value>The cancel button.</value>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.UpdateModule">
+            <summary>
+            Updates the module.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.IsModuleSupported">
+            <summary>
+            Determines whether [is module supported].
+            </summary>
+            <returns><c>true</c> if [is module supported]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ShouldActivateModule">
+            <summary>
+            Shoulds the activate module.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ActivateModule">
+            <summary>
+            Activates the module.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.DeactivateModule">
+            <summary>
+            Deactivates the module.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.Process">
+            <summary>
+            Processes this instance.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ProcessTouchPress(UnityEngine.EventSystems.PointerEventData,System.Boolean,System.Boolean)">
+            <summary>
+            Processes the touch press.
+            </summary>
+            <param name="pointerEvent">The pointer event.</param>
+            <param name="pressed">if set to <c>true</c> [pressed].</param>
+            <param name="released">if set to <c>true</c> [released].</param>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.SendSubmitEventToSelectedObject">
+            <summary>
+            Process submit keys.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.SendMoveEventToSelectedObject">
+            <summary>
+            Process keyboard events.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ProcessMouseEvent">
+            <summary>
+            Processes the mouse event.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ForceAutoSelect">
+            <summary>
+            Forces the automatic select.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ProcessMouseEvent(System.Int32)">
+            <summary>
+            Process all mouse events.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.SendUpdateEventToSelectedObject">
+            <summary>
+            Sends the update event to selected object.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.StandaloneInputModule.ProcessMousePress(UnityEngine.EventSystems.PointerInputModule.MouseButtonEventData)">
+            <summary>
+            Process the current mouse press.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputType">
+            <summary>
+            Enum InputType
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.Button">
+            <summary>
+            The button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.MouseAxis">
+            <summary>
+            The mouse axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.DigitalAxis">
+            <summary>
+            The digital axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.AnalogAxis">
+            <summary>
+            The analog axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.RemoteAxis">
+            <summary>
+            The remote axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.RemoteButton">
+            <summary>
+            The remote button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputType.AnalogButton">
+            <summary>
+            The analog button
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.PlayerID">
+            <summary>
+            Enum PlayerID
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.PlayerID.One">
+            <summary>
+            The one
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.PlayerID.Two">
+            <summary>
+            The two
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.PlayerID.Three">
+            <summary>
+            The three
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.PlayerID.Four">
+            <summary>
+            The four
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.ScanFlags">
+            <summary>
+            Enum ScanFlags
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanFlags.None">
+            <summary>
+            The none
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanFlags.Key">
+            <summary>
+            The key
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanFlags.JoystickButton">
+            <summary>
+            The joystick button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanFlags.JoystickAxis">
+            <summary>
+            The joystick axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanFlags.MouseAxis">
+            <summary>
+            The mouse axis
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.AdvancedInputEditor">
+            <summary>
+            Class AdvancedInputEditor. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions">
+            <summary>
+            Enum FileMenuOptions
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.OverriteInputSettings">
+            <summary>
+            The overrite input settings
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.CreateSnapshot">
+            <summary>
+            The create snapshot
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.LoadSnapshot">
+            <summary>
+            The load snapshot
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.Export">
+            <summary>
+            The export
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.Import">
+            <summary>
+            The import
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.ImportJoystickMapping">
+            <summary>
+            The import joystick mapping
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.ConfigureForInputAdapter">
+            <summary>
+            The configure for input adapter
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.FileMenuOptions.CreateDefaultInputConfig">
+            <summary>
+            The create default input configuration
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions">
+            <summary>
+            Enum EditMenuOptions
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.NewInputConfiguration">
+            <summary>
+            The new input configuration
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.NewAxisConfiguration">
+            <summary>
+            The new axis configuration
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.Duplicate">
+            <summary>
+            The duplicate
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.Delete">
+            <summary>
+            The delete
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.DeleteAll">
+            <summary>
+            The delete all
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.SelectTarget">
+            <summary>
+            The select target
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.IgnoreTimescale">
+            <summary>
+            The ignore timescale
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.DontDestroyOnLoad">
+            <summary>
+            The dont destroy on load
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.Copy">
+            <summary>
+            The copy
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AdvancedInputEditor.EditMenuOptions.Paste">
+            <summary>
+            The paste
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputAdapter">
+            <summary>
+            Class InputAdapter. This class cannot be inherited.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="E:TeamUtility.IO.InputAdapter.InputDeviceChanged">
+            <summary>
+            Occurs when [input device changed].
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.InputAdapter.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputAdapter.inputDevice">
+            <summary>
+            Gets or sets the input device.
+            </summary>
+            <value>The input device.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputAdapter.KeyboardConfiguration">
+            <summary>
+            Gets the keyboard configuration.
+            </summary>
+            <value>The keyboard configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputAdapter.JoystickConfiguration">
+            <summary>
+            Gets the joystick configuration.
+            </summary>
+            <value>The joystick configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputAdapter.mousePosition">
+            <summary>
+            Gets the mouse position.
+            </summary>
+            <value>The mouse position.</value>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetAxis(System.String)">
+            <summary>
+            Gets the axis.
+            </summary>
+            <param name="axisName">Name of the axis.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetTriggerAxis(TeamUtility.IO.InputTriggerAxis)">
+            <summary>
+            Gets the trigger axis.
+            </summary>
+            <param name="axis">The axis.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetDPADAxis(TeamUtility.IO.InputDPADAxis)">
+            <summary>
+            Gets the dpad axis.
+            </summary>
+            <param name="axis">The axis.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetButton(System.String)">
+            <summary>
+            Gets the button.
+            </summary>
+            <param name="buttonName">Name of the button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetButtonDown(System.String)">
+            <summary>
+            Gets the button down.
+            </summary>
+            <param name="buttonName">Name of the button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetButtonUp(System.String)">
+            <summary>
+            Gets the button up.
+            </summary>
+            <param name="buttonName">Name of the button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetMouseButton(System.Int32)">
+            <summary>
+            Gets the mouse button.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetMouseButtonDown(System.Int32)">
+            <summary>
+            Gets the mouse button down.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetMouseButtonUp(System.Int32)">
+            <summary>
+            Gets the mouse button up.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetDPADButton(TeamUtility.IO.InputDPADButton)">
+            <summary>
+            Gets the dpad button.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetDPADButtonDown(TeamUtility.IO.InputDPADButton)">
+            <summary>
+            Gets the dpad button down.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetDPADButtonUp(TeamUtility.IO.InputDPADButton)">
+            <summary>
+            Gets the dpad button up.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetTriggerButton(TeamUtility.IO.InputTriggerButton)">
+            <summary>
+            Gets the trigger button.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetTriggerButtonDown(TeamUtility.IO.InputTriggerButton)">
+            <summary>
+            Gets the trigger button down.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetTriggerButtonUp(TeamUtility.IO.InputTriggerButton)">
+            <summary>
+            Gets the trigger button up.
+            </summary>
+            <param name="button">The button.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.ResetInputAxes">
+            <summary>
+            Resets the input axes.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.GetJoystickNames">
+            <summary>
+            Gets the joystick names.
+            </summary>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.IsUsingJoystick">
+            <summary>
+            Determines whether [is using joystick].
+            </summary>
+            <returns><c>true</c> if [is using joystick]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputAdapter.IsUsingKeyboardAndMouse">
+            <summary>
+            Determines whether [is using keyboard and mouse].
+            </summary>
+            <returns><c>true</c> if [is using keyboard and mouse]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.InputEvent">
+            <summary>
+            Class InputEvent.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputEvent.AxisEvent">
+            <summary>
+            Class AxisEvent.
+            </summary>
+            <seealso cref="!:UnityEngine.Events.UnityEvent&lt;System.Single&gt;" />
+        </member>
+        <member name="T:TeamUtility.IO.InputEvent.ActionEvent">
+            <summary>
+            Class ActionEvent.
+            </summary>
+            <seealso cref="T:UnityEngine.Events.UnityEvent" />
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.name">
+            <summary>
+            Do not change the name of an event at runtime because it will invalidate the lookup table.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.axisName">
+            <summary>
+            The axis name
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.buttonName">
+            <summary>
+            The button name
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.keyCode">
+            <summary>
+            The key code
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.eventType">
+            <summary>
+            The event type
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.inputState">
+            <summary>
+            The input state
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.playerID">
+            <summary>
+            The player identifier
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.onAction">
+            <summary>
+            The on action
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputEvent.onAxis">
+            <summary>
+            The on axis
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputEvent.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputEvent"/> class.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputEvent.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputEvent"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputEvent.Evaluate">
+            <summary>
+            Evaluates this instance.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.InputEventManager">
+            <summary>
+            Class InputEventManager.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="P:TeamUtility.IO.InputEventManager.EventCount">
+            <summary>
+            Gets the event count.
+            </summary>
+            <value>The event count.</value>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.CreateAxisEvent(System.String,System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Creates the axis event.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="axisName">Name of the axis.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns>InputEvent.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.CreateButtonEvent(System.String,System.String,TeamUtility.IO.InputState,TeamUtility.IO.PlayerID)">
+            <summary>
+            Creates the button event.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="buttonName">Name of the button.</param>
+            <param name="inputState">State of the input.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns>InputEvent.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.CreateKeyEvent(System.String,UnityEngine.KeyCode,TeamUtility.IO.InputState)">
+            <summary>
+            Creates the key event.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+            <param name="inputState">State of the input.</param>
+            <returns>InputEvent.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.CreateEmptyEvent(System.String)">
+            <summary>
+            Creates the empty event.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>InputEvent.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.DeleteEvent(System.String)">
+            <summary>
+            Deletes the event.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.GetEvent(System.String)">
+            <summary>
+            Searches for an event based on the specified name. If an event can't be found the return value will be null.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputEventManager.GetEvent(System.Int32)">
+            <summary>
+            Gets the event at the specified index. If the index is out of range the return value will be null.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.AxisMapping">
+            <summary>
+            Class AxisMapping.
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.AxisMapping.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisMapping.Key">
+            <summary>
+            Gets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisMapping.JoystickAxis">
+            <summary>
+            Gets the joystick axis.
+            </summary>
+            <value>The joystick axis.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisMapping.ScanType">
+            <summary>
+            Gets the type of the scan.
+            </summary>
+            <value>The type of the scan.</value>
+        </member>
+        <member name="M:TeamUtility.IO.AxisMapping.#ctor(System.String,UnityEngine.KeyCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.AxisMapping"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisMapping.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.AxisMapping"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="joystickAxis">The joystick axis.</param>
+        </member>
+        <member name="T:TeamUtility.IO.JoystickMapping">
+            <summary>
+            Class JoystickMapping.
+            </summary>
+            <seealso cref="!:System.Collections.Generic.IEnumerable&lt;TeamUtility.IO.AxisMapping&gt;" />
+        </member>
+        <member name="P:TeamUtility.IO.JoystickMapping.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:TeamUtility.IO.JoystickMapping.AxisCount">
+            <summary>
+            Gets the axis count.
+            </summary>
+            <value>The axis count.</value>
+        </member>
+        <member name="M:TeamUtility.IO.JoystickMapping.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.JoystickMapping"/> class.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.JoystickMapping.Load(System.String)">
+            <summary>
+            Loads the specified filename.
+            </summary>
+            <param name="filename">The filename.</param>
+        </member>
+        <member name="M:TeamUtility.IO.JoystickMapping.LoadFromResources(System.String)">
+            <summary>
+            Loads from resources.
+            </summary>
+            <param name="path">The path.</param>
+        </member>
+        <member name="M:TeamUtility.IO.JoystickMapping.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>IEnumerator&lt;AxisMapping&gt;.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.MappingWizardItem">
+            <summary>
+            Class MappingWizardItem.
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.MappingWizardItem.AxisName">
+            <summary>
+            Gets the name of the axis.
+            </summary>
+            <value>The name of the axis.</value>
+        </member>
+        <member name="P:TeamUtility.IO.MappingWizardItem.ScanType">
+            <summary>
+            Gets the type of the scan.
+            </summary>
+            <value>The type of the scan.</value>
+        </member>
+        <member name="M:TeamUtility.IO.MappingWizardItem.#ctor(System.String,TeamUtility.IO.MappingWizard.ScanType)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.MappingWizardItem"/> class.
+            </summary>
+            <param name="axisName">Name of the axis.</param>
+            <param name="scanType">Type of the scan.</param>
+        </member>
+        <member name="T:TeamUtility.IO.CloneControllerConfiguration">
+            <summary>
+            Class CloneControllerConfiguration.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="T:TeamUtility.IO.AxisConfiguration">
+            <summary>
+            Class AxisConfiguration. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.Neutral">
+            <summary>
+            The neutral
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.Positive">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.Negative">
+            <summary>
+            The negative
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.MaxMouseAxes">
+            <summary>
+            The maximum mouse axes
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.MaxJoystickAxes">
+            <summary>
+            The maximum joystick axes
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.MaxJoysticks">
+            <summary>
+            The maximum joysticks
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.name">
+            <summary>
+            Do not change the name of an axis at runtime because it will invalidate the lookup tables.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.description">
+            <summary>
+            The description
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.positive">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.negative">
+            <summary>
+            The negative
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.altPositive">
+            <summary>
+            The alt positive
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.altNegative">
+            <summary>
+            The alt negative
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.deadZone">
+            <summary>
+            The dead zone
+            </summary>
+        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "F:TeamUtility.IO.AxisConfiguration.gravity" -->
+        <member name="F:TeamUtility.IO.AxisConfiguration.sensitivity">
+            <summary>
+            The speed(in units/sec) at which a digital axis moves towards the target value.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.snap">
+            <summary>
+            If input switches direction, do we snap to neutral and continue from there?
+            Only for digital axes.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.invert">
+            <summary>
+            The invert
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.type">
+            <summary>
+            The type
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.axis">
+            <summary>
+            The axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.joystick">
+            <summary>
+            The joystick
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.AxisConfiguration.ButtonState.Pressed">
+            <summary>
+            The pressed
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.AxisConfiguration.AnyInput">
+            <summary>
+            Gets a value indicating whether [any input].
+            </summary>
+            <value><c>true</c> if [any input]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisConfiguration.AnyKey">
+            <summary>
+            Gets a value indicating whether [any key].
+            </summary>
+            <value><c>true</c> if [any key]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisConfiguration.AnyKeyDown">
+            <summary>
+            Gets a value indicating whether [any key down].
+            </summary>
+            <value><c>true</c> if [any key down]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.AxisConfiguration.AnyKeyUp">
+            <summary>
+            Gets a value indicating whether [any key up].
+            </summary>
+            <value><c>true</c> if [any key up]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.AxisConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.AxisConfiguration"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.Update">
+            <summary>
+            Updates this instance.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.GetAxis">
+            <summary>
+            Gets the axis.
+            </summary>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.GetAxisRaw">
+            <summary>
+            	Returns raw input with no sensitivity or smoothing applyed.
+             </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.GetButton">
+            <summary>
+            Gets the button.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.GetButtonDown">
+            <summary>
+            Gets the button down.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.GetButtonUp">
+            <summary>
+            Gets the button up.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.SetMouseAxis(System.Int32)">
+            <summary>
+            Sets the mouse axis.
+            </summary>
+            <param name="axis">The axis.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.SetAnalogAxis(System.Int32,System.Int32)">
+            <summary>
+            Sets the analog axis.
+            </summary>
+            <param name="joystick">The joystick.</param>
+            <param name="axis">The axis.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.SetAnalogButton(System.Int32,System.Int32)">
+            <summary>
+            Sets the analog button.
+            </summary>
+            <param name="joystick">The joystick.</param>
+            <param name="axis">The axis.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.SetRemoteAxisValue(System.Single)">
+            <summary>
+            If the axis' input type is set to "RemoteAxis" the axis value will be changed, else nothing will happen.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.SetRemoteButtonValue(System.Boolean,System.Boolean)">
+            <summary>
+            If the axis' input type is set to "RemoteButton" the axis state will be changed, else nothing will happen.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.Copy(TeamUtility.IO.AxisConfiguration)">
+            <summary>
+            Copies the specified source.
+            </summary>
+            <param name="source">The source.</param>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.Reset">
+            <summary>
+            Resets this instance.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.StringToKey(System.String)">
+            <summary>
+            Strings to key.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>KeyCode.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.StringToInputType(System.String)">
+            <summary>
+            Strings the type of to input.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>InputType.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.AxisConfiguration.Duplicate(TeamUtility.IO.AxisConfiguration)">
+            <summary>
+            Duplicates the specified source.
+            </summary>
+            <param name="source">The source.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.InputConfiguration">
+            <summary>
+            Class InputConfiguration. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputConfiguration.name">
+            <summary>
+            Do not change the name of an input configuration at runtime because it will invalidate the lookup tables.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputConfiguration.axes">
+            <summary>
+            The axes
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputConfiguration.isExpanded">
+            <summary>
+            The is expanded
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputConfiguration"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputConfiguration.Duplicate(TeamUtility.IO.InputConfiguration)">
+            <summary>
+            Duplicates the specified source.
+            </summary>
+            <param name="source">The source.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.KeyScanHandler">
+            <summary>
+            Encapsulates a method that takes one parameter(the key) and returns 'true' if
+            the key is accepted or 'false' if it isn't.
+            The 'userData' parameter is used to send additional user data.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.AxisScanHandler">
+            <summary>
+            Encapsulates a method that takes one parameter(the axis) and returns 'true' if
+            the axis is accepted or 'false' if it isn't.
+            The 'userData' parameter is used to send additional user data.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.ScanHandler">
+            <summary>
+            Encapsulates a method that takes one parameter(the scan result) and returns 'true' if
+            the scan result is accepted or 'false' if it isn't.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.RemoteUpdateDelegate">
+            <summary>
+            Delegate RemoteUpdateDelegate
+            </summary>
+            <param name="playerID">The player identifier.</param>
+        </member>
+        <member name="T:TeamUtility.IO.InputManager">
+            <summary>
+            Class InputManager.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+            <summary>
+            Class InputManager.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="E:TeamUtility.IO.InputManager.ConfigurationChanged">
+            <summary>
+            Occurs when [configuration changed].
+            </summary>
+        </member>
+        <member name="E:TeamUtility.IO.InputManager.ConfigurationDirty">
+            <summary>
+            Occurs when [configuration dirty].
+            </summary>
+        </member>
+        <member name="E:TeamUtility.IO.InputManager.Loaded">
+            <summary>
+            Occurs when [loaded].
+            </summary>
+        </member>
+        <member name="E:TeamUtility.IO.InputManager.Saved">
+            <summary>
+            Occurs when [saved].
+            </summary>
+        </member>
+        <member name="E:TeamUtility.IO.InputManager.RemoteUpdate">
+            <summary>
+            Occurs when [remote update].
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.inputConfigurations">
+            <summary>
+            The input configurations
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.playerOneDefault">
+            <summary>
+            The player one default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.playerTwoDefault">
+            <summary>
+            The player two default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.playerThreeDefault">
+            <summary>
+            The player three default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.playerFourDefault">
+            <summary>
+            The player four default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.dontDestroyOnLoad">
+            <summary>
+            The dont destroy on load
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.InputManager.ignoreTimescale">
+            <summary>
+            The ignore timescale
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Load(TeamUtility.IO.SaveLoadParameters)">
+            <summary>
+            Loads the specified parameters.
+            </summary>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetSaveParameters">
+            <summary>
+            Gets the save parameters.
+            </summary>
+            <returns>SaveLoadParameters.</returns>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.Instance">
+            <summary>
+            A reference to the input manager instance. Use it to check if an input manager exists in the scene and
+            to subscribe to the input manager's events.
+            </summary>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.CurrentConfiguration">
+            <summary>
+            Gets the current configuration.
+            </summary>
+            <value>The current configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.PlayerOneConfiguration">
+            <summary>
+            Gets the player one configuration.
+            </summary>
+            <value>The player one configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.PlayerTwoConfiguration">
+            <summary>
+            Gets the player two configuration.
+            </summary>
+            <value>The player two configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.PlayerThreeConfiguration">
+            <summary>
+            Gets the player three configuration.
+            </summary>
+            <value>The player three configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.PlayerFourConfiguration">
+            <summary>
+            Gets the player four configuration.
+            </summary>
+            <value>The player four configuration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.IsScanning">
+            <summary>
+            Gets a value indicating whether this instance is scanning.
+            </summary>
+            <value><c>true</c> if this instance is scanning; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.IgnoreTimescale">
+            <summary>
+            Gets a value indicating whether [ignore timescale].
+            </summary>
+            <value><c>true</c> if [ignore timescale]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.AnyInput">
+            <summary>
+            Returns true if any axis of any active input configuration is receiving input.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.AnyInput(TeamUtility.IO.PlayerID)">
+            <summary>
+            Returns true if any axis of the input configuration is receiving input.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.AnyInput(System.String)">
+            <summary>
+            Returns true if any axis of the specified input configuration is receiving input.
+            If the specified input configuration is not active and the axis is of type
+            DigialAxis, RemoteAxis, RemoteButton or AnalogButton this method will return false.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetRemoteAxisValue(System.String,System.Single)">
+            <summary>
+            If an axis with the requested name exists, and it is of type 'RemoteAxis', the axis' value will be changed.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetRemoteAxisValue(System.String,System.String,System.Single)">
+            <summary>
+            If an axis with the requested name exists, and it is of type 'RemoteAxis', the axis' value will be changed.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetRemoteButtonValue(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            If an button with the requested name exists, and it is of type 'RemoteButton', the button's state will be changed.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetRemoteButtonValue(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            If an button with the requested name exists, and it is of type 'RemoteButton', the button's state will be changed.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Reinitialize">
+            <summary>
+            Resets the internal state of the input manager.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.ResetInputConfiguration(TeamUtility.IO.PlayerID)">
+            <summary>
+            Resets the input configuration.
+            </summary>
+            <param name="playerID">The player identifier.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetInputConfiguration(System.String)">
+            <summary>
+            Changes the active input configuration.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetInputConfiguration(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Changes the active input configuration.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetInputConfiguration(System.String)">
+            <summary>
+            Gets the input configuration.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetInputConfiguration(TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the input configuration.
+            </summary>
+            <param name="playerID">The player identifier.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetAxisConfiguration(System.String,System.String)">
+            <summary>
+            Gets the axis configuration.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetAxisConfiguration(TeamUtility.IO.PlayerID,System.String)">
+            <summary>
+            Gets the axis configuration.
+            </summary>
+            <param name="playerID">The player identifier.</param>
+            <param name="axisName">Name of the axis.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateInputConfiguration(System.String)">
+            <summary>
+            Creates the input configuration.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.DeleteInputConfiguration(System.String)">
+            <summary>
+            Deletes the specified input configuration. If the speficied input configuration is
+            active for any player then the active input configuration for the respective player will be set to null.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateButton(System.String,System.String,UnityEngine.KeyCode)">
+            <summary>
+            Creates the button.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="buttonName">Name of the button.</param>
+            <param name="primaryKey">The primary key.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateButton(System.String,System.String,UnityEngine.KeyCode,UnityEngine.KeyCode)">
+            <summary>
+            Creates the button.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="buttonName">Name of the button.</param>
+            <param name="primaryKey">The primary key.</param>
+            <param name="secondaryKey">The secondary key.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateDigitalAxis(System.String,System.String,UnityEngine.KeyCode,UnityEngine.KeyCode,System.Single,System.Single)">
+            <summary>
+            Creates the digital axis.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <param name="positive">The positive.</param>
+            <param name="negative">The negative.</param>
+            <param name="gravity">The gravity.</param>
+            <param name="sensitivity">The sensitivity.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateDigitalAxis(System.String,System.String,UnityEngine.KeyCode,UnityEngine.KeyCode,UnityEngine.KeyCode,UnityEngine.KeyCode,System.Single,System.Single)">
+            <summary>
+            Creates the digital axis.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <param name="positive">The positive.</param>
+            <param name="negative">The negative.</param>
+            <param name="altPositive">The alt positive.</param>
+            <param name="altNegative">The alt negative.</param>
+            <param name="gravity">The gravity.</param>
+            <param name="sensitivity">The sensitivity.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateMouseAxis(System.String,System.String,System.Int32,System.Single)">
+            <summary>
+            Creates the mouse axis.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <param name="axis">The axis.</param>
+            <param name="sensitivity">The sensitivity.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateAnalogAxis(System.String,System.String,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Creates the analog axis.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <param name="joystick">The joystick.</param>
+            <param name="axis">The axis.</param>
+            <param name="sensitivity">The sensitivity.</param>
+            <param name="deadZone">The dead zone.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateRemoteAxis(System.String,System.String)">
+            <summary>
+            Creates the remote axis.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateRemoteButton(System.String,System.String)">
+            <summary>
+            Creates the remote button.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="buttonName">Name of the button.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateAnalogButton(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates the analog button.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="buttonName">Name of the button.</param>
+            <param name="joystick">The joystick.</param>
+            <param name="axis">The axis.</param>
+            <returns>AxisConfiguration.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CreateEmptyAxis(System.String,System.String)">
+            <summary>
+            Creates an uninitialized axis configuration. It's your responsability to configure the axis properly.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.DeleteAxisConfiguration(System.String,System.String)">
+            <summary>
+            Deletes the axis configuration.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <param name="axisName">Name of the axis.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartKeyScan(TeamUtility.IO.KeyScanHandler,System.Single,System.String,System.Object[])">
+            <summary>
+            Scans for keyboard input and calls the handler with the result.
+            Returns KeyCode.None if timeout is reached or the scan is canceled.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartKeyboardButtonScan(TeamUtility.IO.KeyScanHandler,System.Single,System.String,System.Object[])">
+            <summary>
+            Scans for keyboard input and calls the handler with the result.
+            Returns KeyCode.None if timeout is reached or the scan is canceled.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartMouseAxisScan(TeamUtility.IO.AxisScanHandler,System.Single,System.String,System.Object[])">
+            <summary>
+            Scans for mouse input and calls the handler with the result.
+            Returns -1 if timeout is reached or the scan is canceled.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartJoystickButtonScan(TeamUtility.IO.KeyScanHandler,System.Nullable{System.Int32},System.Single,System.String,System.Object[])">
+            <summary>
+            Scans for joystick button input and calls the handler with the result.
+            Returns KeyCode.None if timeout is reached or the scan is canceled.
+            <param name="joystick">The index of the joystick to scan for input. If null all joysticks will be scanned.</param>
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartJoystickAxisScan(TeamUtility.IO.AxisScanHandler,System.Nullable{System.Int32},System.Single,System.String,System.Object[])">
+            <summary>
+            Scans for joystick input and calls the handler with the result.
+            Returns -1 if timeout is reached or the scan is canceled.
+            <param name="joystick">The index of the joystick to scan for input. If null all joysticks will be scanned.</param>
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.StartScan(TeamUtility.IO.ScanSettings,TeamUtility.IO.ScanHandler)">
+            <summary>
+            Starts the scan.
+            </summary>
+            <param name="settings">The settings.</param>
+            <param name="scanHandler">The scan handler.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.CancelScan">
+            <summary>
+            Cancels the scan.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.SetConfigurationDirty(System.String)">
+            <summary>
+            Triggers the ConfigurationDirty event.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Save">
+            <summary>
+            Saves the input configurations in the XML format, in Application.persistentDataPath.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Save(System.String)">
+            <summary>
+            Saves the input configurations in the XML format, at the specified location.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Save(TeamUtility.IO.IInputSaver)">
+            <summary>
+            Saves the specified input saver.
+            </summary>
+            <param name="inputSaver">The input saver.</param>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Load">
+            <summary>
+            Loads the input configurations saved in the XML format, from Application.persistentDataPath.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Load(System.String)">
+            <summary>
+            Loads the input configurations saved in the XML format, from the specified location.
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.Load(TeamUtility.IO.IInputLoader)">
+            <summary>
+            Loads the specified input loader.
+            </summary>
+            <param name="inputLoader">The input loader.</param>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.acceleration">
+            <summary>
+            Gets the acceleration.
+            </summary>
+            <value>The acceleration.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.accelerationEventCount">
+            <summary>
+            Gets the acceleration event count.
+            </summary>
+            <value>The acceleration event count.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.accelerationEvents">
+            <summary>
+            Gets the acceleration events.
+            </summary>
+            <value>The acceleration events.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.anyKey">
+            <summary>
+            Gets a value indicating whether [any key].
+            </summary>
+            <value><c>true</c> if [any key]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.anyKeyDown">
+            <summary>
+            Gets a value indicating whether [any key down].
+            </summary>
+            <value><c>true</c> if [any key down]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.compass">
+            <summary>
+            Gets the compass.
+            </summary>
+            <value>The compass.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.compositionString">
+            <summary>
+            Gets the composition string.
+            </summary>
+            <value>The composition string.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.deviceOrientation">
+            <summary>
+            Gets the device orientation.
+            </summary>
+            <value>The device orientation.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.gyro">
+            <summary>
+            Gets the gyro.
+            </summary>
+            <value>The gyro.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.imeIsSelected">
+            <summary>
+            Gets a value indicating whether [IME is selected].
+            </summary>
+            <value><c>true</c> if [IME is selected]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.inputString">
+            <summary>
+            Gets the input string.
+            </summary>
+            <value>The input string.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.location">
+            <summary>
+            Gets the location.
+            </summary>
+            <value>The location.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.mousePosition">
+            <summary>
+            Gets the mouse position.
+            </summary>
+            <value>The mouse position.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.mousePresent">
+            <summary>
+            Gets a value indicating whether [mouse present].
+            </summary>
+            <value><c>true</c> if [mouse present]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.touchSupported">
+            <summary>
+            Gets a value indicating whether [touch supported].
+            </summary>
+            <value><c>true</c> if [touch supported]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.touchCount">
+            <summary>
+            Gets the touch count.
+            </summary>
+            <value>The touch count.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.touches">
+            <summary>
+            Gets the touches.
+            </summary>
+            <value>The touches.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.compensateSensors">
+            <summary>
+            Gets or sets a value indicating whether [compensate sensors].
+            </summary>
+            <value><c>true</c> if [compensate sensors]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.compositionCursorPos">
+            <summary>
+            Gets or sets the composition cursor position.
+            </summary>
+            <value>The composition cursor position.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.imeCompositionMode">
+            <summary>
+            Gets or sets the IME composition mode.
+            </summary>
+            <value>The IME composition mode.</value>
+        </member>
+        <member name="P:TeamUtility.IO.InputManager.multiTouchEnabled">
+            <summary>
+            Gets or sets a value indicating whether [multi touch enabled].
+            </summary>
+            <value><c>true</c> if [multi touch enabled]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetAccelerationEvent(System.Int32)">
+            <summary>
+            Gets the acceleration event.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>AccelerationEvent.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetAxis(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the axis.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetAxisRaw(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the axis raw.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetButton(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the button.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetButtonDown(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the button down.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetButtonUp(System.String,TeamUtility.IO.PlayerID)">
+            <summary>
+            Gets the button up.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="playerID">The player identifier.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetKey(UnityEngine.KeyCode)">
+            <summary>
+            Gets the key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetKeyDown(UnityEngine.KeyCode)">
+            <summary>
+            Gets the key down.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetKeyUp(UnityEngine.KeyCode)">
+            <summary>
+            Gets the key up.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetMouseButton(System.Int32)">
+            <summary>
+            Gets the mouse button.
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetMouseButtonDown(System.Int32)">
+            <summary>
+            Gets the mouse button down.
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetMouseButtonUp(System.Int32)">
+            <summary>
+            Gets the mouse button up.
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetTouch(System.Int32)">
+            <summary>
+            Gets the touch.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>Touch.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.GetJoystickNames">
+            <summary>
+            Gets the joystick names.
+            </summary>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputManager.ResetInputAxes">
+            <summary>
+            Resets the input axes.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.IInputLoader">
+            <summary>
+            Interface IInputLoader
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.IInputLoader.Load">
+            <summary>
+            Loads this instance.
+            </summary>
+            <returns>SaveLoadParameters.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.IInputLoader.LoadSelective(System.String)">
+            <summary>
+            Loads the selective.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.IInputSaver">
+            <summary>
+            Interface IInputSaver
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.IInputSaver.Save(TeamUtility.IO.SaveLoadParameters)">
+            <summary>
+            Saves the specified parameters.
+            </summary>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="T:TeamUtility.IO.InputLoaderXML">
+            <summary>
+            Class InputLoaderXML. This class cannot be inherited.
+            </summary>
+            <seealso cref="T:TeamUtility.IO.IInputLoader" />
+        </member>
+        <member name="M:TeamUtility.IO.InputLoaderXML.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputLoaderXML"/> class.
+            </summary>
+            <param name="filename">The filename.</param>
+            <exception cref="T:System.ArgumentNullException">filename</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputLoaderXML.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputLoaderXML"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputLoaderXML.#ctor(System.IO.TextReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputLoaderXML"/> class.
+            </summary>
+            <param name="reader">The reader.</param>
+            <exception cref="T:System.ArgumentNullException">reader</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputLoaderXML.Load">
+            <summary>
+            Loads this instance.
+            </summary>
+            <returns>SaveLoadParameters.</returns>
+        </member>
+        <member name="M:TeamUtility.IO.InputLoaderXML.LoadSelective(System.String)">
+            <summary>
+            Loads the selective.
+            </summary>
+            <param name="inputConfigName">Name of the input configuration.</param>
+            <returns>InputConfiguration.</returns>
+        </member>
+        <member name="T:TeamUtility.IO.InputSaverXML">
+            <summary>
+            Class InputSaverXML. This class cannot be inherited.
+            </summary>
+            <seealso cref="T:TeamUtility.IO.IInputSaver" />
+        </member>
+        <member name="M:TeamUtility.IO.InputSaverXML.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputSaverXML"/> class.
+            </summary>
+            <param name="filename">The filename.</param>
+            <exception cref="T:System.ArgumentNullException">filename</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputSaverXML.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputSaverXML"/> class.
+            </summary>
+            <param name="stream">The stream.</param>
+            <exception cref="T:System.ArgumentNullException">stream</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputSaverXML.#ctor(System.Text.StringBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.InputSaverXML"/> class.
+            </summary>
+            <param name="output">The output.</param>
+            <exception cref="T:System.ArgumentNullException">output</exception>
+        </member>
+        <member name="M:TeamUtility.IO.InputSaverXML.Save(TeamUtility.IO.SaveLoadParameters)">
+            <summary>
+            Saves the specified parameters.
+            </summary>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="T:TeamUtility.IO.ResourcePaths">
+            <summary>
+            Class ResourcePaths.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ResourcePaths.INPUT_ADAPTER_DEFAULT_CONFIG">
+            <summary>
+            The input adapter default configuration
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ResourcePaths.INPUT_MANAGER_DEFAULT_CONFIG">
+            <summary>
+            The input manager default configuration
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.SaveLoadParameters">
+            <summary>
+            Class SaveLoadParameters.
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.SaveLoadParameters.inputConfigurations">
+            <summary>
+            The input configurations
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.SaveLoadParameters.playerOneDefault">
+            <summary>
+            The player one default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.SaveLoadParameters.playerTwoDefault">
+            <summary>
+            The player two default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.SaveLoadParameters.playerThreeDefault">
+            <summary>
+            The player three default
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.SaveLoadParameters.playerFourDefault">
+            <summary>
+            The player four default
+            </summary>
+        </member>
+        <member name="M:TeamUtility.IO.SaveLoadParameters.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TeamUtility.IO.SaveLoadParameters"/> class.
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.ScanResult">
+            <summary>
+            Struct ScanResult
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.scanFlags">
+            <summary>
+            The scan flags
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.key">
+            <summary>
+            The key
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.joystick">
+            <summary>
+            The joystick
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.joystickAxis">
+            <summary>
+            The joystick axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.joystickAxisValue">
+            <summary>
+            The joystick axis value
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.mouseAxis">
+            <summary>
+            The mouse axis
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanResult.userData">
+            <summary>
+            The user data
+            </summary>
+        </member>
+        <member name="T:TeamUtility.IO.ScanSettings">
+            <summary>
+            Struct ScanSettings
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanSettings.scanFlags">
+            <summary>
+            The scan flags
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanSettings.joystick">
+            <summary>
+            The joystick
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanSettings.timeout">
+            <summary>
+            The timeout
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanSettings.cancelScanButton">
+            <summary>
+            The cancel scan button
+            </summary>
+        </member>
+        <member name="F:TeamUtility.IO.ScanSettings.userData">
+            <summary>
+            The user data
+            </summary>
+        </member>
+        <member name="T:UnityInputConverter.YamlDotNet.Core.Events.MappingStyle">
+            <summary>
+            Specifies the style of a mapping.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.MappingStyle.Any">
+            <summary>
+            Let the emitter choose the style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.MappingStyle.Block">
+            <summary>
+            The block mapping style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.MappingStyle.Flow">
+            <summary>
+            The flow mapping style.
+            </summary>
+        </member>
+        <member name="T:UnityInputConverter.YamlDotNet.Core.Events.SequenceStyle">
+            <summary>
+            Specifies the style of a sequence.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.SequenceStyle.Any">
+            <summary>
+            Let the emitter choose the style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.SequenceStyle.Block">
+            <summary>
+            The block sequence style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.Events.SequenceStyle.Flow">
+            <summary>
+            The flow sequence style.
+            </summary>
+        </member>
+        <member name="T:UnityInputConverter.YamlDotNet.Core.ScalarStyle">
+            <summary>
+            Specifies the style of a YAML scalar.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.Any">
+            <summary>
+            Let the emitter choose the style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.Plain">
+            <summary>
+            The plain scalar style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.SingleQuoted">
+            <summary>
+            The single-quoted scalar style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.DoubleQuoted">
+            <summary>
+            The double-quoted scalar style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.Literal">
+            <summary>
+            The literal scalar style.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Core.ScalarStyle.Folded">
+            <summary>
+            The folded scalar style.
+            </summary>
+        </member>
+        <member name="T:UnityInputConverter.YamlDotNet.RepresentationModel.YamlNodeType">
+            <summary>
+            Specifies the type of node in the representation model.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.RepresentationModel.YamlNodeType.Alias">
+            <summary>
+            The node is a <see cref="!:YamlAliasNode"/>.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.RepresentationModel.YamlNodeType.Mapping">
+            <summary>
+            The node is a <see cref="!:YamlMappingNode"/>.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.RepresentationModel.YamlNodeType.Scalar">
+            <summary>
+            The node is a <see cref="!:YamlScalarNode"/>.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.RepresentationModel.YamlNodeType.Sequence">
+            <summary>
+            The node is a <see cref="!:YamlSequenceNode"/>.
+            </summary>
+        </member>
+        <member name="T:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions">
+            <summary>
+            Options that control the serialization process.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.None">
+            <summary>
+            Serializes using the default options
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.Roundtrip">
+            <summary>
+            Ensures that it will be possible to deserialize the serialized objects.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.DisableAliases">
+            <summary>
+            If this flag is specified, if the same object appears more than once in the
+            serialization graph, it will be serialized each time instead of just once.
+            </summary>
+            <remarks>
+            If the serialization graph contains circular references and this flag is set,
+            a StackOverflowException will be thrown.
+            If this flag is not set, there is a performance penalty because the entire
+            object graph must be walked twice.
+            </remarks>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.EmitDefaults">
+            <summary>
+            Forces every value to be serialized, even if it is the default value for that type.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.JsonCompatible">
+            <summary>
+            Ensures that the result of the serialization is valid JSON.
+            </summary>
+        </member>
+        <member name="F:UnityInputConverter.YamlDotNet.Serialization.SerializationOptions.DefaultToStaticType">
+            <summary>
+            Use the static type of values instead of their actual type.
             </summary>
         </member>
         <member name="M:ScottGarland.DigitsArray.Allocate(System.Int32)">

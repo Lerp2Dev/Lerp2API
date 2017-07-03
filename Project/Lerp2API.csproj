@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Build\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;LERP2API;UNITY_EDITOR</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;LERP2API;UNITY_EDITOR;UNITY_5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Build\Lerp2API.XML</DocumentationFile>
@@ -345,6 +345,27 @@
     <Compile Include="Utility\ContinuationManager.cs" />
     <Compile Include="Utility\CSG\BooleanMesh.cs" />
     <Compile Include="Utility\CSG\Triangulation.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\InputAdapter\Runtime\InputAdapter.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\InputEvents\Runtime\InputEvent.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\InputEvents\Runtime\InputEventManager.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\JoystickMapping\Runtime\AxisMapping.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\JoystickMapping\Runtime\JoystickMapping.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\JoystickMapping\Runtime\MappingWizard.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\JoystickMapping\Runtime\MappingWizardItem.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\UIInputModules\Runtime\StandaloneInputModule.cs" />
+    <Compile Include="Utility\CustomInputManager\Addons\Utility\CloneControllerConfiguration.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\AxisConfiguration.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\InputConfiguration.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\InputManager.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\InputManager_Unity.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Interfaces\IInputLoader.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Interfaces\IInputSaver.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\InputLoaderXML.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\InputSaverXML.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\ResourcePaths.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\SaveLoadParameters.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\ScanResult.cs" />
+    <Compile Include="Utility\CustomInputManager\Source\Runtime\_Support\ScanSettings.cs" />
     <Compile Include="Utility\DebugLine.cs" />
     <Compile Include="Utility\FileBrowser.cs" />
     <Compile Include="Utility\GameLoopEntry.cs" />
@@ -419,6 +440,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="All Noises\Noise\COPYING.LESSER.txt" />
+    <Content Include="Utility\CustomInputManager\Addons\InputAdapter\Resources\input_adapter_default_config.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mappings\playstation_3.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mappings\xbox_360_linux.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mappings\xbox_360_linux_wireless.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mappings\xbox_360_osx.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mappings\xbox_360_windows.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Resources\joystick_mapping_index.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\PS3 Controller Clone\ps3_wizard_definition.xml" />
+    <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\XBox Controller Clone\xbox_wizard_definition.xml" />
+    <Content Include="Utility\CustomInputManager\Source\Resources\input_manager_default_config.xml" />
+    <Content Include="Utility\CustomInputManager\Source\Resources\input_manager_project_settings.txt" />
     <None Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\packages.config" />
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\.gitignore" />
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\README.ja-jp.md" />
@@ -430,6 +462,9 @@
     <Content Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\MinimumThreadingBridge.csproj" />
     <Content Include="Backports\MinimumAsyncBridge\MvvmBridge\MvvmBridge.csproj" />
     <Content Include="Serializers\unityserializer-ng\license.txt" />
+    <None Include="Utility\CustomInputManager\Addons\JoystickMapping\GUI\joystick_mapping_gui_skin.guiskin" />
+    <None Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\PS3 Controller Clone\ps3_controller.unity" />
+    <None Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\XBox Controller Clone\xbox_controller.unity" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Serializers\unityserializer-ng\Serialization\.gitignore" />

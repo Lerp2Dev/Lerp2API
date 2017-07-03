@@ -1042,8 +1042,17 @@ public class AssertExtensions
 
 #region "Casting Extensions"
 
+/// <summary>
+/// Class CastingExtensions.
+/// </summary>
 public static class CastingExtensions
 {
+    /// <summary>
+    /// fs the parse.
+    /// </summary>
+    /// <param name="p">The p.</param>
+    /// <param name="r">The r.</param>
+    /// <returns>System.Single.</returns>
     public static float FParse(this string p, float r)
     {
         float n;

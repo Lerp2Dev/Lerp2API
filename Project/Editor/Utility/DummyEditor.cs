@@ -17,7 +17,7 @@ namespace Lerp2API.Utility
         /// </summary>
         /// <param name="command">The command.</param>
         [MenuItem("Lerp2Dev Team Tools/Save Scene Skin...")]
-        static public void SaveEditorSkin(MenuCommand command)
+        private static void SaveEditorSkin()
         {
             string dir = Path.Combine(Application.dataPath, "Saved Skins/");
             if (!Directory.Exists(dir))

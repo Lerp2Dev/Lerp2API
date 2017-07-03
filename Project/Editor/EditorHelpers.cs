@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using UnityEditor;
+using UnityEngine;
 using Debug = Lerp2API._Debug.Debug;
 
 namespace Lerp2APIEditor
@@ -14,6 +15,7 @@ namespace Lerp2APIEditor
         #region "Editor Extensions"
 
         private static SerializedObject _tagMan;
+
         private static SerializedObject tagManager
         {
             get
@@ -26,6 +28,7 @@ namespace Lerp2APIEditor
         }
 
         private static SerializedProperty _tagsProp;
+
         private static SerializedProperty tagsProp
         {
             get
@@ -37,6 +40,7 @@ namespace Lerp2APIEditor
         }
 
         private static SerializedProperty _layersProp;
+
         private static SerializedProperty layersProp
         {
             get
@@ -86,8 +90,70 @@ namespace Lerp2APIEditor
             return found;
         }
 
+        /// <summary>
+        /// Checks the layer.
+        /// </summary>
+        /// <param name="layerName">Name of the layer.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public static bool CheckLayer(this string layerName)
+        {
+            int layer = LayerMask.NameToLayer(layerName);
+            return layersProp.GetArrayElementAtIndex(layer) != null && layer != 0;
+        }
 
-        //I have to hacer un checklayer...
+        /// <summary>
+        /// Checks the axis.
+        /// </summary>
+        /// <param name="axisName">Name of the axis.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public static bool CheckAxis(this string axisName)
+        {
+            try
+            {
+                Input.GetAxis(axisName);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Checks the button.
+        /// </summary>
+        /// <param name="btnName">Name of the BTN.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public static bool CheckButton(string btnName)
+        {
+            try
+            {
+                Input.GetButton(btnName);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Defines the layer.
+        /// </summary>
+        /// <param name="layerName">Name of the layer.</param>
+        public static void DefineLayer(this string layerName)
+        {
+            int i = 8;
+            for (i = 8; i <= 31; i++)
+            {
+                string nm = "User Layer " + i;
+                SerializedProperty sp = tagManager.FindProperty(nm);
+                if (sp == null || (sp != null && string.IsNullOrEmpty(sp.stringValue)))
+                    break;
+            }
+            layerName.DefineLayer(i);
+        }
+
         /// <summary>
         /// Defines the layer.
         /// </summary>
@@ -108,10 +174,11 @@ namespace Lerp2APIEditor
             tagManager.ApplyModifiedProperties();
         }
 
-#endregion "Editor Extensions"
+        #endregion "Editor Extensions"
     }
 
     #region "Editor Reflection Extensions"
+
     /// <summary>
     /// Class EditorReflectionHelpers.
     /// </summary>
@@ -121,6 +188,7 @@ namespace Lerp2APIEditor
         /// The fin
         /// </summary>
         public Action fin;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="EditorReflectionHelpers"/> class.
         /// </summary>
@@ -129,6 +197,7 @@ namespace Lerp2APIEditor
         {
             fin = f;
         }
+
         /// <summary>
         /// Waits the until class is available.
         /// </summary>
@@ -154,15 +223,18 @@ namespace Lerp2APIEditor
             th.Start();
         }
     }
-    #endregion
+
+    #endregion "Editor Reflection Extensions"
 
     #region "Thread Safe Editor Extensions"
+
     /// <summary>
     /// Class ThreadSafeEditor.
     /// </summary>
     public class ThreadSafeEditor
     {
         private Process cmd;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadSafeEditor"/> class.
         /// </summary>
@@ -171,6 +243,7 @@ namespace Lerp2APIEditor
             cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
         }
+
         /// <summary>
         /// Messages the specified commands.
         /// </summary>
@@ -182,5 +255,6 @@ namespace Lerp2APIEditor
             cmd.Close();
         }
     }
-#endregion
+
+    #endregion "Thread Safe Editor Extensions"
 }

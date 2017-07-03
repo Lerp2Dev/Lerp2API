@@ -16,14 +16,17 @@ namespace Lerp2APIEditor.Utility
         /// The value
         /// </summary>
         public T value = default(T);
+
         /// <summary>
         /// The is called
         /// </summary>
         public bool isCalled = false;
+
         /// <summary>
         /// The method called
         /// </summary>
         public string methodCalled = "";
+
         /// <summary>
         /// The matched methods
         /// </summary>
@@ -40,6 +43,7 @@ namespace Lerp2APIEditor.Utility
                 return (FileSystemWatcher)(object)value;
             }
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LerpedThread{T}"/> class.
         /// </summary>
@@ -47,7 +51,7 @@ namespace Lerp2APIEditor.Utility
         /// <param name="pars">The pars.</param>
         public LerpedThread(string name, FSWParams pars)
         {
-            if(typeof(T) == typeof(FileSystemWatcher))
+            if (typeof(T) == typeof(FileSystemWatcher))
             {
                 if (LerpedCore.isFSWDisabled)
                     return;
@@ -71,16 +75,19 @@ namespace Lerp2APIEditor.Utility
                 }
             }
         }
+
         private void OnChanged(object source, FileSystemEventArgs e)
         {
             methodCalled = e.ChangeType.ToString();
             isCalled = true;
         }
+
         private void OnRenamed(object source, RenamedEventArgs e)
         {
             methodCalled = e.ChangeType.ToString();
             isCalled = true;
         }
+
         /// <summary>
         /// Starts the FSW.
         /// </summary>
@@ -88,6 +95,7 @@ namespace Lerp2APIEditor.Utility
         {
             FSW.EnableRaisingEvents = true;
         }
+
         /// <summary>
         /// Cancels the FSW.
         /// </summary>
@@ -95,6 +103,7 @@ namespace Lerp2APIEditor.Utility
         {
             FSW.EnableRaisingEvents = false;
         }
+
         /// <summary>
         /// Applies the changes.
         /// </summary>
@@ -105,6 +114,7 @@ namespace Lerp2APIEditor.Utility
             value = (T)(object)obj;
         }
     }
+
     /// <summary>
     /// Class FSWParams.
     /// </summary>
@@ -118,14 +128,17 @@ namespace Lerp2APIEditor.Utility
                       /// The filter
                       /// </summary>
                       filter;
+
         /// <summary>
         /// The notifiers
         /// </summary>
         public NotifyFilters notifiers;
+
         /// <summary>
         /// The include subfolders
         /// </summary>
         public bool includeSubfolders;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FSWParams"/> class.
         /// </summary>

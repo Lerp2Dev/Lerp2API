@@ -24,7 +24,11 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
             }
         }
 
-        public static Transform subFirstObject
+        /// <summary>
+        /// Gets the FPS controller object.
+        /// </summary>
+        /// <value>The FPS controller object.</value>
+        public static Transform FPSControllerObject
         {
             get
             {
@@ -32,6 +36,10 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
             }
         }
 
+        /// <summary>
+        /// Gets the current view.
+        /// </summary>
+        /// <returns>PersonView.</returns>
         public static PersonView GetCurView()
         {
             if (player == null)

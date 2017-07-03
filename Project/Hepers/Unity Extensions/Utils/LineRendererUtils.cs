@@ -38,7 +38,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
             lr.endColor = endColor;
 
             lr.material = new Material(Shader.Find("Particles/Additive"));
-            lr.numPositions = 0;
+            lr.positionCount = 0;
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
             }
 
             lrs.ApplyStyles(ref lr);
-            lr.numPositions = 0;
+            lr.positionCount = 0;
         }
 
         /// <summary>
@@ -70,9 +70,9 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         /// <param name="lr">The lr.</param>
         public static void AddPoint(Vector3 point, ref LineRenderer lr)
         {
-            int pos = lr.numPositions;
+            int pos = lr.positionCount;
             ++pos;
-            lr.numPositions = pos;
+            lr.positionCount = pos;
 
             lr.SetPosition(pos - 1, point);
         }
@@ -131,7 +131,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         public static Vector3 GetLastPoint(this LineRenderer lr)
         {
             if (lr != null)
-                return lr.GetPoint(lr.numPositions - 1);
+                return lr.GetPoint(lr.positionCount - 1);
             return default(Vector3);
         }
 
@@ -143,7 +143,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         /// <returns>Vector3.</returns>
         public static Vector3 GetPoint(this LineRenderer lr, int index)
         {
-            if (lr != null && index < lr.numPositions)
+            if (lr != null && index < lr.positionCount)
                 return lr.GetPosition(index);
             else
             {

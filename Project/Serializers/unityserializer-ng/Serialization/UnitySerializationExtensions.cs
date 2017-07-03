@@ -538,46 +538,57 @@ public class SerializeWheelCollider : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool Enabled;
+
         /// <summary>
         /// The brake torque
         /// </summary>
         public float brakeTorque;
+
         /// <summary>
         /// The center
         /// </summary>
         public Vector3 center;
+
         /// <summary>
         /// The force application point distance
         /// </summary>
         public float forceAppPointDistance;
+
         /// <summary>
         /// The forward friction
         /// </summary>
         public WheelFrictionCurve forwardFriction;
+
         /// <summary>
         /// The mass
         /// </summary>
         public float mass;
+
         /// <summary>
         /// The motor torque
         /// </summary>
         public float motorTorque;
+
         /// <summary>
         /// The radius
         /// </summary>
         public float radius;
+
         /// <summary>
         /// The sideways friction
         /// </summary>
         public WheelFrictionCurve sidewaysFriction;
+
         /// <summary>
         /// The steer angle
         /// </summary>
         public float steerAngle;
+
         /// <summary>
         /// The suspension distance
         /// </summary>
         public float suspensionDistance;
+
         /// <summary>
         /// The suspension spring
         /// </summary>
@@ -758,6 +769,7 @@ public class SerializeRigidBody2D : IComponentSerializer
             /// The rotation
             /// </summary>
             rotation;
+
         /// <summary>
         /// The center of mass
         /// </summary>
@@ -770,14 +782,17 @@ public class SerializeRigidBody2D : IComponentSerializer
             /// The velocity
             /// </summary>
             velocity;
+
         /// <summary>
         /// The collision detection mode
         /// </summary>
         public CollisionDetectionMode2D collisionDetectionMode;
+
         /// <summary>
         /// The constraints
         /// </summary>
         public RigidbodyConstraints2D constraints;
+
         /// <summary>
         /// The freeze rotation
         /// </summary>
@@ -794,10 +809,12 @@ public class SerializeRigidBody2D : IComponentSerializer
             /// The use automatic mass
             /// </summary>
             useAutoMass;
+
         /// <summary>
         /// The interpolation
         /// </summary>
         public RigidbodyInterpolation2D interpolation;
+
         /// <summary>
         /// The sleep mode
         /// </summary>
@@ -947,10 +964,12 @@ public class SerializeBoxCollider2D : IComponentSerializer
                        /// The offset
                        /// </summary>
                        offset;
+
         /// <summary>
         /// The shared material
         /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+
         /// <summary>
         /// The density
         /// </summary>
@@ -1063,10 +1082,12 @@ public class SerializeCircleCollider2D : IComponentSerializer
         /// The offset
         /// </summary>
         public Vector2 offset;
+
         /// <summary>
         /// The shared material
         /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+
         /// <summary>
         /// The radius
         /// </summary>
@@ -1183,14 +1204,17 @@ public class SerializeEdgeCollider2D : IComponentSerializer
         /// The offset
         /// </summary>
         public Vector2 offset;
+
         /// <summary>
         /// The points
         /// </summary>
         public Vector2[] points;
+
         /// <summary>
         /// The shared material
         /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+
         /// <summary>
         /// The density
         /// </summary>
@@ -1303,18 +1327,22 @@ public class SerializePolygonCollider2D : IComponentSerializer
         /// The offset
         /// </summary>
         public Vector2 offset;
+
         /// <summary>
         /// The paths
         /// </summary>
         public Vector2[][] paths;
+
         /// <summary>
         /// The shared material
         /// </summary>
         public PhysicsMaterial2D sharedMaterial;
+
         /// <summary>
         /// The density
         /// </summary>
         public float density;
+
         /// <summary>
         /// The path count
         /// </summary>
@@ -1431,6 +1459,7 @@ public class SerializeDistanceJoint2D : IComponentSerializer
                      /// The distance
                      /// </summary>
                      distance;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -1451,6 +1480,7 @@ public class SerializeDistanceJoint2D : IComponentSerializer
                     /// The automatic configure connected anchor
                     /// </summary>
                     autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -1459,6 +1489,7 @@ public class SerializeDistanceJoint2D : IComponentSerializer
                        /// The connected anchor
                        /// </summary>
                        connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -1561,6 +1592,7 @@ public class SerializeFixedJoint2D : IComponentSerializer
                      /// The break torque
                      /// </summary>
                      breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -1573,6 +1605,7 @@ public class SerializeFixedJoint2D : IComponentSerializer
                     /// The automatic configure connected anchor
                     /// </summary>
                     autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -1581,6 +1614,7 @@ public class SerializeFixedJoint2D : IComponentSerializer
                        /// The connected anchor
                        /// </summary>
                        connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -1693,6 +1727,7 @@ public class SerializeFrictionJoint2D : IComponentSerializer
                      /// The break torque
                      /// </summary>
                      breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -1705,6 +1740,7 @@ public class SerializeFrictionJoint2D : IComponentSerializer
                     /// The automatic configure connected anchor
                     /// </summary>
                     autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -1713,6 +1749,7 @@ public class SerializeFrictionJoint2D : IComponentSerializer
                        /// The connected anchor
                        /// </summary>
                        connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -1825,6 +1862,7 @@ public class SerializeHingeJoint2D : IComponentSerializer
                      /// The break torque
                      /// </summary>
                      breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -1837,6 +1875,7 @@ public class SerializeHingeJoint2D : IComponentSerializer
                     /// The automatic configure connected anchor
                     /// </summary>
                     autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -1845,6 +1884,7 @@ public class SerializeHingeJoint2D : IComponentSerializer
                        /// The connected anchor
                        /// </summary>
                        connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -1854,10 +1894,12 @@ public class SerializeHingeJoint2D : IComponentSerializer
         /// The limits
         /// </summary>
         public JointAngleLimits2D limits;
+
         /// <summary>
         /// The motor
         /// </summary>
         public JointMotor2D motor;
+
         /// <summary>
         /// The use limits
         /// </summary>
@@ -1969,6 +2011,7 @@ public class SerializeRelativeJoint2D : IComponentSerializer
             /// The enable collision
             /// </summary>
             enableCollision;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -1990,10 +2033,12 @@ public class SerializeRelativeJoint2D : IComponentSerializer
             /// The maximum torque
             /// </summary>
             maxTorque;
+
         /// <summary>
         /// The automatic configure offset
         /// </summary>
         public bool autoConfigureOffset;
+
         /// <summary>
         /// The linear offset
         /// </summary>
@@ -2088,6 +2133,7 @@ public class SerializeSliderJoint2D : IComponentSerializer
             /// The break torque
             /// </summary>
             breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -2100,6 +2146,7 @@ public class SerializeSliderJoint2D : IComponentSerializer
             /// The automatic configure connected anchor
             /// </summary>
             autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -2108,6 +2155,7 @@ public class SerializeSliderJoint2D : IComponentSerializer
             /// The connected anchor
             /// </summary>
             connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -2117,6 +2165,7 @@ public class SerializeSliderJoint2D : IComponentSerializer
         /// The angle
         /// </summary>
         public float angle;
+
         /// <summary>
         /// The automatic configure angle
         /// </summary>
@@ -2129,10 +2178,12 @@ public class SerializeSliderJoint2D : IComponentSerializer
             /// The use motor
             /// </summary>
             useMotor;
+
         /// <summary>
         /// The limits
         /// </summary>
         public JointTranslationLimits2D limits;
+
         /// <summary>
         /// The motor
         /// </summary>
@@ -2244,6 +2295,7 @@ public class SerializeSpringJoint2D : IComponentSerializer
             /// The break torque
             /// </summary>
             breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -2256,6 +2308,7 @@ public class SerializeSpringJoint2D : IComponentSerializer
             /// The automatic configure connected anchor
             /// </summary>
             autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -2264,6 +2317,7 @@ public class SerializeSpringJoint2D : IComponentSerializer
             /// The connected anchor
             /// </summary>
             connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -2281,6 +2335,7 @@ public class SerializeSpringJoint2D : IComponentSerializer
             /// The frequency
             /// </summary>
             frequency;
+
         /// <summary>
         /// The automatic configure distance
         /// </summary>
@@ -2388,6 +2443,7 @@ public class SerializeWheelJoint2D : IComponentSerializer
             /// The break torque
             /// </summary>
             breakTorque;
+
         /// <summary>
         /// The enable collision
         /// </summary>
@@ -2400,6 +2456,7 @@ public class SerializeWheelJoint2D : IComponentSerializer
             /// The automatic configure connected anchor
             /// </summary>
             autoConfigureConnectedAnchor;
+
         /// <summary>
         /// The anchor
         /// </summary>
@@ -2408,6 +2465,7 @@ public class SerializeWheelJoint2D : IComponentSerializer
             /// The connected anchor
             /// </summary>
             connectedAnchor;
+
         /// <summary>
         /// The connected body
         /// </summary>
@@ -2417,10 +2475,12 @@ public class SerializeWheelJoint2D : IComponentSerializer
         /// The motor
         /// </summary>
         public JointMotor2D motor;
+
         /// <summary>
         /// The suspension
         /// </summary>
         public JointSuspension2D suspension;
+
         /// <summary>
         /// The use motor
         /// </summary>
@@ -3132,6 +3192,7 @@ public class SerializeNavMeshAgent : IComponentSerializer
             /// The automatic repath
             /// </summary>
             autoRepath;
+
         /// <summary>
         /// The x
         /// </summary>
@@ -3172,6 +3233,7 @@ public class SerializeNavMeshAgent : IComponentSerializer
             /// The stopping distance
             /// </summary>
             stoppingDistance;
+
         /// <summary>
         /// The passable
         /// </summary>
@@ -3180,6 +3242,7 @@ public class SerializeNavMeshAgent : IComponentSerializer
             /// The avoidance priority
             /// </summary>
             avoidancePriority;
+
         /// <summary>
         /// The obstacle avoidance type
         /// </summary>
@@ -3281,46 +3344,57 @@ public class SerializeCamera : IComponentSerializer
         /// The rendering path
         /// </summary>
         public RenderingPath renderingPath;
+
         /// <summary>
         /// The field of view
         /// </summary>
         public float fieldOfView;
+
         /// <summary>
         /// The near clip plane
         /// </summary>
         public float nearClipPlane;
+
         /// <summary>
         /// The far clip plane
         /// </summary>
         public float farClipPlane;
+
         /// <summary>
         /// The depth
         /// </summary>
         public float depth;
+
         /// <summary>
         /// The rect
         /// </summary>
         public Rect rect;
+
         /// <summary>
         /// The use occlusion culling
         /// </summary>
         public bool useOcclusionCulling;
+
         /// <summary>
         /// The HDR
         /// </summary>
         public bool hdr;
+
         /// <summary>
         /// The target texture
         /// </summary>
         public RenderTexture targetTexture;
+
         /// <summary>
         /// The orthographic
         /// </summary>
         public bool orthographic;
+
         /// <summary>
         /// The orthographic size
         /// </summary>
         public float orthographicSize;
+
         /// <summary>
         /// The background color
         /// </summary>
@@ -3346,7 +3420,7 @@ public class SerializeCamera : IComponentSerializer
             farClipPlane = camera.farClipPlane,
             rect = camera.rect,
             useOcclusionCulling = camera.useOcclusionCulling,
-            hdr = camera.hdr,
+            hdr = camera.allowHDR,
             targetTexture = camera.targetTexture,
             orthographic = camera.orthographic,
             orthographicSize = camera.orthographicSize,
@@ -3371,7 +3445,7 @@ public class SerializeCamera : IComponentSerializer
         camera.depth = cd.depth;
         camera.rect = cd.rect;
         camera.useOcclusionCulling = cd.useOcclusionCulling;
-        camera.hdr = cd.hdr;
+        camera.allowHDR = cd.hdr;
         camera.targetTexture = cd.targetTexture;
         camera.orthographic = cd.orthographic;
         camera.orthographicSize = cd.orthographicSize;
@@ -3396,6 +3470,7 @@ public class SerializeRigidBody : IComponentSerializer
         /// The is kinematic
         /// </summary>
         public bool isKinematic;
+
         /// <summary>
         /// The use gravity
         /// </summary>
@@ -3408,6 +3483,7 @@ public class SerializeRigidBody : IComponentSerializer
             /// The detect collisions
             /// </summary>
             detectCollisions;
+
         /// <summary>
         /// The velocity
         /// </summary>
@@ -3428,6 +3504,7 @@ public class SerializeRigidBody : IComponentSerializer
             /// The inertia tensor
             /// </summary>
             inertiaTensor;
+
         /// <summary>
         /// The rotation
         /// </summary>
@@ -3436,6 +3513,7 @@ public class SerializeRigidBody : IComponentSerializer
             /// The inertia tensor rotation
             /// </summary>
             inertiaTensorRotation;
+
         /// <summary>
         /// The drag
         /// </summary>
@@ -3456,18 +3534,22 @@ public class SerializeRigidBody : IComponentSerializer
             /// The maximum angular velocity
             /// </summary>
             maxAngularVelocity;
+
         /// <summary>
         /// The constraints
         /// </summary>
         public RigidbodyConstraints constraints;
+
         /// <summary>
         /// The collision detection mode
         /// </summary>
         public CollisionDetectionMode collisionDetectionMode;
+
         /// <summary>
         /// The interpolation
         /// </summary>
         public RigidbodyInterpolation interpolation;
+
         /// <summary>
         /// The solver iteration count
         /// </summary>
@@ -3622,46 +3704,57 @@ public class SerializeRenderer : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool Enabled;
+
         /// <summary>
         /// The materials
         /// </summary>
         public List<Material> materials = new List<Material>();
+
         /// <summary>
         /// The shadow casting mode
         /// </summary>
         public ShadowCastingMode shadowCastingMode;
+
         /// <summary>
         /// The receive shadows
         /// </summary>
         public bool receiveShadows;
+
         /// <summary>
         /// The light probe usage
         /// </summary>
         public LightProbeUsage lightProbeUsage;
+
         /// <summary>
         /// The reflection probe usage
         /// </summary>
         public ReflectionProbeUsage reflectionProbeUsage;
+
         /// <summary>
         /// The light probe proxy volume override
         /// </summary>
         public GameObject lightProbeProxyVolumeOverride;
+
         /// <summary>
         /// The probe anchor
         /// </summary>
         public Transform probeAnchor;
+
         /// <summary>
         /// The lightmap index
         /// </summary>
         public int lightmapIndex;
+
         /// <summary>
         /// The realtime lightmap index
         /// </summary>
         public int realtimeLightmapIndex;
+
         /// <summary>
         /// The lightmap scale offset
         /// </summary>
         public Vector4 lightmapScaleOffset;
+
         /// <summary>
         /// The realtime lightmap scale offset
         /// </summary>
@@ -3887,14 +3980,17 @@ public class SerializeTrailRenderer : IComponentSerializer
         /// The autodestruct
         /// </summary>
         public bool autodestruct;
+
         /// <summary>
         /// The start width
         /// </summary>
         public float startWidth;
+
         /// <summary>
         /// The end width
         /// </summary>
         public float endWidth;
+
         /// <summary>
         /// The time
         /// </summary>
@@ -4015,10 +4111,12 @@ public class SerializeSkinnedMeshRenderer : IComponentSerializer
         /// The local bounds
         /// </summary>
         public Bounds localBounds;
+
         /// <summary>
         /// The quality
         /// </summary>
         public SkinQuality quality;
+
         /// <summary>
         /// The update when offscreen
         /// </summary>
@@ -4132,30 +4230,37 @@ public class SerializeAudioChorusFilter : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The delay
         /// </summary>
         public float delay;
+
         /// <summary>
         /// The depth
         /// </summary>
         public float depth;
+
         /// <summary>
         /// The dry mix
         /// </summary>
         public float dryMix;
+
         /// <summary>
         /// The rate
         /// </summary>
         public float rate;
+
         /// <summary>
         /// The wet mix1
         /// </summary>
         public float wetMix1;
+
         /// <summary>
         /// The wet mix2
         /// </summary>
         public float wetMix2;
+
         /// <summary>
         /// The wet mix3
         /// </summary>
@@ -4239,6 +4344,7 @@ public class SerializeAudioDistortionFilter : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The distortion level
         /// </summary>
@@ -4310,18 +4416,22 @@ public class SerializeAudioEchoFilter : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The decay ratio
         /// </summary>
         public float decayRatio;
+
         /// <summary>
         /// The delay
         /// </summary>
         public float delay;
+
         /// <summary>
         /// The dry mix
         /// </summary>
         public float dryMix;
+
         /// <summary>
         /// The wet mix
         /// </summary>
@@ -4397,10 +4507,12 @@ public class SerializeAudioLowPassFilter : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The cutoff frequency
         /// </summary>
         public float cutoffFrequency;
+
         /// <summary>
         /// The lowpass resonance q
         /// </summary>
@@ -4474,10 +4586,12 @@ public class SerializeAudioHighPassFilter : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The cutoff frequency
         /// </summary>
         public float cutoffFrequency;
+
         /// <summary>
         /// The highpass resonance q
         /// </summary>
@@ -4551,14 +4665,17 @@ public class SerializeEventSystem : IComponentSerializer
         /// The enabled
         /// </summary>
         public bool enabled;
+
         /// <summary>
         /// The first selected game object
         /// </summary>
         public GameObject firstSelectedGameObject;
+
         /// <summary>
         /// The pixel drag threshold
         /// </summary>
         public int pixelDragThreshold;
+
         /// <summary>
         /// The send navigation events
         /// </summary>
@@ -4768,6 +4885,7 @@ public class SerializeComponentReference : SerializerExtensionBase<Component>
 public class ProvideAttributes : IProvideAttributeList
 {
     private string[] _attributes;
+
     /// <summary>
     /// All simple
     /// </summary>

@@ -894,6 +894,27 @@ namespace Lerp2API.Utility
         /// </summary>
         Outset
     }
+
+    /// <summary>
+    /// Enum RequiredData
+    /// </summary>
+    public enum RequiredData
+    {
+        /// <summary>
+        /// The tags
+        /// </summary>
+        Tags,
+
+        /// <summary>
+        /// The layers
+        /// </summary>
+        Layers,
+
+        /// <summary>
+        /// The axis
+        /// </summary>
+        Axis
+    }
 }
 
 namespace ICSharpCode.SharpZipLib.Zip.Compression
@@ -1472,5 +1493,581 @@ namespace Lerp2API.Utility.CSG
         /// The intersection
         /// </summary>
         Intersection
+    }
+}
+
+namespace TeamUtility.IO
+{
+    /// <summary>
+    /// Enum InputDPADButton
+    /// </summary>
+    public enum InputDPADButton
+    {
+        /// <summary>
+        /// The left
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// The right
+        /// </summary>
+        Right,
+
+        /// <summary>
+        /// Up
+        /// </summary>
+        Up,
+
+        /// <summary>
+        /// Down
+        /// </summary>
+        Down,
+
+        /// <summary>
+        /// The left up
+        /// </summary>
+        Left_Up,
+
+        /// <summary>
+        /// The right up
+        /// </summary>
+        Right_Up,
+
+        /// <summary>
+        /// The left down
+        /// </summary>
+        Left_Down,
+
+        /// <summary>
+        /// The right down
+        /// </summary>
+        Right_Down,
+
+        /// <summary>
+        /// Any
+        /// </summary>
+        Any
+    }
+
+    /// <summary>
+    /// Enum InputTriggerButton
+    /// </summary>
+    public enum InputTriggerButton
+    {
+        /// <summary>
+        /// The left
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// The right
+        /// </summary>
+        Right,
+
+        /// <summary>
+        /// Any
+        /// </summary>
+        Any
+    }
+
+    /// <summary>
+    /// Enum InputTriggerAxis
+    /// </summary>
+    public enum InputTriggerAxis
+    {
+        /// <summary>
+        /// The left
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// The right
+        /// </summary>
+        Right
+    }
+
+    /// <summary>
+    /// Enum InputDPADAxis
+    /// </summary>
+    public enum InputDPADAxis
+    {
+        /// <summary>
+        /// The horizontal
+        /// </summary>
+        Horizontal,
+
+        /// <summary>
+        /// The vertical
+        /// </summary>
+        Vertical
+    }
+
+    /// <summary>
+    /// Enum InputDevice
+    /// </summary>
+    public enum InputDevice
+    {
+        /// <summary>
+        /// The keyboard and mouse
+        /// </summary>
+        KeyboardAndMouse,
+
+        /// <summary>
+        /// The joystick
+        /// </summary>
+        Joystick
+    }
+
+    /// <summary>
+    /// Enum InputEventType
+    /// </summary>
+    public enum InputEventType
+    {
+        /// <summary>
+        /// The axis
+        /// </summary>
+        Axis,
+
+        /// <summary>
+        /// The button
+        /// </summary>
+        Button,
+
+        /// <summary>
+        /// The key
+        /// </summary>
+        Key
+    }
+
+    /// <summary>
+    /// Enum InputState
+    /// </summary>
+    public enum InputState
+    {
+        /// <summary>
+        /// The pressed
+        /// </summary>
+        Pressed,
+
+        /// <summary>
+        /// The released
+        /// </summary>
+        Released,
+
+        /// <summary>
+        /// The held
+        /// </summary>
+        Held
+    }
+
+    /// <summary>
+    /// Class MappingWizard.
+    /// </summary>
+    public partial class MappingWizard
+    {
+        /// <summary>
+        /// Enum ScanType
+        /// </summary>
+        public enum ScanType
+        {
+            /// <summary>
+            /// The button
+            /// </summary>
+            Button,
+
+            /// <summary>
+            /// The axis
+            /// </summary>
+            Axis
+        }
+    }
+
+    /// <summary>
+    /// Class StandaloneInputModule.
+    /// </summary>
+    public partial class StandaloneInputModule
+    {
+        /// <summary>
+        /// Enum InputMode
+        /// </summary>
+        [Obsolete("Mode is no longer needed on input module as it handles both mouse and keyboard simultaneously.", false)]
+        public enum InputMode
+        {
+            /// <summary>
+            /// The mouse
+            /// </summary>
+            Mouse,
+
+            /// <summary>
+            /// The buttons
+            /// </summary>
+            Buttons
+        }
+    }
+
+    /// <summary>
+    /// Enum InputType
+    /// </summary>
+    public enum InputType
+    {
+        /// <summary>
+        /// The button
+        /// </summary>
+        Button,
+
+        /// <summary>
+        /// The mouse axis
+        /// </summary>
+        MouseAxis,
+
+        /// <summary>
+        /// The digital axis
+        /// </summary>
+        DigitalAxis,
+
+        /// <summary>
+        /// The analog axis
+        /// </summary>
+        AnalogAxis,
+
+        /// <summary>
+        /// The remote axis
+        /// </summary>
+        RemoteAxis,
+
+        /// <summary>
+        /// The remote button
+        /// </summary>
+        RemoteButton,
+
+        /// <summary>
+        /// The analog button
+        /// </summary>
+        AnalogButton
+    }
+
+    /// <summary>
+    /// Enum PlayerID
+    /// </summary>
+    public enum PlayerID
+    {
+        /// <summary>
+        /// The one
+        /// </summary>
+        One,
+
+        /// <summary>
+        /// The two
+        /// </summary>
+        Two,
+
+        /// <summary>
+        /// The three
+        /// </summary>
+        Three,
+
+        /// <summary>
+        /// The four
+        /// </summary>
+        Four
+    }
+
+    /// <summary>
+    /// Enum ScanFlags
+    /// </summary>
+    public enum ScanFlags
+    {
+        /// <summary>
+        /// The none
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// The key
+        /// </summary>
+        Key = 2,
+
+        /// <summary>
+        /// The joystick button
+        /// </summary>
+        JoystickButton = 4,
+
+        /// <summary>
+        /// The joystick axis
+        /// </summary>
+        JoystickAxis = 8,
+
+        /// <summary>
+        /// The mouse axis
+        /// </summary>
+        MouseAxis = 16
+    }
+
+    /// <summary>
+    /// Class AdvancedInputEditor. This class cannot be inherited.
+    /// </summary>
+    public sealed partial class AdvancedInputEditor
+    {
+        /// <summary>
+        /// Enum FileMenuOptions
+        /// </summary>
+        public enum FileMenuOptions
+        {
+            /// <summary>
+            /// The overrite input settings
+            /// </summary>
+            OverriteInputSettings = 0,
+
+            /// <summary>
+            /// The create snapshot
+            /// </summary>
+            CreateSnapshot,
+
+            /// <summary>
+            /// The load snapshot
+            /// </summary>
+            LoadSnapshot,
+
+            /// <summary>
+            /// The export
+            /// </summary>
+            Export,
+
+            /// <summary>
+            /// The import
+            /// </summary>
+            Import,
+
+            /// <summary>
+            /// The import joystick mapping
+            /// </summary>
+            ImportJoystickMapping,
+
+            /// <summary>
+            /// The configure for input adapter
+            /// </summary>
+            ConfigureForInputAdapter,
+
+            /// <summary>
+            /// The create default input configuration
+            /// </summary>
+            CreateDefaultInputConfig
+        }
+
+        /// <summary>
+        /// Enum EditMenuOptions
+        /// </summary>
+        public enum EditMenuOptions
+        {
+            /// <summary>
+            /// The new input configuration
+            /// </summary>
+            NewInputConfiguration = 0,
+
+            /// <summary>
+            /// The new axis configuration
+            /// </summary>
+            NewAxisConfiguration,
+
+            /// <summary>
+            /// The duplicate
+            /// </summary>
+            Duplicate,
+
+            /// <summary>
+            /// The delete
+            /// </summary>
+            Delete,
+
+            /// <summary>
+            /// The delete all
+            /// </summary>
+            DeleteAll,
+
+            /// <summary>
+            /// The select target
+            /// </summary>
+            SelectTarget,
+
+            /// <summary>
+            /// The ignore timescale
+            /// </summary>
+            IgnoreTimescale,
+
+            /// <summary>
+            /// The dont destroy on load
+            /// </summary>
+            DontDestroyOnLoad,
+
+            /// <summary>
+            /// The copy
+            /// </summary>
+            Copy,
+
+            /// <summary>
+            /// The paste
+            /// </summary>
+            Paste
+        }
+    }
+}
+
+namespace UnityInputConverter.YamlDotNet.Core.Events
+{
+    /// <summary>
+    /// Specifies the style of a mapping.
+    /// </summary>
+    public enum MappingStyle
+    {
+        /// <summary>
+        /// Let the emitter choose the style.
+        /// </summary>
+        Any,
+
+        /// <summary>
+        /// The block mapping style.
+        /// </summary>
+        Block,
+
+        /// <summary>
+        /// The flow mapping style.
+        /// </summary>
+        Flow
+    }
+
+    /// <summary>
+    /// Specifies the style of a sequence.
+    /// </summary>
+    public enum SequenceStyle
+    {
+        /// <summary>
+        /// Let the emitter choose the style.
+        /// </summary>
+        Any,
+
+        /// <summary>
+        /// The block sequence style.
+        /// </summary>
+        Block,
+
+        /// <summary>
+        /// The flow sequence style.
+        /// </summary>
+        Flow
+    }
+}
+
+namespace UnityInputConverter.YamlDotNet.Core
+{
+    /// <summary>
+    /// Specifies the style of a YAML scalar.
+    /// </summary>
+    public enum ScalarStyle
+    {
+        /// <summary>
+        /// Let the emitter choose the style.
+        /// </summary>
+        Any,
+
+        /// <summary>
+        /// The plain scalar style.
+        /// </summary>
+        Plain,
+
+        /// <summary>
+        /// The single-quoted scalar style.
+        /// </summary>
+        SingleQuoted,
+
+        /// <summary>
+        /// The double-quoted scalar style.
+        /// </summary>
+        DoubleQuoted,
+
+        /// <summary>
+        /// The literal scalar style.
+        /// </summary>
+        Literal,
+
+        /// <summary>
+        /// The folded scalar style.
+        /// </summary>
+        Folded,
+    }
+}
+
+namespace UnityInputConverter.YamlDotNet.RepresentationModel
+{
+    /// <summary>
+    /// Specifies the type of node in the representation model.
+    /// </summary>
+    public enum YamlNodeType
+    {
+        /// <summary>
+        /// The node is a <see cref="YamlAliasNode"/>.
+        /// </summary>
+        Alias,
+
+        /// <summary>
+        /// The node is a <see cref="YamlMappingNode"/>.
+        /// </summary>
+        Mapping,
+
+        /// <summary>
+        /// The node is a <see cref="YamlScalarNode"/>.
+        /// </summary>
+        Scalar,
+
+        /// <summary>
+        /// The node is a <see cref="YamlSequenceNode"/>.
+        /// </summary>
+        Sequence
+    }
+}
+
+namespace UnityInputConverter.YamlDotNet.Serialization
+{
+    /// <summary>
+    /// Options that control the serialization process.
+    /// </summary>
+    [Flags]
+    public enum SerializationOptions
+    {
+        /// <summary>
+        /// Serializes using the default options
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Ensures that it will be possible to deserialize the serialized objects.
+        /// </summary>
+        Roundtrip = 1,
+
+        /// <summary>
+        /// If this flag is specified, if the same object appears more than once in the
+        /// serialization graph, it will be serialized each time instead of just once.
+        /// </summary>
+        /// <remarks>
+        /// If the serialization graph contains circular references and this flag is set,
+        /// a StackOverflowException will be thrown.
+        /// If this flag is not set, there is a performance penalty because the entire
+        /// object graph must be walked twice.
+        /// </remarks>
+        DisableAliases = 2,
+
+        /// <summary>
+        /// Forces every value to be serialized, even if it is the default value for that type.
+        /// </summary>
+        EmitDefaults = 4,
+
+        /// <summary>
+        /// Ensures that the result of the serialization is valid JSON.
+        /// </summary>
+        JsonCompatible = 8,
+
+        /// <summary>
+        /// Use the static type of values instead of their actual type.
+        /// </summary>
+        DefaultToStaticType = 16,
     }
 }

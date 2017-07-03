@@ -35,6 +35,8 @@ namespace Lerp2Raw
         /// </summary>
         public static Queue<Type> typePool = new Queue<Type>();
 
+        private bool localIsPlaying;
+
         [InitializeOnLoadMethod]
         private static void OnLoadMethods()
         {
@@ -56,6 +58,7 @@ namespace Lerp2Raw
         public void Awake()
         {
             me = this;
+            LerpedCore.isEditor = true;
         }
 
         /// <summary>
@@ -63,14 +66,17 @@ namespace Lerp2Raw
         /// </summary>
         public void Update()
         {
+            if (localIsPlaying != LerpedCore.isPlaying)
+                EditorApplication.isPlaying = LerpedCore.isPlaying;
+
             if (!EditorApplication.isPlayingOrWillChangePlaymode)
-            {
                 if (typePool.Count > 0)
                 {
                     Type type = typePool.Dequeue();
                     gameObject.AddComponent(type);
                 }
-            }
+
+            localIsPlaying = LerpedCore.isPlaying;
         }
 
         /// <summary>
