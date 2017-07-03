@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Lerp2API.Controllers.PersonView;
+using UnityEngine;
 
 namespace Lerp2API.Hepers.Unity_Extensions.Utils
 {
@@ -21,6 +22,25 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
                     _p = GameObject.FindGameObjectWithTag("Player");
                 return _p;
             }
+        }
+
+        public static Transform subFirstObject
+        {
+            get
+            {
+                return player.transform.GetChild(0);
+            }
+        }
+
+        public static PersonView GetCurView()
+        {
+            if (player == null)
+            {
+                Debug.LogWarning("Please, define a player by setting the tag to a gameObject.");
+                return default(PersonView);
+            }
+
+            return player.GetComponent("FirstPersonController") != null ? PersonView.First : PersonView.Third;
         }
     }
 }

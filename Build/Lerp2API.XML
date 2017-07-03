@@ -2406,13 +2406,6 @@
             </summary>
             <param name="player">The player.</param>
         </member>
-        <member name="M:Lerp2API.Hepers.Unity_Extensions.Utils.CharacterUtils.Init(UnityEngine.GameObject,UnityEngine.GameObject)">
-            <summary>
-            Initializes the specified first person.
-            </summary>
-            <param name="firstPerson">The first person.</param>
-            <param name="thirdPerson">The third person.</param>
-        </member>
         <member name="M:Lerp2API.Hepers.Unity_Extensions.Utils.CharacterUtils.ToggleControl">
             <summary>
             Toggles the control.

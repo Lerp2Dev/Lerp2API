@@ -651,11 +651,11 @@
             </summary>
             <seealso cref="T:UnityEditor.EditorWindow" />
         </member>
-        <member name="M:Lerp2API.Utility.DummyEditor.SaveEditorSkin(UnityEditor.EditorSkin)">
+        <member name="M:Lerp2API.Utility.DummyEditor.SaveEditorSkin(UnityEditor.MenuCommand)">
             <summary>
             Saves the editor skin.
             </summary>
-            <param name="es">The es.</param>
+            <param name="command">The command.</param>
         </member>
         <member name="T:GenericMenuExtensions">
             <summary>

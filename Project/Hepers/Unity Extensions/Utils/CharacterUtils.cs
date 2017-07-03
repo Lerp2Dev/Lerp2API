@@ -1,6 +1,4 @@
 ﻿using Lerp2API.Controllers.PersonView;
-using Lerp2Assets.Characters.FirstPerson;
-using Lerp2Assets.Characters.ThirdPerson;
 using UnityEngine;
 
 namespace Lerp2API.Hepers.Unity_Extensions.Utils
@@ -15,11 +13,34 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         /// </summary>
         public static bool isInit;
 
-        private static FirstPersonController fControl;
+        private static MonoBehaviour fControl
+        {
+            get
+            {
+                if (playerRef != null)
+                    return (MonoBehaviour)firstPerson.GetComponent("FirstPersonController");
+                return (MonoBehaviour)player.GetComponent("FirstPersonController");
+            }
+        }
 
-        private static ThirdPersonUserControl tControl;
+        private static MonoBehaviour tControl
+        {
+            get
+            {
+                if (playerRef != null)
+                    return (MonoBehaviour)thirdPerson.GetComponent("ThirdPersonUserControl");
+                return (MonoBehaviour)PlayerUtils.player.GetComponent("ThirdPersonUserControl");
+            }
+        }
+
         private static Animator anim;
         private static Rigidbody body;
+
+        private static bool freezed;
+        private static Transform playerRef;
+
+        private static GameObject firstPerson,
+                                  thirdPerson;
 
         /// <summary>
         /// Gets a value indicating whether this instance is controlled.
@@ -29,10 +50,7 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         {
             get
             {
-                if (curView == PersonView.Third)
-                    return tControl.enabled;
-                else
-                    return fControl.enabled;
+                return !freezed;
             }
         }
 
@@ -40,27 +58,22 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         /// Initializes the specified player.
         /// </summary>
         /// <param name="player">The player.</param>
-        public static void Init(Transform player)
+        public static void Init(Transform player = null)
         {
-            Init(player.Find("FirstPerson").gameObject, player.Find("ThirdPerson").gameObject);
-        }
+            if (player == null)
+                player = PlayerUtils.player.transform;
 
-        /// <summary>
-        /// Initializes the specified first person.
-        /// </summary>
-        /// <param name="firstPerson">The first person.</param>
-        /// <param name="thirdPerson">The third person.</param>
-        public static void Init(GameObject firstPerson, GameObject thirdPerson)
-        {
-            if (firstPerson == null || thirdPerson == null)
+            playerRef = player;
+
+            firstPerson = player.Find("FirstPerson").gameObject;
+            thirdPerson = player.Find("ThirdPerson").gameObject;
+
+            if (!(player != null && firstPerson != null && thirdPerson != null))
             {
                 Debug.LogError("Passed player is null.");
                 return;
             }
 
-            fControl = firstPerson.GetComponent<FirstPersonController>();
-
-            tControl = thirdPerson.GetComponent<ThirdPersonUserControl>();
             anim = thirdPerson.GetComponent<Animator>();
             body = thirdPerson.GetComponent<Rigidbody>();
 
@@ -73,22 +86,22 @@ namespace Lerp2API.Hepers.Unity_Extensions.Utils
         public static void ToggleControl()
         {
             //Tengo que parar el movimiento. O poner la animación por el primer frame, que viene a ser lo mismo (I have to)
-            if (fControl == null || tControl == null)
-            {
-                Debug.LogError("Player object is null.");
-                return;
-            }
+            //Ya no hace falta salirse de aqui si los controladores son nulos, porque el tControl y el fControl se obtiene de otra forma, de hecho, en el asset de Ballisitic Physics ya le puedo meter el script de los Standard Assets
 
-            if (curView == PersonView.Third)
+            freezed = !freezed;
+
+            PersonView view = playerRef == null ? PlayerUtils.GetCurView() : curView;
+
+            if (view == PersonView.Third)
             {
-                tControl.enabled = !tControl.enabled;
-                anim.speed = tControl.enabled ? 1 : 0;
-                if (!tControl.enabled)
+                tControl.enabled = !freezed;
+                anim.speed = freezed ? 1 : 0;
+                if (!freezed)
                     anim.Play(anim.GetCurrentAnimatorStateInfo(0).fullPathHash, -1, 0);
-                body.constraints = tControl.enabled ? RigidbodyConstraints.FreezeRotation : RigidbodyConstraints.FreezeAll;
+                body.constraints = freezed ? RigidbodyConstraints.FreezeRotation : RigidbodyConstraints.FreezeAll;
             }
             else
-                fControl.enabled = !fControl.enabled;
+                fControl.enabled = !freezed;
         }
     }
 }
