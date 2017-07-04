@@ -370,7 +370,9 @@
     <Compile Include="Utility\FileBrowser.cs" />
     <Compile Include="Utility\GameLoopEntry.cs" />
     <Compile Include="Utility\GUILayoutx.cs" />
+    <Compile Include="Utility\LerpedInputs.cs" />
     <Compile Include="Utility\MeshSerializer.cs" />
+    <Compile Include="Utility\RequiredInspectorItems.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2Constants.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2Exception.cs" />

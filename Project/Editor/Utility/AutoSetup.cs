@@ -26,26 +26,25 @@ namespace Lerp2APIEditor.Utility
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 return;
 
-            foreach (RequiredData data in Enum.GetValues(typeof(RequiredData)))
+            foreach (RequiredData dataType in Enum.GetValues(typeof(RequiredData)))
             {
-                if (data == RequiredData.Axis)
+                object[] rawData = null; //Aqui vendria bien hacer unos cuantos polimorfismos...
+                if (!GetRequiredData(dataType, out rawData))
                     return;
-                string[] reqData = null; //Aqui vendria bien hacer unos cuantos polimorfismos...
-                if (!GetRequiredData(data, out reqData))
-                    return;
-                if (!GetDisabledData(data) && reqData.Any(x => !CheckData(x, data)))
+                IEnumerable<string> reqData = ((NamedData[])rawData).Select(z => z.Name),
+                                    neededData = reqData.Where(x => !CheckData(x, dataType));
+                if (!GetDisabledData(dataType) && neededData.Count() > 0)
                 {
-                    string[] r = reqData.Where(y => !y.CheckTag()).ToArray();
-                    int x = EditorUtility.DisplayDialogComplex("Project message", string.Format("There are unsetted tags, do you want to define them automatically? (Required tags: {0})", string.Join(", ", r)), "Ok", "No", "Never");
+                    int x = EditorUtility.DisplayDialogComplex("Project message", string.Format("There are unsetted tags, do you want to define them automatically? (Required tags: {0})", string.Join(", ", reqData.ToArray())), "Ok", "No", "Never");
                     switch (x)
                     {
                         case 0:
-                            foreach (string s in r)
-                                s.DefineTag();
+                            foreach (string dataValue in reqData)
+                                DefineData(dataValue, dataType);
                             break;
 
                         case 2:
-                            LerpedCore.SetBool(LerpedCore.disableTagCheck, true);
+                            SetDataState(dataType, true);
                             EditorUtility.DisplayDialog("Project message", "You disabled this message, now you have to set the tags manually.", "Ok");
                             break;
                     }
@@ -58,9 +57,13 @@ namespace Lerp2APIEditor.Utility
         /// </summary>
         /// <param name="tags">The tags.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        public static bool GetTags(out string[] tags)
+        public static bool GetTags(out NamedData[] tags)
         {
-            return GetRequiredData(RequiredData.Tags, out tags);
+            object[] objs;
+            bool r = GetRequiredData(RequiredData.Tags, out objs);
+            tags = (NamedData[])objs;
+            return r;
+            //return GetRequiredData(RequiredData.Tags, out tags);
         }
 
         /// <summary>
@@ -68,12 +71,16 @@ namespace Lerp2APIEditor.Utility
         /// </summary>
         /// <param name="layers">The layers.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        public static bool GetLayers(out string[] layers)
+        public static bool GetLayers(out LayerData[] layers)
         {
-            return GetRequiredData(RequiredData.Layers, out layers);
+            object[] objs;
+            bool r = GetRequiredData(RequiredData.Layers, out objs);
+            layers = (LayerData[])objs;
+            return r;
         }
 
-        private static bool GetAxis(out string[][] axis)
+        //Esto se hace por otro lado
+        /*private static bool GetAxis(out AxisData[] axis)
         {
             string[] rawData;
             bool r = GetRequiredData(RequiredData.Axis, out rawData);
@@ -82,7 +89,7 @@ namespace Lerp2APIEditor.Utility
                 arr.Add(rawData[i].Split(';'));
             axis = arr.ToArray();
             return r;
-        }
+        }*/
 
         private static bool CheckData(string name, RequiredData data)
         {
@@ -111,7 +118,7 @@ namespace Lerp2APIEditor.Utility
             }
         }
 
-        private static bool GetRequiredData(RequiredData rData, out string[] data)
+        private static bool GetRequiredData(RequiredData rData, out object[] data)
         {
             FileInfo[] files = new DirectoryInfo(Application.dataPath).GetFiles(GetFileNameFromData(rData), SearchOption.AllDirectories);
             List<string> reqData = new List<string>();
@@ -136,9 +143,6 @@ namespace Lerp2APIEditor.Utility
 
                 case RequiredData.Layers:
                     return "RequiredLayers.txt";
-
-                case RequiredData.Axis:
-                    return "RequiredAxis.txt";
             }
             return "";
         }
@@ -152,11 +156,22 @@ namespace Lerp2APIEditor.Utility
 
                 case RequiredData.Layers:
                     return LerpedCore.GetBool(LerpedCore.disableLayerCheck);
-
-                case RequiredData.Axis:
-                    return LerpedCore.GetBool(LerpedCore.disableAxisCheck);
             }
             return true;
+        }
+
+        private static void SetDataState(RequiredData rData, bool enabled)
+        {
+            switch (rData)
+            {
+                case RequiredData.Tags:
+                    LerpedCore.SetBool(LerpedCore.disableTagCheck, enabled);
+                    break;
+
+                case RequiredData.Layers:
+                    LerpedCore.SetBool(LerpedCore.disableLayerCheck, enabled);
+                    break;
+            }
         }
     }
 }

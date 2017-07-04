@@ -1,4 +1,5 @@
 ﻿using Lerp2API;
+using Lerp2API.Utility;
 using System.IO;
 using UnityEngine;
 using Debug = Lerp2API._Debug.Debug;
@@ -15,6 +16,7 @@ namespace Lerp2Raw
         /// Me
         /// </summary>
         public static LerpedHook me;
+
         /// <summary>
         /// The m run console at play event
         /// </summary>
@@ -35,10 +37,12 @@ namespace Lerp2Raw
                     /// The m disable server socket
                     /// </summary>
                     m_disableServerSocket;
+
         /// <summary>
         /// The m definition log path
         /// </summary>
         public string m_defLogPath = "";
+
         private void Awake() //This must be onenable, only for hook log
         {
             me = this;
@@ -52,13 +56,20 @@ namespace Lerp2Raw
             if (m_runConsoleAtPlayEvent) ConsoleServer.StartConsole(!string.IsNullOrEmpty(m_defLogPath) ? m_defLogPath : Path.Combine(Application.dataPath, LerpedCore.defaultLogFilePath));
         }
 
+        private void OnEnable()
+        {
+            LerpedInputs.LoadAxis();
+        }
+
         private void OnDisable()
         {
+            LerpedInputs.SaveAxis();
+
             //UnityEngine.Debug.Log("Unhooking log!");
             Debug.UnhookLog();
 
             //Aquí tengo que guardar todo y mandarle la solicitud a la consola
-            if(m_runConsoleAtPlayEvent)
+            if (m_runConsoleAtPlayEvent)
                 ConsoleServer.CloseConsole();
         }
     }

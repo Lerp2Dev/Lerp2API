@@ -4303,11 +4303,6 @@
             The layers
             </summary>
         </member>
-        <member name="F:Lerp2API.Utility.RequiredData.Axis">
-            <summary>
-            The axis
-            </summary>
-        </member>
         <member name="T:Lerp2API.Utility.CSG.CSGType">
             <summary>
             Enum CSGType

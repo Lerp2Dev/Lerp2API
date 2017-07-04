@@ -908,12 +908,7 @@ namespace Lerp2API.Utility
         /// <summary>
         /// The layers
         /// </summary>
-        Layers,
-
-        /// <summary>
-        /// The axis
-        /// </summary>
-        Axis
+        Layers
     }
 }
 
