@@ -28,30 +28,48 @@ namespace Lerp2API.Utility
     [Serializable]
     public class ButtonData : NamedData
     {
-        public KeyCode Positive;
+        public KeyCode PrimaryKey,
+                       SecondKey;
 
-        public ButtonData(string n, KeyCode p)
+        public ButtonData(string n, KeyCode pk, KeyCode sk)
             : base(n)
         {
-            Positive = p;
+            PrimaryKey = pk;
+            SecondKey = sk;
         }
     }
 
     [Serializable]
-    public class AxisData : ButtonData
+    public class AxisData : NamedData
     {
         public KeyCode Positive,
-                       Negative;
+                       Negative,
+                       AltPositive,
+                       AltNegative;
 
-        public float Sensibility;
+        public float Sensibility,
+                     Gravity;
+
         public bool Invert;
 
         public AxisData(string name, KeyCode p, KeyCode n, float s, bool inv)
-            : base(name, p)
+            : base(name)
         {
             Positive = p;
             Negative = n;
             Sensibility = s;
+            Invert = inv;
+        }
+
+        public AxisData(string name, KeyCode p, KeyCode n, KeyCode ap, KeyCode an, float s, float g, bool inv)
+            : base(name)
+        {
+            Positive = p;
+            Negative = n;
+            AltPositive = ap;
+            AltNegative = an;
+            Sensibility = s;
+            Gravity = g;
             Invert = inv;
         }
     }

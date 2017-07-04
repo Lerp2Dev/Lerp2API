@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lerp2API.Utility;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using UnityEditor;
@@ -172,6 +174,28 @@ namespace Lerp2APIEditor
 #endif
             // and to save the changes
             tagManager.ApplyModifiedProperties();
+        }
+
+        public static NamedData[] GetDefinedTags()
+        {
+            List<NamedData> tags = new List<NamedData>();
+            for (int i = 0; i < tagsProp.arraySize; ++i)
+            {
+                SerializedProperty sp = layersProp.GetArrayElementAtIndex(i);
+                tags.Add(new NamedData(sp.stringValue));
+            }
+            return tags.ToArray();
+        }
+
+        public static LayerData[] GetDefinedLayers()
+        {
+            List<LayerData> layers = new List<LayerData>();
+            for (int i = 8; i < tagsProp.arraySize - 8; ++i)
+            {
+                SerializedProperty sp = layersProp.GetArrayElementAtIndex(i);
+                layers.Add(new LayerData(sp.stringValue, i));
+            }
+            return layers.ToArray();
         }
 
         #endregion "Editor Extensions"

@@ -12,6 +12,7 @@ namespace Lerp2APIEditor.Utility
 {
     /// <summary>
     /// Class AutoSetup.
+    /// Load/Save Tags & Layers
     /// </summary>
     public class AutoSetup : Editor
     {
@@ -20,19 +21,60 @@ namespace Lerp2APIEditor.Utility
 
         //private static readonly string[] reqTags = new string[5] { "Turret", "Projectile", "Trajectory", "Ejection", "Throwable" };
 
+        private static NamedData[] _tags;
+        private static LayerData[] _layers;
+
+        public static NamedData[] Tags
+        {
+            get
+            {
+                if (_tags == null)
+                    _tags = JsonUtility.FromJson<NamedData[]>(File.ReadAllText(GetFileNameFromData(RequiredData.Tags)));
+                return _tags;
+            }
+        }
+
+        public static LayerData[] Layers
+        {
+            get
+            {
+                if (_layers == null)
+                    _layers = JsonUtility.FromJson<LayerData[]>(File.ReadAllText(GetFileNameFromData(RequiredData.Layers)));
+                return _layers;
+            }
+        }
+
         [DidReloadScripts]
         private static void OnScriptRecompile()
         { //En este mensaje si no estan los tags voy a mostrarlo, voy a decir q si los quieres añadir
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 return;
 
+            //Get unloaded Tags & Layers
             foreach (RequiredData dataType in Enum.GetValues(typeof(RequiredData)))
             {
                 object[] rawData = null; //Aqui vendria bien hacer unos cuantos polimorfismos...
                 if (!GetRequiredData(dataType, out rawData))
                     return;
+
                 IEnumerable<string> reqData = ((NamedData[])rawData).Select(z => z.Name),
                                     neededData = reqData.Where(x => !CheckData(x, dataType));
+
+                //Before we replace anything, we will save the new Tags & Layers
+
+                object[] newData = GetDefinedData(dataType);
+                int i = 0;
+
+                foreach (object data in newData)
+                    if (!reqData.Contains(GetDataName(dataType, data)))
+                    {
+                        AddData(dataType, data);
+                        ++i;
+                    }
+
+                if (i > 0) //If it was modified then update it.
+                    SaveData(dataType);
+
                 if (!GetDisabledData(dataType) && neededData.Count() > 0)
                 {
                     int x = EditorUtility.DisplayDialogComplex("Project message", string.Format("There are unsetted tags, do you want to define them automatically? (Required tags: {0})", string.Join(", ", reqData.ToArray())), "Ok", "No", "Never");
@@ -79,17 +121,52 @@ namespace Lerp2APIEditor.Utility
             return r;
         }
 
-        //Esto se hace por otro lado
-        /*private static bool GetAxis(out AxisData[] axis)
+        private static void AddLayer(LayerData data)
         {
-            string[] rawData;
-            bool r = GetRequiredData(RequiredData.Axis, out rawData);
-            List<string[]> arr = new List<string[]>();
-            for (int i = 0; i < rawData.Length; ++i)
-                arr.Add(rawData[i].Split(';'));
-            axis = arr.ToArray();
-            return r;
-        }*/
+            List<LayerData> lList = new List<LayerData>();
+            if (Layers != null)
+                lList = Layers.ToList();
+            lList.Add(data);
+            _layers = lList.ToArray();
+        }
+
+        private static void AddTag(NamedData data)
+        {
+            List<NamedData> tList = new List<NamedData>();
+            if (Layers != null)
+                tList = Tags.ToList();
+            tList.Add(data);
+            _tags = tList.ToArray();
+        }
+
+        private static void AddData(RequiredData data, object obj)
+        {
+            switch (data)
+            {
+                case RequiredData.Layers:
+                    AddLayer((LayerData)obj);
+                    break;
+
+                case RequiredData.Tags:
+                    AddTag((NamedData)obj);
+                    break;
+            }
+        }
+
+        private static void SaveData(RequiredData data)
+        {
+            string path = GetFileNameFromData(data);
+            switch (data)
+            {
+                case RequiredData.Tags:
+                    File.WriteAllText(path, JsonUtility.ToJson(_tags));
+                    break;
+
+                case RequiredData.Layers:
+                    File.WriteAllText(path, JsonUtility.ToJson(_layers));
+                    break;
+            }
+        }
 
         private static bool CheckData(string name, RequiredData data)
         {
@@ -120,31 +197,34 @@ namespace Lerp2APIEditor.Utility
 
         private static bool GetRequiredData(RequiredData rData, out object[] data)
         {
-            FileInfo[] files = new DirectoryInfo(Application.dataPath).GetFiles(GetFileNameFromData(rData), SearchOption.AllDirectories);
-            List<string> reqData = new List<string>();
-            foreach (FileInfo fil in files)
-                foreach (string line in File.ReadAllLines(fil.FullName))
-                    reqData.Add(line);
-            if (reqData.Count == 0)
+            switch (rData)
             {
-                data = null;
-                return false;
+                case RequiredData.Layers:
+                    data = Layers;
+                    break;
+
+                case RequiredData.Tags:
+                    data = Tags;
+                    break;
             }
-            data = reqData.ToArray();
-            return true;
+            data = null;
+            return data != null;
         }
 
         private static string GetFileNameFromData(RequiredData rData)
         {
+            string str = Path.Combine(Application.dataPath, "Lerp2API");
             switch (rData)
             {
                 case RequiredData.Tags:
-                    return "RequiredTags.txt";
+                    str = Path.Combine(str, "RequiredTags.json");
+                    break;
 
                 case RequiredData.Layers:
-                    return "RequiredLayers.txt";
+                    str = Path.Combine(str, "RequiredLayers.json");
+                    break;
             }
-            return "";
+            return str;
         }
 
         private static bool GetDisabledData(RequiredData rData)
@@ -172,6 +252,24 @@ namespace Lerp2APIEditor.Utility
                     LerpedCore.SetBool(LerpedCore.disableLayerCheck, enabled);
                     break;
             }
+        }
+
+        private static object[] GetDefinedData(RequiredData data)
+        {
+            switch (data)
+            {
+                case RequiredData.Tags:
+                    return EditorHelpers.GetDefinedTags();
+
+                case RequiredData.Layers:
+                    return EditorHelpers.GetDefinedLayers();
+            }
+            return null;
+        }
+
+        private static string GetDataName(RequiredData data, object obj)
+        {
+            return ((NamedData)obj).Name;
         }
     }
 }

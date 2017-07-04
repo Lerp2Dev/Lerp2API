@@ -8,6 +8,8 @@ namespace Lerp2API.Utility
 {
     public class LerpedInputs
     {
+        public const string configName = "LerpedConfig";
+
         private static ButtonData[] Buttons;
         private static AxisData[] Axis;
 
@@ -16,7 +18,7 @@ namespace Lerp2API.Utility
 
         public static void LoadAxis()
         {
-            InputManager.CreateInputConfiguration("DefaultConfig");
+            InputManager.CreateInputConfiguration(configName);
             AxisData[] aData = JsonUtility.FromJson<AxisData[]>(File.ReadAllText(axisJsonPath));
             foreach (AxisData axis in aData)
                 AddAxis(axis);
@@ -29,7 +31,7 @@ namespace Lerp2API.Utility
 
         public static void LoadButtons()
         {
-            InputManager.CreateInputConfiguration("DefaultConfig");
+            InputManager.CreateInputConfiguration(configName);
             ButtonData[] bData = JsonUtility.FromJson<ButtonData[]>(File.ReadAllText(buttonJsonPath));
             foreach (ButtonData button in bData)
                 AddButton(button);
@@ -44,6 +46,7 @@ namespace Lerp2API.Utility
         {
             //I have to introducir los nuevos datos del axis aquí en el custom input manager.
             //https://github.com/daemon3000/InputManager/wiki/Key-Remap
+            InputManager.CreateDigitalAxis(configName, data.Name, data.Positive, data.Negative, data.AltPositive, data.AltNegative, data.Gravity, data.Sensibility);
             List<AxisData> aList = new List<AxisData>();
             if (Axis != null)
                 aList = Axis.ToList();
@@ -55,6 +58,7 @@ namespace Lerp2API.Utility
         {
             //I have to introducir los nuevos datos del axis aquí en el custom input manager.
             //https://github.com/daemon3000/InputManager/wiki/Key-Remap
+            InputManager.CreateButton(configName, data.Name, data.PrimaryKey);
             List<ButtonData> bList = new List<ButtonData>();
             if (Axis != null)
                 bList = Buttons.ToList();
