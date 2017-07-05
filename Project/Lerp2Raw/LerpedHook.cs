@@ -58,12 +58,12 @@ namespace Lerp2Raw
 
         private void OnEnable()
         {
-            LerpedInputs.LoadAxis();
+            //LerpedInputs.LoadAxis();
         }
 
         private void OnDisable()
         {
-            LerpedInputs.SaveAxis();
+            //LerpedInputs.SaveAxis();
 
             //UnityEngine.Debug.Log("Unhooking log!");
             Debug.UnhookLog();

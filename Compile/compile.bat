@@ -137,6 +137,23 @@ goto :EOF
 ::Copy everything
 
 :copycontent
+
+IF NOT EXIST "%ProjectPath%" (
+	mkdir "%ProjectPath%"
+)
+
+IF NOT EXIST "%ProjectPath%\Console" (
+	mkdir "%ProjectPath%\Console"
+)
+
+IF NOT EXIST "%ProjectPath%\Editor" (
+	mkdir "%ProjectPath%\Editor"
+)
+
+IF NOT EXIST "%ProjectPath%\AttachedScripts" (
+	mkdir "%ProjectPath%\AttachedScripts"
+)
+
 echo.
 echo ---------------------------------
 echo Copiando los archivos al proyecto

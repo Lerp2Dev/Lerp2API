@@ -7,6 +7,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using Lerp2API.Utility;
+using TeamUtilityEditor.IO.InputManager;
+using UnityInputConverter;
+using TeamUtility.IO;
+using InputConfiguration = TeamUtility.IO.InputConfiguration;
 
 namespace Lerp2APIEditor.Utility
 {
@@ -19,27 +23,87 @@ namespace Lerp2APIEditor.Utility
         //Levarme esto pa la api, sacar los required tags de una suma de archivos. Se buscará por el archivos RequiredTags.txt (en todo el proyecto) y cada linea será un tag más a sumar.
         //Estas mecánicass las tengo que ir explicando poco a poco en una guía o algo (I have to)
 
-        //private static readonly string[] reqTags = new string[5] { "Turret", "Projectile", "Trajectory", "Ejection", "Throwable" };
+        private static AdvancedInputEditor advInputEditor;
+
+        [MenuItem("Lerp2Dev Team Tools/Force to apply the Custom Input Manager as default...")]
+        private static void ForceCustomInputManager()
+        {
+            string key = string.Concat(PlayerSettings.companyName, ".", PlayerSettings.productName, ".InputManager.StartupWarning"),
+                   inputManagerPath = Path.Combine(Path.GetDirectoryName(Application.dataPath), "ProjectSettings/InputManager.asset"),
+                   exportPath = Path.Combine(Application.dataPath, "Lerp2API/unity_input_export.xml");
+
+            if (!EditorPrefs.GetBool(key, false))
+            {
+                File.Copy(inputManagerPath, Path.Combine(Application.dataPath, "Lerp2API/InputManager.yml"));
+
+                //We create a Input manager script
+                MenuCommands.CreateInputManager();
+
+                //Then we export the Old Settings
+                InputConverter inputConverter = new InputConverter();
+                inputConverter.ConvertUnityInputManager(inputManagerPath, exportPath);
+                inputConverter.GenerateDefaultUnityInputManager(inputManagerPath); //Overwrite default input
+            }
+
+            //Now import this new settings.
+            InputManager manager = GameObject.Find("Input Manager").GetComponent<InputManager>();
+
+            if (manager != null && manager.inputConfigurations != null && manager.inputConfigurations.Any(x => x.name == LerpedInputs.configName))
+                return;
+
+            List<InputConfiguration> configs = new List<InputConfiguration>();
+
+            InputLoaderXML inputLoader = new InputLoaderXML(exportPath);
+            var parameters = inputLoader.Load();
+            if (parameters.inputConfigurations != null && parameters.inputConfigurations.Count > 0)
+                foreach (var config in parameters.inputConfigurations)
+                {
+                    if (config.name == "Unity-Imported")
+                        config.name = LerpedInputs.configName;
+                    configs.Add(config);
+                }
+
+            if (configs != null && configs.Count > 0)
+                manager.inputConfigurations.AddRange(configs);
+        }
 
         private static NamedData[] _tags;
         private static LayerData[] _layers;
 
+        /// <summary>
+        /// Gets the tags.
+        /// </summary>
+        /// <value>The tags.</value>
         public static NamedData[] Tags
         {
             get
             {
                 if (_tags == null)
-                    _tags = JsonUtility.FromJson<NamedData[]>(File.ReadAllText(GetFileNameFromData(RequiredData.Tags)));
+                {
+                    string path = GetFileNameFromData(RequiredData.Tags);
+                    if (!File.Exists(path))
+                        File.WriteAllText(path, JsonUtility.ToJson(EditorHelpers.GetDefinedTags(), true));
+                    _tags = JsonUtility.FromJson<NamedData[]>(File.ReadAllText(path));
+                }
                 return _tags;
             }
         }
 
+        /// <summary>
+        /// Gets the layers.
+        /// </summary>
+        /// <value>The layers.</value>
         public static LayerData[] Layers
         {
             get
             {
                 if (_layers == null)
+                {
+                    string path = GetFileNameFromData(RequiredData.Layers);
+                    if (!File.Exists(path))
+                        File.WriteAllText(path, JsonUtility.ToJson(EditorHelpers.GetDefinedLayers(), true));
                     _layers = JsonUtility.FromJson<LayerData[]>(File.ReadAllText(GetFileNameFromData(RequiredData.Layers)));
+                }
                 return _layers;
             }
         }

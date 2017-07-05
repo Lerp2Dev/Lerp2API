@@ -35,7 +35,7 @@ namespace TeamUtilityEditor.IO.InputManager
     public static class MenuCommands
     {
         [MenuItem("Lerp2Dev Team Tools/Input Manager/Create Input Manager", false, 2)]
-        private static void CreateInputManager()
+        public static void CreateInputManager()
         {
             GameObject gameObject = new GameObject("Input Manager");
             gameObject.AddComponent<TeamUtility.IO.InputManager>();

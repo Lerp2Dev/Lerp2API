@@ -4880,6 +4880,170 @@
             </summary>
             <param name="i">The i.</param>
         </member>
+        <member name="T:Lerp2API.Utility.LerpedInputs">
+            <summary>
+            Class LerpedInputs.
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.LerpedInputs.configName">
+            <summary>
+            The configuration name
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.LoadAxis">
+            <summary>
+            Loads the axis.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.SaveAxis">
+            <summary>
+            Saves the axis.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.LoadButtons">
+            <summary>
+            Loads the buttons.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.SaveButtons">
+            <summary>
+            Saves the buttons.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.AddAxis(Lerp2API.Utility.AxisData)">
+            <summary>
+            Adds the axis.
+            </summary>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.LerpedInputs.AddButton(Lerp2API.Utility.ButtonData)">
+            <summary>
+            Adds the button.
+            </summary>
+            <param name="data">The data.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.NamedData">
+            <summary>
+            Class NamedData.
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.NamedData.Name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.NamedData.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.NamedData"/> class.
+            </summary>
+            <param name="n">The n.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.LayerData">
+            <summary>
+            Class LayerData.
+            </summary>
+            <seealso cref="T:Lerp2API.Utility.NamedData" />
+        </member>
+        <member name="F:Lerp2API.Utility.LayerData.Layer">
+            <summary>
+            The layer
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.LayerData.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.LayerData"/> class.
+            </summary>
+            <param name="n">The n.</param>
+            <param name="l">The l.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.ButtonData">
+            <summary>
+            Class ButtonData.
+            </summary>
+            <seealso cref="T:Lerp2API.Utility.NamedData" />
+        </member>
+        <member name="F:Lerp2API.Utility.ButtonData.PrimaryKey">
+            <summary>
+            The primary key
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.ButtonData.SecondKey">
+            <summary>
+            The primary key
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.ButtonData.#ctor(System.String,UnityEngine.KeyCode,UnityEngine.KeyCode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.ButtonData"/> class.
+            </summary>
+            <param name="n">The n.</param>
+            <param name="pk">The pk.</param>
+            <param name="sk">The sk.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.AxisData">
+            <summary>
+            Class AxisData.
+            </summary>
+            <seealso cref="T:Lerp2API.Utility.NamedData" />
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.Positive">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.Negative">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.AltPositive">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.AltNegative">
+            <summary>
+            The positive
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.Sensibility">
+            <summary>
+            The sensibility
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.Gravity">
+            <summary>
+            The sensibility
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AxisData.Invert">
+            <summary>
+            The invert
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.AxisData.#ctor(System.String,UnityEngine.KeyCode,UnityEngine.KeyCode,System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.AxisData"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="p">The p.</param>
+            <param name="n">The n.</param>
+            <param name="s">The s.</param>
+            <param name="inv">if set to <c>true</c> [inv].</param>
+        </member>
+        <member name="M:Lerp2API.Utility.AxisData.#ctor(System.String,UnityEngine.KeyCode,UnityEngine.KeyCode,UnityEngine.KeyCode,UnityEngine.KeyCode,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.AxisData"/> class.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="p">The p.</param>
+            <param name="n">The n.</param>
+            <param name="ap">The ap.</param>
+            <param name="an">An.</param>
+            <param name="s">The s.</param>
+            <param name="g">The g.</param>
+            <param name="inv">if set to <c>true</c> [inv].</param>
+        </member>
         <member name="T:Lerp2API.Utility.TextureUtils">
             <summary>
             Class TextureUtils.

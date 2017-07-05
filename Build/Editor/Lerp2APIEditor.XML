@@ -100,6 +100,18 @@
             <param name="layerName">Name of the layer.</param>
             <param name="layer">The layer.</param>
         </member>
+        <member name="M:Lerp2APIEditor.EditorHelpers.GetDefinedTags">
+            <summary>
+            Gets the defined tags.
+            </summary>
+            <returns>NamedData[].</returns>
+        </member>
+        <member name="M:Lerp2APIEditor.EditorHelpers.GetDefinedLayers">
+            <summary>
+            Gets the defined layers.
+            </summary>
+            <returns>LayerData[].</returns>
+        </member>
         <member name="T:Lerp2APIEditor.EditorReflectionHelpers">
             <summary>
             Class EditorReflectionHelpers.
@@ -230,19 +242,27 @@
             <param name="name">The name.</param>
             <param name="contents">The contents.</param>
         </member>
-        <member name="T:Lerp2APIEditor.Utility.AutoSetup">
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "T:Lerp2APIEditor.Utility.AutoSetup" -->
+        <member name="P:Lerp2APIEditor.Utility.AutoSetup.Tags">
             <summary>
-            Class AutoSetup.
+            Gets the tags.
             </summary>
+            <value>The tags.</value>
         </member>
-        <member name="M:Lerp2APIEditor.Utility.AutoSetup.GetTags(System.String[]@)">
+        <member name="P:Lerp2APIEditor.Utility.AutoSetup.Layers">
+            <summary>
+            Gets the layers.
+            </summary>
+            <value>The layers.</value>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.AutoSetup.GetTags(Lerp2API.Utility.NamedData[]@)">
             <summary>
             Gets the tags.
             </summary>
             <param name="tags">The tags.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         </member>
-        <member name="M:Lerp2APIEditor.Utility.AutoSetup.GetLayers(System.String[]@)">
+        <member name="M:Lerp2APIEditor.Utility.AutoSetup.GetLayers(Lerp2API.Utility.LayerData[]@)">
             <summary>
             Gets the layers.
             </summary>
@@ -7829,6 +7849,41 @@
             Saves the editor skin.
             </summary>
             <param name="command">The command.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility">
+            <summary>
+            Class SharpZibLibUtility.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility.ExtractUnityPackage(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Extracts the unity package.
+            </summary>
+            <param name="gzArchiveName">Name of the gz archive.</param>
+            <param name="destFolder">The dest folder.</param>
+            <param name="packList">The pack list.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.StandardHandler">
+            <summary>
+            Class StandardHandler.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.StandardHandler.ImportAssets(System.String)">
+            <summary>
+            Imports the assets.
+            </summary>
+            <param name="file">The file.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.StandardInstaller">
+            <summary>
+            Class StandardInstaller.
+            </summary>
+            <seealso cref="T:UnityEditor.EditorWindow" />
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.StandardInstaller.me">
+            <summary>
+            Me
+            </summary>
         </member>
         <member name="T:GenericMenuExtensions">
             <summary>

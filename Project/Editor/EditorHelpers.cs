@@ -176,21 +176,29 @@ namespace Lerp2APIEditor
             tagManager.ApplyModifiedProperties();
         }
 
+        /// <summary>
+        /// Gets the defined tags.
+        /// </summary>
+        /// <returns>NamedData[].</returns>
         public static NamedData[] GetDefinedTags()
         {
             List<NamedData> tags = new List<NamedData>();
             for (int i = 0; i < tagsProp.arraySize; ++i)
             {
-                SerializedProperty sp = layersProp.GetArrayElementAtIndex(i);
+                SerializedProperty sp = tagsProp.GetArrayElementAtIndex(i);
                 tags.Add(new NamedData(sp.stringValue));
             }
             return tags.ToArray();
         }
 
+        /// <summary>
+        /// Gets the defined layers.
+        /// </summary>
+        /// <returns>LayerData[].</returns>
         public static LayerData[] GetDefinedLayers()
         {
             List<LayerData> layers = new List<LayerData>();
-            for (int i = 8; i < tagsProp.arraySize - 8; ++i)
+            for (int i = 8; i < layersProp.arraySize - 8; ++i)
             {
                 SerializedProperty sp = layersProp.GetArrayElementAtIndex(i);
                 layers.Add(new LayerData(sp.stringValue, i));

@@ -262,6 +262,9 @@
     <Compile Include="LerpedUpdater.cs" />
     <Compile Include="Menu\DebugManager.cs" />
     <Compile Include="Utility\LerpedShortcuts.cs" />
+    <Compile Include="Utility\StandardInstaller\SharpZibLibUtility.cs" />
+    <Compile Include="Utility\StandardInstaller\StandardHandler.cs" />
+    <Compile Include="Utility\StandardInstaller\StandardInstaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

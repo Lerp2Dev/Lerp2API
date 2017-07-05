@@ -115,7 +115,7 @@ namespace TeamUtilityEditor.IO
             if (_intputConfigurations.isExpanded)
             {
                 EditorGUI.indentLevel++;
-                int arraySize = EditorGUILayout.IntField("Size", _intputConfigurations.arraySize);
+                int arraySize = EditorGUILayout.DelayedIntField("Size", _intputConfigurations.arraySize);
                 if (arraySize != _intputConfigurations.arraySize)
                 {
                     _intputConfigurations.arraySize = arraySize;
@@ -148,7 +148,7 @@ namespace TeamUtilityEditor.IO
             if (axes.isExpanded)
             {
                 EditorGUI.indentLevel++;
-                int arraySize = EditorGUILayout.IntField("Size", axes.arraySize);
+                int arraySize = EditorGUILayout.DelayedIntField("Size", axes.arraySize);
                 if (arraySize != axes.arraySize)
                 {
                     axes.arraySize = arraySize;
