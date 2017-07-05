@@ -18,7 +18,7 @@ namespace Lerp2API.Utility.StandardInstaller
 
         static StandardHandler()
         {
-            if (!File.Exists(Path.Combine(Application.dataPath.Replace("/Assets", ""), ".dontDelete")) && File.Exists(Path.Combine(Application.dataPath, "standardAssets.txt")))
+            if (!EditorPrefs.GetBool(StandardInstaller.EditorKey) && File.Exists(StandardInstaller.TxtFile))
             {
                 if (Directory.Exists(string.Format(EditorApplication.applicationContentsPath.Replace("Data", "{0}"), "Standard Packages")))
                     Debug.LogWarning("You are using an old version of Unity!");
@@ -28,7 +28,7 @@ namespace Lerp2API.Utility.StandardInstaller
                     Debug.LogWarning("Cannot find Standard Assets folder, you may deleted it or you didn't install it or you are using an old version of Unity!");
                     return;
                 }
-                standardAssetsFiles = File.ReadAllLines(Path.Combine(Application.dataPath, "standardAssets.txt"));
+                standardAssetsFiles = File.ReadAllLines(StandardInstaller.TxtFile);
                 foreach (string path in Directory.GetFiles(standardAssetsPath))
                 {
                     string fileName = path.Replace(standardAssetsPath, "").Substring(1);

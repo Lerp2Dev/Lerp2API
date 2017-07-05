@@ -1,5 +1,6 @@
 ﻿using Lerp2API.Hepers.Unity_Extensions;
 using Lerp2API.Hepers.Unity_Extensions.Utils;
+using TeamUtility.IO;
 using UnityEngine;
 
 namespace Lerp2API.Controllers.PersonView
@@ -90,7 +91,7 @@ namespace Lerp2API.Controllers.PersonView
         /// </summary>
         public void Update()
         {
-            if (isLocal && Input.GetKeyDown(changeView))
+            if (isLocal && InputManager.GetKeyDown(changeView))
                 ChangeView();
         }
 

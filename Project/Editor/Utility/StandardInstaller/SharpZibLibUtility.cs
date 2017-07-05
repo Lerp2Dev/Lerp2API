@@ -126,9 +126,8 @@ namespace Lerp2API.Utility.StandardInstaller
                 string lastAsset = PackagesList[0];
                 PackagesList.RemoveAt(0);
                 Debug.Log(string.Format("'{0}' Asset has been imported successfully, continuing with {1}!", lastAsset, PackagesList[0]));
-                string sFile = Path.Combine(Application.dataPath, "standardAssets.txt");
-                var lines = File.ReadAllLines(sFile).Skip(1).ToArray();
-                File.WriteAllLines(sFile, lines);
+                var lines = File.ReadAllLines(StandardInstaller.TxtFile).Skip(1).ToArray();
+                File.WriteAllLines(StandardInstaller.TxtFile, lines);
                 EditorApplication.update -= Update;
                 curIndex = 0;
                 upt = null;
@@ -142,8 +141,9 @@ namespace Lerp2API.Utility.StandardInstaller
                 Moving = false;
                 EditorApplication.UnlockReloadAssemblies();
                 Debug.Log("Importing process has been finished!");
-                File.Delete(Path.Combine(Application.dataPath, "standardAssets.txt"));
-                File.Create(Path.Combine(Application.dataPath.ReplaceLast("Assets", ""), ".dontDelete"));
+                File.Delete(StandardInstaller.TxtFile);
+                StandardInstaller.SetEditorPref();
+                //File.Create(Path.Combine(Application.dataPath.ReplaceLast("Assets", ""), ".dontDelete"));
                 AssetDatabase.Refresh();
             }
         }

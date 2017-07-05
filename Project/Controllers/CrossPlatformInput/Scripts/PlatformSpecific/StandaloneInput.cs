@@ -1,5 +1,6 @@
 using Lerp2Assets.CrossPlatformInput.CrossPlatformInput;
 using System;
+using TeamUtility.IO;
 using UnityEngine;
 
 namespace Lerp2Assets.CrossPlatformInput.PlatformSpecific
@@ -18,7 +19,7 @@ namespace Lerp2Assets.CrossPlatformInput.PlatformSpecific
         /// <returns>System.Single.</returns>
         public override float GetAxis(string name, bool raw)
         {
-            return raw ? Input.GetAxisRaw(name) : Input.GetAxis(name);
+            return raw ? InputManager.GetAxisRaw(name) : InputManager.GetAxis(name);
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace Lerp2Assets.CrossPlatformInput.PlatformSpecific
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool GetButton(string name)
         {
-            return Input.GetButton(name);
+            return InputManager.GetButton(name);
         }
 
         /// <summary>
@@ -38,7 +39,7 @@ namespace Lerp2Assets.CrossPlatformInput.PlatformSpecific
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool GetButtonDown(string name)
         {
-            return Input.GetButtonDown(name);
+            return InputManager.GetButtonDown(name);
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Lerp2Assets.CrossPlatformInput.PlatformSpecific
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool GetButtonUp(string name)
         {
-            return Input.GetButtonUp(name);
+            return InputManager.GetButtonUp(name);
         }
 
         /// <summary>

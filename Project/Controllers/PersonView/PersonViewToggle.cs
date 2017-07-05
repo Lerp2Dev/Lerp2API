@@ -1,5 +1,6 @@
 ﻿using Lerp2API.Hepers.Unity_Extensions.Utils;
 using System;
+using TeamUtility.IO;
 using UnityEngine;
 
 namespace Lerp2API.Controllers.PersonView
@@ -213,7 +214,7 @@ namespace Lerp2API.Controllers.PersonView
         // Update is called once per frame
         private void Update()
         {
-            if (!isLocal && Input.GetKeyDown(changeView)) //If the local script hasn't take the permission, by default you can change it.
+            if (!isLocal && InputManager.GetKeyDown(changeView)) //If the local script hasn't take the permission, by default you can change it.
                 ToggleView();
         }
 

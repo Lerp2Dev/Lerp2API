@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using TeamUtility.IO;
 using UnityEditor;
 using UnityEngine;
 using Debug = Lerp2API._Debug.Debug;
@@ -112,7 +113,7 @@ namespace Lerp2APIEditor
         {
             try
             {
-                Input.GetAxis(axisName);
+                InputManager.GetAxis(axisName);
                 return true;
             }
             catch
@@ -130,7 +131,7 @@ namespace Lerp2APIEditor
         {
             try
             {
-                Input.GetButton(btnName);
+                InputManager.GetButton(btnName);
                 return true;
             }
             catch
