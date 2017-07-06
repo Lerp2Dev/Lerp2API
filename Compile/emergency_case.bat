@@ -54,7 +54,6 @@ IF "%third%" EQU "" (
     )
 ) else (
     echo Going directly to compile everything...
-    set /a "rline=%third%-1"
     call :SelectLine numeric %third% 0 %first% "%second%" 
 )
 goto:EOF
@@ -67,9 +66,8 @@ goto:EOF
 
 echo.
 set /p "line=Which path do you choose? [1-%~1]: "
-set /a "rline=%line%-1"
 
-echo(%line%|findstr "^[-][1-9][0-9]*$ ^[1-9][0-9]*$ ^0$">nul&&call :SelectLine numeric %rline% %~1 %~2 "%~3"||call :SelectLine not_numeric
+echo(%line%|findstr "^[-][1-9][0-9]*$ ^[1-9][0-9]*$ ^0$">nul&&call :SelectLine numeric %line% %~1 %~2 "%~3"||call :SelectLine not_numeric
 goto:EOF
 
 :SelectLine
@@ -80,8 +78,17 @@ goto:EOF
 ::%~4 = Opt
 ::%~5 = Order
 
+set /a "numline=%~2-1"
+
+::Little fix...
+if "%numline%" GTR 0 (
+  set SKIP="skip=%numline% delims="
+) else (
+  set SKIP="delims="
+)
+
 IF "%~1" EQU "numeric" (
-    for /F "skip=%~2 delims=" %%i in (project_path.txt) do (
+    for /F %SKIP% %%i in (project_path.txt) do (
         call :Compiler "%%i" %~4 "%~5"
         goto:EOF
     )

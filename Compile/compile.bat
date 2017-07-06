@@ -177,6 +177,8 @@ copy /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
 
 echo.
 
+echo Copiado todo a %ProjectPath%
+
 goto:EOF
 
 ::Other params that you will need if you modify this code and put new dlls, or maybe, if the dlls aren't found in your hdd
