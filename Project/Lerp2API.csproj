@@ -441,6 +441,36 @@
     <Compile Include="Utility\Triangulator.cs" />
     <Compile Include="Utility\UniqueIdentifiers.cs" />
     <Compile Include="Utility\UnityDictionary.cs" />
+    <Compile Include="Utility\UnityLib\2D\Camera\PixelPerfectCamera.cs" />
+    <Compile Include="Utility\UnityLib\2D\Camera\ScaleCamera.cs" />
+    <Compile Include="Utility\UnityLib\2D\Colliders\ScreenEdgeColliders.cs" />
+    <Compile Include="Utility\UnityLib\2D\Tilemaps\RandomTiles.cs" />
+    <Compile Include="Utility\UnityLib\2D\Tilemaps\TileMap.cs" />
+    <Compile Include="Utility\UnityLib\AssetBundles\AssetBundleLoader.cs" />
+    <Compile Include="Utility\UnityLib\Camera\CameraShake.cs" />
+    <Compile Include="Utility\UnityLib\Camera\CameraSwitcher.cs" />
+    <Compile Include="Utility\UnityLib\Camera\SmoothMouseLook.cs" />
+    <Compile Include="Utility\UnityLib\Camera\WowCamera.cs" />
+    <Compile Include="Utility\UnityLib\Camera\ZoomWithMouse.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\Debug\Timer.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\DrawGLLine.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\Drawing\DrawCrossHair.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\DrawRendererBounds.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\FileSystem\FileSystemWatch.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\FileSystem\OpenExternalFile.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\FPSCounter.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\Screenshot\GrabDesktop.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\String\StringOperationUtil.cs" />
+    <Compile Include="Utility\UnityLib\Helpers\Version\GetVersion.cs" />
+    <Compile Include="Utility\UnityLib\Misc\Messaging\Callback.cs" />
+    <Compile Include="Utility\UnityLib\Misc\Messaging\Messenger.cs" />
+    <Compile Include="Utility\UnityLib\Misc\Messaging\MessengerUnitTest.cs" />
+    <Compile Include="Utility\UnityLib\Misc\MeteorRing.cs" />
+    <Compile Include="Utility\UnityLib\Misc\TexturePixels2Quads.cs" />
+    <Compile Include="Utility\UnityLib\StandardAssets\Effects\ImageEffects\Scripts\ColorCorrectionCurvesLayers.cs" />
+    <Compile Include="Utility\UnityLib\Threading\ThreadPoolTest.cs" />
+    <Compile Include="Utility\UnityLib\Vector3Int.cs" />
+    <Compile Include="Utility\UnityLib\_Internal\PostEffectBase.cs" />
     <Compile Include="Utility\UpdateEventHooks.cs" />
     <Compile Include="Utility\xGUI.cs" />
   </ItemGroup>
@@ -457,6 +487,10 @@
     <Content Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\XBox Controller Clone\xbox_wizard_definition.xml" />
     <Content Include="Utility\CustomInputManager\Source\Resources\input_manager_default_config.xml" />
     <Content Include="Utility\CustomInputManager\Source\Resources\input_manager_project_settings.txt" />
+    <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_DownArrow2.png" />
+    <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_tilemap.png" />
+    <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_tilemap_disabled.png" />
+    <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_UpArrow2.png" />
     <None Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\packages.config" />
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\.gitignore" />
     <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\README.ja-jp.md" />
@@ -471,6 +505,11 @@
     <None Include="Utility\CustomInputManager\Addons\JoystickMapping\GUI\joystick_mapping_gui_skin.guiskin" />
     <None Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\PS3 Controller Clone\ps3_controller.unity" />
     <None Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\XBox Controller Clone\xbox_controller.unity" />
+    <None Include="Utility\UnityLib\2D\Tilemaps\Icons\.gitkeep" />
+    <None Include="Utility\UnityLib\Misc\Messaging\Callback.cs.meta" />
+    <None Include="Utility\UnityLib\Misc\Messaging\Messenger.cs.meta" />
+    <None Include="Utility\UnityLib\Misc\Messaging\MessengerUnitTest.cs.meta" />
+    <None Include="Utility\UnityLib\Misc\Messaging\README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Serializers\unityserializer-ng\Serialization\.gitignore" />

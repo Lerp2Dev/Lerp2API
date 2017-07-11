@@ -266,15 +266,35 @@
     <Compile Include="Utility\LerpedShortcuts.cs" />
     <Compile Include="Utility\ReorderableList\ReorderableDrawer.cs" />
     <Compile Include="Utility\ReorderableList\ReorderableList.cs" />
+    <Compile Include="Utility\SpriteBackgroundRemove.cs" />
     <Compile Include="Utility\StandardInstaller\SharpZibLibUtility.cs" />
     <Compile Include="Utility\StandardInstaller\StandardHandler.cs" />
     <Compile Include="Utility\StandardInstaller\StandardInstaller.cs" />
+    <Compile Include="Utility\UnityLib\2D\TileMaps\RandomTiles.cs" />
+    <Compile Include="Utility\UnityLib\2D\TileMaps\TileMapEditor.cs" />
+    <Compile Include="Utility\UnityLib\2D\TileMaps\TileMapHierarchyHelper.cs" />
+    <Compile Include="Utility\UnityLib\2D\TileMaps\TilemapLayerHelper.cs" />
+    <Compile Include="Utility\UnityLib\BuildProcess\PostProcessBuild.cs" />
+    <Compile Include="Utility\UnityLib\EditorShortCutKeys.cs" />
+    <Compile Include="Utility\UnityLib\Gizmos\DrawCameraFrustumGizmos.cs" />
+    <Compile Include="Utility\UnityLib\GridGenerator\Editor\GridGeneratorEditor.cs" />
+    <Compile Include="Utility\UnityLib\GridGenerator\GridGenerator.cs" />
+    <Compile Include="Utility\UnityLib\SetPivot.cs" />
+    <Compile Include="Utility\UnityLib\SpriteBackgroundRemover.cs" />
+    <Compile Include="Utility\UnityLib\UI\CanvasScalerUtil\CanvasScalerUtil.cs" />
+    <Compile Include="Utility\UnityLib\UI\CanvasScalerUtil\Editor\CanvasScalerUtilEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomDrawers\TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utility\UnityLib\ImageEffects\ColorCorrectionCurvesEditorLayers" />
+    <None Include="Utility\UnityLib\UI\CanvasScalerUtil\CanvasScalerUtil.cs.meta" />
+    <None Include="Utility\UnityLib\UI\CanvasScalerUtil\Editor.meta" />
+    <None Include="Utility\UnityLib\UI\CanvasScalerUtil\Editor\CanvasScalerUtilEditor.cs.meta" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

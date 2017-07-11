@@ -8156,5 +8156,70 @@
              If <paramref name="action"/> is a value of <c>null</c>.
              </exception>
         </member>
+        <member name="T:CBX.Unity.Editors.Editor.TileMapEditor">
+            <summary>
+            Provides a editor for the <see cref="T:CBX.TileMapping.Unity.TileMap"/> component
+            </summary>
+        </member>
+        <member name="F:CBX.Unity.Editors.Editor.TileMapEditor.mouseHitPos">
+            <summary>
+            Holds the location of the mouse hit location
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.OnSceneGUI">
+            <summary>
+            Lets the Editor handle an event in the scene view.
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.OnEnable">
+            <summary>
+            When the <see cref="T:UnityEngine.GameObject"/> is selected set the current tool to the view tool.
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.Draw">
+            <summary>
+            Draws a block at the pre-calculated mouse hit position
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.Erase">
+            <summary>
+            Erases a block at the pre-calculated mouse hit position
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.GetTilePositionFromMouseLocation">
+            <summary>
+            Calculates the location in tile coordinates (Column/Row) of the mouse position
+            </summary>
+            <returns>Returns a <see cref="T:UnityEngine.Vector2"/> type representing the Column and Row where the mouse of positioned over.</returns>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.IsMouseOnLayer">
+            <summary>
+            Returns true or false depending if the mouse is positioned over the tile map.
+            </summary>
+            <returns>Will return true if the mouse is positioned over the tile map.</returns>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.RecalculateMarkerPosition">
+            <summary>
+            Recalculates the position of the marker based on the location of the mouse pointer.
+            </summary>
+        </member>
+        <member name="M:CBX.Unity.Editors.Editor.TileMapEditor.UpdateHitPosition">
+            <summary>
+            Calculates the position of the mouse over the tile map in local space coordinates.
+            </summary>
+            <returns>Returns true if the mouse is over the tile map.</returns>
+        </member>
+        <member name="T:CanvasScalerUtil">
+            <summary>
+            Author: https://github.com/Sacristan
+            Script to hastily create correct canvas scales. Logic handled at editor's side
+            </summary>
+        </member>
+        <member name="T:CanvasScalerUtilEditor">
+            <summary>
+            Author: Girts Kesteris 2017
+            Script to hastily create correct canvas scales. Logic handled at editor's side
+            </summary>
+        </member>
     </members>
 </doc>

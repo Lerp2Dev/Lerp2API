@@ -41207,5 +41207,78 @@
             <param name="saveTangents">if set to <c>true</c> [save tangents].</param>
             <returns>System.Byte[].</returns>
         </member>
+        <member name="M:UnityLibrary.AssetBundleLoader.DownloadAndCache(System.String,System.String)">
+            <summary>
+            asset bundle load and instantiate
+            </summary>
+            <param name="bundleURL">full url to the bundle file</param>
+            <param name="assetName">optional asset name to instantiate from the bundle</param>
+        </member>
+        <member name="T:CBX.TileMapping.Unity.TileMap">
+            <summary>
+            Provides a component for tile mapping.
+            </summary>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.Rows">
+            <summary>
+            Gets or sets the number of rows of tiles.
+            </summary>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.Columns">
+            <summary>
+            Gets or sets the number of columns of tiles.
+            </summary>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.TileWidth">
+            <summary>
+            Gets or sets the value of the tile width.
+            </summary>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.TileHeight">
+            <summary>
+            Gets or sets the value of the tile height.
+            </summary>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.MarkerPosition">
+            <summary>
+            Used by editor components or game logic to indicate a tile location.
+            </summary>
+            <remarks>This will be hidden from the inspector window. See <see cref="T:UnityEngine.HideInInspector"/></remarks>
+        </member>
+        <member name="M:CBX.TileMapping.Unity.TileMap.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CBX.TileMapping.Unity.TileMap"/> class.
+            </summary>
+        </member>
+        <member name="M:CBX.TileMapping.Unity.TileMap.OnDrawGizmosSelected">
+            <summary>
+            When the game object is selected this will draw the grid
+            </summary>
+            <remarks>Only called when in the Unity editor.</remarks>
+        </member>
+        <member name="M:WowCamera.LateUpdate">
+            Camera logic on LateUpdate to only update after all character movement logic has been handled.
+        </member>
+        <member name="T:StringOperationUtil.OptimizedStringOperation">
+            <summary>
+            Using this,you can optimize string concat operation easily.
+            To use this , you should put this on the top of code.
+            ------
+            using StrOpe = StringOperationUtil.OptimizedStringOperation;
+            ------
+            
+            - before code
+            string str = "aaa" + 20 + "bbbb";
+            
+            - after code
+            string str = StrOpe.i + "aaa" + 20 + "bbbb";
+            
+            "StrOpe.i" is for MainThread , do not call from other theads.
+            If "StrOpe.i" is called from Mainthread , reuse same object.
+            
+            You can also use "StrOpe.small" / "StrOpe.medium" / "StrOpe.large" instead of "StrOpe.i". 
+            These are creating instance.
+            </summary>
+        </member>
     </members>
 </doc>
