@@ -255,7 +255,7 @@ namespace Lerp2API.Optimizers
         /// <returns>The result of the conversion.</returns>
         public static explicit operator Color(UnityEngine.Color c)
         {
-            return new Color((byte)(c.r * 255), (byte)(c.g * 255), (byte)(c.b * 255));
+            return new Color((byte)(c.r * 255), (byte)(c.g * 255), (byte)(c.b * 255), (byte)(c.a * 255));
         }
 
         /// <summary>

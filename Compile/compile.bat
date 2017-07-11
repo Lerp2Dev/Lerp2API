@@ -160,6 +160,9 @@ echo Copiando los archivos al proyecto
 echo ---------------------------------
 echo.
 
+echo Copiado todo a %ProjectPath%
+echo.
+
 copy /y "%MAIN_PATH%\Build\Lerp2API.dll" "%ProjectPath%\Lerp2API.dll"
 copy /y "%MAIN_PATH%\Build\Lerp2API.pdb" "%ProjectPath%\Lerp2API.pdb"
 copy /y "%MAIN_PATH%\Build\Lerp2API.xml" "%ProjectPath%\Lerp2API.xml"
@@ -176,8 +179,6 @@ copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp
 copy /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
 
 echo.
-
-echo Copiado todo a %ProjectPath%
 
 goto:EOF
 

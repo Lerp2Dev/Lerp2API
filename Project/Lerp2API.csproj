@@ -372,6 +372,9 @@
     <Compile Include="Utility\GUILayoutx.cs" />
     <Compile Include="Utility\LerpedInputs.cs" />
     <Compile Include="Utility\MeshSerializer.cs" />
+    <Compile Include="Utility\ObjectDictionary.cs" />
+    <Compile Include="Utility\ReorderableList\Attributes\ReorderableAttribute.cs" />
+    <Compile Include="Utility\ReorderableList\ReorderableArray.cs" />
     <Compile Include="Utility\RequiredInspectorItems.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2Constants.cs" />
@@ -437,6 +440,7 @@
     <Compile Include="Utility\TextureUtils.cs" />
     <Compile Include="Utility\Triangulator.cs" />
     <Compile Include="Utility\UniqueIdentifiers.cs" />
+    <Compile Include="Utility\UnityDictionary.cs" />
     <Compile Include="Utility\UpdateEventHooks.cs" />
     <Compile Include="Utility\xGUI.cs" />
   </ItemGroup>
@@ -480,6 +484,7 @@
     <Folder Include="Hepers\Math Extensions\" />
     <Folder Include="Hepers\Reflection Extensions\" />
     <Folder Include="Hepers\Unity Extensions\Serializer\" />
+    <Folder Include="Utility\Binary2Yaml\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

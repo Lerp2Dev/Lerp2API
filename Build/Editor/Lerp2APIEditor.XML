@@ -669,6 +669,122 @@
             Checks for updates.
             </summary>
         </member>
+        <member name="T:Lerp2API.Utility.AssetDefineManager">
+            <summary>
+            Class AssetDefineManager.
+            </summary>
+            <seealso cref="T:UnityEditor.AssetPostprocessor" />
+        </member>
+        <member name="F:Lerp2API.Utility.AssetDefineManager.CustomDefines">
+            <summary>
+            Custom defines to add based on the file to detect the asset by, and the desired platforms
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.assetDetectionFile">
+            <summary>
+            The asset detection file
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.assetDefines">
+            <summary>
+            The asset defines
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.definePlatforms">
+            <summary>
+            The define platforms
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.#ctor(System.String,UnityEditor.BuildTargetGroup[],System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.AssetDefineManager.AssetDefine"/> struct.
+            </summary>
+            <param name="fileToDetectAsset">The file to detect asset.</param>
+            <param name="platformsForDefine">The platforms for define.</param>
+            <param name="definesForAsset">The defines for asset.</param>
+        </member>
+        <member name="P:Lerp2API.Utility.AssetDefineManager.AssetDefine.IsValid">
+            <summary>
+            Returns true if ... is valid.
+            </summary>
+            <value><c>true</c> if this instance is valid; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.Invalid">
+            <summary>
+            The invalid
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.RemoveAllDefines">
+            <summary>
+            Removes all defines.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.AddAllDefines">
+            <summary>
+            Adds all defines.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.AssetDefineManager.AddCompileDefine(System.String,UnityEditor.BuildTargetGroup[])">
+            <summary>
+            Attempts to add a new #define constant to the Player Settings
+            </summary>
+            <param name="newDefineCompileConstant">constant to attempt to define</param>
+            <param name="targetGroups">platforms to add this for (null will add to all platforms)</param>
+        </member>
+        <member name="M:Lerp2API.Utility.AssetDefineManager.RemoveCompileDefine(System.String,UnityEditor.BuildTargetGroup[])">
+            <summary>
+            Attempts to remove a #define constant from the Player Settings
+            </summary>
+            <param name="defineCompileConstant"></param>
+            <param name="targetGroups"></param>
+        </member>
+        <member name="T:Lerp2API.Utility.DummyEditor">
+            <summary>
+            Class DummyEditor.
+            </summary>
+            <seealso cref="T:UnityEditor.EditorWindow" />
+        </member>
+        <member name="M:Lerp2API.Utility.DummyEditor.SaveEditorSkin">
+            <summary>
+            Saves the editor skin.
+            </summary>
+            <param name="command">The command.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility">
+            <summary>
+            Class SharpZibLibUtility.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility.ExtractUnityPackage(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Extracts the unity package.
+            </summary>
+            <param name="gzArchiveName">Name of the gz archive.</param>
+            <param name="destFolder">The dest folder.</param>
+            <param name="packList">The pack list.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.StandardHandler">
+            <summary>
+            Class StandardHandler.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.StandardHandler.ImportAssets(System.String)">
+            <summary>
+            Imports the assets.
+            </summary>
+            <param name="file">The file.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.StandardInstaller">
+            <summary>
+            Class StandardInstaller.
+            </summary>
+            <seealso cref="T:UnityEditor.EditorWindow" />
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.StandardInstaller.me">
+            <summary>
+            Me
+            </summary>
+        </member>
         <member name="T:TeamUtilityEditor.IO.InputEventManagerEditor">
             <summary>
             Class InputEventManagerEditor.
@@ -7768,122 +7884,6 @@
             Initializes a new instance of the <see cref="T:UnityInputConverter.YamlDotNet.Serialization.YamlMemberAttribute" /> class.
             </summary>
             <param name="serializeAs">Specifies that this property should be serialized as the given type, rather than using the actual runtime value's type.</param>
-        </member>
-        <member name="T:Lerp2API.Utility.AssetDefineManager">
-            <summary>
-            Class AssetDefineManager.
-            </summary>
-            <seealso cref="T:UnityEditor.AssetPostprocessor" />
-        </member>
-        <member name="F:Lerp2API.Utility.AssetDefineManager.CustomDefines">
-            <summary>
-            Custom defines to add based on the file to detect the asset by, and the desired platforms
-            </summary>
-        </member>
-        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.assetDetectionFile">
-            <summary>
-            The asset detection file
-            </summary>
-        </member>
-        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.assetDefines">
-            <summary>
-            The asset defines
-            </summary>
-        </member>
-        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.definePlatforms">
-            <summary>
-            The define platforms
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.#ctor(System.String,UnityEditor.BuildTargetGroup[],System.String[])">
-            <summary>
-            Initializes a new instance of the <see cref="T:Lerp2API.Utility.AssetDefineManager.AssetDefine"/> struct.
-            </summary>
-            <param name="fileToDetectAsset">The file to detect asset.</param>
-            <param name="platformsForDefine">The platforms for define.</param>
-            <param name="definesForAsset">The defines for asset.</param>
-        </member>
-        <member name="P:Lerp2API.Utility.AssetDefineManager.AssetDefine.IsValid">
-            <summary>
-            Returns true if ... is valid.
-            </summary>
-            <value><c>true</c> if this instance is valid; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="F:Lerp2API.Utility.AssetDefineManager.AssetDefine.Invalid">
-            <summary>
-            The invalid
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.RemoveAllDefines">
-            <summary>
-            Removes all defines.
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.AssetDefineManager.AssetDefine.AddAllDefines">
-            <summary>
-            Adds all defines.
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.AssetDefineManager.AddCompileDefine(System.String,UnityEditor.BuildTargetGroup[])">
-            <summary>
-            Attempts to add a new #define constant to the Player Settings
-            </summary>
-            <param name="newDefineCompileConstant">constant to attempt to define</param>
-            <param name="targetGroups">platforms to add this for (null will add to all platforms)</param>
-        </member>
-        <member name="M:Lerp2API.Utility.AssetDefineManager.RemoveCompileDefine(System.String,UnityEditor.BuildTargetGroup[])">
-            <summary>
-            Attempts to remove a #define constant from the Player Settings
-            </summary>
-            <param name="defineCompileConstant"></param>
-            <param name="targetGroups"></param>
-        </member>
-        <member name="T:Lerp2API.Utility.DummyEditor">
-            <summary>
-            Class DummyEditor.
-            </summary>
-            <seealso cref="T:UnityEditor.EditorWindow" />
-        </member>
-        <member name="M:Lerp2API.Utility.DummyEditor.SaveEditorSkin">
-            <summary>
-            Saves the editor skin.
-            </summary>
-            <param name="command">The command.</param>
-        </member>
-        <member name="T:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility">
-            <summary>
-            Class SharpZibLibUtility.
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.StandardInstaller.SharpZibLibUtility.ExtractUnityPackage(System.String,System.String,System.Collections.Generic.List{System.String})">
-            <summary>
-            Extracts the unity package.
-            </summary>
-            <param name="gzArchiveName">Name of the gz archive.</param>
-            <param name="destFolder">The dest folder.</param>
-            <param name="packList">The pack list.</param>
-        </member>
-        <member name="T:Lerp2API.Utility.StandardInstaller.StandardHandler">
-            <summary>
-            Class StandardHandler.
-            </summary>
-        </member>
-        <member name="M:Lerp2API.Utility.StandardInstaller.StandardHandler.ImportAssets(System.String)">
-            <summary>
-            Imports the assets.
-            </summary>
-            <param name="file">The file.</param>
-        </member>
-        <member name="T:Lerp2API.Utility.StandardInstaller.StandardInstaller">
-            <summary>
-            Class StandardInstaller.
-            </summary>
-            <seealso cref="T:UnityEditor.EditorWindow" />
-        </member>
-        <member name="F:Lerp2API.Utility.StandardInstaller.StandardInstaller.me">
-            <summary>
-            Me
-            </summary>
         </member>
         <member name="T:GenericMenuExtensions">
             <summary>

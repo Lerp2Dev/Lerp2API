@@ -18,7 +18,7 @@ namespace Lerp2API.Utility
         /// <param name="command">The command.</param>
         [MenuItem("Lerp2Dev Team Tools/Save Scene Skin...")]
         private static void SaveEditorSkin()
-        {
+        { //I have to compare the old files
             string dir = Path.Combine(Application.dataPath, "Saved Skins/");
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
@@ -28,7 +28,7 @@ namespace Lerp2API.Utility
             foreach (EditorSkin es in vals)
             {
                 GUISkin skin = Instantiate(EditorGUIUtility.GetBuiltinSkin(es)) as GUISkin;
-                string n = string.Format("SceneSkin{0} - {1}.guiskin", es, c);
+                string n = string.Format("SceneSkin{0} - {1}.guiskin", es, c / 3);
                 enums.Add(n);
                 n = "Assets/Saved Skins/" + n;
                 AssetDatabase.CreateAsset(skin, n); //There should be an dialog to set the name!

@@ -54,7 +54,7 @@ namespace Lerp2API.Hepers.JSON_Extensions
         /// <param name="path">The path.</param>
         /// <param name="value">The value.</param>
         /// <param name="pretty">if set to <c>true</c> [pretty].</param>
-        public static void SerializeToFile<T>(string path, T value, bool pretty = true)
+        public static void SerializeToFile<T>(this T value, string path, bool pretty = true)
         {
             File.WriteAllText(path, Serialize(value, pretty));
         }

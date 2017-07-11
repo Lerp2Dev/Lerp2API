@@ -3,9 +3,15 @@ using UnityEditor;
 using System.IO;
 using System;
 using System.Linq;
+using Lerp2API.Hepers.JSON_Extensions;
+using Lerp2APIEditor.Utility.GUI_Extensions;
+using Object = UnityEngine.Object;
+using System.Collections.Generic;
+using Lerp2API.Hepers.Serializer_Extensions;
 
 namespace Lerp2API.Utility.StandardInstaller
 {
+    [Serializable]
     public enum AssetLocation
     {
         Local,
@@ -48,18 +54,24 @@ namespace Lerp2API.Utility.StandardInstaller
             }
         }
 
+        private static float defHeight
+        {
+            get
+            {
+                return EditorGUIUtility.GetBuiltinSkin(EditorSkin.Inspector).GetStyle("textfield").CalcHeight(new GUIContent("abcd"), defTextFieldWidth);
+            }
+        }
+
         private const int windowWidth = 600,
-                          windowHeight = 400; //Estaria bien q automaticamente cogiese la altura solo
+                          windowHeight = 400, //Estaria bien q automaticamente cogiese la altura solo
+                          defTextFieldWidth = 450;
 
-        //private static string standardAssetsPath = "";
-
-        //private static string[] standardAssetsFiles;
-        //private static bool[] includedStandardAssets;
-        private Vector2 windowScroll;
+        private Vector2 windowScroll,
+                        fromScroll;
 
         private static AssetsLocation[] fromWhere = new AssetsLocation[3];
-
         private static int selectedTab = 0;
+        private readonly static LerpedList[] m_Lists = new LerpedList[2];
 
         [MenuItem("Lerp2Dev Team Tools/Set Standard packages ready to be uploaded...")]
         public static void Init()
@@ -67,11 +79,19 @@ namespace Lerp2API.Utility.StandardInstaller
             if (Directory.Exists(string.Format(EditorApplication.applicationContentsPath.Replace("Data", "{0}"), "Standard Packages")))
                 Debug.LogWarning("You are using an old version of Unity!");
 
-            if (fromWhere == null)
-                fromWhere = JsonUtility.FromJson<AssetsLocation[]>(JSONFile);
+            if (File.Exists(JSONFile))
+            {
+                AssetsLocation[] aLocs = JSONHelpers.DeserializeFromFile<AssetsLocation[]>(JSONFile);
+                if (!IsEmpty(aLocs))
+                    fromWhere = aLocs;
+                else
+                    fromWhere = new AssetsLocation[3];
+            }
+
+            bool edited = false; //This can be optimized (I have to)
 
             //From Local
-            if (IsNullLocation(AssetLocation.Local) == null)
+            if (IsNullLocation(AssetLocation.Local))
             {
                 string standardAssetsPath = string.Format(EditorApplication.applicationContentsPath.Replace("Data", "{0}"), "Standard Assets");
 
@@ -83,27 +103,37 @@ namespace Lerp2API.Utility.StandardInstaller
 
                 string[] paths = Directory.GetFiles(standardAssetsPath);
 
-                ActiveAsset[] aAsset = new ActiveAsset[paths.Length];
+                List<ActiveAsset> aAsset = new List<ActiveAsset>(paths.Length);
 
-                for (int i = 0; i < paths.Length; ++i)
+                foreach (string path in paths)
                 {
                     //Aqui le vamos a ir añadiendo valor a valor
-                    aAsset[i] = new ActiveAsset(Path.GetFileName(paths[i]), paths[i]);
+                    aAsset.Add(new ActiveAsset(Path.GetFileName(path), path));
                 }
 
-                fromWhere[0] = new AssetsLocation(AssetLocation.Local, aAsset);
+                AssetsLocation aLoc = CreateInstance<AssetsLocation>();
 
-                //standardAssetsFiles = ;
-                //includedStandardAssets = new bool[standardAssetsFiles.Length];
+                aLoc.assets = aAsset;
+                aLoc.location = AssetLocation.Local;
+
+                fromWhere[0] = aLoc;
+                edited = true;
             }
 
-            if (IsNullLocation(AssetLocation.HDD) == null)
-            {
-            }
+            foreach (int val in new int[2] { 1, 2 })
+                if (IsNullLocation((AssetLocation)val))
+                {
+                    AssetsLocation aLoc = CreateInstance<AssetsLocation>();
 
-            if (IsNullLocation(AssetLocation.URL) == null)
-            {
-            }
+                    aLoc.assets = new List<ActiveAsset>();
+                    aLoc.location = (AssetLocation)val;
+
+                    fromWhere[val] = aLoc; //new AssetsLocation(AssetLocation.Local, aAsset);
+                    edited = true;
+                }
+
+            if (edited)
+                SnapJSON(); //Esto no parece que salte, hay algun tipo de problema...
 
             me = GetWindow<StandardInstaller>();
             me.titleContent = new GUIContent("Export Standard Assets (easy way)");
@@ -112,6 +142,109 @@ namespace Lerp2API.Utility.StandardInstaller
 
             me.position = new Rect(Screen.currentResolution.width / 2 - windowWidth / 2, Screen.currentResolution.height / 2 - windowHeight / 2, windowWidth, windowHeight);
             me.Show();
+
+            for (int i = 0; i < m_Lists.Length; ++i)
+            {
+                m_Lists[i] = new LerpedList(me, fromWhere[i + 1].serializedObj, fromWhere[i + 1].serializedObj.FindProperty("assets"), string.Format("From {0}", ((AssetLocation)(i + 1)).ToString()));
+
+                m_Lists[i].SetElementCallback(i, (idx) =>
+                { //ESTO TODAVIA NO FUNCIONA... TENGO QUE HACER WL FSW, EL WWWHANDLER PARA LA DESCARGA DE ESTOS ARCHIVOS Y DEMÁS...
+                    return (rect, index, active, focused) =>
+                    {
+                        int ivalue = idx + 1,
+                            len = m_Lists[idx].PropLength;
+
+                        //Debug.Log(m_Lists[idx].m_Prop.isArray);
+
+                        //Better than a try-catch structure, Thanks ElektroStudios
+                        if (m_Lists[idx].m_Prop.isArray && m_Lists[idx].m_Prop.GetAt(index) == null)
+                            m_Lists[idx].m_Prop.Add(new ActiveAsset());
+
+                        //SerializedProperty sProp = m_Lists[idx].m_Prop.GetAt(index);
+
+                        //Debug.Log(sProp.GetEndProperty().type);
+
+                        if (index >= len)
+                            for (int j = 0; j < len - index + 1; ++j)
+                                m_Lists[idx].m_Prop.Add(new ActiveAsset());
+
+                        /*GUILayout.BeginArea(new Rect(rect.x, rect.y + 43, windowWidth - 10, defHeight + 4));
+                        GUILayout.BeginHorizontal();
+
+                        EditorGUILayout.LabelField(string.Format("{0} {1}", ((AssetLocation)(idx + 1)).ToString(), index), GUILayout.Width(60));
+
+                        sProp.FindPropertyRelative("active").boolValue = EditorGUILayout.Toggle(sProp.FindPropertyRelative("active").boolValue, GUILayout.Width(20));
+                        sProp.FindPropertyRelative("path").stringValue = EditorGUILayout.TextField(sProp.FindPropertyRelative("path").stringValue, GUILayout.Width(defTextFieldWidth));
+
+                        GUILayout.EndHorizontal();
+                        GUILayout.EndArea();*/
+
+                        //m_Lists[idx].m_Obj.Update();
+                        AssetsLocation aLoc = m_Lists[idx].m_Obj.targetObject as AssetsLocation;
+                        ActiveAsset aAss = aLoc.assets[index];
+
+                        if (aAss == null)
+                        {
+                            Debug.Log("Shitty shit!");
+                            aAss = new ActiveAsset();
+                        }
+
+                        GUILayout.BeginArea(new Rect(rect.x, rect.y + 43, windowWidth - 10, defHeight + 4));
+                        GUILayout.BeginHorizontal();
+
+                        EditorGUILayout.LabelField(string.Format("{0} {1}", ((AssetLocation)(idx + 1)).ToString(), index), GUILayout.Width(60));
+
+                        aAss.active = EditorGUILayout.Toggle(aAss.active, GUILayout.Width(20));
+                        aAss.path = EditorGUILayout.TextField(aAss.path, GUILayout.Width(defTextFieldWidth));
+
+                        GUILayout.EndHorizontal();
+                        GUILayout.EndArea();
+
+                        //aLoc.assets[index] = aAss;
+                        m_Lists[idx].m_Obj.FindProperty("assets").GetAt(index).SetValue(aAss);
+                        m_Lists[idx].m_Obj.ApplyModifiedProperties();
+                    };
+                });
+
+                m_Lists[i].SetElementBackgroundCallback(i, (idx) =>
+                {
+                    return (rect, index, active, focused) =>
+                    {
+                        rect.height = defHeight + 4;
+                        if (active)
+                            GUI.DrawTexture(rect, m_Lists[idx].backgroundTex);
+                    };
+                });
+
+                m_Lists[i].SetHeightElementCallback(i, (idx) =>
+                {
+                    return (index) =>
+                    {
+                        if (m_Lists[idx].m_Type == ReferType.Editor)
+                            ((Editor)m_Lists[idx].m_Refer).Repaint();
+                        else
+                            ((EditorWindow)m_Lists[idx].m_Refer).Repaint();
+
+                        return defHeight + 4;
+                    };
+                });
+
+                m_Lists[i].SetAddDropdownCallback(i, (idx) =>
+                {
+                    return (rect, li) =>
+                    {
+                        var menu = new GenericMenu();
+                        menu.AddItem(new GUIContent("Add Element"), false, () =>
+                        {
+                            m_Lists[idx].m_Obj.Update();
+                            li.serializedProperty.Add(new ActiveAsset());
+                            m_Lists[idx].m_Obj.ApplyModifiedProperties();
+                        });
+
+                        menu.ShowAsContext();
+                    };
+                });
+            }
         }
 
         private void OnGUI()
@@ -120,37 +253,39 @@ namespace Lerp2API.Utility.StandardInstaller
 
             AssetsLocation aLoc = GetLocationFromTab(selectedTab);
 
-            if (aLoc != null)
+            GUILayout.BeginVertical();
+            switch (selectedTab)
             {
-                switch (selectedTab)
-                {
-                    case 0:
-                        GUILayout.BeginVertical();
+                case 0:
+                    if (aLoc != null)
+                    {
                         windowScroll = GUILayout.BeginScrollView(windowScroll);
-                        //for (int i = 0; i < standardAssetsFiles.Length; ++i)
-                        //    includedStandardAssets[i] = GUILayout.Toggle(includedStandardAssets[i], standardAssetsFiles[i].Replace(standardAssetsPath, "").Substring(1));
-                        for (int i = 0; i < aLoc.assets.Length; ++i)
+                        for (int i = 0; i < aLoc.assets.Count(); ++i)
                         {
-                            ActiveAsset aAsset = aLoc.assets[i];
+                            ActiveAsset aAsset = aLoc.assets.ElementAt(i);
                             aAsset.active = GUILayout.Toggle(aAsset.active, aAsset.name);
                         }
                         GUILayout.EndScrollView();
-                        GUILayout.BeginHorizontal();
-                        GUILayout.FlexibleSpace();
-                        if (GUILayout.Button("Prepare Asset File Name List"))
-                            Prepare();
-                        GUILayout.FlexibleSpace();
-                        GUILayout.EndHorizontal();
-                        GUILayout.EndVertical();
-                        break;
+                    }
+                    break;
 
-                    case 1:
-                        break;
-
-                    case 2:
-                        break;
-                }
+                case 1:
+                case 2:
+                    if (aLoc != null)
+                        m_Lists[selectedTab - 1].Draw();
+                    break;
             }
+
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("Prepare Asset File Name List"))
+                Prepare();
+            GUILayout.FlexibleSpace();
+            if (GUILayout.Button("Reset Standard Asset List"))
+                ResetAll();
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
         }
 
         private void Update()
@@ -159,16 +294,30 @@ namespace Lerp2API.Utility.StandardInstaller
                 me.Close();
         }
 
+        private void OnDestroy()
+        {
+            SnapJSON();
+        }
+
+        private static void SnapJSON()
+        {
+            fromWhere.SerializeToFile(JSONFile, true);
+        }
+
+        private static void ResetAll()
+        {
+            File.Delete(JSONFile);
+            File.Delete(JSONFile + ".meta");
+            AssetDatabase.Refresh();
+            me.Close();
+        }
+
         private void Prepare()
         {
-            /*using (StreamWriter w = new StreamWriter(TxtFile))
-                for (int i = 0; i < standardAssetsFiles.Length; ++i)
-                    if (includedStandardAssets[i])
-                        w.WriteLine(standardAssetsFiles[i].Replace(standardAssetsPath, "").Substring(1));*/
-            File.WriteAllText(JSONFile, JsonUtility.ToJson(fromWhere));
+            SnapJSON();
             SetEditorPref();
-            //File.Create(Path.Combine(Application.dataPath.Replace("/Assets", ""), ".dontDelete"));
-            if (EditorUtility.DisplayDialog("Editor message", "A file has been created called 'StandardAssets.txt', it contains the Standard Assets to be included. Don't delete it, and of course, include it when you upload this Asset (including the API also in it).\nThanks for using this!", "Ok"))
+
+            if (EditorUtility.DisplayDialog("Editor message", "A file has been created called 'StandardAssets.json', it contains the Standard Assets to be included. Don't delete it, and of course, include it when you upload this Asset (including the API also in it).\nThanks for using this!", "Ok"))
                 me.Close();
         }
 
@@ -184,39 +333,67 @@ namespace Lerp2API.Utility.StandardInstaller
 
             AssetLocation aLoc = (AssetLocation)tab;
 
-            return fromWhere.SingleOrDefault(x => x.location == aLoc);
+            return fromWhere.Where(x => x != null).SingleOrDefault(x => x.location == aLoc);
         }
 
         internal static bool IsNullLocation(AssetLocation aLoc)
         {
             AssetsLocation aLocs = GetLocationFromTab((int)aLoc);
-            return aLocs == null || (aLocs != null && aLocs.assets.Length == 0);
+            return aLocs == null || (aLocs != null && aLocs.assets.Count() == 0);
         }
 
-        [Serializable]
-        internal class AssetsLocation
+        internal static bool IsEmpty(AssetsLocation[] aLocs = null)
         {
-            public AssetLocation location;
-            public ActiveAsset[] assets;
+            if (aLocs == null)
+                aLocs = fromWhere;
+            return aLocs == null || (aLocs != null && (aLocs.All(x => x == null) || aLocs.Length == 0));
+        }
+    }
 
-            public AssetsLocation(AssetLocation aLoc, ActiveAsset[] aas)
+    [Serializable]
+    public class AssetsLocation : ScriptableObject
+    {
+        [SerializeField]
+        public AssetLocation location;
+
+        [SerializeField]
+        public List<ActiveAsset> assets = new List<ActiveAsset>(1);
+
+        private SerializedObject _serObj;
+
+        public SerializedObject serializedObj
+        {
+            get
             {
-                location = aLoc;
-                assets = aas;
+                if (_serObj == null)
+                    _serObj = new SerializedObject(this);
+                return _serObj;
             }
         }
 
-        [Serializable]
-        internal class ActiveAsset
+        public AssetsLocation(AssetLocation aLoc, List<ActiveAsset> aas)
         {
-            public bool active;
-            public string name, path;
+            location = aLoc;
+            assets = aas;
+        }
+    }
 
-            public ActiveAsset(string n, string p)
-            {
-                name = n;
-                path = p;
-            }
+    [Serializable]
+    public class ActiveAsset : Object
+    {
+        public bool active;
+
+        public string name = "",
+                      path = "";
+
+        public ActiveAsset()
+        {
+        }
+
+        public ActiveAsset(string n, string p)
+        {
+            name = n;
+            path = p;
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="EditorHelpers.cs" />
     <Compile Include="EditorWindows\BrowserWindow.cs" />
     <Compile Include="EditorWindows\LerpedPaths.cs" />
+    <Compile Include="Helpers\Serializer Extensions\SerializedPropertyExtensions.cs" />
     <Compile Include="LerpedEditorCore.cs" />
     <Compile Include="RawReferences\LerpedEditorHook.cs" />
     <Compile Include="Utility\AutoSetup.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="Utility\CustomInputManager\Source\UnityInputConverter\YamlDotNet\Serialization\YamlMember.cs" />
     <Compile Include="Utility\CustomInputManager\Source\_Support\EditorToolbox.cs" />
     <Compile Include="Utility\CustomInputManager\Source\_Support\MenuCommands.cs" />
+    <Compile Include="Utility\GUI Extensions\GUIHelpers.cs" />
     <Compile Include="Utility\LerpedThread.cs" />
     <Compile Include="Menu\AnalyticsManager.cs" />
     <Compile Include="Utility\AssetDefineManager.cs" />
@@ -262,6 +264,8 @@
     <Compile Include="LerpedUpdater.cs" />
     <Compile Include="Menu\DebugManager.cs" />
     <Compile Include="Utility\LerpedShortcuts.cs" />
+    <Compile Include="Utility\ReorderableList\ReorderableDrawer.cs" />
+    <Compile Include="Utility\ReorderableList\ReorderableList.cs" />
     <Compile Include="Utility\StandardInstaller\SharpZibLibUtility.cs" />
     <Compile Include="Utility\StandardInstaller\StandardHandler.cs" />
     <Compile Include="Utility\StandardInstaller\StandardInstaller.cs" />

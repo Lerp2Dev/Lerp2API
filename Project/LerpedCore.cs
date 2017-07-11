@@ -210,7 +210,7 @@ namespace Lerp2API
                 storedInfo.Add(key, value);
             else
                 storedInfo[key] = value;
-            JSONHelpers.SerializeToFile(storePath, storedInfo, true);
+            storedInfo.SerializeToFile(storePath, true);
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Lerp2API
                 storedInfo.Add(key, value);
             else
                 storedInfo[key] = value;
-            JSONHelpers.SerializeToFile(storePath, storedInfo, true);
+            storedInfo.SerializeToFile(storePath, true);
         }
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace Lerp2API
                 storedInfo.Add(key, value);
             else
                 storedInfo[key] = value;
-            JSONHelpers.SerializeToFile(storePath, storedInfo, true);
+            storedInfo.SerializeToFile(storePath, true);
         }
 
         /// <summary>
@@ -291,7 +291,7 @@ namespace Lerp2API
                 storedInfo.Add(key, value);
             else
                 storedInfo[key] = value;
-            JSONHelpers.SerializeToFile(storePath, storedInfo, true);
+            storedInfo.SerializeToFile(storePath, true);
         }
 
         /// <summary>

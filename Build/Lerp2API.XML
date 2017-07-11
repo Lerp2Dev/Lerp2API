@@ -2152,7 +2152,7 @@
             <param name="serializedState">State of the serialized.</param>
             <returns>T.</returns>
         </member>
-        <member name="M:Lerp2API.Hepers.JSON_Extensions.JSONHelpers.SerializeToFile``1(System.String,``0,System.Boolean)">
+        <member name="M:Lerp2API.Hepers.JSON_Extensions.JSONHelpers.SerializeToFile``1(``0,System.String,System.Boolean)">
             <summary>
             Serializes to file.
             </summary>
