@@ -7,25 +7,52 @@ using UnityEngine;
 
 namespace UnityStandardAssets.ImageEffects
 {
+    /// <summary>
+    /// Class ColorCorrectionCurvesLayers.
+    /// </summary>
+    /// <seealso cref="M8.ImageEffects.PostEffectsBase" />
     [ExecuteInEditMode]
     [AddComponentMenu("Image Effects/Color Adjustments/Color Correction (Curves, Saturation) Layers")]
-    public class ColorCorrectionCurvesLayers : PostEffectsBase
+    public partial class ColorCorrectionCurvesLayers : PostEffectsBase
     {
-        public enum ColorCorrectionMode
-        {
-            Simple = 0,
-            Advanced = 1
-        }
-
+        /// <summary>
+        /// The red channel
+        /// </summary>
         public AnimationCurve redChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
+
+        /// <summary>
+        /// The green channel
+        /// </summary>
         public AnimationCurve greenChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
+
+        /// <summary>
+        /// The blue channel
+        /// </summary>
         public AnimationCurve blueChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
 
+        /// <summary>
+        /// The use depth correction
+        /// </summary>
         public bool useDepthCorrection = false;
 
+        /// <summary>
+        /// The z curve
+        /// </summary>
         public AnimationCurve zCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
+
+        /// <summary>
+        /// The depth red channel
+        /// </summary>
         public AnimationCurve depthRedChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
+
+        /// <summary>
+        /// The depth green channel
+        /// </summary>
         public AnimationCurve depthGreenChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
+
+        /// <summary>
+        /// The depth blue channel
+        /// </summary>
         public AnimationCurve depthBlueChannel = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(1f, 1f));
 
         private Material ccMaterial;
@@ -36,23 +63,56 @@ namespace UnityStandardAssets.ImageEffects
         private Texture2D rgbDepthChannelTex;
         private Texture2D zCurveTex;
 
+        /// <summary>
+        /// The saturation
+        /// </summary>
         public float saturation = 1.0f;
 
+        /// <summary>
+        /// The selective cc
+        /// </summary>
         public bool selectiveCc = false;
 
+        /// <summary>
+        /// The selective from color
+        /// </summary>
         public Color selectiveFromColor = Color.white;
+
+        /// <summary>
+        /// The selective to color
+        /// </summary>
         public Color selectiveToColor = Color.white;
 
+        /// <summary>
+        /// The mode
+        /// </summary>
         public ColorCorrectionMode mode;
 
+        /// <summary>
+        /// The update textures
+        /// </summary>
         public bool updateTextures = true;
 
+        /// <summary>
+        /// The color correction curves shader
+        /// </summary>
         public Shader colorCorrectionCurvesShader = null;
+
+        /// <summary>
+        /// The simple color correction curves shader
+        /// </summary>
         public Shader simpleColorCorrectionCurvesShader = null;
+
+        /// <summary>
+        /// The color correction selective shader
+        /// </summary>
         public Shader colorCorrectionSelectiveShader = null;
 
         private bool updateTexturesOnStartup = true;
 
+        /// <summary>
+        /// The exclude layers
+        /// </summary>
         public LayerMask excludeLayers = 0;
 
         private GameObject tmpCam = null;
@@ -67,6 +127,10 @@ namespace UnityStandardAssets.ImageEffects
         private void Awake()
         { }
 
+        /// <summary>
+        /// Checks the resources.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public override bool CheckResources()
         {
             CheckSupport(mode == ColorCorrectionMode.Advanced);
@@ -95,6 +159,9 @@ namespace UnityStandardAssets.ImageEffects
             return isSupported;
         }
 
+        /// <summary>
+        /// Updates the parameters.
+        /// </summary>
         public void UpdateParameters()
         {
             CheckResources(); // textures might not be created if we're tweaking UI while disabled

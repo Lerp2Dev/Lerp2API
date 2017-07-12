@@ -29,6 +29,12 @@ namespace CBX.TileMapping.Unity
         /// </summary>
         public float TileWidth = 1;
 
+        /// <summary>
+        /// Sets the tile.
+        /// </summary>
+        /// <param name="tilePos">The tile position.</param>
+        /// <param name="tile">The tile.</param>
+        /// <exception cref="NotImplementedException"></exception>
         public void SetTile(Vector3Int tilePos, Tile tile)
         {
             throw new NotImplementedException();
@@ -46,6 +52,9 @@ namespace CBX.TileMapping.Unity
         [HideInInspector]
         public Vector3 MarkerPosition;
 
+        /// <summary>
+        /// The color
+        /// </summary>
         public Color color;
 
         /// <summary>

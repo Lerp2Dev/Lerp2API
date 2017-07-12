@@ -8,11 +8,18 @@ using UnityEditor;
 using System.IO;
 using Lerp2APIEditor.Utility;
 
+/// <summary>
+/// Class SpriteBackgroundRemover.
+/// </summary>
 public class SpriteBackgroundRemover : EditorWindow
 {
     private Texture2D img;
     private Texture2D newImg;
     private Color colorToRemove = Color.magenta;
+
+    /// <summary>
+    /// The win
+    /// </summary>
     public static SpriteBackgroundRemove win;
 
     [MenuItem("Window/Tools/Alpha-fy Images")]
@@ -136,6 +143,10 @@ public class SpriteBackgroundRemover : EditorWindow
         return (n);
     }
 
+    /// <summary>
+    /// Checks the texture settings.
+    /// </summary>
+    /// <param name="texture">The texture.</param>
     public void CheckTextureSettings(Texture2D texture)
     {
         if (texture == null) { Debug.LogError("CheckTextureSettings Failed - Texture is null"); return; }

@@ -4,6 +4,30 @@
         <name>Lerp2APIEditor</name>
     </assembly>
     <members>
+        <member name="T:Lerp2APIEditor.CustomDrawers.DictionaryDrawer`2">
+            <summary>
+            Class DictionaryDrawer.
+            </summary>
+            <typeparam name="TK">The type of the tk.</typeparam>
+            <typeparam name="TV">The type of the tv.</typeparam>
+            <seealso cref="T:UnityEditor.PropertyDrawer" />
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.DictionaryDrawer`2.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the height of the property.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="label">The label.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.DictionaryDrawer`2.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Called when [GUI].
+            </summary>
+            <param name="position">The position.</param>
+            <param name="property">The property.</param>
+            <param name="label">The label.</param>
+        </member>
         <member name="T:Lerp2APIEditor.CustomAttributes.ReadOnlyDrawer">
             <summary>
             Class ReadOnlyDrawer.
@@ -272,6 +296,163 @@
         <member name="T:Lerp2APIEditor.Utility.CustomInputManager.MenuItems">
             <summary>
             Class MenuItems.
+            </summary>
+        </member>
+        <member name="T:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList">
+            <summary>
+            Class LerpedList.
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList._debug">
+            <summary>
+            The debug
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.m_List">
+            <summary>
+            The m list
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.m_Obj">
+            <summary>
+            The m object
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.m_Prop">
+            <summary>
+            The m property
+            </summary>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.Label">
+            <summary>
+            Gets the label.
+            </summary>
+            <value>The label.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.PropLength">
+            <summary>
+            Gets the length of the property.
+            </summary>
+            <value>The length of the property.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.DefaultHeaderCallback">
+            <summary>
+            Gets the default header callback.
+            </summary>
+            <value>The default header callback.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.DefaultElementCallback">
+            <summary>
+            Gets the default element callback.
+            </summary>
+            <value>The default element callback.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.DefaultHeightElementCallback">
+            <summary>
+            Gets the default height element callback.
+            </summary>
+            <value>The default height element callback.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.DefaultElementBackgroundCallback">
+            <summary>
+            Gets the default element background callback.
+            </summary>
+            <value>The default element background callback.</value>
+        </member>
+        <member name="P:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.DefaultAddDropdownCallback">
+            <summary>
+            Gets the default add dropdown callback.
+            </summary>
+            <value>The default add dropdown callback.</value>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.#ctor(UnityEditor.Editor,UnityEditor.SerializedObject,UnityEditor.SerializedProperty,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList"/> class.
+            </summary>
+            <param name="refer">The refer.</param>
+            <param name="obj">The object.</param>
+            <param name="prop">The property.</param>
+            <param name="lbl">The label.</param>
+            <param name="debug">if set to <c>true</c> [debug].</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.#ctor(UnityEditor.EditorWindow,UnityEditor.SerializedObject,UnityEditor.SerializedProperty,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList"/> class.
+            </summary>
+            <param name="refer">The refer.</param>
+            <param name="obj">The object.</param>
+            <param name="prop">The property.</param>
+            <param name="lbl">The label.</param>
+            <param name="debug">if set to <c>true</c> [debug].</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetHeaderCallback(System.Int32,System.Func{System.Int32,UnityEditorInternal.ReorderableList.HeaderCallbackDelegate})">
+            <summary>
+            Sets the header callback.
+            </summary>
+            <param name="idx">The index.</param>
+            <param name="act">The act.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetElementCallback(System.Int32,System.Func{System.Int32,UnityEditorInternal.ReorderableList.ElementCallbackDelegate})">
+            <summary>
+            Sets the element callback.
+            </summary>
+            <param name="idx">The index.</param>
+            <param name="act">The act.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetHeightElementCallback(System.Int32,System.Func{System.Int32,UnityEditorInternal.ReorderableList.ElementHeightCallbackDelegate})">
+            <summary>
+            Sets the height element callback.
+            </summary>
+            <param name="idx">The index.</param>
+            <param name="act">The act.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetElementBackgroundCallback(System.Int32,System.Func{System.Int32,UnityEditorInternal.ReorderableList.ElementCallbackDelegate})">
+            <summary>
+            Sets the element background callback.
+            </summary>
+            <param name="idx">The index.</param>
+            <param name="act">The act.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetAddDropdownCallback(System.Int32,System.Func{System.Int32,UnityEditorInternal.ReorderableList.AddDropdownCallbackDelegate})">
+            <summary>
+            Sets the add dropdown callback.
+            </summary>
+            <param name="idx">The index.</param>
+            <param name="act">The act.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetHeaderCallback(UnityEditorInternal.ReorderableList.HeaderCallbackDelegate)">
+            <summary>
+            Sets the header callback.
+            </summary>
+            <param name="dlg">The dialog.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetElementCallback(UnityEditorInternal.ReorderableList.ElementCallbackDelegate)">
+            <summary>
+            Sets the element callback.
+            </summary>
+            <param name="dlg">The dialog.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetHeightElementCallback(UnityEditorInternal.ReorderableList.ElementHeightCallbackDelegate)">
+            <summary>
+            Sets the height element callback.
+            </summary>
+            <param name="dlg">The dialog.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetElementBackgroundCallback(UnityEditorInternal.ReorderableList.ElementCallbackDelegate)">
+            <summary>
+            Sets the element background callback.
+            </summary>
+            <param name="dlg">The dialog.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.SetAddDropdownCallback(UnityEditorInternal.ReorderableList.AddDropdownCallbackDelegate)">
+            <summary>
+            Sets the add dropdown callback.
+            </summary>
+            <param name="dlg">The dialog.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.GUI_Extensions.LerpedList.Draw">
+            <summary>
+            Draws this instance.
             </summary>
         </member>
         <member name="T:Lerp2APIEditor.Utility.LerpedThread`1">
@@ -616,6 +797,28 @@
             <param name="kc">The kc.</param>
             <param name="a">a.</param>
         </member>
+        <member name="T:Lerp2APIEditor.Utility.SpriteBackgroundRemove">
+            <summary>
+            Class SpriteBackgroundRemove.
+            </summary>
+            <seealso cref="T:UnityEditor.EditorWindow" />
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.SpriteBackgroundRemove.win">
+            <summary>
+            The win
+            </summary>
+        </member>
+        <member name="M:Lerp2APIEditor.Utility.SpriteBackgroundRemove.CheckTextureSettings(UnityEngine.Texture2D)">
+            <summary>
+            Checks the texture settings.
+            </summary>
+            <param name="texture">The texture.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps.TilemapLayerHelper">
+            <summary>
+            Class TilemapLayerHelper.
+            </summary>
+        </member>
         <member name="T:Lerp2APIEditor.Menu.DebugManager">
             <summary>
             Class DebugManager.
@@ -668,6 +871,55 @@
             <summary>
             Checks for updates.
             </summary>
+        </member>
+        <member name="T:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions">
+            <summary>
+            Class SerializedPropertyExtensions.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.Add(UnityEditor.SerializedProperty,UnityEngine.Object)">
+            <summary>
+            Adds the specified value.
+            </summary>
+            <param name="prop">The property.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.GetAt(UnityEditor.SerializedProperty,System.Int32)">
+            <summary>
+            Gets at.
+            </summary>
+            <param name="prop">The property.</param>
+            <param name="i">The i.</param>
+            <returns>sp.</returns>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.SetObjectValueAt(UnityEditor.SerializedProperty,System.Int32,System.Object)">
+            <summary>
+            Sets the object value at.
+            </summary>
+            <param name="prop">The property.</param>
+            <param name="i">The i.</param>
+            <param name="toValue">To value.</param>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.SetObjectValue(UnityEditor.SerializedProperty,System.Object)">
+            <summary>
+            Sets the object value.
+            </summary>
+            <param name="prop">The property.</param>
+            <param name="toValue">To value.</param>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.GetValue(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the value.
+            </summary>
+            <param name="property">The property.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:Lerp2API.Hepers.Serializer_Extensions.SerializedPropertyExtensions.SetValue(UnityEditor.SerializedProperty,System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="value">The value.</param>
         </member>
         <member name="T:Lerp2API.Utility.AssetDefineManager">
             <summary>
@@ -784,6 +1036,96 @@
             <summary>
             Me
             </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.StandardInstaller.StandardInstaller.EditorKey">
+            <summary>
+            Gets the editor key.
+            </summary>
+            <value>The editor key.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.StandardInstaller.StandardInstaller.TxtFile">
+            <summary>
+            Gets the text file.
+            </summary>
+            <value>The text file.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.StandardInstaller.StandardInstaller.JSONFile">
+            <summary>
+            Gets the json file.
+            </summary>
+            <value>The json file.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.StandardInstaller.Init">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.StandardInstaller.SetEditorPref">
+            <summary>
+            Sets the editor preference.
+            </summary>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.AssetsLocation">
+            <summary>
+            Class AssetsLocation.
+            </summary>
+            <seealso cref="T:UnityEngine.ScriptableObject" />
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.AssetsLocation.location">
+            <summary>
+            The location
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.AssetsLocation.assets">
+            <summary>
+            The assets
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.StandardInstaller.AssetsLocation.serializedObj">
+            <summary>
+            Gets the serialized object.
+            </summary>
+            <value>The serialized object.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.AssetsLocation.#ctor(Lerp2API.Utility.StandardInstaller.AssetLocation,System.Collections.Generic.List{Lerp2API.Utility.StandardInstaller.ActiveAsset})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.StandardInstaller.AssetsLocation"/> class.
+            </summary>
+            <param name="aLoc">a loc.</param>
+            <param name="aas">The aas.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.ActiveAsset">
+            <summary>
+            Class ActiveAsset.
+            </summary>
+            <seealso cref="T:UnityEngine.Object" />
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.ActiveAsset.active">
+            <summary>
+            The active
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.ActiveAsset.name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.ActiveAsset.path">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.ActiveAsset.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.StandardInstaller.ActiveAsset"/> class.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.StandardInstaller.ActiveAsset.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.StandardInstaller.ActiveAsset"/> class.
+            </summary>
+            <param name="n">The n.</param>
+            <param name="p">The p.</param>
         </member>
         <member name="T:TeamUtilityEditor.IO.InputEventManagerEditor">
             <summary>
@@ -985,6 +1327,11 @@
         <member name="T:TeamUtilityEditor.IO.InputManager.MenuCommands">
             <summary>
             Class MenuCommands.
+            </summary>
+        </member>
+        <member name="M:TeamUtilityEditor.IO.InputManager.MenuCommands.CreateInputManager">
+            <summary>
+            Creates the input manager.
             </summary>
         </member>
         <member name="M:TeamUtilityEditor.IO.InputManager.MenuCommands.CheckForUpdates">
@@ -8156,6 +8503,669 @@
              If <paramref name="action"/> is a value of <c>null</c>.
              </exception>
         </member>
+        <member name="T:Malee.Editor.ReorderableDrawer">
+            <summary>
+            Class ReorderableDrawer.
+            </summary>
+            <seealso cref="T:UnityEditor.PropertyDrawer" />
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetPropertyHeight(UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Gets the height of the property.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="label">The label.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.OnGUI(UnityEngine.Rect,UnityEditor.SerializedProperty,UnityEngine.GUIContent)">
+            <summary>
+            Called when [GUI].
+            </summary>
+            <param name="position">The position.</param>
+            <param name="property">The property.</param>
+            <param name="label">The label.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetListId(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the list identifier.
+            </summary>
+            <param name="property">The property.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetList(UnityEditor.SerializedProperty)">
+            <summary>
+            Gets the list.
+            </summary>
+            <param name="property">The property.</param>
+            <returns>ReorderableList.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetList(UnityEditor.SerializedProperty,Malee.ReorderableAttribute)">
+            <summary>
+            Gets the list.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="attrib">The attribute.</param>
+            <returns>ReorderableList.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetList(UnityEditor.SerializedProperty,System.Int32)">
+            <summary>
+            Gets the list.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="id">The identifier.</param>
+            <returns>ReorderableList.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableDrawer.GetList(UnityEditor.SerializedProperty,Malee.ReorderableAttribute,System.Int32)">
+            <summary>
+            Gets the list.
+            </summary>
+            <param name="property">The property.</param>
+            <param name="attrib">The attribute.</param>
+            <param name="id">The identifier.</param>
+            <returns>ReorderableList.</returns>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList">
+            <summary>
+            Class ReorderableList.
+            </summary>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.DrawHeaderDelegate">
+            <summary>
+            Delegate DrawHeaderDelegate
+            </summary>
+            <param name="rect">The rect.</param>
+            <param name="label">The label.</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.DrawFooterDelegate">
+            <summary>
+            Delegate DrawFooterDelegate
+            </summary>
+            <param name="rect">The rect.</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.DrawElementDelegate">
+            <summary>
+            Delegate DrawElementDelegate
+            </summary>
+            <param name="rect">The rect.</param>
+            <param name="element">The element.</param>
+            <param name="label">The label.</param>
+            <param name="selected">if set to <c>true</c> [selected].</param>
+            <param name="focused">if set to <c>true</c> [focused].</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.ActionDelegate">
+            <summary>
+            Delegate ActionDelegate
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.ActionBoolDelegate">
+            <summary>
+            Delegate ActionBoolDelegate
+            </summary>
+            <param name="list">The list.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.AddDropdownDelegate">
+            <summary>
+            Delegate AddDropdownDelegate
+            </summary>
+            <param name="buttonRect">The button rect.</param>
+            <param name="list">The list.</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.DragDropReferenceDelegate">
+            <summary>
+            Delegate DragDropReferenceDelegate
+            </summary>
+            <param name="references">The references.</param>
+            <param name="list">The list.</param>
+            <returns>Object.</returns>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.DragDropAppendDelegate">
+            <summary>
+            Delegate DragDropAppendDelegate
+            </summary>
+            <param name="reference">The reference.</param>
+            <param name="list">The list.</param>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.GetElementHeightDelegate">
+            <summary>
+            Delegate GetElementHeightDelegate
+            </summary>
+            <param name="element">The element.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.GetElementsHeightDelegate">
+            <summary>
+            Delegate GetElementsHeightDelegate
+            </summary>
+            <param name="list">The list.</param>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="T:Malee.Editor.ReorderableList.GetElementNameDelegate">
+            <summary>
+            Delegate GetElementNameDelegate
+            </summary>
+            <param name="element">The element.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.drawHeaderCallback">
+            <summary>
+            Occurs when [draw header callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.drawFooterCallback">
+            <summary>
+            Occurs when [draw footer callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.drawElementCallback">
+            <summary>
+            Occurs when [draw element callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.drawElementBackgroundCallback">
+            <summary>
+            Occurs when [draw element background callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.getElementHeightCallback">
+            <summary>
+            Occurs when [get element height callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.getElementsHeightCallback">
+            <summary>
+            Occurs when [get elements height callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.getElementNameCallback">
+            <summary>
+            Occurs when [get element name callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onValidateDragAndDropCallback">
+            <summary>
+            Occurs when [on validate drag and drop callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onAppendDragDropCallback">
+            <summary>
+            Occurs when [on append drag drop callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onReorderCallback">
+            <summary>
+            Occurs when [on reorder callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onSelectCallback">
+            <summary>
+            Occurs when [on select callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onAddCallback">
+            <summary>
+            Occurs when [on add callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onAddDropdownCallback">
+            <summary>
+            Occurs when [on add dropdown callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onRemoveCallback">
+            <summary>
+            Occurs when [on remove callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onMouseUpCallback">
+            <summary>
+            Occurs when [on mouse up callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onCanRemoveCallback">
+            <summary>
+            Occurs when [on can remove callback].
+            </summary>
+        </member>
+        <member name="E:Malee.Editor.ReorderableList.onChangedCallback">
+            <summary>
+            Occurs when [on changed callback].
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.canAdd">
+            <summary>
+            The can add
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.canRemove">
+            <summary>
+            The can remove
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.draggable">
+            <summary>
+            The draggable
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.expandable">
+            <summary>
+            The expandable
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.multipleSelection">
+            <summary>
+            The multiple selection
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.label">
+            <summary>
+            The label
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.headerHeight">
+            <summary>
+            The header height
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.footerHeight">
+            <summary>
+            The footer height
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.slideEasing">
+            <summary>
+            The slide easing
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.verticalSpacing">
+            <summary>
+            The vertical spacing
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.showDefaultBackground">
+            <summary>
+            The show default background
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.elementDisplayType">
+            <summary>
+            The element display type
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.elementNameProperty">
+            <summary>
+            The element name property
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.elementNameOverride">
+            <summary>
+            The element name override
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.elementIcon">
+            <summary>
+            The element icon
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.#ctor(UnityEditor.SerializedProperty)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.#ctor(UnityEditor.SerializedProperty,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="canAdd">if set to <c>true</c> [can add].</param>
+            <param name="canRemove">if set to <c>true</c> [can remove].</param>
+            <param name="draggable">if set to <c>true</c> [draggable].</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.#ctor(UnityEditor.SerializedProperty,System.Boolean,System.Boolean,System.Boolean,Malee.Editor.ElementDisplayType,System.String,UnityEngine.Texture)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="canAdd">if set to <c>true</c> [can add].</param>
+            <param name="canRemove">if set to <c>true</c> [can remove].</param>
+            <param name="draggable">if set to <c>true</c> [draggable].</param>
+            <param name="elementDisplayType">Display type of the element.</param>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementIcon">The element icon.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.#ctor(UnityEditor.SerializedProperty,System.Boolean,System.Boolean,System.Boolean,Malee.Editor.ElementDisplayType,System.String,System.String,UnityEngine.Texture)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList"/> class.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="canAdd">if set to <c>true</c> [can add].</param>
+            <param name="canRemove">if set to <c>true</c> [can remove].</param>
+            <param name="draggable">if set to <c>true</c> [draggable].</param>
+            <param name="elementDisplayType">Display type of the element.</param>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementNameOverride">The element name override.</param>
+            <param name="elementIcon">The element icon.</param>
+            <exception cref="T:Malee.Editor.ReorderableList.MissingListExeption"></exception>
+            <exception cref="T:Malee.Editor.ReorderableList.InvalidListException"></exception>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.List">
+            <summary>
+            Gets the list.
+            </summary>
+            <value>The list.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.HasList">
+            <summary>
+            Gets a value indicating whether this instance has list.
+            </summary>
+            <value><c>true</c> if this instance has list; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.Length">
+            <summary>
+            Gets the length.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.Selected">
+            <summary>
+            Gets or sets the selected.
+            </summary>
+            <value>The selected.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.Index">
+            <summary>
+            Gets or sets the index.
+            </summary>
+            <value>The index.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.IsDragging">
+            <summary>
+            Gets a value indicating whether this instance is dragging.
+            </summary>
+            <value><c>true</c> if this instance is dragging; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.GetHeight">
+            <summary>
+            Gets the height.
+            </summary>
+            <returns>System.Single.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.DoLayoutList">
+            <summary>
+            Does the layout list.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.DoList(UnityEngine.Rect,UnityEngine.GUIContent)">
+            <summary>
+            Does the list.
+            </summary>
+            <param name="rect">The rect.</param>
+            <param name="label">The label.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.AddItem``1(``0)">
+            <summary>
+            Adds the item.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+            <returns>SerializedProperty.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.AddItem">
+            <summary>
+            Adds the item.
+            </summary>
+            <returns>SerializedProperty.</returns>
+            <exception cref="T:Malee.Editor.ReorderableList.InvalidListException"></exception>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.Remove(System.Int32[])">
+            <summary>
+            Removes the specified selection.
+            </summary>
+            <param name="selection">The selection.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.RemoveItem(System.Int32)">
+            <summary>
+            Removes the item.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.GetItem(System.Int32)">
+            <summary>
+            Gets the item.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>SerializedProperty.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.IndexOf(UnityEditor.SerializedProperty)">
+            <summary>
+            Indexes the of.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.GrabKeyboardFocus">
+            <summary>
+            Grabs the keyboard focus.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.HasKeyboardControl">
+            <summary>
+            Determines whether [has keyboard control].
+            </summary>
+            <returns><c>true</c> if [has keyboard control]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ReleaseKeyboardFocus">
+            <summary>
+            Releases the keyboard focus.
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.iconToolbarPlus">
+            <summary>
+            The icon toolbar plus
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.iconToolbarPlusMore">
+            <summary>
+            The icon toolbar plus more
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.iconToolbarMinus">
+            <summary>
+            The icon toolbar minus
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.draggingHandle">
+            <summary>
+            The dragging handle
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.headerBackground">
+            <summary>
+            The header background
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.footerBackground">
+            <summary>
+            The footer background
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.boxBackground">
+            <summary>
+            The box background
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.preButton">
+            <summary>
+            The pre button
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.elementBackground">
+            <summary>
+            The element background
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.verticalLabel">
+            <summary>
+            The vertical label
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.expandButton">
+            <summary>
+            The expand button
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ReorderableList.Style.collapseButton">
+            <summary>
+            The collapse button
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.SlideGroup.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList.SlideGroup"/> class.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.SlideGroup.GetRect(System.Int32,UnityEngine.Rect,System.Single)">
+            <summary>
+            Gets the rect.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="r">The r.</param>
+            <param name="easing">The easing.</param>
+            <returns>Rect.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.SlideGroup.SetRect(System.Int32,UnityEngine.Rect)">
+            <summary>
+            Sets the rect.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="rect">The rect.</param>
+            <returns>Rect.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList.ListSelection"/> class.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.#ctor(System.Int32[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList.ListSelection"/> class.
+            </summary>
+            <param name="indexes">The indexes.</param>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.ListSelection.First">
+            <summary>
+            Gets the first.
+            </summary>
+            <value>The first.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.ListSelection.Last">
+            <summary>
+            Gets the last.
+            </summary>
+            <value>The last.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.ListSelection.Length">
+            <summary>
+            Gets the length.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="P:Malee.Editor.ReorderableList.ListSelection.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Int32"/> at the specified index.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Contains(System.Int32)">
+            <summary>
+            Determines whether [contains] [the specified index].
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if [contains] [the specified index]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.SelectWhenNoAction(System.Int32,UnityEngine.Event)">
+            <summary>
+            Selects the when no action.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="evt">The evt.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Select(System.Int32)">
+            <summary>
+            Selects the specified index.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Remove(System.Int32)">
+            <summary>
+            Removes the specified index.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.AppendWithAction(System.Int32,UnityEngine.Event)">
+            <summary>
+            Appends the with action.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="evt">The evt.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Sort">
+            <summary>
+            Sorts this instance.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Sort(System.Comparison{System.Int32})">
+            <summary>
+            Sorts the specified comparison.
+            </summary>
+            <param name="comparison">The comparison.</param>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.ToArray">
+            <summary>
+            To the array.
+            </summary>
+            <returns>System.Int32[].</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>ListSelection.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.ListSelection.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>IEnumerator&lt;System.Int32&gt;.</returns>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.InvalidListException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList.InvalidListException"/> class.
+            </summary>
+        </member>
+        <member name="M:Malee.Editor.ReorderableList.MissingListExeption.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.Editor.ReorderableList.MissingListExeption"/> class.
+            </summary>
+        </member>
+        <member name="T:RandomTiles">
+            <summary>
+            Class RandomTiles.
+            </summary>
+        </member>
+        <member name="F:RandomTiles.tiles">
+            <summary>
+            The tiles
+            </summary>
+        </member>
         <member name="T:CBX.Unity.Editors.Editor.TileMapEditor">
             <summary>
             Provides a editor for the <see cref="T:CBX.TileMapping.Unity.TileMap"/> component
@@ -8208,6 +9218,66 @@
             Calculates the position of the mouse over the tile map in local space coordinates.
             </summary>
             <returns>Returns true if the mouse is over the tile map.</returns>
+        </member>
+        <member name="T:GridGeneratorEditor">
+            <summary>
+            Class GridGeneratorEditor.
+            </summary>
+        </member>
+        <member name="M:GridGeneratorEditor.OnInspectorGUI">
+            <summary>
+            Called when [inspector GUI].
+            </summary>
+        </member>
+        <member name="T:GridGenerator">
+            <summary>
+            Class GridGenerator.
+            </summary>
+        </member>
+        <member name="P:GridGenerator.PrefabToPlace">
+            <summary>
+            Gets the prefab to place.
+            </summary>
+            <value>The prefab to place.</value>
+        </member>
+        <member name="P:GridGenerator.Offset">
+            <summary>
+            Gets the offset.
+            </summary>
+            <value>The offset.</value>
+        </member>
+        <member name="P:GridGenerator.SizeX">
+            <summary>
+            Gets the size x.
+            </summary>
+            <value>The size x.</value>
+        </member>
+        <member name="P:GridGenerator.SizeY">
+            <summary>
+            Gets the size y.
+            </summary>
+            <value>The size y.</value>
+        </member>
+        <member name="T:SetPivot">
+            <summary>
+            Class SetPivot.
+            </summary>
+        </member>
+        <member name="T:SpriteBackgroundRemover">
+            <summary>
+            Class SpriteBackgroundRemover.
+            </summary>
+        </member>
+        <member name="F:SpriteBackgroundRemover.win">
+            <summary>
+            The win
+            </summary>
+        </member>
+        <member name="M:SpriteBackgroundRemover.CheckTextureSettings(UnityEngine.Texture2D)">
+            <summary>
+            Checks the texture settings.
+            </summary>
+            <param name="texture">The texture.</param>
         </member>
         <member name="T:CanvasScalerUtil">
             <summary>

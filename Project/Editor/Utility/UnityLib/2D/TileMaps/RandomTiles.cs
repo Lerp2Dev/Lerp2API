@@ -7,8 +7,14 @@ using Lerp2API.Utility.UnityLib;
 using UnityEngine;
 using UnityEngine.WSA;
 
+/// <summary>
+/// Class RandomTiles.
+/// </summary>
 public class RandomTiles : MonoBehaviour
 {
+    /// <summary>
+    /// The tiles
+    /// </summary>
     public Tile[] tiles;
 
     private void Start()

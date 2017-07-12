@@ -4,30 +4,40 @@ using System.Collections;
 // Draws crosshair to mouseposition with GL.Lines, takes line length in pixels
 // Usage: Attach this script to Main Camera, Assign material (for example some particle shader)
 
+/// <summary>
+/// Class DrawCrossHair.
+/// </summary>
 public class DrawCrossHair : MonoBehaviour
 {
+    /// <summary>
+    /// The mat
+    /// </summary>
     public Material mat;
+
+    /// <summary>
+    /// The line length
+    /// </summary>
     public float lineLen = 5f; // in pixels
 
-    Vector3 mousePos;
-    float lineLenHorizontal;
-    float lineLenVertical;
+    private Vector3 mousePos;
+    private float lineLenHorizontal;
+    private float lineLenVertical;
 
-    void Awake()
+    private void Awake()
     {
         // if you want to adjust lineLen at runtime, would need to calculate these again
         lineLenHorizontal = lineLen / Screen.width;
-        lineLenVertical = lineLen/Screen.height;
+        lineLenVertical = lineLen / Screen.height;
     }
 
-    void Update()
+    private void Update()
     {
         mousePos = Input.mousePosition;
         mousePos.x /= Screen.width;
         mousePos.y /= Screen.height;
     }
 
-    void OnPostRender()
+    private void OnPostRender()
     {
         GL.PushMatrix();
         mat.SetPass(0);

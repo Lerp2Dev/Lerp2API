@@ -5,16 +5,22 @@ using UnityEngine;
 using UnityEditor.SceneManagement;
 using System.Linq;
 
+/// <summary>
+/// Class GridGeneratorEditor.
+/// </summary>
 [CustomEditor(typeof(GridGenerator))]
 public class GridGeneratorEditor : Editor
 {
-    GridGenerator t;
+    private GridGenerator t;
 
     private void OnEnable()
     {
-        t = (GridGenerator) target;
+        t = (GridGenerator)target;
     }
 
+    /// <summary>
+    /// Called when [inspector GUI].
+    /// </summary>
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -60,5 +66,4 @@ public class GridGeneratorEditor : Editor
 
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
-
 }

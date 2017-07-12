@@ -7,12 +7,20 @@ using UnityEngine;
 
 namespace UnityLibrary
 {
+    /// <summary>
+    /// Class CameraSwitcher.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class CameraSwitcher : MonoBehaviour
     {
+        /// <summary>
+        /// The cameras
+        /// </summary>
         public Camera[] cameras;
-        int currentCamera = 0;
 
-        void Awake()
+        private int currentCamera = 0;
+
+        private void Awake()
         {
             if (cameras == null || cameras.Length == 0)
             {
@@ -23,7 +31,7 @@ namespace UnityLibrary
             EnableOnlyFirstCamera();
         }
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -38,7 +46,7 @@ namespace UnityLibrary
             }
         }
 
-        void EnableOnlyFirstCamera()
+        private void EnableOnlyFirstCamera()
         {
             for (int i = 0; i < cameras.Length; i++)
             {

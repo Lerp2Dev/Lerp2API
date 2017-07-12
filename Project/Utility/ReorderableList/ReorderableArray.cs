@@ -3,102 +3,183 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Malee {
+namespace Malee
+{
+    /// <summary>
+    /// Class ReorderableArray.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="System.ICloneable" />
+    /// <seealso cref="System.Collections.Generic.IList{T}" />
+    /// <seealso cref="System.Collections.Generic.ICollection{T}" />
+    /// <seealso cref="System.Collections.Generic.IEnumerable{T}" />
+    [Serializable]
+    public abstract class ReorderableArray<T> : ICloneable, IList<T>, ICollection<T>, IEnumerable<T>
+    {
+        [SerializeField]
+        private List<T> array = new List<T>();
 
-	[Serializable]
-	public abstract class ReorderableArray<T> : ICloneable, IList<T>, ICollection<T>, IEnumerable<T> {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReorderableArray{T}"/> class.
+        /// </summary>
+        public ReorderableArray()
+            : this(0)
+        {
+        }
 
-		[SerializeField]
-		private List<T> array = new List<T>();
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReorderableArray{T}"/> class.
+        /// </summary>
+        /// <param name="length">The length.</param>
+        public ReorderableArray(int length)
+        {
+            array = new List<T>(length);
+        }
 
-		public ReorderableArray()
-			: this(0) {
-		}
+        /// <summary>
+        /// Gets or sets the <see cref="T"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <returns>T.</returns>
+        public T this[int index]
+        {
+            get { return array[index]; }
+            set { array[index] = value; }
+        }
 
-		public ReorderableArray(int length) {
+        /// <summary>
+        /// Gets the length.
+        /// </summary>
+        /// <value>The length.</value>
+        public int Length
+        {
+            get { return array.Count; }
+        }
 
-			array = new List<T>(length);
-		}
+        /// <summary>
+        /// Gets a value indicating whether this instance is read only.
+        /// </summary>
+        /// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        public bool IsReadOnly
+        {
+            get { return false; }
+        }
 
-		public T this[int index] {
+        /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>The count.</value>
+        public int Count
+        {
+            get { return array.Count; }
+        }
 
-			get { return array[index]; }
-			set { array[index] = value; }
-		}
-		
-		public int Length {
-			
-			get { return array.Count; }
-		}
+        /// <summary>
+        /// Clones this instance.
+        /// </summary>
+        /// <returns>System.Object.</returns>
+        public object Clone()
+        {
+            return new List<T>(array);
+        }
 
-		public bool IsReadOnly {
+        /// <summary>
+        /// Determines whether [contains] [the specified value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if [contains] [the specified value]; otherwise, <c>false</c>.</returns>
+        public bool Contains(T value)
+        {
+            return array.Contains(value);
+        }
 
-			get { return false; }
-		}
+        /// <summary>
+        /// Indexes the of.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.Int32.</returns>
+        public int IndexOf(T value)
+        {
+            return array.IndexOf(value);
+        }
 
-		public int Count {
+        /// <summary>
+        /// Inserts the specified index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="item">The item.</param>
+        public void Insert(int index, T item)
+        {
+            array.Insert(index, item);
+        }
 
-			get { return array.Count; }
-		}
+        /// <summary>
+        /// Removes at.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        public void RemoveAt(int index)
+        {
+            array.RemoveAt(index);
+        }
 
-		public object Clone() {
+        /// <summary>
+        /// Adds the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        public void Add(T item)
+        {
+            array.Add(item);
+        }
 
-			return new List<T>(array);
-		}
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
+        public void Clear()
+        {
+            array.Clear();
+        }
 
-		public bool Contains(T value) {
+        /// <summary>
+        /// Copies to.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="arrayIndex">Index of the array.</param>
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            this.array.CopyTo(array, arrayIndex);
+        }
 
-			return array.Contains(value);
-		}
+        /// <summary>
+        /// Removes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public bool Remove(T item)
+        {
+            return array.Remove(item);
+        }
 
-		public int IndexOf(T value) {
+        /// <summary>
+        /// To the array.
+        /// </summary>
+        /// <returns>T[].</returns>
+        public T[] ToArray()
+        {
+            return array.ToArray();
+        }
 
-			return array.IndexOf(value);
-		}
+        /// <summary>
+        /// Gets the enumerator.
+        /// </summary>
+        /// <returns>IEnumerator&lt;T&gt;.</returns>
+        public IEnumerator<T> GetEnumerator()
+        {
+            return array.GetEnumerator();
+        }
 
-		public void Insert(int index, T item) {
-
-			array.Insert(index, item);
-		}
-
-		public void RemoveAt(int index) {
-
-			array.RemoveAt(index);
-		}
-
-		public void Add(T item) {
-
-			array.Add(item);
-		}
-
-		public void Clear() {
-
-			array.Clear();
-		}
-
-		public void CopyTo(T[] array, int arrayIndex) {
-
-			this.array.CopyTo(array, arrayIndex);
-		}
-
-		public bool Remove(T item) {
-
-			return array.Remove(item);
-		}
-
-		public T[] ToArray() {
-
-			return array.ToArray();
-		}
-
-		public IEnumerator<T> GetEnumerator() {
-
-			return array.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator() {
-
-			return array.GetEnumerator();
-		}
-	}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return array.GetEnumerator();
+        }
+    }
 }

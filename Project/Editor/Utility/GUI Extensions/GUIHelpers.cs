@@ -11,14 +11,29 @@ using Debug = Lerp2API._Debug.Debug;
 
 namespace Lerp2APIEditor.Utility.GUI_Extensions
 {
-    public enum ReferType { Editor, EditorWindow }
-
+    /// <summary>
+    /// Class LerpedList.
+    /// </summary>
     public class LerpedList
     {
+        /// <summary>
+        /// The debug
+        /// </summary>
         public bool _debug = true;
 
+        /// <summary>
+        /// The m list
+        /// </summary>
         public ReorderableList m_List;
+
+        /// <summary>
+        /// The m object
+        /// </summary>
         public SerializedObject m_Obj;
+
+        /// <summary>
+        /// The m property
+        /// </summary>
         public SerializedProperty m_Prop;
 
         private string label;
@@ -29,6 +44,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
         internal ReferType m_Type;
         internal ScriptableObject m_Refer;
 
+        /// <summary>
+        /// Gets the label.
+        /// </summary>
+        /// <value>The label.</value>
         public string Label
         {
             get
@@ -37,6 +56,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the length of the property.
+        /// </summary>
+        /// <value>The length of the property.</value>
         public int PropLength
         {
             get
@@ -45,6 +68,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the default header callback.
+        /// </summary>
+        /// <value>The default header callback.</value>
         public HeaderCallbackDelegate DefaultHeaderCallback
         {
             get
@@ -56,6 +83,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the default element callback.
+        /// </summary>
+        /// <value>The default element callback.</value>
         public ElementCallbackDelegate DefaultElementCallback
         {
             get
@@ -103,6 +134,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the default height element callback.
+        /// </summary>
+        /// <value>The default height element callback.</value>
         public ElementHeightCallbackDelegate DefaultHeightElementCallback
         {
             get
@@ -137,6 +172,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the default element background callback.
+        /// </summary>
+        /// <value>The default element background callback.</value>
         public ElementCallbackDelegate DefaultElementBackgroundCallback
         {
             get
@@ -153,6 +192,10 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the default add dropdown callback.
+        /// </summary>
+        /// <value>The default add dropdown callback.</value>
         public AddDropdownCallbackDelegate DefaultAddDropdownCallback
         {
             get
@@ -176,11 +219,27 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LerpedList"/> class.
+        /// </summary>
+        /// <param name="refer">The refer.</param>
+        /// <param name="obj">The object.</param>
+        /// <param name="prop">The property.</param>
+        /// <param name="lbl">The label.</param>
+        /// <param name="debug">if set to <c>true</c> [debug].</param>
         public LerpedList(Editor refer, SerializedObject obj, SerializedProperty prop, string lbl, bool debug = true)
             : this(refer, obj, prop, lbl, ReferType.Editor, debug)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LerpedList"/> class.
+        /// </summary>
+        /// <param name="refer">The refer.</param>
+        /// <param name="obj">The object.</param>
+        /// <param name="prop">The property.</param>
+        /// <param name="lbl">The label.</param>
+        /// <param name="debug">if set to <c>true</c> [debug].</param>
         public LerpedList(EditorWindow refer, SerializedObject obj, SerializedProperty prop, string lbl, bool debug = true)
             : this(refer, obj, prop, lbl, ReferType.EditorWindow, debug)
         {
@@ -225,56 +284,104 @@ namespace Lerp2APIEditor.Utility.GUI_Extensions
             m_Obj.ApplyModifiedProperties();
         }
 
+        /// <summary>
+        /// Sets the header callback.
+        /// </summary>
+        /// <param name="idx">The index.</param>
+        /// <param name="act">The act.</param>
         public void SetHeaderCallback(int idx, Func<int, HeaderCallbackDelegate> act)
         {
             m_List.drawHeaderCallback = act(idx);
         }
 
+        /// <summary>
+        /// Sets the element callback.
+        /// </summary>
+        /// <param name="idx">The index.</param>
+        /// <param name="act">The act.</param>
         public void SetElementCallback(int idx, Func<int, ElementCallbackDelegate> act)
         {
             m_List.drawElementCallback = act(idx);
         }
 
+        /// <summary>
+        /// Sets the height element callback.
+        /// </summary>
+        /// <param name="idx">The index.</param>
+        /// <param name="act">The act.</param>
         public void SetHeightElementCallback(int idx, Func<int, ElementHeightCallbackDelegate> act)
         {
             m_List.elementHeightCallback = act(idx);
         }
 
+        /// <summary>
+        /// Sets the element background callback.
+        /// </summary>
+        /// <param name="idx">The index.</param>
+        /// <param name="act">The act.</param>
         public void SetElementBackgroundCallback(int idx, Func<int, ElementCallbackDelegate> act)
         {
             m_List.drawElementBackgroundCallback = act(idx);
         }
 
+        /// <summary>
+        /// Sets the add dropdown callback.
+        /// </summary>
+        /// <param name="idx">The index.</param>
+        /// <param name="act">The act.</param>
         public void SetAddDropdownCallback(int idx, Func<int, AddDropdownCallbackDelegate> act)
         {
             m_List.onAddDropdownCallback = act(idx);
         }
 
+        /// <summary>
+        /// Sets the header callback.
+        /// </summary>
+        /// <param name="dlg">The dialog.</param>
         public void SetHeaderCallback(HeaderCallbackDelegate dlg)
         {
             m_List.drawHeaderCallback = dlg;
         }
 
+        /// <summary>
+        /// Sets the element callback.
+        /// </summary>
+        /// <param name="dlg">The dialog.</param>
         public void SetElementCallback(ElementCallbackDelegate dlg)
         {
             m_List.drawElementCallback = dlg;
         }
 
+        /// <summary>
+        /// Sets the height element callback.
+        /// </summary>
+        /// <param name="dlg">The dialog.</param>
         public void SetHeightElementCallback(ElementHeightCallbackDelegate dlg)
         {
             m_List.elementHeightCallback = dlg;
         }
 
+        /// <summary>
+        /// Sets the element background callback.
+        /// </summary>
+        /// <param name="dlg">The dialog.</param>
         public void SetElementBackgroundCallback(ElementCallbackDelegate dlg)
         {
             m_List.drawElementBackgroundCallback = dlg;
         }
 
+        /// <summary>
+        /// Sets the add dropdown callback.
+        /// </summary>
+        /// <param name="dlg">The dialog.</param>
         public void SetAddDropdownCallback(AddDropdownCallbackDelegate dlg)
         {
             m_List.onAddDropdownCallback = dlg;
         }
 
+        /// <summary>
+        /// Draws this instance.
+        /// </summary>
         public void Draw()
         {
             if (m_List.drawHeaderCallback == null)

@@ -7,22 +7,28 @@ using UnityEngine.Networking;
 
 namespace UnityLibrary
 {
+    /// <summary>
+    /// Class AssetBundleLoader.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class AssetBundleLoader : MonoBehaviour
     {
+        /// <summary>
+        /// The asset bundle URL
+        /// </summary>
         public string assetBundleURL = "http://localhost/bundle";
 
-        void Start()
+        private void Start()
         {
             StartCoroutine(DownloadAndCache(assetBundleURL, ""));
         }
-
 
         /// <summary>
         /// asset bundle load and instantiate
         /// </summary>
         /// <param name="bundleURL">full url to the bundle file</param>
         /// <param name="assetName">optional asset name to instantiate from the bundle</param>
-        IEnumerator DownloadAndCache(string bundleURL, string assetName)
+        private IEnumerator DownloadAndCache(string bundleURL, string assetName)
         {
             // Wait for the Caching system to be ready
             while (!Caching.ready)
@@ -62,24 +68,24 @@ namespace UnityLibrary
                     if (Caching.IsVersionCached(bundleURL, hashString) == true)
                     {
                         Debug.Log("Bundle with this hash is already cached!");
-                    } else
+                    }
+                    else
                     {
                         Debug.Log("No cached version founded for this hash..");
                     }
-                } else
+                }
+                else
                 {
                     // invalid loaded hash, just try loading latest bundle
                     Debug.LogError("Invalid hash:" + hashString);
                     yield break;
                 }
-
-            } else
+            }
+            else
             {
                 Debug.LogError("Manifest doesn't contain string 'ManifestFileVersion': " + bundleURL + ".manifest");
                 yield break;
             }
-
-
 
             // now download the actual bundle, with hashString parameter it uses cached version if available
             www = UnityWebRequest.GetAssetBundle(bundleURL + "?r=" + (Random.value * 9999999), hashString, 0);
@@ -102,7 +108,8 @@ namespace UnityLibrary
             if (assetName == "")
             {
                 bundlePrefab = (GameObject)bundle.LoadAsset(bundle.GetAllAssetNames()[0]);
-            } else // use asset name
+            }
+            else // use asset name
             {
                 bundlePrefab = (GameObject)bundle.LoadAsset(assetName);
             }
@@ -127,5 +134,4 @@ namespace UnityLibrary
             bundle.Unload(false);
         }
     }
-
 }

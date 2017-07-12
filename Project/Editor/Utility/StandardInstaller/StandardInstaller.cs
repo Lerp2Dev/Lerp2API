@@ -11,14 +11,6 @@ using Lerp2API.Hepers.Serializer_Extensions;
 
 namespace Lerp2API.Utility.StandardInstaller
 {
-    [Serializable]
-    public enum AssetLocation
-    {
-        Local,
-        URL,
-        HDD
-    }
-
     /// <summary>
     /// Class StandardInstaller.
     /// </summary>
@@ -30,6 +22,10 @@ namespace Lerp2API.Utility.StandardInstaller
         /// </summary>
         public static StandardInstaller me;
 
+        /// <summary>
+        /// Gets the editor key.
+        /// </summary>
+        /// <value>The editor key.</value>
         public static string EditorKey
         {
             get
@@ -38,6 +34,10 @@ namespace Lerp2API.Utility.StandardInstaller
             }
         }
 
+        /// <summary>
+        /// Gets the text file.
+        /// </summary>
+        /// <value>The text file.</value>
         public static string TxtFile
         {
             get
@@ -46,6 +46,10 @@ namespace Lerp2API.Utility.StandardInstaller
             }
         }
 
+        /// <summary>
+        /// Gets the json file.
+        /// </summary>
+        /// <value>The json file.</value>
         public static string JSONFile
         {
             get
@@ -73,6 +77,9 @@ namespace Lerp2API.Utility.StandardInstaller
         private static int selectedTab = 0;
         private readonly static LerpedList[] m_Lists = new LerpedList[2];
 
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
         [MenuItem("Lerp2Dev Team Tools/Set Standard packages ready to be uploaded...")]
         public static void Init()
         {
@@ -321,6 +328,9 @@ namespace Lerp2API.Utility.StandardInstaller
                 me.Close();
         }
 
+        /// <summary>
+        /// Sets the editor preference.
+        /// </summary>
         public static void SetEditorPref()
         { //I use editorpref because they cannot be exported. And the api with json (LerpedCore) can be uploaded.
             EditorPrefs.SetBool(EditorKey, true);
@@ -350,17 +360,31 @@ namespace Lerp2API.Utility.StandardInstaller
         }
     }
 
+    /// <summary>
+    /// Class AssetsLocation.
+    /// </summary>
+    /// <seealso cref="UnityEngine.ScriptableObject" />
     [Serializable]
     public class AssetsLocation : ScriptableObject
     {
+        /// <summary>
+        /// The location
+        /// </summary>
         [SerializeField]
         public AssetLocation location;
 
+        /// <summary>
+        /// The assets
+        /// </summary>
         [SerializeField]
         public List<ActiveAsset> assets = new List<ActiveAsset>(1);
 
         private SerializedObject _serObj;
 
+        /// <summary>
+        /// Gets the serialized object.
+        /// </summary>
+        /// <value>The serialized object.</value>
         public SerializedObject serializedObj
         {
             get
@@ -371,6 +395,11 @@ namespace Lerp2API.Utility.StandardInstaller
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssetsLocation"/> class.
+        /// </summary>
+        /// <param name="aLoc">a loc.</param>
+        /// <param name="aas">The aas.</param>
         public AssetsLocation(AssetLocation aLoc, List<ActiveAsset> aas)
         {
             location = aLoc;
@@ -378,18 +407,39 @@ namespace Lerp2API.Utility.StandardInstaller
         }
     }
 
+    /// <summary>
+    /// Class ActiveAsset.
+    /// </summary>
+    /// <seealso cref="UnityEngine.Object" />
     [Serializable]
     public class ActiveAsset : Object
     {
+        /// <summary>
+        /// The active
+        /// </summary>
         public bool active;
 
+        /// <summary>
+        /// The name
+        /// </summary>
         public string name = "",
+                      /// <summary>
+                      /// The path
+                      /// </summary>
                       path = "";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActiveAsset"/> class.
+        /// </summary>
         public ActiveAsset()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActiveAsset"/> class.
+        /// </summary>
+        /// <param name="n">The n.</param>
+        /// <param name="p">The p.</param>
         public ActiveAsset(string n, string p)
         {
             name = n;

@@ -6,17 +6,38 @@ using System.Collections;
 
 namespace M8.ImageEffects
 {
+    /// <summary>
+    /// Class PostEffectsBase.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
     [AddComponentMenu("")]
     public abstract class PostEffectsBase : MonoBehaviour
     {
+        /// <summary>
+        /// The support HDR textures
+        /// </summary>
         protected bool supportHDRTextures = true;
+
+        /// <summary>
+        /// The support d X11
+        /// </summary>
         protected bool supportDX11 = false;
+
+        /// <summary>
+        /// The is supported
+        /// </summary>
         protected bool isSupported = true;
 
         private bool mStarted = false;
 
+        /// <summary>
+        /// Checks the shader and create material.
+        /// </summary>
+        /// <param name="s">The s.</param>
+        /// <param name="m2Create">The m2 create.</param>
+        /// <returns>Material.</returns>
         public Material CheckShaderAndCreateMaterial(Shader s, Material m2Create)
         {
             if (s == null)
@@ -45,6 +66,12 @@ namespace M8.ImageEffects
             }
         }
 
+        /// <summary>
+        /// Creates the material.
+        /// </summary>
+        /// <param name="s">The s.</param>
+        /// <param name="m2Create">The m2 create.</param>
+        /// <returns>Material.</returns>
         public Material CreateMaterial(Shader s, Material m2Create)
         {
             if (s == null)
@@ -70,13 +97,26 @@ namespace M8.ImageEffects
             }
         }
 
+        /// <summary>
+        /// Checks the support.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool CheckSupport()
         {
             return CheckSupport(false);
         }
 
+        /// <summary>
+        /// Checks the resources.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public abstract bool CheckResources();
 
+        /// <summary>
+        /// Checks the support.
+        /// </summary>
+        /// <param name="needDepth">if set to <c>true</c> [need depth].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool CheckSupport(bool needDepth)
         {
             isSupported = true;
@@ -105,6 +145,12 @@ namespace M8.ImageEffects
             return true;
         }
 
+        /// <summary>
+        /// Checks the support.
+        /// </summary>
+        /// <param name="needDepth">if set to <c>true</c> [need depth].</param>
+        /// <param name="needHdr">if set to <c>true</c> [need HDR].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool CheckSupport(bool needDepth, bool needHdr)
         {
             if (!CheckSupport(needDepth))
@@ -119,17 +165,29 @@ namespace M8.ImageEffects
             return true;
         }
 
+        /// <summary>
+        /// DX11s the support.
+        /// </summary>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Dx11Support()
         {
             return supportDX11;
         }
 
+        /// <summary>
+        /// Reports the automatic disable.
+        /// </summary>
         public void ReportAutoDisable()
         {
             Debug.LogWarning("The image effect " + this.ToString() + " has been disabled as it's not supported on the current platform.");
         }
 
         // deprecated but needed for old effects to survive upgrading
+        /// <summary>
+        /// Checks the shader.
+        /// </summary>
+        /// <param name="s">The s.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool CheckShader(Shader s)
         {
             Debug.Log("The shader " + s.ToString() + " on effect " + this.ToString() + " is not part of the Unity 3.2+ effects suite anymore. For best performance and quality, please ensure you are using the latest Standard Assets Image Effects (Pro only) package.");
@@ -144,6 +202,9 @@ namespace M8.ImageEffects
             }
         }
 
+        /// <summary>
+        /// Nots the supported.
+        /// </summary>
         public void NotSupported()
         {
             enabled = false;
@@ -151,6 +212,11 @@ namespace M8.ImageEffects
             return;
         }
 
+        /// <summary>
+        /// Draws the border.
+        /// </summary>
+        /// <param name="dest">The dest.</param>
+        /// <param name="material">The material.</param>
         public void DrawBorder(RenderTexture dest, Material material)
         {
             float x1, x2, y1, y2;
@@ -233,6 +299,9 @@ namespace M8.ImageEffects
                 CheckResources();
         }
 
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
         protected virtual void Start()
         {
             mStarted = true;

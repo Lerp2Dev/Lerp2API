@@ -4,5 +4,74 @@
         <name>Lerp2Console</name>
     </assembly>
     <members>
+        <member name="T:Lerp2Console.CtrlTypes">
+            <summary>
+            Enum CtrlTypes
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.CtrlTypes.CTRL_C_EVENT">
+            <summary>
+            The control c event
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.CtrlTypes.CTRL_BREAK_EVENT">
+            <summary>
+            The control break event
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.CtrlTypes.CTRL_CLOSE_EVENT">
+            <summary>
+            The control close event
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.CtrlTypes.CTRL_LOGOFF_EVENT">
+            <summary>
+            The control logoff event
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.CtrlTypes.CTRL_SHUTDOWN_EVENT">
+            <summary>
+            The control shutdown event
+            </summary>
+        </member>
+        <member name="M:Lerp2Console.Program.SetConsoleCtrlHandler(Lerp2Console.Program.HandlerRoutine,System.Boolean)">
+            <summary>
+            Sets the console control handler.
+            </summary>
+            <param name="Handler">The handler.</param>
+            <param name="Add">if set to <c>true</c> [add].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Lerp2Console.Program.HandlerRoutine">
+            <summary>
+            Delegate HandlerRoutine
+            </summary>
+            <param name="CtrlType">Type of the control.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2Console.Parameter.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2Console.Parameter"/> class.
+            </summary>
+            <param name="n">The n.</param>
+            <param name="v">The v.</param>
+        </member>
+        <member name="F:Lerp2Console.Parameter.name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="F:Lerp2Console.Parameter.value">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="M:Lerp2Console.Parameter.GetParams(System.String)">
+            <summary>
+            Gets the parameters.
+            </summary>
+            <param name="arg">The argument.</param>
+            <returns>Parameter[].</returns>
+        </member>
     </members>
 </doc>

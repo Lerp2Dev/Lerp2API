@@ -376,6 +376,7 @@
     <Compile Include="Utility\ReorderableList\Attributes\ReorderableAttribute.cs" />
     <Compile Include="Utility\ReorderableList\ReorderableArray.cs" />
     <Compile Include="Utility\RequiredInspectorItems.cs" />
+    <Compile Include="Utility\SerializableDictionary.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2Constants.cs" />
     <Compile Include="Utility\SharpZIP\src\BZip2\BZip2Exception.cs" />

@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDrawers\DictionaryDrawer.cs" />
     <Compile Include="CustomDrawers\ReadOnlyDrawer.cs" />
     <Compile Include="CustomIEditor\CommandsEditor.cs" />
     <Compile Include="EditorHelpers.cs" />

@@ -3,19 +3,25 @@ using UnityEngine;
 // Draws lines with GL : https://docs.unity3d.com/ScriptReference/GL.html
 // Usage: Attach this script to gameobject in scene
 
+/// <summary>
+/// Class DrawGLLine.
+/// </summary>
 public class DrawGLLine : MonoBehaviour
 {
+    /// <summary>
+    /// The line color
+    /// </summary>
     public Color lineColor = Color.red;
 
-    Material lineMaterial;
+    private Material lineMaterial;
 
-    void Awake()
+    private void Awake()
     {
         // must be called before trying to draw lines..
         CreateLineMaterial();
     }
 
-    void CreateLineMaterial()
+    private void CreateLineMaterial()
     {
         // Unity has a built-in shader that is useful for drawing simple colored things
         var shader = Shader.Find("Hidden/Internal-Colored");
@@ -30,9 +36,8 @@ public class DrawGLLine : MonoBehaviour
         lineMaterial.SetInt("_ZWrite", 0);
     }
 
-
     // cannot call this on update, line wont be visible then.. and if used OnPostRender() thats works when attached to camera only
-    void OnRenderObject()
+    private void OnRenderObject()
     {
         lineMaterial.SetPass(0);
 

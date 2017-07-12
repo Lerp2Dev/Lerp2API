@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class FPSCounter.
+/// </summary>
 public class FPSCounter : MonoBehaviour
 {
     [SerializeField]
@@ -9,12 +12,12 @@ public class FPSCounter : MonoBehaviour
     private int frames = 0;
     private float timeleft;
 
-    int qty;
+    private int qty;
 
-    float fps;
-    float avgFps;
+    private float fps;
+    private float avgFps;
 
-    void Update()
+    private void Update()
     {
         timeleft -= Time.deltaTime;
         accum += Time.timeScale / Time.deltaTime;
@@ -33,10 +36,9 @@ public class FPSCounter : MonoBehaviour
         avgFps += (fps - avgFps) / qty;
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         GUI.Label(new Rect(Screen.width - 150, 0, 150, 20), "FPS: " + fps.ToString("f2"));
         GUI.Label(new Rect(Screen.width - 150, 20, 150, 20), "Avg FPS: " + avgFps.ToString("f2"));
     }
-
 }

@@ -2066,3 +2066,133 @@ namespace UnityInputConverter.YamlDotNet.Serialization
         DefaultToStaticType = 16,
     }
 }
+
+namespace Lerp2APIEditor.CustomDrawers
+{
+    /// <summary>
+    /// Enum MessengerMode
+    /// </summary>
+    public enum MessengerMode
+    {
+        /// <summary>
+        /// The dont require listener
+        /// </summary>
+        DONT_REQUIRE_LISTENER,
+
+        /// <summary>
+        /// The require listener
+        /// </summary>
+        REQUIRE_LISTENER,
+    }
+}
+
+namespace UnityStandardAssets.ImageEffects
+{
+    /// <summary>
+    /// Enum ColorCorrectionMode
+    /// </summary>
+    public enum ColorCorrectionMode
+    {
+        /// <summary>
+        /// The simple
+        /// </summary>
+        Simple = 0,
+
+        /// <summary>
+        /// The advanced
+        /// </summary>
+        Advanced = 1
+    }
+}
+
+namespace Lerp2APIEditor.Utility.GUI_Extensions
+{
+    /// <summary>
+    /// Enum ReferType
+    /// </summary>
+    public enum ReferType
+    {
+        /// <summary>
+        /// The editor
+        /// </summary>
+        Editor,
+
+        /// <summary>
+        /// The editor window
+        /// </summary>
+        EditorWindow
+    }
+}
+
+namespace Malee.Editor
+{
+    /// <summary>
+    /// Enum ElementDisplayType
+    /// </summary>
+    public enum ElementDisplayType
+    {
+        /// <summary>
+        /// The automatic
+        /// </summary>
+        Auto,
+
+        /// <summary>
+        /// The expandable
+        /// </summary>
+        Expandable,
+
+        /// <summary>
+        /// The single line
+        /// </summary>
+        SingleLine
+    }
+}
+
+namespace Lerp2API.Utility.StandardInstaller
+{
+    /// <summary>
+    /// Enum AssetLocation
+    /// </summary>
+    [Serializable]
+    public enum AssetLocation
+    {
+        /// <summary>
+        /// The local
+        /// </summary>
+        Local,
+
+        /// <summary>
+        /// The URL
+        /// </summary>
+        URL,
+
+        /// <summary>
+        /// The HDD
+        /// </summary>
+        HDD
+    }
+}
+
+namespace Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps
+{
+    /// <summary>
+    /// Enum FrameMode
+    /// </summary>
+    public enum FrameMode
+    {
+        /// <summary>
+        /// The framed
+        /// </summary>
+        Framed,
+
+        /// <summary>
+        /// The pixel perfect
+        /// </summary>
+        PixelPerfect,
+
+        /// <summary>
+        /// The half way
+        /// </summary>
+        HalfWay
+    }
+}

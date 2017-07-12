@@ -24,27 +24,54 @@ using System.Collections.Generic;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class ObjectKvp. This class cannot be inherited.
+    /// </summary>
+    /// <seealso cref="Lerp2API.Utility.UnityNameValuePair{UnityEngine.Object}" />
     [System.Serializable]
     public sealed class ObjectKvp : UnityNameValuePair<Object>
     {
+        /// <summary>
+        /// The value
+        /// </summary>
         public Object value = null;
 
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>The value.</value>
         override public Object Value
         {
             get { return this.value; }
             set { this.value = value; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectKvp"/> class.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
         public ObjectKvp(string key, Object value) : base(key, value)
         {
         }
     }
 
+    /// <summary>
+    /// Class ObjectDictionary.
+    /// </summary>
+    /// <seealso cref="Lerp2API.Utility.UnityDictionary{UnityEngine.Object}" />
     [System.Serializable]
     public class ObjectDictionary : UnityDictionary<Object>
     {
+        /// <summary>
+        /// The values
+        /// </summary>
         public List<ObjectKvp> values;
 
+        /// <summary>
+        /// Gets or sets the key value pairs.
+        /// </summary>
+        /// <value>The key value pairs.</value>
         override protected List<UnityKeyValuePair<string, Object>> KeyValuePairs
         {
             get
@@ -71,6 +98,11 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Sets the key value pair.
+        /// </summary>
+        /// <param name="k">The k.</param>
+        /// <param name="v">The v.</param>
         override protected void SetKeyValuePair(string k, Object v)
         {
             var index = values.FindIndex(x =>

@@ -24,45 +24,86 @@ using System.Collections.Generic;
 
 namespace Lerp2API.Utility
 {
+    /// <summary>
+    /// Class UnityNameValuePair.
+    /// </summary>
+    /// <typeparam name="V"></typeparam>
+    /// <seealso cref="Lerp2API.Utility.UnityKeyValuePair{System.String, V}" />
     public class UnityNameValuePair<V> : UnityKeyValuePair<string, V>
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         public string name = null;
 
+        /// <summary>
+        /// Gets or sets the key.
+        /// </summary>
+        /// <value>The key.</value>
         override public string Key
         {
             get { return name; }
             set { name = value; }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnityNameValuePair{V}"/> class.
+        /// </summary>
         public UnityNameValuePair() : base()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnityNameValuePair{V}"/> class.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
         public UnityNameValuePair(string key, V value) : base(key, value)
         {
         }
     }
 
+    /// <summary>
+    /// Class UnityKeyValuePair.
+    /// </summary>
+    /// <typeparam name="K"></typeparam>
+    /// <typeparam name="V"></typeparam>
     public class UnityKeyValuePair<K, V>
     {
+        /// <summary>
+        /// Gets or sets the key.
+        /// </summary>
+        /// <value>The key.</value>
         virtual public K Key
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the value.
+        /// </summary>
+        /// <value>The value.</value>
         virtual public V Value
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnityKeyValuePair{K, V}"/> class.
+        /// </summary>
         public UnityKeyValuePair()
         {
             Key = default(K);
             Value = default(V);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnityKeyValuePair{K, V}"/> class.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
         public UnityKeyValuePair(K key, V value)
         {
             Key = key;
@@ -70,14 +111,29 @@ namespace Lerp2API.Utility
         }
     }
 
+    /// <summary>
+    /// Class UnityDictionary.
+    /// </summary>
+    /// <typeparam name="K"></typeparam>
+    /// <typeparam name="V"></typeparam>
+    /// <seealso cref="System.Collections.Generic.IDictionary{K, V}" />
     public abstract class UnityDictionary<K, V> : IDictionary<K, V>
     {
+        /// <summary>
+        /// Gets or sets the key value pairs.
+        /// </summary>
+        /// <value>The key value pairs.</value>
         abstract protected List<UnityKeyValuePair<K, V>> KeyValuePairs
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Sets the key value pair.
+        /// </summary>
+        /// <param name="k">The k.</param>
+        /// <param name="v">The v.</param>
         protected abstract void SetKeyValuePair(K k, V v); /* {
 
       var index = Collection.FindIndex(x => {return x.Key == k;});
@@ -95,6 +151,11 @@ namespace Lerp2API.Utility
       values.Add(new UnityKeyValuePair(key, value));
     } */
 
+        /// <summary>
+        /// Gets or sets the <see cref="V"/> with the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>V.</returns>
         virtual public V this[K key]
         {
             get
@@ -124,16 +185,31 @@ namespace Lerp2API.Utility
 
         #region IDictionary interface
 
+        /// <summary>
+        /// Adds the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
         public void Add(K key, V value)
         {
             this[key] = value;
         }
 
+        /// <summary>
+        /// Adds the specified KVP.
+        /// </summary>
+        /// <param name="kvp">The KVP.</param>
         public void Add(KeyValuePair<K, V> kvp)
         {
             this[kvp.Key] = kvp.Value;
         }
 
+        /// <summary>
+        /// Tries the get value.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="value">The value.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool TryGetValue(K key, out V value)
         {
             if (!this.ContainsKey(key))
@@ -146,11 +222,21 @@ namespace Lerp2API.Utility
             return true;
         }
 
+        /// <summary>
+        /// Removes the specified item.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Remove(KeyValuePair<K, V> item)
         {
             return Remove(item.Key);
         }
 
+        /// <summary>
+        /// Removes the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public bool Remove(K key)
         {
             var list = KeyValuePairs;
@@ -172,6 +258,9 @@ namespace Lerp2API.Utility
             return true;
         }
 
+        /// <summary>
+        /// Clears this instance.
+        /// </summary>
         public void Clear()
         {
             var list = KeyValuePairs;
@@ -181,6 +270,11 @@ namespace Lerp2API.Utility
             KeyValuePairs = list;
         }
 
+        /// <summary>
+        /// Determines whether the specified key contains key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns><c>true</c> if the specified key contains key; otherwise, <c>false</c>.</returns>
         public bool ContainsKey(K key)
         {
             return KeyValuePairs.FindIndex(x =>
@@ -189,11 +283,20 @@ namespace Lerp2API.Utility
             }) != -1;
         }
 
+        /// <summary>
+        /// Determines whether [contains] [the specified KVP].
+        /// </summary>
+        /// <param name="kvp">The KVP.</param>
+        /// <returns><c>true</c> if [contains] [the specified KVP]; otherwise, <c>false</c>.</returns>
         public bool Contains(KeyValuePair<K, V> kvp)
         {
             return this[kvp.Key].Equals(kvp.Value);
         }
 
+        /// <summary>
+        /// Gets the count.
+        /// </summary>
+        /// <value>The count.</value>
         public int Count
         {
             get
@@ -202,6 +305,11 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Copies to.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="index">The index.</param>
         public void CopyTo(KeyValuePair<K, V>[] array, int index)
         {
             var copy = KeyValuePairs.ConvertAll<KeyValuePair<K, V>>(
@@ -219,11 +327,19 @@ namespace Lerp2API.Utility
             return GetEnumerator() as IEnumerator;
         }
 
+        /// <summary>
+        /// Gets the enumerator.
+        /// </summary>
+        /// <returns>IEnumerator&lt;KeyValuePair&lt;K, V&gt;&gt;.</returns>
         public IEnumerator<KeyValuePair<K, V>> GetEnumerator()
         {
             return new UnityDictionaryEnumerator(this);
         }
 
+        /// <summary>
+        /// Gets the keys.
+        /// </summary>
+        /// <value>The keys.</value>
         public ICollection<K> Keys
         {
             get
@@ -235,6 +351,10 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Gets the values.
+        /// </summary>
+        /// <value>The values.</value>
         public ICollection<V> Values
         {
             get
@@ -246,6 +366,10 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Gets the items.
+        /// </summary>
+        /// <value>The items.</value>
         public ICollection<KeyValuePair<K, V>> Items
         {
             get
@@ -257,21 +381,37 @@ namespace Lerp2API.Utility
             }
         }
 
+        /// <summary>
+        /// Gets the synchronize root.
+        /// </summary>
+        /// <value>The synchronize root.</value>
         public V SyncRoot
         {
             get { return default(V); }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is fixed size.
+        /// </summary>
+        /// <value><c>true</c> if this instance is fixed size; otherwise, <c>false</c>.</value>
         public bool IsFixedSize
         {
             get { return false; }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is read only.
+        /// </summary>
+        /// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
         public bool IsReadOnly
         {
             get { return false; }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this instance is synchronized.
+        /// </summary>
+        /// <value><c>true</c> if this instance is synchronized; otherwise, <c>false</c>.</value>
         public bool IsSynchronized
         {
             get { return false; }
@@ -301,6 +441,10 @@ namespace Lerp2API.Utility
                 get { return Current; }
             }
 
+            /// <summary>
+            /// Gets the current.
+            /// </summary>
+            /// <value>The current.</value>
             public KeyValuePair<K, V> Current
             {
                 get
@@ -311,11 +455,18 @@ namespace Lerp2API.Utility
             }
 
             // Return the current dictionary entry.
+            /// <summary>
+            /// Gets the entry.
+            /// </summary>
+            /// <value>The entry.</value>
             public KeyValuePair<K, V> Entry
             {
                 get { return (KeyValuePair<K, V>)Current; }
             }
 
+            /// <summary>
+            /// Disposes this instance.
+            /// </summary>
             public void Dispose()
             {
                 index = -1;
@@ -323,6 +474,10 @@ namespace Lerp2API.Utility
             }
 
             // Return the key of the current item.
+            /// <summary>
+            /// Gets the key.
+            /// </summary>
+            /// <value>The key.</value>
             public K Key
             {
                 get
@@ -333,6 +488,10 @@ namespace Lerp2API.Utility
             }
 
             // Return the value of the current item.
+            /// <summary>
+            /// Gets the value.
+            /// </summary>
+            /// <value>The value.</value>
             public V Value
             {
                 get
@@ -343,6 +502,10 @@ namespace Lerp2API.Utility
             }
 
             // Advance to the next item.
+            /// <summary>
+            /// Moves the next.
+            /// </summary>
+            /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
             public bool MoveNext()
             {
                 if (index < items.Length - 1)
@@ -363,6 +526,9 @@ namespace Lerp2API.Utility
             }
 
             // Reset the index to restart the enumeration.
+            /// <summary>
+            /// Resets this instance.
+            /// </summary>
             public void Reset()
             {
                 index = -1;
@@ -372,6 +538,11 @@ namespace Lerp2API.Utility
         }
     }
 
+    /// <summary>
+    /// Class UnityDictionary.
+    /// </summary>
+    /// <typeparam name="V"></typeparam>
+    /// <seealso cref="Lerp2API.Utility.UnityDictionary{System.String, V}" />
     public abstract class UnityDictionary<V> : UnityDictionary<string, V>
     {
     }

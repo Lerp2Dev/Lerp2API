@@ -4,14 +4,28 @@ using UnityEngine;
 
 namespace Lerp2API.Hepers.Serializer_Extensions
 {
+    /// <summary>
+    /// Class SerializedPropertyExtensions.
+    /// </summary>
     public static class SerializedPropertyExtensions
     {
+        /// <summary>
+        /// Adds the specified value.
+        /// </summary>
+        /// <param name="prop">The property.</param>
+        /// <param name="value">The value.</param>
         public static void Add(this sp prop, Object value)
         {
             ++prop.arraySize;
             prop.GetAt(prop.arraySize - 1).objectReferenceValue = value;
         }
 
+        /// <summary>
+        /// Gets at.
+        /// </summary>
+        /// <param name="prop">The property.</param>
+        /// <param name="i">The i.</param>
+        /// <returns>sp.</returns>
         public static sp GetAt(this sp prop, int i)
         {
             try
@@ -24,11 +38,22 @@ namespace Lerp2API.Hepers.Serializer_Extensions
             }
         }
 
+        /// <summary>
+        /// Sets the object value at.
+        /// </summary>
+        /// <param name="prop">The property.</param>
+        /// <param name="i">The i.</param>
+        /// <param name="toValue">To value.</param>
         public static void SetObjectValueAt(this sp prop, int i, System.Object toValue)
         {
             prop.GetAt(i).SetObjectValue(toValue);
         }
 
+        /// <summary>
+        /// Sets the object value.
+        /// </summary>
+        /// <param name="prop">The property.</param>
+        /// <param name="toValue">To value.</param>
         public static void SetObjectValue(this sp prop, System.Object toValue)
         {
             switch (prop.propertyType)
@@ -75,6 +100,11 @@ namespace Lerp2API.Hepers.Serializer_Extensions
             }
         }
 
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <returns>System.Object.</returns>
         public static object GetValue(this sp property)
         {
             System.Type parentType = property.serializedObject.targetObject.GetType();
@@ -82,6 +112,11 @@ namespace Lerp2API.Hepers.Serializer_Extensions
             return fi.GetValue(property.serializedObject.targetObject);
         }
 
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="property">The property.</param>
+        /// <param name="value">The value.</param>
         public static void SetValue(this sp property, object value)
         {
             System.Type parentType = property.serializedObject.targetObject.GetType();

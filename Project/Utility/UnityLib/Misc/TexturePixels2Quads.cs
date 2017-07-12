@@ -5,12 +5,22 @@ using System.Collections;
 // - assign texture (that has [x] read/write enabled in inspector
 // - assign Quad mesh (prefab) to planePrefab. You can assign Unlit/Color material to the quad prefab first.
 
+/// <summary>
+/// Class TexturePixels2Quads.
+/// </summary>
 public class TexturePixels2Quads : MonoBehaviour
 {
+    /// <summary>
+    /// The tex
+    /// </summary>
     public Texture2D tex;
+
+    /// <summary>
+    /// The plane prefab
+    /// </summary>
     public Renderer planePrefab;
 
-    void Start()
+    private void Start()
     {
         for (int x = 0; x < tex.width; x++)
         {

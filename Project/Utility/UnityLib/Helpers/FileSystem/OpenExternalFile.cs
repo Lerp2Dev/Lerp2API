@@ -8,10 +8,16 @@ using System.Diagnostics;
 using System;
 using Debug = UnityEngine.Debug;
 
+/// <summary>
+/// Class OpenExternalFile.
+/// </summary>
 public class OpenExternalFile : MonoBehaviour
 {
-
     // opens external file in default viewer
+    /// <summary>
+    /// Opens the file.
+    /// </summary>
+    /// <param name="fullPath">The full path.</param>
     public static void OpenFile(string fullPath)
     {
         Debug.Log("opening:" + fullPath);

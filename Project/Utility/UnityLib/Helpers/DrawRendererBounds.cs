@@ -2,17 +2,19 @@ using UnityEngine;
 
 // draws mesh renderer bounding box using Debug.Drawline
 
+/// <summary>
+/// Class DrawRendererBounds.
+/// </summary>
 public class DrawRendererBounds : MonoBehaviour
 {
-    MeshRenderer meshRenderer;
+    private MeshRenderer meshRenderer;
 
-    void Awake()
+    private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-
-    void Update()
+    private void Update()
     {
         var b = meshRenderer.bounds;
 

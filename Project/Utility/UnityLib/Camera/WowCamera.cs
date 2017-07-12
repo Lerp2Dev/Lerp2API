@@ -1,29 +1,84 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Class WowCamera.
+/// </summary>
 public class WowCamera : MonoBehaviour
 {
+    /// <summary>
+    /// The target
+    /// </summary>
     public Transform target;
 
+    /// <summary>
+    /// The target height
+    /// </summary>
     public float targetHeight = 1.7f;
+
+    /// <summary>
+    /// The distance
+    /// </summary>
     public float distance = 5.0f;
+
+    /// <summary>
+    /// The offset from wall
+    /// </summary>
     public float offsetFromWall = 0.1f;
 
+    /// <summary>
+    /// The maximum distance
+    /// </summary>
     public float maxDistance = 20;
+
+    /// <summary>
+    /// The minimum distance
+    /// </summary>
     public float minDistance = .6f;
 
+    /// <summary>
+    /// The x speed
+    /// </summary>
     public float xSpeed = 200.0f;
+
+    /// <summary>
+    /// The y speed
+    /// </summary>
     public float ySpeed = 200.0f;
+
+    /// <summary>
+    /// The target speed
+    /// </summary>
     public float targetSpeed = 5.0f;
 
+    /// <summary>
+    /// The y minimum limit
+    /// </summary>
     public int yMinLimit = -80;
+
+    /// <summary>
+    /// The y maximum limit
+    /// </summary>
     public int yMaxLimit = 80;
 
+    /// <summary>
+    /// The zoom rate
+    /// </summary>
     public int zoomRate = 40;
 
+    /// <summary>
+    /// The rotation dampening
+    /// </summary>
     public float rotationDampening = 3.0f;
+
+    /// <summary>
+    /// The zoom dampening
+    /// </summary>
     public float zoomDampening = 5.0f;
 
+    /// <summary>
+    /// The collision layers
+    /// </summary>
     public LayerMask collisionLayers = -1;
 
     private float xDeg = 0.0f;

@@ -5,9 +5,13 @@ using Debug = UnityEngine.Debug;
 
 namespace UnityLibrary
 {
+    /// <summary>
+    /// Class Timer.
+    /// </summary>
+    /// <seealso cref="UnityEngine.MonoBehaviour" />
     public class Timer : MonoBehaviour
     {
-        void Start()
+        private void Start()
         {
             // init and start timer
             var stopwatch = new Stopwatch();

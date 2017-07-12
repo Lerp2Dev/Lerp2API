@@ -7,12 +7,15 @@ using UnityEngine;
 // "Listens to the file system change notifications and raises events when a directory, or file in a directory, changes."
 // references: http://stackoverflow.com/questions/15017506/using-filesystemwatcher-to-monitor-a-directory and http://www.c-sharpcorner.com/article/monitoring-file-system-using-filesystemwatcher-class-part1/
 
+/// <summary>
+/// Class FileSystemWatch.
+/// </summary>
 public class FileSystemWatch : MonoBehaviour
 {
-    string myPath = "c:\\myfolder\\";
-    FileSystemWatcher watcher;
+    private string myPath = "c:\\myfolder\\";
+    private FileSystemWatcher watcher;
 
-    void Start()
+    private void Start()
     {
         InitFileSystemWatcher();
     }

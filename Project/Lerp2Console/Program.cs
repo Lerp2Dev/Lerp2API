@@ -11,11 +11,44 @@ using Lerp2API.Hepers.Debug_Utils;
 
 namespace Lerp2Console
 {
-    class Program
+    /// <summary>
+    /// Enum CtrlTypes
+    /// </summary>
+    public enum CtrlTypes
+    {
+        /// <summary>
+        /// The control c event
+        /// </summary>
+        CTRL_C_EVENT = 0,
+
+        /// <summary>
+        /// The control break event
+        /// </summary>
+        CTRL_BREAK_EVENT,
+
+        /// <summary>
+        /// The control close event
+        /// </summary>
+        CTRL_CLOSE_EVENT,
+
+        /// <summary>
+        /// The control logoff event
+        /// </summary>
+        CTRL_LOGOFF_EVENT = 5,
+
+        /// <summary>
+        /// The control shutdown event
+        /// </summary>
+        CTRL_SHUTDOWN_EVENT
+    }
+
+    internal class Program
     {
         private static SocketClient lerpedSocketConsoleClient;
+
         //private static SocketClient signalClient;
         private static string projectPath = "", listenPath = "", listenFile = "";
+
         private static Parameter[] parameters;
         private const int msWait = 500;
         private static bool stacktrace = true, editor = false;
@@ -23,15 +56,15 @@ namespace Lerp2Console
         private static bool isClosing;
 
         /*
-         * 
+         *
          * TODO:
-         
+
             - Command system, inherited from lerp2api
-             
+
         */
 
         //... -path=C:/.../ -file=example.txt
-        static void Main(string[] args) //Esto siempre será una cadena única
+        private static void Main(string[] args) //Esto siempre será una cadena única
         { //Check when Unity button closes up...
             Console.Title = "Lerp2Dev Console";
 
@@ -52,26 +85,28 @@ namespace Lerp2Console
         // Declare the SetConsoleCtrlHandler function
         // as external and receiving a delegate.
 
+        /// <summary>
+        /// Sets the console control handler.
+        /// </summary>
+        /// <param name="Handler">The handler.</param>
+        /// <param name="Add">if set to <c>true</c> [add].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         [DllImport("Kernel32")]
         public static extern bool SetConsoleCtrlHandler(HandlerRoutine Handler, bool Add);
 
         // A delegate type to be used as the handler routine
         // for SetConsoleCtrlHandler.
+        /// <summary>
+        /// Delegate HandlerRoutine
+        /// </summary>
+        /// <param name="CtrlType">Type of the control.</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         public delegate bool HandlerRoutine(CtrlTypes CtrlType);
 
         // An enumerated type for the control messages
         // sent to the handler routine.
 
-        public enum CtrlTypes
-        {
-            CTRL_C_EVENT = 0,
-            CTRL_BREAK_EVENT,
-            CTRL_CLOSE_EVENT,
-            CTRL_LOGOFF_EVENT = 5,
-            CTRL_SHUTDOWN_EVENT
-        }
-
-        static void Work(string[] args)
+        private static void Work(string[] args)
         {
             /* = new SocketServer();
 
@@ -118,7 +153,7 @@ namespace Lerp2Console
             lerpedSocketConsoleClient.Dispose();
 
             //And finally, we end up everything...
-            if(!ic) //If we aren't closing the console, we need to close it.
+            if (!ic) //If we aren't closing the console, we need to close it.
                 Environment.Exit(0);
         }
 
@@ -165,15 +200,33 @@ namespace Lerp2Console
         }
     }
 
-    class Parameter
+    internal class Parameter
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Parameter"/> class.
+        /// </summary>
+        /// <param name="n">The n.</param>
+        /// <param name="v">The v.</param>
         public Parameter(string n, string v)
         {
             name = n;
             value = v;
         }
+
+        /// <summary>
+        /// The name
+        /// </summary>
         public string name,
+                      /// <summary>
+                      /// The value
+                      /// </summary>
                       value;
+
+        /// <summary>
+        /// Gets the parameters.
+        /// </summary>
+        /// <param name="arg">The argument.</param>
+        /// <returns>Parameter[].</returns>
         public static Parameter[] GetParams(string arg)
         {
             string[] decargs = arg.UnsafeArguments().Select(x => x.Replace("'", "")).ToArray();

@@ -4571,6 +4571,26 @@
             Calculates this instance.
             </summary>
         </member>
+        <member name="T:Lerp2API.Utility.StandardInstaller.AssetLocation">
+            <summary>
+            Enum AssetLocation
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.AssetLocation.Local">
+            <summary>
+            The local
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.AssetLocation.URL">
+            <summary>
+            The URL
+            </summary>
+        </member>
+        <member name="F:Lerp2API.Utility.StandardInstaller.AssetLocation.HDD">
+            <summary>
+            The HDD
+            </summary>
+        </member>
         <member name="T:Lerp2API.Utility.WWWHandler">
             <summary>
             Class WWWHandler.
@@ -4890,6 +4910,54 @@
             The configuration name
             </summary>
         </member>
+        <member name="T:Lerp2API.Utility.ObjectKvp">
+            <summary>
+            Class ObjectKvp. This class cannot be inherited.
+            </summary>
+            <seealso cref="!:Lerp2API.Utility.UnityNameValuePair&lt;UnityEngine.Object&gt;" />
+        </member>
+        <member name="F:Lerp2API.Utility.ObjectKvp.value">
+            <summary>
+            The value
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.ObjectKvp.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.ObjectKvp.#ctor(System.String,UnityEngine.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.ObjectKvp"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.ObjectDictionary">
+            <summary>
+            Class ObjectDictionary.
+            </summary>
+            <seealso cref="!:Lerp2API.Utility.UnityDictionary&lt;UnityEngine.Object&gt;" />
+        </member>
+        <member name="F:Lerp2API.Utility.ObjectDictionary.values">
+            <summary>
+            The values
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.ObjectDictionary.KeyValuePairs">
+            <summary>
+            Gets or sets the key value pairs.
+            </summary>
+            <value>The key value pairs.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.ObjectDictionary.SetKeyValuePair(System.String,UnityEngine.Object)">
+            <summary>
+            Sets the key value pair.
+            </summary>
+            <param name="k">The k.</param>
+            <param name="v">The v.</param>
+        </member>
         <member name="T:Lerp2API.Utility.NamedData">
             <summary>
             Class NamedData.
@@ -4923,6 +4991,221 @@
             </summary>
             <param name="n">The n.</param>
             <param name="l">The l.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.SerializableDictionary`2">
+            <summary>
+            Class SerializableDictionary.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <seealso cref="T:System.Collections.Generic.IDictionary`2" />
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.AsDictionary">
+            <summary>
+            Gets as dictionary.
+            </summary>
+            <value>As dictionary.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Item(`0,`1)">
+            <summary>
+            Gets the <see cref="!:TValue"/> with the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>TValue.</returns>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the <see cref="!:TValue"/> with the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>TValue.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+            <param name="capacity">The capacity.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+            <param name="comparer">The comparer.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor(System.Int32,System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+            <param name="capacity">The capacity.</param>
+            <param name="comparer">The comparer.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">capacity</exception>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+            <param name="dictionary">The dictionary.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.SerializableDictionary`2"/> class.
+            </summary>
+            <param name="dictionary">The dictionary.</param>
+            <param name="comparer">The comparer.</param>
+            <exception cref="T:System.ArgumentNullException">dictionary</exception>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.ContainsValue(`1)">
+            <summary>
+            Determines whether the specified value contains value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value contains value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if the specified key contains key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Remove(`0)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">key</exception>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries the get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="F:Lerp2API.Utility.SerializableDictionary`2.PrimeHelper.Primes">
+            <summary>
+            The primes
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.PrimeHelper.IsPrime(System.Int32)">
+            <summary>
+            Determines whether the specified candidate is prime.
+            </summary>
+            <param name="candidate">The candidate.</param>
+            <returns><c>true</c> if the specified candidate is prime; otherwise, <c>false</c>.</returns>
+        </member>
+        <!-- El comentario XML con formato incorrecto se ha omitido para el miembro "M:Lerp2API.Utility.SerializableDictionary`2.PrimeHelper.GetPrime(System.Int32)" -->
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.PrimeHelper.ExpandPrime(System.Int32)">
+            <summary>
+            Expands the prime.
+            </summary>
+            <param name="oldSize">The old size.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="index">The index.</param>
+            <exception cref="T:System.ArgumentNullException">array</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>Enumerator.</returns>
+        </member>
+        <member name="T:Lerp2API.Utility.SerializableDictionary`2.Enumerator">
+            <summary>
+            Struct Enumerator
+            </summary>
+            <seealso cref="!:System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;" />
+        </member>
+        <member name="P:Lerp2API.Utility.SerializableDictionary`2.Enumerator.Current">
+            <summary>
+            Gets the current.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Enumerator.MoveNext">
+            <summary>
+            Moves the next.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Lerp2API.Utility.SerializableDictionary`2.Enumerator.Dispose">
+            <summary>
+            Disposes this instance.
+            </summary>
         </member>
         <member name="T:Lerp2API.Utility.TextureUtils">
             <summary>
@@ -5229,6 +5512,293 @@
             </summary>
             <param name="vertices2D">The vertices2 d.</param>
             <returns>Mesh.</returns>
+        </member>
+        <member name="T:Lerp2API.Utility.UnityNameValuePair`1">
+            <summary>
+            Class UnityNameValuePair.
+            </summary>
+            <typeparam name="V"></typeparam>
+            <seealso cref="!:Lerp2API.Utility.UnityKeyValuePair&lt;System.String, V&gt;" />
+        </member>
+        <member name="F:Lerp2API.Utility.UnityNameValuePair`1.name">
+            <summary>
+            The name
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityNameValuePair`1.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityNameValuePair`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityNameValuePair`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityNameValuePair`1.#ctor(System.String,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityNameValuePair`1"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.UnityKeyValuePair`2">
+            <summary>
+            Class UnityKeyValuePair.
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityKeyValuePair`2.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityKeyValuePair`2.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityKeyValuePair`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityKeyValuePair`2"/> class.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityKeyValuePair`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityKeyValuePair`2"/> class.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Lerp2API.Utility.UnityDictionary`2">
+            <summary>
+            Class UnityDictionary.
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+            <seealso cref="T:System.Collections.Generic.IDictionary`2" />
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.KeyValuePairs">
+            <summary>
+            Gets or sets the key value pairs.
+            </summary>
+            <value>The key value pairs.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.SetKeyValuePair(`0,`1)">
+            <summary>
+            Sets the key value pair.
+            </summary>
+            <param name="k">The k.</param>
+            <param name="v">The v.</param>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the <see cref="!:V"/> with the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>V.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Add(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Adds the specified KVP.
+            </summary>
+            <param name="kvp">The KVP.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Tries the get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Remove(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Remove(`0)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if the specified key contains key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Determines whether [contains] [the specified KVP].
+            </summary>
+            <param name="kvp">The KVP.</param>
+            <returns><c>true</c> if [contains] [the specified KVP]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>IEnumerator&lt;KeyValuePair&lt;K, V&gt;&gt;.</returns>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.Items">
+            <summary>
+            Gets the items.
+            </summary>
+            <value>The items.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.SyncRoot">
+            <summary>
+            Gets the synchronize root.
+            </summary>
+            <value>The synchronize root.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.IsFixedSize">
+            <summary>
+            Gets a value indicating whether this instance is fixed size.
+            </summary>
+            <value><c>true</c> if this instance is fixed size; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.IsSynchronized">
+            <summary>
+            Gets a value indicating whether this instance is synchronized.
+            </summary>
+            <value><c>true</c> if this instance is synchronized; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Current">
+            <summary>
+            Gets the current.
+            </summary>
+            <value>The current.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Entry">
+            <summary>
+            Gets the entry.
+            </summary>
+            <value>The entry.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Dispose">
+            <summary>
+            Disposes this instance.
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Key">
+            <summary>
+            Gets the key.
+            </summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.MoveNext">
+            <summary>
+            Moves the next.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityDictionary`2.UnityDictionaryEnumerator.Reset">
+            <summary>
+            Resets this instance.
+            </summary>
+        </member>
+        <member name="T:Lerp2API.Utility.UnityDictionary`1">
+            <summary>
+            Class UnityDictionary.
+            </summary>
+            <typeparam name="V"></typeparam>
+            <seealso cref="!:Lerp2API.Utility.UnityDictionary&lt;System.String, V&gt;" />
+        </member>
+        <member name="T:Lerp2API.Utility.UnityLib.Vector3Int">
+            <summary>
+            Class Vector3Int. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityLib.Vector3Int.x">
+            <summary>
+            Gets or sets the x.
+            </summary>
+            <value>The x.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityLib.Vector3Int.y">
+            <summary>
+            Gets or sets the y.
+            </summary>
+            <value>The y.</value>
+        </member>
+        <member name="P:Lerp2API.Utility.UnityLib.Vector3Int.z">
+            <summary>
+            Gets or sets the z.
+            </summary>
+            <value>The z.</value>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityLib.Vector3Int.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityLib.Vector3Int"/> class.
+            </summary>
+        </member>
+        <member name="M:Lerp2API.Utility.UnityLib.Vector3Int.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2API.Utility.UnityLib.Vector3Int"/> class.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <param name="z">The z.</param>
         </member>
         <member name="T:Lerp2API.Utility.UpdateEventHooks">
             <summary>
@@ -15246,6 +15816,274 @@
         <member name="F:Lerp2APIEditor.EditorWindows.LerpedAPIChange.Default">
             <summary>
             The default
+            </summary>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.MessengerMode">
+            <summary>
+            Enum MessengerMode
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.CustomDrawers.MessengerMode.DONT_REQUIRE_LISTENER">
+            <summary>
+            The dont require listener
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.CustomDrawers.MessengerMode.REQUIRE_LISTENER">
+            <summary>
+            The require listener
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.CustomDrawers.MessengerInternal.eventTable">
+            <summary>
+            The event table
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.CustomDrawers.MessengerInternal.DEFAULT_MODE">
+            <summary>
+            The default mode
+            </summary>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.OnListenerAdding(System.String,System.Delegate)">
+            <summary>
+            Called when [listener adding].
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="listenerBeingAdded">The listener being added.</param>
+            <exception cref="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.ListenerException"></exception>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.OnListenerRemoving(System.String,System.Delegate)">
+            <summary>
+            Called when [listener removing].
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="listenerBeingRemoved">The listener being removed.</param>
+            <exception cref="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.ListenerException">
+            </exception>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.OnListenerRemoved(System.String)">
+            <summary>
+            Called when [listener removed].
+            </summary>
+            <param name="eventType">Type of the event.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.OnBroadcasting(System.String,Lerp2APIEditor.CustomDrawers.MessengerMode)">
+            <summary>
+            Called when [broadcasting].
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="mode">The mode.</param>
+            <exception cref="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.BroadcastException"></exception>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.CreateBroadcastSignatureException(System.String)">
+            <summary>
+            Creates the broadcast signature exception.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <returns>BroadcastException.</returns>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.BroadcastException">
+            <summary>
+            Class BroadcastException.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.BroadcastException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.BroadcastException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.ListenerException">
+            <summary>
+            Class ListenerException.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.MessengerInternal.ListenerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Lerp2APIEditor.CustomDrawers.MessengerInternal.ListenerException"/> class.
+            </summary>
+            <param name="msg">The MSG.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.Messenger">
+            <summary>
+            Class Messenger.
+            </summary>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger.AddListener(System.String,Callback)">
+            <summary>
+            Adds the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger.RemoveListener(System.String,Callback)">
+            <summary>
+            Removes the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger.Broadcast(System.String)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger.Broadcast(System.String,Lerp2APIEditor.CustomDrawers.MessengerMode)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.Messenger`1">
+            <summary>
+            Class Messenger.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`1.AddListener(System.String,Callback{`0})">
+            <summary>
+            Adds the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`1.RemoveListener(System.String,Callback{`0})">
+            <summary>
+            Removes the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`1.Broadcast(System.String,`0)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`1.Broadcast(System.String,`0,Lerp2APIEditor.CustomDrawers.MessengerMode)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.Messenger`2">
+            <summary>
+            Class Messenger.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`2.AddListener(System.String,Callback{`0,`1})">
+            <summary>
+            Adds the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`2.RemoveListener(System.String,Callback{`0,`1})">
+            <summary>
+            Removes the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`2.Broadcast(System.String,`0,`1)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`2.Broadcast(System.String,`0,`1,Lerp2APIEditor.CustomDrawers.MessengerMode)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.CustomDrawers.Messenger`3">
+            <summary>
+            Class Messenger.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`3.AddListener(System.String,Callback{`0,`1,`2})">
+            <summary>
+            Adds the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`3.RemoveListener(System.String,Callback{`0,`1,`2})">
+            <summary>
+            Removes the listener.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="handler">The handler.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`3.Broadcast(System.String,`0,`1,`2)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+            <param name="arg3">The arg3.</param>
+        </member>
+        <member name="M:Lerp2APIEditor.CustomDrawers.Messenger`3.Broadcast(System.String,`0,`1,`2,Lerp2APIEditor.CustomDrawers.MessengerMode)">
+            <summary>
+            Broadcasts the specified event type.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+            <param name="arg3">The arg3.</param>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="T:Lerp2APIEditor.Utility.GUI_Extensions.ReferType">
+            <summary>
+            Enum ReferType
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.ReferType.Editor">
+            <summary>
+            The editor
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.GUI_Extensions.ReferType.EditorWindow">
+            <summary>
+            The editor window
+            </summary>
+        </member>
+        <member name="T:Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps.FrameMode">
+            <summary>
+            Enum FrameMode
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps.FrameMode.Framed">
+            <summary>
+            The framed
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps.FrameMode.PixelPerfect">
+            <summary>
+            The pixel perfect
+            </summary>
+        </member>
+        <member name="F:Lerp2APIEditor.Utility.UnityLib.Two_D.TileMaps.FrameMode.HalfWay">
+            <summary>
+            The half way
             </summary>
         </member>
         <member name="T:FullSerializer.fsDataType">
@@ -33785,6 +34623,347 @@
             Use the static type of values instead of their actual type.
             </summary>
         </member>
+        <member name="T:UnityStandardAssets.ImageEffects.ColorCorrectionMode">
+            <summary>
+            Enum ColorCorrectionMode
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionMode.Simple">
+            <summary>
+            The simple
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionMode.Advanced">
+            <summary>
+            The advanced
+            </summary>
+        </member>
+        <member name="T:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers">
+            <summary>
+            Class ColorCorrectionCurvesLayers.
+            </summary>
+            <seealso cref="T:M8.ImageEffects.PostEffectsBase" />
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.redChannel">
+            <summary>
+            The red channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.greenChannel">
+            <summary>
+            The green channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.blueChannel">
+            <summary>
+            The blue channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.useDepthCorrection">
+            <summary>
+            The use depth correction
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.zCurve">
+            <summary>
+            The z curve
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.depthRedChannel">
+            <summary>
+            The depth red channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.depthGreenChannel">
+            <summary>
+            The depth green channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.depthBlueChannel">
+            <summary>
+            The depth blue channel
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.saturation">
+            <summary>
+            The saturation
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.selectiveCc">
+            <summary>
+            The selective cc
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.selectiveFromColor">
+            <summary>
+            The selective from color
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.selectiveToColor">
+            <summary>
+            The selective to color
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.mode">
+            <summary>
+            The mode
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.updateTextures">
+            <summary>
+            The update textures
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.colorCorrectionCurvesShader">
+            <summary>
+            The color correction curves shader
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.simpleColorCorrectionCurvesShader">
+            <summary>
+            The simple color correction curves shader
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.colorCorrectionSelectiveShader">
+            <summary>
+            The color correction selective shader
+            </summary>
+        </member>
+        <member name="F:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.excludeLayers">
+            <summary>
+            The exclude layers
+            </summary>
+        </member>
+        <member name="M:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.CheckResources">
+            <summary>
+            Checks the resources.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:UnityStandardAssets.ImageEffects.ColorCorrectionCurvesLayers.UpdateParameters">
+            <summary>
+            Updates the parameters.
+            </summary>
+        </member>
+        <member name="T:Malee.Editor.ElementDisplayType">
+            <summary>
+            Enum ElementDisplayType
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ElementDisplayType.Auto">
+            <summary>
+            The automatic
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ElementDisplayType.Expandable">
+            <summary>
+            The expandable
+            </summary>
+        </member>
+        <member name="F:Malee.Editor.ElementDisplayType.SingleLine">
+            <summary>
+            The single line
+            </summary>
+        </member>
+        <member name="T:Malee.ReorderableAttribute">
+            <summary>
+            Class ReorderableAttribute.
+            </summary>
+            <seealso cref="T:UnityEngine.PropertyAttribute" />
+        </member>
+        <member name="F:Malee.ReorderableAttribute.add">
+            <summary>
+            The add
+            </summary>
+        </member>
+        <member name="F:Malee.ReorderableAttribute.remove">
+            <summary>
+            The remove
+            </summary>
+        </member>
+        <member name="F:Malee.ReorderableAttribute.draggable">
+            <summary>
+            The draggable
+            </summary>
+        </member>
+        <member name="F:Malee.ReorderableAttribute.elementNameProperty">
+            <summary>
+            The element name property
+            </summary>
+        </member>
+        <member name="F:Malee.ReorderableAttribute.elementNameOverride">
+            <summary>
+            The element name override
+            </summary>
+        </member>
+        <member name="F:Malee.ReorderableAttribute.elementIconPath">
+            <summary>
+            The element icon path
+            </summary>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+            <param name="elementNameProperty">The element name property.</param>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementIconPath">The element icon path.</param>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementNameOverride">The element name override.</param>
+            <param name="elementIconPath">The element icon path.</param>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+            <param name="add">if set to <c>true</c> [add].</param>
+            <param name="remove">if set to <c>true</c> [remove].</param>
+            <param name="draggable">if set to <c>true</c> [draggable].</param>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementIconPath">The element icon path.</param>
+        </member>
+        <member name="M:Malee.ReorderableAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableAttribute"/> class.
+            </summary>
+            <param name="add">if set to <c>true</c> [add].</param>
+            <param name="remove">if set to <c>true</c> [remove].</param>
+            <param name="draggable">if set to <c>true</c> [draggable].</param>
+            <param name="elementNameProperty">The element name property.</param>
+            <param name="elementNameOverride">The element name override.</param>
+            <param name="elementIconPath">The element icon path.</param>
+        </member>
+        <member name="T:Malee.ReorderableArray`1">
+            <summary>
+            Class ReorderableArray.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:System.ICloneable" />
+            <seealso cref="T:System.Collections.Generic.IList`1" />
+            <seealso cref="T:System.Collections.Generic.ICollection`1" />
+            <seealso cref="T:System.Collections.Generic.IEnumerable`1" />
+        </member>
+        <member name="M:Malee.ReorderableArray`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableArray`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Malee.ReorderableArray`1"/> class.
+            </summary>
+            <param name="length">The length.</param>
+        </member>
+        <member name="P:Malee.ReorderableArray`1.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="!:T"/> at the specified index.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="P:Malee.ReorderableArray`1.Length">
+            <summary>
+            Gets the length.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="P:Malee.ReorderableArray`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:Malee.ReorderableArray`1.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Contains(`0)">
+            <summary>
+            Determines whether [contains] [the specified value].
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if [contains] [the specified value]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.IndexOf(`0)">
+            <summary>
+            Indexes the of.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Insert(System.Int32,`0)">
+            <summary>
+            Inserts the specified index.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes at.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Add(`0)">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.Remove(`0)">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.ToArray">
+            <summary>
+            To the array.
+            </summary>
+            <returns>T[].</returns>
+        </member>
+        <member name="M:Malee.ReorderableArray`1.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns>IEnumerator&lt;T&gt;.</returns>
+        </member>
         <member name="M:ScottGarland.DigitsArray.Allocate(System.Int32)">
             <summary>
             Allocates the specified size.
@@ -41207,12 +42386,71 @@
             <param name="saveTangents">if set to <c>true</c> [save tangents].</param>
             <returns>System.Byte[].</returns>
         </member>
+        <member name="T:PixelPerfectCamera">
+            <summary>
+            Class PixelPerfectCamera.
+            </summary>
+        </member>
+        <member name="F:PixelPerfectCamera.pixelsToUnits">
+            <summary>
+            The pixels to units
+            </summary>
+        </member>
+        <member name="T:ScaleCamera">
+            <summary>
+            Class ScaleCamera.
+            </summary>
+        </member>
+        <member name="F:ScaleCamera.targetWidth">
+            <summary>
+            The target width
+            </summary>
+        </member>
+        <member name="F:ScaleCamera.pixelsToUnits">
+            <summary>
+            The pixels to units
+            </summary>
+        </member>
+        <member name="T:UnityLibrary.ScreenEdgeColliders">
+            <summary>
+            Class ScreenEdgeColliders.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="T:UnityLibrary.AssetBundleLoader">
+            <summary>
+            Class AssetBundleLoader.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="F:UnityLibrary.AssetBundleLoader.assetBundleURL">
+            <summary>
+            The asset bundle URL
+            </summary>
+        </member>
         <member name="M:UnityLibrary.AssetBundleLoader.DownloadAndCache(System.String,System.String)">
             <summary>
             asset bundle load and instantiate
             </summary>
             <param name="bundleURL">full url to the bundle file</param>
             <param name="assetName">optional asset name to instantiate from the bundle</param>
+        </member>
+        <member name="T:UnityLibrary.CameraSwitcher">
+            <summary>
+            Class CameraSwitcher.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="F:UnityLibrary.CameraSwitcher.cameras">
+            <summary>
+            The cameras
+            </summary>
+        </member>
+        <member name="T:UnityLibrary.Timer">
+            <summary>
+            Class Timer.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
         </member>
         <member name="T:CBX.TileMapping.Unity.TileMap">
             <summary>
@@ -41234,6 +42472,14 @@
             Gets or sets the value of the tile width.
             </summary>
         </member>
+        <member name="M:CBX.TileMapping.Unity.TileMap.SetTile(Lerp2API.Utility.UnityLib.Vector3Int,UnityEngine.WSA.Tile)">
+            <summary>
+            Sets the tile.
+            </summary>
+            <param name="tilePos">The tile position.</param>
+            <param name="tile">The tile.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="F:CBX.TileMapping.Unity.TileMap.TileHeight">
             <summary>
             Gets or sets the value of the tile height.
@@ -41244,6 +42490,11 @@
             Used by editor components or game logic to indicate a tile location.
             </summary>
             <remarks>This will be hidden from the inspector window. See <see cref="T:UnityEngine.HideInInspector"/></remarks>
+        </member>
+        <member name="F:CBX.TileMapping.Unity.TileMap.color">
+            <summary>
+            The color
+            </summary>
         </member>
         <member name="M:CBX.TileMapping.Unity.TileMap.#ctor">
             <summary>
@@ -41256,28 +42507,579 @@
             </summary>
             <remarks>Only called when in the Unity editor.</remarks>
         </member>
+        <member name="T:CameraShake">
+            <summary>
+            Class CameraShake.
+            </summary>
+        </member>
+        <member name="F:CameraShake.shakePosition">
+            <summary>
+            The shake position
+            </summary>
+        </member>
+        <member name="F:CameraShake.shakeRotation">
+            <summary>
+            The shake rotation
+            </summary>
+        </member>
+        <member name="F:CameraShake.shakeIntensityMin">
+            <summary>
+            The shake intensity minimum
+            </summary>
+        </member>
+        <member name="F:CameraShake.shakeIntensityMax">
+            <summary>
+            The shake intensity maximum
+            </summary>
+        </member>
+        <member name="F:CameraShake.shakeDecay">
+            <summary>
+            The shake decay
+            </summary>
+        </member>
+        <member name="M:CameraShake.Shake">
+            <summary>
+            Shakes this instance.
+            </summary>
+        </member>
+        <member name="T:SmoothMouseLook">
+            <summary>
+            Class SmoothMouseLook.
+            </summary>
+        </member>
+        <member name="F:SmoothMouseLook.clampInDegrees">
+            <summary>
+            The clamp in degrees
+            </summary>
+        </member>
+        <member name="F:SmoothMouseLook.lockCursor">
+            <summary>
+            The lock cursor
+            </summary>
+        </member>
+        <member name="F:SmoothMouseLook.sensitivity">
+            <summary>
+            The sensitivity
+            </summary>
+        </member>
+        <member name="F:SmoothMouseLook.smoothing">
+            <summary>
+            The smoothing
+            </summary>
+        </member>
+        <member name="F:SmoothMouseLook.targetDirection">
+            <summary>
+            The target direction
+            </summary>
+        </member>
+        <member name="T:WowCamera">
+            <summary>
+            Class WowCamera.
+            </summary>
+        </member>
+        <member name="F:WowCamera.target">
+            <summary>
+            The target
+            </summary>
+        </member>
+        <member name="F:WowCamera.targetHeight">
+            <summary>
+            The target height
+            </summary>
+        </member>
+        <member name="F:WowCamera.distance">
+            <summary>
+            The distance
+            </summary>
+        </member>
+        <member name="F:WowCamera.offsetFromWall">
+            <summary>
+            The offset from wall
+            </summary>
+        </member>
+        <member name="F:WowCamera.maxDistance">
+            <summary>
+            The maximum distance
+            </summary>
+        </member>
+        <member name="F:WowCamera.minDistance">
+            <summary>
+            The minimum distance
+            </summary>
+        </member>
+        <member name="F:WowCamera.xSpeed">
+            <summary>
+            The x speed
+            </summary>
+        </member>
+        <member name="F:WowCamera.ySpeed">
+            <summary>
+            The y speed
+            </summary>
+        </member>
+        <member name="F:WowCamera.targetSpeed">
+            <summary>
+            The target speed
+            </summary>
+        </member>
+        <member name="F:WowCamera.yMinLimit">
+            <summary>
+            The y minimum limit
+            </summary>
+        </member>
+        <member name="F:WowCamera.yMaxLimit">
+            <summary>
+            The y maximum limit
+            </summary>
+        </member>
+        <member name="F:WowCamera.zoomRate">
+            <summary>
+            The zoom rate
+            </summary>
+        </member>
+        <member name="F:WowCamera.rotationDampening">
+            <summary>
+            The rotation dampening
+            </summary>
+        </member>
+        <member name="F:WowCamera.zoomDampening">
+            <summary>
+            The zoom dampening
+            </summary>
+        </member>
+        <member name="F:WowCamera.collisionLayers">
+            <summary>
+            The collision layers
+            </summary>
+        </member>
         <member name="M:WowCamera.LateUpdate">
             Camera logic on LateUpdate to only update after all character movement logic has been handled.
         </member>
-        <member name="T:StringOperationUtil.OptimizedStringOperation">
+        <member name="T:ZoomWithMouse">
             <summary>
-            Using this,you can optimize string concat operation easily.
-            To use this , you should put this on the top of code.
-            ------
-            using StrOpe = StringOperationUtil.OptimizedStringOperation;
-            ------
+            Class ZoomWithMouse.
+            </summary>
+        </member>
+        <member name="F:ZoomWithMouse.zoomSpeed">
+            <summary>
+            The zoom speed
+            </summary>
+        </member>
+        <member name="T:DrawGLLine">
+            <summary>
+            Class DrawGLLine.
+            </summary>
+        </member>
+        <member name="F:DrawGLLine.lineColor">
+            <summary>
+            The line color
+            </summary>
+        </member>
+        <member name="T:DrawCrossHair">
+            <summary>
+            Class DrawCrossHair.
+            </summary>
+        </member>
+        <member name="F:DrawCrossHair.mat">
+            <summary>
+            The mat
+            </summary>
+        </member>
+        <member name="F:DrawCrossHair.lineLen">
+            <summary>
+            The line length
+            </summary>
+        </member>
+        <member name="T:DrawRendererBounds">
+            <summary>
+            Class DrawRendererBounds.
+            </summary>
+        </member>
+        <member name="T:FileSystemWatch">
+            <summary>
+            Class FileSystemWatch.
+            </summary>
+        </member>
+        <member name="T:OpenExternalFile">
+            <summary>
+            Class OpenExternalFile.
+            </summary>
+        </member>
+        <member name="M:OpenExternalFile.OpenFile(System.String)">
+            <summary>
+            Opens the file.
+            </summary>
+            <param name="fullPath">The full path.</param>
+        </member>
+        <member name="T:FPSCounter">
+            <summary>
+            Class FPSCounter.
+            </summary>
+        </member>
+        <member name="T:StringOperationUtil.OptimizedStringOperation">
+             <summary>
+             Using this,you can optimize string concat operation easily.
+             To use this , you should put this on the top of code.
+             ------
+             using StrOpe = StringOperationUtil.OptimizedStringOperation;
+             ------
             
-            - before code
-            string str = "aaa" + 20 + "bbbb";
+             - before code
+             string str = "aaa" + 20 + "bbbb";
             
-            - after code
-            string str = StrOpe.i + "aaa" + 20 + "bbbb";
+             - after code
+             string str = StrOpe.i + "aaa" + 20 + "bbbb";
             
-            "StrOpe.i" is for MainThread , do not call from other theads.
-            If "StrOpe.i" is called from Mainthread , reuse same object.
+             "StrOpe.i" is for MainThread , do not call from other theads.
+             If "StrOpe.i" is called from Mainthread , reuse same object.
             
-            You can also use "StrOpe.small" / "StrOpe.medium" / "StrOpe.large" instead of "StrOpe.i". 
-            These are creating instance.
+             You can also use "StrOpe.small" / "StrOpe.medium" / "StrOpe.large" instead of "StrOpe.i".
+             These are creating instance.
+             </summary>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.Create(System.Int32)">
+            <summary>
+            Creates the specified capacity.
+            </summary>
+            <param name="capacity">The capacity.</param>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.small">
+            <summary>
+            Gets the small.
+            </summary>
+            <value>The small.</value>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.medium">
+            <summary>
+            Gets the medium.
+            </summary>
+            <value>The medium.</value>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.large">
+            <summary>
+            Gets the large.
+            </summary>
+            <value>The large.</value>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.i">
+            <summary>
+            Gets the i.
+            </summary>
+            <value>The i.</value>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.Capacity">
+            <summary>
+            Gets or sets the capacity.
+            </summary>
+            <value>The capacity.</value>
+        </member>
+        <member name="P:StringOperationUtil.OptimizedStringOperation.Length">
+            <summary>
+            Gets or sets the length.
+            </summary>
+            <value>The length.</value>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.Remove(System.Int32,System.Int32)">
+            <summary>
+            Removes the specified start index.
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="length">The length.</param>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.Replace(System.String,System.String)">
+            <summary>
+            Replaces the specified old value.
+            </summary>
+            <param name="oldValue">The old value.</param>
+            <param name="newValue">The new value.</param>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.ToLower">
+            <summary>
+            To the lower.
+            </summary>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.ToUpper">
+            <summary>
+            To the upper.
+            </summary>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.Trim">
+            <summary>
+            Trims this instance.
+            </summary>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.TrimStart">
+            <summary>
+            Trims the start.
+            </summary>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.TrimEnd">
+            <summary>
+            Trims the end.
+            </summary>
+            <returns>OptimizedStringOperation.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Implicit(StringOperationUtil.OptimizedStringOperation)~System.String">
+            <summary>
+            Performs an implicit conversion from <see cref="T:StringOperationUtil.OptimizedStringOperation"/> to <see cref="T:System.String"/>.
+            </summary>
+            <param name="t">The t.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Boolean)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="v">if set to <c>true</c> [v].</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Int32)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="v">The v.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Int16)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="v">The v.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Byte)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="v">The v.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Single)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="v">The v.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Char)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="c">The c.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Char[])">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="c">The c.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.String)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="str">The string.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:StringOperationUtil.OptimizedStringOperation.op_Addition(StringOperationUtil.OptimizedStringOperation,System.Text.StringBuilder)">
+            <summary>
+            Implements the +.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="sb">The sb.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="T:Callback">
+            <summary>
+            Delegate Callback
+            </summary>
+        </member>
+        <member name="T:Callback`1">
+            <summary>
+            Delegate Callback
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="arg1">The arg1.</param>
+        </member>
+        <member name="T:Callback`2">
+            <summary>
+            Delegate Callback
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+        </member>
+        <member name="T:Callback`3">
+            <summary>
+            Delegate Callback
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="arg1">The arg1.</param>
+            <param name="arg2">The arg2.</param>
+            <param name="arg3">The arg3.</param>
+        </member>
+        <member name="T:MeteorRing">
+            <summary>
+            Class MeteorRing.
+            </summary>
+        </member>
+        <member name="F:MeteorRing.totalCount">
+            <summary>
+            The total count
+            </summary>
+        </member>
+        <member name="F:MeteorRing.ringRadius">
+            <summary>
+            The ring radius
+            </summary>
+        </member>
+        <member name="F:MeteorRing.ringHeight">
+            <summary>
+            The ring height
+            </summary>
+        </member>
+        <member name="T:TexturePixels2Quads">
+            <summary>
+            Class TexturePixels2Quads.
+            </summary>
+        </member>
+        <member name="F:TexturePixels2Quads.tex">
+            <summary>
+            The tex
+            </summary>
+        </member>
+        <member name="F:TexturePixels2Quads.planePrefab">
+            <summary>
+            The plane prefab
+            </summary>
+        </member>
+        <member name="T:M8.ImageEffects.PostEffectsBase">
+            <summary>
+            Class PostEffectsBase.
+            </summary>
+            <seealso cref="T:UnityEngine.MonoBehaviour" />
+        </member>
+        <member name="F:M8.ImageEffects.PostEffectsBase.supportHDRTextures">
+            <summary>
+            The support HDR textures
+            </summary>
+        </member>
+        <member name="F:M8.ImageEffects.PostEffectsBase.supportDX11">
+            <summary>
+            The support d X11
+            </summary>
+        </member>
+        <member name="F:M8.ImageEffects.PostEffectsBase.isSupported">
+            <summary>
+            The is supported
+            </summary>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckShaderAndCreateMaterial(UnityEngine.Shader,UnityEngine.Material)">
+            <summary>
+            Checks the shader and create material.
+            </summary>
+            <param name="s">The s.</param>
+            <param name="m2Create">The m2 create.</param>
+            <returns>Material.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CreateMaterial(UnityEngine.Shader,UnityEngine.Material)">
+            <summary>
+            Creates the material.
+            </summary>
+            <param name="s">The s.</param>
+            <param name="m2Create">The m2 create.</param>
+            <returns>Material.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckSupport">
+            <summary>
+            Checks the support.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckResources">
+            <summary>
+            Checks the resources.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckSupport(System.Boolean)">
+            <summary>
+            Checks the support.
+            </summary>
+            <param name="needDepth">if set to <c>true</c> [need depth].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckSupport(System.Boolean,System.Boolean)">
+            <summary>
+            Checks the support.
+            </summary>
+            <param name="needDepth">if set to <c>true</c> [need depth].</param>
+            <param name="needHdr">if set to <c>true</c> [need HDR].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.Dx11Support">
+            <summary>
+            DX11s the support.
+            </summary>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.ReportAutoDisable">
+            <summary>
+            Reports the automatic disable.
+            </summary>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.CheckShader(UnityEngine.Shader)">
+            <summary>
+            Checks the shader.
+            </summary>
+            <param name="s">The s.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.NotSupported">
+            <summary>
+            Nots the supported.
+            </summary>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.DrawBorder(UnityEngine.RenderTexture,UnityEngine.Material)">
+            <summary>
+            Draws the border.
+            </summary>
+            <param name="dest">The dest.</param>
+            <param name="material">The material.</param>
+        </member>
+        <member name="M:M8.ImageEffects.PostEffectsBase.Start">
+            <summary>
+            Starts this instance.
             </summary>
         </member>
     </members>

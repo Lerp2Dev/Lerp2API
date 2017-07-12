@@ -10,11 +10,19 @@ namespace Lerp2APIEditor.Utility
     // Usage: Place this script in Editor/ folder
     // Start the tool from menu, Window/Tools/Alpha-fy Images
 
+    /// <summary>
+    /// Class SpriteBackgroundRemove.
+    /// </summary>
+    /// <seealso cref="UnityEditor.EditorWindow" />
     public class SpriteBackgroundRemove : EditorWindow
     {
         private Texture2D img;
         private Texture2D newImg;
         private Color colorToRemove = Color.magenta;
+
+        /// <summary>
+        /// The win
+        /// </summary>
         public static SpriteBackgroundRemove win;
 
         [MenuItem("Window/Tools/Alpha-fy Images")]
@@ -138,6 +146,10 @@ namespace Lerp2APIEditor.Utility
             return (n);
         }
 
+        /// <summary>
+        /// Checks the texture settings.
+        /// </summary>
+        /// <param name="texture">The texture.</param>
         public void CheckTextureSettings(Texture2D texture)
         {
             if (texture == null) { Debug.LogError("CheckTextureSettings Failed - Texture is null"); return; }

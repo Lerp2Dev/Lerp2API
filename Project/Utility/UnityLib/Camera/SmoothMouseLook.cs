@@ -1,31 +1,52 @@
 // original source: http://forum.unity3d.com/threads/a-free-simple-smooth-mouselook.73117/
 // Very simple smooth mouselook modifier for the MainCamera in Unity
-// by Francis R. Griffiths-Keam - www.runningdimensions.com 
+// by Francis R. Griffiths-Keam - www.runningdimensions.com
 // Modified: Escape key for hide/show & lock/unlock mouse
 
 using UnityEngine;
 
+/// <summary>
+/// Class SmoothMouseLook.
+/// </summary>
 public class SmoothMouseLook : MonoBehaviour
 {
-    Vector2 _mouseAbsolute;
-    Vector2 _smoothMouse;
+    private Vector2 _mouseAbsolute;
+    private Vector2 _smoothMouse;
 
+    /// <summary>
+    /// The clamp in degrees
+    /// </summary>
     public Vector2 clampInDegrees = new Vector2(360, 180);
+
+    /// <summary>
+    /// The lock cursor
+    /// </summary>
     public bool lockCursor;
+
+    /// <summary>
+    /// The sensitivity
+    /// </summary>
     public Vector2 sensitivity = new Vector2(2, 2);
+
+    /// <summary>
+    /// The smoothing
+    /// </summary>
     public Vector2 smoothing = new Vector2(3, 3);
+
+    /// <summary>
+    /// The target direction
+    /// </summary>
     public Vector2 targetDirection;
 
-    void Start()
+    private void Start()
     {
         // Set target direction to the camera's initial orientation.
         targetDirection = transform.rotation.eulerAngles;
         Cursor.visible = !lockCursor;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-
         // pressing esc toggles between hide/show and lock/unlock cursor
         if (Input.GetKeyDown(KeyCode.Escape))
         {
