@@ -4,12 +4,6 @@ D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp
 D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\bin\Debug\Lerp2Console.pdb
 D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.exe
 D:\VISUAL STUDIO\Visual Studio Projects\Lerp2Console\Lerp2Console\obj\Debug\Lerp2Console.pdb
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.pdb
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe.config
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.exe
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.pdb
@@ -23,7 +17,6 @@ D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEngine.UI.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\UnityEditor.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\bin\Debug\Lerp2Console.XML
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe.config
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.XML
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Lerp2Console.exe
@@ -31,3 +24,10 @@ C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Build\Console\Le
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe.config
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.XML
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Console\Lerp2Console.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.csprojResolveAssemblyReference.cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.exe
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Console\obj\Debug\Lerp2Console.pdb

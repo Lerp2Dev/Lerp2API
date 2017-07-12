@@ -8,12 +8,6 @@ D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\bin\Debug\UnityEngine.UI.d
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\bin\Debug\UnityEditor.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\bin\Debug\UnityEngine.xml
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\bin\Debug\UnityEngine.UI.xml
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.csprojResolveAssemblyReference.cache
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.dll
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.pdb
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.XML
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.dll
-D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.pdb
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.dll
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.pdb
 D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Build\Raw\Lerp2Raw.XML
@@ -26,3 +20,9 @@ C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Lerp2Raw
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Build\Raw\Lerp2Raw.dll
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Build\Raw\Lerp2Raw.pdb
 C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Lerp2API\Project\Build\Raw\Lerp2Raw.XML
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.csprojResolveAssemblyReference.cache
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.dll
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Project\Lerp2Raw\obj\Debug\Lerp2Raw.pdb
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.XML
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.dll
+D:\LERP2DEV\Lerp2Dev Assets\Lerp2API\Build\Raw\Lerp2Raw.pdb

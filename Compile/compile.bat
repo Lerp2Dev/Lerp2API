@@ -6,9 +6,12 @@
 ::Main
 
 if "%MAIN_PATH%" == "" ( for %%a in ("%~dp0..") do set "MAIN_PATH=%%~fa" )
-if "%REF_PATH%" == "" ( set "REF_PATH=%MAIN_PATH%\Assemblies" )
+if "%REF_PATH%" == "" ( set "REF_PATH=%ProgramFiles(x86)%\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2" ) 
 
-set "MSBuild=%MAIN_PATH%\Apps\MSBuild\3.5"
+:: Assemblies Path => %MAIN_PATH%\Assemblies
+:: MSBuild Path => %MAIN_PATH%\Apps\MSBuild\4.6
+
+set "MSBuild=%ProgramFiles(x86)%\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
 
 ::set MSBuildEmitSolution=1
 

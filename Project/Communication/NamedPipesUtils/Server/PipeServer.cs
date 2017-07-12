@@ -1,6 +1,5 @@
 ﻿using ClientServerUsingNamedPipes.Interfaces;
 using ClientServerUsingNamedPipes.Utilities;
-using Lerp2API.Backports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +31,7 @@ namespace ClientServerUsingNamedPipes.Server
         { //Casi veo mejor que se pueda poner el nombre del server, pero seguramente que por motivos de seguridad y de instancias sea esto así
             _pipeName = Guid.NewGuid().ToString();
             _synchronizationContext = AsyncOperationManager.SynchronizationContext;
-            _servers = new ConcurrentMap<string, ICommunicationServer>();
+            _servers = new Dictionary<string, ICommunicationServer>();
         }
 
         #endregion c'tor

@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lerp2API</RootNamespace>
     <AssemblyName>Lerp2API</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +25,7 @@
     <DocumentationFile>..\Build\Lerp2API.XML</DocumentationFile>
     <CodeAnalysisRuleSet />
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet />
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -55,66 +58,6 @@
     <Compile Include="All Noises\Voronoi\Noise.cs" />
     <Compile Include="All Noises\Voronoi\Voronoi.cs" />
     <Compile Include="Attributes\ReadOnlyAttribute.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\IteratorTasksAwaitExtensions.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\TaskAwaiter.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\TaskAwaiter`1.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\SingleThreadSynchronizationContext.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestCore.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestMemoryLeak.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestSemaphoreSlim.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestSychronizationContext.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestTaskCompletionSource.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestTaskDelay.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestWhenAll.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\UnitTestWhenAny.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncMethodBuilderCore.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncMethodTaskCache.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncServices.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncStateMachineAttribute.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncTaskMethodBuilder.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncTaskMethodBuilder`1.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\AsyncVoidMethodBuilder.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\ConfiguredTaskAwaitable.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\ConfiguredTaskAwaitable`1.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\IAsyncMethodBuilder.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\IAsyncStateMachine.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\ICriticalNotifyCompletion.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\INotifyCompletion.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\IteratorStateMachineAttribute.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\StateMachineAttribute.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\TaskAwaiter.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\TaskAwaiter`1.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\SemaphoreSlim.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\Task.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\TaskCanceledException.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\TaskCompletionSource.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Threading\Tasks\Task`1.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\AggregateException.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\IProgress.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\Threading\CancellationToken.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\Threading\CancellationTokenRegistration.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\Threading\CancellationTokenSource.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\Threading\SpinWait.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\CallerInfoAttributes.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\INotifyCollectionChanged.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\NotifyCollectionChangedEventArgs.cs" />
-    <Compile Include="Backports\MinimumAsyncBridge\MvvmBridge\ObservableCollection.cs" />
-    <Compile Include="Backports\NonSpecific\ConcurrentMap.cs" />
-    <Compile Include="Backports\SharedMemory\BufferReadWrite.cs" />
-    <Compile Include="Backports\SharedMemory\BufferWithLocks.cs" />
-    <Compile Include="Backports\SharedMemory\CircularBuffer.cs" />
-    <Compile Include="Backports\SharedMemory\FastStructure.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFile.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedFileAccess.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedView.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\MemoryMappedViewAccessor.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\SafeMemoryMappedFileHandle.cs" />
-    <Compile Include="Backports\SharedMemory\MemoryMappedFiles\SafeMemoryMappedViewHandle.cs" />
-    <Compile Include="Backports\SharedMemory\SharedArray.cs" />
-    <Compile Include="Backports\SharedMemory\SharedBuffer.cs" />
-    <Compile Include="Backports\SharedMemory\SharedHeader.cs" />
-    <Compile Include="Backports\SharedMemory\UnsafeNativeMethods.cs" />
-    <Compile Include="Backports\SharedMemory\Utilities\ArraySlice.cs" />
     <Compile Include="Communication\NamedPipesUtils\Client\PipeClient.cs" />
     <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunication.cs" />
     <Compile Include="Communication\NamedPipesUtils\Interfaces\ICommunicationClient.cs" />
@@ -191,7 +134,6 @@
     <Compile Include="Mono\LerpedMono.cs" />
     <Compile Include="Optimizers\Color.cs" />
     <Compile Include="Optimizers\Point.cs" />
-    <Compile Include="Other APIs\BigInteger\BigInteger.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\Crc32.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\EncodingFoundException.cs" />
     <Compile Include="Other APIs\HtmlAgilityPack\HtmlAttribute.cs" />
@@ -492,16 +434,7 @@
     <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_tilemap.png" />
     <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_tilemap_disabled.png" />
     <Content Include="Utility\UnityLib\2D\Tilemaps\Icons\icon_UpArrow2.png" />
-    <None Include="Backports\MinimumAsyncBridge\IteratorTasks.AsyncBridge\packages.config" />
-    <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\.gitignore" />
-    <None Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\README.ja-jp.md" />
     <None Include="Resources\LerpedEditorAttach.txt" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimuAsyncBridgeUnitTest\MinimuAsyncBridgeUnitTest.csproj" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\UniRx.dll" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\external\UniRx.pdb" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimumAsyncBridge\Runtime\CompilerServices\LICENSE.txt" />
-    <Content Include="Backports\MinimumAsyncBridge\MinimumThreadingBridge\MinimumThreadingBridge.csproj" />
-    <Content Include="Backports\MinimumAsyncBridge\MvvmBridge\MvvmBridge.csproj" />
     <Content Include="Serializers\unityserializer-ng\license.txt" />
     <None Include="Utility\CustomInputManager\Addons\JoystickMapping\GUI\joystick_mapping_gui_skin.guiskin" />
     <None Include="Utility\CustomInputManager\Addons\JoystickMapping\Wizards\PS3 Controller Clone\ps3_controller.unity" />

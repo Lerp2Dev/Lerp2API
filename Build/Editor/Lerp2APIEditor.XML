@@ -9219,6 +9219,30 @@
             </summary>
             <returns>Returns true if the mouse is over the tile map.</returns>
         </member>
+        <member name="T:UnityLibrary.PostProcessBuild">
+            <summary>
+            Class PostProcessBuild.
+            </summary>
+            <seealso cref="T:UnityEditor.Build.IPostprocessBuild" />
+        </member>
+        <member name="P:UnityLibrary.PostProcessBuild.callbackOrder">
+            <summary>
+            Gets the callback order.
+            </summary>
+            <value>The callback order.</value>
+        </member>
+        <member name="M:UnityLibrary.PostProcessBuild.OnPostprocessBuild(UnityEditor.BuildTarget,System.String)">
+            <summary>
+            Called when [postprocess build].
+            </summary>
+            <param name="target">The target.</param>
+            <param name="path">The path.</param>
+        </member>
+        <member name="T:EditorShortCutKeys">
+            <summary>
+            Class EditorShortCutKeys.
+            </summary>
+        </member>
         <member name="T:GridGeneratorEditor">
             <summary>
             Class GridGeneratorEditor.
@@ -9284,6 +9308,24 @@
             Author: https://github.com/Sacristan
             Script to hastily create correct canvas scales. Logic handled at editor's side
             </summary>
+        </member>
+        <member name="P:CanvasScalerUtil.CanvasWidth">
+            <summary>
+            Gets the width of the canvas.
+            </summary>
+            <value>The width of the canvas.</value>
+        </member>
+        <member name="P:CanvasScalerUtil.CanvasHeight">
+            <summary>
+            Gets the height of the canvas.
+            </summary>
+            <value>The height of the canvas.</value>
+        </member>
+        <member name="P:CanvasScalerUtil.CanvasWorldSizeInMeters">
+            <summary>
+            Gets the canvas world size in meters.
+            </summary>
+            <value>The canvas world size in meters.</value>
         </member>
         <member name="T:CanvasScalerUtilEditor">
             <summary>
