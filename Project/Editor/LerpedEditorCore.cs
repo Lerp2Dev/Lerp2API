@@ -146,21 +146,7 @@ namespace Lerp2APIEditor
                 Debug.LogError("There are one or more paths unsetted, go to Lerp2Dev Team Tools > Refresh Project API Dependencies... to set the paths of the Project in your HDD and the path of this project.");
                 return;
             }
-            string bPath = LerpedCore.GetString(buildPath);
-            m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
-
-            if (m_Watcher != null)
-                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () =>
-                {
-                    LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
-                    lp.iInit(lp, LerpedAPIChange.Auto);
-                });
-
-            //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
-            //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
-            //m_Watcher.Deleted += new FileSystemEventHandler(); //I have to remove files to the raw solution before compile
-
-            m_Watcher.StartFSW();
+            EnableFSW();
         }
 
         /// <summary>
@@ -197,20 +183,23 @@ namespace Lerp2APIEditor
 
             using (var proc = new Process())
             {
-                proc.StartInfo.FileName = batchPath;
+                proc.StartInfo.FileName = "cmd.exe";
                 proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(batchPath); //Gracias Elektro: https://foro.elhacker.net/net/processstart_ejecuta_un_batch_y_hace_que_sus_rutas_contiguas_sean_innacesibles-t465478.0.html;msg2109889#msg2109889
+                proc.StartInfo.Arguments = string.Format(@"/c "" ""{0}"" ""{1}"" """, batchPath, LerpedCore.ProjectPath);
                 //proc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //This will be hidden when the console of the api compiles itsself and could send messages to Unity?
                 proc.Start();
                 proc.WaitForExit();
                 //int exitCode = proc.ExitCode;
             }
 
-            string[] fbFiles = new string[] { Path.Combine(bPath, "Lerp2API.dll"), Path.Combine(bPath, "Lerp2API.pdb"), Path.Combine(bPath, "Lerp2API.pdb"),
+            /*string[] fbFiles = new string[] { Path.Combine(bPath, "Lerp2API.dll"), Path.Combine(bPath, "Lerp2API.pdb"), Path.Combine(bPath, "Lerp2API.pdb"),
                                               Path.Combine(bePath, "Lerp2APIEditor.dll"), Path.Combine(bePath, "Lerp2APIEditor.pdb"), Path.Combine(bePath, "Lerp2APIEditor.xml"),
                                               Path.Combine(bcPath, "Lerp2Console.exe"), Path.Combine(bcPath, "Lerp2Console.exe.config"), Path.Combine(bcPath, "Lerp2Console.pdb"), Path.Combine(bcPath, "Lerp2Console.xml") },
                      feFiles = new string[] { Path.Combine(ePath, "Lerp2API.dll"), Path.Combine(ePath, "Lerp2API.pdb"), Path.Combine(ePath, "Lerp2API.pdb"),
                                               Path.Combine(eePath, "Lerp2APIEditor.dll"), Path.Combine(eePath, "Lerp2APIEditor.pdb"), Path.Combine(eePath, "Lerp2APIEditor.xml"),
                                               Path.Combine(ecPath, "Lerp2Console.exe"), Path.Combine(ecPath, "Lerp2Console.exe.config"), Path.Combine(ecPath, "Lerp2Console.pdb"), Path.Combine(ecPath, "Lerp2Console.xml")};
+
+            //Esto se tiene que copiar los archivos del AttachedScripts, ademas no se pq no dejo que lo haga el compile.bat
 
             //Detect file weight? No, by the moment the Editor makes everything...
             int i = 0;
@@ -228,7 +217,7 @@ namespace Lerp2APIEditor
             catch
             {
                 Debug.LogError("Something gone wrong copying files at Refreshing Dependencies, cancel all new bugged API Messages to Auto Refresh it dependencies! (If this continues, please, restart Unity, we're looking this issue)");
-            }
+            }*/
 
             //Also, copy Lerp2Raw files...
             foreach (string file in Directory.GetFiles(brPath, "*.cs"))
@@ -278,6 +267,31 @@ namespace Lerp2APIEditor
                 Directory.CreateDirectory(path);
             if (!File.Exists(file) || File.ReadAllText(file) != contents)
                 File.WriteAllText(file, contents);
+        }
+
+        public static void EnableFSW()
+        {
+            string bPath = LerpedCore.GetString(buildPath);
+            m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
+
+            if (m_Watcher != null)
+                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () =>
+                {
+                    LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
+                    lp.iInit(lp, LerpedAPIChange.Auto);
+                });
+
+            //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
+            //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
+            //m_Watcher.Deleted += new FileSystemEventHandler(); //I have to remove files to the raw solution before compile
+
+            m_Watcher.StartFSW();
+        }
+
+        public static void DisableFSW()
+        {
+            m_Watcher.FSW.EnableRaisingEvents = false;
+            m_Watcher = null;
         }
     }
 }

@@ -147,14 +147,14 @@ namespace Lerp2APIEditor.EditorWindows
             GUILayout.BeginHorizontal();
             GUILayout.Label("Build Dependencies Path");
             bPath = GUILayout.TextField(bPath, GUILayout.Width(180));
-            if (GUILayout.Button("...", GUILayout.Width(16), GUILayout.Height(16)))
-                ShowBrowser("Build Dependencies Path", out bBrowser);
+            if (GUILayout.Button("...", GUILayout.Width(25), GUILayout.Height(16)))
+                bPath = EditorUtility.OpenFolderPanel("Build Dependencies Path", "", ""); //ShowBrowser("Build Dependencies Path", out bBrowser);
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUILayout.Label("Project API Dependencies Path");
             ePath = GUILayout.TextField(ePath, GUILayout.Width(180));
-            if (GUILayout.Button("...", GUILayout.Width(16), GUILayout.Height(16)))
-                ShowBrowser("Project Dependencies Path", out bBrowser);
+            if (GUILayout.Button("...", GUILayout.Width(25), GUILayout.Height(16)))
+                ePath = EditorUtility.OpenFolderPanel("Project Dependencies Path", "", ""); //ShowBrowser("Project Dependencies Path", out bBrowser); //EditorUtility.OpenFolderPanel
             GUILayout.EndHorizontal();
             GUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();

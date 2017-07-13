@@ -3197,11 +3197,6 @@
             The unity boot
             </summary>
         </member>
-        <member name="F:Lerp2API.LerpedCore.disableFileSysWatcher">
-            <summary>
-            The unity boot
-            </summary>
-        </member>
         <member name="F:Lerp2API.LerpedCore.disableTagCheck">
             <summary>
             The unity boot
@@ -3252,6 +3247,11 @@
             The socket debug
             </summary>
         </member>
+        <member name="F:Lerp2API.LerpedCore.disableFileSystemWatcher">
+            <summary>
+            The socket debug
+            </summary>
+        </member>
         <member name="F:Lerp2API.LerpedCore.consoleClient">
             <summary>
             The console client
@@ -3277,12 +3277,6 @@
             Gets or sets a value indicating whether this instance is mssing assets disabled.
             </summary>
             <value><c>true</c> if this instance is mssing assets disabled; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Lerp2API.LerpedCore.isFSWDisabled">
-            <summary>
-            Gets or sets a value indicating whether this instance is FSW disabled.
-            </summary>
-            <value><c>true</c> if this instance is FSW disabled; otherwise, <c>false</c>.</value>
         </member>
         <member name="P:Lerp2API.LerpedCore.SystemTime">
             <summary>

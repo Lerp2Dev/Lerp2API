@@ -36,7 +36,8 @@ namespace Lerp2Raw
                     /// <summary>
                     /// The m disable server socket
                     /// </summary>
-                    m_disableServerSocket;
+                    m_disableServerSocket,
+                    m_disableFileSystemWatcher;
 
         /// <summary>
         /// The m definition log path
@@ -51,6 +52,7 @@ namespace Lerp2Raw
             CronTask.debugTasks = m_cronTasksDebug;
             LerpedCore.cancelSocketClient = m_disableClientSocket;
             LerpedCore.cancelSocketServer = m_disableServerSocket;
+            LerpedCore.disableFileSystemWatcher = m_disableFileSystemWatcher;
             LerpedCore.lerpedCore = LerpedCore.AutoHookCore();
             Debug.HookLog();
             if (m_runConsoleAtPlayEvent) ConsoleServer.StartConsole(!string.IsNullOrEmpty(m_defLogPath) ? m_defLogPath : Path.Combine(Application.dataPath, LerpedCore.defaultLogFilePath));

@@ -179,9 +179,10 @@ copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.dll" "%ProjectPath%\Editor\Lerp
 copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.pdb" "%ProjectPath%\Editor\Lerp2APIEditor.pdb"
 copy /y "%MAIN_PATH%\Build\Editor\Lerp2APIEditor.xml" "%ProjectPath%\Editor\Lerp2APIEditor.xml"
 
-copy /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
-
 echo.
+
+xcopy /s /r /y "%MAIN_PATH%\Project\Lerp2Raw\*.cs" "%ProjectPath%\AttachedScripts\"
+cmd /c " "%MAIN_PATH%\Apps\DOS Utils\ignorer.bat" "%MAIN_PATH%\Project\Lerp2Raw\ignorecom.txt" "%ProjectPath%\AttachedScripts" "
 
 goto:EOF
 

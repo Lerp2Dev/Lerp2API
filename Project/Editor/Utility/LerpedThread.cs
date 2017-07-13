@@ -53,7 +53,7 @@ namespace Lerp2APIEditor.Utility
         {
             if (typeof(T) == typeof(FileSystemWatcher))
             {
-                if (LerpedCore.isFSWDisabled)
+                if (LerpedCore.disableFileSystemWatcher)
                     return;
                 try
                 {

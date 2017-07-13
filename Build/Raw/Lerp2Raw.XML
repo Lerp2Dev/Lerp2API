@@ -72,6 +72,11 @@
             The m run console at play event
             </summary>
         </member>
+        <member name="F:Lerp2Raw.LerpedHook.m_disableFileSystemWatcher">
+            <summary>
+            The m run console at play event
+            </summary>
+        </member>
         <member name="F:Lerp2Raw.LerpedHook.m_defLogPath">
             <summary>
             The m definition log path

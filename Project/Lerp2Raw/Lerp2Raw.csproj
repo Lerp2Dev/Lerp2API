@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editor\LerpedEditor.cs" />
     <Compile Include="LerpedEditorHook.cs" />
     <Compile Include="LerpedHook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

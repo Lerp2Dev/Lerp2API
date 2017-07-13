@@ -35,7 +35,7 @@ namespace Lerp2API
                             loggerPath = "LOG_PATH",
                             consoleSymLinkPath = "CONSOLE_SYMLINK_PATH",
                             disabledMissingAssets = "DISABLE_MISSING_ASSETS",
-                            disableFileSysWatcher = "DISABLE_FSW",
+                            //disableFileSysWatcher = "DISABLE_FSW",
                             disableTagCheck = "DISABLE_TAG_CHECK",
                             disableLayerCheck = "DISABLE_LAYER_CHECK",
                             disableAxisCheck = "DISABLE_AXIS_CHECK",
@@ -66,7 +66,8 @@ namespace Lerp2API
                            /// <summary>
                            /// The cancel socket server
                            /// </summary>
-                           cancelSocketServer;
+                           cancelSocketServer,
+                           disableFileSystemWatcher;
 
         /// <summary>
         /// The console client
@@ -84,7 +85,8 @@ namespace Lerp2API
         /// <summary>
         /// The is editor
         /// </summary>
-        public static bool isEditor, isPlaying; //Mas rudimentario
+        public static bool isEditor,
+                           isPlaying; //Mas rudimentario
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is mssing assets disabled.
@@ -109,7 +111,7 @@ namespace Lerp2API
         /// Gets or sets a value indicating whether this instance is FSW disabled.
         /// </summary>
         /// <value><c>true</c> if this instance is FSW disabled; otherwise, <c>false</c>.</value>
-        public static bool isFSWDisabled
+        /*public static bool isFSWDisabled
         {
             get
             {
@@ -122,7 +124,7 @@ namespace Lerp2API
             {
                 SetBool(disableFileSysWatcher, value);
             }
-        }
+        }*/
 
         /// <summary>
         /// Gets the system time.
@@ -145,6 +147,14 @@ namespace Lerp2API
             get
             {
                 return Time.fixedDeltaTime;
+            }
+        }
+
+        public static string ProjectPath
+        {
+            get
+            {
+                return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             }
         }
 
