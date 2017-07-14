@@ -54,6 +54,8 @@ namespace Lerp2APIEditor
 
         internal static WWWHandler wh;
 
+        private static bool alreadyDisabledFSW;
+
         /// <summary>
         /// Gets a value indicating whether [available paths].
         /// </summary>
@@ -271,27 +273,37 @@ namespace Lerp2APIEditor
 
         public static void EnableFSW()
         {
-            string bPath = LerpedCore.GetString(buildPath);
-            m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
+            if (m_Watcher == null)
+            {
+                string bPath = LerpedCore.GetString(buildPath);
+                m_Watcher = new LerpedThread<FileSystemWatcher>(t_CompileWatcher, new FSWParams(Path.Combine(Path.GetDirectoryName(bPath), "Project"), "*.cs", NotifyFilters.LastWrite | NotifyFilters.Size, true));
 
-            if (m_Watcher != null)
-                m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () =>
-                {
-                    LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
-                    lp.iInit(lp, LerpedAPIChange.Auto);
-                });
+                if (m_Watcher != null)
+                    m_Watcher.matchedMethods.Add(WatcherChangeTypes.Changed.ToString(), () =>
+                    {
+                        LerpedPaths lp = EditorWindow.GetWindow<LerpedPaths>();
+                        lp.iInit(lp, LerpedAPIChange.Auto);
+                    });
 
-            //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
-            //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
-            //m_Watcher.Deleted += new FileSystemEventHandler(); //I have to remove files to the raw solution before compile
+                //m_Watcher.Created += new FileSystemEventHandler(); //I have to add files to the raw solution before compile
+                //m_Watcher.Renamed += new FileSystemEventHandler(); //I have to rename files to the raw solution before compile
+                //m_Watcher.Deleted += new FileSystemEventHandler(); //I have to remove files to the raw solution before compile
+            }
 
             m_Watcher.StartFSW();
+
+            alreadyDisabledFSW = false;
         }
 
         public static void DisableFSW()
         {
-            m_Watcher.FSW.EnableRaisingEvents = false;
-            m_Watcher = null;
+            if (!alreadyDisabledFSW)
+            {
+                m_Watcher.CancelFSW();
+                m_Watcher.FSW.Dispose();
+
+                alreadyDisabledFSW = true;
+            }
         }
     }
 }

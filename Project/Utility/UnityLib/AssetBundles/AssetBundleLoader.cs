@@ -47,7 +47,7 @@ namespace UnityLibrary
             yield return www.Send();
 
             // if received error, exit
-            if (www.isError == true)
+            if (www.isNetworkError == true)
             {
                 Debug.LogError("www error:" + www.error);
                 yield break;

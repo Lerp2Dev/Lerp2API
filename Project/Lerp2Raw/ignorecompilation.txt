@@ -1,3 +1,0 @@
-x/bin/aa
-x/obj/aa
-x/Properties/aa

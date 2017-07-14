@@ -110,7 +110,7 @@ namespace Lerp2APIEditor.Utility
 
         [DidReloadScripts]
         private static void OnScriptRecompile()
-        { //En este mensaje si no estan los tags voy a mostrarlo, voy a decir q si los quieres añadir
+        { //En este mensaje si no estan los tags voy a mostrarlo, voy a decir q si los quieres añadir...
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 return;
 

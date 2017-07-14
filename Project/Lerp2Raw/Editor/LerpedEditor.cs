@@ -1,4 +1,5 @@
-﻿using Lerp2APIEditor;
+﻿using Lerp2API._Debug;
+using Lerp2APIEditor;
 using UnityEditor;
 
 namespace Lerp2Raw
@@ -10,13 +11,16 @@ namespace Lerp2Raw
 
         public override void OnInspectorGUI()
         {
+            DrawDefaultInspector();
+
             bool curFSWValue = serializedObject.FindProperty("m_disableFileSystemWatcher").boolValue;
             if (localDisabledFSW != curFSWValue)
             {
                 if (curFSWValue)
                     LerpedEditorCore.DisableFSW();
                 else
-                    LerpedEditorCore.EnableFSW(); //...aaacccaaaddfgfdfg
+                    LerpedEditorCore.EnableFSW();
+                localDisabledFSW = curFSWValue;
             }
         }
     }

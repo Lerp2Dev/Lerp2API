@@ -119,7 +119,7 @@ namespace Lerp2API._Debug
         /// <value>The logger.</value>
         public static new ILogger logger
         {
-            get { return UnityEngine.Debug.logger; }
+            get { return UnityEngine.Debug.unityLogger; }
         }
 
         /// <summary>

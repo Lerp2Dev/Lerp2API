@@ -51,7 +51,7 @@ namespace Lerp2APIEditor.Utility
         /// <param name="pars">The pars.</param>
         public LerpedThread(string name, FSWParams pars)
         {
-            if (typeof(T) == typeof(FileSystemWatcher))
+            if (typeof(T) == typeof(FileSystemWatcher) && FSW == null)
             {
                 if (LerpedCore.disableFileSystemWatcher)
                     return;
@@ -63,9 +63,9 @@ namespace Lerp2APIEditor.Utility
                     watcher.IncludeSubdirectories = pars.includeSubfolders;
 
                     watcher.Changed += OnChanged;
-                    watcher.Created += OnChanged;
-                    watcher.Deleted += OnChanged;
-                    watcher.Renamed += OnRenamed;
+                    //watcher.Created += OnChanged;
+                    //watcher.Deleted += OnChanged;
+                    //watcher.Renamed += OnRenamed;
 
                     ApplyChanges(watcher);
                 }

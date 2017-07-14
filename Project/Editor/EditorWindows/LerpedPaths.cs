@@ -74,6 +74,9 @@ namespace Lerp2APIEditor.EditorWindows
         /// <param name="change">The change.</param>
         public void iInit(LerpedPaths rf, LerpedAPIChange change = LerpedAPIChange.Default)
         {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                return;
+
             if (rf != null)
                 rf.Close();
 

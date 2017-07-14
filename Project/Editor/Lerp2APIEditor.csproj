@@ -63,7 +63,6 @@
     <Compile Include="EditorWindows\LerpedPaths.cs" />
     <Compile Include="Helpers\Serializer Extensions\SerializedPropertyExtensions.cs" />
     <Compile Include="LerpedEditorCore.cs" />
-    <Compile Include="RawReferences\LerpedEditorHook.cs" />
     <Compile Include="Utility\AutoSetup.cs" />
     <Compile Include="Utility\CustomInputManager\Addons\InputEvents\InputEventManagerEditor.cs" />
     <Compile Include="Utility\CustomInputManager\Addons\JoystickMapping\MappingExplorer.cs" />

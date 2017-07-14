@@ -1,0 +1,1 @@
+﻿Lo que quiero hacer aquí es un pequeño conversor para el programa Binary2Text, a YALM
